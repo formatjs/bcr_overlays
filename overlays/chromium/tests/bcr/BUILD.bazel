@@ -1,0 +1,7 @@
+load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+
+cc_binary(
+    name = "smoke_test",
+    srcs = ["smoke_test.cc"],
+    deps = ["@chromium//third_party/modp_b64"],
+)

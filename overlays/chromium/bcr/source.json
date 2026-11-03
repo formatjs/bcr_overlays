@@ -1,0 +1,5 @@
+{
+    "url": "https://github.com/chromium/chromium/archive/refs/tags/142.0.7444.59.tar.gz",
+    "integrity": "sha256-UJtriXzq0/Vhcbr4DdDvOe40JlR/7awplIiPZi3ZFc8=",
+    "strip_prefix": "chromium-142.0.7444.59"
+}

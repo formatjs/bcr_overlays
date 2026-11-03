@@ -1,0 +1,19 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["buildflag_header.bzl"])
+
+cc_library(
+    name = "buildflag",
+    hdrs = ["buildflag.h"],
+    includes = [".."],
+)
+
+cc_library(
+    name = "build_config",
+    hdrs = ["build_config.h"],
+    deps = [":buildflag"],
+)
+
+exports_files(["BUILD.bazel"])

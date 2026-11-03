@@ -1,0 +1,11 @@
+{
+    "homepage": "https://www.chromium.org",
+    "maintainers": [],
+    "repository": [
+        "github:chromium/chromium"
+    ],
+    "versions": [
+        "142.0.7444.59"
+    ],
+    "yanked_versions": {}
+}

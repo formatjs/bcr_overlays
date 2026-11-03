@@ -1,0 +1,5 @@
+{
+    "repository": "https://webrtc.googlesource.com/src.git",
+    "revision": "29d6eabaf0b5c1a62af6e7fd03adebf5e1a446e8",
+    "chromium_version": "142.0.7444.59"
+}

@@ -1,0 +1,9 @@
+module(
+    name = "chromium",
+    version = "",
+    bazel_compatibility = [">=8.0.0"],
+)
+
+bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "platforms", version = "1.1.0")
+bazel_dep(name = "double-conversion", version = "3.3.1.bcr.1")

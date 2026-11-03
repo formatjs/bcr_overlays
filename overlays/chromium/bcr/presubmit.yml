@@ -1,0 +1,9 @@
+matrix:
+  bazel: ["8.x", "9.x"]
+tasks:
+  foundation:
+    name: Native Chromium foundation
+    platform: ubuntu2404
+    bazel: ${{ bazel }}
+    build_targets: ["@chromium//:foundation"]
+    test_targets: []

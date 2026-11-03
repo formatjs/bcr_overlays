@@ -1,0 +1,9 @@
+{
+    "homepage": "https://chromium.googlesource.com/v8/v8",
+    "maintainers": [],
+    "repository": [
+        "https://chromium.googlesource.com/v8/v8.git"
+    ],
+    "versions": [],
+    "yanked_versions": {}
+}

@@ -1,0 +1,5 @@
+module(
+    name = "v8",
+    version = "",
+    bazel_compatibility = [">=8.0.0"],
+)

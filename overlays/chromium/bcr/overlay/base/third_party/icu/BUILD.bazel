@@ -1,0 +1,10 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+cc_library(
+    name = "icu_utf",
+    hdrs = ["icu_utf.h"],
+    includes = ["../../.."],
+    visibility = ["//visibility:public"],
+)
+
+exports_files(["BUILD.bazel"])

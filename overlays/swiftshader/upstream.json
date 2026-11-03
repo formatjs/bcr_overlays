@@ -1,0 +1,5 @@
+{
+    "repository": "https://swiftshader.googlesource.com/SwiftShader.git",
+    "revision": "5f1c459a11bb4899301e89609cbf7547f9f31e20",
+    "chromium_version": "142.0.7444.59"
+}

@@ -1,0 +1,5 @@
+module(
+    name = "angle",
+    version = "",
+    bazel_compatibility = [">=8.0.0"],
+)

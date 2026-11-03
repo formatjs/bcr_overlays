@@ -1,0 +1,7 @@
+alias(
+    name = "double_conversion",
+    actual = "@double-conversion//:double-conversion",
+    visibility = ["//visibility:public"],
+)
+
+exports_files(["BUILD.bazel"])

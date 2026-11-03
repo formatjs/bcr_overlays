@@ -1,0 +1,9 @@
+{
+    "homepage": "https://pdfium.googlesource.com/pdfium",
+    "maintainers": [],
+    "repository": [
+        "https://pdfium.googlesource.com/pdfium.git"
+    ],
+    "versions": [],
+    "yanked_versions": {}
+}

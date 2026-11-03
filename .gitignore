@@ -1,0 +1,4 @@
+**/bazel-*
+__pycache__/
+*.pyc
+/overlays/*/tests/bcr/MODULE.bazel.lock

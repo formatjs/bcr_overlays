@@ -1,0 +1,28 @@
+module(
+    name = "chromium_development",
+    version = "142.0.7444.59",
+)
+
+bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "platforms", version = "1.1.0")
+bazel_dep(name = "googletest", version = "1.17.0.bcr.2")
+bazel_dep(name = "double-conversion", version = "3.3.1.bcr.1")
+
+http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "chromium",
+    files = {
+        "BUILD.bazel": "//bcr/overlay:BUILD.bazel",
+        "build/BUILD.bazel": "//bcr/overlay/build:BUILD.bazel",
+        "build/buildflag_header.bzl": "//bcr/overlay/build:buildflag_header.bzl",
+        "base/third_party/cityhash/BUILD.bazel": "//bcr/overlay/base/third_party/cityhash:BUILD.bazel",
+        "base/third_party/icu/BUILD.bazel": "//bcr/overlay/base/third_party/icu:BUILD.bazel",
+        "base/third_party/superfasthash/BUILD.bazel": "//bcr/overlay/base/third_party/superfasthash:BUILD.bazel",
+        "base/third_party/double_conversion/BUILD.bazel": "//bcr/overlay/base/third_party/double_conversion:BUILD.bazel",
+        "third_party/modp_b64/BUILD.bazel": "//bcr/overlay/third_party/modp_b64:BUILD.bazel",
+    },
+    sha256 = "509b6b897cead3f56171baf80dd0ef39ee3426547fedac2994888f662dd915cf",
+    strip_prefix = "chromium-142.0.7444.59",
+    urls = ["https://github.com/chromium/chromium/archive/refs/tags/142.0.7444.59.tar.gz"],
+)

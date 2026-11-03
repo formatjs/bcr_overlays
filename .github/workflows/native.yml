@@ -1,0 +1,29 @@
+name: Native BCR overlays
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  registry:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest discover -s tests
+      - run: python3 overlays/chromium/tests/validate_bcr.py
+  foundation:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: overlays/chromium
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bazel-contrib/setup-bazel@0.15.0
+      - run: python3 tests/validate_bcr.py
+      - run: bazel build //:foundation
+      - run: bazel test //:native_foundation_test
+      - name: Consume staged registry
+        shell: bash
+        run: |
+          registry=$(mktemp -d)
+          python3 ../../tools/stage_bcr_entry.py --source-registry bcr --target-registry "$registry" --module chromium --version 142.0.7444.59
+          cd tests/bcr
+          bazel run --registry="file://$registry" --registry=https://bcr.bazel.build //:smoke_test

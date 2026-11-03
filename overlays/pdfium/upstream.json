@@ -1,0 +1,5 @@
+{
+    "repository": "https://pdfium.googlesource.com/pdfium.git",
+    "revision": "e95c6ead2f97716c98526ec42d5fd9ebb50e6e23",
+    "chromium_version": "142.0.7444.59"
+}

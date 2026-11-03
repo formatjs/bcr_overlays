@@ -1,0 +1,5 @@
+{
+    "repository": "https://chromium.googlesource.com/angle/angle.git",
+    "revision": "e5b338502c7c65bd38d4695bc557938ca4cc3aa7",
+    "chromium_version": "142.0.7444.59"
+}

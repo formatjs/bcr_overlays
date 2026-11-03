@@ -1,0 +1,45 @@
+{
+    "schema_version": 1,
+    "overlays": {
+        "chromium": {
+            "path": "overlays/chromium",
+            "module": "chromium",
+            "status": "bootstrap"
+        },
+        "v8": {
+            "path": "overlays/v8",
+            "module": "v8",
+            "status": "planned"
+        },
+        "skia": {
+            "path": "overlays/skia",
+            "module": "skia",
+            "status": "planned"
+        },
+        "angle": {
+            "path": "overlays/angle",
+            "module": "angle",
+            "status": "planned"
+        },
+        "dawn": {
+            "path": "overlays/dawn",
+            "module": "dawn",
+            "status": "planned"
+        },
+        "webrtc": {
+            "path": "overlays/webrtc",
+            "module": "webrtc",
+            "status": "planned"
+        },
+        "pdfium": {
+            "path": "overlays/pdfium",
+            "module": "pdfium",
+            "status": "planned"
+        },
+        "swiftshader": {
+            "path": "overlays/swiftshader",
+            "module": "swiftshader",
+            "status": "planned"
+        }
+    }
+}

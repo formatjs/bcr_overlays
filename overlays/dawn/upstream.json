@@ -1,0 +1,5 @@
+{
+    "repository": "https://dawn.googlesource.com/dawn.git",
+    "revision": "cee9cb0d67e749bf42f5e90cb3b8a6f525dbb920",
+    "chromium_version": "142.0.7444.59"
+}

@@ -1,0 +1,9 @@
+{
+    "homepage": "https://chromium.googlesource.com/angle/angle",
+    "maintainers": [],
+    "repository": [
+        "https://chromium.googlesource.com/angle/angle.git"
+    ],
+    "versions": [],
+    "yanked_versions": {}
+}

@@ -1,0 +1,2 @@
+tools/stage_bcr_entry.py adapted from perplexityai/rocksdb, licensed Apache-2.0.
+Upstream Chromium and bundled third-party sources retain their own licenses.

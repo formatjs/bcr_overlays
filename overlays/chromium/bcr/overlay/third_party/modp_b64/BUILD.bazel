@@ -1,0 +1,12 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+cc_library(
+    name = "modp_b64",
+    srcs = ["modp_b64.cc"],
+    hdrs = ["modp_b64.h"],
+    includes = ["../.."],
+    textual_hdrs = ["modp_b64_data.h"],
+    visibility = ["//visibility:public"],
+)
+
+exports_files(["BUILD.bazel"])

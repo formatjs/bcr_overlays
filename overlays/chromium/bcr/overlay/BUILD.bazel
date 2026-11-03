@@ -1,0 +1,17 @@
+package(default_visibility = ["//visibility:public"])
+
+filegroup(
+    name = "foundation",
+    srcs = [
+        "//base/third_party/cityhash",
+        "//base/third_party/double_conversion",
+        "//base/third_party/icu:icu_utf",
+        "//base/third_party/superfasthash",
+        "//build:build_config",
+        "//third_party/modp_b64",
+    ],
+)
+
+exports_files(["BUILD.bazel"])
+
+exports_files(["MODULE.bazel"])

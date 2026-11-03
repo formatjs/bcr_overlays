@@ -1,0 +1,5 @@
+module(
+    name = "swiftshader",
+    version = "",
+    bazel_compatibility = [">=8.0.0"],
+)

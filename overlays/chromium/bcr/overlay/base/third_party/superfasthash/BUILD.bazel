@@ -1,0 +1,9 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+cc_library(
+    name = "superfasthash",
+    srcs = ["superfasthash.c"],
+    visibility = ["//visibility:public"],
+)
+
+exports_files(["BUILD.bazel"])

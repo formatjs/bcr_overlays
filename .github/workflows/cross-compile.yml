@@ -20,7 +20,7 @@ jobs:
       id: ${{ steps.target.outputs.id }}
       runner: ${{ steps.target.outputs.runner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.repository.default_branch }}
           persist-credentials: false
@@ -60,7 +60,7 @@ jobs:
     if: github.event.state == 'success'
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.repository.default_branch }}
           persist-credentials: false

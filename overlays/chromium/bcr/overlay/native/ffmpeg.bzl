@@ -8,7 +8,11 @@ load(":tool_inputs.bzl", "chromium_tool_inputs")
 
 def native_ffmpeg():
     chromium_public_dependency(name = "ffmpeg_opus", dependency = "@opus//:opus")
-    config_root = Label("@chromium_ffmpeg//:chromium/config/Chromium/linux/x64/config.h").workspace_root + "/chromium/config/Chromium/linux/x64"
+    source_root = Label("@chromium_ffmpeg//:chromium/config/Chromium/linux/x64/config.h").workspace_root
+    config_options = select({
+        "@platforms//cpu:aarch64": ["-iquote" + source_root + "/chromium/config/Chromium/linux/arm64"],
+        "//conditions:default": ["-iquote" + source_root + "/chromium/config/Chromium/linux/x64"],
+    })
     cc_library(
         name = "ffmpeg_headers",
         hdrs = SHARED_HEADERS + [":all_buildflags"],
@@ -34,14 +38,14 @@ def native_ffmpeg():
             cc_library(
                 name = library["name"] + "_c",
                 srcs = c_sources,
-                copts = ["-iquote" + config_root] + library["c_copts"],
+                copts = config_options + library["c_copts"],
                 **common
             )
             common["deps"] = common["deps"] + [":" + library["name"] + "_c"]
         cc_library(
             name = library["name"],
             srcs = other_sources,
-            copts = ["-iquote" + config_root] + library["copts"],
+            copts = config_options + library["copts"],
             **common
         )
     native.alias(name = "ffmpeg", actual = ":" + LIBRARIES["//third_party/ffmpeg:ffmpeg"]["name"])

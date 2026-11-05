@@ -20,6 +20,7 @@ def main():
         parser.error('use a separate imported overlay as the source')
     preserved = {
         'native/base.bzl',
+        'native/fonts.bzl',
         'native/platform_runtime.bzl',
         'native/rust/BUILD.bazel',
         'base/allocator/partition_allocator/src/partition_alloc/BUILD.bazel',

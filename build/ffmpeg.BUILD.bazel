@@ -8,7 +8,7 @@ cc_library(
     name = "headers",
     hdrs = glob(["**/*.h"]),
     includes = ["."],
-    deps = [":public_config_headers"],
+    deps = [":selected_public_config_headers"],
 )
 
 cc_library(
@@ -23,4 +23,18 @@ cc_library(
     name = "public_config_headers",
     hdrs = glob(["chromium/config/Chromium/linux/x64/libavutil/*.h"]),
     strip_include_prefix = "chromium/config/Chromium/linux/x64",
+)
+
+cc_library(
+    name = "public_config_headers_arm64",
+    hdrs = glob(["chromium/config/Chromium/linux/arm64/libavutil/*.h"]),
+    strip_include_prefix = "chromium/config/Chromium/linux/arm64",
+)
+
+cc_library(
+    name = "selected_public_config_headers",
+    deps = select({
+        "@platforms//cpu:aarch64": [":public_config_headers_arm64"],
+        "//conditions:default": [":public_config_headers"],
+    }),
 )

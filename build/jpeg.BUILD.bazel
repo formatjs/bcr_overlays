@@ -7,7 +7,10 @@ cc_library(
     name = "headers",
     hdrs = glob(["src/**/*.h", "simd/**/*.h", "simd/**/*.inc"]),
     textual_hdrs = glob(["src/**/*.c"]),
-    includes = [".", "src"],
+    includes = [".", "src"] + select({
+        "@platforms//cpu:aarch64": ["simd/arm"],
+        "//conditions:default": [],
+    }),
     include_prefix = "third_party/libjpeg_turbo",
     strip_include_prefix = ".",
 )

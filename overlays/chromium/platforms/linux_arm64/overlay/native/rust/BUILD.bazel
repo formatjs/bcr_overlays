@@ -86,7 +86,10 @@ chromium_bindgen_library(
     cpp = False,
     crate_name = "fontconfig_bindings",
     edition = "2021",
-    header = "//:third_party/fontconfig/include/fontconfig/fontconfig.h",
+    header = select({
+        "@platforms//cpu:aarch64": "//:third_party/fontconfig/include/fontconfig/fontconfig.h",
+        "//conditions:default": "@chromium//:third_party/fontconfig/include/fontconfig/fontconfig.h",
+    }),
 )
 
 chromium_bindgen_library(

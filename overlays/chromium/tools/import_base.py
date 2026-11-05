@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Import Chromium's complete Linux base library and support sources."""
+"""Import pinned Chromium base and support library sources."""
 import argparse
 import gzip
 import json
@@ -50,15 +50,21 @@ def sort_archive_files(text):
 
 
 def main():
+    from import_mojo_runtime import compiler_configuration
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('graph', type=Path)
     parser.add_argument('--source-root', required=True, type=Path)
     args = parser.parse_args()
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     overlay = ROOT / 'bcr/overlay'
-    unpack = lambda value: graph['pool'][value['pool']] if isinstance(value, dict) and 'pool' in value else value
     inputs, sources, options, definitions = set(), {}, {}, {}
     for name, label in SUPPORT.items():
+        if label not in graph['targets']:
+            if (name in ('dwarf_helpers', 'symbolize', 'xdg_user_dirs')
+                    and not graph['targets']['//base:base']['toolchain'].startswith('//build/toolchain/linux:')):
+                continue
+            raise ValueError(f'missing base support target: {label}')
         target = graph['targets'][label]
         if target['type'] not in ('static_library', 'source_set'):
             raise ValueError(f'unmapped base target type: {label}')
@@ -67,23 +73,7 @@ def main():
                 raise ValueError(f'unmapped base source language: {path}')
         sources[name] = [path[2:] for path in target['sources'] if path.endswith(('.cc', '.c'))]
         inputs.update(sources[name])
-        flags = []
-        iterator = iter(unpack(target['cflags']) + unpack(target['cflags_cc']))
-        for flag in iterator:
-            if flag == '-Xclang':
-                argument = next(iterator)
-                if argument not in ('-fmodule-file-home-is-cwd', '-fmodules-local-submodule-visibility'):
-                    raise ValueError(f'unmapped frontend flag: {argument}')
-                continue
-            if flag == '-Werror' or flag == '-nostdinc++' or flag.startswith((
-                    '-fcrash-diagnostics-dir=', '--warning-suppression-mappings=', '--target=',
-                    '--sysroot=', '-isystem', '-fmodules', '-fno-implicit-module',
-                    '-fbuiltin-module-map', '-fmodule-map-file=')):
-                continue
-            flags.append(flag)
-        options[name] = flags
-        definitions[name] = [value for value in unpack(target['defines']) if not value.startswith((
-            'CR_LIBCXX_REVISION=', 'CR_SYSROOT_KEY=', 'USE_LIBCXX_MODULES'))]
+        options[name], definitions[name] = compiler_configuration(graph, target)
     headers = []
     for path in sorted((args.source_root / 'base').rglob('*')):
         if not path.is_file() or path.suffix not in ('.h', '.inc'):

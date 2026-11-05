@@ -1,0 +1,61 @@
+{
+    "schema_version": 1,
+    "provenance": {
+        "chromium_revision": "4b8153ab58d3c3f4c9f7e4baad9616ecf80db5fa",
+        "gn_version": "2285 (81b24e01531e)",
+        "args_gn": "is_debug = false\nis_component_build = false\ntarget_os = \"mac\"\ntarget_cpu = \"arm64\"\nclang_base_path = \"$LLVM_ROOT\"\nclang_use_chrome_plugins = false\nuse_system_xcode = false\nmac_sdk_path = \"$MACOS_SDK_ROOT\"\nmac_llvm_bin_path = \"$LLVM_ROOT/bin\"\n",
+        "deps_sha256": "2bcbc993c76bf81b692d391cd150a849797372b8418df5df8d9a29ac6b058a99",
+        "extraction_inputs": {
+            "sdk": {
+                "archive_sha256": "debe353b27a13cd678b26ab216a040acf07b62c0639d8ac522df4ca07d121eb2",
+                "version": "26.5",
+                "build_version": "25F70",
+                "command_line_tools_version": "26.6",
+                "gn_feature_compatibility_version": "26.6",
+                "compiler": "hermeticbuild LLVM 23"
+            },
+            "maintainer_patches": [
+                {
+                    "path": "platforms/darwin_arm64/capture/mac_sdk_cross.patch",
+                    "sha256": "391db355655f028106fca989f024383d581e8596288b14b42f02b85ceb57c057"
+                }
+            ],
+            "sources": [
+                {
+                    "name": "glslang",
+                    "url": "https://github.com/KhronosGroup/glslang/archive/a57276bf558f5cf94d3a9854ebdf5a2236849a5a.tar.gz",
+                    "revision": "a57276bf558f5cf94d3a9854ebdf5a2236849a5a",
+                    "sha256": "02f4321a3ed01b9a9a9874f76e2d8ad078825818fcc9aae12dbf2c01674fb8af"
+                },
+                {
+                    "name": "cast_core_public",
+                    "url": "https://chromium.googlesource.com/cast_core/public/+archive/f5ee589bdaea60418f670fa176be15ccb9a34942.tar.gz",
+                    "revision": "f5ee589bdaea60418f670fa176be15ccb9a34942",
+                    "sha256": "d1a342eb0596052ae891f05fa3ca975678129d5049ec2264c4871eff62b5c381"
+                }
+            ]
+        }
+    },
+    "graph_sha256": "fdf6f7ca6caadbe0ac71cd168dabd805b001f56f33bbcd41977ed354308cac1b",
+    "compressed_sha256": "80393473456112ad24b3866e00f0b0856c96c1de3e57986622ad2b69886fa4b7",
+    "target_types": {
+        "action": 8342,
+        "action_foreach": 35,
+        "bundle_data": 323,
+        "copy": 135,
+        "create_bundle": 8,
+        "executable": 49,
+        "generated_file": 423,
+        "group": 2511,
+        "rust_library": 243,
+        "rust_proc_macro": 11,
+        "shared_library": 6,
+        "source_set": 4502,
+        "static_library": 2275
+    },
+    "runtime_file_count": {
+        "//chrome:chrome": 1
+    },
+    "generated_file_count": 3697,
+    "pool_entries": 5632
+}

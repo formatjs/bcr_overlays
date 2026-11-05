@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: bazel-contrib/setup-bazel@0.15.0
-      - name: Cross-compile Rust, XML parser and Windows allocator
+      - name: Cross-compile Rust, XML parser and allocators
         env:
           BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA: '1'
           BAZEL_WINDOWS_SDK_EULA: '1'
@@ -35,12 +35,13 @@ jobs:
           //tools/ci:expat-darwin-arm64 //tools/ci:expat-windows-amd64
           //tools/ci:expat-windows-arm64
           //tools/ci:allocator-windows-amd64 //tools/ci:allocator-windows-arm64
-      - name: Collect Windows allocator smoke executables
+          //tools/ci:allocator-darwin-arm64
+      - name: Collect allocator smoke executables
         run: python3 -m tools.ci.collect_allocator_probes --output "$RUNNER_TEMP/allocator-probes"
       - uses: actions/upload-artifact@v7
         with:
-          name: windows-allocators-${{ github.sha }}
-          path: ${{ runner.temp }}/allocator-probes/*.exe
+          name: allocators-${{ github.sha }}
+          path: ${{ runner.temp }}/allocator-probes/*
           if-no-files-found: error
       - name: Run native XML parser probe
         run: bazel run --jobs=4 //tools/ci:expat_toolchain_probe
@@ -60,13 +61,25 @@ jobs:
     steps:
       - uses: actions/download-artifact@v8
         with:
-          name: windows-allocators-${{ github.sha }}
+          name: allocators-${{ github.sha }}
           path: ${{ runner.temp }}/allocator-probes
       - name: Exercise cross-compiled allocator
         shell: pwsh
         run: |
           & "$env:RUNNER_TEMP/allocator-probes/allocator-windows-${{ matrix.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+  darwin-allocator:
+    needs: toolchains
+    runs-on: macos-15
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: allocators-${{ github.sha }}
+          path: ${{ runner.temp }}/allocator-probes
+      - name: Exercise cross-compiled allocator
+        run: |
+          chmod +x "$RUNNER_TEMP/allocator-probes/allocator-darwin-arm64"
+          "$RUNNER_TEMP/allocator-probes/allocator-darwin-arm64"
   compatibility:
     runs-on: ubuntu-24.04
     steps:

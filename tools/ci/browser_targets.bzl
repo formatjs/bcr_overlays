@@ -20,7 +20,7 @@ linux_arm64_browser, _linux_arm64_browser = with_cfg(native.filegroup).set(
 darwin_arm64_browser, _darwin_arm64_browser = with_cfg(native.filegroup).set(
     "platforms",
     [Label("@llvm//platforms:macos_aarch64")],
-).build()
+).set("macos_minimum_os", "12.0").build()
 
 windows_amd64_browser, _windows_amd64_browser = with_cfg(native.filegroup).set(
     "platforms",

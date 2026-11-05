@@ -19,6 +19,7 @@ def main():
     graph = json.loads(gzip.decompress(Path(sys.argv[1]).read_bytes()))
     source = Path(sys.argv[2])
     records = {}
+    objcxx = {}
     for name in TARGETS:
         target = graph['targets'][LABEL + name]
         if target['type'] != 'static_library':
@@ -27,8 +28,9 @@ def main():
         if any(not p.startswith(PREFIX) for p in files):
             raise ValueError(f'source outside PartitionAlloc: {name}')
         records[name] = [p.removeprefix(PREFIX) for p in files if p.endswith('.cc')]
+        objcxx[name] = [p.removeprefix(PREFIX) for p in files if p.endswith('.mm')]
         for path in files:
-            if Path(path).suffix not in ('.cc', '.h', '.inc'):
+            if Path(path).suffix not in ('.cc', '.mm', '.h', '.inc'):
                 raise ValueError(f'unmapped source language: {path}')
             if not (source / path[2:]).is_file():
                 raise ValueError(f'missing source: {path}')
@@ -47,6 +49,12 @@ def main():
     defines = [s for s in unpack('defines') if not s.startswith(
         ('IS_PARTITION_ALLOC_BASE_IMPL', 'CR_LIBCXX_REVISION=', 'CR_SYSROOT_KEY=', 'USE_LIBCXX_MODULES'))]
     data = {'SOURCES': records, 'HEADERS': headers, 'COPTS': flags, 'DEFINES': defines}
+    if any(objcxx.values()):
+        data['OBJCXX_SOURCES'] = objcxx
+        data['OBJCXX_COPTS'] = {
+            name: compiler_configuration(graph, graph['targets'][LABEL + name], 'cflags_objcc')[0]
+            for name in TARGETS
+        }
     output = ROOT / 'bcr/overlay/base/allocator/partition_allocator/src/partition_alloc'
     output.mkdir(parents=True, exist_ok=True)
     (output / 'sources.bzl').write_text(

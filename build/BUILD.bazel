@@ -1,4 +1,5 @@
 exports_files([
+    "llvm-macos-cryptex-frameworks.patch",
     "spirv-tools-generator-input.patch",
     "spirv-headers-generator-inputs.patch",
     "windows_debuggers.BUILD.bazel",

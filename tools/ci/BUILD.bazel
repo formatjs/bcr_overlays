@@ -62,6 +62,22 @@ cc_binary(
     }),
 )
 
+cc_binary(
+    name = "darwin_allocator_probe",
+    srcs = ["allocator_probe.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-exceptions",
+    ],
+    target_compatible_with = ["@platforms//os:macos"],
+    deps = ["@chromium_darwin_arm64//base/allocator/partition_allocator/src/partition_alloc:allocator_core"],
+)
+
+darwin_arm64_browser(
+    name = "allocator-darwin-arm64",
+    srcs = [":darwin_allocator_probe"],
+)
+
 windows_amd64_browser(
     name = "allocator-windows-amd64",
     srcs = [":allocator_static_crt"],

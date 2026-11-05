@@ -28,6 +28,77 @@ bazel_dep(name = "libxrandr", version = "1.5.4")
 bazel_dep(name = "libxrender", version = "0.9.12")
 bazel_dep(name = "libxcb", version = "1.17.0.bcr.3")
 bazel_dep(name = "llvm", version = "0.8.26")
+single_version_override(
+    module_name = "llvm",
+    patch_strip = 1,
+    patches = ["//build:llvm-macos-cryptex-frameworks.patch"],
+)
+
+osx = use_extension("@llvm//extensions:osx.bzl", "osx")
+osx.frameworks(names = [
+    "ColorSync",
+    "FontServices",
+    "ImageIO",
+    "PDFKit",
+    "QuickLookUI",
+    "AVFAudio",
+    "AVFoundation",
+    "Accelerate",
+    "Accessibility",
+    "AppKit",
+    "ApplicationServices",
+    "AudioToolbox",
+    "AudioUnit",
+    "AuthenticationServices",
+    "CFNetwork",
+    "Carbon",
+    "Cocoa",
+    "CoreAudio",
+    "CoreBluetooth",
+    "CoreFoundation",
+    "CoreGraphics",
+    "CoreImage",
+    "CoreLocation",
+    "CoreMIDI",
+    "CoreML",
+    "CoreMedia",
+    "CoreServices",
+    "CoreText",
+    "CoreVideo",
+    "CoreWLAN",
+    "CryptoTokenKit",
+    "DiskArbitration",
+    "ForceFeedback",
+    "Foundation",
+    "GameController",
+    "IOBluetooth",
+    "IOKit",
+    "IOSurface",
+    "ImageCaptureCore",
+    "Kernel",
+    "LocalAuthentication",
+    "LocalAuthenticationEmbeddedUI",
+    "MediaAccessibility",
+    "MediaPlayer",
+    "Metal",
+    "MetalKit",
+    "Network",
+    "OSLog",
+    "OpenDirectory",
+    "OpenGL",
+    "Quartz",
+    "QuartzCore",
+    "SafariServices",
+    "Security",
+    "SecurityInterface",
+    "ServiceManagement",
+    "SystemConfiguration",
+    "UniformTypeIdentifiers",
+    "UserNotifications",
+    "VideoToolbox",
+    "Vision",
+])
+
 bazel_dep(name = "with_cfg.bzl", version = "0.12.0")
 bazel_dep(name = "rules_cc", version = "0.2.26")
 bazel_dep(name = "rules_python", version = "1.9.0")
@@ -109,7 +180,7 @@ archive_override(
 )
 
 sources = use_extension("//build:dependencies.bzl", "chromium_dependencies")
-use_repo(sources, "angle", "chromium", "chromium_angle", "chromium_anonymous_tokens", "chromium_catapult", "chromium_cdm_api", "chromium_cld3", "chromium_content_analysis_sdk", "chromium_crabbyavif", "chromium_cros_system_api", "chromium_dawn", "chromium_devtools_esbuild", "chromium_devtools_frontend", "chromium_dom_distiller_js", "chromium_egl_registry", "chromium_eigen3", "chromium_emoji_segmenter", "chromium_farmhash", "chromium_federated_compute", "chromium_ffmpeg", "chromium_fontconfig", "chromium_freetype", "chromium_gemmlowp", "chromium_harfbuzz", "chromium_icu", "chromium_ink", "chromium_ink_stroke_modeler", "chromium_jpeg", "chromium_kde_protocols", "chromium_leveldatabase", "chromium_libaddressinput", "chromium_libdrm", "chromium_libgav1", "chromium_libphonenumber", "chromium_libsrtp", "chromium_libsync", "chromium_libyuv", "chromium_linux_arm64", "chromium_material_color_utilities", "chromium_neon_2_sse", "chromium_opengl_registry", "chromium_openscreen", "chromium_ots", "chromium_pciutils", "chromium_pdfium", "chromium_platform_headers", "chromium_platform_headers_arm64", "chromium_platform_headers_cross", "chromium_platform_runtime", "chromium_platform_runtime_arm64", "chromium_protobuf_javascript", "chromium_pthreadpool", "chromium_quiche", "chromium_readability", "chromium_ruy", "chromium_search_engines_data", "chromium_skia", "chromium_smhasher", "chromium_sqlite", "chromium_swiftshader", "chromium_tflite", "chromium_v8", "chromium_vma", "chromium_vulkan_loader", "chromium_vulkan_tools", "chromium_vulkan_utility", "chromium_vulkan_validation", "chromium_wayland_protocols", "chromium_webp", "chromium_webrtc", "chromium_windows_amd64", "chromium_windows_arm64", "chromium_windows_debuggers", "chromium_wuffs", "chromium_xcomposite", "chromium_xdg_utils", "chromium_xnnpack", "chromium_xtst", "compact_enc_det", "dragonbox", "fp16", "ipcz", "linux-syscall-support", "nspr", "nss", "perfetto", "skia", "v8")
+use_repo(sources, "angle", "chromium", "chromium_angle", "chromium_anonymous_tokens", "chromium_catapult", "chromium_cdm_api", "chromium_cld3", "chromium_content_analysis_sdk", "chromium_crabbyavif", "chromium_cros_system_api", "chromium_darwin_arm64", "chromium_dawn", "chromium_devtools_esbuild", "chromium_devtools_frontend", "chromium_dom_distiller_js", "chromium_egl_registry", "chromium_eigen3", "chromium_emoji_segmenter", "chromium_farmhash", "chromium_federated_compute", "chromium_ffmpeg", "chromium_fontconfig", "chromium_freetype", "chromium_gemmlowp", "chromium_harfbuzz", "chromium_icu", "chromium_ink", "chromium_ink_stroke_modeler", "chromium_jpeg", "chromium_kde_protocols", "chromium_leveldatabase", "chromium_libaddressinput", "chromium_libdrm", "chromium_libgav1", "chromium_libphonenumber", "chromium_libsrtp", "chromium_libsync", "chromium_libyuv", "chromium_linux_arm64", "chromium_material_color_utilities", "chromium_neon_2_sse", "chromium_opengl_registry", "chromium_openscreen", "chromium_ots", "chromium_pciutils", "chromium_pdfium", "chromium_platform_headers", "chromium_platform_headers_arm64", "chromium_platform_headers_cross", "chromium_platform_runtime", "chromium_platform_runtime_arm64", "chromium_protobuf_javascript", "chromium_pthreadpool", "chromium_quiche", "chromium_readability", "chromium_ruy", "chromium_search_engines_data", "chromium_skia", "chromium_smhasher", "chromium_sqlite", "chromium_swiftshader", "chromium_tflite", "chromium_v8", "chromium_vma", "chromium_vulkan_loader", "chromium_vulkan_tools", "chromium_vulkan_utility", "chromium_vulkan_validation", "chromium_wayland_protocols", "chromium_webp", "chromium_webrtc", "chromium_windows_amd64", "chromium_windows_arm64", "chromium_windows_debuggers", "chromium_wuffs", "chromium_xcomposite", "chromium_xdg_utils", "chromium_xnnpack", "chromium_xtst", "compact_enc_det", "dragonbox", "fp16", "ipcz", "linux-syscall-support", "nspr", "nss", "perfetto", "skia", "v8")
 
 register_toolchains("@llvm//toolchain:all")
 

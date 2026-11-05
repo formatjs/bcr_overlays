@@ -1,4 +1,8 @@
 import copy
+import gzip
+import json
+import subprocess
+import sys
 from pathlib import Path
 import tempfile
 import unittest
@@ -77,6 +81,32 @@ class CaptureNativeGraphTest(unittest.TestCase):
                          [('/tmp/compiler', '$LLVM_ROOT')])
         index = result['targets']['//:browser']['libs']['pool']
         self.assertEqual(result['pool'][index], ['$LLVM_ROOT/lib/builtins.a'])
+
+    def test_cli_maps_relative_sdk_flags_and_records_extraction_inputs(self):
+        sdk = self.root / 'sdk'
+        self.project['targets']['//:browser']['cflags'] = ['-isysroot', '../../sdk']
+        (self.root / 'out/import/args.gn').write_text('mac_sdk_path = "' + str(sdk) + '"')
+        (self.root / 'DEPS').write_text('pinned dependencies')
+        project = self.root / 'project.json'
+        runtime = self.root / 'runtime.json'
+        provenance = self.root / 'extraction.json'
+        output = self.root / 'capture.json.gz'
+        project.write_text(json.dumps(self.project))
+        runtime.write_text(json.dumps(self.runtime))
+        provenance.write_text(json.dumps({'sdk': {'sha256': 'pinned'}}))
+        subprocess.run([
+            sys.executable, str(Path(__file__).resolve().parents[1] / 'tools/capture_native_graph.py'),
+            '--project', str(project), '--runtime-deps', str(runtime),
+            '--source-root', str(self.root), '--llvm-root', str(self.root / 'llvm'),
+            '--path-map', str(sdk) + '=$MACOS_SDK_ROOT',
+            '--extraction-inputs', str(provenance), '--revision', 'pinned',
+            '--gn-version', 'pinned', '--output', str(output),
+        ], check=True, capture_output=True, text=True)
+        graph = json.loads(gzip.decompress(output.read_bytes()))
+        flags = graph['targets']['//:browser']['cflags']['pool']
+        self.assertEqual(graph['pool'][flags], ['-isysroot', '$MACOS_SDK_ROOT'])
+        self.assertEqual(graph['provenance']['args_gn'], 'mac_sdk_path = "$MACOS_SDK_ROOT"')
+        self.assertEqual(graph['provenance']['extraction_inputs'], {'sdk': {'sha256': 'pinned'}})
 
     def test_captures_gn_time_inputs_without_action_producers(self):
         name = '//out/import/gen/source_list.rsp'

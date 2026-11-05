@@ -22,10 +22,6 @@ cc_library(
         ".",
         "src",
         "include",
-        "third_party/subzero",
-        "third_party/subzero/pnacl-llvm/include",
-        "third_party/llvm-subzero/build/Linux/include",
-        "third_party/llvm-subzero/include",
         "third_party/marl/include",
         "third_party/astc-encoder/Source",
     ] + select({
@@ -48,6 +44,11 @@ cc_library(
             "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
             "third_party/llvm-10.0/configs/linux/include",
         ],
-        "//conditions:default": [],
+        "//conditions:default": [
+            "third_party/subzero",
+            "third_party/subzero/pnacl-llvm/include",
+            "third_party/llvm-subzero/build/Linux/include",
+            "third_party/llvm-subzero/include",
+        ],
     }),
 )

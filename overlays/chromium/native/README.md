@@ -48,6 +48,10 @@ paths and SHA-256 digests. These files normally come from Chromium's SDK setup
 hook rather than a GN action. The pinned Microsoft debugger package lives in
 `build/dependencies.bzl`; source-built browser binaries remain separate.
 
+`darwin_arm64.json.gz` captures the macOS ARM64 browser closure. SDK provenance
+and extraction patches live in `platforms/darwin_arm64/capture/`. PartitionAlloc
+cross-compiles with Objective-C++ support; full browser translation remains pending.
+
 `tools/capture_native_graph.py --runtime-input OUTPUT=SOURCE` records those
 explicit inputs. Undeclared runtime outputs still fail capture.
 

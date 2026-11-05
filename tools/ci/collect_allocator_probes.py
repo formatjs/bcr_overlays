@@ -1,4 +1,4 @@
-"""Collect architecture-checked Windows executables for native CI smoke."""
+"""Collect architecture-checked cross-compiled executables for native CI smoke."""
 
 import argparse
 from pathlib import Path
@@ -22,13 +22,16 @@ def main():
     command = startup + ['cquery', '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',
                 '--repo_env=BAZEL_WINDOWS_SDK_EULA=1', '--output=files']
     args.output.mkdir(parents=True, exist_ok=True)
-    for arch in ['amd64', 'arm64']:
-        label = '//tools/ci:allocator-windows-' + arch
+    for platform in ['windows-amd64', 'windows-arm64', 'darwin-arm64']:
+        operating_system, arch = platform.split('-')
+        label = '//tools/ci:allocator-' + platform
         files = subprocess.check_output(command + [label], cwd=ROOT, text=True).splitlines()
-        executables = [execution_root / name for name in files if name.endswith('.exe')]
-        if len(executables) != 1 or binary_platform(executables[0]) != ('windows', arch):
-            raise ValueError(f'{label}: expected one Windows {arch} executable')
-        shutil.copy2(executables[0], args.output / ('allocator-windows-' + arch + '.exe'))
+        executables = [execution_root / name for name in files]
+        if len(executables) != 1 or binary_platform(executables[0]) != (operating_system, arch):
+            raise ValueError(f'{label}: expected one {operating_system} {arch} executable')
+        suffix = '.exe' if operating_system == 'windows' else ''
+        shutil.copy2(executables[0], args.output / ('allocator-' + platform + suffix))
+
 
 
 if __name__ == '__main__':

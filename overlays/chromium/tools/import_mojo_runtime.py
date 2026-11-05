@@ -31,10 +31,10 @@ TARGETS = {
 }
 
 
-def compiler_configuration(graph, target):
+def compiler_configuration(graph, target, language_flags="cflags_cc"):
     unpack = lambda value: graph['pool'][value['pool']] if isinstance(value, dict) else value
     flags = []
-    original = unpack(target['cflags']) + unpack(target['cflags_cc'])
+    original = unpack(target['cflags']) + unpack(target[language_flags])
     msvc = any(flag.startswith(('/W', '/std:')) for flag in original)
     iterator = iter(original)
     for flag in iterator:
@@ -52,11 +52,17 @@ def compiler_configuration(graph, target):
                     raise ValueError(f'unmapped Clang target feature: {feature}')
                 flags.extend(['-Xclang', argument, '-Xclang', feature])
                 continue
+            if argument == '-debug-info-kind=limited':
+                flags.extend([flag, argument])
+                continue
             if argument == '-fuse-ctor-homing':
                 flags.extend(['/clang:-Xclang', '/clang:' + argument] if msvc else ['-Xclang', argument])
                 continue
             if argument not in ('-fmodule-file-home-is-cwd', '-fmodules-local-submodule-visibility'):
                 raise ValueError(f'unmapped frontend flag: {argument}')
+            continue
+        if flag == '-isysroot':
+            next(iterator)
             continue
         if flag in ('-Werror', '/WX', '-nostdinc++', '-I../../third_party/libc++/src/include') or flag.startswith((
                 '-fcrash-diagnostics-dir=', '--warning-suppression-mappings=', '--target=',

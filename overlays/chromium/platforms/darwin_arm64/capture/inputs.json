@@ -1,0 +1,30 @@
+{
+  "sdk": {
+    "archive_sha256": "debe353b27a13cd678b26ab216a040acf07b62c0639d8ac522df4ca07d121eb2",
+    "version": "26.5",
+    "build_version": "25F70",
+    "command_line_tools_version": "26.6",
+    "gn_feature_compatibility_version": "26.6",
+    "compiler": "hermeticbuild LLVM 23"
+  },
+  "maintainer_patches": [
+    {
+      "path": "platforms/darwin_arm64/capture/mac_sdk_cross.patch",
+      "sha256": "391db355655f028106fca989f024383d581e8596288b14b42f02b85ceb57c057"
+    }
+  ],
+  "sources": [
+    {
+      "name": "glslang",
+      "url": "https://github.com/KhronosGroup/glslang/archive/a57276bf558f5cf94d3a9854ebdf5a2236849a5a.tar.gz",
+      "revision": "a57276bf558f5cf94d3a9854ebdf5a2236849a5a",
+      "sha256": "02f4321a3ed01b9a9a9874f76e2d8ad078825818fcc9aae12dbf2c01674fb8af"
+    },
+    {
+      "name": "cast_core_public",
+      "url": "https://chromium.googlesource.com/cast_core/public/+archive/f5ee589bdaea60418f670fa176be15ccb9a34942.tar.gz",
+      "revision": "f5ee589bdaea60418f670fa176be15ccb9a34942",
+      "sha256": "d1a342eb0596052ae891f05fa3ca975678129d5049ec2264c4871eff62b5c381"
+    }
+  ]
+}

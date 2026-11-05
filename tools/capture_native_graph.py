@@ -9,6 +9,7 @@ import hashlib
 import json
 from pathlib import Path
 import posixpath
+import re
 
 POOL_FIELDS = frozenset((
     'all_dependent_configs', 'arflags', 'asmflags', 'cflags', 'cflags_c',
@@ -163,6 +164,10 @@ def main():
     parser.add_argument('--target', action='append', help='Capture this complete dependency closure')
     parser.add_argument('--runtime-input', action='append', default=[], metavar='OUTPUT=SOURCE',
                         help='Declare a source runtime file normally copied by an SDK setup hook')
+    parser.add_argument('--path-map', action='append', default=[], metavar='PATH=PLACEHOLDER',
+                        help='Map an additional SDK root to a portable $UPPERCASE placeholder')
+    parser.add_argument('--extraction-inputs', type=Path,
+                        help='Portable JSON provenance for SDK pins and maintainer extraction patches')
     args = parser.parse_args()
     project = json.loads(args.project.read_text())
     if args.target:
@@ -173,20 +178,37 @@ def main():
         if not separator or output in runtime_inputs:
             parser.error('runtime inputs must be unique OUTPUT=SOURCE pairs')
         runtime_inputs[output] = source
+    replacements = [(str(args.llvm_root), '$LLVM_ROOT'),
+                    (str(args.source_root), '$SOURCE_ROOT')]
+    for value in args.path_map:
+        path, separator, placeholder = value.partition('=')
+        if (not separator or not Path(path).is_absolute()
+                or not re.fullmatch(r'\$[A-Z][A-Z0-9_]*', placeholder)):
+            parser.error('path maps require an absolute PATH=$UPPERCASE_PLACEHOLDER')
+        replacements.append((path, placeholder))
+    build_root = args.source_root / project['build_settings']['build_dir'][2:]
+    for path, placeholder in list(replacements):
+        if placeholder != '$SOURCE_ROOT':
+            replacements.append((posixpath.relpath(path, build_root), placeholder))
+    replacements.sort(key=lambda pair: len(pair[0]), reverse=True)
     graph = capture(project,
                     json.loads(args.runtime_deps.read_text()), args.source_root,
-                    [(str(args.llvm_root), '$LLVM_ROOT'),
-                     (str(args.source_root), '$SOURCE_ROOT')], runtime_inputs=runtime_inputs)
+                    replacements, runtime_inputs=runtime_inputs)
     args_file = args.source_root / graph['build_settings']['build_dir'][2:] / 'args.gn'
-    configuration = (args_file.read_text()
-                     .replace(str(args.llvm_root), '$LLVM_ROOT')
-                     .replace(str(args.source_root), '$SOURCE_ROOT'))
+    configuration = args_file.read_text()
+    for path, placeholder in replacements:
+        configuration = configuration.replace(path, placeholder)
     graph['provenance'] = {
         'chromium_revision': args.revision,
         'gn_version': args.gn_version,
         'args_gn': configuration,
         'deps_sha256': hashlib.sha256((args.source_root / 'DEPS').read_bytes()).hexdigest(),
     }
+    if args.extraction_inputs:
+        extra = json.loads(args.extraction_inputs.read_text())
+        if not isinstance(extra, dict) or any(prefix in json.dumps(extra) for prefix in ('/tmp/', '/home/')):
+            parser.error('extraction inputs must be an object using portable paths')
+        graph['provenance']['extraction_inputs'] = extra
     payload = json.dumps(graph, sort_keys=True, separators=(',', ':')).encode()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_bytes(gzip.compress(payload, mtime=0))

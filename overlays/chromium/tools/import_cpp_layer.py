@@ -81,6 +81,28 @@ def name(label):
     return 'network_' + hashlib.sha256(label.encode()).hexdigest()[:16]
 
 
+def foreach_arguments(arguments, source, outputs):
+    """Expand GN source substitutions in the action's toolchain output tree."""
+    substitutions = {'{{source}}': '../../' + source[2:],
+                     '{{source_name_part}}': Path(source).stem}
+    if any('{{source_gen_dir}}' in argument for argument in arguments):
+        roots = set()
+        for output in outputs:
+            relative = output.removeprefix(BUILD)
+            if relative.startswith('gen/'):
+                roots.add('gen')
+            elif '/gen/' in relative:
+                roots.add(relative.split('/gen/', 1)[0] + '/gen')
+        if len(roots) != 1:
+            raise ValueError('ambiguous GN source_gen_dir output tree: ' + repr(outputs))
+        substitutions['{{source_gen_dir}}'] = roots.pop() + '/' + str(Path(source[2:]).parent)
+    for token, value in substitutions.items():
+        arguments = [argument.replace(token, value) for argument in arguments]
+    if any('{{' in argument for argument in arguments):
+        raise ValueError('unmapped GN source substitution: ' + repr(arguments))
+    return arguments
+
+
 def header_resolver(source_root, include_directories):
     """Cache immutable checkout probes while retaining local include context."""
     @cache
@@ -1556,14 +1578,7 @@ def main():
             if any('$SOURCE_ROOT' in p for p in arguments):
                 raise ValueError('unmapped source-root argument: ' + label)
             if source:
-                substitutions = {'{{source}}': '../../' + source[2:],
-                                 '{{source_name_part}}': Path(source).stem,
-                                 '{{source_gen_dir}}': 'gen/' + str(Path(source[2:]).parent)}
-                arguments = [argument for argument in arguments]
-                for token, value in substitutions.items():
-                    arguments = [argument.replace(token, value) for argument in arguments]
-                if any('{{' in argument for argument in arguments):
-                    raise ValueError('unmapped GN substitution: ' + label)
+                arguments = foreach_arguments(arguments, source, outputs)
             if 'response_file_contents' in target:
                 response = target['response_file_contents']
             else:

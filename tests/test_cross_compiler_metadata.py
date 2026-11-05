@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'overlays/chromium/tools'))
-from import_cpp_layer import header_resolver, reuse_host_targets
+from import_cpp_layer import header_resolver, reuse_host_targets, foreach_arguments
 from import_base import starlark_literal
 from import_mojo_runtime import compiler_configuration
 sys.path.pop(0)
@@ -45,6 +45,24 @@ class CrossCompilerMetadataTest(unittest.TestCase):
         self.assertEqual(options, ['-O2', '-Xclang', '-target-feature', '-Xclang',
                                    '+mte', '-std=c++20'])
         self.assertEqual(defines, ['PA_ENABLE_MTE=1'])
+
+    def test_cross_snapshot_flatbuffers_output_uses_toolchain_tree(self):
+        source = '//third_party/tflite/cache.fbs'
+        for prefix in ['', 'clang_x64_v8_arm64/']:
+            arguments = foreach_arguments(
+                ['-o', '{{source_gen_dir}}', '{{source}}'], source,
+                ['//out/bazel-import/' + prefix + 'gen/third_party/tflite/cache_generated.h'])
+            self.assertEqual(arguments, ['-o', prefix + 'gen/third_party/tflite',
+                                         '../../third_party/tflite/cache.fbs'])
+
+    def test_objcxx_preserves_arc_without_captured_sdk_path(self):
+        options, _ = compiler_configuration({}, {
+            'cflags': ['-isysroot', '/captured/sdk', '-Xclang', '-debug-info-kind=limited'],
+            'cflags_cc': ['-std=c++20'],
+            'cflags_objcc': ['-fobjc-arc', '-fno-objc-arc-exceptions'], 'defines': [],
+        }, 'cflags_objcc')
+        self.assertEqual(options, ['-Xclang', '-debug-info-kind=limited',
+                                   '-fobjc-arc', '-fno-objc-arc-exceptions'])
 
     def test_unknown_frontend_feature_fails_closed(self):
         with self.assertRaisesRegex(ValueError, 'unmapped Clang target feature'):

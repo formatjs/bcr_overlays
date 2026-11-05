@@ -1,0 +1,96 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("//native:objcxx.bzl", "objcxx_library")
+load(":sources.bzl", "COPTS", "DEFINES", "HEADERS", "OBJCXX_COPTS", "OBJCXX_SOURCES", "SOURCES")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "headers",
+    hdrs = HEADERS,
+    defines = DEFINES,
+    includes = [".."],
+    target_compatible_with = [
+        "@platforms//os:macos",
+        "@platforms//cpu:aarch64",
+    ],
+    deps = ["//native:partition_alloc_buildflags"],
+)
+
+cc_library(
+    name = "allocator_base",
+    srcs = SOURCES["allocator_base"],
+    copts = COPTS["allocator_base"] if type(COPTS) == "dict" else COPTS,
+    linkopts = [
+        "-framework",
+        "CoreFoundation",
+        "-framework",
+        "Foundation",
+        "-framework",
+        "Security",
+        "-mmacos-version-min=12.0",
+    ],
+    local_defines = ["IS_PARTITION_ALLOC_BASE_IMPL"],
+    deps = [
+        ":allocator_base_objcxx",
+        ":headers",
+    ],
+)
+
+cc_library(
+    name = "allocator_core",
+    srcs = SOURCES["allocator_core"],
+    copts = COPTS["allocator_core"] if type(COPTS) == "dict" else COPTS,
+    local_defines = ["IS_PARTITION_ALLOC_IMPL"],
+    deps = [":allocator_base"],
+)
+
+cc_library(
+    name = "allocator_shim",
+    srcs = SOURCES["allocator_shim"],
+    copts = COPTS["allocator_shim"] if type(COPTS) == "dict" else COPTS,
+    local_defines = ["IS_ALLOCATOR_SHIM_IMPL"],
+    deps = [
+        ":allocator_core",
+        ":allocator_shim_objcxx",
+    ],
+    alwayslink = True,
+)
+
+cc_library(
+    name = "raw_ptr",
+    srcs = SOURCES["raw_ptr"],
+    copts = COPTS["raw_ptr"] if type(COPTS) == "dict" else COPTS,
+    local_defines = ["IS_RAW_PTR_IMPL"],
+    deps = [":allocator_shim"],
+)
+
+cc_library(
+    name = "partition_alloc",
+    deps = [
+        ":allocator_shim",
+        ":raw_ptr",
+    ],
+)
+
+exports_files([
+    "BUILD.bazel",
+    "sources.bzl",
+    "write_buildflag_header.py",
+])
+
+objcxx_library(
+    name = "allocator_base_objcxx",
+    srcs = OBJCXX_SOURCES["allocator_base"],
+    copts = OBJCXX_COPTS["allocator_base"],
+    local_defines = ["IS_PARTITION_ALLOC_BASE_IMPL"],
+    deps = [":headers"],
+)
+
+objcxx_library(
+    name = "allocator_shim_objcxx",
+    srcs = OBJCXX_SOURCES["allocator_shim"],
+    copts = OBJCXX_COPTS["allocator_shim"],
+    local_defines = ["IS_ALLOCATOR_SHIM_IMPL"],
+    deps = [":allocator_core"],
+    alwayslink = True,
+)

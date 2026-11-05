@@ -61,7 +61,10 @@ load(":xslt.bzl", "native_xslt")
 
 package(default_visibility = ["//visibility:public"])
 
-exports_files(["python_action.py"])
+exports_files([
+    "python_action.py",
+    "stage_tool.py",
+])
 
 native_buildflags(name = "all_buildflags")
 

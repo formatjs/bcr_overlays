@@ -919,6 +919,7 @@ cc_binary(
     data = [
         "tests/generator_payload.txt",
         ":fixtures/lib/libgenerator_relative_runtime.so",
+        ":fixtures/snapshot_blob.bin",
     ],
     linkopts = ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"],
     deps = [
@@ -937,11 +938,15 @@ chromium_tool_inputs(
 
 chromium_python_action(
     name = "generator_runtime_output",
-    srcs = {"@chromium//build:gn_run_binary.py": "build/gn_run_binary.py"},
+    srcs = {
+        "@chromium//build:gn_run_binary.py": "build/gn_run_binary.py",
+        ":tests/generator_target_snapshot.txt": "out/bazel-import/snapshot_blob.bin",
+    },
     outs = {"generator_runtime_result.txt": "generator_runtime_result.txt"},
     args = [
         "probe",
         "generator_runtime_result.txt",
+        "snapshot_blob.bin",
     ],
     script = "build/gn_run_binary.py",
     deps = [":generator_runtime_inputs"],
@@ -985,4 +990,10 @@ chromium_resource_copy(
     name = "generator_relative_runtime_data",
     srcs = {":generator_relative_runtime.ifso": "runtime/library"},
     outputs = {"fixtures/lib/libgenerator_relative_runtime.so": "runtime/library"},
+)
+
+chromium_resource_copy(
+    name = "generator_host_snapshot",
+    srcs = {":tests/generator_host_snapshot.txt": "host/snapshot_blob.bin"},
+    outputs = {"fixtures/snapshot_blob.bin": "host/snapshot_blob.bin"},
 )

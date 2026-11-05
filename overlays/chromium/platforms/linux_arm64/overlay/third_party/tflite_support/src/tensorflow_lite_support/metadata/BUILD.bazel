@@ -1,0 +1,7 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "metadata_schema.fbs",
+])
+# END BLINK_PLATFORM INPUTS

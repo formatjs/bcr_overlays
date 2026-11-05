@@ -29,25 +29,29 @@ _archive = repository_rule(
 def _sources_impl(ctx):
     root = ctx.path(ctx.attr.catalog).dirname
     overlay = root.get_child("overlays/" + ctx.attr.overlay + "/bcr/overlay")
-    ctx.watch_tree(overlay)
     files = {}
     directories = {"": True}
-    pending = [(overlay, "")]
-    for _ in range(32):
-        next_level = []
-        for directory, prefix in pending:
-            for path in sorted(directory.readdir(), key = str):
-                relative = prefix + path.basename
-                if path.is_dir:
-                    directories[relative] = True
-                    next_level.append((path, relative + "/"))
-                else:
-                    files[relative] = path
-        pending = next_level
-        if not pending:
-            break
-    if pending:
-        fail("Overlay exceeds supported directory depth: " + ctx.attr.overlay)
+    layers = [overlay]
+    if ctx.attr.variant:
+        layers.append(root.get_child("overlays/" + ctx.attr.overlay + "/platforms/" + ctx.attr.variant + "/overlay"))
+    for layer in layers:
+        ctx.watch_tree(layer)
+        pending = [(layer, "")]
+        for _ in range(32):
+            next_level = []
+            for directory, prefix in pending:
+                for path in sorted(directory.readdir(), key = str):
+                    relative = prefix + path.basename
+                    if path.is_dir:
+                        directories[relative] = True
+                        next_level.append((path, relative + "/"))
+                    else:
+                        files[relative] = path
+            pending = next_level
+            if not pending:
+                break
+        if pending:
+            fail("Overlay exceeds supported directory depth: " + str(layer))
 
     # Split only directories containing overrides; symlink unchanged source trees.
     # Rule edits then avoid extracting Chromium's archive again.
@@ -76,6 +80,7 @@ _sources = repository_rule(
         "archive": attr.label(mandatory = True),
         "catalog": attr.label(mandatory = True),
         "overlay": attr.string(mandatory = True),
+        "variant": attr.string(),
     },
 )
 

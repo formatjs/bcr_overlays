@@ -1,0 +1,8 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "common_utils.cc",
+    "common_utils.h",
+])
+# END BLINK_PLATFORM INPUTS

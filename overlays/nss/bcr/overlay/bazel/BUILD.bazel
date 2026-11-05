@@ -5,6 +5,7 @@ exports_files([
     "actions.bzl",
     "nss.bzl",
     "sources.bzl",
+    "sources_arm64.bzl",
 ])
 
 py_binary(

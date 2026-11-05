@@ -1,0 +1,14 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "nl_classifier.cc",
+    "nl_classifier.h",
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "nl_classifier.h",
+])
+# END CONTENT INPUTS

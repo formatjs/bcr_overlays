@@ -102,7 +102,14 @@ def download_packages(libraries, directory):
             for url, _, checksum in packages]
 
 
-def bazel_sources(libraries, host_libraries):
+def bazel_sources(libraries, host_libraries, runtime_repository="chromium_platform_runtime",
+                  headers_repository="chromium_platform_headers", host_runtime_repository=None):
+    sources = '{source: "platform_runtime/" + name for name, source in runtime_files.items()}'
+    host_files = []
+    if host_runtime_repository:
+        host_files = [f'    host_runtime_files = {{name: BAZEL_LIBRARIES.get(name, "@{host_runtime_repository}//:" + name) for name in SONAMES}}',
+                      '    host_runtime_files.update({"lib" + name + ".chk": "@nss//:" + name + "_checksum" for name in ["freebl3", "freeblpriv3", "nssdbm3", "softokn3"]})']
+        sources = 'select({"@platforms//cpu:aarch64": ' + sources + ', "//conditions:default": {source: "platform_runtime/" + name for name, source in host_runtime_files.items()}})'
     return '\n'.join([
         '"""Verified platform runtime libraries at Chromium build paths."""',
         'load(":public_dependency.bzl", "chromium_link_dependency")',
@@ -115,16 +122,17 @@ def bazel_sources(libraries, host_libraries):
         'def native_platform_runtime():',
         '    chromium_link_dependency(',
         '        name = "platform_xshmfence_link",',
-        '        dependency = "@chromium_platform_headers//:xshmfence_shared",',
+        f'        dependency = "@{headers_repository}//:xshmfence_shared",',
         '    )',
-        '    runtime_files = {name: BAZEL_LIBRARIES.get(name, "@chromium_platform_runtime//:" + name) for name in SONAMES}',
+        f'    runtime_files = {{name: BAZEL_LIBRARIES.get(name, "@{runtime_repository}//:" + name) for name in SONAMES}}',
         '    runtime_files.update({',
         '        "lib" + name + ".chk": "@nss//:" + name + "_checksum"',
         '        for name in ["freebl3", "freeblpriv3", "nssdbm3", "softokn3"]',
         '    })',
+        *host_files,
         '    chromium_resource_copy(',
         '        name = "platform_runtime_copies",',
-        '        srcs = {source: "platform_runtime/" + name for name, source in runtime_files.items()},',
+        '        srcs = ' + sources + ',',
         '        outputs = {"lib/" + name: "platform_runtime/" + name for name in runtime_files},',
         '    )',
         '    chromium_filegroup(',
@@ -142,6 +150,10 @@ def bazel_sources(libraries, host_libraries):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--sysroot', type=Path, required=True)
+    parser.add_argument('--architecture', choices=('amd64', 'arm64'), default='amd64')
+    parser.add_argument('--runtime-repository', default='chromium_platform_runtime')
+    parser.add_argument('--headers-repository', default='chromium_platform_headers')
+    parser.add_argument('--host-runtime-repository')
     parser.add_argument('--library', action='append', default=[])
     parser.add_argument('--source-root', type=Path, required=True)
     parser.add_argument('--download-dir', type=Path,
@@ -151,7 +163,12 @@ def main():
                         help='Write the native runtime copy and logical-input providers')
     args = parser.parse_args()
     sysroot = args.sysroot.resolve()
-    template = ROOT.parents[1] / 'build/platform_headers.BUILD.bazel'
+    template = Path(__file__).resolve().parents[3] / 'build/platform_headers.BUILD.bazel'
+    triple = 'aarch64-linux-gnu' if args.architecture == 'arm64' else 'x86_64-linux-gnu'
+    system_libraries = set(SYSTEM_LIBRARIES)
+    if args.architecture == 'arm64':
+        system_libraries.remove('ld-linux-x86-64.so.2')
+        system_libraries.add('ld-linux-aarch64.so.1')
     roots = []
     host_roots = []
     for call in ast.walk(ast.parse(template.read_text())):
@@ -160,13 +177,13 @@ def main():
         if call.func.id == 'cc_import':
             fields = {item.arg: ast.literal_eval(item.value) for item in call.keywords}
             if 'interface_library' in fields:
-                path = sysroot / fields['interface_library']
+                path = sysroot / fields['interface_library'].replace('x86_64-linux-gnu', triple)
                 roots.append(path)
                 if not fields['name'].startswith('qt'):
                     host_roots.append(path)
     directories = [sysroot / part for part in [
-        'usr/lib/x86_64-linux-gnu', 'lib/x86_64-linux-gnu',
-        'usr/lib', 'lib', 'usr/lib/gcc/x86_64-linux-gnu/10',
+        'usr/lib/' + triple, 'lib/' + triple,
+        'usr/lib', 'lib', 'usr/lib/gcc/' + triple + '/10',
     ]]
     owners = {}
     controls = {}
@@ -181,7 +198,7 @@ def main():
                 checksum, path = line.split(maxsplit=1)
                 owners[path] = (package, checksum)
     urls = {}
-    package_list = args.source_root / 'build/linux/sysroot_scripts/generated_package_lists/bullseye.amd64'
+    package_list = args.source_root / ('build/linux/sysroot_scripts/generated_package_lists/bullseye.' + args.architecture)
     for url in package_list.read_text().splitlines():
         urls[unquote(url.rsplit('/', 1)[-1])] = url
 
@@ -199,7 +216,7 @@ def main():
         path = pending.pop().resolve()
         relative = str(path.relative_to(sysroot))
         soname, needed = dynamic(path)
-        if soname in SYSTEM_LIBRARIES:
+        if soname in system_libraries:
             continue
         if soname in libraries:
             if libraries[soname]['interface'] != relative:
@@ -213,18 +230,18 @@ def main():
             'interface': relative, 'needed': sorted(needed),
             'package': package, 'url': urls[filename], 'md5': checksum,
         }
-        pending.extend(resolve(name) for name in needed if name not in SYSTEM_LIBRARIES)
+        pending.extend(resolve(name) for name in needed if name not in system_libraries)
     host_libraries = set()
     pending = [dynamic(path)[0] for path in host_roots]
     while pending:
         soname = pending.pop()
-        if soname in SYSTEM_LIBRARIES or soname in host_libraries:
+        if soname in system_libraries or soname in host_libraries:
             continue
         host_libraries.add(soname)
         pending.extend(libraries[soname]['needed'])
     result = {
         'root_libraries': sorted({str(path.relative_to(sysroot)) for path in roots}),
-        'system_libraries': sorted(SYSTEM_LIBRARIES),
+        'system_libraries': sorted(system_libraries),
         'libraries': dict(sorted(libraries.items())),
         'host_libraries': sorted(host_libraries),
         'bazel_libraries': BAZEL_LIBRARIES,
@@ -233,7 +250,7 @@ def main():
         result['packages'] = download_packages(libraries, args.download_dir.resolve())
     args.output.write_text(json.dumps(result, indent=2) + '\n')
     if args.bazel_output:
-        args.bazel_output.write_text(bazel_sources(libraries, host_libraries))
+        args.bazel_output.write_text(bazel_sources(libraries, host_libraries, args.runtime_repository, args.headers_repository, args.host_runtime_repository))
     print(f'{len(libraries)} library requirements; {len({row["package"] for row in libraries.values()})} runtime packages; SDK interfaces contain no executable code')
 
 

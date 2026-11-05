@@ -930,6 +930,7 @@ cc_binary(
 
 chromium_tool_inputs(
     name = "generator_runtime_inputs",
+    additional_logical_paths = ["out/bazel-import/clang_x64/probe"],
     logical_path = "out/bazel-import/probe",
     runtime_data = {":tests/generator_payload.txt": "payload.txt"},
     stage_runtime = True,
@@ -944,7 +945,7 @@ chromium_python_action(
     },
     outs = {"generator_runtime_result.txt": "generator_runtime_result.txt"},
     args = [
-        "probe",
+        "clang_x64/probe",
         "generator_runtime_result.txt",
         "snapshot_blob.bin",
     ],

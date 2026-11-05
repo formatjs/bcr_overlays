@@ -1,0 +1,74 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "zlib",
+    hdrs = [
+        "zconf.h",
+        "zlib.h",
+    ],
+    includes = ["../.."],
+    deps = ["@zlib"],
+)
+
+exports_files(["BUILD.bazel"])
+
+# BEGIN GFX INPUTS
+exports_files([
+    "google/compression_utils.cc",
+    "google/compression_utils.h",
+    "google/compression_utils_portable.cc",
+    "google/compression_utils_portable.h",
+])
+# END GFX INPUTS
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "chromeconf.h",
+    "contrib/minizip/crypt.h",
+    "contrib/minizip/ints.h",
+    "contrib/minizip/ioapi.c",
+    "contrib/minizip/ioapi.h",
+    "contrib/minizip/skipset.h",
+    "contrib/minizip/unzip.c",
+    "contrib/minizip/unzip.h",
+    "contrib/minizip/zip.c",
+    "contrib/minizip/zip.h",
+    "google/compression_utils.h",
+    "zconf.h",
+    "zlib.h",
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "chromeconf.h",
+    "zconf.h",
+    "zlib.h",
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "chromeconf.h",
+    "contrib/minizip/ints.h",
+    "contrib/minizip/ioapi.h",
+    "contrib/minizip/iowin32.h",
+    "contrib/minizip/unzip.h",
+    "contrib/minizip/zip.h",
+    "google/compression_utils.h",
+    "google/compression_utils_portable.h",
+    "google/redact.h",
+    "google/zip.cc",
+    "google/zip.h",
+    "google/zip_internal.cc",
+    "google/zip_internal.h",
+    "google/zip_reader.cc",
+    "google/zip_reader.h",
+    "google/zip_writer.cc",
+    "google/zip_writer.h",
+    "zconf.h",
+    "zlib.h",
+])
+# END CONTENT INPUTS

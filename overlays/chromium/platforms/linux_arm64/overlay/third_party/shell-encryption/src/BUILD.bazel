@@ -1,0 +1,7 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "serialization.proto",
+])
+# END CONTENT INPUTS

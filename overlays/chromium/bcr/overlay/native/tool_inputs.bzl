@@ -41,11 +41,12 @@ def _tool_inputs_impl(ctx):
     if ctx.attr.stage_runtime or ctx.attr.runtime_data:
         # Keep host runtime data beside its executable, outside target GN inputs.
         executable, files = _stage_runtime(ctx, executable)
+    logical_paths = [ctx.attr.logical_path] + ctx.attr.additional_logical_paths
     return [
         DefaultInfo(files = depset(files)),
         ChromiumFilesInfo(
-            mappings = depset([(executable, ctx.attr.logical_path)]),
-            executables = [(runner, ctx.attr.logical_path)],
+            mappings = depset([(executable, path) for path in logical_paths]),
+            executables = [(runner, path) for path in logical_paths],
         ),
     ]
 
@@ -54,6 +55,7 @@ chromium_tool_inputs = rule(
     attrs = {
         "tool": attr.label(executable = True, cfg = "exec", mandatory = True),
         "logical_path": attr.string(mandatory = True),
+        "additional_logical_paths": attr.string_list(),
         "runtime_data": attr.label_keyed_string_dict(allow_files = True, cfg = "exec"),
         "stage_runtime": attr.bool(default = False),
         "_stage_script": attr.label(default = Label("//native:stage_tool.py"), allow_single_file = True),

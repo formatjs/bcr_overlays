@@ -1,0 +1,18 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "bert_nl_classifier_options.proto",
+    "bert_nl_classifier_options_proto_inc.h",
+    "nl_classifier_options.proto",
+    "nl_classifier_options_proto_inc.h",
+    "text_embedder_options.proto",
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "bert_nl_classifier_options_proto_inc.h",
+    "nl_classifier_options_proto_inc.h",
+])
+# END CONTENT INPUTS

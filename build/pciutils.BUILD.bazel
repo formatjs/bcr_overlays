@@ -1,14 +1,18 @@
+load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
 load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
 load("@rules_cc//cc:cc_import.bzl", "cc_import")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
-genrule(
+copy_file(
     name = "linux_config",
-    srcs = ["@chromium_platform_headers//:usr/include/x86_64-linux-gnu/pci/config.h"],
-    outs = ["lib/config.h"],
-    cmd = "cp $< $@",
+    src = select({
+        "@platforms//cpu:aarch64": "@chromium_platform_headers_arm64//:usr/include/aarch64-linux-gnu/pci/config.h",
+        "//conditions:default": "@chromium_platform_headers//:usr/include/x86_64-linux-gnu/pci/config.h",
+    }),
+    out = "lib/config.h",
+    allow_symlink = True,
 )
 
 cc_library(
@@ -36,13 +40,18 @@ cc_library(
         "caps",
         "sysfs",
         "proc",
-        "i386-ports",
-    ]],
+    ]] + select({
+        "@platforms//cpu:x86_64": ["lib/i386-ports.c"],
+        "//conditions:default": [],
+    }),
     hdrs = glob(["lib/*.h"]) + [":linux_config"],
     includes = ["lib"],
     copts = ["-O2", "-fPIC", "-fvisibility=hidden"],
     alwayslink = True,
-    deps = ["@chromium_platform_headers//:udev", "@zlib//:zlib"],
+    deps = select({
+        "@platforms//cpu:aarch64": ["@chromium_platform_headers_arm64//:udev"],
+        "//conditions:default": ["@chromium_platform_headers//:udev"],
+    }) + ["@zlib//:zlib"],
     linkopts = ["-lresolv"],
 )
 

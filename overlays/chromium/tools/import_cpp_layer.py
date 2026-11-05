@@ -3,6 +3,7 @@
 """Import complete captured C++ layers into the combined Chromium build."""
 import argparse
 import ast
+from functools import cache
 import gzip
 import hashlib
 import json
@@ -11,7 +12,7 @@ import re
 import shlex
 from pathlib import Path
 
-from import_base import replace_block, sort_archive_files
+from import_base import replace_block, sort_archive_files, starlark_literal
 from import_mojo_runtime import compiler_configuration, TARGETS as MOJO_RUNTIME_TARGETS
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,6 +55,11 @@ REUSED = {
     '//third_party/re2:re2': '@re2//:re2',
     '//third_party/zstd:decompress': '@zstd//:zstd',
     '//third_party/simdutf:simdutf': '@simdutf//:simdutf',
+    '//third_party/wayland:wayland_client': '@wayland//:wayland_client',
+    '//third_party/wayland:wayland_util': '@wayland//:wayland_client',
+    '//third_party/wayland:wayland_cursor': '@wayland//:wayland_cursor',
+    '//third_party/wayland:wayland_egl': '@wayland//:wayland_egl',
+    '//third_party/wayland:wayland_scanner': '@wayland//:wayland_scanner',
     '//mojo/public/cpp/bindings:default_construct_tag': ':mojo_cpp_bindings',
     '//base:sanitizer_buildflags': ':all_buildflags',
     '//build:branding_buildflags': ':all_buildflags',
@@ -73,6 +79,63 @@ PROVIDED = {
 
 def name(label):
     return 'network_' + hashlib.sha256(label.encode()).hexdigest()[:16]
+
+
+def header_resolver(source_root, include_directories):
+    """Cache immutable checkout probes while retaining local include context."""
+    @cache
+    def exists(relative):
+        return (source_root / relative).is_file()
+
+    @cache
+    def search(include):
+        for directory in include_directories:
+            candidate = posixpath.join(directory, include)
+            if exists(candidate):
+                return candidate
+        return None
+
+    def resolve(source, include):
+        if exists(include):
+            return include
+        local = posixpath.join(posixpath.dirname(source), include)
+        return local if exists(local) else search(include)
+
+    return resolve
+
+
+def reuse_host_targets(targets, reused, provided):
+    """Keep ordinary host dependencies separate from cross-V8 generators."""
+    for label in targets:
+        original, separator, toolchain = label.partition('(')
+        if not separator:
+            continue
+        if toolchain not in (
+                '//build/toolchain/linux:clang_x64)',
+                '//build/toolchain/linux:clang_x64_v8_arm64)'):
+            continue
+        if original in PROVIDED:
+            provided.add(label)
+        cross_v8 = toolchain.endswith(':clang_x64_v8_arm64)')
+        # Cross-V8 libraries must retain their captured target architecture.
+        if original not in reused:
+            continue
+        dependency = reused[original]
+        host_support = original in REUSED or dependency.startswith(('@', '//native/rust:')) or dependency in (
+            ':libvpx_public', ':ffmpeg_opus',
+        ) or original in (
+            '//build/win:default_exe_manifest',
+            '//third_party/perfetto:libperfetto',
+            '//third_party/rust/temporal_capi:temporal_capi',
+            '//third_party/zlib/google:compression_utils_portable',
+        )
+        if cross_v8 and not host_support:
+            continue
+        if dependency.startswith(':'):
+            dependency = '@chromium//native' + dependency
+        elif dependency.startswith('//'):
+            dependency = '@chromium' + dependency
+        reused[label] = dependency
 
 
 def deduplicate_source_sets(libraries):
@@ -578,6 +641,7 @@ def main():
             '//third_party/icu:icui18n': '//third_party/icu:icu',
             '//third_party/zstd:compress': '@zstd//:zstd',
         })
+    reuse_host_targets(targets, reused, extra_provided)
     existing_actions = {label for label in targets if hashlib.sha256(label.encode()).hexdigest()[:16] in existing_action_hashes}
     reused_asset_roots = {}
     for label in browser_asset_roots:
@@ -624,6 +688,7 @@ def main():
     overlay = ROOT / "bcr/overlay"
     generated_paths = {path for target in targets.values() for path in target.get('outputs', [])}
 
+    @cache
     def file_label(path):
         if path.startswith(BUILD):
             return ':' + path.removeprefix(BUILD)
@@ -689,6 +754,21 @@ def main():
             for source in target.get('sources', []):
                 content = (args.source_root / source[2:]).read_text()
                 for header in re.findall(r'\binclude!\(\s*"([^"\n]+)"\s*\)', content):
+                    if not (args.source_root / header).is_file():
+                        directories = list(unpack(target.get('include_dirs', [])))
+                        parent = posixpath.dirname(source)
+                        while parent.startswith('//'):
+                            directories.append(parent)
+                            if parent == '//':
+                                break
+                            parent = posixpath.dirname(parent)
+                        candidates = {directory[2:].rstrip('/') + '/' + header
+                                      for directory in directories
+                                      if directory.startswith('//')
+                                      and (args.source_root / directory[2:] / header).is_file()}
+                        if len(candidates) != 1:
+                            raise ValueError('unresolved or ambiguous CXX include: ' + header)
+                        header = candidates.pop()
                     shared_headers.add(file_label('//' + header))
                     scan_sources.add('//' + header)
             reused_actions.add(label)
@@ -1045,6 +1125,7 @@ def main():
                     shared_headers.add(file_label(source))
                     if not source.startswith(BUILD):
                         scan_sources.add(source)
+    resolve_header = header_resolver(args.source_root, include_search)
     while scan_sources:
         path = scan_sources.pop()
         if path in scanned:
@@ -1070,18 +1151,9 @@ def main():
                 forwarders[include] = include.removeprefix('third_party/skia/')
             if include.startswith('third_party/protobuf/src/'):
                 forwarders[include] = include.removeprefix('third_party/protobuf/src/')
-            candidate = args.source_root / include
-            if not candidate.is_file():
-                candidate = args.source_root / relative
-                candidate = candidate.parent / include
-            if not candidate.is_file():
-                for directory in include_search:
-                    option = args.source_root / directory / include
-                    if option.is_file():
-                        candidate = option
-                        break
-            if candidate.is_file():
-                project = posixpath.normpath(candidate.relative_to(args.source_root).as_posix())
+            candidate = resolve_header(relative, include)
+            if candidate is not None:
+                project = posixpath.normpath(candidate)
                 if (project.startswith(own)
                         and not (layer == 'browser' and project.startswith('third_party/icu/'))
                         and not project.startswith((
@@ -1173,12 +1245,23 @@ def main():
     tools = {}
     executable_outputs = {output: label for label, target in targets.items()
                           if target['type'] == 'executable'
-                          and (label in selected or reused.get(label, '').startswith(':'))
+                          and (label in selected or reused.get(label, '').startswith((':', '@', '//')))
                           for output in target.get('outputs', [])}
 
     def native_tool(label, path):
         tool = dict(tool=reused.get(label, ':' + name(label)), logical_path=path[2:],
                     exec_compatible_with=['@llvm//constraints/libc:gnu.2.31'])
+        if tool['tool'].startswith('@chromium//native:'):
+            tool['stage_runtime'] = True
+        if layer == 'browser' and '(//build/toolchain/linux:clang_x64_v8_arm64)' in label:
+            host = json.loads((ROOT / 'native/platform_runtime.json').read_text())
+            sonames = set(host['host_libraries']) | set(host['bazel_libraries'])
+            tool['runtime_data'] = {':lib/' + soname: 'lib/' + soname for soname in sorted(sonames)}
+            tool['runtime_data'].update({':lib/lib' + part + '.chk': 'lib/lib' + part + '.chk'
+                                         for part in ['freebl3', 'freeblpriv3', 'nssdbm3', 'softokn3']})
+            tool['runtime_data']['@chromium_icu//:common/icudtl.dat'] = 'icudtl.dat'
+            if label.startswith('//tools/v8_context_snapshot:'):
+                tool['runtime_data'][':snapshot_blob.bin'] = 'snapshot_blob.bin'
         if path.rsplit('/', 1)[-1] == 'top_domain_generator':
             tool['runtime_data'] = {'@chromium_icu//:common/icudtl.dat': 'icudtl.dat'}
         return tool
@@ -1443,7 +1526,7 @@ def main():
                     tools['ozone_wayland_scanner_tool'] = dict(tool='@wayland//:wayland_scanner', logical_path=path[2:])
                     deps.append(':ozone_wayland_scanner_tool')
                     continue
-                if path == BUILD + 'protoc':
+                if path.startswith(BUILD) and posixpath.basename(path) == 'protoc':
                     deps.append(':protoc_tool')
                     continue
                 if path in executable_outputs:
@@ -1544,7 +1627,7 @@ def main():
         data['METADATA'] = metadata
     (overlay / ('native/' + layer + '_sources.bzl')).write_text(
         ('"""Generated by tools/import_network.py; complete original network closure."""\n\n' if layer == 'network' else '"""Generated by tools/import_cpp_layer.py; native '+layer+' closure."""\n\n')+
-        '\n\n'.join(k+' = '+json.dumps(v, indent=4) for k,v in data.items())+'\n')
+        '\n\n'.join(k+' = '+starlark_literal(v) for k,v in data.items())+'\n')
     if layer == 'browser':
         catalog = {label: name(label) + '_0_outputs' for label in actions if targets[label]['type'] == 'action'}
         catalog.update({label: copy['name'] + '_outputs' for label, copy in copies.items()})

@@ -4,6 +4,7 @@
 import argparse
 import gzip
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,6 +17,14 @@ SUPPORT = {
     'base': '//base:base',
     'base_i18n': '//base:i18n',
 }
+
+
+def starlark_literal(value):
+    """Render JSON-shaped metadata without changing keywords inside strings."""
+    keywords = {'true': 'True', 'false': 'False', 'null': 'None'}
+    return re.sub(r'("(?:\\.|[^"\\])*")|\b(true|false|null)\b',
+                  lambda match: match[1] if match[1] is not None else keywords[match[2]],
+                  json.dumps(value, indent=4))
 
 
 def replace_block(path, begin, end, block):

@@ -24,10 +24,16 @@ def main():
              'def native_perfetto_proto(name):',
              '    """Generate original browser tracing protocols with native host tools.', '',
              '    Args:', '        name: Generated protocol output group.', '    """']
+    tool_paths = {tool: {path for target in targets.values() for path in target['inputs']
+                         if path.startswith(BUILD_DIR) and Path(path).name == tool}
+                  for tool in TOOLS}
+    if any(len(paths) != 1 for paths in tool_paths.values()):
+        raise ValueError('expected one execution-platform path per Perfetto plugin')
+    tool_paths = {tool: paths.pop() for tool, paths in tool_paths.items()}
     for tool in TOOLS:
         lines += ['    chromium_tool_inputs(', f'        name = "perfetto_{tool}_tool",',
                   f'        tool = "@perfetto//:{tool}",',
-                  f'        logical_path = "out/bazel-import/{tool}",', '    )']
+                  '        logical_path = ' + json.dumps(tool_paths[tool][2:]) + ',', '    )']
     names = {}
     generated = set()
     for label, target in sorted(targets.items()):
@@ -37,10 +43,10 @@ def main():
         deps = [':protoc_tool']
         for path in sorted(set(target['inputs'] + [target['script']])):
             logical = path[2:]
-            if path == BUILD_DIR + 'protoc':
+            if path.startswith(BUILD_DIR) and Path(path).name == 'protoc':
                 continue
-            if any(path == BUILD_DIR + tool for tool in TOOLS):
-                deps.append(':perfetto_' + path.removeprefix(BUILD_DIR) + '_tool')
+            if path in tool_paths.values():
+                deps.append(':perfetto_' + Path(path).name + '_tool')
                 continue
             if path == '//third_party/protobuf/src/google/protobuf/descriptor.proto':
                 file_label = '@protobuf//:descriptor_proto_srcs'
@@ -64,8 +70,8 @@ def main():
     lines += ['    chromium_filegroup(', '        name = name,',
               '        deps = ' + json.dumps([':' + name for name in names.values()]) + ',', '    )', '']
     lines += ['    cc_library(', '        name = name + "_cpp",',
-              '        srcs = ' + json.dumps([':' + path for path in sorted(generated) if path.endswith('.cc') and not path.endswith('.ipc.cc')]) + ',',
-              '        hdrs = ' + json.dumps([':' + path for path in sorted(generated) if path.endswith('.h') and not path.endswith('.ipc.h')]) + ',',
+              '        srcs = ' + json.dumps([':' + path for path in sorted(generated) if path.startswith('gen/') and path.endswith('.cc') and not path.endswith('.ipc.cc')]) + ',',
+              '        hdrs = ' + json.dumps([':' + path for path in sorted(generated) if path.startswith('gen/') and path.endswith('.h') and not path.endswith('.ipc.h')]) + ',',
               '        includes = ["gen/third_party/perfetto", "gen"],',
               '        copts = ["-std=c++20", "-fno-rtti", "-fno-exceptions"],',
               '        deps = ["@perfetto//:chromium_protozero", ":protobuf_lite_runtime"],',

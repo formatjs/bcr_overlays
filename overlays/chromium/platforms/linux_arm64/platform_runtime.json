@@ -1,0 +1,2116 @@
+{
+  "root_libraries": [
+    "usr/lib/aarch64-linux-gnu/libQt5Core.so",
+    "usr/lib/aarch64-linux-gnu/libQt5Gui.so",
+    "usr/lib/aarch64-linux-gnu/libQt5Widgets.so",
+    "usr/lib/aarch64-linux-gnu/libQt6Core.so",
+    "usr/lib/aarch64-linux-gnu/libQt6Gui.so",
+    "usr/lib/aarch64-linux-gnu/libQt6Widgets.so",
+    "usr/lib/aarch64-linux-gnu/libasound.so",
+    "usr/lib/aarch64-linux-gnu/libatk-1.0.so",
+    "usr/lib/aarch64-linux-gnu/libatk-bridge-2.0.so",
+    "usr/lib/aarch64-linux-gnu/libatspi.so",
+    "usr/lib/aarch64-linux-gnu/libcairo.so",
+    "usr/lib/aarch64-linux-gnu/libcups.so",
+    "usr/lib/aarch64-linux-gnu/libdbus-1.so",
+    "usr/lib/aarch64-linux-gnu/libdrm.so",
+    "usr/lib/aarch64-linux-gnu/libgbm.so",
+    "usr/lib/aarch64-linux-gnu/libpango-1.0.so",
+    "usr/lib/aarch64-linux-gnu/libpangocairo-1.0.so",
+    "usr/lib/aarch64-linux-gnu/libudev.so",
+    "usr/lib/aarch64-linux-gnu/libxshmfence.so",
+    "usr/lib/gcc/aarch64-linux-gnu/10/libstdc++.so"
+  ],
+  "system_libraries": [
+    "ld-linux-aarch64.so.1",
+    "libc.so.6",
+    "libdl.so.2",
+    "libm.so.6",
+    "libpthread.so.0",
+    "libresolv.so.2",
+    "librt.so.1",
+    "libutil.so.1"
+  ],
+  "libraries": {
+    "libEGL.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libEGL.so.1.1.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libGLdispatch.so.0",
+        "libc.so.6",
+        "libdl.so.2"
+      ],
+      "package": "libegl1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libegl1_1.3.2-1_arm64.deb",
+      "md5": "c6ad9cce8c58b8803ef4369997574b4f"
+    },
+    "libGL.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libGL.so.1.7.0",
+      "needed": [
+        "libGLX.so.0",
+        "libGLdispatch.so.0",
+        "libc.so.6"
+      ],
+      "package": "libgl1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libgl1_1.3.2-1_arm64.deb",
+      "md5": "312d1a33847ba1e0ecdcab652c4db0c1"
+    },
+    "libGLX.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libGLX.so.0.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libGLdispatch.so.0",
+        "libX11.so.6",
+        "libc.so.6",
+        "libdl.so.2"
+      ],
+      "package": "libglx0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libglx0_1.3.2-1_arm64.deb",
+      "md5": "e7075ede3aa42dd102ab4c8bb0f09152"
+    },
+    "libGLdispatch.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libGLdispatch.so.0.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2"
+      ],
+      "package": "libglvnd0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libglvnd0_1.3.2-1_arm64.deb",
+      "md5": "78d101324e001ed989bf6ea9b3b12126"
+    },
+    "libOpenGL.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libOpenGL.so.0.0.0",
+      "needed": [
+        "libGLdispatch.so.0",
+        "libc.so.6"
+      ],
+      "package": "libopengl0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libopengl0_1.3.2-1_arm64.deb",
+      "md5": "b27775bb3eae81f88d3f0e35c45fc442"
+    },
+    "libQt5Core.so.5": {
+      "interface": "usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libdouble-conversion.so.3",
+        "libgcc_s.so.1",
+        "libglib-2.0.so.0",
+        "libicui18n.so.67",
+        "libicuuc.so.67",
+        "libm.so.6",
+        "libpcre2-16.so.0",
+        "libpthread.so.0",
+        "libstdc++.so.6",
+        "libz.so.1",
+        "libzstd.so.1"
+      ],
+      "package": "libqt5core5a",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qtbase-opensource-src/libqt5core5a_5.15.2+dfsg-9+deb11u1_arm64.deb",
+      "md5": "a7d53f3b1916a45a8c1b2b2fc605189d"
+    },
+    "libQt5Gui.so.5": {
+      "interface": "usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libGL.so.1",
+        "libQt5Core.so.5",
+        "libc.so.6",
+        "libharfbuzz.so.0",
+        "libm.so.6",
+        "libmd4c.so.0",
+        "libpng16.so.16",
+        "libpthread.so.0",
+        "libstdc++.so.6",
+        "libz.so.1"
+      ],
+      "package": "libqt5gui5",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qtbase-opensource-src/libqt5gui5_5.15.2+dfsg-9+deb11u1_arm64.deb",
+      "md5": "4481b0f5a158ad300a391122452aa6fc"
+    },
+    "libQt5Widgets.so.5": {
+      "interface": "usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libQt5Core.so.5",
+        "libQt5Gui.so.5",
+        "libc.so.6",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "package": "libqt5widgets5",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qtbase-opensource-src/libqt5widgets5_5.15.2+dfsg-9+deb11u1_arm64.deb",
+      "md5": "e65e255dff7ec8fbc3ec2d8268ade3eb"
+    },
+    "libQt6Core.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libQt6Core.so.6.4.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libb2.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libdouble-conversion.so.3",
+        "libgcc_s.so.1",
+        "libglib-2.0.so.0",
+        "libicui18n.so.67",
+        "libicuuc.so.67",
+        "libm.so.6",
+        "libpcre2-16.so.0",
+        "libpthread.so.0",
+        "libstdc++.so.6",
+        "libz.so.1",
+        "libzstd.so.1"
+      ],
+      "package": "libqt6core6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6core6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+      "md5": "f504014364090922f35403890fbc9630"
+    },
+    "libQt6DBus.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libQt6DBus.so.6.4.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libQt6Core.so.6",
+        "libc.so.6",
+        "libdbus-1.so.3",
+        "libpthread.so.0",
+        "libstdc++.so.6"
+      ],
+      "package": "libqt6dbus6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6dbus6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+      "md5": "74aacaed000e8a48f7d7a8989f9d27fa"
+    },
+    "libQt6Gui.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libQt6Gui.so.6.4.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libEGL.so.1",
+        "libGLX.so.0",
+        "libOpenGL.so.0",
+        "libQt6Core.so.6",
+        "libQt6DBus.so.6",
+        "libX11.so.6",
+        "libc.so.6",
+        "libdl.so.2",
+        "libfontconfig.so.1",
+        "libfreetype.so.6",
+        "libglib-2.0.so.0",
+        "libharfbuzz.so.0",
+        "libm.so.6",
+        "libmd4c.so.0",
+        "libpng16.so.16",
+        "libpthread.so.0",
+        "libstdc++.so.6",
+        "libxkbcommon.so.0",
+        "libz.so.1"
+      ],
+      "package": "libqt6gui6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6gui6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+      "md5": "d2e0aca2d559f61979f29ce3eb950d4d"
+    },
+    "libQt6Widgets.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libQt6Core.so.6",
+        "libQt6Gui.so.6",
+        "libc.so.6",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "package": "libqt6widgets6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6widgets6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+      "md5": "ead90622fda687b6c0b20db2d7a48239"
+    },
+    "libX11.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libX11.so.6.4.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libxcb.so.1"
+      ],
+      "package": "libx11-6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libx11/libx11-6_1.7.2-1+deb11u2_arm64.deb",
+      "md5": "dfcf43b9e90e307dd8de0d1e9fb5594f"
+    },
+    "libXau.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libXau.so.6.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libxau6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxau/libxau6_1.0.9-1_arm64.deb",
+      "md5": "8e5f4a928a3ad29e3385280107da6d3d"
+    },
+    "libXdmcp.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libXdmcp.so.6.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libbsd.so.0",
+        "libc.so.6"
+      ],
+      "package": "libxdmcp6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxdmcp/libxdmcp6_1.1.2-3_arm64.deb",
+      "md5": "d0d24e8b28e9d2685116a4e89afd24dc"
+    },
+    "libXext.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libXext.so.6.4.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libX11.so.6",
+        "libc.so.6"
+      ],
+      "package": "libxext6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxext/libxext6_1.3.3-1.1_arm64.deb",
+      "md5": "9c75b7fd923768f395ef1c64fac7faef"
+    },
+    "libXi.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libXi.so.6.1.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libX11.so.6",
+        "libXext.so.6",
+        "libc.so.6"
+      ],
+      "package": "libxi6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxi/libxi6_1.7.10-1_arm64.deb",
+      "md5": "3ad759348550c71e1373ab30facef6de"
+    },
+    "libXrender.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libXrender.so.1.3.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libX11.so.6",
+        "libc.so.6"
+      ],
+      "package": "libxrender1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxrender/libxrender1_0.9.10-1_arm64.deb",
+      "md5": "15f707cfc87066999ccca17015239bb6"
+    },
+    "libasound.so.2": {
+      "interface": "usr/lib/aarch64-linux-gnu/libasound.so.2.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libm.so.6",
+        "libpthread.so.0"
+      ],
+      "package": "libasound2",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/alsa-lib/libasound2_1.2.4-1.1_arm64.deb",
+      "md5": "0cbc17b12b877c6e3fea8977e0c25a09"
+    },
+    "libatk-1.0.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libatk-1.0.so.0.23809.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0"
+      ],
+      "package": "libatk1.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/atk1.0/libatk1.0-0_2.38.0-1~bpo11+1_arm64.deb",
+      "md5": "70fc6187f542dc7477cdc8a86d4bc2a1"
+    },
+    "libatk-bridge-2.0.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libatk-bridge-2.0.so.0.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libatk-1.0.so.0",
+        "libatspi.so.0",
+        "libc.so.6",
+        "libdbus-1.so.3",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0"
+      ],
+      "package": "libatk-bridge2.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/at-spi2-atk/libatk-bridge2.0-0_2.38.0-4~bpo11+1_arm64.deb",
+      "md5": "7ac3f7ffe15b9779cc802827da4fda5b"
+    },
+    "libatspi.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libatspi.so.0.0.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libX11.so.6",
+        "libXi.so.6",
+        "libc.so.6",
+        "libdbus-1.so.3",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0"
+      ],
+      "package": "libatspi2.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/at-spi2-core/libatspi2.0-0_2.44.1-1~bpo11+1_arm64.deb",
+      "md5": "c47b45e7f9a8eb5b558da7ecbe401a94"
+    },
+    "libavahi-client.so.3": {
+      "interface": "usr/lib/aarch64-linux-gnu/libavahi-client.so.3.2.9",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libavahi-common.so.3",
+        "libc.so.6",
+        "libdbus-1.so.3",
+        "libdl.so.2",
+        "libpthread.so.0"
+      ],
+      "package": "libavahi-client3",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/avahi/libavahi-client3_0.8-5+deb11u2_arm64.deb",
+      "md5": "9daa08257fe73dc669e30ab294e97fc0"
+    },
+    "libavahi-common.so.3": {
+      "interface": "usr/lib/aarch64-linux-gnu/libavahi-common.so.3.5.4",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libpthread.so.0"
+      ],
+      "package": "libavahi-common3",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/avahi/libavahi-common3_0.8-5+deb11u2_arm64.deb",
+      "md5": "4d9646d5f785a180b405a8bee6efe04d"
+    },
+    "libb2.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libb2.so.1.0.4",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libgomp.so.1"
+      ],
+      "package": "libb2-1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libb/libb2/libb2-1_0.98.1-1.1_arm64.deb",
+      "md5": "fb458902927a51b2c38213a231f540f5"
+    },
+    "libblkid.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libblkid.so.1.1.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libblkid1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/u/util-linux/libblkid1_2.36.1-8+deb11u2_arm64.deb",
+      "md5": "48ec2d4a9f48db29be1efdf2d12dddd6"
+    },
+    "libbrotlicommon.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libbrotlicommon.so.1.0.9",
+      "needed": [
+        "libc.so.6"
+      ],
+      "package": "libbrotli1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/b/brotli/libbrotli1_1.0.9-2+b2_arm64.deb",
+      "md5": "c376e4467d7152e4ba972308738ae5f9"
+    },
+    "libbrotlidec.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libbrotlidec.so.1.0.9",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libbrotlicommon.so.1",
+        "libc.so.6"
+      ],
+      "package": "libbrotli1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/b/brotli/libbrotli1_1.0.9-2+b2_arm64.deb",
+      "md5": "668d4a31a307c696bde2117079049f85"
+    },
+    "libbsd.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libbsd.so.0.11.3",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libmd.so.0"
+      ],
+      "package": "libbsd0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libb/libbsd/libbsd0_0.11.3-1+deb11u1_arm64.deb",
+      "md5": "32809f9e637e5e7eb6ea2e8f80556667"
+    },
+    "libcairo.so.2": {
+      "interface": "usr/lib/aarch64-linux-gnu/libcairo.so.2.11600.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libX11.so.6",
+        "libXext.so.6",
+        "libXrender.so.1",
+        "libc.so.6",
+        "libfontconfig.so.1",
+        "libfreetype.so.6",
+        "libm.so.6",
+        "libpixman-1.so.0",
+        "libpng16.so.16",
+        "libpthread.so.0",
+        "libxcb-render.so.0",
+        "libxcb-shm.so.0",
+        "libxcb.so.1",
+        "libz.so.1"
+      ],
+      "package": "libcairo2",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/c/cairo/libcairo2_1.16.0-5_arm64.deb",
+      "md5": "2b1fb825246c233b661bd30f02ae1de7"
+    },
+    "libcom_err.so.2": {
+      "interface": "lib/aarch64-linux-gnu/libcom_err.so.2.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libpthread.so.0"
+      ],
+      "package": "libcom-err2",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/e/e2fsprogs/libcom-err2_1.46.6-1~bpo11+1_arm64.deb",
+      "md5": "06f497a73cffebc671871a333a8508a7"
+    },
+    "libcups.so.2": {
+      "interface": "usr/lib/aarch64-linux-gnu/libcups.so.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libavahi-client.so.3",
+        "libavahi-common.so.3",
+        "libc.so.6",
+        "libgnutls.so.30",
+        "libgssapi_krb5.so.2",
+        "libm.so.6",
+        "libpthread.so.0",
+        "libz.so.1"
+      ],
+      "package": "libcups2",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/c/cups/libcups2_2.3.3op2-3+deb11u8_arm64.deb",
+      "md5": "979cc77402b226df992a71885b60bbc0"
+    },
+    "libdatrie.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libdatrie.so.1.4.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libdatrie1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libd/libdatrie/libdatrie1_0.2.13-1_arm64.deb",
+      "md5": "2be090098642ef133acf3ccf590fbe60"
+    },
+    "libdbus-1.so.3": {
+      "interface": "lib/aarch64-linux-gnu/libdbus-1.so.3.19.17",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libpthread.so.0",
+        "libsystemd.so.0"
+      ],
+      "package": "libdbus-1-3",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/d/dbus/libdbus-1-3_1.12.28-0+deb11u1_arm64.deb",
+      "md5": "f8c07991e2f1584ecf759b05b2fa001e"
+    },
+    "libdouble-conversion.so.3": {
+      "interface": "usr/lib/aarch64-linux-gnu/libdouble-conversion.so.3.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libgcc_s.so.1",
+        "libstdc++.so.6"
+      ],
+      "package": "libdouble-conversion3",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/d/double-conversion/libdouble-conversion3_3.1.5-6.1_arm64.deb",
+      "md5": "d310fe117b32a6585f4b4dabaef89841"
+    },
+    "libdrm.so.2": {
+      "interface": "usr/lib/aarch64-linux-gnu/libdrm.so.2.4.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libdrm2",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libd/libdrm/libdrm2_2.4.104-1_arm64.deb",
+      "md5": "17ce5cddc0ecdd920eeec38e90168b3c"
+    },
+    "libexpat.so.1": {
+      "interface": "lib/aarch64-linux-gnu/libexpat.so.1.6.12",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libexpat1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/e/expat/libexpat1_2.2.10-2+deb11u5_arm64.deb",
+      "md5": "51853d3ab344ea88a3a47821384cda60"
+    },
+    "libffi.so.7": {
+      "interface": "usr/lib/aarch64-linux-gnu/libffi.so.7.1.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libffi7",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libf/libffi/libffi7_3.3-6_arm64.deb",
+      "md5": "aa7e4b5e57de47544ec5271d0b0d8107"
+    },
+    "libfontconfig.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libfontconfig.so.1.12.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libexpat.so.1",
+        "libfreetype.so.6",
+        "libpthread.so.0",
+        "libuuid.so.1"
+      ],
+      "package": "libfontconfig1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/f/fontconfig/libfontconfig1_2.13.1-4.2_arm64.deb",
+      "md5": "3cc0d6299fbe702e507cee02325576b4"
+    },
+    "libfreetype.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libfreetype.so.6.17.4",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libbrotlidec.so.1",
+        "libc.so.6",
+        "libpng16.so.16",
+        "libz.so.1"
+      ],
+      "package": "libfreetype6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/f/freetype/libfreetype6_2.10.4+dfsg-1+deb11u1_arm64.deb",
+      "md5": "d0c12fc55ef58b624c66ce02b60cee2b"
+    },
+    "libfribidi.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libfribidi.so.0.4.0",
+      "needed": [
+        "libc.so.6"
+      ],
+      "package": "libfribidi0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/f/fribidi/libfribidi0_1.0.8-2+deb11u1_arm64.deb",
+      "md5": "c995eb9bddb811eae9723c76a54ca8b0"
+    },
+    "libgbm.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgbm.so.1.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libdrm.so.2",
+        "libexpat.so.1",
+        "libm.so.6",
+        "libpthread.so.0",
+        "libwayland-server.so.0"
+      ],
+      "package": "libgbm1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/m/mesa/libgbm1_20.3.5-1_arm64.deb",
+      "md5": "3228638ce6e446adb87365eed6f7a21b"
+    },
+    "libgcc_s.so.1": {
+      "interface": "lib/aarch64-linux-gnu/libgcc_s.so.1",
+      "needed": [
+        "libc.so.6"
+      ],
+      "package": "libgcc-s1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gcc-10/libgcc-s1_10.2.1-6_arm64.deb",
+      "md5": "14de95b5f7a9dbe9f827c7782a92a9b4"
+    },
+    "libgcrypt.so.20": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgcrypt.so.20.2.8",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libgpg-error.so.0"
+      ],
+      "package": "libgcrypt20",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libgcrypt20/libgcrypt20_1.8.7-6_arm64.deb",
+      "md5": "4e5342f799d7387498396a619ff08190"
+    },
+    "libgio-2.0.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgio-2.0.so.0.6600.8",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libglib-2.0.so.0",
+        "libgmodule-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libmount.so.1",
+        "libresolv.so.2",
+        "libselinux.so.1",
+        "libz.so.1"
+      ],
+      "package": "libglib2.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/glib2.0/libglib2.0-0_2.66.8-1+deb11u4_arm64.deb",
+      "md5": "631207b8228661f83a2530fb6c4ad4c1"
+    },
+    "libglib-2.0.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libglib-2.0.so.0.6600.8",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libpcre.so.3",
+        "libpthread.so.0"
+      ],
+      "package": "libglib2.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/glib2.0/libglib2.0-0_2.66.8-1+deb11u4_arm64.deb",
+      "md5": "fc7f229b4549a4b77c528c2d3883d2be"
+    },
+    "libgmodule-2.0.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgmodule-2.0.so.0.6600.8",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libglib-2.0.so.0"
+      ],
+      "package": "libglib2.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/glib2.0/libglib2.0-0_2.66.8-1+deb11u4_arm64.deb",
+      "md5": "861e1882152c36e4f33e784187d0b125"
+    },
+    "libgmp.so.10": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgmp.so.10.4.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libgmp10",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gmp/libgmp10_6.2.1+dfsg-1+deb11u1_arm64.deb",
+      "md5": "d9bdc91e4b7770de548b57baac00a8f1"
+    },
+    "libgnutls.so.30": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgnutls.so.30.29.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libgmp.so.10",
+        "libhogweed.so.6",
+        "libidn2.so.0",
+        "libnettle.so.8",
+        "libp11-kit.so.0",
+        "libpthread.so.0",
+        "libtasn1.so.6",
+        "libunistring.so.2"
+      ],
+      "package": "libgnutls30",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gnutls28/libgnutls30_3.7.1-5+deb11u5_arm64.deb",
+      "md5": "4941429729a3e48e2bbf5b3e3b3f91c7"
+    },
+    "libgobject-2.0.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgobject-2.0.so.0.6600.8",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libffi.so.7",
+        "libglib-2.0.so.0"
+      ],
+      "package": "libglib2.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/glib2.0/libglib2.0-0_2.66.8-1+deb11u4_arm64.deb",
+      "md5": "f7e4e90ecc7aa1ee0356d02e6d5f479c"
+    },
+    "libgomp.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgomp.so.1.0.0",
+      "needed": [
+        "libc.so.6",
+        "libdl.so.2",
+        "libpthread.so.0"
+      ],
+      "package": "libgomp1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gcc-10/libgomp1_10.2.1-6_arm64.deb",
+      "md5": "84aaa159e2383878b24e2fc2460aa380"
+    },
+    "libgpg-error.so.0": {
+      "interface": "lib/aarch64-linux-gnu/libgpg-error.so.0.29.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libgpg-error0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libgpg-error/libgpg-error0_1.38-2_arm64.deb",
+      "md5": "5d5ba2877d19e984dae7dcbf668413e1"
+    },
+    "libgraphite2.so.3": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgraphite2.so.3.2.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libgraphite2-3",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/graphite2/libgraphite2-3_1.3.14-1_arm64.deb",
+      "md5": "e81f52a01a7eabce9ab2830b740f1dba"
+    },
+    "libgssapi_krb5.so.2": {
+      "interface": "usr/lib/aarch64-linux-gnu/libgssapi_krb5.so.2.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libcom_err.so.2",
+        "libk5crypto.so.3",
+        "libkrb5.so.3",
+        "libkrb5support.so.0"
+      ],
+      "package": "libgssapi-krb5-2",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libgssapi-krb5-2_1.18.3-6+deb11u5_arm64.deb",
+      "md5": "8d8b73561694a215adab4f9423a7117b"
+    },
+    "libharfbuzz.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libharfbuzz.so.0.20704.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libfreetype.so.6",
+        "libglib-2.0.so.0",
+        "libgraphite2.so.3"
+      ],
+      "package": "libharfbuzz0b",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/h/harfbuzz/libharfbuzz0b_2.7.4-1_arm64.deb",
+      "md5": "31fbe51367f1ce9e89975816972d9efa"
+    },
+    "libhogweed.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libhogweed.so.6.4",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libgmp.so.10",
+        "libnettle.so.8"
+      ],
+      "package": "libhogweed6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/n/nettle/libhogweed6_3.7.3-1_arm64.deb",
+      "md5": "0e95978cc1c976ccaf3b7e941a7d0bd9"
+    },
+    "libicudata.so.67": {
+      "interface": "usr/lib/aarch64-linux-gnu/libicudata.so.67.1",
+      "needed": [],
+      "package": "libicu67",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/i/icu/libicu67_67.1-7_arm64.deb",
+      "md5": "8955491cb4ed2b12e57b4da556d39f20"
+    },
+    "libicui18n.so.67": {
+      "interface": "usr/lib/aarch64-linux-gnu/libicui18n.so.67.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libgcc_s.so.1",
+        "libicuuc.so.67",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "package": "libicu67",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/i/icu/libicu67_67.1-7_arm64.deb",
+      "md5": "61b6b15b62c47676fe11f8aeb437927d"
+    },
+    "libicuuc.so.67": {
+      "interface": "usr/lib/aarch64-linux-gnu/libicuuc.so.67.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libgcc_s.so.1",
+        "libicudata.so.67",
+        "libm.so.6",
+        "libpthread.so.0",
+        "libstdc++.so.6"
+      ],
+      "package": "libicu67",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/i/icu/libicu67_67.1-7_arm64.deb",
+      "md5": "fac4c08bd07c2cc354472c81b46e8504"
+    },
+    "libidn2.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libidn2.so.0.3.7",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libunistring.so.2"
+      ],
+      "package": "libidn2-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libi/libidn2/libidn2-0_2.3.0-5_arm64.deb",
+      "md5": "1649bdf8dd70e1e93f12b3f32f1c1640"
+    },
+    "libk5crypto.so.3": {
+      "interface": "usr/lib/aarch64-linux-gnu/libk5crypto.so.3.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libkrb5support.so.0"
+      ],
+      "package": "libk5crypto3",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libk5crypto3_1.18.3-6+deb11u5_arm64.deb",
+      "md5": "3ae8514b6dddc49783e8b62f8e7ea48e"
+    },
+    "libkeyutils.so.1": {
+      "interface": "lib/aarch64-linux-gnu/libkeyutils.so.1.9",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libkeyutils1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/keyutils/libkeyutils1_1.6.1-2_arm64.deb",
+      "md5": "ce407071d3d6106509e93ed4a415b7f8"
+    },
+    "libkrb5.so.3": {
+      "interface": "usr/lib/aarch64-linux-gnu/libkrb5.so.3.3",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libcom_err.so.2",
+        "libk5crypto.so.3",
+        "libkeyutils.so.1",
+        "libkrb5support.so.0",
+        "libresolv.so.2"
+      ],
+      "package": "libkrb5-3",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libkrb5-3_1.18.3-6+deb11u5_arm64.deb",
+      "md5": "a8719d4f9a575e8c86d23facb29a558f"
+    },
+    "libkrb5support.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libkrb5support.so.0.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2"
+      ],
+      "package": "libkrb5support0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libkrb5support0_1.18.3-6+deb11u5_arm64.deb",
+      "md5": "9d644de3b03bed1a3958d52f499cbc78"
+    },
+    "liblz4.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/liblz4.so.1.9.3",
+      "needed": [
+        "libc.so.6"
+      ],
+      "package": "liblz4-1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/l/lz4/liblz4-1_1.9.3-2_arm64.deb",
+      "md5": "9f55d84df161c5add758a658c883a7ac"
+    },
+    "liblzma.so.5": {
+      "interface": "lib/aarch64-linux-gnu/liblzma.so.5.2.5",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libpthread.so.0"
+      ],
+      "package": "liblzma5",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/x/xz-utils/liblzma5_5.2.5-2.1~deb11u1_arm64.deb",
+      "md5": "ba95897ea38117463ce465d212fc72c0"
+    },
+    "libmd.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libmd.so.0.0.4",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libmd0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libm/libmd/libmd0_1.0.3-3_arm64.deb",
+      "md5": "209ccf5af89e96c3b285d2ecd1b2311a"
+    },
+    "libmd4c.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libmd4c.so.0.4.7",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libmd4c0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/m/md4c/libmd4c0_0.4.7-2_arm64.deb",
+      "md5": "67b74ec57e0700e5624d09e1cbadb71e"
+    },
+    "libmount.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libmount.so.1.1.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libblkid.so.1",
+        "libc.so.6",
+        "libselinux.so.1"
+      ],
+      "package": "libmount1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/u/util-linux/libmount1_2.36.1-8+deb11u2_arm64.deb",
+      "md5": "19a55039226a287c6c6777b1e286847e"
+    },
+    "libnettle.so.8": {
+      "interface": "usr/lib/aarch64-linux-gnu/libnettle.so.8.4",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libnettle8",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/n/nettle/libnettle8_3.7.3-1_arm64.deb",
+      "md5": "d3551d44cc671371c79614932230e5d5"
+    },
+    "libp11-kit.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libp11-kit.so.0.3.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libffi.so.7",
+        "libpthread.so.0"
+      ],
+      "package": "libp11-kit0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/p11-kit/libp11-kit0_0.23.22-1_arm64.deb",
+      "md5": "714234c8c81a38abe8d3a0244633b755"
+    },
+    "libpango-1.0.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libpango-1.0.so.0.4600.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libfribidi.so.0",
+        "libgio-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libharfbuzz.so.0",
+        "libm.so.6",
+        "libthai.so.0"
+      ],
+      "package": "libpango-1.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pango1.0/libpango-1.0-0_1.46.2-3_arm64.deb",
+      "md5": "ea17d732a953c0ff90525baaa31e8719"
+    },
+    "libpangocairo-1.0.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libpangocairo-1.0.so.0.4600.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libcairo.so.2",
+        "libfontconfig.so.1",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libm.so.6",
+        "libpango-1.0.so.0",
+        "libpangoft2-1.0.so.0"
+      ],
+      "package": "libpangocairo-1.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pango1.0/libpangocairo-1.0-0_1.46.2-3_arm64.deb",
+      "md5": "9812df0cddbd0ba2b3320ccc074d87e0"
+    },
+    "libpangoft2-1.0.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libpangoft2-1.0.so.0.4600.2",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libfontconfig.so.1",
+        "libfreetype.so.6",
+        "libgio-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libharfbuzz.so.0",
+        "libpango-1.0.so.0"
+      ],
+      "package": "libpangoft2-1.0-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pango1.0/libpangoft2-1.0-0_1.46.2-3_arm64.deb",
+      "md5": "384026802fadfec0baaee729c4b5d94c"
+    },
+    "libpcre.so.3": {
+      "interface": "lib/aarch64-linux-gnu/libpcre.so.3.13.3",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libpthread.so.0"
+      ],
+      "package": "libpcre3",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pcre3/libpcre3_8.39-13_arm64.deb",
+      "md5": "ec0b5dcd54007a31e21307038a6b75b2"
+    },
+    "libpcre2-16.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libpcre2-16.so.0.10.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libpthread.so.0"
+      ],
+      "package": "libpcre2-16-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pcre2/libpcre2-16-0_10.36-2+deb11u1_arm64.deb",
+      "md5": "bd7349320787962268ff19cb1ad7ab6a"
+    },
+    "libpcre2-8.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.10.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libpthread.so.0"
+      ],
+      "package": "libpcre2-8-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pcre2/libpcre2-8-0_10.36-2+deb11u1_arm64.deb",
+      "md5": "ce1a99fd79b28630f497c92510656b68"
+    },
+    "libpixman-1.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libpixman-1.so.0.40.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libm.so.6"
+      ],
+      "package": "libpixman-1-0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pixman/libpixman-1-0_0.40.0-1.1~deb11u1_arm64.deb",
+      "md5": "fd0ca1a55739f3746a8e086b3e1f4031"
+    },
+    "libpng16.so.16": {
+      "interface": "usr/lib/aarch64-linux-gnu/libpng16.so.16.37.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libm.so.6",
+        "libz.so.1"
+      ],
+      "package": "libpng16-16",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libp/libpng1.6/libpng16-16_1.6.37-3_arm64.deb",
+      "md5": "5d186c6ba939b0edec2a7e8981a755a9"
+    },
+    "libselinux.so.1": {
+      "interface": "lib/aarch64-linux-gnu/libselinux.so.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdl.so.2",
+        "libpcre2-8.so.0"
+      ],
+      "package": "libselinux1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libs/libselinux/libselinux1_3.1-3_arm64.deb",
+      "md5": "5a12beb02e56d2cc6fb509d68ccd827d"
+    },
+    "libstdc++.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.28",
+      "needed": [
+        "libc.so.6",
+        "libgcc_s.so.1",
+        "libm.so.6"
+      ],
+      "package": "libstdc++6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gcc-10/libstdc++6_10.2.1-6_arm64.deb",
+      "md5": "1314959836aa564d220a907f19f2f130"
+    },
+    "libsystemd.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libsystemd.so.0.35.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libgcrypt.so.20",
+        "liblz4.so.1",
+        "liblzma.so.5",
+        "libpthread.so.0",
+        "librt.so.1",
+        "libzstd.so.1"
+      ],
+      "package": "libsystemd0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/s/systemd/libsystemd0_252.29-1~deb12u1~bpo11+1_arm64.deb",
+      "md5": "66b768c1ebcef828c0f28e13b8fe74b0"
+    },
+    "libtasn1.so.6": {
+      "interface": "usr/lib/aarch64-linux-gnu/libtasn1.so.6.6.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libtasn1-6",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libt/libtasn1-6/libtasn1-6_4.16.0-2+deb11u1_arm64.deb",
+      "md5": "c4bd0ebdfd2c78dbc1b6e2c38bf9dfcd"
+    },
+    "libthai.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libthai.so.0.3.1",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libdatrie.so.1"
+      ],
+      "package": "libthai0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libt/libthai/libthai0_0.1.28-3_arm64.deb",
+      "md5": "360702d8802b2227fdc1ff415c8218ca"
+    },
+    "libudev.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libudev.so.1.7.5",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libpthread.so.0"
+      ],
+      "package": "libudev1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/s/systemd/libudev1_252.29-1~deb12u1~bpo11+1_arm64.deb",
+      "md5": "733970c2c8280ab80eb44662093d31ba"
+    },
+    "libunistring.so.2": {
+      "interface": "usr/lib/aarch64-linux-gnu/libunistring.so.2.1.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libunistring2",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libu/libunistring/libunistring2_0.9.10-4_arm64.deb",
+      "md5": "4019184f895532840a40e3c354b17f89"
+    },
+    "libuuid.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libuuid.so.1.3.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libuuid1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/u/util-linux/libuuid1_2.36.1-8+deb11u2_arm64.deb",
+      "md5": "582993ca77e33b2138c3fce7222b133b"
+    },
+    "libwayland-server.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libwayland-server.so.0.1.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libffi.so.7",
+        "libpthread.so.0"
+      ],
+      "package": "libwayland-server0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/w/wayland/libwayland-server0_1.18.0-2~exp1.1_arm64.deb",
+      "md5": "6a6c415783f618d8631863f4c76838a8"
+    },
+    "libxcb-render.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libxcb-render.so.0.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libxcb.so.1"
+      ],
+      "package": "libxcb-render0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxcb/libxcb-render0_1.14-3_arm64.deb",
+      "md5": "c49b4d78f061dba4979551896bd8e37a"
+    },
+    "libxcb-shm.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libxcb-shm.so.0.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6",
+        "libxcb.so.1"
+      ],
+      "package": "libxcb-shm0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxcb/libxcb-shm0_1.14-3_arm64.deb",
+      "md5": "0d7eaee52a856b0070dff2da869e4f55"
+    },
+    "libxcb.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libxcb.so.1.1.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libXau.so.6",
+        "libXdmcp.so.6",
+        "libc.so.6"
+      ],
+      "package": "libxcb1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxcb/libxcb1_1.14-3_arm64.deb",
+      "md5": "3d8a1c8cc2723c7400d099a0940b7085"
+    },
+    "libxkbcommon.so.0": {
+      "interface": "usr/lib/aarch64-linux-gnu/libxkbcommon.so.0.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libxkbcommon0",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxkbcommon/libxkbcommon0_1.0.3-2_arm64.deb",
+      "md5": "6d2d64b92fa7af5baaf976b116f80cb0"
+    },
+    "libxshmfence.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libxshmfence.so.1.0.0",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libxshmfence1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxshmfence/libxshmfence1_1.3-1_arm64.deb",
+      "md5": "15f667a53ad30e7faf1f159dc99f998b"
+    },
+    "libz.so.1": {
+      "interface": "lib/aarch64-linux-gnu/libz.so.1.2.11",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "zlib1g",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/z/zlib/zlib1g_1.2.11.dfsg-2+deb11u2_arm64.deb",
+      "md5": "be43d2ef88d220a6b24f952f50e88a72"
+    },
+    "libzstd.so.1": {
+      "interface": "usr/lib/aarch64-linux-gnu/libzstd.so.1.4.8",
+      "needed": [
+        "ld-linux-aarch64.so.1",
+        "libc.so.6"
+      ],
+      "package": "libzstd1",
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libz/libzstd/libzstd1_1.4.8+dfsg-2.1_arm64.deb",
+      "md5": "0f49e6b0ada0e7da2dc6b624d5f123ea"
+    }
+  },
+  "host_libraries": [
+    "libX11.so.6",
+    "libXau.so.6",
+    "libXdmcp.so.6",
+    "libXext.so.6",
+    "libXi.so.6",
+    "libXrender.so.1",
+    "libasound.so.2",
+    "libatk-1.0.so.0",
+    "libatk-bridge-2.0.so.0",
+    "libatspi.so.0",
+    "libavahi-client.so.3",
+    "libavahi-common.so.3",
+    "libblkid.so.1",
+    "libbrotlicommon.so.1",
+    "libbrotlidec.so.1",
+    "libbsd.so.0",
+    "libcairo.so.2",
+    "libcom_err.so.2",
+    "libcups.so.2",
+    "libdatrie.so.1",
+    "libdbus-1.so.3",
+    "libdrm.so.2",
+    "libexpat.so.1",
+    "libffi.so.7",
+    "libfontconfig.so.1",
+    "libfreetype.so.6",
+    "libfribidi.so.0",
+    "libgbm.so.1",
+    "libgcrypt.so.20",
+    "libgio-2.0.so.0",
+    "libglib-2.0.so.0",
+    "libgmodule-2.0.so.0",
+    "libgmp.so.10",
+    "libgnutls.so.30",
+    "libgobject-2.0.so.0",
+    "libgpg-error.so.0",
+    "libgraphite2.so.3",
+    "libgssapi_krb5.so.2",
+    "libharfbuzz.so.0",
+    "libhogweed.so.6",
+    "libidn2.so.0",
+    "libk5crypto.so.3",
+    "libkeyutils.so.1",
+    "libkrb5.so.3",
+    "libkrb5support.so.0",
+    "liblz4.so.1",
+    "liblzma.so.5",
+    "libmd.so.0",
+    "libmount.so.1",
+    "libnettle.so.8",
+    "libp11-kit.so.0",
+    "libpango-1.0.so.0",
+    "libpangocairo-1.0.so.0",
+    "libpangoft2-1.0.so.0",
+    "libpcre.so.3",
+    "libpcre2-8.so.0",
+    "libpixman-1.so.0",
+    "libpng16.so.16",
+    "libselinux.so.1",
+    "libsystemd.so.0",
+    "libtasn1.so.6",
+    "libthai.so.0",
+    "libudev.so.1",
+    "libunistring.so.2",
+    "libuuid.so.1",
+    "libwayland-server.so.0",
+    "libxcb-render.so.0",
+    "libxcb-shm.so.0",
+    "libxcb.so.1",
+    "libxshmfence.so.1",
+    "libz.so.1",
+    "libzstd.so.1"
+  ],
+  "bazel_libraries": {
+    "libpci.so.3": "@chromium_pciutils//:libpci.so.3",
+    "libfreebl3.so": "@nss//:libfreebl3.so",
+    "libfreeblpriv3.so": "@nss//:libfreeblpriv3.so",
+    "libnss3.so": "@nss//:libnss3.so",
+    "libnssckbi.so": "@nss//:libnssckbi.so",
+    "libnssdbm3.so": "@nss//:libnssdbm3.so",
+    "libnssutil3.so": "@nss//:libnssutil3.so",
+    "libsmime3.so": "@nss//:libsmime3.so",
+    "libsoftokn3.so": "@nss//:libsoftokn3.so",
+    "libssl3.so": "@nss//:libssl3.so",
+    "libnspr4.so": "@nspr//:libnspr4.so",
+    "libplc4.so": "@nspr//:libplc4.so",
+    "libplds4.so": "@nspr//:libplds4.so",
+    "libglib-2.0.so.0": "@glib//glib:libglib-2.0.so.0",
+    "libgobject-2.0.so.0": "@glib//gobject:libgobject-2.0.so.0",
+    "libgio-2.0.so.0": "@glib//gio:libgio-2.0.so.0",
+    "libgmodule-2.0.so.0": "@glib//gmodule:libgmodule-2.0.so.0"
+  },
+  "packages": [
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/alsa-lib/libasound2_1.2.4-1.1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/a/alsa-lib/libasound2_1.2.4-1.1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/a/alsa-lib/libasound2_1.2.4-1.1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/alsa-lib/libasound2_1.2.4-1.1_arm64.deb"
+      ],
+      "sha256": "8fabd77256593c42e2ad1578f938b56d0a5ed19aa61c6c72c890fd761fd129a8"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/at-spi2-atk/libatk-bridge2.0-0_2.38.0-4~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/a/at-spi2-atk/libatk-bridge2.0-0_2.38.0-4~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/a/at-spi2-atk/libatk-bridge2.0-0_2.38.0-4~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/at-spi2-atk/libatk-bridge2.0-0_2.38.0-4~bpo11+1_arm64.deb"
+      ],
+      "sha256": "17448dc14eb8d2f650bf1684ced593121d6080b39a9ef6d3efff5edf114c987f"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/at-spi2-core/libatspi2.0-0_2.44.1-1~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/a/at-spi2-core/libatspi2.0-0_2.44.1-1~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/a/at-spi2-core/libatspi2.0-0_2.44.1-1~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/at-spi2-core/libatspi2.0-0_2.44.1-1~bpo11+1_arm64.deb"
+      ],
+      "sha256": "4b8a5aa47073455610fa262522f3774184d4191cb54c1d3b3c3b26b0e8362855"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/atk1.0/libatk1.0-0_2.38.0-1~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/a/atk1.0/libatk1.0-0_2.38.0-1~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/a/atk1.0/libatk1.0-0_2.38.0-1~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/atk1.0/libatk1.0-0_2.38.0-1~bpo11+1_arm64.deb"
+      ],
+      "sha256": "af682b63f980f6f865e66a7e0fe126b29b5badc89f205ff77ddd775c7e8cc795"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/avahi/libavahi-client3_0.8-5+deb11u2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/a/avahi/libavahi-client3_0.8-5+deb11u2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/a/avahi/libavahi-client3_0.8-5+deb11u2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/avahi/libavahi-client3_0.8-5+deb11u2_arm64.deb"
+      ],
+      "sha256": "c2d0e95348c3ac3756efd448e040763eee557c129135f04400e187daee39cda9"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/avahi/libavahi-common3_0.8-5+deb11u2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/a/avahi/libavahi-common3_0.8-5+deb11u2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/a/avahi/libavahi-common3_0.8-5+deb11u2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/a/avahi/libavahi-common3_0.8-5+deb11u2_arm64.deb"
+      ],
+      "sha256": "29fd90570bb26836f3fc2446a1f6db174599196d3e3ae60db70137cd75d3691b"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/b/brotli/libbrotli1_1.0.9-2+b2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/b/brotli/libbrotli1_1.0.9-2+b2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/b/brotli/libbrotli1_1.0.9-2+b2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/b/brotli/libbrotli1_1.0.9-2+b2_arm64.deb"
+      ],
+      "sha256": "52ca7f90de6cb6576a0a5cf5712fc4ae7344b79c44b8a1548087fd5d92bf1f64"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/c/cairo/libcairo2_1.16.0-5_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/c/cairo/libcairo2_1.16.0-5_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/c/cairo/libcairo2_1.16.0-5_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/c/cairo/libcairo2_1.16.0-5_arm64.deb"
+      ],
+      "sha256": "5b18336974b045dda5fbd64799f06247f6b216ee54f3391adc90f0bf81596de5"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/c/cups/libcups2_2.3.3op2-3+deb11u8_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/c/cups/libcups2_2.3.3op2-3+deb11u8_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/c/cups/libcups2_2.3.3op2-3+deb11u8_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/c/cups/libcups2_2.3.3op2-3+deb11u8_arm64.deb"
+      ],
+      "sha256": "9ae6465458d782394af75217c0d47e6cc2ddb098bb7817b7c2485479f1b8ffda"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/d/dbus/libdbus-1-3_1.12.28-0+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/d/dbus/libdbus-1-3_1.12.28-0+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/d/dbus/libdbus-1-3_1.12.28-0+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/d/dbus/libdbus-1-3_1.12.28-0+deb11u1_arm64.deb"
+      ],
+      "sha256": "f1bb373a6f82d709b27b183aa36a393de5e7144a0dc1985656e47f76a8118e81"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/d/double-conversion/libdouble-conversion3_3.1.5-6.1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/d/double-conversion/libdouble-conversion3_3.1.5-6.1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/d/double-conversion/libdouble-conversion3_3.1.5-6.1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/d/double-conversion/libdouble-conversion3_3.1.5-6.1_arm64.deb"
+      ],
+      "sha256": "63b41ee55d95505e4dcd7ec6f7bb840fdc5a0527f6ecd29069f6ce7ff8536ba2"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/e/e2fsprogs/libcom-err2_1.46.6-1~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/e/e2fsprogs/libcom-err2_1.46.6-1~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/e/e2fsprogs/libcom-err2_1.46.6-1~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/e/e2fsprogs/libcom-err2_1.46.6-1~bpo11+1_arm64.deb"
+      ],
+      "sha256": "af019562768ffc54dbbaaf8e49c12b84dc71298ff727060bb32cc8b6958880df"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/e/expat/libexpat1_2.2.10-2+deb11u5_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/e/expat/libexpat1_2.2.10-2+deb11u5_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/e/expat/libexpat1_2.2.10-2+deb11u5_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/e/expat/libexpat1_2.2.10-2+deb11u5_arm64.deb"
+      ],
+      "sha256": "8d20bfd061845bda0321d01accd6f8386ead5b1d7250a585d12b8d5fb1408ffa"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/f/fontconfig/libfontconfig1_2.13.1-4.2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/f/fontconfig/libfontconfig1_2.13.1-4.2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/f/fontconfig/libfontconfig1_2.13.1-4.2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/f/fontconfig/libfontconfig1_2.13.1-4.2_arm64.deb"
+      ],
+      "sha256": "18b13ef8a46e9d79ba6a6ba2db0c86e42583277b5d47f6942f3223e349c22641"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/f/freetype/libfreetype6_2.10.4+dfsg-1+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/f/freetype/libfreetype6_2.10.4+dfsg-1+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/f/freetype/libfreetype6_2.10.4+dfsg-1+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/f/freetype/libfreetype6_2.10.4+dfsg-1+deb11u1_arm64.deb"
+      ],
+      "sha256": "b25f1c148498dd2b49dc30da0a2b2537a7bd0cb34afb8ea681dd145053c9a3f8"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/f/fribidi/libfribidi0_1.0.8-2+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/f/fribidi/libfribidi0_1.0.8-2+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/f/fribidi/libfribidi0_1.0.8-2+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/f/fribidi/libfribidi0_1.0.8-2+deb11u1_arm64.deb"
+      ],
+      "sha256": "3312d582ecb8b396ec09a10dfed4d06e9b74952dedf94a13f71c8a93a5f4661e"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gcc-10/libgcc-s1_10.2.1-6_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/g/gcc-10/libgcc-s1_10.2.1-6_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/g/gcc-10/libgcc-s1_10.2.1-6_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gcc-10/libgcc-s1_10.2.1-6_arm64.deb"
+      ],
+      "sha256": "e2fcdb378d3c1ad1bcb64d4fb6b37aab44011152beca12a4944f435a2582df1f"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gcc-10/libgomp1_10.2.1-6_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/g/gcc-10/libgomp1_10.2.1-6_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/g/gcc-10/libgomp1_10.2.1-6_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gcc-10/libgomp1_10.2.1-6_arm64.deb"
+      ],
+      "sha256": "813af2e0b8ba0a7cea18c988cd843412ef6d0415700fc860d62816750e741670"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gcc-10/libstdc++6_10.2.1-6_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/g/gcc-10/libstdc++6_10.2.1-6_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/g/gcc-10/libstdc++6_10.2.1-6_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gcc-10/libstdc++6_10.2.1-6_arm64.deb"
+      ],
+      "sha256": "7869aa540cc46e9f3d4267d5bde2af0e5b429a820c1d6f1a4cfccfe788c31890"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/glib2.0/libglib2.0-0_2.66.8-1+deb11u4_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/g/glib2.0/libglib2.0-0_2.66.8-1+deb11u4_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/g/glib2.0/libglib2.0-0_2.66.8-1+deb11u4_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/glib2.0/libglib2.0-0_2.66.8-1+deb11u4_arm64.deb"
+      ],
+      "sha256": "6acd43e7296d0f1baceb582bf323fffa6ce4d428f6ee88d9ebc0a45d9001a399"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gmp/libgmp10_6.2.1+dfsg-1+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/g/gmp/libgmp10_6.2.1+dfsg-1+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/g/gmp/libgmp10_6.2.1+dfsg-1+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gmp/libgmp10_6.2.1+dfsg-1+deb11u1_arm64.deb"
+      ],
+      "sha256": "d52619b6ff8829aa5424dfe3189dd05f22118211e69273e9576030584ffcce80"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gnutls28/libgnutls30_3.7.1-5+deb11u5_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/g/gnutls28/libgnutls30_3.7.1-5+deb11u5_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/g/gnutls28/libgnutls30_3.7.1-5+deb11u5_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/gnutls28/libgnutls30_3.7.1-5+deb11u5_arm64.deb"
+      ],
+      "sha256": "1f08bdc5db597cf1f5d7f79f66a714b5b1be454e68b4208f04cfb06058610124"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/graphite2/libgraphite2-3_1.3.14-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/g/graphite2/libgraphite2-3_1.3.14-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/g/graphite2/libgraphite2-3_1.3.14-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/g/graphite2/libgraphite2-3_1.3.14-1_arm64.deb"
+      ],
+      "sha256": "473362a74ba74ae630fc43675460fb5a1058564a635a301875e00f1c6f9b27cb"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/h/harfbuzz/libharfbuzz0b_2.7.4-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/h/harfbuzz/libharfbuzz0b_2.7.4-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/h/harfbuzz/libharfbuzz0b_2.7.4-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/h/harfbuzz/libharfbuzz0b_2.7.4-1_arm64.deb"
+      ],
+      "sha256": "d9f0345391cc661503d1508ccd318b3db48add354e706cf9d66fa16bf99e2d03"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/i/icu/libicu67_67.1-7_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/i/icu/libicu67_67.1-7_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/i/icu/libicu67_67.1-7_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/i/icu/libicu67_67.1-7_arm64.deb"
+      ],
+      "sha256": "776303db230b275d8a17dfe8f0012bf61093dfc910f0d51f175be36707686efe"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/keyutils/libkeyutils1_1.6.1-2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/k/keyutils/libkeyutils1_1.6.1-2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/k/keyutils/libkeyutils1_1.6.1-2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/keyutils/libkeyutils1_1.6.1-2_arm64.deb"
+      ],
+      "sha256": "7101c2380ab47a3627a6fa076a149ab71078263064f936fccbd43efbaed4a2da"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libgssapi-krb5-2_1.18.3-6+deb11u5_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/k/krb5/libgssapi-krb5-2_1.18.3-6+deb11u5_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/k/krb5/libgssapi-krb5-2_1.18.3-6+deb11u5_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libgssapi-krb5-2_1.18.3-6+deb11u5_arm64.deb"
+      ],
+      "sha256": "6bc41826de805baa51b05de4970d4c597c0509d1013db20fd46bb42ea65a9002"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libk5crypto3_1.18.3-6+deb11u5_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/k/krb5/libk5crypto3_1.18.3-6+deb11u5_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/k/krb5/libk5crypto3_1.18.3-6+deb11u5_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libk5crypto3_1.18.3-6+deb11u5_arm64.deb"
+      ],
+      "sha256": "965afcbbf717c55d625343c86548c156a26e54dc1905776421ff6a21515784cc"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libkrb5-3_1.18.3-6+deb11u5_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/k/krb5/libkrb5-3_1.18.3-6+deb11u5_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/k/krb5/libkrb5-3_1.18.3-6+deb11u5_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libkrb5-3_1.18.3-6+deb11u5_arm64.deb"
+      ],
+      "sha256": "1d70ec972e1d1f19c1b0d82f9941f1208ae8506ec38e4b29b816b64cf4c04351"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libkrb5support0_1.18.3-6+deb11u5_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/k/krb5/libkrb5support0_1.18.3-6+deb11u5_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/k/krb5/libkrb5support0_1.18.3-6+deb11u5_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/k/krb5/libkrb5support0_1.18.3-6+deb11u5_arm64.deb"
+      ],
+      "sha256": "b0eac63312a9cda796c92d649b19346ccf2d6558fce75daac528bad7f132071c"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/l/lz4/liblz4-1_1.9.3-2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/l/lz4/liblz4-1_1.9.3-2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/l/lz4/liblz4-1_1.9.3-2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/l/lz4/liblz4-1_1.9.3-2_arm64.deb"
+      ],
+      "sha256": "83f0ee547cd42854e1b2a2e4c1a5705e28259ee5fa6560119f918f961a5dada2"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libb/libb2/libb2-1_0.98.1-1.1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libb/libb2/libb2-1_0.98.1-1.1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libb/libb2/libb2-1_0.98.1-1.1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libb/libb2/libb2-1_0.98.1-1.1_arm64.deb"
+      ],
+      "sha256": "7e81c630e6e5835ac36ec915a46c2c60407be3ad12378ea1c466fff7b8ca1bb6"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libb/libbsd/libbsd0_0.11.3-1+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libb/libbsd/libbsd0_0.11.3-1+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libb/libbsd/libbsd0_0.11.3-1+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libb/libbsd/libbsd0_0.11.3-1+deb11u1_arm64.deb"
+      ],
+      "sha256": "614d36d41b670955a75526865bd321703f2accb6e0c07ee4c283fbba12e494df"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libd/libdatrie/libdatrie1_0.2.13-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libd/libdatrie/libdatrie1_0.2.13-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libd/libdatrie/libdatrie1_0.2.13-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libd/libdatrie/libdatrie1_0.2.13-1_arm64.deb"
+      ],
+      "sha256": "e2953eec7abf0addebb53d6690a5b52b0e8429492328636e495ce016d819c4c7"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libd/libdrm/libdrm2_2.4.104-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libd/libdrm/libdrm2_2.4.104-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm2_2.4.104-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libd/libdrm/libdrm2_2.4.104-1_arm64.deb"
+      ],
+      "sha256": "1dc606aa361307a8c5277c2a5ddedea40a4125874e887c98e82b33dacaa853b0"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libf/libffi/libffi7_3.3-6_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libf/libffi/libffi7_3.3-6_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libf/libffi/libffi7_3.3-6_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libf/libffi/libffi7_3.3-6_arm64.deb"
+      ],
+      "sha256": "eb748e33ae4ed46f5a4c14b7a2a09792569f2029ede319d0979c373829ba1532"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libgcrypt20/libgcrypt20_1.8.7-6_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.8.7-6_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.8.7-6_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libgcrypt20/libgcrypt20_1.8.7-6_arm64.deb"
+      ],
+      "sha256": "61ec779149f20923b30adad7bdf4732957e88a5b6a26d94b2210dfe79409959b"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libegl1_1.3.2-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libg/libglvnd/libegl1_1.3.2-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libg/libglvnd/libegl1_1.3.2-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libegl1_1.3.2-1_arm64.deb"
+      ],
+      "sha256": "4b531a79399010d3377ce9b6094c8f5f3508bd18ea5b32008a6a1ec16e019a81"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libgl1_1.3.2-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libg/libglvnd/libgl1_1.3.2-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libg/libglvnd/libgl1_1.3.2-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libgl1_1.3.2-1_arm64.deb"
+      ],
+      "sha256": "18075b79c22b06bb25b9b4f3fa44a42127c40e573b34703af3f4c0b780cae29a"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libglvnd0_1.3.2-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libg/libglvnd/libglvnd0_1.3.2-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libg/libglvnd/libglvnd0_1.3.2-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libglvnd0_1.3.2-1_arm64.deb"
+      ],
+      "sha256": "5d7a05a966d1df43ca440245dfc7e18a51fc974f665441fc87180a605a0481d9"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libglx0_1.3.2-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libg/libglvnd/libglx0_1.3.2-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libg/libglvnd/libglx0_1.3.2-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libglx0_1.3.2-1_arm64.deb"
+      ],
+      "sha256": "a53aec87ff8d3ae181c320c01bc190f752a276d5e5ca87e624f9058a4b520bf2"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libopengl0_1.3.2-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libg/libglvnd/libopengl0_1.3.2-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libg/libglvnd/libopengl0_1.3.2-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libglvnd/libopengl0_1.3.2-1_arm64.deb"
+      ],
+      "sha256": "0dcd4846079fd8106f92f943331e4d035b3c79d9eae5a337135ced490a0deb15"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libgpg-error/libgpg-error0_1.38-2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libg/libgpg-error/libgpg-error0_1.38-2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libg/libgpg-error/libgpg-error0_1.38-2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libg/libgpg-error/libgpg-error0_1.38-2_arm64.deb"
+      ],
+      "sha256": "d1116f4281d6db35279799a21051e0d0e2600d110d7ee2b95b3cca6bec28067c"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libi/libidn2/libidn2-0_2.3.0-5_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libi/libidn2/libidn2-0_2.3.0-5_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libi/libidn2/libidn2-0_2.3.0-5_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libi/libidn2/libidn2-0_2.3.0-5_arm64.deb"
+      ],
+      "sha256": "0d2e6d39bf65f16861f284be567c1a6c5d4dc6b54dcfdf9dba631546ff4e6796"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libm/libmd/libmd0_1.0.3-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libm/libmd/libmd0_1.0.3-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libm/libmd/libmd0_1.0.3-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libm/libmd/libmd0_1.0.3-3_arm64.deb"
+      ],
+      "sha256": "3c490cdcce9d25e702e6587b6166cd8e7303fce8343642d9d5d99695282a9e5c"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libp/libpng1.6/libpng16-16_1.6.37-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libp/libpng1.6/libpng16-16_1.6.37-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libp/libpng1.6/libpng16-16_1.6.37-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libp/libpng1.6/libpng16-16_1.6.37-3_arm64.deb"
+      ],
+      "sha256": "f5f61274aa5f71b9e44b077bd7b9fa9cd5ff71d8b8295f47dc1b2d45378aa73e"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libs/libselinux/libselinux1_3.1-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libs/libselinux/libselinux1_3.1-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libs/libselinux/libselinux1_3.1-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libs/libselinux/libselinux1_3.1-3_arm64.deb"
+      ],
+      "sha256": "da98279a47dabaa46a83514142f5c691c6a71fa7e582661a3a3db6887ad3e9d1"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libt/libtasn1-6/libtasn1-6_4.16.0-2+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.16.0-2+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.16.0-2+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libt/libtasn1-6/libtasn1-6_4.16.0-2+deb11u1_arm64.deb"
+      ],
+      "sha256": "f469147bbd3969055c51fc661c9aa0d56d48eccd070d233f1424b0d8b3f29295"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libt/libthai/libthai0_0.1.28-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libt/libthai/libthai0_0.1.28-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libt/libthai/libthai0_0.1.28-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libt/libthai/libthai0_0.1.28-3_arm64.deb"
+      ],
+      "sha256": "e7ac0d861936385cca0ea7e3b9b04d20e85a7dfbfaa801e093d9f7fcbcf841f6"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libu/libunistring/libunistring2_0.9.10-4_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libu/libunistring/libunistring2_0.9.10-4_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libu/libunistring/libunistring2_0.9.10-4_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libu/libunistring/libunistring2_0.9.10-4_arm64.deb"
+      ],
+      "sha256": "53ff395ea4d8cf17c52155a452a0dc15af0ee2fa5cb3b0085b9c7335de8d5f7f"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libx11/libx11-6_1.7.2-1+deb11u2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libx11/libx11-6_1.7.2-1+deb11u2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libx11/libx11-6_1.7.2-1+deb11u2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libx11/libx11-6_1.7.2-1+deb11u2_arm64.deb"
+      ],
+      "sha256": "1ddb1a4d3dbdaeac8fd8d0009a27e6453b15d97362fdd1d3efb1d5f577364f30"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxau/libxau6_1.0.9-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxau/libxau6_1.0.9-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxau/libxau6_1.0.9-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxau/libxau6_1.0.9-1_arm64.deb"
+      ],
+      "sha256": "36c2bf400641a80521093771dc2562c903df4065f9eb03add50d90564337ea6c"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxcb/libxcb-render0_1.14-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxcb/libxcb-render0_1.14-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-render0_1.14-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxcb/libxcb-render0_1.14-3_arm64.deb"
+      ],
+      "sha256": "e794ba2657c5f21dcca327343b41b1997a150b6ac27977970404d60f471be48a"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxcb/libxcb-shm0_1.14-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxcb/libxcb-shm0_1.14-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-shm0_1.14-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxcb/libxcb-shm0_1.14-3_arm64.deb"
+      ],
+      "sha256": "e7f59fc41744fe6b8b9ba97b262a051621173689e2a3e5ebb26dc253c9bdc48b"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxcb/libxcb1_1.14-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxcb/libxcb1_1.14-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb1_1.14-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxcb/libxcb1_1.14-3_arm64.deb"
+      ],
+      "sha256": "48f82b65c93adb7af7757961fdd2730928316459f008d767b7104a56bc20a8f1"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxdmcp/libxdmcp6_1.1.2-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxdmcp/libxdmcp6_1.1.2-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxdmcp/libxdmcp6_1.1.2-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxdmcp/libxdmcp6_1.1.2-3_arm64.deb"
+      ],
+      "sha256": "e92569ac33247261aa09adfadc34ced3994ac301cf8b58de415a2d5dbf15ccfc"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxext/libxext6_1.3.3-1.1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxext/libxext6_1.3.3-1.1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxext/libxext6_1.3.3-1.1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxext/libxext6_1.3.3-1.1_arm64.deb"
+      ],
+      "sha256": "57237ecf54662372e206b154c0ab6096e05955e048552575b45d3ad14a6ff6e5"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxi/libxi6_1.7.10-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxi/libxi6_1.7.10-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxi/libxi6_1.7.10-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxi/libxi6_1.7.10-1_arm64.deb"
+      ],
+      "sha256": "0a6788844441f160d970fc7d61004607fe92cfad8966d0b371291703201b3971"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxkbcommon/libxkbcommon0_1.0.3-2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxkbcommon/libxkbcommon0_1.0.3-2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxkbcommon/libxkbcommon0_1.0.3-2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxkbcommon/libxkbcommon0_1.0.3-2_arm64.deb"
+      ],
+      "sha256": "91c19f642af34ae8cb909d00d08bc83f0b4f8e87ddde6984bd8bff0f7bf83204"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxrender/libxrender1_0.9.10-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxrender/libxrender1_0.9.10-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxrender/libxrender1_0.9.10-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxrender/libxrender1_0.9.10-1_arm64.deb"
+      ],
+      "sha256": "fcae69900b599e7b31b31eafa203a184e00376ade1d2f74f9b3d7b24991573a0"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxshmfence/libxshmfence1_1.3-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libx/libxshmfence/libxshmfence1_1.3-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libx/libxshmfence/libxshmfence1_1.3-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libx/libxshmfence/libxshmfence1_1.3-1_arm64.deb"
+      ],
+      "sha256": "fa2edaae6902681ecd02534dcdf8389ac48714d3385d572cc17747160957acc8"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libz/libzstd/libzstd1_1.4.8+dfsg-2.1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/libz/libzstd/libzstd1_1.4.8+dfsg-2.1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/libz/libzstd/libzstd1_1.4.8+dfsg-2.1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/libz/libzstd/libzstd1_1.4.8+dfsg-2.1_arm64.deb"
+      ],
+      "sha256": "dd01659c6c122f983a3369a04ede63539f666585d52a03f8aa2c27b307e547e0"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/m/md4c/libmd4c0_0.4.7-2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/m/md4c/libmd4c0_0.4.7-2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/m/md4c/libmd4c0_0.4.7-2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/m/md4c/libmd4c0_0.4.7-2_arm64.deb"
+      ],
+      "sha256": "ce086a542c768cf63f20863d02b387fdc17263efe3158096a7aaf4d02b584160"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/m/mesa/libgbm1_20.3.5-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/m/mesa/libgbm1_20.3.5-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/m/mesa/libgbm1_20.3.5-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/m/mesa/libgbm1_20.3.5-1_arm64.deb"
+      ],
+      "sha256": "991e5db7978e44ef745a1f7f18100927d304ddf1eaaab840167b5f07e3bdc7e8"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/n/nettle/libhogweed6_3.7.3-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/n/nettle/libhogweed6_3.7.3-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/n/nettle/libhogweed6_3.7.3-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/n/nettle/libhogweed6_3.7.3-1_arm64.deb"
+      ],
+      "sha256": "3e9eea5e474dd98a7de9e4c1ecfbfd6f6efb1d40bf51d6473de9713cf41d2191"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/n/nettle/libnettle8_3.7.3-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/n/nettle/libnettle8_3.7.3-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/n/nettle/libnettle8_3.7.3-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/n/nettle/libnettle8_3.7.3-1_arm64.deb"
+      ],
+      "sha256": "5061c931f95dc7277d95fc58bce7c17b1a95c6aa9a9aac781784f3b3dc909047"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/p11-kit/libp11-kit0_0.23.22-1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/p/p11-kit/libp11-kit0_0.23.22-1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/p/p11-kit/libp11-kit0_0.23.22-1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/p11-kit/libp11-kit0_0.23.22-1_arm64.deb"
+      ],
+      "sha256": "ac6e8eda3277708069bc6f03aff06dc319855d64ede9fca219938e52f92ee09c"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pango1.0/libpango-1.0-0_1.46.2-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/p/pango1.0/libpango-1.0-0_1.46.2-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/p/pango1.0/libpango-1.0-0_1.46.2-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pango1.0/libpango-1.0-0_1.46.2-3_arm64.deb"
+      ],
+      "sha256": "6bbb5d942bf5075e07ba2290687cf03939e29dd89c67cba4d868a5d5ca94d360"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pango1.0/libpangocairo-1.0-0_1.46.2-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/p/pango1.0/libpangocairo-1.0-0_1.46.2-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/p/pango1.0/libpangocairo-1.0-0_1.46.2-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pango1.0/libpangocairo-1.0-0_1.46.2-3_arm64.deb"
+      ],
+      "sha256": "6947061235f6a3fce541b985ae38509298f7b46299e31fd985d7c596e31e4bbf"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pango1.0/libpangoft2-1.0-0_1.46.2-3_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/p/pango1.0/libpangoft2-1.0-0_1.46.2-3_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/p/pango1.0/libpangoft2-1.0-0_1.46.2-3_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pango1.0/libpangoft2-1.0-0_1.46.2-3_arm64.deb"
+      ],
+      "sha256": "75c9b7f28b80822b6e4edea5e2235257f877ac6cade7930c6683e24395e952ec"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pcre2/libpcre2-16-0_10.36-2+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/p/pcre2/libpcre2-16-0_10.36-2+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/p/pcre2/libpcre2-16-0_10.36-2+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pcre2/libpcre2-16-0_10.36-2+deb11u1_arm64.deb"
+      ],
+      "sha256": "3c3b23bf94361e57c3d9b0e95255094c43ab1fe3be72e7e3c5b906c4abc3fcd3"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pcre2/libpcre2-8-0_10.36-2+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/p/pcre2/libpcre2-8-0_10.36-2+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/p/pcre2/libpcre2-8-0_10.36-2+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pcre2/libpcre2-8-0_10.36-2+deb11u1_arm64.deb"
+      ],
+      "sha256": "27a4362a4793cb67a8ae571bd8c3f7e8654dc2e56d99088391b87af1793cca9c"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pcre3/libpcre3_8.39-13_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/p/pcre3/libpcre3_8.39-13_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/p/pcre3/libpcre3_8.39-13_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pcre3/libpcre3_8.39-13_arm64.deb"
+      ],
+      "sha256": "21cac4064a41dbc354295c437f37bf623f9004513a97a6fa030248566aa986e9"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pixman/libpixman-1-0_0.40.0-1.1~deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/p/pixman/libpixman-1-0_0.40.0-1.1~deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/p/pixman/libpixman-1-0_0.40.0-1.1~deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/p/pixman/libpixman-1-0_0.40.0-1.1~deb11u1_arm64.deb"
+      ],
+      "sha256": "f891c7a1015e3c234d6dc1219caa1fecb9fc2abffd3072d93a5fbf1a4b0a1756"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6core6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/q/qt6-base/libqt6core6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/q/qt6-base/libqt6core6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6core6_6.4.2+dfsg-11~bpo11+1_arm64.deb"
+      ],
+      "sha256": "4e6bc2500266d7317a8c6e7122c44e1375da509396e9c3ae64eb524e5631eef3"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6dbus6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/q/qt6-base/libqt6dbus6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/q/qt6-base/libqt6dbus6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6dbus6_6.4.2+dfsg-11~bpo11+1_arm64.deb"
+      ],
+      "sha256": "80d68c66173e8cd50fc96988e9df9befdd28ad83ab51c88184213e721ff437c3"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6gui6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/q/qt6-base/libqt6gui6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/q/qt6-base/libqt6gui6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6gui6_6.4.2+dfsg-11~bpo11+1_arm64.deb"
+      ],
+      "sha256": "35e217f9d0e0d5a8326bef3bfd26f882b2f57e11590aaed3d70cdb26f3d4b11d"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6widgets6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/q/qt6-base/libqt6widgets6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/q/qt6-base/libqt6widgets6_6.4.2+dfsg-11~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qt6-base/libqt6widgets6_6.4.2+dfsg-11~bpo11+1_arm64.deb"
+      ],
+      "sha256": "e6110008dbecc603398547abf460f428780d928125a9789835e2306980d59acf"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qtbase-opensource-src/libqt5core5a_5.15.2+dfsg-9+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5core5a_5.15.2+dfsg-9+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5core5a_5.15.2+dfsg-9+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qtbase-opensource-src/libqt5core5a_5.15.2+dfsg-9+deb11u1_arm64.deb"
+      ],
+      "sha256": "73f7bdfc1c266825e94059e4b3ce75b8fd6894bad20925b314add241232fe1c8"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qtbase-opensource-src/libqt5gui5_5.15.2+dfsg-9+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5gui5_5.15.2+dfsg-9+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5gui5_5.15.2+dfsg-9+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qtbase-opensource-src/libqt5gui5_5.15.2+dfsg-9+deb11u1_arm64.deb"
+      ],
+      "sha256": "4304623b829bb8e68444c17fa0e158613276d7c9ed57a9f07ad46cd0ad58fb5c"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qtbase-opensource-src/libqt5widgets5_5.15.2+dfsg-9+deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5widgets5_5.15.2+dfsg-9+deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5widgets5_5.15.2+dfsg-9+deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/q/qtbase-opensource-src/libqt5widgets5_5.15.2+dfsg-9+deb11u1_arm64.deb"
+      ],
+      "sha256": "1de141f85100d4ad9711a774da5f05da5fb3db8a3e23f9dc145463ac0949f0ae"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/s/systemd/libsystemd0_252.29-1~deb12u1~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/s/systemd/libsystemd0_252.29-1~deb12u1~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/s/systemd/libsystemd0_252.29-1~deb12u1~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/s/systemd/libsystemd0_252.29-1~deb12u1~bpo11+1_arm64.deb"
+      ],
+      "sha256": "22811f8d928085fc7c93c41cda794c872b2f61f9351b2edc6b3cfb13db2d0a5e"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/s/systemd/libudev1_252.29-1~deb12u1~bpo11+1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/s/systemd/libudev1_252.29-1~deb12u1~bpo11+1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/s/systemd/libudev1_252.29-1~deb12u1~bpo11+1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/s/systemd/libudev1_252.29-1~deb12u1~bpo11+1_arm64.deb"
+      ],
+      "sha256": "cf921d2d94a24b1c1dffbc542263d5c7d30b41b421cbbb223cf6462ed570ebd9"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/u/util-linux/libblkid1_2.36.1-8+deb11u2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/u/util-linux/libblkid1_2.36.1-8+deb11u2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/u/util-linux/libblkid1_2.36.1-8+deb11u2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/u/util-linux/libblkid1_2.36.1-8+deb11u2_arm64.deb"
+      ],
+      "sha256": "3fbb4e3ffd78dcc7e181d424beb934233d5717a15998ad2e18d241b14ddf2e10"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/u/util-linux/libmount1_2.36.1-8+deb11u2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/u/util-linux/libmount1_2.36.1-8+deb11u2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/u/util-linux/libmount1_2.36.1-8+deb11u2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/u/util-linux/libmount1_2.36.1-8+deb11u2_arm64.deb"
+      ],
+      "sha256": "1ff25c96e811f2dd31c6217bfe646476b6290e4a7e575af03d3053b038dd8e66"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/u/util-linux/libuuid1_2.36.1-8+deb11u2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/u/util-linux/libuuid1_2.36.1-8+deb11u2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/u/util-linux/libuuid1_2.36.1-8+deb11u2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/u/util-linux/libuuid1_2.36.1-8+deb11u2_arm64.deb"
+      ],
+      "sha256": "2b3df73a725c3fe4ec8565ec04124e556122370fc63fd7886f7dfa25092df0ba"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/w/wayland/libwayland-server0_1.18.0-2~exp1.1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/w/wayland/libwayland-server0_1.18.0-2~exp1.1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/w/wayland/libwayland-server0_1.18.0-2~exp1.1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/w/wayland/libwayland-server0_1.18.0-2~exp1.1_arm64.deb"
+      ],
+      "sha256": "3bbcb9e41159b6268b40ce16b1512e5bcf38e63b8bcf2426eaa54b19c6988257"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/x/xz-utils/liblzma5_5.2.5-2.1~deb11u1_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/x/xz-utils/liblzma5_5.2.5-2.1~deb11u1_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/x/xz-utils/liblzma5_5.2.5-2.1~deb11u1_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/x/xz-utils/liblzma5_5.2.5-2.1~deb11u1_arm64.deb"
+      ],
+      "sha256": "d865bba41952c707b3fa3ae8cab4d4bd337ee92991d2aead66c925bf7cc48846"
+    },
+    {
+      "url": "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/z/zlib/zlib1g_1.2.11.dfsg-2+deb11u2_arm64.deb",
+      "urls": [
+        "https://archive.debian.org/debian/pool/main/z/zlib/zlib1g_1.2.11.dfsg-2+deb11u2_arm64.deb",
+        "https://deb.debian.org/debian/pool/main/z/zlib/zlib1g_1.2.11.dfsg-2+deb11u2_arm64.deb",
+        "https://snapshot.debian.org/archive/debian/20250129T203412Z/pool/main/z/zlib/zlib1g_1.2.11.dfsg-2+deb11u2_arm64.deb"
+      ],
+      "sha256": "e3963985d1a020d67ffd4180e6f9c4b5c600b515f0c9d8fda513d7a0e48e63a1"
+    }
+  ]
+}

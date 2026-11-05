@@ -36,6 +36,8 @@ def main():
     overlay = ROOT / 'bcr/overlay'
     reused = json.loads((ROOT / 'native/mojo_targets.json').read_text())
     reused['//third_party/protobuf:protoc'] = '//native:protoc_tool'
+    reused.update({label: '//native:protoc_tool' for label in targets
+                   if label.partition('(')[0] == '//third_party/protobuf:protoc'})
     grit = json.loads((overlay / 'native/grit_targets.json').read_text())['native']
     # Reuse GRIT behind the header-only GN wrapper.
     reused['//third_party/blink/public/strings:permission_element_strings'] = (
@@ -52,7 +54,7 @@ def main():
     def source_label(path):
         if path == NODE:
             return '@nodejs_linux_amd64//:node_bin'
-        if path == BUILD + 'protoc':
+        if path.startswith(BUILD) and Path(path).name == 'protoc':
             return '//native:protoc_tool'
         if path == '//third_party/protobuf/src/google/protobuf/descriptor.proto':
             return '@protobuf//:descriptor_proto_srcs'

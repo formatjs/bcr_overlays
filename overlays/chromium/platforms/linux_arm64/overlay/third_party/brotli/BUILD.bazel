@@ -1,0 +1,37 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load(":legacy_sources.bzl", "HEADERS", "SOURCES")
+
+cc_library(
+    name = "legacy_decoder",
+    testonly = True,
+    srcs = SOURCES,
+    hdrs = HEADERS,
+    copts = [
+        "-std=c11",
+        "-O2",
+        "-fstack-protector",
+        "-ftrivial-auto-var-init=pattern",
+        "-fno-strict-aliasing",
+    ],
+    includes = ["include"],
+    linkstatic = True,
+    local_defines = [
+        "NDEBUG",
+        "_FORTIFY_SOURCE=2",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+exports_files([
+    "BUILD.bazel",
+    "legacy_sources.bzl",
+])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "include/brotli/decode.h",
+    "include/brotli/port.h",
+    "include/brotli/shared_dictionary.h",
+    "include/brotli/types.h",
+])
+# END BLINK_PLATFORM INPUTS

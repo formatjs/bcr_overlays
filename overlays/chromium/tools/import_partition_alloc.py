@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 import sys
 
+from import_mojo_runtime import compiler_configuration
+
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = '//base/allocator/partition_allocator/src/partition_alloc/'
 LABEL = PREFIX[:-1] + ':'
@@ -35,26 +37,13 @@ def main():
                      if p.is_file() and p.suffix in ('.h', '.inc'))
     base = graph['targets'][LABEL + 'allocator_base']
     unpack = lambda key: graph['pool'][base[key]['pool']]
+    options = {}
     for name in TARGETS:
         target = graph['targets'][LABEL + name]
-        for field in ('cflags', 'cflags_cc', 'include_dirs'):
-            if graph['pool'][target[field]['pool']] != unpack(field):
-                raise ValueError(f'per-target compiler configuration needs mapping: {name} {field}')
-    flags = []
-    compiler_flags = iter(unpack('cflags') + unpack('cflags_cc'))
-    for flag in compiler_flags:
-        if flag == '-Xclang':
-            argument = next(compiler_flags)
-            if argument not in ('-fmodule-file-home-is-cwd', '-fmodules-local-submodule-visibility'):
-                raise ValueError(f'unmapped Clang frontend option: {argument}')
-            continue
-        if (flag == '-Werror' or flag == '-nostdinc++' or
-                flag.startswith(('-fcrash-diagnostics-dir=', '--warning-suppression-mappings=',
-                                 '--target=', '--sysroot=', '-isystem', '-fmodules',
-                                 '-fno-implicit-module', '-fbuiltin-module-map',
-                                 '-fmodule-map-file='))):
-            continue
-        flags.append(flag)
+        if graph['pool'][target['include_dirs']['pool']] != unpack('include_dirs'):
+            raise ValueError(f'per-target include directories need mapping: {name}')
+        options[name], _ = compiler_configuration(graph, target)
+    flags = options if any(value != options['allocator_base'] for value in options.values()) else options['allocator_base']
     defines = [s for s in unpack('defines') if not s.startswith(
         ('IS_PARTITION_ALLOC_BASE_IMPL', 'CR_LIBCXX_REVISION=', 'CR_SYSROOT_KEY=', 'USE_LIBCXX_MODULES'))]
     data = {'SOURCES': records, 'HEADERS': headers, 'COPTS': flags, 'DEFINES': defines}

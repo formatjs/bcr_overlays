@@ -1,0 +1,23 @@
+exports_files(
+    [
+        "failure_signal_handler.h",
+        "internal/address_is_readable.h",
+        "internal/addresses.h",
+        "internal/bounded_utf8_length_sequence.h",
+        "internal/decode_rust_punycode.h",
+        "internal/demangle.h",
+        "internal/demangle_rust.h",
+        "internal/elf_mem_image.h",
+        "internal/examine_stack.h",
+        "internal/stack_consumption.h",
+        "internal/stacktrace_config.h",
+        "internal/symbolize.h",
+        "internal/utf8_for_code_point.h",
+        "internal/vdso_support.h",
+        "leak_check.h",
+        "stacktrace.h",
+        "symbolize.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)

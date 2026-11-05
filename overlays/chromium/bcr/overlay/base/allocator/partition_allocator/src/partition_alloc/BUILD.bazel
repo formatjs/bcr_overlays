@@ -18,7 +18,7 @@ cc_library(
 cc_library(
     name = "allocator_base",
     srcs = SOURCES["allocator_base"],
-    copts = COPTS,
+    copts = COPTS["allocator_base"] if type(COPTS) == "dict" else COPTS,
     linkopts = [
         "-pthread",
         "-ldl",
@@ -30,7 +30,7 @@ cc_library(
 cc_library(
     name = "allocator_core",
     srcs = SOURCES["allocator_core"],
-    copts = COPTS,
+    copts = COPTS["allocator_core"] if type(COPTS) == "dict" else COPTS,
     local_defines = ["IS_PARTITION_ALLOC_IMPL"],
     deps = [":allocator_base"],
 )
@@ -38,7 +38,7 @@ cc_library(
 cc_library(
     name = "allocator_shim",
     srcs = SOURCES["allocator_shim"],
-    copts = COPTS,
+    copts = COPTS["allocator_shim"] if type(COPTS) == "dict" else COPTS,
     local_defines = ["IS_ALLOCATOR_SHIM_IMPL"],
     deps = [":allocator_core"],
     alwayslink = True,
@@ -47,7 +47,7 @@ cc_library(
 cc_library(
     name = "raw_ptr",
     srcs = SOURCES["raw_ptr"],
-    copts = COPTS,
+    copts = COPTS["raw_ptr"] if type(COPTS) == "dict" else COPTS,
     local_defines = ["IS_RAW_PTR_IMPL"],
     deps = [":allocator_shim"],
 )
@@ -168,7 +168,7 @@ exports_files([
     "thread_isolation/alignment.h",
     "thread_isolation/pkey.h",
     "thread_isolation/thread_isolation.h",
-    "yield_processor.h"
+    "yield_processor.h",
 ])
 # END BLINK_PLATFORM INPUTS
 
@@ -272,7 +272,7 @@ exports_files([
     "thread_isolation/alignment.h",
     "thread_isolation/pkey.h",
     "thread_isolation/thread_isolation.h",
-    "yield_processor.h"
+    "yield_processor.h",
 ])
 # END BLINK_CORE INPUTS
 
@@ -376,7 +376,7 @@ exports_files([
     "thread_isolation/alignment.h",
     "thread_isolation/pkey.h",
     "thread_isolation/thread_isolation.h",
-    "yield_processor.h"
+    "yield_processor.h",
 ])
 # END BLINK_MODULES INPUTS
 
@@ -480,7 +480,7 @@ exports_files([
     "thread_isolation/alignment.h",
     "thread_isolation/pkey.h",
     "thread_isolation/thread_isolation.h",
-    "yield_processor.h"
+    "yield_processor.h",
 ])
 # END CONTENT INPUTS
 
@@ -716,6 +716,6 @@ exports_files([
     "thread_isolation/pkey.h",
     "thread_isolation/thread_isolation.cc",
     "thread_isolation/thread_isolation.h",
-    "yield_processor.h"
+    "yield_processor.h",
 ])
 # END BROWSER INPUTS

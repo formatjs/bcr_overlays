@@ -1,0 +1,13 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "base_vision_task_api.h",
+    "classification_head.cc",
+    "classification_head.h",
+    "frame_buffer.cc",
+    "frame_buffer.h",
+    "label_map_item.cc",
+    "label_map_item.h",
+])
+# END BLINK_PLATFORM INPUTS

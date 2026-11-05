@@ -38,6 +38,14 @@ def compiler_configuration(graph, target):
     for flag in iterator:
         if flag == '-Xclang':
             argument = next(iterator)
+            if argument == '-target-feature':
+                if next(iterator) != '-Xclang':
+                    raise ValueError('missing Clang target feature argument')
+                feature = next(iterator)
+                if feature not in ('+mte', '-mte'):
+                    raise ValueError(f'unmapped Clang target feature: {feature}')
+                flags.extend(['-Xclang', argument, '-Xclang', feature])
+                continue
             if argument not in ('-fmodule-file-home-is-cwd', '-fmodules-local-submodule-visibility'):
                 raise ValueError(f'unmapped frontend flag: {argument}')
             continue

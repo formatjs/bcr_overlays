@@ -30,10 +30,11 @@ cc_library(
         "lib/libc/include",
         "pr/include",
     ],
-    target_compatible_with = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-    ],
+    target_compatible_with = ["@platforms//os:linux"] + select({
+        "@platforms//cpu:aarch64": [],
+        "@platforms//cpu:x86_64": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
 )
 
 # Linux pthread configuration from upstream configure.in and config/config.mk.
@@ -59,7 +60,10 @@ DEFINES = [
 
 cc_library(
     name = "nspr4",
-    srcs = NSPR_SOURCES + glob([
+    srcs = [source for source in NSPR_SOURCES if not source.endswith(".s")] + select({
+        "@platforms//cpu:x86_64": [source for source in NSPR_SOURCES if source.endswith(".s")],
+        "//conditions:default": [],
+    }) + glob([
         "pr/include/private/*.h",
         "pr/include/md/*.h",
     ]),

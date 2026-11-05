@@ -3,7 +3,7 @@ load("@rules_cc//cc:cc_test.bzl", "cc_test")
 load("@rules_python//python:defs.bzl", "py_test")
 load("@rules_rust//rust:defs.bzl", "rust_library")
 
-exports_files(["native/platform_runtime.json"] + glob(
+exports_files(["native/platform_runtime.json", "platforms/linux_arm64/platform_runtime.json"] + glob(
     ["bcr/*"],
     exclude = ["**/BUILD.bazel"],
 ))

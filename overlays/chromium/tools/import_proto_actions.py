@@ -15,10 +15,15 @@ BUILD_DIR = '//out/bazel-import/'
 def main():
     graph = json.loads(gzip.decompress(Path(sys.argv[1]).read_bytes()))
     target = graph['targets'][TARGET]
+    compilers = {path for path in target['inputs'] if path.startswith(BUILD_DIR)
+                 and Path(path).name == 'protoc'}
+    if len(compilers) != 1:
+        raise ValueError('expected one execution-platform protoc input')
+    compiler = compilers.pop()
     sources = set()
 
     def file_label(path):
-        if path == BUILD_DIR + 'protoc':
+        if path == compiler:
             return ':protoc_tool'
         if path == '//third_party/protobuf/src/google/protobuf/descriptor.proto':
             return '@protobuf//:descriptor_proto_srcs'
@@ -44,7 +49,10 @@ def main():
         '        dep = "@protobuf//:protobuf_lite",', '    )',
         '    chromium_tool_inputs(', '        name = "protoc_tool",',
         '        tool = ":protobuf_compiler",',
-        '        logical_path = "out/bazel-import/protoc",', '    )',
+        '        logical_path = ' + json.dumps(compiler[2:]) + ',',
+        *(['        additional_logical_paths = ["out/bazel-import/protoc"],']
+          if compiler != BUILD_DIR + 'protoc' else []),
+        '    )',
         '    chromium_python_action(', '        name = "variations_proto_gen",',
         '        srcs = ' + json.dumps(files) + ',',
         '        outs = ' + json.dumps(outputs) + ',',

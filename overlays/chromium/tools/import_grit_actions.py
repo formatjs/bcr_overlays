@@ -51,6 +51,12 @@ def main():
         native_outputs.update(graph['targets'][target].get('outputs', []))
     producers = {output: target for target, value in graph['targets'].items()
                  for output in value.get('outputs', [])}
+    ids_targets = {label: target for label, target in graph['targets'].items()
+                   if label.partition('(')[0] == '//tools/gritsettings:default_resource_ids'}
+    ids_names = {label: ('grit_resource_ids' if '(' not in label else
+                        'grit_' + hashlib.sha256(label.encode()).hexdigest()[:16])
+                 for label in ids_targets}
+    native_outputs.update(path for target in ids_targets.values() for path in target['outputs'])
     if args.generated_root:
         for path in sorted(native_outputs):
             relative = path.removeprefix('//out/bazel-import/')
@@ -132,8 +138,24 @@ def main():
              '        script = "tools/grit/grit.py",',
              '        args = ' + json.dumps(graph['targets']['//tools/gritsettings:default_resource_ids']['args']) + ',',
              '        outs = {"gen/tools/gritsettings/default_resource_ids": "gen/tools/gritsettings/default_resource_ids"},', '    )',
-             '    chromium_tool_inputs(name = "grit_brotli_tool", tool = "@brotli//:brotli", logical_path = "out/bazel-import/brotli")']
+             '    chromium_tool_inputs(name = "grit_brotli_tool", tool = "@brotli//:brotli", logical_path = "out/bazel-import/brotli", additional_logical_paths = ' +
+             json.dumps(sorted({path[2:] for target in graph['targets'].values()
+                                if target.get('script') == '//tools/grit/grit.py'
+                                for path in target.get('inputs', [])
+                                if path.startswith('//out/bazel-import/') and Path(path).name == 'brotli'
+                                and path != '//out/bazel-import/brotli'})) + ')']
     all_outputs = [':gen/tools/gritsettings/default_resource_ids']
+    for target_label, target in ids_targets.items():
+        if '(' not in target_label:
+            continue
+        outputs = {path.removeprefix('//out/bazel-import/'): path.removeprefix('//out/bazel-import/')
+                   for path in target['outputs']}
+        lines += ['    chromium_python_action(', '        name = ' + json.dumps(ids_names[target_label]) + ',',
+                  '        srcs = ' + json.dumps({label(path): path for path in sorted(inputs)}) + ',',
+                  '        script = "tools/grit/grit.py",',
+                  '        args = ' + json.dumps(target['args']) + ',',
+                  '        outs = ' + json.dumps(outputs) + ',', '    )']
+        all_outputs.extend(':' + path for path in outputs)
     with tempfile.TemporaryDirectory(prefix='chromium-grit-discovery.') as temporary:
         ids = Path(temporary) / 'resource_ids'
         subprocess.run(command + ['--add-header', '-o', str(ids)], check=True)
@@ -145,8 +167,8 @@ def main():
                     continue
                 name = TARGETS.get(target_label, 'grit_' + hashlib.sha256(target_label.encode()).hexdigest()[:16])
                 arguments = target['args']
-                if target_label == '//tools/gritsettings:default_resource_ids':
-                    selected[target_label] = 'grit_resource_ids'
+                if target_label in ids_names:
+                    selected[target_label] = ids_names[target_label]
                     continue
                 defines = {}
                 for index, argument in enumerate(arguments[:-1]):
@@ -158,7 +180,8 @@ def main():
                         os.environ[key] = value
                 grd = (build / arguments[arguments.index('-i') + 1]).resolve()
                 raw = set(target.get('inputs', []))
-                deps = [':grit_resource_ids']
+                ids_dependencies = [ids_names[dep] for dep in target.get('deps', []) if dep in ids_names]
+                deps = [':' + name for name in ids_dependencies] or [':grit_resource_ids']
                 additions = set()
                 try:
                     if grd.is_relative_to(build):
@@ -167,8 +190,7 @@ def main():
                         if not grd.is_file():
                             raise UnmappedInput(f'generated GRD needs native build artifact: {path}')
                     for path in raw:
-                        if path.startswith('//out/') and path not in (
-                                '//out/bazel-import/brotli', '//out/bazel-import/gen/tools/gritsettings/default_resource_ids'):
+                        if path.startswith('//out/') and producers.get(path) not in ids_names and Path(path).name != 'brotli':
                             generated_input(path)
                     discovered = grit_info.Inputs(str(grd), defines, str(ids), target_platform='linux')
                     files = {label(path): path for path in python_sources}
@@ -179,9 +201,9 @@ def main():
                     fragments = part_closure(path[2:] for path in raw if not path.startswith('//out/'))
                     raw.update('//' + path for path in fragments)
                     for path in sorted(raw):
-                        if path == '//out/bazel-import/gen/tools/gritsettings/default_resource_ids':
+                        if producers.get(path) in ids_names:
                             continue
-                        if path == '//out/bazel-import/brotli':
+                        if path.startswith('//out/bazel-import/') and Path(path).name == 'brotli':
                             deps.append(':grit_brotli_tool')
                         elif path.startswith('//out/bazel-import/'):
                             file_label, logical = generated_input(path)

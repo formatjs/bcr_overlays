@@ -15,7 +15,7 @@ def chromium_sdk(name, protocol_library, generated_sources, generated_headers, *
     """
     cc_library(
         name = name,
-        srcs = [Label("//:" + path) for path in SDK_SOURCES] + generated_sources,
+        srcs = SDK_SOURCES + generated_sources,
         hdrs = generated_headers,
         includes = ["gen/third_party/perfetto"],
         copts = SDK_COPTS,

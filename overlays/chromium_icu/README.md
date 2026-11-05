@@ -18,7 +18,10 @@ Public targets:
 - `@chromium_icu//:common/icudtl.dat`: pinned Chromium locale data.
 
 Native C++ compilation and declared upstream Python assembly generation only.
-No GN, Ninja, CMake or foreign-build backend. Linux x86_64 supported initially.
+No GN, Ninja, CMake or foreign-build backend. File-data ICU supports Linux
+AMD64/ARM64, macOS ARM64, and Windows AMD64/ARM64 with MSVC ABI. The embedded
+assembly data target remains Linux-only. Windows uses captured RTTI and
+namespace/feature settings with clang-cl.
 Consumer tests register hermeticbuild LLVM `llvm@0.8.26`; published library leaves
 compiler selection to consumers.
 

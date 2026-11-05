@@ -581,6 +581,8 @@ def main():
         'third_party/wayland-protocols/kde/': '@chromium_kde_protocols//:',
         'third_party/protobuf-javascript/src/': '@chromium_protobuf_javascript//:',
         'third_party/vulkan-tools/src/': '@chromium_vulkan_tools//:',
+        'third_party/vulkan-headers/src/': '@vulkan_headers//:',
+        'third_party/perfetto/include/': '@perfetto//:include/',
         'third_party/angle/': '@chromium_angle//:third_party/angle/',
         'third_party/vulkan_memory_allocator/': '@chromium_vma//:',
 
@@ -1527,10 +1529,11 @@ def main():
                     tools[tool_name] = native_tool(executable_outputs[binary], binary)
                     deps.append(':' + tool_name)
                     inputs.discard(binary)
-            if layer in ('ml', 'blink_platform', 'blink_core', 'blink_modules', 'content', 'browser') and target['script'] == '//build/gn_run_binary.py' and target['args'][0] == 'flatc':
-                tools[layer + '_flatc_tool'] = dict(tool='@flatbuffers//:flatc', logical_path=BUILD[2:]+'flatc')
-                deps.append(':' + layer + '_flatc_tool')
-                inputs.discard(BUILD + 'flatc')
+            if layer in ('ml', 'blink_platform', 'blink_core', 'blink_modules', 'content', 'browser') and target['script'] == '//build/gn_run_binary.py' and Path(target['args'][0]).name == 'flatc':
+                if target['args'][0] == 'flatc':
+                    tools[layer + '_flatc_tool'] = dict(tool='@flatbuffers//:flatc', logical_path=BUILD[2:]+'flatc')
+                    deps.append(':' + layer + '_flatc_tool')
+                    inputs.discard(BUILD + 'flatc')
                 pending_schemas = [p for p in inputs if p.endswith('.fbs')]
                 schema_roots = [args.source_root / target['args'][i+1].removeprefix('../../')
                                 for i, value in enumerate(target['args']) if value == '-I']

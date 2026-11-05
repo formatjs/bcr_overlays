@@ -14,13 +14,21 @@ cc_library(
     name = "implementation",
     srcs = COMMON_SRCS,
     copts = ICU_COPTS,
-    linkopts = ["-pthread"],
+    linkopts = select({
+        "@platforms//os:linux": ["-pthread"],
+        "//conditions:default": [],
+    }),
     linkstatic = True,
     local_defines = ICU_CODE_DEFINES + [
         "U_COMMON_IMPLEMENTATION",
         "U_ICUDATAENTRY_IN_COMMON",
     ],
-    target_compatible_with = ["@platforms//os:linux"] + select({
+    target_compatible_with = select({
+        "@platforms//os:linux": [],
+        "@platforms//os:macos": [],
+        "@platforms//os:windows": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }) + select({
         "@platforms//cpu:x86_64": [],
         "@platforms//cpu:aarch64": [],
         "//conditions:default": ["@platforms//:incompatible"],

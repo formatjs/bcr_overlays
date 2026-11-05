@@ -189773,6 +189773,7 @@ ACTIONS = [
         "srcs": {
             "//build:gn_run_binary.py": "build/gn_run_binary.py",
             "//:components/subresource_filter/core/common/flat/indexed_ruleset.fbs": "components/subresource_filter/core/common/flat/indexed_ruleset.fbs",
+            "//:components/url_pattern_index/flat/url_pattern_index.fbs": "components/url_pattern_index/flat/url_pattern_index.fbs",
         },
         "outs": {
             "gen/components/subresource_filter/core/common/flat/indexed_ruleset_generated.h": "gen/components/subresource_filter/core/common/flat/indexed_ruleset_generated.h",

@@ -17,13 +17,25 @@ ICU_CODE_DEFINES = [
     "U_CHARSET_IS_UTF8=1",
 ]
 
-ICU_COPTS = [
-    "-std=c++20",
-    "-frtti",
-    "-pthread",
-    "-Wno-parentheses",
-    "-Wno-unused-function",
-    "-Wno-unused-variable",
-    "-Wno-ambiguous-reversed-operator",
-    "-Wno-deprecated-declarations",
-]
+ICU_COPTS = select({
+    "@platforms//os:windows": [
+        "/std:c++20",
+        "/GR",
+        "/EHs-c-",
+        "-Wno-parentheses",
+        "-Wno-unused-function",
+        "-Wno-unused-variable",
+        "-Wno-ambiguous-reversed-operator",
+        "-Wno-deprecated-declarations",
+    ],
+    "//conditions:default": [
+        "-std=c++20",
+        "-frtti",
+        "-pthread",
+        "-Wno-parentheses",
+        "-Wno-unused-function",
+        "-Wno-unused-variable",
+        "-Wno-ambiguous-reversed-operator",
+        "-Wno-deprecated-declarations",
+    ],
+})

@@ -21,6 +21,7 @@ def main():
     preserved = {
         'native/base.bzl',
         'native/fonts.bzl',
+        'native/blink_rust.bzl',
         'native/platform_runtime.bzl',
         'native/rust/BUILD.bazel',
         'base/allocator/partition_allocator/src/partition_alloc/BUILD.bazel',

@@ -27,10 +27,11 @@ def main():
     tool_paths = {tool: {path for target in targets.values() for path in target['inputs']
                          if path.startswith(BUILD_DIR) and Path(path).name == tool}
                   for tool in TOOLS}
-    if any(len(paths) != 1 for paths in tool_paths.values()):
+    if any(len(paths) > 1 or (tool != 'ipc_plugin' and not paths)
+           for tool, paths in tool_paths.items()):
         raise ValueError('expected one execution-platform path per Perfetto plugin')
-    tool_paths = {tool: paths.pop() for tool, paths in tool_paths.items()}
-    for tool in TOOLS:
+    tool_paths = {tool: paths.pop() for tool, paths in tool_paths.items() if paths}
+    for tool in tool_paths:
         lines += ['    chromium_tool_inputs(', f'        name = "perfetto_{tool}_tool",',
                   f'        tool = "@perfetto//:{tool}",',
                   '        logical_path = ' + json.dumps(tool_paths[tool][2:]) + ',', '    )']
@@ -73,7 +74,7 @@ def main():
               '        srcs = ' + json.dumps([':' + path for path in sorted(generated) if path.startswith('gen/') and path.endswith('.cc') and not path.endswith('.ipc.cc')]) + ',',
               '        hdrs = ' + json.dumps([':' + path for path in sorted(generated) if path.startswith('gen/') and path.endswith('.h') and not path.endswith('.ipc.h')]) + ',',
               '        includes = ["gen/third_party/perfetto", "gen"],',
-              '        copts = ["-std=c++20", "-fno-rtti", "-fno-exceptions"],',
+              '        copts = select({"@platforms//os:windows": ["/std:c++20", "/GR-", "/EHs-c-"], "//conditions:default": ["-std=c++20", "-fno-rtti", "-fno-exceptions"]}),',
               '        deps = ["@perfetto//:chromium_protozero", ":protobuf_lite_runtime"],',
               '    )', '']
     (ROOT / 'bcr/overlay/native/perfetto_proto.bzl').write_text('\n'.join(lines))

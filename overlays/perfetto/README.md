@@ -67,3 +67,14 @@ python3 overlays/perfetto/tools/import_chromium_sdk.py \
   overlays/chromium/native/linux_x64.json.gz /path/to/pinned/perfetto
 buildifier -r overlays/perfetto
 ```
+
+Platform metadata covers Linux AMD64/ARM64, macOS ARM64, and Windows
+AMD64/ARM64. Windows selects its captured 142 SDK sources and disables IPC,
+HTTPD, and the system consumer. Other platforms use 159 SDK sources. Host
+generator binaries stay on Linux; target compiler settings follow target
+platform. Perfetto foundation cross-builds pass all three non-Linux
+targets; full Chromium browser integration remains in progress.
+
+Regeneration accepts `--windows-amd64-graph`, `--windows-arm64-graph`, and
+`--darwin-arm64-graph` alongside `--arm64-graph`. Regenerate runtime build flags
+with `import_chromium_flags.py LINUX_GRAPH --windows-graph WINDOWS_GRAPH`.

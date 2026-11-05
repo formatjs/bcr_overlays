@@ -1,4 +1,6 @@
 exports_files([
+    "spirv-tools-generator-input.patch",
+    "spirv-headers-generator-inputs.patch",
     "windows_debuggers.BUILD.bazel",
     "platform_runtime.bzl",
     "browser_sources.bzl",

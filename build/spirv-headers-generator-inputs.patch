@@ -1,0 +1,12 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -7,6 +7,8 @@
+ licenses(["notice"])
+ 
+ exports_files(["LICENSE"])
++
++exports_files(glob(["include/spirv/**/*.json"]))
+ 
+ filegroup(
+     name = "spirv_core_grammar_1.0",

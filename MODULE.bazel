@@ -66,6 +66,18 @@ bazel_dep(name = "vulkan_headers", version = "1.4.349")
 bazel_dep(name = "vulkan_utility_libraries", version = "1.4.349")
 bazel_dep(name = "spirv_headers", version = "1.4.341.0")
 bazel_dep(name = "spirv_tools", version = "2026.1")
+single_version_override(
+    module_name = "spirv_tools",
+    patch_strip = 1,
+    patches = ["//build:spirv-tools-generator-input.patch"],
+)
+
+single_version_override(
+    module_name = "spirv_headers",
+    patch_strip = 1,
+    patches = ["//build:spirv-headers-generator-inputs.patch"],
+)
+
 bazel_dep(name = "fast_float", version = "8.2.4")
 bazel_dep(name = "simdutf", version = "7.7.0")
 

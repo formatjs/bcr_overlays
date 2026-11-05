@@ -530,6 +530,8 @@ def main():
             '//third_party/flatbuffers:flatc': '@flatbuffers//:flatc',
         })
     font_repositories = {
+        'third_party/spirv-tools/src/': '@spirv_tools//:',
+        'third_party/spirv-headers/src/': '@spirv_headers//:',
         'third_party/cros_system_api/': '@chromium_cros_system_api//:',
         'third_party/devtools-frontend/src/': '@chromium_devtools_frontend//:',
         'third_party/search_engines_data/resources/': '@chromium_search_engines_data//:',

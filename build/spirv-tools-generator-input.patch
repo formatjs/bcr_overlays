@@ -1,0 +1,11 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -26,6 +26,7 @@
+ exports_files([
+     "CHANGES",
+     "LICENSE",
++    "utils/generate_language_headers.py",
+ ])
+ 
+ py_binary(

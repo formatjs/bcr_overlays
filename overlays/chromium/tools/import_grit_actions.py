@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Import native GRIT resource actions and report unresolved asset producers."""
 import argparse
 import gzip

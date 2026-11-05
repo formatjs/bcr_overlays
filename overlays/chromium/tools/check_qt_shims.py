@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Check the captured Qt GNU ABI and staged runtime loader paths."""
 
 import argparse

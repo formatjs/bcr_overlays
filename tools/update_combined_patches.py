@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Expose overlay-only targets in shared BCR module overrides."""
 from pathlib import Path
 import difflib

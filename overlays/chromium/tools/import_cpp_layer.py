@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Import complete captured C++ layers into the combined Chromium build."""
 import argparse
 import ast

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Import pinned Rust prerequisites through native rules_rust actions."""
 import argparse
 import gzip

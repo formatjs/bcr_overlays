@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Capture GN maintainer metadata for native Bazel translation, never execution."""
 
 import argparse

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Read installed dependency paths from an npm package-lock without executing npm."""
 
 from pathlib import PurePosixPath

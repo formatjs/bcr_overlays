@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Translate browser Mojo generator closures to sharded native Bazel actions."""
 
 import argparse

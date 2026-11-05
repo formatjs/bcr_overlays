@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Import Chromium's vendored libxslt with its captured C configuration."""
 
 import argparse

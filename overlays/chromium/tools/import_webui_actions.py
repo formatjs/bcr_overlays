@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Import complete supported WebUI preprocessing/TypeScript/bundling closures."""
 import argparse
 import gzip

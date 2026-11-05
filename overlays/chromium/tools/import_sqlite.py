@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Import original Chromium SQLite C compiler and public header configuration."""
 import argparse
 import gzip

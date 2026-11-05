@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Pin Chromium's Node binary and complete prepatched WebUI source archive."""
 
 import json

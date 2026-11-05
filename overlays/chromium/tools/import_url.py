@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Import complete URL library and original Mojo URL/origin traits."""
 import argparse
 import gzip

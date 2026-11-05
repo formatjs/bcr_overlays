@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Import original Linux Mojo core, bindings and system source configurations."""
 import argparse
 import gzip

@@ -3,6 +3,7 @@
 #include <unistd.h>
 
 extern const char *generator_expected_payload(void);
+extern const char *generator_relative_expected_payload(void);
 
 int main(int argc, char **argv) {
   char executable[4096];
@@ -21,6 +22,7 @@ int main(int argc, char **argv) {
   if (!fgets(payload, sizeof(payload), input)) return 4;
   fclose(input);
   if (strcmp(payload, generator_expected_payload()) != 0) return 7;
+  if (strcmp(payload, generator_relative_expected_payload()) != 0) return 8;
   FILE *output = fopen(argv[1], "w");
   if (!output) return 5;
   fputs(payload, output);

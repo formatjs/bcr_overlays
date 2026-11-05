@@ -1,4 +1,5 @@
 load("@chromium//native:python_action.bzl", "chromium_python_action")
+load("@chromium//native:resource_copy.bzl", "chromium_resource_copy")
 load("@chromium//native:tool_inputs.bzl", "chromium_tool_inputs")
 load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
 load("@rules_cc//cc:cc_import.bzl", "cc_import")
@@ -913,17 +914,25 @@ cc_test(
 )
 
 cc_binary(
-    name = "generator_runtime_probe",
+    name = "fixtures/generator_runtime_probe",
     srcs = ["tests/generator_runtime_probe.c"],
-    data = ["tests/generator_payload.txt"],
-    deps = [":generator_runtime_library"],
+    data = [
+        "tests/generator_payload.txt",
+        ":fixtures/lib/libgenerator_relative_runtime.so",
+    ],
+    linkopts = ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"],
+    deps = [
+        ":generator_relative_runtime_library",
+        ":generator_runtime_library",
+    ],
 )
 
 chromium_tool_inputs(
     name = "generator_runtime_inputs",
     logical_path = "out/bazel-import/probe",
     runtime_data = {":tests/generator_payload.txt": "payload.txt"},
-    tool = ":generator_runtime_probe",
+    stage_runtime = True,
+    tool = ":fixtures/generator_runtime_probe",
 )
 
 chromium_python_action(
@@ -957,4 +966,23 @@ cc_binary(
 cc_import(
     name = "generator_runtime_library",
     shared_library = ":libgenerator_runtime.so",
+)
+
+cc_binary(
+    name = "generator_relative_runtime.ifso",
+    srcs = ["tests/generator_relative_runtime_library.c"],
+    linkopts = ["-Wl,-soname,libgenerator_relative_runtime.so"],
+    linkshared = True,
+)
+
+cc_import(
+    name = "generator_relative_runtime_library",
+    interface_library = ":generator_relative_runtime.ifso",
+    system_provided = True,
+)
+
+chromium_resource_copy(
+    name = "generator_relative_runtime_data",
+    srcs = {":generator_relative_runtime.ifso": "runtime/library"},
+    outputs = {"fixtures/lib/libgenerator_relative_runtime.so": "runtime/library"},
 )

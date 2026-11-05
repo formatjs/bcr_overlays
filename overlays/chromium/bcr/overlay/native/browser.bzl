@@ -26,7 +26,11 @@ def native_browser():
             imports = ["../third_party/dom_distiller_js/protoc_plugins"],
             deps = ["@protobuf//:protobuf_python"],
         )
+    native_tools = {":" + library["name"]: True for library in LIBRARIES.values() if library["kind"] == "executable"}
     for name, tool in TOOLS.items():
+        tool = dict(tool)
+        if tool["tool"] in native_tools:
+            tool["stage_runtime"] = True
         chromium_tool_inputs(name = name, **tool)
     for bridge in BRIDGES:
         chromium_cxx_bridge(**bridge)

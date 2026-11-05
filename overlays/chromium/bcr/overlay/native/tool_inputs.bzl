@@ -5,11 +5,27 @@ load(":python_action.bzl", "ChromiumFilesInfo")
 def _tool_inputs_impl(ctx):
     runner = ctx.attr.tool[DefaultInfo].files_to_run
     executable = runner.executable
+    mappings = [(executable, ctx.attr.logical_path)]
+    if ctx.attr.runtime_data:
+        # Preserve native loader paths when the executable must move beside data.
+        for file in ctx.attr.tool[DefaultInfo].default_runfiles.files.to_list():
+            if file == executable:
+                continue
+            path = file.short_path
+            runfile = path[3:] if path.startswith("../") else ctx.workspace_name + "/" + path
+            mappings.append((file, ctx.attr.logical_path + ".runfiles/" + runfile))
+        directory = ctx.attr.logical_path.rsplit("/", 1)[0]
+        for target, relative in ctx.attr.runtime_data.items():
+            files = target[DefaultInfo].files.to_list()
+            if len(files) != 1:
+                fail("runtime data must identify one file: %s" % target.label)
+            mappings.append((files[0], directory + "/" + relative))
     return [
-        DefaultInfo(files = depset([executable])),
+        DefaultInfo(files = depset([file for file, _ in mappings])),
         ChromiumFilesInfo(
-            mappings = depset([(executable, ctx.attr.logical_path)]),
+            mappings = depset(mappings),
             executables = [(runner, ctx.attr.logical_path)],
+            copied_executables = depset([ctx.attr.logical_path] if ctx.attr.runtime_data else []),
         ),
     ]
 
@@ -18,5 +34,6 @@ chromium_tool_inputs = rule(
     attrs = {
         "tool": attr.label(executable = True, cfg = "exec", mandatory = True),
         "logical_path": attr.string(mandatory = True),
+        "runtime_data": attr.label_keyed_string_dict(allow_files = True, cfg = "exec"),
     },
 )

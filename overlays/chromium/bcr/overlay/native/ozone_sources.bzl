@@ -27562,5 +27562,6 @@ TOOLS = {
     "ozone_c78f2ee0b9f8ce7e_tool": {
         "tool": ":ozone_c78f2ee0b9f8ce7e",
         "logical_path": "out/bazel-import/top_domain_generator",
+        "runtime_data": {"@chromium_icu//:common/icudtl.dat": "icudtl.dat"},
     },
 }

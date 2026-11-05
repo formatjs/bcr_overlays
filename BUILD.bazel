@@ -1,4 +1,8 @@
+load("@chromium//native:python_action.bzl", "chromium_python_action")
+load("@chromium//native:tool_inputs.bzl", "chromium_tool_inputs")
+load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
 load("@rules_cc//cc:cc_test.bzl", "cc_test")
+load("@rules_python//python:defs.bzl", "py_test")
 load("@rules_rs//rs:rust_test.bzl", "rust_test")
 
 exports_files([
@@ -121,6 +125,7 @@ test_suite(
         ":dawn_native_runtime_test",
         ":dawn_runtime_test",
         ":fonts_runtime_test",
+        ":generator_runtime_test",
         ":geometry_runtime_test",
         ":gfx_runtime_test",
         ":gpu_client_runtime_test",
@@ -904,4 +909,38 @@ cc_test(
         "@chromium//native:libxslt",
         "@rules_cc//cc/runfiles",
     ],
+)
+
+cc_binary(
+    name = "generator_runtime_probe",
+    srcs = ["tests/generator_runtime_probe.c"],
+    data = ["tests/generator_payload.txt"],
+)
+
+chromium_tool_inputs(
+    name = "generator_runtime_inputs",
+    logical_path = "out/bazel-import/probe",
+    runtime_data = {":tests/generator_payload.txt": "payload.txt"},
+    tool = ":generator_runtime_probe",
+)
+
+chromium_python_action(
+    name = "generator_runtime_output",
+    srcs = {"@chromium//build:gn_run_binary.py": "build/gn_run_binary.py"},
+    outs = {"generator_runtime_result.txt": "generator_runtime_result.txt"},
+    args = [
+        "probe",
+        "generator_runtime_result.txt",
+    ],
+    script = "build/gn_run_binary.py",
+    deps = [":generator_runtime_inputs"],
+)
+
+py_test(
+    name = "generator_runtime_test",
+    size = "small",
+    srcs = ["tests/generator_runtime_test.py"],
+    args = ["$(rlocationpath :generator_runtime_output)"],
+    data = [":generator_runtime_output"],
+    deps = ["@rules_python//python/runfiles"],
 )

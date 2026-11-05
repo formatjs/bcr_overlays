@@ -1177,8 +1177,11 @@ def main():
                           for output in target.get('outputs', [])}
 
     def native_tool(label, path):
-        return dict(tool=reused.get(label, ':' + name(label)), logical_path=path[2:],
+        tool = dict(tool=reused.get(label, ':' + name(label)), logical_path=path[2:],
                     exec_compatible_with=['@llvm//constraints/libc:gnu.2.31'])
+        if path.rsplit('/', 1)[-1] == 'top_domain_generator':
+            tool['runtime_data'] = {'@chromium_icu//:common/icudtl.dat': 'icudtl.dat'}
+        return tool
 
     for label, target in sorted(actions.items()):
         instances = [(None, target.get('outputs', []))]

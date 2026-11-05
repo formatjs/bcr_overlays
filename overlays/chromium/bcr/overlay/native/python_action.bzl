@@ -5,6 +5,7 @@ ChromiumFilesInfo = provider(
     fields = {
         "mappings": "Depset of (file, Chromium-relative path) pairs.",
         "executables": "Optional list of (files_to_run, logical path) pairs.",
+        "copied_executables": "Depset of tools requiring staged sibling data.",
     },
 )
 
@@ -25,6 +26,9 @@ def _executables(deps):
             tools[logical] = runner
     return [(tools[path], path) for path in sorted(tools)]
 
+def _copied_executables(deps):
+    return depset(transitive = [getattr(dep[ChromiumFilesInfo], "copied_executables", depset()) for dep in deps])
+
 def _direct_mappings(srcs):
     mappings = []
     for target, logical in srcs.items():
@@ -41,7 +45,7 @@ def _logical_group_impl(ctx):
     )
     return [
         DefaultInfo(files = depset([file for file, _ in mappings.to_list()])),
-        ChromiumFilesInfo(mappings = mappings, executables = _executables(ctx.attr.deps)),
+        ChromiumFilesInfo(mappings = mappings, executables = _executables(ctx.attr.deps), copied_executables = _copied_executables(ctx.attr.deps)),
         ChromiumGeneratedFilesInfo(mappings = depset(
             [pair for pair in _direct_mappings(ctx.attr.srcs) if pair[1].startswith("out/bazel-import/")],
             transitive = _generated(ctx.attr.deps),
@@ -78,8 +82,9 @@ def _python_action_impl(ctx):
         "build_dir": "out/bazel-import",
     }
     executables = _executables(ctx.attr.deps)
+    copied = _copied_executables(ctx.attr.deps)
     if executables:
-        description["symlink_inputs"] = [logical for _, logical in executables]
+        description["symlink_inputs"] = [logical for _, logical in executables if logical not in copied.to_list()]
     ctx.actions.write(manifest, json.encode(description))
     ctx.actions.run(
         executable = ctx.attr._python[platform_common.ToolchainInfo].py3_runtime.interpreter,
@@ -102,6 +107,7 @@ def _python_action_impl(ctx):
                 for out, logical in zip(outputs, ctx.attr.logical_outputs)
             ], transitive = [mappings] if ctx.attr.propagate_inputs else []),
             executables = executables if ctx.attr.propagate_inputs else [],
+            copied_executables = copied if ctx.attr.propagate_inputs else depset(),
         ),
     ]
 

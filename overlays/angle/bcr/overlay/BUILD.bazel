@@ -1,0 +1,95 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_python//python:defs.bzl", "py_binary")
+load("//bazel:versions.bzl", "angle_versions")
+load(
+    ":angle_sources.bzl",
+    "COMMON_HDRS",
+    "COMMON_SRCS",
+    "PREPROCESSOR_HDRS",
+    "PREPROCESSOR_SRCS",
+    "PUBLIC_HDRS",
+    "SHADER_STATE_HDRS",
+    "SHADER_STATE_SRCS",
+    "TRANSLATOR_HDRS",
+    "TRANSLATOR_SRCS",
+    "XXHASH_HDRS",
+    "XXHASH_SRCS",
+)
+
+py_binary(
+    name = "program_version_tool",
+    srcs = ["src/program_serialize_data_version.py"],
+    main = "src/program_serialize_data_version.py",
+)
+
+angle_versions(
+    name = "generated_version_headers",
+    srcs = depset(PUBLIC_HDRS + XXHASH_HDRS + XXHASH_SRCS + COMMON_HDRS + COMMON_SRCS + SHADER_STATE_HDRS + SHADER_STATE_SRCS +
+                  PREPROCESSOR_HDRS + PREPROCESSOR_SRCS + TRANSLATOR_HDRS + TRANSLATOR_SRCS + [
+        "BUILD.bazel",
+        "MODULE.bazel",
+        "angle_sources.bzl",
+        "//bazel:versions.bzl",
+    ]).to_list(),
+    commit_hash = "e5b338502c7c",
+)
+
+cc_library(
+    name = "version_headers",
+    hdrs = [":generated_version_headers"],
+    strip_include_prefix = "generated_version_headers",
+)
+
+cc_library(
+    name = "xxhash",
+    srcs = XXHASH_SRCS,
+    hdrs = XXHASH_HDRS,
+    includes = ["src/common/third_party/xxhash"],
+)
+
+cc_library(
+    name = "common",
+    srcs = COMMON_SRCS,
+    hdrs = COMMON_HDRS + PUBLIC_HDRS,
+    copts = ["-std=c++20"],
+    defines = ["ANGLE_USE_ABSEIL"],
+    includes = [
+        "include",
+        "src",
+        "src/common/base",
+    ],
+    linkopts = [
+        "-ldl",
+        "-pthread",
+    ],
+    deps = [
+        ":xxhash",
+        "@abseil-cpp//absl/container:flat_hash_map",
+        "@abseil-cpp//absl/container:flat_hash_set",
+    ],
+)
+
+cc_library(
+    name = "translator",
+    srcs = PREPROCESSOR_SRCS + TRANSLATOR_SRCS + SHADER_STATE_SRCS + [
+        "src/common/angle_version_info.cpp",
+    ],
+    hdrs = PREPROCESSOR_HDRS + TRANSLATOR_HDRS + SHADER_STATE_HDRS + [
+        "src/common/angle_version.h",
+        "src/common/angle_version_info.h",
+    ],
+    copts = ["-std=c++20"],
+    defines = [
+        "ANGLE_ENABLE_ESSL",
+        "ANGLE_ENABLE_GLSL",
+    ],
+    includes = [
+        "include",
+        "src",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":common",
+        ":version_headers",
+    ],
+)

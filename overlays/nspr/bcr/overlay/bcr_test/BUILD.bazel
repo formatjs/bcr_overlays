@@ -1,0 +1,40 @@
+load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+cc_binary(
+    name = "libnspr_test_plugin.so",
+    testonly = True,
+    srcs = ["plugin.c"],
+    linkshared = True,
+    linkstatic = True,
+)
+
+cc_test(
+    name = "runtime_test",
+    size = "small",
+    srcs = ["runtime_test.cc"],
+    args = ["$(rlocationpath :libnspr_test_plugin.so)"],
+    copts = ["-std=c++20"],
+    data = [":libnspr_test_plugin.so"],
+    linkstatic = True,
+    visibility = ["//visibility:public"],
+    deps = [
+        "@nspr",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "shared_runtime_test",
+    size = "small",
+    srcs = ["runtime_test.cc"],
+    args = ["$(rlocationpath :libnspr_test_plugin.so)"],
+    copts = ["-std=c++20"],
+    data = [":libnspr_test_plugin.so"],
+    linkstatic = True,
+    visibility = ["//visibility:public"],
+    deps = [
+        "@nspr//:shared",
+        "@rules_cc//cc/runfiles",
+    ],
+)

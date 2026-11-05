@@ -1,0 +1,18 @@
+{
+    "homepage": "https://firefox-source-docs.mozilla.org/nspr/",
+    "maintainers": [
+        {
+            "github": "longlho",
+            "github_user_id": 198255,
+            "name": "Long Ho"
+        }
+    ],
+    "repository": [
+        "https://hg.mozilla.org/projects/nspr",
+        "https://archive.mozilla.org/pub/nspr/releases"
+    ],
+    "versions": [
+        "4.29"
+    ],
+    "yanked_versions": {}
+}

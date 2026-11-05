@@ -1,16 +1,19 @@
 # SwiftShader native Bazel overlay
 
-Status: planned. Native implementation, archive checksum, tests and release version
-remain pending. This directory does not provide a buildable module yet.
+Implemented in the combined root workspace. Pinned Subzero/Marl, native assembly,
+BCR SPIR-V tools and native Wayland/FFI build with hermetic LLVM. Real software
+Vulkan compute and raster readbacks pass through Dawn with validation loaded.
+The original Python action generates the Linux ICD manifest beside the driver;
+the runtime test loads that manifest without rewriting its relative library path.
 
-Upstream: [SwiftShader](https://swiftshader.googlesource.com/SwiftShader.git), revision
-`5f1c459a11bb4899301e89609cbf7547f9f31e20`, matching Chromium 142.0.7444.59's DEPS.
-Machine-readable pin: [upstream.json](upstream.json).
+```sh
+bazel build @chromium//native:swiftshader_runtime
+bazel test @chromium//native:swiftshader_runtime_test //:wayland_runtime_test
+```
 
-BCR module name: `swiftshader`. Maintain this module's own `bcr/` directory,
-versions and presubmit. Once implemented, publish separately using the shared
-[staging tool](../../tools/stage_bcr_entry.py). An empty version list deliberately
-prevents publishing this scaffold.
+Upstream revision `5f1c459a11bb4899301e89609cbf7547f9f31e20` matches Chromium
+142.0.7444.59. [upstream.json](upstream.json) records the pin. Rules/source lists
+live in [Chromium's native directory](../chromium/bcr/overlay/native/swiftshader.bzl).
 
-Build rules and generators must be native Bazel. Reuse compatible BCR dependencies.
-No CMake, GN, Ninja or foreign-build wrappers.
+Standalone module packaging/publication remains planned. The empty version list
+prevents publishing the scaffold. Browser assembly remains unfinished.

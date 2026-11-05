@@ -30,6 +30,22 @@ def _stamp_module(template: str, version: str) -> str:
     return template.replace(marker, f'version = "{version}"')
 
 
+def require_maintainers(metadata: dict) -> None:
+    maintainers = metadata.get("maintainers")
+    if not isinstance(maintainers, list) or not maintainers:
+        raise ValueError("BCR metadata requires at least one maintainer")
+
+
+def require_repository_url(metadata: dict, source: dict) -> None:
+    url = source["url"]
+    for repository in metadata.get("repository", []):
+        prefix = ("https://github.com/" + repository.removeprefix("github:")
+                  if repository.startswith("github:") else repository).rstrip("/")
+        if url == prefix or url.startswith(prefix + "/"):
+            return
+    raise ValueError("source URL not allowed by metadata repository")
+
+
 def stage_entry(
     source_registry: pathlib.Path,
     target_registry: pathlib.Path,
@@ -42,6 +58,13 @@ def stage_entry(
     source_metadata = _read_json(source_registry / "metadata.json")
     if version not in source_metadata["versions"]:
         raise ValueError(f"{module}@{version} missing from source metadata")
+    require_maintainers(source_metadata)
+
+    for name in ("overlay", "patches"):
+        tree = source_registry / name
+        for path in [tree, *tree.rglob("*")]:
+            if path.is_symlink():
+                raise ValueError(f"symlink in published source: {path}")
 
     target_module = target_registry / "modules" / module
     target_version = target_module / version
@@ -62,6 +85,10 @@ def stage_entry(
         raise ValueError("registry and overlay MODULE.bazel templates differ")
     published_module = _stamp_module(template, version)
     source = _read_json(source_registry / "source.json")
+    require_repository_url(source_metadata, source)
+    patch_strip = source.get("patch_strip", 1)
+    if type(patch_strip) is not int or patch_strip < 0:
+        raise ValueError("patch_strip must be a non-negative integer")
 
     target_module.mkdir(parents=True, exist_ok=True)
     shutil.copytree(source_registry / "overlay", target_version / "overlay")
@@ -75,7 +102,7 @@ def stage_entry(
         for path in sorted((target_version / "overlay").rglob("*"))
         if path.is_file()
     }
-    source["patch_strip"] = 1
+    source["patch_strip"] = patch_strip
     source["patches"] = {
         path.relative_to(target_version / "patches").as_posix(): _integrity(path)
         for path in sorted((target_version / "patches").rglob("*"))

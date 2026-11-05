@@ -1,0 +1,8 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "embedding.proto",
+    "embedding_options.proto"
+])
+# END BLINK_PLATFORM INPUTS

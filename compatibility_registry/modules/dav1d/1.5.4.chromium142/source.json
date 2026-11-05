@@ -1,0 +1,17 @@
+{
+    "url": "https://deb.debian.org/debian/pool/main/d/dav1d/dav1d_1.5.4.orig.tar.xz",
+    "integrity": "sha256-aGYWt8aeuI1ERZORqyXKwTtmR6OyiINcV4TnHBUUpcU=",
+    "strip_prefix": "dav1d-1.5.4",
+    "patches": {},
+    "overlay": {
+        "BUILD.bazel": "sha256-eSgzyauTIluhnN2uS1KEBQACLS+ruvtmqW1krwVHfIg=",
+        "MODULE.bazel": "sha256-QZE5OtcH0AUOhN0ILtG4zhOf4WdEdHlqnM6KM2IX4Hw=",
+        "config.asm": "sha256-1Is1g0lY87urWNy9MI94VL2VtmzzlDbrVpAUN5xW++4=",
+        "config.h": "sha256-pXLLmspDFHdcKCesr62z7leSIwxAU1nqMG4kbPBgBSI=",
+        "include/vcs_version.h": "sha256-qiZpUPiYHIQl6YskSudw3H8algUCLxaRYYOie3q0ASg=",
+        "bcr_test/MODULE.bazel": "sha256-Ny4U6nNZjAHsYVCV+hK8fyGfKbu+e9+Pe67XclrM96E=",
+        "bcr_test/BUILD.bazel": "sha256-HIxVakN7WY1TKl2i1fxnoi/c546BTKoK8n7LMjt5bp8=",
+        "bcr_test/.bazelrc": "sha256-aJshsGcxO/WgE3/UZTJEhPTcCW8H4QOvqP6QXhEWk6E=",
+        "bcr_test/.bazelversion": "sha256-G5SH1VvqR/6lDSJsycU7xUiHetKjGLrI+8izIPQp5cU="
+    }
+}

@@ -1,0 +1,22 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["**"]))
+
+# Blink includes the generated Ragel scanner as a C fragment.
+_HEADERS = glob(["**/*.h", "**/*.hpp", "**/*.inc", "emoji_presentation_scanner.c"], allow_empty = True)
+
+cc_library(
+    name = "headers",
+    hdrs = _HEADERS,
+    includes = [".", "include", "src", "cpp/src"],
+)
+
+cc_library(
+    name = "chromium_headers",
+    hdrs = _HEADERS,
+    include_prefix = "@@PREFIX@@",
+    strip_include_prefix = "/",
+    deps = [":headers"],
+)

@@ -1,0 +1,19 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -499,6 +499,15 @@
+         "//conditions:default": ":arm64_vpx_bundle_non_windows",
+     }),
+     visibility = ["//visibility:private"],
++)
++
++cc_library(
++    name = "vpx_rc",
++    srcs = ["vp8/vp8_ratectrl_rtc.cc", "vp9/ratectrl_rtc.cc"],
++    hdrs = ["vp8/vp8_ratectrl_rtc.h", "vp9/ratectrl_rtc.h", "vpx/internal/vpx_ratectrl_rtc.h"],
++    strip_include_prefix = ".",
++    visibility = ["//visibility:public"],
++    deps = [":vpx"],
+ )
+ 
+ cc_library(

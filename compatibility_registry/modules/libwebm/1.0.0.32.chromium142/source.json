@@ -1,0 +1,17 @@
+{
+    "url": "https://github.com/webmproject/libwebm/archive/libwebm-1.0.0.32.tar.gz",
+    "integrity": "sha256-f9Xghb2p+AMc8q0qHlLZt7KcupwLlq0s55TOieQknrg=",
+    "strip_prefix": "libwebm-libwebm-1.0.0.32",
+    "overlay": {
+        "BUILD.bazel": "sha256-mMVDEfHgwNJFHysPV9fR+PDMsE/1ULEa7qBnX2PpE9E=",
+        "MODULE.bazel": "sha256-ewv9OLlYgacjNR74l+AW6h5eWtu+gGYPl+ktGfvadXY=",
+        "tests/BUILD.bazel": "sha256-KogduRdKAMZf1LdhzmbyNpd+Kqc+Str/vphu1ppYA3c=",
+        "tests/MODULE.bazel": "sha256-sQ/vGhtEZYJoNUT+nCU+a0D9ysT8d4KpPQSqHrooOBY=",
+        "tests/smoke.cc": "sha256-nlsh/xGy69d/TF3unv4yj4+Knuy6f1aeziCK4toJsD0=",
+        "bcr_test/MODULE.bazel": "sha256-ngDXfrNg1R/MZvLxf7QhGKZyKTnVK981mnru0udh1KM=",
+        "bcr_test/BUILD.bazel": "sha256-sJ9w+0EP3lKlwrm9qKE/E62FDonKPD4PX3WOYb0kb78=",
+        "bcr_test/.bazelrc": "sha256-aJshsGcxO/WgE3/UZTJEhPTcCW8H4QOvqP6QXhEWk6E=",
+        "bcr_test/.bazelversion": "sha256-G5SH1VvqR/6lDSJsycU7xUiHetKjGLrI+8izIPQp5cU="
+    },
+    "patches": {}
+}

@@ -1,0 +1,166 @@
+## 85_security_load.patch by Mike Hommey <glandium@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Load modules from $ORIGIN/nss.
+
+Index: nss/nss/cmd/shlibsign/shlibsign.c
+===================================================================
+--- nss.orig/nss/cmd/shlibsign/shlibsign.c
++++ nss/nss/cmd/shlibsign/shlibsign.c
+@@ -49,6 +49,9 @@
+ /* freebl headers */
+ #include "shsign.h"
+ 
++/* nssutil headers */
++#include "secport.h"
++
+ #define NUM_ELEM(array) (sizeof(array) / sizeof(array[0]))
+ CK_BBOOL true = CK_TRUE;
+ CK_BBOOL false = CK_FALSE;
+@@ -706,7 +709,6 @@ main(int argc, char **argv)
+ {
+     PLOptState *optstate;
+     char *program_name;
+-    char *libname = NULL;
+     PRLibrary *lib = NULL;
+     PRFileDesc *fd;
+     PRStatus rv = PR_SUCCESS;
+@@ -864,22 +866,21 @@ main(int argc, char **argv)
+         return 1;
+     }
+ 
+-    /* Get the platform-dependent library name of the
++    /* Get the platform-dependent library of the
+      * NSS cryptographic module.
+      */
+-    libname = PR_GetLibraryName(NULL, "softokn3");
+-    assert(libname != NULL);
+-    if (!libname) {
+-        PR_fprintf(PR_STDERR, "getting softokn3 failed");
+-        goto cleanup;
+-    }
+-    lib = PR_LoadLibrary(libname);
++    lib = PORT_LoadLibraryFromOrigin(
++        SHLIB_PREFIX"nssutil"SHLIB_VERSION"."SHLIB_SUFFIX,
++        (PRFuncPtr) &PORT_Alloc, /* Use an arbitry unused function, as on some
++                                  * platforms, using PORT_LoadLibraryFromOrigin
++                                  * would only give a pointer in the PLT because
++                                  * of the function call. */
++        SHLIB_PREFIX"softokn"SOFTOKEN_SHLIB_VERSION"."SHLIB_SUFFIX);
+     assert(lib != NULL);
+     if (!lib) {
+         PR_fprintf(PR_STDERR, "loading softokn3 failed");
+         goto cleanup;
+     }
+-    PR_FreeLibraryName(libname);
+ 
+     if (FIPSMODE) {
+         /* FIPSMODE == FC_GetFunctionList */
+Index: nss/nss/lib/pk11wrap/pk11load.c
+===================================================================
+--- nss.orig/nss/lib/pk11wrap/pk11load.c
++++ nss/nss/lib/pk11wrap/pk11load.c
+@@ -466,6 +466,13 @@ secmod_LoadPKCS11Module(SECMODModule *mo
+          * unload the library if anything goes wrong from here on out...
+          */
+         library = PR_LoadLibrary(mod->dllName);
++        if ((library == NULL) &&
++            !rindex(mod->dllName, PR_GetDirectorySeparator())) {
++             library = PORT_LoadLibraryFromOrigin(my_shlib_name,
++                                       (PRFuncPtr) &softoken_LoadDSO,
++                                       mod->dllName);
++        }
++
+         mod->library = (void *)library;
+ 
+         if (library == NULL) {
+Index: nss/nss/lib/util/secload.c
+===================================================================
+--- nss.orig/nss/lib/util/secload.c
++++ nss/nss/lib/util/secload.c
+@@ -65,14 +65,19 @@ loader_LoadLibInReferenceDir(const char*
+ {
+     PRLibrary* dlh = NULL;
+     char* fullName = NULL;
+-    char* c;
++    const char* c;
+     PRLibSpec libSpec;
+ 
+     /* Remove the trailing filename from referencePath and add the new one */
+     c = strrchr(referencePath, PR_GetDirectorySeparator());
++    if (!c) { /* referencePath doesn't contain a / means that dladdr gave us argv[0]
++               * and program was called from $PATH. Hack to get libs from /usr/lib */
++        referencePath = "/usr/lib/";
++        c = &referencePath[8]; /* last / */
++    }
+     if (c) {
+         size_t referencePathSize = 1 + c - referencePath;
+-        fullName = (char*)PORT_Alloc(strlen(name) + referencePathSize + 1);
++        fullName = (char*)PORT_Alloc(strlen(name) + referencePathSize + 5);
+         if (fullName) {
+             memcpy(fullName, referencePath, referencePathSize);
+             strcpy(fullName + referencePathSize, name);
+@@ -82,6 +87,12 @@ loader_LoadLibInReferenceDir(const char*
+ #endif
+             libSpec.type = PR_LibSpec_Pathname;
+             libSpec.value.pathname = fullName;
++            if ((referencePathSize >= 4) &&
++                (strncmp(fullName + referencePathSize - 4, "bin", 3) == 0)) {
++                memcpy(fullName + referencePathSize -4, "lib", 3);
++            }
++            strcpy(fullName + referencePathSize, "nss/");
++            strcpy(fullName + referencePathSize + 4, name);
+             dlh = PR_LoadLibraryWithFlags(libSpec, PR_LD_NOW | PR_LD_LOCAL
+ #ifdef PR_LD_ALT_SEARCH_PATH
+                                                        /* allow library's dependencies to be found in the same directory
+@@ -89,6 +100,10 @@ loader_LoadLibInReferenceDir(const char*
+                                                        | PR_LD_ALT_SEARCH_PATH
+ #endif
+                                           );
++            if (! dlh) {
++                strcpy(fullName + referencePathSize, name);
++                dlh = PR_LoadLibraryWithFlags(libSpec, PR_LD_NOW | PR_LD_LOCAL);
++            }
+             PORT_Free(fullName);
+         }
+     }
+Index: nss/nss/cmd/shlibsign/Makefile
+===================================================================
+--- nss.orig/nss/cmd/shlibsign/Makefile
++++ nss/nss/cmd/shlibsign/Makefile
+@@ -30,6 +30,7 @@ EXTRA_LIBS += \
+ 	$(NSPR_LIB_DIR)/$(NSPR31_LIB_PREFIX)plc4.$(LIB_SUFFIX) \
+ 	$(NSPR_LIB_DIR)/$(NSPR31_LIB_PREFIX)plds4.$(LIB_SUFFIX) \
+ 	$(NSPR_LIB_DIR)/$(NSPR31_LIB_PREFIX)nspr4.$(LIB_SUFFIX) \
++	$(NSSUTIL_LIB_DIR)/$(IMPORT_LIB_PREFIX)nssutil3$(IMPORT_LIB_SUFFIX) \
+ 	$(NULL)
+ 
+ else
+@@ -39,6 +40,8 @@ EXTRA_SHARED_LIBS += \
+ 	-lplc4 \
+ 	-lplds4 \
+ 	-lnspr4 \
++	-L$(NSSUTIL_LIB_DIR) \
++	-lnssutil3 \
+ 	$(NULL)
+ 
+ endif
+Index: nss/nss/cmd/shlibsign/manifest.mn
+===================================================================
+--- nss.orig/nss/cmd/shlibsign/manifest.mn
++++ nss/nss/cmd/shlibsign/manifest.mn
+@@ -8,7 +8,13 @@ CORE_DEPTH = ../..
+ # MODULE public and private header  directories are implicitly REQUIRED.
+ MODULE = nss
+ 
+-DEFINES += -DSHLIB_SUFFIX=\"$(DLL_SUFFIX)\" -DSHLIB_PREFIX=\"$(DLL_PREFIX)\"
++LIBRARY_VERSION = 3
++SOFTOKEN_LIBRARY_VERSION = 3
++
++DEFINES += -DSHLIB_SUFFIX=\"$(DLL_SUFFIX)\" -DSHLIB_PREFIX=\"$(DLL_PREFIX)\" \
++	-DSHLIB_VERSION=\"$(LIBRARY_VERSION)\" \
++	-DSOFTOKEN_SHLIB_VERSION=\"$(SOFTOKEN_LIBRARY_VERSION)\"
++
+ 
+ CSRCS = \
+ 	shlibsign.c \

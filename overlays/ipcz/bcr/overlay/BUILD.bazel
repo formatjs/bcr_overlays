@@ -1,0 +1,88 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("//bazel:ipcz.bzl", "ipcz_library", "ipcz_reference_drivers")
+load("//bazel:sources.bzl", "COPTS", "CORE_HEADERS", "CORE_SOURCES")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(CORE_SOURCES + CORE_HEADERS + glob([
+    "third_party/ipcz/src/reference_drivers/*.cc",
+    "third_party/ipcz/src/reference_drivers/*.h",
+]))
+
+cc_library(
+    name = "headers",
+    hdrs = ["third_party/ipcz/include/ipcz/ipcz.h"],
+    strip_include_prefix = "third_party/ipcz/include",
+)
+
+cc_library(
+    name = "static_api_header",
+    hdrs = ["third_party/ipcz/src/api.h"],
+    include_prefix = "ipcz",
+    strip_include_prefix = "third_party/ipcz/src",
+)
+
+cc_library(
+    name = "absl_bridge",
+    hdrs = glob(["absl_forward/**/*.h"]),
+    include_prefix = "third_party/abseil-cpp/absl",
+    strip_include_prefix = "absl_forward",
+    deps = [
+        "@abseil-cpp//absl/base:core_headers",
+        "@abseil-cpp//absl/base:log_severity",
+        "@abseil-cpp//absl/cleanup",
+        "@abseil-cpp//absl/container:flat_hash_map",
+        "@abseil-cpp//absl/container:flat_hash_set",
+        "@abseil-cpp//absl/container:inlined_vector",
+        "@abseil-cpp//absl/debugging:stacktrace",
+        "@abseil-cpp//absl/debugging:symbolize",
+        "@abseil-cpp//absl/functional:overload",
+        "@abseil-cpp//absl/numeric:bits",
+        "@abseil-cpp//absl/strings",
+        "@abseil-cpp//absl/synchronization",
+        "@abseil-cpp//absl/types:span",
+    ],
+)
+
+cc_library(
+    name = "internal_headers",
+    hdrs = CORE_HEADERS,
+    includes = ["third_party/ipcz/src"],
+    deps = [
+        ":absl_bridge",
+        ":headers",
+        ":static_api_header",
+    ],
+)
+
+cc_library(
+    name = "platform_headers",
+    hdrs = [
+        "build/build_config.h",
+        "build/buildflag.h",
+    ],
+    include_prefix = "build",
+    strip_include_prefix = "build",
+)
+
+cc_library(
+    name = "standalone_support",
+    srcs = [
+        "third_party/ipcz/src/standalone/base/logging.cc",
+        "third_party/ipcz/src/standalone/base/stack_trace.cc",
+    ],
+    copts = COPTS,
+    deps = [
+        ":internal_headers",
+        ":platform_headers",
+    ],
+)
+
+ipcz_library(name = "ipcz")
+
+ipcz_reference_drivers(
+    name = "reference_drivers",
+    ipcz = ":ipcz",
+)
+
+exports_files(["third_party/ipcz/LICENSE"])

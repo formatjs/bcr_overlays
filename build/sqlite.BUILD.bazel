@@ -1,0 +1,9 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+cc_library(
+    name = "headers",
+    hdrs = ["amalgamation/rename_exports.h", "amalgamation/sqlite3.h", "amalgamation/sqlite3.c"],
+    include_prefix = "third_party/sqlite/src",
+    strip_include_prefix = ".",
+    visibility = ["//visibility:public"],
+)

@@ -1,0 +1,11 @@
+exports_files([
+    "protobuf_config.bzl",
+    "buildflags.bzl",
+    "chromium_flags.bzl",
+])
+
+exports_files([
+    "configured_library.bzl",
+    "chromium_sdk.bzl",
+    "sdk_sources.bzl",
+])

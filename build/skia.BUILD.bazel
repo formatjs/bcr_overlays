@@ -1,0 +1,10 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+exports_files(glob(["third_party/skia/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["third_party/skia/**/*.h", "third_party/skia/**/*.inc"]),
+    includes = [".", "third_party/skia"],
+)

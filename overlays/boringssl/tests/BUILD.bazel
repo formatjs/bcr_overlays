@@ -1,0 +1,4 @@
+test_suite(
+    name = "pki_api_test",
+    tests = ["@boringssl//bcr_test:pki_api_test"],
+)

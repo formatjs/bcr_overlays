@@ -1,0 +1,42 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "gtest_prod",
+    hdrs = ["include/gtest/gtest_prod.h"],
+    includes = ["../.."],
+    deps = ["@googletest//:gtest_prod"],
+)
+
+exports_files(["BUILD.bazel"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "include/gtest/gtest_prod.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "include/gtest/gtest_prod.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "include/gtest/gtest_prod.h"
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "include/gtest/gtest_prod.h"
+])
+# END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "include/gtest/gtest_prod.h"
+])
+# END BROWSER INPUTS

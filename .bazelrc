@@ -1,0 +1,27 @@
+startup --host_jvm_args=-Xmx8g
+common --enable_bzlmod
+# Keep live build inputs outside shared extracted-cache cleanup.
+common --repo_contents_cache=
+# Bound default concurrency for container builds.
+build --jobs=8
+
+# Release analysis state while compiling the full browser.
+build:browser --jobs=4
+build:browser --discard_analysis_cache
+build:browser --notrack_incremental_state
+build:browser --nokeep_state_after_build
+test --test_output=errors
+
+# Keep Chromium and LLVM's C++ runtime in the same hardening mode.
+build --cxxopt=-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE
+build --host_cxxopt=-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE
+build --cxxopt=-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS
+build --host_cxxopt=-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS
+build --cxxopt=-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS
+build --host_cxxopt=-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS
+
+# Debian Bullseye desktop interfaces require symbols newer than glibc 2.28.
+build --platforms=@llvm//platforms:linux_x86_64_gnu.2.31
+
+# Keep BCR audio/video codec kernels optimized in the combined build.
+build --per_file_copt=external/(opus|libvpx|aom|dav1d|flac|libwebm|crc32c)[+]/.*@-O2

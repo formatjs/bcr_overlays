@@ -1,0 +1,34 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["**"]))
+
+filegroup(
+    name = "sources",
+    srcs = glob(["**"]),
+)
+
+_HEADERS = glob([
+    "**/*.h",
+    "**/*.hpp",
+    "**/*.hxx",
+    "**/*.inc",
+    "**/*.inl",
+    "Eigen/**",
+    "unsupported/Eigen/**",
+], allow_empty = True)
+
+cc_library(
+    name = "headers",
+    hdrs = _HEADERS,
+    includes = [".", "src", "include", "deps/clog/include", "third_party/xla", "third_party/xla/third_party/tsl"],
+)
+
+cc_library(
+    name = "chromium_headers",
+    hdrs = _HEADERS,
+    include_prefix = "third_party/@@PROJECT@@/src",
+    strip_include_prefix = "/",
+    deps = [":headers"],
+)

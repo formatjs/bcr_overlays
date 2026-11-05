@@ -1,0 +1,6 @@
+{
+    "repository": "https://github.com/chromium/chromium",
+    "revision": "4b8153ab58d3c3f4c9f7e4baad9616ecf80db5fa",
+    "source_path": "third_party/ipcz",
+    "chromium_version": "142.0.7444.59"
+}

@@ -1,0 +1,12 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+cc_test(
+    name = "smoke_test",
+    size = "small",
+    srcs = ["smoke_test.cc"],
+    copts = ["-std=c++20"],
+    linkstatic = True,
+    deps = ["@angle//:translator"],
+)
+
+exports_files(["smoke_test.cc"])

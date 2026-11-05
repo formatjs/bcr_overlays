@@ -5,5 +5,42 @@ module(
 )
 
 bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "rules_python", version = "1.8.0")
 bazel_dep(name = "platforms", version = "1.1.0")
 bazel_dep(name = "double-conversion", version = "3.3.1.bcr.1")
+bazel_dep(name = "protobuf", version = "33.4")
+bazel_dep(name = "re2", version = "2025-08-12.bcr.1")
+bazel_dep(name = "perfetto", version = "52.0.chromium142")
+bazel_dep(name = "rules_rust", version = "0.75.0")
+
+chromium_rust = use_extension("//native/rust:extensions.bzl", "chromium_rust")
+use_repo(chromium_rust, "chromium_rust_compiler")
+
+bazel_dep(name = "rules_rust_bindgen", version = "0.75.0")
+bazel_dep(name = "abseil-cpp", version = "20250814.1.chromium142")
+bazel_dep(name = "boringssl", version = "0.20251002.0.chromium142")
+bazel_dep(name = "chromium_icu", version = "74.2.chromium142")
+bazel_dep(name = "glib", version = "2.82.2.bcr.11")
+bazel_dep(name = "linux-syscall-support", version = "0.0.0-20240201-ed31caa")
+bazel_dep(name = "zlib", version = "1.3.1.bcr.9")
+bazel_dep(name = "googletest", version = "1.17.0.bcr.2")
+bazel_dep(name = "compact_enc_det", version = "0.0.0-20190221-ba412ea")
+bazel_dep(name = "brotli", version = "1.2.0.bcr.3")
+bazel_dep(name = "curl", version = "8.12.0.bcr.1")
+
+# BEGIN CHROMIUM NODE DEPENDENCIES
+bazel_dep(name = "rules_nodejs", version = "6.7.7")
+
+node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
+node.toolchain(node_version = "22.11.0")
+use_repo(node, "nodejs_linux_amd64")
+
+npm_sources = use_extension("//native:node_deps.bzl", "npm_sources")
+use_repo(npm_sources, "chromium_node_modules")
+# END CHROMIUM NODE DEPENDENCIES
+
+bazel_dep(name = "ipcz", version = "0.0.0.chromium142")
+bazel_dep(name = "nss", version = "3.61.deb11u3")
+
+chromium_deps = use_extension("//native:dependencies.bzl", "chromium_dependencies")
+use_repo(chromium_deps, "chromium_quiche")

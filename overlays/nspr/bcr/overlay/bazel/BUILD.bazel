@@ -1,0 +1,4 @@
+exports_files([
+    "config.bzl",
+    "sources.bzl",
+])

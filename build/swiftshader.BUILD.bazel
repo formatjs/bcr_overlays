@@ -1,0 +1,29 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["**"], exclude = ["BUILD.bazel"]))
+
+cc_library(
+    name = "headers",
+    hdrs = [p for p in glob([
+        "src/**",
+        "include/**",
+        "third_party/subzero/**",
+        "third_party/llvm-subzero/**",
+        "third_party/marl/**",
+        "third_party/astc-encoder/**",
+    ], allow_empty = True) if p.endswith((".h", ".hpp", ".inc", ".inl", ".def"))],
+    include_prefix = "third_party/swiftshader",
+    includes = [
+        ".",
+        "src",
+        "include",
+        "third_party/subzero",
+        "third_party/subzero/pnacl-llvm/include",
+        "third_party/llvm-subzero/build/Linux/include",
+        "third_party/llvm-subzero/include",
+        "third_party/marl/include",
+        "third_party/astc-encoder/Source",
+    ],
+)

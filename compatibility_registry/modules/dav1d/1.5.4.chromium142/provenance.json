@@ -1,0 +1,9 @@
+{
+    "base_module": "dav1d@1.5.4",
+    "patches": {
+        "//build:dav1d-simd.patch": "sha256-Qfw6vrVMhIA5Afvy4mPOo/Il31Et0HqdVz/53epvGNk="
+    },
+    "added_dependencies": {
+        "rules_cc_autoconf": "0.35.0"
+    }
+}

@@ -1,0 +1,194 @@
+diff --git a/bazel/gen_compile_flags_txt_linux_amd64.bzl b/bazel/gen_compile_flags_txt_linux_amd64.bzl
+--- a/bazel/gen_compile_flags_txt_linux_amd64.bzl
++++ b/bazel/gen_compile_flags_txt_linux_amd64.bzl
+@@ -1,6 +1,6 @@
+ """This module provides the gen_compile_flags_txt_linux_amd64 macro."""
+ 
+-load("@skia_user_config//:copts.bzl", "DEFAULT_COPTS")
++load("//include/config:copts.bzl", "DEFAULT_COPTS")
+ load("//toolchain:linux_amd64_toolchain_config.bzl", "EXTERNAL_TOOLCHAIN")
+ 
+ def _gen_compile_flags_txt_linux_amd64_rule_impl(ctx):
+diff --git a/bazel/skia_rules.bzl b/bazel/skia_rules.bzl
+--- a/bazel/skia_rules.bzl
++++ b/bazel/skia_rules.bzl
+@@ -11,8 +11,8 @@
+ load("@rules_cc//cc:cc_library.bzl", "cc_library")
+ load("@rules_cc//cc:cc_test.bzl", "cc_test")
+ load("@rules_cc//cc:objc_library.bzl", "objc_library")
+-load("@skia_user_config//:copts.bzl", "DEFAULT_COPTS", "DEFAULT_OBJC_COPTS")
+-load("@skia_user_config//:linkopts.bzl", "DEFAULT_LINKOPTS")
++load("//include/config:copts.bzl", "DEFAULT_COPTS", "DEFAULT_OBJC_COPTS")
++load("//include/config:linkopts.bzl", "DEFAULT_LINKOPTS")
+ load(
+     "//bazel:generate_cpp_files_for_headers.bzl",
+     _generate_cpp_files_for_headers = "generate_cpp_files_for_headers",
+@@ -108,9 +108,9 @@
+     Args:
+         name: the name of the underlying executable.
+         copts: Flags which should be passed to the C++ compiler. By default, we use DEFAULT_COPTS
+-            from @skia_user_config//:copts.bzl.
++            from //include/config:copts.bzl.
+         linkopts: Global flags which should be passed to the C++ linker. By default, we use
+-            DEFAULT_LINKOPTS from  @skia_user_config//:linkopts.bzl. Other linker flags will be
++            DEFAULT_LINKOPTS from  //include/config:linkopts.bzl. Other linker flags will be
+             passed in via deps (see deps_and_linkopts below).
+         **kwargs: All the normal arguments that cc_binary takes.
+     """
+@@ -125,9 +125,9 @@
+     Args:
+         name: the name of the underlying executable.
+         copts: Flags which should be passed to the C++ compiler. By default, we use DEFAULT_COPTS
+-            from @skia_user_config//:copts.bzl.
++            from //include/config:copts.bzl.
+         linkopts: Global flags which should be passed to the C++ linker. By default, we use
+-            DEFAULT_LINKOPTS from  @skia_user_config//:linkopts.bzl. Other linker flags will be
++            DEFAULT_LINKOPTS from  //include/config:linkopts.bzl. Other linker flags will be
+             passed in via deps (see deps_and_linkopts below).
+         **kwargs: All the normal arguments that cc_binary takes.
+     """
+@@ -148,7 +148,7 @@
+     Args:
+         name: the name of the underlying library.
+         copts: Flags which should be passed to the C++ compiler. By default, we use DEFAULT_COPTS
+-            from @skia_user_config//:copts.bzl.
++            from //include/config:copts.bzl.
+         local_defines: Defines set when compiling this library, but not dependents. We
+             add a define to all our libraries to correctly export/import symbols.
+         **kwargs: All the normal arguments that cc_library takes.
+@@ -193,7 +193,7 @@
+     Args:
+         name: the name of the underlying target.
+         copts: Flags which should be passed to the C++ compiler. By default, we use
+-            DEFAULT_OBJC_COPTS from @skia_user_config//:copts.bzl.
++            DEFAULT_OBJC_COPTS from //include/config:copts.bzl.
+         deps: https://bazel.build/reference/be/objective-c#objc_library.deps
+         ios_frameworks: A list (not select) of iOS-specific Frameworks.
+         mac_frameworks: A list (not select) of Mac-specific Frameworks.
+diff --git a/include/config/BUILD.bazel b/include/config/BUILD.bazel
+--- a/include/config/BUILD.bazel
++++ b/include/config/BUILD.bazel
+@@ -17,6 +17,8 @@
+     hdrs = [
+         "SkUserConfig.h",
+     ],
++    includes = ["../.."],
++    strip_include_prefix = ".",
+     defines = [
+         "SK_USE_BAZEL_CONFIG_HEADER",
+     ] + select({
+diff --git a/modules/canvaskit/BUILD.bazel b/modules/canvaskit/BUILD.bazel
+--- a/modules/canvaskit/BUILD.bazel
++++ b/modules/canvaskit/BUILD.bazel
+@@ -1,5 +1,5 @@
+ load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+-load("@skia_user_config//:copts.bzl", "DEFAULT_COPTS")
++load("//include/config:copts.bzl", "DEFAULT_COPTS")
+ load("//bazel:macros.bzl", "bool_flag", "skia_filegroup", "wasm_cc_binary")
+ 
+ # TODO(b/417250857): need to update JS test harness
+diff --git a/modules/pathkit/BUILD.bazel b/modules/pathkit/BUILD.bazel
+--- a/modules/pathkit/BUILD.bazel
++++ b/modules/pathkit/BUILD.bazel
+@@ -1,5 +1,5 @@
+ load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+-load("@skia_user_config//:copts.bzl", "DEFAULT_COPTS")
++load("//include/config:copts.bzl", "DEFAULT_COPTS")
+ load("//bazel:macros.bzl", "wasm_cc_binary")
+ 
+ package(
+diff --git a/modules/skcms/BUILD.bazel b/modules/skcms/BUILD.bazel
+--- a/modules/skcms/BUILD.bazel
++++ b/modules/skcms/BUILD.bazel
+@@ -1,4 +1,4 @@
+-load("@skia_user_config//:copts.bzl", "DEFAULT_COPTS")
++load("//include/config:copts.bzl", "DEFAULT_COPTS")
+ load("//bazel:skia_rules.bzl", "skia_cc_library", "skia_filegroup")
+ 
+ package(
+diff --git a/src/base/BUILD.bazel b/src/base/BUILD.bazel
+--- a/src/base/BUILD.bazel
++++ b/src/base/BUILD.bazel
+@@ -112,7 +112,7 @@
+         "//tests:__subpackages__",
+         "//tools:__subpackages__",
+     ],
+-    deps = ["@skia_user_config//:user_config"],
++    deps = ["//include/config:user_config"],
+ )
+ 
+ generate_cpp_files_for_headers(
+diff --git a/src/gpu/ganesh/mtl/BUILD.bazel b/src/gpu/ganesh/mtl/BUILD.bazel
+--- a/src/gpu/ganesh/mtl/BUILD.bazel
++++ b/src/gpu/ganesh/mtl/BUILD.bazel
+@@ -1,4 +1,4 @@
+-load("@skia_user_config//:copts.bzl", "DEFAULT_OBJC_COPTS")
++load("//include/config:copts.bzl", "DEFAULT_OBJC_COPTS")
+ load("//bazel:skia_rules.bzl", "skia_filegroup", "skia_objc_library", "split_srcs_and_hdrs")
+ 
+ package(
+diff --git a/src/gpu/graphite/mtl/BUILD.bazel b/src/gpu/graphite/mtl/BUILD.bazel
+--- a/src/gpu/graphite/mtl/BUILD.bazel
++++ b/src/gpu/graphite/mtl/BUILD.bazel
+@@ -1,4 +1,4 @@
+-load("@skia_user_config//:copts.bzl", "DEFAULT_OBJC_COPTS")
++load("//include/config:copts.bzl", "DEFAULT_OBJC_COPTS")
+ load("//bazel:skia_rules.bzl", "skia_objc_library", "split_srcs_and_hdrs")
+ 
+ package(
+diff --git a/src/opts/BUILD.bazel b/src/opts/BUILD.bazel
+--- a/src/opts/BUILD.bazel
++++ b/src/opts/BUILD.bazel
+@@ -11,7 +11,7 @@
+ (e.g. architecture options) and linked into the final library or binary.
+ """
+ 
+-load("@skia_user_config//:copts.bzl", "DEFAULT_COPTS")
++load("//include/config:copts.bzl", "DEFAULT_COPTS")
+ load("//bazel:flags.bzl", "selects")
+ load("//bazel:skia_rules.bzl", "skia_cc_library", "skia_filegroup")
+ 
+@@ -43,7 +43,7 @@
+     deps = [
+         "//modules/skcms",  # Needed to implement SkRasterPipeline_opts.h
+         "//src/base",
+-        "@skia_user_config//:user_config",
++        "//include/config:user_config",
+     ],
+ )
+ 
+@@ -64,7 +64,7 @@
+     deps = [
+         "//modules/skcms",  # Needed to implement SkRasterPipeline_opts.h
+         "//src/base",
+-        "@skia_user_config//:user_config",
++        "//include/config:user_config",
+     ],
+ )
+ 
+diff --git a/tools/testrunners/unit/unit_tests.bzl b/tools/testrunners/unit/unit_tests.bzl
+--- a/tools/testrunners/unit/unit_tests.bzl
++++ b/tools/testrunners/unit/unit_tests.bzl
+@@ -1,8 +1,8 @@
+ """This module contains macros to generate C++ unit test targets."""
+ 
+ load("@rules_cc//cc:cc_test.bzl", "cc_test")
+-load("@skia_user_config//:copts.bzl", "DEFAULT_COPTS")
+-load("@skia_user_config//:linkopts.bzl", "DEFAULT_LINKOPTS")
++load("//include/config:copts.bzl", "DEFAULT_COPTS")
++load("//include/config:linkopts.bzl", "DEFAULT_LINKOPTS")
+ 
+ def unit_tests(
+         name,
+diff --git a/include/config/copts.bzl b/include/config/copts.bzl
+--- a/include/config/copts.bzl
++++ b/include/config/copts.bzl
+@@ -63,7 +63,7 @@
+ WARNINGS = [
+     "-fcolor-diagnostics",
+     "-Wall",
+-    "-Werror",
++    # Newer Clang adds diagnostics to -Weverything. Keep them as warnings.
+     "-Weverything",
+     "-Wextra",
+     "-Wpointer-arith",

@@ -1,0 +1,9 @@
+module(name = "perfetto_consumer")
+
+bazel_dep(name = "perfetto", version = "52.0.chromium142")
+bazel_dep(name = "llvm", version = "0.8.26")
+
+register_toolchains("@llvm//toolchain:all")
+
+bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "protobuf", version = "33.4")

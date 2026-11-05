@@ -1,0 +1,11 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+exports_files(["vma.cpp"] + glob(["include/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["include/**/*.h"]),
+    include_prefix = "third_party/vulkan_memory_allocator",
+    includes = [".", "include"],
+)

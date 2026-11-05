@@ -1,0 +1,25 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["third_party/dawn/**"]))
+
+cc_library(
+    name = "source_headers",
+    hdrs = glob([
+        "third_party/dawn/include/**/*.h",
+        "third_party/dawn/src/dawn/**/*.h",
+        "third_party/dawn/src/tint/**/*.h",
+        "third_party/dawn/src/utils/**/*.h",
+    ]),
+    includes = [
+        "third_party/dawn",
+        "third_party/dawn/include",
+        "third_party/dawn/src",
+    ],
+)
+
+cc_library(
+    name = "khronos_headers",
+    deps = ["@chromium_egl_registry//:headers"],
+)

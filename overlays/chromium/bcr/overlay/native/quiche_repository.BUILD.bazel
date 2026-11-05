@@ -1,0 +1,15 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["net/**/*.cc", "net/**/*.proto"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["net/**/*.h", "net/**/*.inc"]),
+    includes = [
+        ".",
+        "net/third_party/quiche/src",
+        "net/third_party/quiche/src/quiche/common/platform/default",
+    ],
+)

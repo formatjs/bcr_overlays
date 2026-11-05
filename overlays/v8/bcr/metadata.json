@@ -1,9 +1,18 @@
 {
     "homepage": "https://chromium.googlesource.com/v8/v8",
-    "maintainers": [],
-    "repository": [
-        "https://chromium.googlesource.com/v8/v8.git"
+    "maintainers": [
+        {
+            "github": "longlho",
+            "github_user_id": 198255,
+            "name": "Long Ho"
+        }
     ],
-    "versions": [],
+    "repository": [
+        "https://chromium.googlesource.com/v8/v8.git",
+        "github:v8/v8"
+    ],
+    "versions": [
+        "14.2.231.14"
+    ],
     "yanked_versions": {}
 }

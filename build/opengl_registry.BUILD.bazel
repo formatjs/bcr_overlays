@@ -1,0 +1,12 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["api/**", "xml/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["api/**/*.h"]),
+    include_prefix = "third_party/dawn/third_party/khronos/OpenGL-Registry",
+    includes = ["api"],
+)

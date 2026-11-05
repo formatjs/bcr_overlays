@@ -1,0 +1,7 @@
+{
+    "base_module": "wayland@1.24.0.bcr.1",
+    "patches": {
+        "//build:wayland-public-headers.patch": "sha256-DJSbI9gEUv2w4XLqTjjAoPo7wX11vC8KWg4bTHLtBUI="
+    },
+    "upstream_source_sha256": "af780acbd3fbfe59cac8ad674371535f2a63bd4b5649c2c65b21f9b470942f11"
+}

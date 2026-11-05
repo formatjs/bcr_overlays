@@ -1,0 +1,23 @@
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -44,6 +44,7 @@
+     "urandom_test_sources",
+ )
+ load(":util/util.bzl", "bssl_cc_binary", "bssl_cc_library", "bssl_cc_test")
++load("@rules_cc//cc:defs.bzl", "cc_library")
+ 
+ package(
+     default_applicable_licenses = [":license"],
+@@ -199,3 +200,12 @@
+         "@googletest//:gtest",
+     ],
+ )
++
++# Chromium consumes PKI headers beyond libpki's public C++ API.
++cc_library(
++    name = "chromium_pki",
++    hdrs = pki_headers + pki_internal_headers,
++    includes = ["."],
++    deps = [":pki"],
++    visibility = ["//visibility:public"],
++)

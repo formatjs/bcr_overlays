@@ -1,9 +1,29 @@
-matrix:
-  bazel: ["8.x", "9.x"]
-tasks:
-  foundation:
-    name: Native Chromium foundation
-    platform: ubuntu2404
-    bazel: ${{ bazel }}
-    build_targets: ["@chromium//:foundation"]
-    test_targets: []
+bcr_test_module:
+  module_path: bcr_test
+  matrix:
+    bazel: ["8.x", "9.x"]
+  tasks:
+    native:
+      name: Chromium native components and generators
+      platform: ubuntu2404
+      bazel: ${{ bazel }}
+      build_targets:
+        - "@chromium//:foundation"
+        - "@chromium//native:base"
+        - "@chromium//native:base_i18n"
+        - "@chromium//native:grit_resources"
+        - "@chromium//native:webui_assets"
+        - "@chromium//native:blink_permission_strings_map"
+        - "@chromium//native:ipcz"
+        - "@chromium//native:mojo_cpp_bindings"
+        - "@chromium//native:url_origin"
+        - "@chromium//native:url_scheme_host_port"
+        - "@chromium//native:crypto"
+        - "@chromium//native:all_buildflags"
+        - "@chromium//native:configuration_metadata"
+        - "@chromium//native:mojo_bindings"
+        - "@chromium//native:perfetto_proto"
+        - "@chromium//native/rust:all_crates"
+        - "@chromium//third_party/perfetto:libperfetto"
+        - "@chromium//base/allocator/partition_allocator/src/partition_alloc:partition_alloc"
+      test_targets: ["//:native_graph_buildflags_test", "//:partition_alloc_test", "//:allocator_shim_test", "//:mojo_control_test", "//:variations_proto_test", "//:perfetto_proto_test", "//:rust_allocator_test", "//:cxx_bridge_test", "//:perfetto_runtime_test", "//:bcr_core_dependencies_test", "//:base_runtime_test", "//:base_i18n_test", "//:grit_resources_test", "//:grit_binary_resources_test", "//:webui_test", "//:permission_strings_test", "//:ipcz_test", "//:mojo_runtime_test", "//:url_runtime_test", "//:crypto_runtime_test"]

@@ -1,0 +1,5 @@
+{
+    "repository": "https://github.com/google/perfetto",
+    "revision": "d5bbee7afdf259af4212929ccbff467dd5349953",
+    "chromium_version": "142.0.7444.59"
+}

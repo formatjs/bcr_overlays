@@ -1,0 +1,17 @@
+{
+    "homepage": "https://chromium.googlesource.com/chromium/deps/icu",
+    "maintainers": [
+        {
+            "github": "longlho",
+            "github_user_id": 198255,
+            "name": "Long Ho"
+        }
+    ],
+    "repository": [
+        "github:foolip/chromium-icu"
+    ],
+    "versions": [
+        "74.2.chromium142"
+    ],
+    "yanked_versions": {}
+}

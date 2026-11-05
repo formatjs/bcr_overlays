@@ -1,0 +1,4 @@
+filegroup(
+    name = "libraries",
+    srcs = ["@wayland//:wayland_client", "@wayland//:wayland_server"],
+)

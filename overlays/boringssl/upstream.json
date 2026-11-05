@@ -1,0 +1,8 @@
+{
+    "repository": "https://github.com/google/boringssl",
+    "version": "0.20251002.0",
+    "bcr_version": "0.20251002.0",
+    "chromium_version": "142.0.7444.59",
+    "source_changes": false,
+    "build_adapter": "chromium_pki"
+}

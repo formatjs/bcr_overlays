@@ -1,0 +1,23 @@
+module(
+    name = "fxdiv",
+    version = "0.0.0-20201209-63058ef.chromium142",
+    compatibility_level = 1,
+)
+
+bazel_dep(
+    name = "rules_cc",
+    version = "0.2.26",
+)
+
+bazel_dep(
+    name = "google_benchmark",
+    dev_dependency = True,
+    version = "1.8.3",
+    repo_name = "com_google_benchmark",
+)
+bazel_dep(
+    name = "googletest",
+    dev_dependency = True,
+    version = "1.14.0.bcr.1",
+    repo_name = "com_google_googletest",
+)

@@ -1,9 +1,18 @@
 {
     "homepage": "https://skia.googlesource.com/skia",
-    "maintainers": [],
-    "repository": [
-        "https://skia.googlesource.com/skia.git"
+    "maintainers": [
+        {
+            "github": "longlho",
+            "github_user_id": 198255,
+            "name": "Long Ho"
+        }
     ],
-    "versions": [],
+    "repository": [
+        "https://skia.googlesource.com/skia.git",
+        "github:google/skia"
+    ],
+    "versions": [
+        "142.0.0"
+    ],
     "yanked_versions": {}
 }

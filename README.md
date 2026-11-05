@@ -1,54 +1,102 @@
-# FormatJS BCR overlays
+# Chromium native Bazel build
 
-Native Bazel overlays, maintained in one repository and published as separate
-Bazel Central Registry modules. No umbrella `bcr_overlays` module.
+One workspace builds Chromium 142 and its dependencies with native Bazel actions.
+All maintained overlays share one dependency setup and hermeticbuild LLVM.
+Compatible BCR modules stay shared; pinned Chromium forks keep their patches.
+Linux x86_64 browser and runtime bundle build successfully. Relocated bundle
+reports `Chromium 142.0.7444.59` and passes a real headless HTTP page check with
+external JavaScript/CSS, Unicode normalization, Intl formatting and layout.
+Validation uses the normal Chromium sandbox and no `LD_LIBRARY_PATH` override.
 
-- [Chromium](overlays/chromium): native foundation builds and tests; full browser pending.
-- Planned: [V8](overlays/v8), [Skia](overlays/skia), [ANGLE](overlays/angle),
-  [Dawn](overlays/dawn), [WebRTC](overlays/webrtc), [PDFium](overlays/pdfium),
-  [SwiftShader](overlays/swiftshader).
+The existing `overlays/` directories organize build rules and source pins.
+They no longer need separate registry staging for the main build.
 
-Each overlay owns its source pin, `bcr/MODULE.bazel`, metadata, versions,
-overlay files, patches and presubmit. Seven planned overlays have no proposed
-versions yet and cannot be staged. [overlays.json](overlays.json) records status.
-See [dependency audit](docs/dependency-overlays.md) for priorities.
+- [Chromium](overlays/chromium): native base, Mojo, network/SQL, geometry, fonts, image codecs, GPU command protocol, X11 connection, browser services, Linux UI/GL and generators; Linux browser and runtime bundle validated.
+- [V8](overlays/v8): native engine, snapshots, WebAssembly and Intl validation.
+- [NSS](overlays/nss): patched Linux PKCS#11, persistent key databases and signed FIPS modules.
+- [NSPR](overlays/nspr): native Linux runtime and PLC/PLDS support for NSS.
+- [ipcz](overlays/ipcz): native standalone and Chromium implementations, real transport/portal tests.
+- [Perfetto](overlays/perfetto): native protocol compilers, browser tracing, service and IPC runtime.
+- [Chromium ICU](overlays/chromium_icu): pinned fork, embedded/file data validation.
+- [Dragonbox](overlays/dragonbox): V8 decimal conversion dependency, absent from BCR.
+- [Linux Syscall Support](overlays/linux-syscall-support): pinned native syscall header.
+- [Compact Encoding Detection](overlays/compact_enc_det): Chromium's pinned HTML5 detector.
+- [BoringSSL](overlays/boringssl): existing BCR snapshot with public Chromium PKI adapter.
+- [Abseil](overlays/abseil-cpp): existing BCR module update preserving Chromium hardening.
+- [FP16](overlays/fp16): Bazel 9 compatibility update to existing BCR module.
+- [Skia](overlays/skia): full captured Chromium profile in combined workspace; standalone raster core/path operations.
+- [ANGLE](overlays/angle): native EGL/GLES runtime, Vulkan/Dawn backends, WebGL shader compiler.
+- [Dawn](overlays/dawn): native backends, Tint, validated software-Vulkan execution.
+- [SwiftShader](overlays/swiftshader): native Subzero driver, compute/raster readback.
+- Standalone entries planned: [WebRTC](overlays/webrtc), [PDFium](overlays/pdfium).
+
+WebRTC, PDFium, Dawn and SwiftShader build inside Chromium’s combined workspace.
+Their standalone registry entries remain planned in
+[overlays.json](overlays.json).
+See [dependency audit](docs/dependency-overlays.md) for compatibility findings.
 
 ## Development
 
 ```sh
+bazel build //:components
+bazel test //:runtime_tests
+
+# Individual components use the same dependency setup.
+bazel build //:quiche //:v8 //:skia //:angle
 python3 -m unittest discover -s tests
-python3 overlays/chromium/tests/validate_bcr.py
-cd overlays/chromium
-bazel build //:foundation
-bazel test //:native_foundation_test
+
+# Full browser and runtime bundle.
+bazel build --config=browser @chromium//native:browser @chromium//native:browser_bundle
+bundle=$(bazel cquery --config=browser --output=files @chromium//native:browser_bundle)
+python3 overlays/chromium/tools/check_browser.py "$bundle"
 ```
 
-Builds and generators must use native Bazel actions. Reuse compatible BCR
-dependencies. Chromium currently uses BCR Double Conversion and GoogleTest.
+The browser configuration uses four jobs and releases analysis state during
+execution, trading incremental reuse for lower memory use
+([Bazel memory guidance](https://bazel.build/advanced/performance/memory)).
 
-## Separate publication
-
-Stage exactly one module/version per publication:
+On IOPS-limited Linux builders, sandbox directories can use a private RAM filesystem:
 
 ```sh
-registry=$(mktemp -d)
-python3 tools/stage_bcr_entry.py \
-  --source-registry overlays/chromium/bcr \
-  --target-registry "$registry" \
-  --module chromium --version 142.0.7444.59
-cd overlays/chromium/tests/bcr
-bazel run --registry="file://$registry" --registry=https://bcr.bazel.build //:smoke_test
+mkdir -p /tmp/chromium-sandboxes
+unshare --user --map-root-user --mount --fork sh -c '
+  mount -t tmpfs -o size=8g tmpfs /tmp/chromium-sandboxes &&
+  exec bazel --batch --output_user_root=/tmp/chromium-ram-bazel build \
+    --config=browser --sandbox_base=/tmp/chromium-sandboxes \
+    @chromium//native:browser_bundle
+'
 ```
 
-Output remains `modules/<module>/<version>/`, with that module's own checksums,
-metadata and presubmit. Consumers continue using separate dependencies such as
-`bazel_dep(name = "chromium", version = "142.0.7444.59")`.
+The mount disappears after the batch build. Compiler and generator actions keep
+their sandbox isolation; local compilation can select vendored headers before
+the BCR forwarding headers.
 
-When adding release automation, use module-specific tags `<module>/v<version>`
-and release only the selected registry entry. A Chromium release must not
-implicitly release V8, Skia or any other module. Published entries remain
-immutable. No module has been published to BCR yet; maintainer metadata is
-required before submission.
+No local BCR registry required. `build/dependencies.bzl` fetches pinned archives,
+applies existing patches, and projects maintained overlay files into each source
+repository. Shared Abseil and BoringSSL module overrides preserve ABI consistency
+with Protobuf. Source integrity checks remain enabled.
+
+After changing overlay-only targets in Abseil or BoringSSL, regenerate their
+small additive module patches:
+
+```sh
+python3 tools/update_combined_patches.py
+```
+
+Hermeticbuild LLVM (`llvm@0.8.26`) supplies C/C++ toolchains. Chromium's pinned
+Rust compiler and Node.js build tools remain unchanged. Native build rules do
+not execute GN, Ninja or CMake.
+
+Legacy BCR templates and staging utilities remain available for reference.
+They are not required by the combined workspace. No module has been published.
+
+[Compatibility registry](compatibility_registry/README.md) preserves thirteen
+independently versioned dependency overlays in one registry. Standalone Chromium
+packaging bundles private dependency overlays and provides a browser consumer
+presubmit. The staged registry contains 28 modules; browser-bundle analysis
+passes against the pinned Chromium archive (379,665 configured targets).
+Native browser linking, `--version` and headless HTTP validation pass. Hosted
+BCR presubmits have not run; no module has been published.
 
 ## License
 

@@ -1,9 +1,18 @@
 {
     "homepage": "https://chromium.googlesource.com/angle/angle",
-    "maintainers": [],
-    "repository": [
-        "https://chromium.googlesource.com/angle/angle.git"
+    "maintainers": [
+        {
+            "github": "longlho",
+            "github_user_id": 198255,
+            "name": "Long Ho"
+        }
     ],
-    "versions": [],
+    "repository": [
+        "https://chromium.googlesource.com/angle/angle.git",
+        "github:google/angle"
+    ],
+    "versions": [
+        "2.1.0-e5b338502c7c"
+    ],
     "yanked_versions": {}
 }

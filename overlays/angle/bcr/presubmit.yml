@@ -1,0 +1,10 @@
+bcr_test_module:
+  module_path: bcr_test
+  matrix:
+    bazel: ["8.x", "9.x"]
+  tasks:
+    consumer:
+      name: Native ANGLE translator with hermetic LLVM
+      platform: ubuntu2404
+      bazel: ${{ bazel }}
+      test_targets: ["//:smoke_test"]

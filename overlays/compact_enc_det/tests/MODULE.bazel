@@ -1,0 +1,7 @@
+module(name = "compact_enc_det_consumer")
+
+bazel_dep(name = "compact_enc_det", version = "0.0.0-20190221-ba412ea")
+bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "llvm", version = "0.8.26")
+
+register_toolchains("@llvm//toolchain:all")

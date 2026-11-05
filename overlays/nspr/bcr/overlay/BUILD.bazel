@@ -1,0 +1,186 @@
+load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+load("@rules_cc//cc:cc_import.bzl", "cc_import")
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("//bazel:config.bzl", "linux_configuration")
+load("//bazel:sources.bzl", "NSPR_SOURCES", "PLC_SOURCES", "PLDS_SOURCES")
+
+package(default_visibility = ["//visibility:public"])
+
+linux_configuration(
+    name = "configuration",
+    cpu = "pr/include/md/_linux.cfg",
+)
+
+cc_library(
+    name = "headers",
+    hdrs = glob([
+        "pr/include/*.h",
+        "pr/include/obsolete/*.h",
+        "lib/ds/*.h",
+        "lib/libc/include/*.h",
+    ]) + [
+        "pr/include/private/pprio.h",
+        "pr/include/private/pprthred.h",
+        "pr/include/private/prpriv.h",
+        ":configuration",
+    ],
+    includes = [
+        ".",
+        "lib/ds",
+        "lib/libc/include",
+        "pr/include",
+    ],
+    target_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+)
+
+# Linux pthread configuration from upstream configure.in and config/config.mk.
+DEFINES = [
+    "NDEBUG=1",
+    "HAVE_VISIBILITY_HIDDEN_ATTRIBUTE=1",
+    "HAVE_VISIBILITY_PRAGMA=1",
+    "XP_UNIX=1",
+    "_GNU_SOURCE=1",
+    "HAVE_FCNTL_FILE_LOCKING=1",
+    "HAVE_POINTER_LOCALTIME_R=1",
+    "LINUX=1",
+    "HAVE_DLADDR=1",
+    "HAVE_LCHOWN=1",
+    "HAVE_SETPRIORITY=1",
+    "HAVE_STRERROR=1",
+    "HAVE_SYSCALL=1",
+    "HAVE_SECURE_GETENV=1",
+    "_REENTRANT=1",
+    "_PR_PTHREADS",
+    "FORCE_PR_LOG",
+]
+
+cc_library(
+    name = "nspr4",
+    srcs = NSPR_SOURCES + glob([
+        "pr/include/private/*.h",
+        "pr/include/md/*.h",
+    ]),
+    copts = [
+        "-std=gnu99",
+        "-O2",
+        "-pthread",
+        "-UDEBUG",
+        "-UHAVE_CVAR_BUILT_ON_SEM",
+    ],
+    includes = ["pr/include/private"],
+    linkopts = [
+        "-pthread",
+        "-ldl",
+        "-lrt",
+    ],
+    linkstatic = True,
+    local_defines = DEFINES + [
+        "_NSPR_BUILD_",
+    ],
+    deps = [":headers"],
+    alwayslink = True,
+)
+
+cc_library(
+    name = "plc4",
+    srcs = PLC_SOURCES,
+    copts = [
+        "-std=gnu99",
+        "-O2",
+        "-pthread",
+        "-UDEBUG",
+    ],
+    linkstatic = True,
+    local_defines = DEFINES,
+    deps = [":nspr4"],
+)
+
+cc_library(
+    name = "plds4",
+    srcs = PLDS_SOURCES,
+    copts = [
+        "-std=gnu99",
+        "-O2",
+        "-pthread",
+        "-UDEBUG",
+    ],
+    linkstatic = True,
+    local_defines = DEFINES + ["NSPR_PLDS_BUILD"],
+    deps = [":nspr4"],
+)
+
+cc_library(
+    name = "nspr",
+    deps = [
+        ":nspr4",
+        ":plc4",
+        ":plds4",
+    ],
+)
+
+cc_binary(
+    name = "libnspr4.so",
+    linkshared = True,
+    linkstatic = True,
+    deps = [":nspr4"],
+)
+
+cc_import(
+    name = "nspr4_shared",
+    shared_library = ":libnspr4.so",
+    deps = [":headers"],
+)
+
+cc_binary(
+    name = "libplc4.so",
+    srcs = PLC_SOURCES,
+    copts = [
+        "-std=gnu99",
+        "-O2",
+        "-pthread",
+        "-UDEBUG",
+    ],
+    linkshared = True,
+    linkstatic = True,
+    local_defines = DEFINES,
+    deps = [":nspr4_shared"],
+)
+
+cc_import(
+    name = "plc4_shared",
+    shared_library = ":libplc4.so",
+    deps = [":nspr4_shared"],
+)
+
+cc_binary(
+    name = "libplds4.so",
+    srcs = PLDS_SOURCES,
+    copts = [
+        "-std=gnu99",
+        "-O2",
+        "-pthread",
+        "-UDEBUG",
+    ],
+    linkshared = True,
+    linkstatic = True,
+    local_defines = DEFINES + ["NSPR_PLDS_BUILD"],
+    deps = [":nspr4_shared"],
+)
+
+cc_import(
+    name = "plds4_shared",
+    shared_library = ":libplds4.so",
+    deps = [":nspr4_shared"],
+)
+
+cc_library(
+    name = "shared",
+    deps = [
+        ":nspr4_shared",
+        ":plc4_shared",
+        ":plds4_shared",
+    ],
+)

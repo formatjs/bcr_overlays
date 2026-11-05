@@ -1,0 +1,13 @@
+{
+    "url": "https://github.com/Maratyszcza/FXdiv/archive/63058eff77e11aa15bf531df5dd34395ec3017c8.tar.gz",
+    "integrity": "sha256-7HTYgqCkfP2cD5W8T66ZAaSt6AKpajt24CZxu3NApMU=",
+    "strip_prefix": "FXdiv-63058eff77e11aa15bf531df5dd34395ec3017c8",
+    "patches": {},
+    "overlay": {
+        "MODULE.bazel": "sha256-bl4eGwtAY0HnWtFZAHxG8fyokCRPfqN8NVmr0GwSD/s=",
+        "bcr_test/MODULE.bazel": "sha256-SDxBSLoNxii20j62rsChWbvtxUlJUfRldixtGK/1qvI=",
+        "bcr_test/BUILD.bazel": "sha256-1IJoN/QPHNXSFamiq9b+VAPkfYNxqvJpp5D50zu7VPA=",
+        "bcr_test/.bazelrc": "sha256-aJshsGcxO/WgE3/UZTJEhPTcCW8H4QOvqP6QXhEWk6E=",
+        "bcr_test/.bazelversion": "sha256-G5SH1VvqR/6lDSJsycU7xUiHetKjGLrI+8izIPQp5cU="
+    }
+}

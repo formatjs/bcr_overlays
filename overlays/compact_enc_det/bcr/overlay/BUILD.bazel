@@ -1,0 +1,15 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load(":chromium_sources.bzl", "COPTS", "DEFINES", "HEADERS", "SOURCES")
+
+cc_library(
+    name = "ced",
+    srcs = SOURCES,
+    hdrs = HEADERS,
+    copts = COPTS,
+    includes = ["."],
+    linkstatic = True,
+    local_defines = DEFINES,
+    visibility = ["//visibility:public"],
+)
+
+exports_files(["LICENSE"])

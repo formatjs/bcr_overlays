@@ -1,0 +1,21 @@
+{
+  "graph_sha256": "ea1206dadd7fbe695cbdbae072078d3a9d42380129cdd91347b240e93b9b93b5",
+  "roots": [
+    "//chrome/browser/resources/side_panel/bookmarks:build_code_cache_grd",
+    "//chrome/browser/resources/side_panel/customize_chrome:build_code_cache_grd",
+    "//chrome/browser/resources/side_panel/reading_list:build_code_cache_grd",
+    "//chrome/browser/resources/side_panel/shared:build_code_cache_grd",
+    "//components/resources:about_credits",
+    "//content/browser/tracing:build_grd",
+    "//third_party/devtools-frontend/src:generate_devtools_grd",
+    "//ui/webui/resources:build_code_cache_grd",
+    "//components/neterror/resources:minify_js",
+    "//third_party/blink/public/devtools_protocol:protocol_version",
+    "//components/neterror/resources:bundle_js",
+    "//components/resources/ssl/ssl_error_assistant:make_ssl_error_assistant_protobuf",
+    "//components/safe_browsing/content/resources:make_file_types_protobuf",
+    "//components/security_interstitials/content/resources:build_ts",
+    "//components/security_interstitials/core/browser/resources:bundle_js",
+    "//components/supervised_user/core/browser/resources:bundle_js"
+  ]
+}

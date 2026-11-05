@@ -1,0 +1,20 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["**"], exclude = ["BUILD.bazel"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["*.h", "include/**/*.h"]),
+    include_prefix = "third_party/libdrm/src",
+    includes = [".", "include", "include/drm"],
+)
+
+cc_library(
+    name = "webrtc_headers",
+    hdrs = glob(["include/drm/*.h"]),
+    include_prefix = "libdrm",
+    strip_include_prefix = "include/drm",
+    deps = [":headers"],
+)

@@ -1,0 +1,14 @@
+{
+  "source": "ui/gl/BUILD.gn",
+  "source_sha256": "8d4037302b37076c4e864d62c18bb1183f58c96c08ae569aa7ad82a3171a734f",
+  "graph_sha256": "ea1206dadd7fbe695cbdbae072078d3a9d42380129cdd91347b240e93b9b93b5",
+  "runtime_deps": {
+    "//ui/gl:gl": [
+      "//third_party/angle:libEGL",
+      "//third_party/angle:libGLESv2",
+      "//third_party/swiftshader/src/Vulkan:icd_file",
+      "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan",
+      "//third_party/vulkan-loader/src:libvulkan"
+    ]
+  }
+}

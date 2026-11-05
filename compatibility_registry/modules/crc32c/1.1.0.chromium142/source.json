@@ -1,0 +1,14 @@
+{
+    "url": "https://github.com/google/crc32c/archive/refs/tags/1.1.0.tar.gz",
+    "integrity": "sha256-Sd4Te/HC62Jo1RImdPfdFSS5FIumXHuFxa5Lm+EEolo=",
+    "strip_prefix": "crc32c-1.1.0",
+    "patches": {},
+    "overlay": {
+        "BUILD.bazel": "sha256-RBS76JGSU9S61Q5VhFKMa3woCGpqyJvGhttdX25F1pM=",
+        "MODULE.bazel": "sha256-EB7ob5AG8gkYKYeblBSn3Fs+LUn1xPtnvRqrScGULBg=",
+        "bcr_test/MODULE.bazel": "sha256-NKzieMpEsaKwwjg/pd7spUa85y6Olw5QEVa1Rv1GGus=",
+        "bcr_test/BUILD.bazel": "sha256-N08XL5Ujczv1P0uV+tBH/cThwIPS3gBONimiH37HET4=",
+        "bcr_test/.bazelrc": "sha256-aJshsGcxO/WgE3/UZTJEhPTcCW8H4QOvqP6QXhEWk6E=",
+        "bcr_test/.bazelversion": "sha256-G5SH1VvqR/6lDSJsycU7xUiHetKjGLrI+8izIPQp5cU="
+    }
+}

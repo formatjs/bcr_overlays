@@ -1,0 +1,9 @@
+test_suite(
+    name = "runtime_test",
+    tests = ["@nspr//bcr_test:runtime_test"],
+)
+
+test_suite(
+    name = "shared_runtime_test",
+    tests = ["@nspr//bcr_test:shared_runtime_test"],
+)

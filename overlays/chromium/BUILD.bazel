@@ -1,7 +1,9 @@
 load("@chromium//build:buildflag_header.bzl", "buildflag_header")
 load("@rules_cc//cc:cc_test.bzl", "cc_test")
+load("@rules_python//python:defs.bzl", "py_test")
+load("@rules_rust//rust:defs.bzl", "rust_library")
 
-exports_files(glob(
+exports_files(["native/platform_runtime.json"] + glob(
     ["bcr/*"],
     exclude = ["**/BUILD.bazel"],
 ))
@@ -36,4 +38,336 @@ cc_test(
 filegroup(
     name = "foundation",
     srcs = ["@chromium//:foundation"],
+)
+
+cc_test(
+    name = "native_graph_buildflags_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:native_graph_buildflags_test.cc"],
+    deps = ["@chromium//native:debugging_buildflags"],
+)
+
+cc_test(
+    name = "partition_alloc_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:partition_alloc_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//base/allocator/partition_allocator/src/partition_alloc:allocator_core"],
+)
+
+cc_test(
+    name = "allocator_shim_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:allocator_shim_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//base/allocator/partition_allocator/src/partition_alloc"],
+)
+
+py_test(
+    name = "mojo_control_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:mojo_control_test.py"],
+    args = ["$(rootpath @chromium//native:gen/mojo/public/interfaces/bindings/interface_control_messages.mojom-module)"],
+    data = [
+        "@chromium//native:gen/mojo/public/interfaces/bindings/interface_control_messages.mojom-module",
+        "@chromium//native:mojo_control_bindings",
+    ],
+    main = "@chromium//bcr_test:mojo_control_test.py",
+    deps = ["@chromium//native:mojo_python"],
+)
+
+cc_test(
+    name = "variations_proto_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:variations_proto_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-DNDEBUG",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:variations_proto"],
+)
+
+cc_test(
+    name = "perfetto_proto_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:perfetto_proto_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:perfetto_proto_cpp"],
+)
+
+rust_library(
+    name = "rust_allocator_bridge",
+    srcs = ["@chromium//bcr_test:rust_allocator_bridge.rs"],
+    crate_root = "@chromium//bcr_test:rust_allocator_bridge.rs",
+    edition = "2021",
+    deps = [
+        "@chromium//build/rust/allocator",
+        "@chromium//native/rust:chromium_prelude",
+    ],
+)
+
+cc_test(
+    name = "rust_allocator_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:rust_allocator_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+    ],
+    linkstatic = True,
+    deps = [
+        ":rust_allocator_bridge",
+        "@chromium//base/allocator/partition_allocator/src/partition_alloc",
+    ],
+)
+
+rust_library(
+    name = "cxx_bridge_test_rust",
+    testonly = True,
+    srcs = ["@chromium//bcr_test:cxx_bridge.rs"],
+    crate_root = "@chromium//bcr_test:cxx_bridge.rs",
+    edition = "2021",
+    deps = [
+        "@chromium//build/rust/allocator",
+        "@chromium//native/rust:chromium_prelude",
+        "@chromium//native/rust:cxx_runtime",
+        "@chromium//native/rust:serde",
+        "@chromium//native/rust:serde_json_lenient",
+    ],
+)
+
+cc_test(
+    name = "cxx_bridge_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:cxx_bridge_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        ":cxx_bridge_test_rust",
+        "@chromium//base/allocator/partition_allocator/src/partition_alloc",
+        "@chromium//native:cxx_bridge_test_cpp",
+    ],
+)
+
+cc_test(
+    name = "perfetto_runtime_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:perfetto_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-fno-rtti",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:perfetto_runtime"],
+)
+
+cc_test(
+    name = "bcr_core_dependencies_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:bcr_core_dependencies_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-DNDEBUG",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//third_party/abseil-cpp:absl",
+        "@chromium//third_party/boringssl",
+    ],
+)
+
+rust_library(
+    name = "base_runtime_log",
+    testonly = True,
+    srcs = ["@chromium//bcr_test:base_runtime_log.rs"],
+    crate_root = "@chromium//bcr_test:base_runtime_log.rs",
+    edition = "2021",
+    deps = [
+        "@chromium//build/rust/allocator",
+        "@chromium//native/rust:chromium_prelude",
+        "@chromium//native/rust:rust_log",
+    ],
+)
+
+cc_test(
+    name = "base_runtime_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:base_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        ":base_runtime_log",
+        "@chromium//native:base",
+    ],
+)
+
+cc_test(
+    name = "base_i18n_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:base_i18n_test.cc"],
+    args = ["$(rlocationpath @chromium_icu//:common/icudtl.dat)"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = ["@chromium_icu//:common/icudtl.dat"],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:base_i18n",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+py_test(
+    name = "grit_resources_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:grit_resources_test.py"],
+    args = [
+        "$(rlocationpath @chromium//native:gen/ui/strings/grit/ui_strings.h)",
+        "$(rlocationpath @chromium//native:gen/chrome/grit/generated_resources.h)",
+        "$(rlocationpath @chromium//native:gen/chrome/grit/branded_strings.h)",
+        "$(rlocationpath @chromium//native:gen/chrome/grit/locale_settings.h)",
+        "$(rlocationpath @chromium//native:gen/chrome/grit/platform_locale_settings.h)",
+        "$(rlocationpath @chromium//native:gen/ui/strings/ui_strings_en-US.pak)",
+        "$(rlocationpath @chromium//native:gen/ui/strings/ui_strings_fr.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/generated_resources_en-US.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/generated_resources_fr.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/branded_strings_en-US.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/branded_strings_fr.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/locale_settings_en-US.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/locale_settings_fr.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/platform_locale_settings_en-US.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/platform_locale_settings_fr.pak)",
+        "$(rlocationpath @chromium//native:gen/ui/strings/ui_strings_fr_NEUTER.pak)",
+    ],
+    data = [
+        "@chromium//native:gen/chrome/branded_strings_en-US.pak",
+        "@chromium//native:gen/chrome/branded_strings_fr.pak",
+        "@chromium//native:gen/chrome/generated_resources_en-US.pak",
+        "@chromium//native:gen/chrome/generated_resources_fr.pak",
+        "@chromium//native:gen/chrome/grit/branded_strings.h",
+        "@chromium//native:gen/chrome/grit/generated_resources.h",
+        "@chromium//native:gen/chrome/grit/locale_settings.h",
+        "@chromium//native:gen/chrome/grit/platform_locale_settings.h",
+        "@chromium//native:gen/chrome/locale_settings_en-US.pak",
+        "@chromium//native:gen/chrome/locale_settings_fr.pak",
+        "@chromium//native:gen/chrome/platform_locale_settings_en-US.pak",
+        "@chromium//native:gen/chrome/platform_locale_settings_fr.pak",
+        "@chromium//native:gen/ui/strings/grit/ui_strings.h",
+        "@chromium//native:gen/ui/strings/ui_strings_en-US.pak",
+        "@chromium//native:gen/ui/strings/ui_strings_fr.pak",
+        "@chromium//native:gen/ui/strings/ui_strings_fr_NEUTER.pak",
+    ],
+    main = "@chromium//bcr_test:grit_resources_test.py",
+    deps = [
+        "@chromium//native:grit_python",
+        "@rules_python//python/runfiles",
+    ],
+)
+
+py_test(
+    name = "grit_binary_resources_test",
+    size = "small",
+    srcs = ["@chromium//bcr_test:grit_binary_resources_test.py"],
+    args = [
+        "$(rlocationpath @chromium//bcr_test:legacy_brotli_decoder)",
+        "$(rlocationpath @chromium//native:gen/chrome/browser/glic/resources/grit/glic_browser_resources.h)",
+        "$(rlocationpath @chromium//native:gen/chrome/browser/glic/resources/glic_browser_resources.pak)",
+        "$(rlocationpath @chromium//:chrome/browser/glic/resources/logo.svg)",
+        "$(rlocationpath @chromium//:chrome/browser/glic/resources/border.sksl)",
+        "$(rlocationpath @chromium//:chrome/browser/glic/resources/glic_button_alt_icon.png)",
+        "$(rlocationpath @chromium//native:gen/chrome/browser/actor/resources/grit/actor_browser_resources.h)",
+        "$(rlocationpath @chromium//native:gen/chrome/browser/actor/resources/actor_browser_resources.pak)",
+        "$(rlocationpath @chromium//:chrome/browser/actor/resources/tab_icon_indicator.json)",
+        "$(rlocationpath @chromium//native:gen/base/tracing/protos/grit/tracing_proto_resources.h)",
+        "$(rlocationpath @chromium//native:gen/base/tracing/protos/tracing_proto_resources.pak)",
+        "$(rlocationpath @chromium//native:gen/base/tracing/protos/chrome_track_event.descriptor)",
+        "$(rlocationpath @chromium//native:gen/chrome/theme_resources_100_percent.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/theme_resources_200_percent.pak)",
+        "$(rlocationpath @chromium//native:gen/chrome/theme_resources_300_percent.pak)",
+    ],
+    data = [
+        "@chromium//:chrome/browser/actor/resources/tab_icon_indicator.json",
+        "@chromium//:chrome/browser/glic/resources/border.sksl",
+        "@chromium//:chrome/browser/glic/resources/glic_button_alt_icon.png",
+        "@chromium//:chrome/browser/glic/resources/logo.svg",
+        "@chromium//bcr_test:legacy_brotli_decoder",
+        "@chromium//native:gen/base/tracing/protos/chrome_track_event.descriptor",
+        "@chromium//native:gen/base/tracing/protos/grit/tracing_proto_resources.h",
+        "@chromium//native:gen/base/tracing/protos/tracing_proto_resources.pak",
+        "@chromium//native:gen/chrome/browser/actor/resources/actor_browser_resources.pak",
+        "@chromium//native:gen/chrome/browser/actor/resources/grit/actor_browser_resources.h",
+        "@chromium//native:gen/chrome/browser/glic/resources/glic_browser_resources.pak",
+        "@chromium//native:gen/chrome/browser/glic/resources/grit/glic_browser_resources.h",
+        "@chromium//native:gen/chrome/theme_resources_100_percent.pak",
+        "@chromium//native:gen/chrome/theme_resources_200_percent.pak",
+        "@chromium//native:gen/chrome/theme_resources_300_percent.pak",
+    ],
+    main = "@chromium//bcr_test:grit_binary_resources_test.py",
+    deps = [
+        "@chromium//native:grit_python",
+        "@rules_python//python/runfiles",
+    ],
+)
+
+test_suite(
+    name = "webui_test",
+    tests = ["@chromium//bcr_test:webui_test"],
+)
+
+test_suite(
+    name = "permission_strings_test",
+    tests = ["@chromium//bcr_test:permission_strings_test"],
+)
+
+test_suite(
+    name = "ipcz_test",
+    tests = ["@chromium//bcr_test:ipcz_test"],
+)
+
+test_suite(
+    name = "mojo_runtime_test",
+    tests = ["@chromium//bcr_test:mojo_runtime_test"],
+)
+
+test_suite(
+    name = "url_runtime_test",
+    tests = ["@chromium//bcr_test:url_runtime_test"],
+)
+
+test_suite(
+    name = "crypto_runtime_test",
+    tests = ["@chromium//bcr_test:crypto_runtime_test"],
 )

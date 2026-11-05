@@ -1,0 +1,10 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+cc_test(
+    name = "syscall_test",
+    size = "small",
+    srcs = ["@linux-syscall-support//bcr_test:syscall_test.cc"],
+    copts = ["-std=c++20"],
+    linkopts = ["-pthread"],
+    deps = ["@linux-syscall-support//:linux-syscall-support"],
+)

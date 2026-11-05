@@ -1,0 +1,7 @@
+{
+    "base_module": "crc32c@1.1.0",
+    "patches": {
+        "//build:crc32c-bazel9.patch": "sha256-uiFx2Q/MjqC+EPqzkrXS9GJuiuk2QaVtsHlHPCXZWg0="
+    },
+    "upstream_source_sha256": "aabc6ce46d4b71343d500270c2ddfd45f59cff9fd171313bdd773bf620cf2a6f"
+}

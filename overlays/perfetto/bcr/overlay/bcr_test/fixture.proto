@@ -1,0 +1,9 @@
+syntax = "proto2";
+package native_test;
+message Packet {
+  optional uint64 timestamp = 1;
+  optional string name = 2;
+}
+service Recorder {
+  rpc Send(Packet) returns (Packet);
+}

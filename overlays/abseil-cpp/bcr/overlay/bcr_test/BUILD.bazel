@@ -1,0 +1,21 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+cc_test(
+    name = "hardening_test",
+    size = "small",
+    srcs = ["hardening_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-omit-frame-pointer",
+    ],
+    deps = [
+        "@abseil-cpp//absl/base:dynamic_annotations",
+        "@abseil-cpp//absl/container:flat_hash_map",
+        "@abseil-cpp//absl/container:inlined_vector",
+        "@abseil-cpp//absl/debugging:stacktrace",
+        "@abseil-cpp//absl/strings:str_format",
+        "@abseil-cpp//absl/types:span",
+    ],
+)

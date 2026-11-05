@@ -1,0 +1,10 @@
+bcr_test_module:
+  module_path: bcr_test
+  matrix:
+    bazel: ["8.x", "9.x"]
+  tasks:
+    linux:
+      name: Native NSPR Linux runtime
+      platform: ubuntu2404
+      bazel: ${{ bazel }}
+      test_targets: ["//:runtime_test", "//:shared_runtime_test"]

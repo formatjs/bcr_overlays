@@ -1,0 +1,311 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -3998,29 +3998,8 @@
+     }),
+ )
+ 
+-v8_library(
+-  name = "lib_dragonbox",
+-  srcs = ["third_party/dragonbox/src/include/dragonbox/dragonbox.h"],
+-  hdrs = [
+-    "third_party/dragonbox/src/include/dragonbox/dragonbox.h",
+-  ],
+-  includes = [
+-    "third_party/dragonbox/src/include",
+-  ],
+-)
+-
+-v8_library(
+-  name = "lib_fp16",
+-  srcs = ["third_party/fp16/src/include/fp16.h"],
+-  hdrs = [
+-    "third_party/fp16/src/include/fp16/fp16.h",
+-    "third_party/fp16/src/include/fp16/bitcasts.h",
+-    "third_party/fp16/src/include/fp16/macros.h",
+-  ],
+-  includes = [
+-    "third_party/fp16/src/include",
+-  ],
+-)
++alias(name = "lib_dragonbox", actual = "@dragonbox//:dragonbox")
++alias(name = "lib_fp16", actual = "@fp16//:fp16")
+ 
+ filegroup(
+     name = "v8_bigint",
+@@ -4352,7 +4331,6 @@
+            --config $(location :src/inspector/inspector_protocol_config.json) \
+            --config_value protocol.path=$(location :include/js_protocol.pdl) \
+            --output_base $(@D)/src/inspector",
+-    local = 1,
+     message = "Generating inspector files",
+     tools = [
+         ":code_generator",
+@@ -4486,17 +4464,7 @@
+     ],
+ )
+ 
+-cc_library(
+-  name = "simdutf",
+-  srcs = ["third_party/simdutf/simdutf.cpp"],
+-  hdrs = ["third_party/simdutf/simdutf.h"],
+-  copts = select({
+-        "@v8//bazel/config:is_clang": ["-std=c++20"],
+-        "@v8//bazel/config:is_gcc": ["-std=gnu++2a"],
+-        "@v8//bazel/config:is_windows": ["/std:c++20"],
+-        "//conditions:default": [],
+-    }),
+-)
++alias(name = "simdutf", actual = "@simdutf//:simdutf")
+ 
+ v8_library(
+     name = "v8_libshared",
+@@ -4512,7 +4480,7 @@
+     copts = ["-Wno-implicit-fallthrough"],
+     icu_deps = [
+         ":icu/generated_torque_definitions_headers",
+-        "//external:icu",
++        "@chromium_icu//:icu",
+     ],
+     icu_srcs = [
+         ":generated_regexp_special_case",
+@@ -4527,7 +4495,7 @@
+     ],
+     deps = [
+         ":lib_dragonbox",
+-        "//third_party/fast_float/src:fast_float",
++        "@fast_float//:fast_float",
+         ":lib_fp16",
+         ":simdutf",
+         ":v8_libbase",
+@@ -4634,7 +4602,7 @@
+     ],
+     deps = [
+         ":v8_libbase",
+-        "//external:icu",
++        "@chromium_icu//:icu",
+     ],
+ )
+ 
+diff --git a/bazel/defs.bzl b/bazel/defs.bzl
+--- a/bazel/defs.bzl
++++ b/bazel/defs.bzl
+@@ -130,6 +130,7 @@
+             "@v8//bazel/config:is_clang": [
+                 "-Wno-invalid-offsetof",
+                 "-Wno-deprecated-this-capture",
++                "-Wno-deprecated-attributes",
+                 "-Wno-deprecated-declarations",
+                 "-std=c++20",
+             ],
+@@ -183,7 +184,10 @@
+                 "Advapi32.lib",
+             ],
+             "@v8//bazel/config:is_macos": ["-pthread"],
+-            "//conditions:default": ["-Wl,--no-as-needed -ldl -latomic -pthread"],
++            "//conditions:default": ["-Wl,--no-as-needed -ldl -pthread"],
++        }) + select({
++            "@v8//bazel/config:is_gcc": ["-latomic"],
++            "//conditions:default": [],
+         }) + select({
+             ":should_add_rdynamic": ["-rdynamic"],
+             "//conditions:default": [],
+@@ -286,6 +290,7 @@
+         native.alias(
+             name = "noicu/" + name,
+             actual = name + "_noicu",
++            visibility = kwargs.get("visibility"),
+         )
+         cc_library(
+             name = name + "_icu",
+@@ -305,6 +310,7 @@
+         native.alias(
+             name = "icu/" + name,
+             actual = name + "_icu",
++            visibility = kwargs.get("visibility"),
+         )
+     else:
+         cc_library(
+diff --git a/src/builtins/builtins-typed-array.cc b/src/builtins/builtins-typed-array.cc
+--- a/src/builtins/builtins-typed-array.cc
++++ b/src/builtins/builtins-typed-array.cc
+@@ -14,7 +14,7 @@
+ #include "src/objects/objects-inl.h"
+ #include "src/objects/option-utils.h"
+ #include "src/objects/simd.h"
+-#include "third_party/simdutf/simdutf.h"
++#include "simdutf.h"
+ 
+ namespace v8::internal {
+ 
+diff --git a/src/codegen/external-reference.cc b/src/codegen/external-reference.cc
+--- a/src/codegen/external-reference.cc
++++ b/src/codegen/external-reference.cc
+@@ -44,7 +44,7 @@
+ #include "src/regexp/regexp-stack.h"
+ #include "src/strings/string-search.h"
+ #include "src/strings/unicode-inl.h"
+-#include "third_party/fp16/src/include/fp16.h"
++#include "fp16.h"
+ 
+ #if V8_ENABLE_WEBASSEMBLY
+ #include "src/wasm/wasm-external-refs.h"
+diff --git a/src/diagnostics/objects-printer.cc b/src/diagnostics/objects-printer.cc
+--- a/src/diagnostics/objects-printer.cc
++++ b/src/diagnostics/objects-printer.cc
+@@ -37,7 +37,7 @@
+ #include "src/snapshot/embedded/embedded-data.h"
+ #include "src/strings/string-stream.h"
+ #include "src/utils/ostreams.h"
+-#include "third_party/fp16/src/include/fp16.h"
++#include "fp16.h"
+ 
+ #if V8_ENABLE_WEBASSEMBLY
+ #include "src/debug/debug-wasm-objects-inl.h"
+diff --git a/src/execution/arm64/simulator-logic-arm64.cc b/src/execution/arm64/simulator-logic-arm64.cc
+--- a/src/execution/arm64/simulator-logic-arm64.cc
++++ b/src/execution/arm64/simulator-logic-arm64.cc
+@@ -9,7 +9,7 @@
+ #include <cmath>
+ 
+ #include "src/numbers/conversions-inl.h"
+-#include "third_party/fp16/src/include/fp16.h"
++#include "fp16.h"
+ 
+ namespace v8 {
+ namespace internal {
+diff --git a/src/numbers/conversions.cc b/src/numbers/conversions.cc
+--- a/src/numbers/conversions.cc
++++ b/src/numbers/conversions.cc
+@@ -23,9 +23,9 @@
+ #include "src/objects/string-inl.h"
+ #include "src/strings/char-predicates-inl.h"
+ #include "src/utils/allocation.h"
+-#include "third_party/dragonbox/src/include/dragonbox/dragonbox.h"
+-#include "third_party/fast_float/src/include/fast_float/fast_float.h"
+-#include "third_party/fast_float/src/include/fast_float/float_common.h"
++#include "dragonbox/dragonbox.h"
++#include "fast_float/fast_float.h"
++#include "fast_float/float_common.h"
+ 
+ #if defined(_STLP_VENDOR_CSTD)
+ // STLPort doesn't import fpclassify into the std namespace.
+diff --git a/src/objects/elements.cc b/src/objects/elements.cc
+--- a/src/objects/elements.cc
++++ b/src/objects/elements.cc
+@@ -28,7 +28,7 @@
+ #include "src/objects/slots-atomic-inl.h"
+ #include "src/objects/slots.h"
+ #include "src/utils/utils.h"
+-#include "third_party/fp16/src/include/fp16.h"
++#include "fp16.h"
+ 
+ // Each concrete ElementsAccessor can handle exactly one ElementsKind,
+ // several abstract ElementsAccessor classes are used to allow sharing
+diff --git a/src/objects/string-inl.h b/src/objects/string-inl.h
+--- a/src/objects/string-inl.h
++++ b/src/objects/string-inl.h
+@@ -38,7 +38,7 @@
+ #include "src/torque/runtime-macro-shims.h"
+ #include "src/torque/runtime-support.h"
+ #include "src/utils/utils.h"
+-#include "third_party/simdutf/simdutf.h"
++#include "simdutf.h"
+ 
+ // Has to be the last include (doesn't have include guards):
+ #include "src/objects/object-macros.h"
+diff --git a/src/objects/string.h b/src/objects/string.h
+--- a/src/objects/string.h
++++ b/src/objects/string.h
+@@ -21,7 +21,7 @@
+ #include "src/objects/tagged.h"
+ #include "src/sandbox/external-pointer.h"
+ #include "src/strings/unicode-decoder.h"
+-#include "third_party/simdutf/simdutf.h"
++#include "simdutf.h"
+ 
+ // Has to be the last include (doesn't have include guards):
+ #include "src/objects/object-macros.h"
+diff --git a/src/runtime/runtime-typedarray.cc b/src/runtime/runtime-typedarray.cc
+--- a/src/runtime/runtime-typedarray.cc
++++ b/src/runtime/runtime-typedarray.cc
+@@ -11,7 +11,7 @@
+ #include "src/objects/objects-inl.h"
+ #include "src/runtime/runtime-utils.h"
+ #include "src/runtime/runtime.h"
+-#include "third_party/fp16/src/include/fp16.h"
++#include "fp16.h"
+ 
+ namespace v8 {
+ namespace internal {
+diff --git a/src/strings/unicode-inl.h b/src/strings/unicode-inl.h
+--- a/src/strings/unicode-inl.h
++++ b/src/strings/unicode-inl.h
+@@ -10,7 +10,7 @@
+ 
+ #include "src/base/logging.h"
+ #include "src/utils/utils.h"
+-#include "third_party/simdutf/simdutf.h"
++#include "simdutf.h"
+ 
+ namespace unibrow {
+ 
+diff --git a/src/strings/unicode.cc b/src/strings/unicode.cc
+--- a/src/strings/unicode.cc
++++ b/src/strings/unicode.cc
+@@ -21,7 +21,7 @@
+ #include "unicode/uchar.h"
+ #endif
+ 
+-#include "third_party/simdutf/simdutf.h"
++#include "simdutf.h"
+ 
+ namespace unibrow {
+ 
+diff --git a/src/wasm/float16.h b/src/wasm/float16.h
+--- a/src/wasm/float16.h
++++ b/src/wasm/float16.h
+@@ -6,7 +6,7 @@
+ #define V8_WASM_FLOAT16_H_
+ 
+ #include "src/base/memory.h"
+-#include "third_party/fp16/src/include/fp16.h"
++#include "fp16.h"
+ 
+ namespace v8 {
+ namespace internal {
+diff --git a/src/wasm/wasm-objects-inl.h b/src/wasm/wasm-objects-inl.h
+--- a/src/wasm/wasm-objects-inl.h
++++ b/src/wasm/wasm-objects-inl.h
+@@ -30,7 +30,7 @@
+ #include "src/roots/roots.h"
+ #include "src/wasm/wasm-code-manager.h"
+ #include "src/wasm/wasm-module.h"
+-#include "third_party/fp16/src/include/fp16.h"
++#include "fp16.h"
+ 
+ #if V8_ENABLE_DRUMBRAKE
+ #include "src/wasm/interpreter/wasm-interpreter-objects.h"
+diff --git a/src/wasm/wasm-value.h b/src/wasm/wasm-value.h
+--- a/src/wasm/wasm-value.h
++++ b/src/wasm/wasm-value.h
+@@ -14,7 +14,7 @@
+ #include "src/handles/handles.h"
+ #include "src/utils/boxed-float.h"
+ #include "src/wasm/value-type.h"
+-#include "third_party/fp16/src/include/fp16.h"
++#include "fp16.h"
+ 
+ namespace v8 {
+ namespace internal {
+diff --git a/src/wasm/pgo.h b/src/wasm/pgo.h
+--- a/src/wasm/pgo.h
++++ b/src/wasm/pgo.h
+@@ -9,6 +9,7 @@
+ #error This header should only be included if WebAssembly is enabled.
+ #endif  // !V8_ENABLE_WEBASSEMBLY
+ 
++#include <atomic>
+ #include <vector>
+ 
+ #include "src/base/vector.h"

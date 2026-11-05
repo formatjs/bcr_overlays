@@ -1,0 +1,9 @@
+exports_files(
+    [
+        "generators/trace_processor_table/public.py",
+        "generators/trace_processor_table/serialize.py",
+        "generators/trace_processor_table/serialize_new.py",
+        "generators/trace_processor_table/util.py",
+    ],
+    visibility = ["//visibility:public"],
+)

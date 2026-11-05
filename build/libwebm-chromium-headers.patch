@@ -1,0 +1,16 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -37,3 +37,12 @@
+     includes = ["."],
+     visibility = ["//visibility:public"],
+ )
++
++cc_library(
++    name = "chromium_headers",
++    hdrs = glob(["common/*.h", "mkvmuxer/*.h", "mkvparser/*.h", "*.hpp"]),
++    include_prefix = "third_party/libwebm/source",
++    strip_include_prefix = "/",
++    visibility = ["//visibility:public"],
++    deps = [":webm"],
++)

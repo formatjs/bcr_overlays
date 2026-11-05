@@ -1,0 +1,16 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -107,3 +107,12 @@
+     visibility = ["//visibility:public"],
+     deps = ["@ogg"],
+ )
++
++cc_library(
++    name = "chromium_headers",
++    hdrs = glob(["include/FLAC/*.h"]),
++    include_prefix = "third_party/flac/include",
++    strip_include_prefix = "include",
++    visibility = ["//visibility:public"],
++    deps = [":flac"],
++)

@@ -1,0 +1,6 @@
+startup --host_jvm_args=-Xmx4g
+common --enable_bzlmod
+common --repo_contents_cache=
+build --jobs=2
+build --platforms=@llvm//platforms:linux_x86_64_gnu.2.31
+test --test_output=errors

@@ -1,0 +1,29 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("//:icu_sources.bzl", "COMMON_HDRS", "COMMON_SRCS")
+load("//bazel:config.bzl", "ICU_CODE_DEFINES", "ICU_COPTS", "ICU_DEFINES")
+
+cc_library(
+    name = "headers",
+    hdrs = COMMON_HDRS,
+    defines = ICU_DEFINES,
+    strip_include_prefix = ".",
+    visibility = ["//:__subpackages__"],
+)
+
+cc_library(
+    name = "implementation",
+    srcs = COMMON_SRCS,
+    copts = ICU_COPTS,
+    linkopts = ["-pthread"],
+    linkstatic = True,
+    local_defines = ICU_CODE_DEFINES + [
+        "U_COMMON_IMPLEMENTATION",
+        "U_ICUDATAENTRY_IN_COMMON",
+    ],
+    target_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [":headers"],
+)

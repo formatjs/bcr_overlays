@@ -1,0 +1,10 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+cc_test(
+    name = "pki_api_test",
+    srcs = ["pki_api_test.cc"],
+    copts = ["-std=c++20"],
+    linkstatic = True,
+    visibility = ["//visibility:public"],
+    deps = ["@boringssl//:chromium_pki"],
+)

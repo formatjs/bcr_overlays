@@ -1,0 +1,7 @@
+{
+    "base_module": "libxcb@1.17.0.bcr.3",
+    "patches": {
+        "//build:libxcb-abstract-sockets.patch": "sha256-rzvfbgiEGRdhU5MVcYDivlVMcg9t80iYeQwbNQlRYvw="
+    },
+    "upstream_source_sha256": "396d884aee044329cf8eeb625845e5c64d7386ec5409e4a2530ba49390cc703f"
+}

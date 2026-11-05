@@ -1,0 +1,12 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+exports_files(glob(["src/**", "sharpyuv/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["src/**/*.h", "sharpyuv/**/*.h"]),
+    includes = [".", "src"],
+    include_prefix = "third_party/libwebp/src",
+    strip_include_prefix = ".",
+)

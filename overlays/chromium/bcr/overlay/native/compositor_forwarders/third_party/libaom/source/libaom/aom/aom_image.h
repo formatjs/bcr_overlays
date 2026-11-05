@@ -1,0 +1,2 @@
+#pragma once
+#include "aom/aom_image.h"

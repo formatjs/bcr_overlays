@@ -1,0 +1,11 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+exports_files(glob(["icd/**", "scripts/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["icd/**/*.h"]),
+    includes = ["icd", "icd/generated"],
+    include_prefix = "third_party/vulkan-tools/src",
+)

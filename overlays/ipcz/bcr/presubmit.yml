@@ -1,0 +1,11 @@
+bcr_test_module:
+  module_path: bcr_test
+  matrix:
+    bazel: ["8.x", "9.x"]
+  tasks:
+    native:
+      name: ipcz native API and driver integration
+      platform: ubuntu2404
+      bazel: ${{ bazel }}
+      build_targets: ["@ipcz//:ipcz", "@ipcz//:reference_drivers"]
+      test_targets: ["//:ipcz_test"]

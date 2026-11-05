@@ -1,0 +1,18 @@
+{
+    "url": "https://github.com/xiph/flac/releases/download/1.5.0/flac-1.5.0.tar.xz",
+    "integrity": "sha256-8sHHZZKoL//4QTujxKEpm2x6sGxzTe4D/YhjBIXCuSA=",
+    "strip_prefix": "flac-1.5.0",
+    "overlay": {
+        "BUILD.bazel": "sha256-d4KHqWm8crmXzUx6EEpAcIb/v0DVtpE5bTqLRG6QPf4=",
+        "MODULE.bazel": "sha256-WiCxS/NTmPWb+Z/AAHBYru3QruHIdQCB/x+3OlF3cv0=",
+        "bazel/config.h": "sha256-LYezPi7VDohQakWb4wwB/nhjyDQjeOe5QnzWWfzyeSk=",
+        "src/libFLAC/bitwriter.c": "sha256-6r8D/ZMQJXbz3IYfQTMmfj9BOFmD2ne9P4NtzhkbL0Q=",
+        "src/libFLAC/metadata_iterators.c": "sha256-HVwAFL1NQ//njW+8FN/59rAjB1w3RRwpWyFP6eg95w0=",
+        "src/libFLAC/stream_encoder.c": "sha256-SIbrFq+Na63+PzsJhxDDotZGsgoTyFXGczIKWAwwXMw=",
+        "bcr_test/MODULE.bazel": "sha256-7ForZArUn5j5YP3JKvDVmaUxTJ34DEQJvRiXWsDrdb8=",
+        "bcr_test/BUILD.bazel": "sha256-fmVdFdpaNGcw8fWq55Qvcjee1FEwHJkuv22LY0MUVio=",
+        "bcr_test/.bazelrc": "sha256-aJshsGcxO/WgE3/UZTJEhPTcCW8H4QOvqP6QXhEWk6E=",
+        "bcr_test/.bazelversion": "sha256-G5SH1VvqR/6lDSJsycU7xUiHetKjGLrI+8izIPQp5cU="
+    },
+    "patches": {}
+}

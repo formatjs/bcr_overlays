@@ -1,0 +1,36 @@
+{
+    "homepage": "https://boringssl.googlesource.com/boringssl/",
+    "maintainers": [
+        {
+            "email": "agl@google.com",
+            "github": "agl",
+            "github_user_id": 21203,
+            "name": "Adam Langley"
+        },
+        {
+            "email": "davidben@google.com",
+            "github": "davidben",
+            "github_user_id": 109690,
+            "name": "David Benjamin"
+        },
+        {
+            "email": "dadrian@google.com",
+            "github": "dadrian",
+            "github_user_id": 1158264,
+            "name": "David Adrian"
+        },
+        {
+            "email": "chlily@google.com",
+            "github": "chlily1",
+            "github_user_id": 45374074,
+            "name": "Lily Chen"
+        }
+    ],
+    "repository": [
+        "github:google/boringssl"
+    ],
+    "versions": [
+        "0.20251002.0.chromium142"
+    ],
+    "yanked_versions": {}
+}

@@ -10,3 +10,15 @@ cc_library(
 )
 
 exports_files(["BUILD.bazel"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "modp_b64.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "modp_b64.h"
+])
+# END CONTENT INPUTS

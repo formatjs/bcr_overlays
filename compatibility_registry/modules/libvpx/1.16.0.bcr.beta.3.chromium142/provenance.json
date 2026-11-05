@@ -1,0 +1,12 @@
+{
+    "base_module": "libvpx@1.16.0.bcr.beta.3",
+    "patches": {
+        "//build:libvpx-highbitdepth.patch": "sha256-Zcs/huno1OKeixz83V4GmN9MfPAUfMdAsP2OqlBCQ04=",
+        "//build:libvpx-chromium-headers.patch": "sha256-FCBdm9joBDWB5TXzLc6U/LTA02tuNCeTy5tR2yWQdwQ=",
+        "//build:libvpx-rate-control.patch": "sha256-/Xd3O6yazBRPAY+czqfIM9z/2IqalCulDUIszqLgd6E="
+    },
+    "upstream_source_sha256": "20f8950bc6e358ae4cf5b03ce0df17b392a49945d87db922150145e43a632be7",
+    "added_dependencies": {
+        "rules_cc_autoconf": "0.35.0"
+    }
+}

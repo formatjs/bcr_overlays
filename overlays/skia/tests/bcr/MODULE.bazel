@@ -1,0 +1,7 @@
+module(name = "skia_consumer")
+
+bazel_dep(name = "skia", version = "142.0.0")
+bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "llvm", version = "0.8.26")
+
+register_toolchains("@llvm//toolchain:all")

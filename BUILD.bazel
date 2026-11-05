@@ -1,0 +1,907 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+load("@rules_rust//rust:defs.bzl", "rust_test")
+
+exports_files([
+    "overlays.json",
+] + glob([
+    "overlays/abseil-cpp/bcr/patches/*.patch",
+    "overlays/boringssl/bcr/patches/*.patch",
+]))
+
+alias(
+    name = "quiche",
+    actual = "@chromium//native:quiche",
+)
+
+alias(
+    name = "v8",
+    actual = "@chromium//native:browser_v8",
+)
+
+alias(
+    name = "skia",
+    actual = "@chromium//native:skia",
+)
+
+alias(
+    name = "angle",
+    actual = "@angle//:translator",
+)
+
+filegroup(
+    name = "components",
+    srcs = [
+        "@angle//:translator",
+        "@aom",
+        "@chromium//native:all_buildflags",
+        "@chromium//native:angle_runtime",
+        "@chromium//native:base_i18n",
+        "@chromium//native:blink_core",
+        "@chromium//native:blink_modules",
+        "@chromium//native:blink_platform",
+        "@chromium//native:browser_metrics",
+        "@chromium//native:browser_tracing",
+        "@chromium//native:browser_v8",
+        "@chromium//native:browser_v8_runtime",
+        "@chromium//native:chromium_gl",
+        "@chromium//native:chromium_sqlite",
+        "@chromium//native:compositor",
+        "@chromium//native:content",
+        "@chromium//native:crypto",
+        "@chromium//native:dawn_cpp_headers",
+        "@chromium//native:dawn_native_library",
+        "@chromium//native:dawn_native_runtime",
+        "@chromium//native:dawn_native_runtime_requirements",
+        "@chromium//native:dawn_proc",
+        "@chromium//native:ffmpeg",
+        "@chromium//native:fontconfig",
+        "@chromium//native:gfx",
+        "@chromium//native:gfx_geometry_mojom",
+        "@chromium//native:gfx_geometry_skia",
+        "@chromium//native:gfx_range_mojom",
+        "@chromium//native:gfx_x11",
+        "@chromium//native:gl_init",
+        "@chromium//native:gl_runtime",
+        "@chromium//native:gles2_implementation",
+        "@chromium//native:gpu_gles2_commands",
+        "@chromium//native:gpu_gles2_interface",
+        "@chromium//native:gpu_ipc_client",
+        "@chromium//native:gpu_service",
+        "@chromium//native:grit_resources",
+        "@chromium//native:harfbuzz",
+        "@chromium//native:jpeg",
+        "@chromium//native:leveldb",
+        "@chromium//native:leveldb_proto",
+        "@chromium//native:libgav1_parser",
+        "@chromium//native:media",
+        "@chromium//native:mojo_bindings",
+        "@chromium//native:mojo_cpp_bindings",
+        "@chromium//native:net",
+        "@chromium//native:ozone",
+        "@chromium//native:paint",
+        "@chromium//native:pthreadpool",
+        "@chromium//native:quiche",
+        "@chromium//native:raster_implementation",
+        "@chromium//native:skia",
+        "@chromium//native:tflite",
+        "@chromium//native:tflite_builtin_op_resolver",
+        "@chromium//native:tint",
+        "@chromium//native:url",
+        "@chromium//native:viz_client",
+        "@chromium//native:viz_common",
+        "@chromium//native:webp",
+        "@chromium//native:webui_assets",
+        "@chromium//native:wuffs",
+        "@chromium//native:x11_gpu_memory_buffer_support",
+        "@chromium//native/rust:all_crates",
+        "@crc32c",
+        "@dav1d",
+        "@flac",
+        "@libvpx",
+        "@libwebm",
+        "@opus",
+        "@skia//:core",
+        "@skia//:pathops",
+        "@v8//:icu/v8",
+    ],
+)
+
+test_suite(
+    name = "runtime_tests",
+    tests = [
+        ":avif_runtime_test",
+        ":blink_core_runtime_test",
+        ":blink_font_format_runtime_test",
+        ":blink_platform_runtime_test",
+        ":browser_services_runtime_test",
+        ":browser_v8_runtime_test",
+        ":codecs_runtime_test",
+        ":compositor_runtime_test",
+        ":confidential_compute_runtime_test",
+        ":dawn_native_runtime_test",
+        ":dawn_runtime_test",
+        ":fonts_runtime_test",
+        ":geometry_runtime_test",
+        ":gfx_runtime_test",
+        ":gpu_client_runtime_test",
+        ":gpu_protocol_runtime_test",
+        ":graphics_rust_test",
+        ":linux_buffers_runtime_test",
+        ":media_audio_runtime_test",
+        ":media_runtime_test",
+        ":ml_support_runtime_test",
+        ":network_runtime_test",
+        ":paint_runtime_test",
+        ":pthreadpool_runtime_test",
+        ":quiche_runtime_test",
+        ":skia_runtime_test",
+        ":sqlite_runtime_test",
+        ":srtp_runtime_test",
+        ":tflite_runtime_test",
+        ":tint_runtime_test",
+        ":video_codecs_runtime_test",
+        ":vulkan_loader_runtime_test",
+        ":vulkan_validation_runtime_test",
+        ":wayland_runtime_test",
+        ":webrtc_runtime_test",
+        ":xslt_runtime_test",
+        "@abseil-cpp//bcr_test:hardening_test",
+        "@angle//bcr_test:smoke_test",
+        "@boringssl//bcr_test:pki_api_test",
+        "@chromium//bcr_test:allocator_shim_test",
+        "@chromium//bcr_test:base_i18n_test",
+        "@chromium//bcr_test:base_runtime_test",
+        "@chromium//bcr_test:bcr_core_dependencies_test",
+        "@chromium//bcr_test:crypto_runtime_test",
+        "@chromium//bcr_test:cxx_bridge_test",
+        "@chromium//bcr_test:grit_binary_resources_test",
+        "@chromium//bcr_test:grit_resources_test",
+        "@chromium//bcr_test:ipcz_test",
+        "@chromium//bcr_test:mojo_control_test",
+        "@chromium//bcr_test:mojo_runtime_test",
+        "@chromium//bcr_test:native_graph_buildflags_test",
+        "@chromium//bcr_test:partition_alloc_test",
+        "@chromium//bcr_test:perfetto_proto_test",
+        "@chromium//bcr_test:perfetto_runtime_test",
+        "@chromium//bcr_test:permission_strings_test",
+        "@chromium//bcr_test:rust_allocator_test",
+        "@chromium//bcr_test:url_runtime_test",
+        "@chromium//bcr_test:variations_proto_test",
+        "@chromium//bcr_test:webui_test",
+        "@chromium//native:angle_runtime_test",
+        "@chromium//native:gl_runtime_test",
+        "@chromium//native:ozone_gl_runtime_test",
+        "@chromium//native:swiftshader_runtime_test",
+        "@chromium_icu//bcr_test:file_data_test",
+        "@chromium_icu//bcr_test:static_data_test",
+        "@compact_enc_det//bcr_test:encoding_test",
+        "@ipcz//bcr_test:ipcz_test",
+        "@linux-syscall-support//bcr_test:syscall_test",
+        "@nspr//bcr_test:runtime_test",
+        "@nspr//bcr_test:shared_runtime_test",
+        "@nss//bcr_test:fips_runtime_test",
+        "@nss//bcr_test:runtime_test",
+        "@perfetto//bcr_test:chromium_wire_test",
+        "@perfetto//bcr_test:wire_test",
+        "@skia//bcr_test:smoke_test",
+        "@v8//bcr_test:intl_test",
+        "@xkbcommon//:xkbcommon_compose_from_buffer_test",
+        "@xkbcommon//:xkbcommon_consumer_link_test",
+        "@xkbcommon//:xkbcommon_headers_consumer_compile_test",
+    ],
+)
+
+cc_test(
+    name = "quiche_runtime_test",
+    srcs = ["tests/quiche_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:quiche"],
+)
+
+cc_test(
+    name = "sqlite_runtime_test",
+    size = "small",
+    srcs = [
+        "tests/bcr_sqlite_version.cc",
+        "tests/sqlite_runtime_test.cc",
+    ],
+    args = ["$(rlocationpath @chromium_icu//:common/icudtl.dat)"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-O2",
+    ],
+    data = ["@chromium_icu//:common/icudtl.dat"],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:base_i18n",
+        "@chromium//native:chromium_sqlite",
+        "@rules_cc//cc/runfiles",
+        "@sqlite3",
+    ],
+)
+
+alias(
+    name = "net",
+    actual = "@chromium//native:net",
+)
+
+cc_test(
+    name = "network_runtime_test",
+    size = "small",
+    srcs = ["tests/network_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        "@brotli//:brotlienc",
+        "@chromium//native:net",
+        "@zstd",
+    ],
+)
+
+cc_test(
+    name = "geometry_runtime_test",
+    size = "small",
+    srcs = ["tests/geometry_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:gfx_geometry_mojom",
+        "@chromium//native:gfx_geometry_skia",
+        "@chromium//native:gfx_range_mojom",
+    ],
+)
+
+rust_test(
+    name = "graphics_rust_test",
+    size = "small",
+    srcs = ["tests/graphics_rust_test.rs"],
+    crate_root = "tests/graphics_rust_test.rs",
+    data = ["@chromium//:headless/test/data/Ahem.ttf"],
+    edition = "2021",
+    rustc_env = {"FONT_FIXTURE": "$(rootpath @chromium//:headless/test/data/Ahem.ttf)"},
+    use_libtest_harness = False,
+    deps = [
+        "@chromium//native/rust:png",
+        "@chromium//native/rust:skrifa",
+    ],
+)
+
+cc_test(
+    name = "dawn_runtime_test",
+    size = "small",
+    srcs = ["tests/dawn_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    local_defines = [
+        "DAWN_ENABLE_ASSERTS",
+        "DAWN_ABORT_ON_ASSERT",
+    ],
+    deps = [
+        "@chromium//native:dawn_cpp_headers",
+        "@chromium//native:dawn_proc",
+    ],
+)
+
+cc_test(
+    name = "fonts_runtime_test",
+    size = "small",
+    srcs = ["tests/fonts_runtime_test.cc"],
+    args = [
+        "$(rlocationpath @chromium_icu//:common/icudtl.dat)",
+        "$(rlocationpath @chromium//:headless/test/data/Ahem.ttf)",
+    ],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        "@chromium//:headless/test/data/Ahem.ttf",
+        "@chromium_icu//:common/icudtl.dat",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:base_i18n",
+        "@chromium//native:fontconfig",
+        "@chromium//native:freetype",
+        "@chromium//native:harfbuzz",
+        "@chromium//native:libpng",
+        "@chromium//native:libxml",
+        "@libuuid//:uuid",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "codecs_runtime_test",
+    size = "small",
+    srcs = ["tests/codecs_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    local_defines = ["MANGLE_JPEG_NAMES"],
+    deps = [
+        "@chromium//native:jpeg",
+        "@chromium//native:webp",
+        "@chromium//native:wuffs",
+    ],
+)
+
+cc_test(
+    name = "skia_runtime_test",
+    size = "small",
+    srcs = ["tests/skia_runtime_test.cc"],
+    args = [
+        "$(rlocationpath @chromium_icu//:common/icudtl.dat)",
+        "$(rlocationpath @chromium//:headless/test/data/Ahem.ttf)",
+    ],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        "@chromium//:headless/test/data/Ahem.ttf",
+        "@chromium_icu//:common/icudtl.dat",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:base_i18n",
+        "@chromium//native:skia",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "paint_runtime_test",
+    size = "small",
+    srcs = ["tests/paint_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    local_defines = ["UNIT_TEST"],
+    deps = [
+        "@chromium//native:crash_keys",
+        "@chromium//native:paint",
+    ],
+)
+
+cc_test(
+    name = "gfx_runtime_test",
+    size = "small",
+    srcs = ["tests/gfx_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:gfx",
+        "@chromium//native:libdrm",
+        "@chromium//native:libsync",
+        "@chromium//native:ui_data_pack",
+        "@chromium//native:zlib_compression_utils",
+    ],
+)
+
+cc_test(
+    name = "tint_runtime_test",
+    size = "small",
+    srcs = ["tests/tint_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        "@angle//:translator",
+        "@chromium//native:tint",
+        "@spirv_tools",
+        "@spirv_tools//:spirv_tools_opt",
+    ],
+)
+
+cc_test(
+    name = "dawn_native_runtime_test",
+    size = "small",
+    srcs = ["tests/dawn_native_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:dawn_native_library",
+        "@chromium//native:dawn_proc",
+    ],
+)
+
+cc_test(
+    name = "vulkan_loader_runtime_test",
+    size = "small",
+    srcs = ["tests/vulkan_loader_runtime_test.cc"],
+    args = ["$(rlocationpath @chromium//native:libvulkan.so.1)"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        "@chromium//native:libvulkan.so.1",
+        "@chromium//native:vulkan_validation_runtime",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:dawn_native_library",
+        "@chromium//native:dawn_proc",
+        "@chromium//native:vulkan_loader",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "vulkan_validation_runtime_test",
+    size = "small",
+    srcs = ["tests/vulkan_validation_runtime_test.cc"],
+    args = [
+        "$(rlocationpath @chromium//native:libVkLayer_khronos_validation.so)",
+        "$(rlocationpath @chromium//native:angledata/VkLayer_khronos_validation.json)",
+    ],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        "@chromium//native:angledata/VkLayer_khronos_validation.json",
+        "@chromium//native:libVkLayer_khronos_validation.so",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:vulkan_loader",
+        "@jsoncpp",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "wayland_runtime_test",
+    size = "small",
+    srcs = ["tests/wayland_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        "@wayland//:wayland_client",
+        "@wayland//:wayland_server",
+    ],
+)
+
+cc_test(
+    name = "gpu_protocol_runtime_test",
+    size = "small",
+    srcs = ["tests/gpu_protocol_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:gl_enums",
+        "@chromium//native:gpu_command_common",
+        "@chromium//native:gpu_gles2_commands",
+        "@chromium//native:gpu_gles2_utils",
+        "@chromium//native:viz_shared_image_format",
+    ],
+)
+
+cc_test(
+    name = "x11_runtime_test",
+    size = "small",
+    srcs = [
+        "tests/x11_extensions_runtime_test.cc",
+        "tests/x11_runtime_test.cc",
+    ],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    tags = [
+        "manual",
+        "requires-network",
+    ],
+    deps = [
+        "@chromium//native:gfx_x11",
+        "@chromium//native:x11_gpu_memory_buffer_support",
+        "@chromium_xcomposite//:xcomposite",
+        "@chromium_xtst//:xtst",
+        "@libxdamage",
+        "@libxfixes",
+        "@libxrandr",
+        "@libxrender",
+    ],
+)
+
+cc_test(
+    name = "linux_buffers_runtime_test",
+    size = "small",
+    srcs = ["tests/linux_buffers_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkopts = ["-ldl"],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:linux_drm",
+        "@chromium//native:linux_gbm",
+        "@chromium//native:native_pixmap_usage",
+    ],
+)
+
+cc_test(
+    name = "browser_services_runtime_test",
+    size = "small",
+    srcs = ["tests/browser_services_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:browser_metrics",
+        "@chromium//native:browser_tracing",
+        "@chromium//native:prefs",
+        "@chromium//native:variations",
+    ],
+)
+
+cc_test(
+    name = "browser_v8_runtime_test",
+    size = "medium",
+    srcs = ["tests/browser_v8_runtime_test.cc"],
+    args = [
+        "$(rlocationpath @chromium//native:icudtl.dat)",
+        "$(rlocationpath @chromium//native:snapshot_blob.bin)",
+    ],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        "@chromium//native:icudtl.dat",
+        "@chromium//native:snapshot_blob.bin",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:browser_v8",
+        "@chromium//native:browser_v8_platform",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+genrule(
+    name = "ml_support_schema",
+    srcs = ["@chromium_tflite//:tensorflow/lite/delegates/xnnpack/weight_cache_schema.fbs"],
+    outs = ["tests/weight_cache_schema_generated.h"],
+    cmd = "$(execpath @flatbuffers//:flatc) --cpp --gen-object-api -o $(@D) $(location @chromium_tflite//:tensorflow/lite/delegates/xnnpack/weight_cache_schema.fbs)",
+    tools = ["@flatbuffers//:flatc"],
+)
+
+cc_test(
+    name = "ml_support_runtime_test",
+    size = "small",
+    srcs = [
+        "tests/ml_support_runtime_test.cc",
+        ":ml_support_schema",
+    ],
+    copts = ["-std=c++20"],
+    linkstatic = True,
+    deps = [
+        "@cpuinfo",
+        "@flatbuffers//:runtime_cc",
+        "@fxdiv//:FXdiv",
+    ],
+)
+
+cc_test(
+    name = "pthreadpool_runtime_test",
+    size = "small",
+    srcs = ["tests/pthreadpool_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:pthreadpool"],
+)
+
+cc_test(
+    name = "tflite_runtime_test",
+    size = "small",
+    srcs = ["tests/tflite_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:tflite_builtin_op_resolver"],
+)
+
+cc_test(
+    name = "media_audio_runtime_test",
+    size = "small",
+    srcs = ["tests/media_audio_runtime_test.cc"],
+    copts = ["-std=c++20"],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:ffmpeg",
+        "@opus",
+    ],
+)
+
+cc_test(
+    name = "video_codecs_runtime_test",
+    size = "small",
+    srcs = ["tests/video_codecs_runtime_test.cc"],
+    copts = ["-std=c++20"],
+    linkstatic = True,
+    deps = [
+        "@aom",
+        "@dav1d",
+        "@libvpx",
+    ],
+)
+
+cc_test(
+    name = "gpu_client_runtime_test",
+    size = "small",
+    srcs = ["tests/gpu_client_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:gpu_client_test_support"],
+)
+
+cc_test(
+    name = "media_runtime_test",
+    size = "small",
+    srcs = ["tests/media_runtime_test.cc"],
+    args = ["$(rlocationpath @chromium_icu//:common/icudtl.dat)"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = ["@chromium_icu//:common/icudtl.dat"],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:base_i18n",
+        "@chromium//native:leveldb",
+        "@chromium//native:media",
+        "@chromium//native/rust:symphonia_glue",
+        "@flac",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "compositor_runtime_test",
+    size = "small",
+    srcs = ["tests/compositor_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:compositor",
+        "@chromium//native:network_public_cpp",
+    ],
+)
+
+cc_test(
+    name = "confidential_compute_runtime_test",
+    size = "small",
+    srcs = ["tests/confidential_compute_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:confidential_compute"],
+)
+
+cc_test(
+    name = "srtp_runtime_test",
+    size = "small",
+    srcs = ["tests/srtp_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:libsrtp"],
+)
+
+cc_test(
+    name = "webrtc_runtime_test",
+    size = "small",
+    srcs = ["tests/webrtc_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkstatic = True,
+    deps = ["@chromium//native:webrtc_task_queue_factory"],
+)
+
+cc_test(
+    name = "blink_font_format_runtime_test",
+    size = "small",
+    srcs = ["tests/blink_font_format_runtime_test.cc"],
+    args = [
+        "$(rlocationpath @chromium//:third_party/blink/renderer/platform/testing/data/roboto-a.ttf)",
+        "$(rlocationpath @chromium//:third_party/blink/renderer/platform/testing/data/colrv0_test.ttf)",
+        "$(rlocationpath @chromium//:third_party/blink/renderer/platform/testing/data/colrv1_test.ttf)",
+    ],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        "@chromium//:third_party/blink/renderer/platform/testing/data/colrv0_test.ttf",
+        "@chromium//:third_party/blink/renderer/platform/testing/data/colrv1_test.ttf",
+        "@chromium//:third_party/blink/renderer/platform/testing/data/roboto-a.ttf",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:blink_font_format_cpp",
+        "@chromium//native/rust:font_format_check",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "blink_core_runtime_test",
+    size = "small",
+    srcs = ["tests/blink_core_runtime_test.cc"],
+    args = ["$(rlocationpath @chromium_icu//:common/icudtl.dat)"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = ["@chromium_icu//:common/icudtl.dat"],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:base_i18n",
+        "@chromium//native:blink_core",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "blink_platform_runtime_test",
+    size = "small",
+    srcs = ["tests/blink_platform_runtime_test.cc"],
+    args = ["$(rlocationpath @chromium_icu//:common/icudtl.dat)"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = ["@chromium_icu//:common/icudtl.dat"],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:base_i18n",
+        "@chromium//native:blink_platform",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "avif_runtime_test",
+    size = "small",
+    srcs = ["tests/avif_runtime_test.cc"],
+    args = [
+        "$(rlocationpath @chromium_crabbyavif//:tests/data/colors-animated-8bpc.avif)",
+        "$(rlocationpath @chromium_crabbyavif//:tests/data/paris_10bpc.avif)",
+        "$(rlocationpath @chromium_crabbyavif//:tests/data/colors-animated-12bpc-keyframes-0-2-3.avif)",
+    ],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        "@chromium_crabbyavif//:tests/data/colors-animated-12bpc-keyframes-0-2-3.avif",
+        "@chromium_crabbyavif//:tests/data/colors-animated-8bpc.avif",
+        "@chromium_crabbyavif//:tests/data/paris_10bpc.avif",
+    ],
+    linkstatic = True,
+    deps = [
+        "@chromium//native/rust:crabbyavif",
+        "@chromium_crabbyavif//:chromium_headers",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "xslt_runtime_test",
+    size = "small",
+    srcs = ["tests/xslt_runtime_test.cc"],
+    args = ["$(rlocationpath @chromium_icu//:common/icudtl.dat)"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = ["@chromium_icu//:common/icudtl.dat"],
+    linkstatic = True,
+    deps = [
+        "@chromium//native:base_i18n",
+        "@chromium//native:libxslt",
+        "@rules_cc//cc/runfiles",
+    ],
+)

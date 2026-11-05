@@ -1,0 +1,137 @@
+diff --git a/chromium_shared.bzl b/chromium_shared.bzl
+--- /dev/null
++++ b/chromium_shared.bzl
+@@ -0,0 +1,57 @@
++"""Use one native GLib family across Chromium and desktop DSOs."""
++
++load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
++load("@rules_cc//cc:cc_import.bzl", "cc_import")
++load("@rules_cc//cc:cc_library.bzl", "cc_library")
++load("@rules_cc//cc/common:cc_info.bzl", "CcInfo")
++
++def _linkage_impl(ctx):
++    runtime = ctx.attr.runtime[DefaultInfo]
++    runfiles = ctx.runfiles(transitive_files = runtime.files).merge(runtime.default_runfiles)
++    runfiles = runfiles.merge(ctx.attr.library[DefaultInfo].default_runfiles)
++    return [
++        CcInfo(
++            compilation_context = ctx.attr.library[CcInfo].compilation_context,
++            linking_context = ctx.attr.shared[CcInfo].linking_context,
++        ),
++        DefaultInfo(files = runtime.files, runfiles = runfiles),
++    ]
++
++_linkage = rule(
++    implementation = _linkage_impl,
++    attrs = {
++        "library": attr.label(providers = [CcInfo], mandatory = True),
++        "shared": attr.label(providers = [CcInfo], mandatory = True),
++        "runtime": attr.label(mandatory = True),
++    },
++)
++
++def shared_glib_library(name, soname, **kwargs):
++    visibility = kwargs.get("visibility")
++    cc_library(
++        name = name + "_static",
++        alwayslink = select({"@platforms//os:linux": True, "//conditions:default": False}),
++        **kwargs
++    )
++    compatible = select({"@platforms//os:linux": [], "//conditions:default": ["@platforms//:incompatible"]})
++    cc_binary(
++        name = soname,
++        deps = [":" + name + "_static"],
++        linkshared = True,
++        linkstatic = True,
++        linkopts = ["-Wl,-soname," + soname],
++        target_compatible_with = compatible,
++        visibility = visibility,
++    )
++    cc_import(
++        name = name + "_shared_import",
++        shared_library = ":" + soname,
++        target_compatible_with = compatible,
++    )
++    _linkage(
++        name = name,
++        library = ":" + name + "_static",
++        shared = select({"@platforms//os:linux": ":" + name + "_shared_import", "//conditions:default": ":" + name + "_static"}),
++        runtime = select({"@platforms//os:linux": ":" + soname, "//conditions:default": ":" + name + "_static"}),
++        visibility = visibility,
++    )
+diff --git a/glib/BUILD.bazel b/glib/BUILD.bazel
+--- a/glib/BUILD.bazel
++++ b/glib/BUILD.bazel
+@@ -1,3 +1,4 @@
++load("//:chromium_shared.bzl", "shared_glib_library")
+ load("@bazel_skylib//rules:expand_template.bzl", "expand_template")
+ load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+ load("@rules_cc//cc:cc_library.bzl", "cc_library")
+@@ -319,8 +320,9 @@
+ 
+ INCLUDE_PREFIX = REPO_ROOT if REPO_ROOT else "."
+ 
+-cc_library(
++shared_glib_library(
+     name = "glib",
++    soname = "libglib-2.0.so.0",
+     srcs = GLIB_SRCS + select({
+         "@platforms//os:windows": GLIB_WIN32_SRCS,
+         "//conditions:default": GLIB_POSIX_SRCS,
+diff --git a/gobject/BUILD.bazel b/gobject/BUILD.bazel
+--- a/gobject/BUILD.bazel
++++ b/gobject/BUILD.bazel
+@@ -1,3 +1,4 @@
++load("//:chromium_shared.bzl", "shared_glib_library")
+ load("@bazel_skylib//rules:expand_template.bzl", "expand_template")
+ load("@rules_cc//cc:cc_library.bzl", "cc_library")
+ load("@rules_python//python:defs.bzl", "py_binary")
+@@ -136,8 +137,9 @@
+ 
+ INCLUDE_PREFIX = REPO_ROOT if REPO_ROOT else "."
+ 
+-cc_library(
++shared_glib_library(
+     name = "gobject",
++    soname = "libgobject-2.0.so.0",
+     srcs = GOBJECT_SRCS + PUBLIC_HDRS + [
+         "gatomicarray.h",
+         "glib-enumtypes.c",
+diff --git a/gmodule/BUILD.bazel b/gmodule/BUILD.bazel
+--- a/gmodule/BUILD.bazel
++++ b/gmodule/BUILD.bazel
+@@ -1,3 +1,4 @@
++load("//:chromium_shared.bzl", "shared_glib_library")
+ load("@bazel_skylib//rules:expand_template.bzl", "expand_template")
+ load("@rules_cc//cc:cc_library.bzl", "cc_library")
+ 
+@@ -59,8 +60,9 @@
+ 
+ INCLUDE_PREFIX = REPO_ROOT if REPO_ROOT else "."
+ 
+-cc_library(
++shared_glib_library(
+     name = "gmodule",
++    soname = "libgmodule-2.0.so.0",
+     srcs = [
+         "gmodule.c",
+         "gmodule-deprecated.c",
+diff --git a/gio/BUILD.bazel b/gio/BUILD.bazel
+--- a/gio/BUILD.bazel
++++ b/gio/BUILD.bazel
+@@ -1,3 +1,4 @@
++load("//:chromium_shared.bzl", "shared_glib_library")
+ load("@bazel_skylib//rules:expand_template.bzl", "expand_template")
+ load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+ load("@rules_cc//cc:cc_library.bzl", "cc_library")
+@@ -748,8 +749,9 @@
+     ] + PUBLIC_HDRS_OSX,
+ )
+ 
+-cc_library(
++shared_glib_library(
+     name = "gio",
++    soname = "libgio-2.0.so.0",
+     srcs = GIO_BASE_SOURCES + select({
+         "@platforms//os:linux": ["gcontenttype-fdo.c"],
+         "@platforms//os:macos": [],

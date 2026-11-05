@@ -1,0 +1,9 @@
+test_suite(
+    name = "runtime_test",
+    tests = ["@nss//bcr_test:runtime_test"],
+)
+
+test_suite(
+    name = "fips_runtime_test",
+    tests = ["@nss//bcr_test:fips_runtime_test"],
+)

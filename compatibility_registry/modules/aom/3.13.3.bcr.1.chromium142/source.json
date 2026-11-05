@@ -1,0 +1,31 @@
+{
+    "url": "https://storage.googleapis.com/aom-releases/libaom-3.13.3.tar.gz",
+    "integrity": "sha256-RGpK6XQcuPPuuYyUnSX5G0jLK4Vpyul1xLc3OS6QJPw=",
+    "strip_prefix": "libaom-3.13.3",
+    "patches": {},
+    "overlay": {
+        ".bazelignore": "sha256-zWtUzFqO6dfuoWSiESeJfE9uiKsYgmkUKObM07/vjlU=",
+        "BUILD.bazel": "sha256-9TFBKh1YtSp0Ns0lsDnp1hSACglAwWWGkMkIWlf/T0E=",
+        "MODULE.bazel": "sha256-9wscuacY6iB533U1CgONVfm5mgPz5bsX1mIzjodVvFY=",
+        "aom_dsp/butteraugli.c": "sha256-pOwRVgOXGJn0rKnXKljwX1PIVwp8UDIv0ITylwrdmhk=",
+        "aom_dsp/reduce_sum_hwy.h": "sha256-iQXFg355N//c403QFEKtgNJn9hv1imJ1SPJx4/6OMy8=",
+        "aom_dsp/sad_hwy.h": "sha256-fBtHWzqjtRilO+Wg/NqcyhpZngqz3in42wUdqoUDttQ=",
+        "apps/aomdec.c": "sha256-7QDkFh8WQ1YIEs5ZSlEurxL2MawP2dRtyAWQdgrXnRs=",
+        "apps/aomenc.c": "sha256-NmJ4aLbkZQwCnQ3Z9xFm0zOfhaQVK2xQ1D5WcJRYvuI=",
+        "av1/common/selfguided_hwy.h": "sha256-tOPyBCH3PG//B+km//5wr1ZoeFdfBAqffcTNOFsMszs=",
+        "av1/encoder/av1_fwd_txfm2d_hwy.h": "sha256-LrwNnABkckrE74XciCS/jQr4/6q2Q0c7w75ownBfiGw=",
+        "bazel/BUILD.bazel": "sha256-luyGhZ6217kXQ2idZUDJQin8dNNSDXu+RK84BjkAN14=",
+        "bazel/aom_config.bzl": "sha256-To+iPNkZrTxYXlvg/hsZmc8iHTDvVf0JxMQslme4eTk=",
+        "bazel/rtcd.bzl": "sha256-Ks/81LgNr/x3D/R3SDL8R1bdvfWsYSSYdNonD+9Clf8=",
+        "bazel/stdout_to_file.cc": "sha256-DisTswipGBukO2XaLJOzrrbanXfv/4zPBv+huX0INM8=",
+        "common/webmdec.cc": "sha256-/g9zQzDsOhoBP05SqqbkxWCHZ2bfqN4xhj6ac9A9I0U=",
+        "common/webmenc.cc": "sha256-NDRQ83j0DSGmFLODUUUd2xre4ImkDDZyiaI5yhBRAXM=",
+        "test/BUILD.bazel": "sha256-UHXX+AGQQZic/WwnnJPHSzNaDBoF5uViHigFnQd1+Lc=",
+        "test/MODULE.bazel": "sha256-KcOTIWO+03EnLOl9YzW44ZkMhFRQMF47jWHq3p0oFGs=",
+        "test/datarate_test.cc": "sha256-Q3YLCnr6LIKmwcIJBGc3sczSLIG8pyt21VQrNf44uJU=",
+        "bcr_test/MODULE.bazel": "sha256-chYzNpJGFDmRKinHMMqgzUywMDOHvuYXMCtuwAorJEo=",
+        "bcr_test/BUILD.bazel": "sha256-HPu3f3aUxUvGsmbJT8iNE7XvSY9EOUEASuFjuf5zEwo=",
+        "bcr_test/.bazelrc": "sha256-aJshsGcxO/WgE3/UZTJEhPTcCW8H4QOvqP6QXhEWk6E=",
+        "bcr_test/.bazelversion": "sha256-G5SH1VvqR/6lDSJsycU7xUiHetKjGLrI+8izIPQp5cU="
+    }
+}

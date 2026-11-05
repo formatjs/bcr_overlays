@@ -1,0 +1,7 @@
+{
+    "base_module": "cpuinfo@0.0.0-20250925-877328f",
+    "patches": {
+        "//build:cpuinfo-bazel9.patch": "sha256-WKs67uKvwCQlDNOuYFv+RxjvPXl7GTswuXGEUVsfk2w="
+    },
+    "upstream_source_sha256": "caedea2af3f9247e83c25d7d59c763c4e4ed894f972376a32cb6cf082b5ac7ea"
+}

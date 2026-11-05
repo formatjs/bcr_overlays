@@ -1,0 +1,10 @@
+{
+    "base_module": "aom@3.13.3.bcr.1",
+    "patches": {
+        "//build:aom-rate-control.patch": "sha256-ERAB0H8x38vrNpfpFa/NflnxUlWJJfNgl3WSgYe8Zf4="
+    },
+    "upstream_source_sha256": "22d5e907cde4adfa3645010bbd8a90c476b0a4e964c1440cd69324faa3cd26dc",
+    "added_dependencies": {
+        "rules_cc_autoconf": "0.35.0"
+    }
+}

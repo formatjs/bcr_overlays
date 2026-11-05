@@ -1,0 +1,11 @@
+{
+    "repository": "https://hg.mozilla.org/projects/nss",
+    "version": "3.61",
+    "archive": "https://archive.mozilla.org/pub/security/nss/releases/NSS_3_61_RTM/src/nss-3.61.tar.gz",
+    "sha256": "312e2d804b34ccf0fec70b57cf8cd6ac853f8ced60df53e30ebb0a7bcd0e1370",
+    "chromium_version": "142.0.7444.59",
+    "sysroot_package_version": "2:3.61-1+deb11u3",
+    "debian_patches_archive": "https://archive.debian.org/debian/pool/main/n/nss/nss_3.61-1+deb11u3.debian.tar.xz",
+    "debian_patches_sha256": "3ea623845a92df91fa2065b5878aadf8bc5ff8ef1e51cecc1ad8196f300778aa",
+    "gyp_next_version": "0.20.5"
+}

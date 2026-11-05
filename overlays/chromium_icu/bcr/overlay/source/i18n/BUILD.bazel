@@ -1,0 +1,23 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("//:icu_sources.bzl", "I18N_HDRS", "I18N_SRCS")
+load("//bazel:config.bzl", "ICU_CODE_DEFINES", "ICU_COPTS", "ICU_DEFINES")
+
+cc_library(
+    name = "headers",
+    hdrs = I18N_HDRS,
+    defines = ICU_DEFINES,
+    strip_include_prefix = ".",
+)
+
+cc_library(
+    name = "implementation",
+    srcs = I18N_SRCS,
+    copts = ICU_COPTS,
+    linkstatic = True,
+    local_defines = ICU_CODE_DEFINES + ["U_I18N_IMPLEMENTATION"],
+    visibility = ["//:__pkg__"],
+    deps = [
+        ":headers",
+        "//source/common:implementation",
+    ],
+)

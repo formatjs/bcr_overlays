@@ -1,0 +1,215 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_python//python:defs.bzl", "py_binary")
+load("@rules_rust//cargo:cargo_toolchain.bzl", "cargo_toolchain")
+load("@rules_rust//rust:defs.bzl", "rust_library")
+load("@rules_rust//rust:rust_toolchain.bzl", "rust_toolchain")
+load("@rules_rust_bindgen//:defs.bzl", "rust_bindgen_toolchain")
+load(":bindings.bzl", "chromium_bindgen_library")
+load(":crates.bzl", "native_rust_crates")
+load(":tools.bzl", "import_executable")
+load(":unsupported.bzl", "unsupported_rustdoc")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files([
+    "BUILD.bazel",
+    "bindings.bzl",
+    "crates.bzl",
+    "copy_bindings.py",
+    "compiler.BUILD.bazel",
+    "extensions.bzl",
+    "unsupported.bzl",
+])
+
+unsupported_rustdoc(name = "rustdoc_unavailable")
+
+rust_toolchain(
+    name = "compiler",
+    binary_ext = "",
+    channel = "nightly",
+    default_edition = "2021",
+    dylib_ext = ".so",
+    exec_triple = "x86_64-unknown-linux-gnu",
+    extra_rustc_flags = [
+        "-Cpanic=abort",
+        "-Cforce-unwind-tables=yes",
+        "-Cdebug-assertions",
+        "-Dunsafe_op_in_unsafe_fn",
+    ],
+    rust_doc = ":rustdoc_unavailable",
+    rust_std = "@chromium_rust_compiler//:stdlib",
+    rustc = "@chromium_rust_compiler//:bin/rustc",
+    rustc_lib = "@chromium_rust_compiler//:compiler_libraries",
+    staticlib_ext = ".a",
+    stdlib_linkflags = [
+        "-ldl",
+        "-lpthread",
+        "-lm",
+    ],
+    target_triple = "x86_64-unknown-linux-gnu",
+    version = "1.92.0",
+)
+
+toolchain(
+    name = "toolchain",
+    exec_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+    target_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+    toolchain = ":compiler",
+    toolchain_type = "@rules_rust//rust:toolchain_type",
+)
+
+import_executable(
+    name = "bindgen",
+    src = "@chromium_rust_compiler//:bin/bindgen",
+)
+
+rust_bindgen_toolchain(
+    name = "bindgen_compiler",
+    bindgen = ":bindgen",
+    default_rustfmt = False,
+    libclang = "@chromium_rust_compiler//:libclang",
+)
+
+toolchain(
+    name = "bindgen_toolchain",
+    exec_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+    target_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+    toolchain = ":bindgen_compiler",
+    toolchain_type = "@rules_rust_bindgen//:toolchain_type",
+)
+
+py_binary(
+    name = "copy_bindings",
+    srcs = ["copy_bindings.py"],
+    main = "copy_bindings.py",
+)
+
+chromium_bindgen_library(
+    name = "allocator_impls_ffi",
+    cc_lib = "//build/rust/allocator:allocator_impls",
+    crate_name = "allocator_impls_ffi",
+    edition = "2021",
+    header = "//build/rust/allocator:allocator_impls.h",
+)
+
+chromium_bindgen_library(
+    name = "alloc_error_handler_impl_ffi",
+    cc_lib = "//build/rust/allocator:alloc_error_handler_impl",
+    crate_name = "alloc_error_handler_impl_ffi",
+    edition = "2021",
+    header = "//build/rust/allocator:alloc_error_handler_impl.h",
+)
+
+rust_library(
+    name = "allocator",
+    srcs = ["//build/rust/allocator:lib.rs"],
+    crate_name = "build_srust_sallocator_callocator",
+    crate_root = "//build/rust/allocator:lib.rs",
+    edition = "2021",
+    rustc_flags = ["--cfg=rust_allocator_uses_allocator_impls_h"],
+    deps = [
+        ":alloc_error_handler_impl_ffi",
+        ":allocator_impls_ffi",
+    ],
+)
+
+native_rust_crates(name = "all_crates")
+
+chromium_bindgen_library(
+    name = "logging_log_severity_bindgen",
+    cc_lib = "//native:base_headers",
+    crate_name = "base_clogging_ulog_useverity_ubindgen",
+    edition = "2021",
+    header = "//:base/logging/log_severity.h",
+)
+
+cargo_toolchain(
+    name = "cargo_compiler",
+    cargo = "@chromium_rust_compiler//:bin/cargo",
+    channel = "nightly",
+    version = "1.92.0",
+)
+
+toolchain(
+    name = "cargo_toolchain",
+    exec_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+    target_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+    toolchain = ":cargo_compiler",
+    toolchain_type = "@rules_rust//cargo:toolchain_type",
+)
+
+import_executable(
+    name = "rustc_tool",
+    src = "@chromium_rust_compiler//:bin/rustc",
+    runtime = "@chromium_rust_compiler//:compiler_libraries",
+)
+
+cc_library(
+    name = "fontconfig_bindgen_headers",
+    deps = ["//native:fonts_headers"],
+)
+
+chromium_bindgen_library(
+    name = "fontconfig_h_bindgen",
+    bindgen_flags = [
+        "--no-layout-tests",
+        "--merge-extern-blocks",
+        "--allowlist-item=(FcCharSet.*|FC_(SLANT|WEIGHT|WIDTH|DUAL|MONO|FAMILY)(_.*)?|Fc(Lang|Font)Set(Add|Create|Destroy|Copy|HasLang).*|FcWeightFromOpenType.*)",
+    ],
+    cc_lib = ":fontconfig_bindgen_headers",
+    clang_flags = [
+        "-x",
+        "c",
+        "-std=c17",
+        "-DBINDGEN_IGNORE_VISIBILITY=1",
+        "-DFC_NO_MT=1",
+        "-DFLEXIBLE_ARRAY_MEMBER=1",
+    ],
+    cpp = False,
+    crate_name = "fontconfig_bindings",
+    edition = "2021",
+    header = "//:third_party/fontconfig/include/fontconfig/fontconfig.h",
+)
+
+chromium_bindgen_library(
+    name = "fcint_h_bindgen",
+    bindgen_flags = [
+        "--no-layout-tests",
+        "--merge-extern-blocks",
+        "--allowlist-item=(FcPattern.*|FcRange.*|FcCharSet.*|FcLangSetFromCharSet|FC_.*_OBJECT)",
+        "--blocklist-type=(FcCharSet|FcLangSet)",
+        "--raw-line=pub use fontconfig_bindings::FcCharSet; pub use fontconfig_bindings::FcLangSet;",
+    ],
+    cc_lib = ":fontconfig_bindgen_headers",
+    clang_flags = [
+        "-x",
+        "c",
+        "-std=c17",
+        "-DBINDGEN_IGNORE_VISIBILITY=1",
+        "-DFC_NO_MT=1",
+        "-DFLEXIBLE_ARRAY_MEMBER=1",
+    ],
+    cpp = False,
+    crate_name = "fcint_bindings",
+    edition = "2021",
+    header = "@chromium_fontconfig//:src/fcint.h",
+    deps = [":fontconfig_h_bindgen"],
+)

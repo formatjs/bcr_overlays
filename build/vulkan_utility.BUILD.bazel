@@ -1,0 +1,12 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["scripts/gn/stub.cpp"] + glob(["include/**", "src/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["include/**/*.h", "include/**/*.hpp", "src/**/*.hpp"]),
+    include_prefix = "third_party/vulkan-utility-libraries/src",
+    includes = ["include", "src"],
+)

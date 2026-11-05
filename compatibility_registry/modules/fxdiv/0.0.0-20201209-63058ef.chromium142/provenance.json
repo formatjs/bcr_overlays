@@ -1,0 +1,6 @@
+{
+    "base_module": "fxdiv@0.0.0-20201209-63058ef",
+    "patches": {
+        "//build:fxdiv-module.patch": "sha256-7IdC/pY4x+E7n1XHSF444UZnq3shIBFmDsVnAop3vjQ="
+    }
+}

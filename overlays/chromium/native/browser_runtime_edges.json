@@ -1,0 +1,11 @@
+{
+  "graph_sha256": "ea1206dadd7fbe695cbdbae072078d3a9d42380129cdd91347b240e93b9b93b5",
+  "source": "ui/qt/BUILD.gn",
+  "source_sha256": "826c907b6defb154d6aab6016ba6bbfca57d9a45954164368fdd1483a978e679",
+  "runtime_deps": {
+    "//ui/qt:qt": [
+      "//ui/qt:qt5_shim",
+      "//ui/qt:qt6_shim"
+    ]
+  }
+}

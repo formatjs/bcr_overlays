@@ -1,6 +1,12 @@
 {
     "homepage": "https://www.chromium.org",
-    "maintainers": [],
+    "maintainers": [
+        {
+            "github": "longlho",
+            "github_user_id": 198255,
+            "name": "Long Ho"
+        }
+    ],
     "repository": [
         "github:chromium/chromium"
     ],

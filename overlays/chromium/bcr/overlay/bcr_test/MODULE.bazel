@@ -1,0 +1,23 @@
+module(name = "chromium_consumer")
+
+bazel_dep(name = "chromium", version = "142.0.7444.59")
+bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "llvm", version = "0.8.26")
+
+register_toolchains("@llvm//toolchain:all")
+
+local_path_override(
+    module_name = "chromium",
+    path = "..",
+)
+
+bazel_dep(name = "rules_python", version = "1.8.0")
+bazel_dep(name = "rules_rust", version = "0.75.0")
+
+register_toolchains("@chromium//native/rust:toolchain")
+
+register_toolchains("@chromium//native/rust:bindgen_toolchain")
+
+register_toolchains("@chromium//native/rust:cargo_toolchain")
+
+bazel_dep(name = "chromium_icu", version = "74.2.chromium142")

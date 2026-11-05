@@ -9,17 +9,17 @@
         "v8": {
             "path": "overlays/v8",
             "module": "v8",
-            "status": "planned"
+            "status": "bootstrap"
         },
         "skia": {
             "path": "overlays/skia",
             "module": "skia",
-            "status": "planned"
+            "status": "bootstrap"
         },
         "angle": {
             "path": "overlays/angle",
             "module": "angle",
-            "status": "planned"
+            "status": "bootstrap"
         },
         "dawn": {
             "path": "overlays/dawn",
@@ -40,6 +40,61 @@
             "path": "overlays/swiftshader",
             "module": "swiftshader",
             "status": "planned"
+        },
+        "dragonbox": {
+            "path": "overlays/dragonbox",
+            "module": "dragonbox",
+            "status": "bootstrap"
+        },
+        "fp16": {
+            "path": "overlays/fp16",
+            "module": "fp16",
+            "status": "bootstrap"
+        },
+        "chromium_icu": {
+            "path": "overlays/chromium_icu",
+            "module": "chromium_icu",
+            "status": "bootstrap"
+        },
+        "perfetto": {
+            "path": "overlays/perfetto",
+            "module": "perfetto",
+            "status": "bootstrap"
+        },
+        "abseil-cpp": {
+            "path": "overlays/abseil-cpp",
+            "module": "abseil-cpp",
+            "status": "bootstrap"
+        },
+        "linux-syscall-support": {
+            "path": "overlays/linux-syscall-support",
+            "module": "linux-syscall-support",
+            "status": "bootstrap"
+        },
+        "compact_enc_det": {
+            "path": "overlays/compact_enc_det",
+            "module": "compact_enc_det",
+            "status": "bootstrap"
+        },
+        "ipcz": {
+            "path": "overlays/ipcz",
+            "module": "ipcz",
+            "status": "bootstrap"
+        },
+        "nspr": {
+            "path": "overlays/nspr",
+            "module": "nspr",
+            "status": "bootstrap"
+        },
+        "nss": {
+            "path": "overlays/nss",
+            "module": "nss",
+            "status": "bootstrap"
+        },
+        "boringssl": {
+            "path": "overlays/boringssl",
+            "module": "boringssl",
+            "status": "bootstrap"
         }
     }
 }

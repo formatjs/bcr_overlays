@@ -17,3 +17,295 @@ cc_library(
 )
 
 exports_files(["BUILD.bazel"])
+
+exports_files(["write_buildflag_header.py"])
+
+# BEGIN GENERATED MOJO INPUTS
+exports_files([
+    "action_helpers.py",
+    "gn_helpers.py",
+    "zip_helpers.py",
+])
+# END GENERATED MOJO INPUTS
+
+exports_files(["rust/bindings.rs"])
+
+# BEGIN GENERATED RUST INPUTS
+exports_files([
+    "rust/chromium_prelude/chromium_prelude.rs",
+    "rust/chromium_prelude/import_attribute.rs",
+    "rust/gni_impl/allow_all_warnings.rsp"
+])
+# END GENERATED RUST INPUTS
+
+exports_files(["rust/gni_impl/rustc_print_cfg.py"])
+
+# BEGIN GENERATED BASE INPUTS
+exports_files([
+    "util/version.py",
+    "util/android_chrome_version.py",
+    "util/LASTCHANGE.dummy",
+])
+# END GENERATED BASE INPUTS
+
+# BEGIN GENERATED WEBUI INPUTS
+exports_files([
+    "action_helpers.py",
+    "gn_helpers.py",
+    "zip_helpers.py",
+])
+# END GENERATED WEBUI INPUTS
+
+# BEGIN NETWORK INPUTS
+exports_files([
+    "gn_run_binary.py",
+    "util/LASTCHANGE.dummy",
+    "util/PRESUBMIT.py",
+    "util/android_chrome_version.py",
+    "util/android_chrome_version_test.py",
+    "util/generate_wrapper.py",
+    "util/java_action.py",
+    "util/lastchange.py",
+    "util/lib/__init__.py",
+    "util/lib/common/PRESUBMIT.py",
+    "util/lib/common/__init__.py",
+    "util/lib/common/decorators.py",
+    "util/lib/common/decorators_test.py",
+    "util/lib/common/google_storage_helper.py",
+    "util/lib/common/google_storage_helper_test.py",
+    "util/lib/common/perf_result_data_type.py",
+    "util/lib/common/perf_tests_results_helper.py",
+    "util/lib/common/unittest_util.py",
+    "util/lib/common/unittest_util_test.py",
+    "util/lib/common/util.py",
+    "util/lib/proto/PRESUBMIT.py",
+    "util/lib/proto/__init__.py",
+    "util/lib/proto/average.py",
+    "util/lib/proto/average_unittests.py",
+    "util/lib/proto/count.py",
+    "util/lib/proto/count_unittests.py",
+    "util/lib/proto/data_points.py",
+    "util/lib/proto/data_points_unittests.py",
+    "util/lib/proto/exception_occurrences_pb2.py",
+    "util/lib/proto/exception_recorder.py",
+    "util/lib/proto/exception_recorder_unittests.py",
+    "util/lib/proto/measure.py",
+    "util/lib/proto/measures.py",
+    "util/lib/proto/measures_unittests.py",
+    "util/lib/proto/metric.py",
+    "util/lib/proto/metric_unittests.py",
+    "util/lib/proto/test_script_metrics_pb2.py",
+    "util/lib/proto/time_consumption.py",
+    "util/lib/proto/time_consumption_unittests.py",
+    "util/lib/results/__init__.py",
+    "util/lib/results/result_sink.py",
+    "util/lib/results/result_sink_test.py",
+    "util/lib/results/result_types.py",
+    "util/tast_control.py",
+    "util/version.py",
+    "util/version_test.py",
+])
+# END NETWORK INPUTS
+
+# BEGIN CODECS INPUTS
+exports_files([
+    "gn_run_binary.py",
+])
+# END CODECS INPUTS
+
+# BEGIN OZONE INPUTS
+exports_files([
+    "gn_run_binary.py",
+])
+# END OZONE INPUTS
+
+# BEGIN ML INPUTS
+exports_files([
+    "gn_run_binary.py",
+])
+# END ML INPUTS
+
+# BEGIN FFMPEG INPUTS
+exports_files([
+    "gn_run_binary.py",
+])
+# END FFMPEG INPUTS
+
+# BEGIN COMPOSITOR INPUTS
+exports_files([
+    "util/PRESUBMIT.py",
+    "util/android_chrome_version.py",
+    "util/android_chrome_version_test.py",
+    "util/generate_wrapper.py",
+    "util/java_action.py",
+    "util/lastchange.py",
+    "util/lib/__init__.py",
+    "util/lib/common/PRESUBMIT.py",
+    "util/lib/common/__init__.py",
+    "util/lib/common/decorators.py",
+    "util/lib/common/decorators_test.py",
+    "util/lib/common/google_storage_helper.py",
+    "util/lib/common/google_storage_helper_test.py",
+    "util/lib/common/perf_result_data_type.py",
+    "util/lib/common/perf_tests_results_helper.py",
+    "util/lib/common/unittest_util.py",
+    "util/lib/common/unittest_util_test.py",
+    "util/lib/common/util.py",
+    "util/lib/proto/PRESUBMIT.py",
+    "util/lib/proto/__init__.py",
+    "util/lib/proto/average.py",
+    "util/lib/proto/average_unittests.py",
+    "util/lib/proto/count.py",
+    "util/lib/proto/count_unittests.py",
+    "util/lib/proto/data_points.py",
+    "util/lib/proto/data_points_unittests.py",
+    "util/lib/proto/exception_occurrences_pb2.py",
+    "util/lib/proto/exception_recorder.py",
+    "util/lib/proto/exception_recorder_unittests.py",
+    "util/lib/proto/measure.py",
+    "util/lib/proto/measures.py",
+    "util/lib/proto/measures_unittests.py",
+    "util/lib/proto/metric.py",
+    "util/lib/proto/metric_unittests.py",
+    "util/lib/proto/test_script_metrics_pb2.py",
+    "util/lib/proto/time_consumption.py",
+    "util/lib/proto/time_consumption_unittests.py",
+    "util/lib/results/__init__.py",
+    "util/lib/results/result_sink.py",
+    "util/lib/results/result_sink_test.py",
+    "util/lib/results/result_types.py",
+    "util/tast_control.py",
+    "util/version.py",
+    "util/version_test.py",
+])
+# END COMPOSITOR INPUTS
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "build_config.h",
+    "buildflag.h",
+    "gn_run_binary.py"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "build_config.h",
+    "buildflag.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "build_config.h",
+    "buildflag.h"
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "build_config.h",
+    "buildflag.h",
+    "gn_run_binary.py",
+    "util/LASTCHANGE.dummy",
+    "util/PRESUBMIT.py",
+    "util/android_chrome_version.py",
+    "util/android_chrome_version_test.py",
+    "util/chromium_git_revision.h.in",
+    "util/generate_wrapper.py",
+    "util/java_action.py",
+    "util/lastchange.py",
+    "util/lib/__init__.py",
+    "util/lib/common/PRESUBMIT.py",
+    "util/lib/common/__init__.py",
+    "util/lib/common/decorators.py",
+    "util/lib/common/decorators_test.py",
+    "util/lib/common/google_storage_helper.py",
+    "util/lib/common/google_storage_helper_test.py",
+    "util/lib/common/perf_result_data_type.py",
+    "util/lib/common/perf_tests_results_helper.py",
+    "util/lib/common/unittest_util.py",
+    "util/lib/common/unittest_util_test.py",
+    "util/lib/common/util.py",
+    "util/lib/proto/PRESUBMIT.py",
+    "util/lib/proto/__init__.py",
+    "util/lib/proto/average.py",
+    "util/lib/proto/average_unittests.py",
+    "util/lib/proto/count.py",
+    "util/lib/proto/count_unittests.py",
+    "util/lib/proto/data_points.py",
+    "util/lib/proto/data_points_unittests.py",
+    "util/lib/proto/exception_occurrences_pb2.py",
+    "util/lib/proto/exception_recorder.py",
+    "util/lib/proto/exception_recorder_unittests.py",
+    "util/lib/proto/measure.py",
+    "util/lib/proto/measures.py",
+    "util/lib/proto/measures_unittests.py",
+    "util/lib/proto/metric.py",
+    "util/lib/proto/metric_unittests.py",
+    "util/lib/proto/test_script_metrics_pb2.py",
+    "util/lib/proto/time_consumption.py",
+    "util/lib/proto/time_consumption_unittests.py",
+    "util/lib/results/__init__.py",
+    "util/lib/results/result_sink.py",
+    "util/lib/results/result_sink_test.py",
+    "util/lib/results/result_types.py",
+    "util/tast_control.py",
+    "util/version.py",
+    "util/version_test.py"
+])
+# END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "build_config.h",
+    "buildflag.h",
+    "gn_run_binary.py",
+    "linux/chrome.map",
+    "util/LASTCHANGE.dummy",
+    "util/PRESUBMIT.py",
+    "util/android_chrome_version.py",
+    "util/android_chrome_version_test.py",
+    "util/generate_wrapper.py",
+    "util/java_action.py",
+    "util/lastchange.py",
+    "util/lib/__init__.py",
+    "util/lib/common/PRESUBMIT.py",
+    "util/lib/common/__init__.py",
+    "util/lib/common/decorators.py",
+    "util/lib/common/decorators_test.py",
+    "util/lib/common/google_storage_helper.py",
+    "util/lib/common/google_storage_helper_test.py",
+    "util/lib/common/perf_result_data_type.py",
+    "util/lib/common/perf_tests_results_helper.py",
+    "util/lib/common/unittest_util.py",
+    "util/lib/common/unittest_util_test.py",
+    "util/lib/common/util.py",
+    "util/lib/proto/PRESUBMIT.py",
+    "util/lib/proto/__init__.py",
+    "util/lib/proto/average.py",
+    "util/lib/proto/average_unittests.py",
+    "util/lib/proto/count.py",
+    "util/lib/proto/count_unittests.py",
+    "util/lib/proto/data_points.py",
+    "util/lib/proto/data_points_unittests.py",
+    "util/lib/proto/exception_occurrences_pb2.py",
+    "util/lib/proto/exception_recorder.py",
+    "util/lib/proto/exception_recorder_unittests.py",
+    "util/lib/proto/measure.py",
+    "util/lib/proto/measures.py",
+    "util/lib/proto/measures_unittests.py",
+    "util/lib/proto/metric.py",
+    "util/lib/proto/metric_unittests.py",
+    "util/lib/proto/test_script_metrics_pb2.py",
+    "util/lib/proto/time_consumption.py",
+    "util/lib/proto/time_consumption_unittests.py",
+    "util/lib/results/__init__.py",
+    "util/lib/results/result_sink.py",
+    "util/lib/results/result_sink_test.py",
+    "util/lib/results/result_types.py",
+    "util/tast_control.py",
+    "util/version.py",
+    "util/version_test.py"
+])
+# END BROWSER INPUTS

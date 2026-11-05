@@ -1,0 +1,12 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["**"], exclude = ["BUILD.bazel"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["*.h", "include/**/*.h"]),
+    include_prefix = "third_party/libsync/src",
+    includes = [".", "include"],
+)

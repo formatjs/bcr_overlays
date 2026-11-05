@@ -1,0 +1,12 @@
+module(name = "chromium_compatibility_consumer")
+
+bazel_dep(name = "crc32c", version = "1.1.0.chromium142")
+bazel_dep(name = "llvm", version = "0.8.26")
+bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "rules_python", version = "1.9.0")
+bazel_dep(name = "platforms", version = "1.1.0")
+
+register_toolchains("@llvm//toolchain:all")
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(python_version = "3.11")

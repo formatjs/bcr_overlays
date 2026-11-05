@@ -1,0 +1,17 @@
+{
+    "homepage": "https://chromium.googlesource.com/chromium/src/+/main/third_party/ipcz/",
+    "maintainers": [
+        {
+            "github": "longlho",
+            "github_user_id": 198255,
+            "name": "Long Ho"
+        }
+    ],
+    "repository": [
+        "github:chromium/chromium"
+    ],
+    "versions": [
+        "0.0.0.chromium142"
+    ],
+    "yanked_versions": {}
+}

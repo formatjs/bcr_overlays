@@ -1,0 +1,7 @@
+module(
+    name = "compact_enc_det",
+    version = "",
+    bazel_compatibility = [">=8.0.0"],
+)
+
+bazel_dep(name = "rules_cc", version = "0.2.26")

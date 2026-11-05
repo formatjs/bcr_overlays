@@ -1,0 +1,557 @@
+load("@ipcz//bazel:ipcz.bzl", "ipcz_library", "ipcz_reference_drivers")
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library")
+load(":angle_runtime.bzl", "native_angle_runtime")
+load(":base.bzl", "native_base")
+load(":blink_core.bzl", "native_blink_core")
+load(":blink_modules.bzl", "native_blink_modules")
+load(":blink_platform.bzl", "native_blink_platform")
+load(":blink_rust.bzl", "native_blink_rust")
+load(":browser.bzl", "native_browser")
+load(":browser_services.bzl", "native_browser_services")
+load(":browser_v8.bzl", "native_browser_v8")
+load(":buildflags.bzl", "native_buildflags")
+load(":codecs.bzl", "native_codecs")
+load(":compositor.bzl", "native_compositor")
+load(":content.bzl", "native_content")
+load(":crypto.bzl", "native_crypto")
+load(":cxx_bridge.bzl", "chromium_cxx_bridge", "native_cxx_tools")
+load(":dawn.bzl", "native_dawn")
+load(":dawn_native.bzl", "native_dawn_backend")
+load(":devtools_inspector.bzl", "native_devtools_inspector")
+load(":ffmpeg.bzl", "native_ffmpeg")
+load(":fonts.bzl", "native_fonts")
+load(":generated_files.bzl", "captured_generated_files")
+load(":geometry.bzl", "native_geometry")
+load(":gfx.bzl", "native_gfx")
+load(":gpu_client.bzl", "native_gpu_client")
+load(":gpu_protocol.bzl", "native_gpu_protocol")
+load(":gpu_service.bzl", "native_gpu_service")
+load(":grit_actions.bzl", "native_grit")
+load(":grit_sources.bzl", GRIT_PYS = "ROOT_PYS")
+load(":linux_buffers.bzl", "native_linux_buffers")
+load(":linux_ui.bzl", "native_linux_ui")
+load(":media.bzl", "native_media")
+load(":ml.bzl", "native_ml")
+load(":mojo_actions.bzl", "native_mojo_bindings")
+load(":mojo_runtime.bzl", "native_mojo_runtime")
+load(":mojo_source_files.bzl", "ROOT_SOURCES")
+load(":network.bzl", "native_network")
+load(":node_inputs.bzl", "chromium_npm_inputs")
+load(":ozone.bzl", "native_ozone")
+load(":paint.bzl", "native_paint")
+load(":perfetto_proto.bzl", "native_perfetto_proto")
+load(":perfetto_runtime.bzl", "native_perfetto_runtime")
+load(":platform_runtime.bzl", "native_platform_runtime")
+load(":proto_actions.bzl", "native_variations_proto")
+load(":pthreadpool.bzl", "native_pthreadpool")
+load(":quiche.bzl", "native_quiche")
+load(":skia.bzl", "native_skia")
+load(":sqlite.bzl", "native_sqlite")
+load(":xslt.bzl", "native_xslt")
+load(":swiftshader.bzl", "native_swiftshader")
+load(":tint.bzl", "native_tint")
+load(":url.bzl", "native_url")
+load(":vulkan_loader.bzl", "native_vulkan_loader")
+load(":vulkan_tools.bzl", "native_vulkan_tools")
+load(":vulkan_validation.bzl", "native_vulkan_validation")
+load(":webui_actions.bzl", "native_webui")
+load(":x11.bzl", "native_x11")
+
+package(default_visibility = ["//visibility:public"])
+
+py_binary(
+    name = "python_action_runner",
+    srcs = ["python_action.py"],
+    main = "python_action.py",
+)
+
+py_binary(name = "runtime_bundle_runner", srcs = ["assemble_runtime.py"], main = "assemble_runtime.py")
+
+native_buildflags(name = "all_buildflags")
+
+native_dawn()
+
+native_fonts()
+
+native_codecs()
+
+native_skia()
+
+native_paint()
+
+native_gfx()
+
+native_tint()
+
+native_dawn_backend()
+
+native_vulkan_loader()
+
+native_vulkan_validation()
+
+native_swiftshader()
+
+native_angle_runtime()
+
+native_gpu_protocol()
+
+native_x11()
+
+native_linux_buffers()
+
+native_browser_services()
+
+native_linux_ui()
+
+native_ozone()
+
+native_gpu_service()
+
+native_gpu_client()
+
+native_browser_v8()
+
+native_pthreadpool()
+
+native_ml()
+
+native_media()
+
+native_blink_rust()
+
+native_compositor()
+
+native_blink_platform()
+
+native_blink_core()
+
+native_blink_modules()
+
+native_content()
+
+native_platform_runtime()
+
+native_browser()
+
+native_devtools_inspector()
+
+native_ffmpeg()
+
+native_vulkan_tools()
+
+captured_generated_files(name = "configuration_metadata")
+
+chromium_npm_inputs(name = "node_npm_sources")
+
+alias(
+    name = "typescript_manifest",
+    actual = "@chromium_node_modules//:node_modules/typescript/package.json",
+)
+
+native_mojo_bindings(name = "mojo_bindings")
+
+native_mojo_runtime()
+
+native_url()
+
+native_crypto()
+
+exports_files([
+    "swiftshader_runtime_test.cc",
+    "angle_runtime_test.cc",
+    "vulkan_tools.bzl",
+    "vulkan_tools_sources.bzl",
+    "gl_runtime_test.cc",
+    "gpu_client.bzl",
+    "gpu_client_sources.bzl",
+    "gpu_service.bzl",
+    "gpu_service_sources.bzl",
+    "ffmpeg.bzl",
+    "ffmpeg_sources.bzl",
+    "media.bzl",
+    "media_sources.bzl",
+    "ml.bzl",
+    "ml_sources.bzl",
+    "pthreadpool.bzl",
+    "pthreadpool_sources.bzl",
+    "browser_v8.bzl",
+    "browser_v8_sources.bzl",
+    "ozone.bzl",
+    "ozone_sources.bzl",
+    "linux_ui.bzl",
+    "linux_ui_sources.bzl",
+    "browser_services.bzl",
+    "browser_services_sources.bzl",
+    "linux_buffers.bzl",
+    "linux_buffers_sources.bzl",
+    "x11.bzl",
+    "x11_sources.bzl",
+    "gpu_protocol.bzl",
+    "gpu_protocol_sources.bzl",
+    "angle_runtime.bzl",
+    "angle_runtime_sources.bzl",
+    "swiftshader.bzl",
+    "swiftshader_sources.bzl",
+    "vulkan_validation.bzl",
+    "vulkan_validation_sources.bzl",
+    "vulkan_loader.bzl",
+    "vulkan_loader_sources.bzl",
+    "dawn_native.bzl",
+    "dawn_native_sources.bzl",
+    "tint.bzl",
+    "tint_sources.bzl",
+    "gfx.bzl",
+    "gfx_sources.bzl",
+    "paint.bzl",
+    "paint_sources.bzl",
+    "codecs.bzl",
+    "codecs_sources.bzl",
+    "crypto.bzl",
+    "crypto_sources.bzl",
+    "url.bzl",
+    "url_sources.bzl",
+])
+
+exports_files([
+    "mojo_runtime.bzl",
+    "mojo_runtime_sources.bzl",
+])
+
+native_variations_proto(name = "variations_proto")
+
+native_perfetto_proto(name = "perfetto_proto")
+
+exports_files([
+    "BUILD.bazel",
+    "buildflags.bzl",
+    "cxx_bridge.bzl",
+    "generated_files.bzl",
+    "mojo_actions.bzl",
+    "mojo_common_inputs.bzl",
+    "mojo_parameters.bzl",
+    "mojo_source_files.bzl",
+    "node_deps.bzl",
+    "node_inputs.bzl",
+    "npm_packages.bzl",
+    "proto_actions.bzl",
+    "perfetto_runtime.bzl",
+    "perfetto_proto.bzl",
+    "protobuf_config.bzl",
+    "tool_inputs.bzl",
+    "python_action.bzl",
+    "python_action.py",
+])
+
+cc_library(
+    name = "partition_alloc_buildflags",
+    hdrs = [":flags_4a0fe733a7b9f6e6"],
+    includes = ["gen/base/allocator/partition_allocator/src"],
+)
+
+py_library(
+    name = "mojo_python",
+    srcs = ["//:" + path for path in ROOT_SOURCES if path.endswith(".py")],
+    imports = [
+        "../mojo/public/tools/bindings",
+        "../mojo/public/tools/mojom",
+        "../third_party",
+    ],
+)
+
+exports_files(glob(["mojo_actions_*.bzl"]))
+
+cc_library(
+    name = "rust_allocator_buildflags",
+    hdrs = [":gen/build/rust/allocator/buildflags.h"],
+    includes = ["gen"],
+)
+
+native_cxx_tools(name = "cxx_tools")
+
+chromium_cxx_bridge(
+    name = "cxx_bridge_test_generated",
+    testonly = True,
+    src = "//bcr_test:cxx_bridge.rs",
+    logical_source = "bcr_test/cxx_bridge.rs",
+)
+
+cc_library(
+    name = "cxx_bridge_test_cpp",
+    testonly = True,
+    srcs = [":gen/bcr_test/cxx_bridge.rs.cc"],
+    hdrs = [":gen/bcr_test/cxx_bridge.rs.h"],
+    copts = [
+        "-std=c++20",
+        "-fno-exceptions",
+        "-fno-rtti",
+    ],
+    includes = ["gen"],
+    deps = ["//bcr_test:cxx_test_headers"],
+)
+
+native_perfetto_runtime(name = "perfetto_runtime")
+
+native_base(name = "base")
+
+native_grit(name = "grit_resources")
+
+native_webui(name = "webui_assets")
+
+ipcz_library(
+    name = "ipcz",
+    chromium_base = ":base",
+)
+
+ipcz_reference_drivers(
+    name = "ipcz_reference_drivers",
+    chromium = True,
+    ipcz = ":ipcz",
+)
+
+cc_library(
+    name = "blink_permission_strings_map",
+    srcs = [":gen/third_party/blink/renderer/core/html/html_permission_element_strings_map.cc"],
+    hdrs = [
+        ":gen/third_party/blink/public/strings/grit/permission_element_generated_strings.h",
+        ":gen/third_party/blink/public/strings/grit/permission_element_strings.h",
+        "//:third_party/blink/renderer/core/html/html_permission_element_strings_map.h",
+    ],
+    copts = ["-std=c++20"],
+    includes = [
+        "..",
+        "gen",
+    ],
+    linkstatic = True,
+    deps = [":base"],
+)
+
+exports_files(["node_python_tool.bzl"])
+
+exports_files([
+    "webui_actions.bzl",
+    "webui_targets.json",
+    "resource_copy.bzl",
+])
+
+py_library(
+    name = "grit_python",
+    srcs = ["//:" + path for path in GRIT_PYS],
+    imports = ["../tools/grit"],
+)
+
+cc_library(
+    name = "grit_string_headers",
+    hdrs = [
+        ":gen/chrome/grit/branded_strings.h",
+        ":gen/chrome/grit/generated_resources.h",
+        ":gen/chrome/grit/locale_settings.h",
+        ":gen/chrome/grit/platform_locale_settings.h",
+        ":gen/ui/strings/grit/ui_strings.h",
+    ],
+    includes = ["gen"],
+)
+
+exports_files([
+    "grit_actions.bzl",
+    "grit_targets.json",
+    "grit_sources.bzl",
+])
+
+exports_files([
+    "base.bzl",
+    "base_sources.bzl",
+])
+
+chromium_cxx_bridge(
+    name = "serde_json_wrapper_generated",
+    src = "//:third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs",
+    logical_source = "third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs",
+)
+
+cc_library(
+    name = "serde_json_wrapper_cpp",
+    srcs = [":gen/third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs.cc"],
+    hdrs = [":gen/third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs.h"],
+    copts = [
+        "-std=c++20",
+        "-fno-exceptions",
+        "-fno-rtti",
+    ],
+    includes = ["gen"],
+    deps = ["//:serde_json_wrapper_headers"],
+)
+
+native_quiche()
+
+exports_files([
+    "quiche.bzl",
+    "quiche_sources.bzl",
+    "dependencies.bzl",
+    "quiche_repository.BUILD.bazel",
+])
+
+exports_files([
+    "skia.bzl",
+    "skia_sources.bzl",
+    "sqlite.bzl",
+    "xslt.bzl",
+    "sqlite_sources.bzl",
+])
+
+native_sqlite()
+
+exports_files([
+    "network.bzl",
+    "network_sources.bzl",
+])
+
+native_network()
+
+exports_files([
+    "dawn.bzl",
+    "dawn_sources.bzl",
+    "fonts.bzl",
+    "fonts_sources.bzl",
+    "geometry.bzl",
+    "geometry_sources.bzl",
+])
+
+native_geometry()
+
+# Dawn resolves angledata relative to its executable.
+cc_test(
+    name = "swiftshader_runtime_test",
+    size = "medium",
+    srcs = ["swiftshader_runtime_test.cc"],
+    args = [
+        "$(rlocationpath :libvk_swiftshader.so)",
+        "$(rlocationpath :libVkLayer_khronos_validation.so)",
+        "$(rlocationpath :vk_swiftshader_icd.json)",
+    ],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        ":angledata/VkLayer_khronos_validation.json",
+        ":libVkLayer_khronos_validation.so",
+        ":libvk_swiftshader.so",
+        ":libvulkan.so.1",
+        ":vk_swiftshader_icd.json",
+    ],
+    linkstatic = True,
+    deps = [
+        ":dawn_native_library",
+        ":dawn_proc",
+        "@jsoncpp",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "angle_runtime_test",
+    size = "medium",
+    srcs = ["angle_runtime_test.cc"],
+    args = [
+        "$(rlocationpath :libEGL.so)",
+        "$(rlocationpath :libGLESv2.so)",
+        "$(rlocationpath @chromium_pciutils//:libpci.so.3)",
+    ],
+    copts = [
+        "-std=c++20",
+        "-O2",
+    ],
+    data = [
+        ":dawn_native_runtime",
+        ":libEGL.so",
+        ":libGLESv2.so",
+        "@chromium_pciutils//:libpci.so.3",
+    ],
+    linkopts = ["-ldl"],
+    deps = [
+        "@chromium_angle//:headers",
+        "@chromium_pciutils//:headers",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "gl_runtime_test",
+    size = "medium",
+    srcs = ["gl_runtime_test.cc"],
+    args = [
+        "$(rlocationpath :libEGL.so)",
+        "$(rlocationpath :libGLESv2.so)",
+        "$(rlocationpath @glib//glib:libglib-2.0.so.0)",
+        "$(rlocationpath @glib//gobject:libgobject-2.0.so.0)",
+    ],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        ":gl_runtime",
+        ":libEGL.so",
+        ":libGLESv2.so",
+        "@glib//glib:libglib-2.0.so.0",
+        "@glib//gobject:libgobject-2.0.so.0",
+    ],
+    linkstatic = True,
+    deps = [
+        ":chromium_gl",
+        ":gl_init",
+        "@glib//glib",
+        "@glib//gobject",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+cc_test(
+    name = "ozone_gl_runtime_test",
+    size = "medium",
+    srcs = ["gl_runtime_test.cc"],
+    args = [
+        "$(rlocationpath :libEGL.so)",
+        "$(rlocationpath :libGLESv2.so)",
+        "$(rlocationpath @glib//glib:libglib-2.0.so.0)",
+        "$(rlocationpath @glib//gobject:libgobject-2.0.so.0)",
+        "--ozone",
+    ],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    data = [
+        ":gl_runtime",
+        ":libEGL.so",
+        ":libGLESv2.so",
+        "@glib//glib:libglib-2.0.so.0",
+        "@glib//gobject:libgobject-2.0.so.0",
+    ],
+    linkstatic = True,
+    deps = [
+        ":chromium_gl",
+        ":gl_init",
+        "@glib//glib",
+        "@glib//gobject",
+        "@rules_cc//cc/runfiles",
+    ],
+)
+
+exports_files([
+    "browser.bzl",
+    "platform_runtime.bzl",
+    "qt_sdk_headers.bzl",
+    "runtime_bundle.bzl",
+    "assemble_runtime.py",
+    "browser_sources.bzl",
+    "browser_targets.json",
+])
+
+native_xslt()

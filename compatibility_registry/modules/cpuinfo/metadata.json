@@ -1,0 +1,23 @@
+{
+    "homepage": "https://github.com/pytorch/cpuinfo",
+    "maintainers": [
+        {
+            "email": "julian.amann@tum.de",
+            "github": "Vertexwahn",
+            "github_user_id": 3775001,
+            "name": "Julian Amann"
+        },
+        {
+            "email": "DoDoEntertainment@gmail.com",
+            "github": "DoDoENT",
+            "github_user_id": 158844
+        }
+    ],
+    "repository": [
+        "github:pytorch/cpuinfo"
+    ],
+    "versions": [
+        "0.0.0-20250925-877328f.chromium142"
+    ],
+    "yanked_versions": {}
+}

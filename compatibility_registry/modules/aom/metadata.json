@@ -1,0 +1,23 @@
+{
+    "homepage": "https://aomedia.googlesource.com/aom/",
+    "maintainers": [
+        {
+            "email": "alexanderfaxa@intrinsic.ai",
+            "github": "faximan",
+            "github_user_id": 207300,
+            "name": "Alex Faxa"
+        },
+        {
+            "github": "mering",
+            "github_user_id": 133344217
+        }
+    ],
+    "repository": [
+        "https://aomedia.googlesource.com/aom/",
+        "https://storage.googleapis.com/aom-releases"
+    ],
+    "versions": [
+        "3.13.3.bcr.1.chromium142"
+    ],
+    "yanked_versions": {}
+}

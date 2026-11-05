@@ -1,0 +1,9 @@
+matrix:
+  bazel: ["8.x", "9.x"]
+tasks:
+  headers:
+    name: FP16 headers
+    platform: ubuntu2404
+    bazel: ${{ bazel }}
+    build_targets: ["@fp16//:fp16"]
+    test_targets: []

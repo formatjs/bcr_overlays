@@ -1,0 +1,11 @@
+bcr_test_module:
+  module_path: bcr_test
+  matrix:
+    bazel: ["8.x", "9.x"]
+  tasks:
+    consumer:
+      name: Perfetto host compilers with hermetic LLVM
+      platform: ubuntu2404
+      bazel: ${{ bazel }}
+      build_targets: ["//:host_tools"]
+      test_targets: ["//:wire_test", "//:chromium_wire_test"]

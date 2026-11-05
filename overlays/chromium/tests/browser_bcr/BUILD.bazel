@@ -1,0 +1,4 @@
+filegroup(
+    name = "browser",
+    srcs = ["@chromium//native:browser_bundle"],
+)

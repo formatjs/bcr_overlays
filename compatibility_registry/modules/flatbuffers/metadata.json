@@ -1,0 +1,16 @@
+{
+    "homepage": "https://github.com/google/flatbuffers",
+    "maintainers": [
+        {
+            "github": "mering",
+            "github_user_id": 133344217
+        }
+    ],
+    "repository": [
+        "github:google/flatbuffers"
+    ],
+    "versions": [
+        "25.2.10.chromium142"
+    ],
+    "yanked_versions": {}
+}

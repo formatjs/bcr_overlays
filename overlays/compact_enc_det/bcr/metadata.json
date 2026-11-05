@@ -1,0 +1,17 @@
+{
+    "homepage": "https://github.com/google/compact_enc_det",
+    "maintainers": [
+        {
+            "github": "longlho",
+            "github_user_id": 198255,
+            "name": "Long Ho"
+        }
+    ],
+    "repository": [
+        "github:google/compact_enc_det"
+    ],
+    "versions": [
+        "0.0.0-20190221-ba412ea"
+    ],
+    "yanked_versions": {}
+}

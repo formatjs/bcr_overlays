@@ -1,0 +1,17 @@
+{
+    "homepage": "https://perfetto.dev",
+    "maintainers": [
+        {
+            "github": "longlho",
+            "github_user_id": 198255,
+            "name": "Long Ho"
+        }
+    ],
+    "repository": [
+        "github:google/perfetto"
+    ],
+    "versions": [
+        "52.0.chromium142"
+    ],
+    "yanked_versions": {}
+}

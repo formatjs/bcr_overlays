@@ -1,0 +1,23 @@
+exports_files(
+    [
+        "bernoulli_distribution.h",
+        "beta_distribution.h",
+        "bit_gen_ref.h",
+        "discrete_distribution.h",
+        "distributions.h",
+        "exponential_distribution.h",
+        "gaussian_distribution.h",
+        "log_uniform_int_distribution.h",
+        "mock_distributions.h",
+        "mocking_bit_gen.h",
+        "poisson_distribution.h",
+        "random.h",
+        "seed_gen_exception.h",
+        "seed_sequences.h",
+        "uniform_int_distribution.h",
+        "uniform_real_distribution.h",
+        "zipf_distribution.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)

@@ -1,0 +1,5 @@
+{
+    "repository": "https://chromium.googlesource.com/linux-syscall-support.git",
+    "revision": "ed31caa60f20a4f6569883b2d752ef7522de51e0",
+    "chromium_version": "142.0.7444.59"
+}

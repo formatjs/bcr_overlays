@@ -1,0 +1,12 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+cc_test(
+    name = "smoke_test",
+    size = "small",
+    srcs = ["@skia//bcr_test:smoke_test.cc"],
+    linkstatic = True,
+    deps = [
+        "@skia//:core",
+        "@skia//:pathops",
+    ],
+)

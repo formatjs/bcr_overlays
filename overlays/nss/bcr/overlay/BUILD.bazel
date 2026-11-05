@@ -1,0 +1,76 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_perl//perl:perl.bzl", "perl_binary")
+load("//bazel:actions.bzl", "export_headers", "generate", "sign_module")
+load("//bazel:nss.bzl", "native_nss")
+load("//bazel:sources.bzl", "EXPORTS")
+
+package(default_visibility = ["//visibility:public"])
+
+export_headers(
+    name = "export_headers",
+    layout = {source: destination for destination, source in EXPORTS.items()},
+)
+
+cc_library(
+    name = "headers",
+    hdrs = glob([
+        "lib/**/*.h",
+        "lib/**/*.tab",
+        "lib/**/*.c",
+        "cmd/**/*.h",
+    ]) + [":export_headers"],
+    includes = [
+        ".",
+        "include/private/dbm",
+        "include/private/nss",
+        "include/public/dbm",
+        "include/public/nss",
+    ],
+    target_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+)
+
+perl_binary(
+    name = "certdata_generator",
+    srcs = ["lib/ckfw/builtins/certdata.perl"],
+    main = "lib/ckfw/builtins/certdata.perl",
+)
+
+generate(
+    name = "certdata_source",
+    out = "generated/certdata.c",
+    source = "lib/ckfw/builtins/certdata.txt",
+    tool = ":certdata_generator",
+)
+
+native_nss()
+
+[sign_module(
+    name = library + "_checksum",
+    out = "lib" + library + ".chk",
+    library = ":lib" + library + ".so",
+    tool = ":shlibsign",
+) for library in [
+    "freebl3",
+    "freeblpriv3",
+    "nssdbm3",
+    "softokn3",
+]]
+
+filegroup(
+    name = "module_checksums",
+    srcs = [":lib" + library + ".chk" for library in [
+        "freebl3",
+        "freeblpriv3",
+        "nssdbm3",
+        "softokn3",
+    ]],
+)
+
+cc_library(
+    name = "nss",
+    data = [":module_checksums"],
+    deps = [":nss_libs"],
+)

@@ -1,0 +1,55 @@
+diff --git a/bcr_test/.bazelrc b/bcr_test/.bazelrc
+new file mode 100644
+--- /dev/null
++++ b/bcr_test/.bazelrc
+@@ -0,0 +1,10 @@
++common --enable_bzlmod
++test --test_output=errors
++
++# Keep Chromium and LLVM's C++ runtime in the same hardening mode.
++build --cxxopt=-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE
++build --host_cxxopt=-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE
++build --cxxopt=-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS
++build --host_cxxopt=-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS
++build --cxxopt=-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS
++build --host_cxxopt=-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS
+diff --git a/bcr_test/BUILD.bazel b/bcr_test/BUILD.bazel
+new file mode 100644
+--- /dev/null
++++ b/bcr_test/BUILD.bazel
+@@ -0,0 +1,10 @@
++load("@rules_cc//cc:cc_test.bzl", "cc_test")
++
++cc_test(
++    name = "pki_api_test",
++    srcs = ["pki_api_test.cc"],
++    copts = ["-std=c++20"],
++    linkstatic = True,
++    visibility = ["//visibility:public"],
++    deps = ["@boringssl//:chromium_pki"],
++)
+diff --git a/bcr_test/pki_api_test.cc b/bcr_test/pki_api_test.cc
+new file mode 100644
+--- /dev/null
++++ b/bcr_test/pki_api_test.cc
+@@ -0,0 +1,20 @@
++#include <string>
++
++#include "pki/pem.h"
++
++int main() {
++  const std::string pem =
++      "-----BEGIN CERTIFICATE-----\nTQ==\n-----END CERTIFICATE-----\n";
++  auto decoded = bssl::PEMDecodeSingle(pem, "CERTIFICATE");
++  if (!decoded || *decoded != "M")
++    return 1;
++  if (bssl::PEMDecodeSingle(pem, "PRIVATE KEY"))
++    return 2;
++  if (bssl::PEMDecodeSingle(pem + pem, "CERTIFICATE"))
++    return 3;
++  if (bssl::PEMDecodeSingle(
++          "-----BEGIN CERTIFICATE-----\n!\n-----END CERTIFICATE-----\n",
++          "CERTIFICATE"))
++    return 4;
++  return 0;
++}

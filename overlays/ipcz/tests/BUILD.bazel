@@ -1,0 +1,18 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+exports_files(["ipcz_test.cc"])
+
+cc_test(
+    name = "ipcz_test",
+    size = "small",
+    srcs = ["@ipcz//bcr_test:ipcz_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+    ],
+    linkstatic = True,
+    deps = [
+        "@ipcz",
+        "@ipcz//:reference_drivers",
+    ],
+)

@@ -1,0 +1,19 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["include/**", "source/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["include/**/*.h"]),
+    includes = ["include"],
+)
+
+cc_library(
+    name = "chromium_headers",
+    hdrs = glob(["include/**/*.h"]),
+    include_prefix = "third_party/libyuv",
+    strip_include_prefix = "/",
+    deps = [":headers"],
+)

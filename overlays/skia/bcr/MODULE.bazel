@@ -3,3 +3,8 @@ module(
     version = "",
     bazel_compatibility = [">=8.0.0"],
 )
+
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "platforms", version = "1.1.0")
+bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "rules_license", version = "1.0.0")

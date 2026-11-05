@@ -1,0 +1,21 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -3,6 +3,7 @@
+ 
+ # cpuinfo, a library to detect information about the host CPU
+ 
++load("@rules_cc//cc:cc_library.bzl", "cc_library")
+ load("@rules_license//rules:license.bzl", "license")
+ 
+ package(
+diff --git a/MODULE.bazel b/MODULE.bazel
+--- a/MODULE.bazel
++++ b/MODULE.bazel
+@@ -5,5 +5,6 @@
+     bazel_compatibility = [">=7.2.1"],
+ )
+ 
++bazel_dep(name = "rules_cc", version = "0.2.26")
+ bazel_dep(name = "rules_license", version = "1.0.0")
+ bazel_dep(name = "platforms", version = "1.0.0")

@@ -1,0 +1,16 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("//bazel:config.bzl", "ICU_CODE_DEFINES", "ICU_COPTS")
+
+cc_library(
+    name = "stubdata",
+    srcs = ["stubdata.cpp"],
+    hdrs = ["stubdata.h"],
+    copts = ICU_COPTS,
+    linkstatic = True,
+    local_defines = ICU_CODE_DEFINES + [
+        "U_COMMON_IMPLEMENTATION",
+        "U_ICUDATAENTRY_IN_COMMON",
+    ],
+    visibility = ["//:__pkg__"],
+    deps = ["//source/common:headers"],
+)

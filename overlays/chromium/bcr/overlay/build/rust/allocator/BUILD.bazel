@@ -1,0 +1,53 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["BUILD.bazel"])
+
+cc_library(
+    name = "allocator_impls",
+    srcs = ["allocator_impls.cc"],
+    hdrs = ["allocator_impls.h"],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-exceptions",
+        "-fno-rtti",
+    ],
+    includes = ["../../.."],
+    deps = [
+        "//base/allocator/partition_allocator/src/partition_alloc:allocator_shim",
+        "//build:build_config",
+        "//native:rust_allocator_buildflags",
+    ],
+)
+
+cc_library(
+    name = "alloc_error_handler_impl",
+    srcs = [
+        "alias.cc",
+        "alloc_error_handler_impl.cc",
+    ],
+    hdrs = [
+        "alias.h",
+        "alloc_error_handler_impl.h",
+        "compiler_specific.h",
+        "immediate_crash.h",
+    ],
+    copts = [
+        "-std=c++20",
+        "-O2",
+        "-fno-exceptions",
+        "-fno-rtti",
+        "-fno-lto",
+    ],
+    includes = ["../../.."],
+    deps = ["//build:build_config"],
+)
+
+alias(
+    name = "allocator",
+    actual = "//native/rust:allocator",
+)
+
+exports_files(["lib.rs"])

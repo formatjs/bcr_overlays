@@ -1,0 +1,18 @@
+load("@rules_cc//cc:cc_import.bzl", "cc_import")
+load("@rules_rust//rust:rust_stdlib_filegroup.bzl", "rust_stdlib_filegroup")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["bin/rustc", "bin/bindgen", "VERSION"])
+
+filegroup(name = "compiler_libraries", srcs = glob(["lib/*.so*"]))
+
+rust_stdlib_filegroup(
+    name = "stdlib",
+    srcs = glob(["lib/rustlib/x86_64-unknown-linux-gnu/lib/**"]),
+)
+
+exports_files(["lib/libclang.so"])
+cc_import(name = "libclang", shared_library = "lib/libclang.so")
+
+exports_files(["bin/cargo"])

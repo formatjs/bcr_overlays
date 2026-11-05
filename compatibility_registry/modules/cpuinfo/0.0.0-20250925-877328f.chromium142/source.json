@@ -1,0 +1,15 @@
+{
+    "url": "https://github.com/pytorch/cpuinfo/archive/877328f188a3c7d1fa855871a278eb48d530c4c0.tar.gz",
+    "integrity": "sha256-XOtozHE869Cimfb4Us5v7S3YC2JRD25egsu9yPqRtxA=",
+    "strip_prefix": "cpuinfo-877328f188a3c7d1fa855871a278eb48d530c4c0",
+    "overlay": {
+        "BUILD.bazel": "sha256-sIcIz66P+RDNGXHA33C8/swccTBTy6wFQeglJR9sJIA=",
+        "MODULE.bazel": "sha256-3/v5cmh9bWMRq3azwxoXuVimsB4+Oa71eMM1TXuG3KY=",
+        "bcr_test/MODULE.bazel": "sha256-Vb2T4Kq1m6QIQR6I+Nr4DMqbSO73tYp7a+zeBrkoQyw=",
+        "bcr_test/BUILD.bazel": "sha256-Ff2nY/g+Fof9V+negdEhO8vCSbn4F/9oEcRfP9yY450=",
+        "bcr_test/.bazelrc": "sha256-aJshsGcxO/WgE3/UZTJEhPTcCW8H4QOvqP6QXhEWk6E=",
+        "bcr_test/.bazelversion": "sha256-G5SH1VvqR/6lDSJsycU7xUiHetKjGLrI+8izIPQp5cU=",
+        "bcr_test/cpuinfo_consumer_test.cc": "sha256-djUHwh+0X15csuyyQ6syMjP0PCVyWcUzAw/NqCs32gc="
+    },
+    "patches": {}
+}

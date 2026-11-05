@@ -1,0 +1,59 @@
+load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+load("@rules_cc//cc:cc_import.bzl", "cc_import")
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+genrule(
+    name = "linux_config",
+    srcs = ["@chromium_platform_headers//:usr/include/x86_64-linux-gnu/pci/config.h"],
+    outs = ["lib/config.h"],
+    cmd = "cp $< $@",
+)
+
+cc_library(
+    name = "headers",
+    hdrs = ["lib/pci.h", "lib/header.h", "lib/types.h", ":linux_config"],
+    strip_include_prefix = "lib",
+    include_prefix = "pci",
+)
+
+cc_library(
+    name = "implementation",
+    srcs = ["lib/" + name + ".c" for name in [
+        "init",
+        "access",
+        "generic",
+        "dump",
+        "names",
+        "filter",
+        "names-hash",
+        "names-parse",
+        "names-net",
+        "names-cache",
+        "names-hwdb",
+        "params",
+        "caps",
+        "sysfs",
+        "proc",
+        "i386-ports",
+    ]],
+    hdrs = glob(["lib/*.h"]) + [":linux_config"],
+    includes = ["lib"],
+    copts = ["-O2", "-fPIC", "-fvisibility=hidden"],
+    alwayslink = True,
+    deps = ["@chromium_platform_headers//:udev", "@zlib//:zlib"],
+    linkopts = ["-lresolv"],
+)
+
+cc_binary(
+    name = "libpci.so.3",
+    deps = [":implementation"],
+    linkshared = True,
+    linkstatic = True,
+    additional_linker_inputs = ["lib/libpci.ver"],
+    linkopts = ["-Wl,--version-script=$(location lib/libpci.ver)", "-Wl,-soname,libpci.so.3", "-Wl,-z,relro,-z,now,-z,noexecstack"],
+)
+
+cc_import(name = "shared", shared_library = ":libpci.so.3")
+cc_library(name = "pci", deps = [":headers", ":shared"])

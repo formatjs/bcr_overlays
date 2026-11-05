@@ -1,0 +1,16 @@
+{
+    "url": "https://archive.mozilla.org/pub/security/nss/releases/NSS_3_61_RTM/src/nss-3.61.tar.gz",
+    "integrity": "sha256-MS4tgEs0zPD+xwtXz4zWrIU/jO1g31PjDrsKe80OE3A=",
+    "strip_prefix": "nss-3.61/nss",
+    "patches": {
+        "38_hppa.patch": "sha256-GScJuWgDj02pmD1yBWSET289PFmaDFM/B/y95paPYeg=",
+        "38_hurd.patch": "sha256-9ITL5+lp2KzqBClBH5vK0IxGcrWFhQYK9vDoAp/Nfmc=",
+        "80_security_tools.patch": "sha256-Qz5sccrQJb3HU+5FmEe9GeMV/CkzCN2LdM87I501WMo=",
+        "85_security_load.patch": "sha256-FC3Eu9g9RAeBtuI3hUVhrPP519bXW0xe+Hooj0LDe/0=",
+        "CVE-2021-43527.patch": "sha256-l2XGFfVBJYNIMSXC0amjdkVSHpAPfGhLPQOGTo4sJ7I=",
+        "CVE-2022-22747.patch": "sha256-J7a0dz78LrAhsDhTV6fy3h1CodegtLT7lvCZ4evYahQ=",
+        "CVE-2023-0767.patch": "sha256-iKhzxZ/hhTxXeX09i5teKUp3UvInUD1iDDC2Wf2ZJZs=",
+        "bazel_module_realpath.patch": "sha256-BZBgFOXspdH5ER/Py29IO+tOqgzEy/COlI00IEgj4g4="
+    },
+    "patch_strip": 2
+}

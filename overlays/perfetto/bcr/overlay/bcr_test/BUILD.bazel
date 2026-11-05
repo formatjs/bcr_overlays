@@ -1,0 +1,64 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+filegroup(
+    name = "host_tools",
+    srcs = [
+        "@perfetto//:cppgen_plugin",
+        "@perfetto//:ipc_plugin",
+        "@perfetto//:protozero_plugin",
+    ],
+)
+
+genrule(
+    name = "generated",
+    srcs = ["fixture.proto"],
+    outs = [
+        "fixture.pbzero.h",
+        "fixture.gen.h",
+        "fixture.gen.cc",
+        "fixture.ipc.h",
+        "fixture.ipc.cc",
+    ],
+    cmd = "$(location @protobuf//:protoc) -I $$(dirname $(location fixture.proto)) --plugin=protoc-gen-zero=$(location @perfetto//:protozero_plugin) --plugin=protoc-gen-obj=$(location @perfetto//:cppgen_plugin) --plugin=protoc-gen-ipc=$(location @perfetto//:ipc_plugin) --zero_out=wrapper_namespace=pbzero:$(@D) --obj_out=wrapper_namespace=gen:$(@D) --ipc_out=$(@D) $(location fixture.proto)",
+    tools = [
+        "@perfetto//:cppgen_plugin",
+        "@perfetto//:ipc_plugin",
+        "@perfetto//:protozero_plugin",
+        "@protobuf//:protoc",
+    ],
+)
+
+filegroup(
+    name = "generated_cpp",
+    srcs = [
+        "fixture.gen.cc",
+        "fixture.gen.h",
+        "fixture.pbzero.h",
+    ],
+)
+
+cc_test(
+    name = "wire_test",
+    srcs = [
+        "wire_test.cc",
+        ":generated_cpp",
+    ],
+    includes = ["."],
+    deps = ["@perfetto//:protozero"],
+)
+
+cc_test(
+    name = "chromium_wire_test",
+    srcs = [
+        "wire_test.cc",
+        ":generated_cpp",
+    ],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    includes = ["."],
+    local_defines = ["EXPECT_CHROMIUM_CONFIG"],
+    deps = ["@perfetto//:chromium_protozero"],
+)

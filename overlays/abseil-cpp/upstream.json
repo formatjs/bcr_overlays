@@ -1,0 +1,6 @@
+{
+    "repository": "https://github.com/abseil/abseil-cpp",
+    "version": "20250814.1",
+    "chromium_revision": "aef36c342b796a9fc932ea06ecbe3ce26bbd05a6",
+    "chromium_version": "142.0.7444.59"
+}

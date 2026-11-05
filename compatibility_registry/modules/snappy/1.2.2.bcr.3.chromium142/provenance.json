@@ -1,0 +1,7 @@
+{
+    "base_module": "snappy@1.2.2.bcr.3",
+    "patches": {
+        "//build:snappy-public-headers.patch": "sha256-0Brg/xDX6b8Jya45Yap+F2787R4Gmm4t4fZfzjP91vc="
+    },
+    "upstream_source_sha256": "6cefb1f9c60dfff3492d335d4aa4fd6aa69316c3d3f6d3dfa99c15a2fa6e9212"
+}

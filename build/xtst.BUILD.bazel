@@ -1,0 +1,15 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "xtst",
+    srcs = ["src/XTest.c", "src/XRecord.c"],
+    hdrs = glob(["include/**/*.h"]),
+    includes = ["include"],
+    deps = [
+        "@libx11//:libx11",
+        "@libxext//:libxext",
+        "@libxi//:libxi",
+    ],
+)

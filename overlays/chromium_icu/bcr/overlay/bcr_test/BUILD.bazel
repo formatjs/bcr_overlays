@@ -1,0 +1,23 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+cc_test(
+    name = "static_data_test",
+    size = "small",
+    srcs = ["icu_test.cc"],
+    copts = ["-std=c++20"],
+    linkstatic = True,
+    deps = ["@chromium_icu//:icu"],
+)
+
+cc_test(
+    name = "file_data_test",
+    size = "small",
+    srcs = ["icu_test.cc"],
+    args = ["$(rootpath @chromium_icu//:common/icudtl.dat)"],
+    copts = ["-std=c++20"],
+    data = ["@chromium_icu//:common/icudtl.dat"],
+    linkstatic = True,
+    deps = ["@chromium_icu//:icu_file"],
+)
+
+exports_files(["icu_test.cc"])

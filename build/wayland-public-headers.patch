@@ -1,0 +1,18 @@
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -89,6 +89,7 @@
+     ] + glob(["src/*.h"]),
+     copts = ["-Wno-unused-variable"],
+     includes = [
++        ".",
+         "src",
+     ],
+     visibility = ["//visibility:public"],
+@@ -112,6 +113,7 @@
+         ":wayland_version_h",
+     ] + glob(["src/*.h"]),
+     includes = [
++        ".",
+         "src",
+     ],
+     visibility = ["//visibility:public"],

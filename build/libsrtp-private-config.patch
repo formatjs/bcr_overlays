@@ -1,0 +1,12 @@
+diff --git a/include/srtp_priv.h b/include/srtp_priv.h
+--- a/include/srtp_priv.h
++++ b/include/srtp_priv.h
+@@ -46,7 +46,7 @@
+ #define SRTP_PRIV_H
+ 
+ // Leave this as the top level import. Ensures the existence of defines
+-#include "config.h"
++#include "../config/config.h"
+ 
+ #include "srtp.h"
+ #include "rdbx.h"

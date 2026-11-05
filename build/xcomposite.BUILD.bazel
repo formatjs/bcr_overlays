@@ -1,0 +1,14 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "xcomposite",
+    srcs = ["src/Xcomposite.c"],
+    hdrs = glob(["include/**/*.h", "src/*.h"]),
+    includes = ["include"],
+    deps = [
+        "@libx11//:libx11",
+        "@libxfixes//:libxfixes",
+    ],
+)

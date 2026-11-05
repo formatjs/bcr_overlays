@@ -1,0 +1,11 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -91,6 +91,7 @@
+     "vpx/vpx_image.h",
+     "vpx/vpx_integer.h",
+     "vpx/vpx_tpl.h",
++    "vpx_util/vpx_thread.h",
+ ]
+ 
+ _PLATFORM_BASE_SRCS = select({

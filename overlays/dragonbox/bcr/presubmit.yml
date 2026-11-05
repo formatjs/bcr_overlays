@@ -1,0 +1,9 @@
+matrix:
+  bazel: ["8.x", "9.x"]
+tasks:
+  headers:
+    name: Dragonbox headers
+    platform: ubuntu2404
+    bazel: ${{ bazel }}
+    build_targets: ["@dragonbox//:dragonbox"]
+    test_targets: []

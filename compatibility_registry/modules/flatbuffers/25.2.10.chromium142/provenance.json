@@ -1,0 +1,6 @@
+{
+    "base_module": "flatbuffers@25.2.10",
+    "patches": {
+        "//build:flatbuffers-cpp-module.patch": "sha256-viLxNWYMzWz2xA+DDUjJX2LwiR4T/DCo/akgvdTClaY="
+    }
+}

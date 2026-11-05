@@ -1,0 +1,18 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -1775,6 +1775,14 @@
+ # =========================================================================
+ #
+ cc_library(
++    name = "aom_rc",
++    srcs = ["av1/ratectrl_rtc.cc"],
++    hdrs = ["av1/ratectrl_rtc.h"],
++    visibility = ["//visibility:public"],
++    deps = [":aom"],
++)
++
++cc_library(
+     name = "aom_common_app_util",
+     srcs = [
+         "common/args.c",

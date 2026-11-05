@@ -1,0 +1,13 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+exports_files(glob(["src/**", "simd/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["src/**/*.h", "simd/**/*.h", "simd/**/*.inc"]),
+    textual_hdrs = glob(["src/**/*.c"]),
+    includes = [".", "src"],
+    include_prefix = "third_party/libjpeg_turbo",
+    strip_include_prefix = ".",
+)

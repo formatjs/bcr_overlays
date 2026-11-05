@@ -1,0 +1,98 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -11,13 +11,13 @@
+     "LIBVPX_ARM_ASM_SRCS",
+     "LIBVPX_ARM_NEON_SRCS",
+     "LIBVPX_ARM_SRCS",
+-    "LIBVPX_X86_64_ASM_SRCS_LOWBD",
+-    "LIBVPX_X86_64_AVX2_SRCS_LOWBD",
++    "LIBVPX_X86_64_ASM_SRCS",
++    "LIBVPX_X86_64_AVX2_SRCS",
+     "LIBVPX_X86_64_AVX_SRCS",
+     "LIBVPX_X86_64_SRCS",
+-    "LIBVPX_X86_64_SSE2_SRCS_LOWBD",
+-    "LIBVPX_X86_64_SSE4_1_SRCS_LOWBD",
+-    "LIBVPX_X86_64_SSSE3_SRCS_LOWBD",
++    "LIBVPX_X86_64_SSE2_SRCS",
++    "LIBVPX_X86_64_SSE4_1_SRCS",
++    "LIBVPX_X86_64_SSSE3_SRCS",
+     "LIBVPX_X86_64_MMX_SRCS",
+     "LIBVPX_X86_ASM_SRCS_LOWBD",
+     "LIBVPX_X86_AVX2_SRCS_LOWBD",
+@@ -268,7 +268,7 @@
+ 
+ cc_library(
+     name = "x86_64_sse2",
+-    srcs = LIBVPX_X86_64_SSE2_SRCS_LOWBD,
++    srcs = LIBVPX_X86_64_SSE2_SRCS,
+     copts = _COMMON_COPTS + select({
+         "@platforms//os:windows": [],
+         "//conditions:default": ["-msse2"],
+@@ -284,7 +284,7 @@
+ 
+ cc_library(
+     name = "x86_64_ssse3",
+-    srcs = LIBVPX_X86_64_SSSE3_SRCS_LOWBD,
++    srcs = LIBVPX_X86_64_SSSE3_SRCS,
+     copts = _COMMON_COPTS + select({
+         "@platforms//os:windows": [],
+         "//conditions:default": ["-mssse3"],
+@@ -300,7 +300,7 @@
+ 
+ cc_library(
+     name = "x86_64_sse4_1",
+-    srcs = LIBVPX_X86_64_SSE4_1_SRCS_LOWBD,
++    srcs = LIBVPX_X86_64_SSE4_1_SRCS,
+     copts = _COMMON_COPTS + select({
+         "@platforms//os:windows": ["/arch:AVX"],
+         "//conditions:default": ["-msse4.1"],
+@@ -332,7 +332,7 @@
+ 
+ cc_library(
+     name = "x86_64_avx2",
+-    srcs = LIBVPX_X86_64_AVX2_SRCS_LOWBD,
++    srcs = LIBVPX_X86_64_AVX2_SRCS,
+     copts = _COMMON_COPTS + select({
+         "@platforms//os:windows": ["/arch:AVX2"],
+         "//conditions:default": ["-mavx2"],
+@@ -348,7 +348,7 @@
+ 
+ nasm_library(
+     name = "x86_64_asm",
+-    srcs = LIBVPX_X86_64_ASM_SRCS_LOWBD,
++    srcs = LIBVPX_X86_64_ASM_SRCS,
+     hdrs = _NASM_HDRS,
+     copts = select({
+         "@platforms//os:android": ["-D__ANDROID__"],
+diff --git a/config/vpx_config.bzl b/config/vpx_config.bzl
+--- a/config/vpx_config.bzl
++++ b/config/vpx_config.bzl
+@@ -271,6 +271,8 @@
+     defines.update(_COMMON_CONFIG)
+     if windows:
+         defines.update(_WINDOWS_CONFIG)
++    if arch == "x86_64":
++        defines["CONFIG_VP9_HIGHBITDEPTH"] = 1
+     defines.update(features)
+     return defines
+ 
+diff --git a/libvpx_srcs.bzl b/libvpx_srcs.bzl
+--- a/libvpx_srcs.bzl
++++ b/libvpx_srcs.bzl
+@@ -484,7 +484,6 @@
+     "vpx_dsp/x86/avg_intrin_avx2.c",
+     "vpx_dsp/x86/avg_pred_avx2.c",
+     "vpx_dsp/x86/highbd_convolve_avx2.c",
+-    "vpx_dsp/x86/highbd_intrapred_intrin_avx2.c",
+     "vpx_dsp/x86/highbd_quantize_intrin_avx2.c",
+     "vpx_dsp/x86/highbd_sad4d_avx2.c",
+     "vpx_dsp/x86/highbd_sad_avx2.c",
+@@ -1191,7 +1190,6 @@
+     "vpx_dsp/x86/avg_intrin_avx2.c",
+     "vpx_dsp/x86/avg_pred_avx2.c",
+     "vpx_dsp/x86/highbd_convolve_avx2.c",
+-    "vpx_dsp/x86/highbd_intrapred_intrin_avx2.c",
+     "vpx_dsp/x86/highbd_quantize_intrin_avx2.c",
+     "vpx_dsp/x86/highbd_sad4d_avx2.c",
+     "vpx_dsp/x86/highbd_sad_avx2.c",

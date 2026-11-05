@@ -1,0 +1,7 @@
+{
+    "base_module": "flac@1.5.0.bcr.1",
+    "patches": {
+        "//build:flac-chromium-headers.patch": "sha256-Jo3iPXN1BE4vKrWLHh8T1/XVOU2L7lqS0NfkqLJfybg="
+    },
+    "upstream_source_sha256": "65bbf993c86bdc532df3111cb2f3f23179be611325e2117fd098540df3b4a60e"
+}

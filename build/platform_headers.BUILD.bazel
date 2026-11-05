@@ -1,0 +1,362 @@
+load("@rules_cc//cc:cc_import.bzl", "cc_import")
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+cc_library(
+    name = "gtk_headers",
+    hdrs = glob([
+        "usr/include/gtk-3.0/**/*.h",
+        "usr/include/gdk-pixbuf-2.0/**/*.h",
+        "usr/include/pango-1.0/**/*.h",
+        "usr/include/cairo/**/*.h",
+        "usr/include/atk-1.0/**/*.h",
+    ]),
+    includes = [
+        "usr/include/gtk-3.0",
+        "usr/include/gtk-3.0/unix-print",
+        "usr/include/gdk-pixbuf-2.0",
+        "usr/include/pango-1.0",
+        "usr/include/cairo",
+        "usr/include/atk-1.0",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@glib//glib",
+        "@glib//gobject",
+        "@glib//gio",
+    ],
+)
+
+cc_library(
+    name = "va_headers",
+    hdrs = glob(["usr/include/va/**/*.h"]),
+    strip_include_prefix = "usr/include",
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "gssapi",
+    hdrs = [
+        "usr/include/mit-krb5/gssapi.h",
+        "usr/include/mit-krb5/gssapi/gssapi.h",
+    ],
+    includes = ["usr/include/mit-krb5"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "graphics",
+    hdrs = glob([
+        "usr/include/X11/**/*.h",
+        "usr/include/xcb/**/*.h",
+        "usr/include/GL/**/*.h",
+        "usr/include/EGL/**/*.h",
+        "usr/include/KHR/**/*.h",
+    ]),
+    strip_include_prefix = "usr/include",
+    visibility = ["//visibility:public"],
+)
+
+exports_files(["usr/include/x86_64-linux-gnu/pci/config.h"])
+
+cc_import(
+    name = "udev_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libudev.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "udev",
+    hdrs = ["usr/include/libudev.h"],
+    strip_include_prefix = "usr/include",
+    visibility = ["//visibility:public"],
+    deps = [":udev_shared"],
+)
+
+cc_import(
+    name = "xshmfence_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libxshmfence.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_import(
+    name = "gbm_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libgbm.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "gbm",
+    hdrs = ["usr/include/gbm.h"],
+    strip_include_prefix = "usr/include",
+    visibility = ["//visibility:public"],
+    deps = [":gbm_shared"],
+)
+
+cc_import(
+    name = "dbus_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libdbus-1.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "dbus",
+    hdrs = glob([
+        "usr/include/dbus-1.0/dbus/*.h",
+        "usr/lib/x86_64-linux-gnu/dbus-1.0/include/dbus/*.h",
+    ]),
+    includes = [
+        "usr/include/dbus-1.0",
+        "usr/lib/x86_64-linux-gnu/dbus-1.0/include",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [":dbus_shared"],
+)
+
+# Captured Linux desktop APIs use platform shared libraries.
+cc_import(
+    name = "pango_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libpango-1.0.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_import(
+    name = "pangocairo_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_import(
+    name = "cairo_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libcairo.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "pango",
+    hdrs = glob([
+        "usr/include/pango-1.0/pango/*.h",
+        "usr/include/cairo/*.h",
+    ]),
+    includes = [
+        "usr/include/cairo",
+        "usr/include/pango-1.0",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":cairo_shared",
+        ":pango_shared",
+        ":pangocairo_shared",
+        "@glib//gobject",
+    ],
+)
+
+cc_import(
+    name = "atk_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libatk-1.0.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_import(
+    name = "atk_bridge_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libatk-bridge-2.0.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "atk",
+    hdrs = glob([
+        "usr/include/atk-1.0/atk/*.h",
+        "usr/include/at-spi2-atk/2.0/*.h",
+    ]),
+    includes = [
+        "usr/include/at-spi2-atk/2.0",
+        "usr/include/atk-1.0",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":atk_bridge_shared",
+        ":atk_shared",
+        ":atspi",
+        "@glib//gobject",
+    ],
+)
+
+cc_import(
+    name = "atspi_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libatspi.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "atspi",
+    hdrs = glob(["usr/include/at-spi-2.0/atspi/*.h"]),
+    strip_include_prefix = "usr/include/at-spi-2.0",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":atspi_shared",
+        ":dbus",
+        "@glib//gio",
+    ],
+)
+
+cc_import(
+    name = "alsa_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libasound.so",
+    system_provided = True,
+)
+
+cc_library(
+    name = "alsa",
+    hdrs = glob(["usr/include/alsa/**/*.h"]),
+    strip_include_prefix = "usr/include",
+    visibility = ["//visibility:public"],
+    deps = [":alsa_shared"],
+)
+
+cc_library(
+    name = "pulse_headers",
+    hdrs = glob(["usr/include/pulse/**/*.h"]),
+    strip_include_prefix = "usr/include",
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "pipewire_headers",
+    hdrs = glob([
+        "usr/include/pipewire-0.3/**/*.h",
+        "usr/include/spa-0.2/**/*.h",
+    ]),
+    includes = [
+        "usr/include/pipewire-0.3",
+        "usr/include/spa-0.2",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+cc_import(
+    name = "drm_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libdrm.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_import(
+    name = "cups_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libcups.so",
+    system_provided = True,
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "cups",
+    hdrs = glob(["usr/include/cups/*.h"]),
+    strip_include_prefix = "usr/include",
+    visibility = ["//visibility:public"],
+    deps = [":cups_shared"],
+)
+
+cc_import(
+    name = "qt_stdlib_shared",
+    visibility = ["//visibility:public"],
+    interface_library = "usr/lib/gcc/x86_64-linux-gnu/10/libstdc++.so",
+    system_provided = True,
+)
+
+cc_library(
+    name = "qt_stdlib",
+    hdrs = glob([
+        "usr/include/**/*.h",
+        "usr/include/c++/10/**",
+    ]),
+    visibility = ["//visibility:public"],
+    deps = [":qt_stdlib_shared"],
+)
+
+cc_import(
+    name = "qt5_core_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libQt5Core.so",
+    system_provided = True,
+)
+
+cc_import(
+    name = "qt5_gui_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libQt5Gui.so",
+    system_provided = True,
+)
+
+cc_import(
+    name = "qt5_widgets_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libQt5Widgets.so",
+    system_provided = True,
+)
+
+cc_library(
+    name = "qt5",
+    hdrs = glob([
+        "usr/include/x86_64-linux-gnu/qt5/**",
+        "usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/*.h",
+    ]),
+    includes = [
+        "usr/include/x86_64-linux-gnu/qt5",
+        "usr/include/x86_64-linux-gnu/qt5/QtCore",
+        "usr/include/x86_64-linux-gnu/qt5/QtGui",
+        "usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":qt5_core_shared",
+        ":qt5_gui_shared",
+        ":qt5_widgets_shared",
+        ":qt_stdlib",
+    ],
+)
+
+cc_import(
+    name = "qt6_core_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libQt6Core.so",
+    system_provided = True,
+)
+
+cc_import(
+    name = "qt6_gui_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libQt6Gui.so",
+    system_provided = True,
+)
+
+cc_import(
+    name = "qt6_widgets_shared",
+    interface_library = "usr/lib/x86_64-linux-gnu/libQt6Widgets.so",
+    system_provided = True,
+)
+
+cc_library(
+    name = "qt6",
+    hdrs = glob([
+        "usr/include/x86_64-linux-gnu/qt6/**",
+        "usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++/*.h",
+    ]),
+    includes = [
+        "usr/include/x86_64-linux-gnu/qt6",
+        "usr/include/x86_64-linux-gnu/qt6/QtCore",
+        "usr/include/x86_64-linux-gnu/qt6/QtGui",
+        "usr/include/x86_64-linux-gnu/qt6/QtWidgets",
+        "usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":qt6_core_shared",
+        ":qt6_gui_shared",
+        ":qt6_widgets_shared",
+        ":qt_stdlib",
+    ],
+)

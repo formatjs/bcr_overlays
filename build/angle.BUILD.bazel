@@ -1,0 +1,17 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+exports_files(glob(["third_party/angle/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob([
+        "third_party/angle/include/**",
+        "third_party/angle/src/**/*.h",
+        "third_party/angle/src/**/*.hpp",
+        "third_party/angle/src/**/*.inc",
+        "third_party/angle/src/**/*.inl",
+        "third_party/angle/util/**/*.h",
+    ], allow_empty = True),
+    includes = [".", "third_party/angle", "third_party/angle/include", "third_party/angle/src", "third_party/angle/src/common/base", "third_party/angle/src/common/third_party/xxhash", "third_party/angle/src/third_party/khronos", "third_party/angle/src/third_party/volk"],
+)

@@ -1,0 +1,7 @@
+{
+    "base_module": "libwebm@1.0.0.32",
+    "patches": {
+        "//build:libwebm-chromium-headers.patch": "sha256-YFBbCsvWf77xcteFZWssvkkYXXQo2azT3VRlvgY79DU="
+    },
+    "upstream_source_sha256": "8903e55719f8ac7d5b348d0c2ead8220458eea3a1ebef353cf584dcb686989e6"
+}

@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 /overlays/*/tests/bcr/MODULE.bazel.lock
+/overlays/chromium/tests/browser_bcr/MODULE.bazel.lock
+/compatibility_registry/tests/MODULE.bazel.lock

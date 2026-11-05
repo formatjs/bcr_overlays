@@ -1,0 +1,43 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_python//python:defs.bzl", "py_binary")
+load("//bazel:data.bzl", "icu_data_assembly")
+
+py_binary(
+    name = "make_data_assembly_tool",
+    srcs = ["scripts/make_data_assembly.py"],
+    main = "scripts/make_data_assembly.py",
+)
+
+icu_data_assembly(
+    name = "icudtl_dat",
+    src = "common/icudtl.dat",
+)
+
+cc_library(
+    name = "embedded_data",
+    srcs = [":icudtl_dat"],
+    linkstatic = True,
+    local_defines = ["U_HIDE_DATA_SYMBOL"],
+)
+
+cc_library(
+    name = "icu",
+    defines = ["ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_STATIC"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":embedded_data",
+        "//source/i18n:implementation",
+    ],
+)
+
+cc_library(
+    name = "icu_file",
+    defines = ["ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//source/i18n:implementation",
+        "//source/stubdata",
+    ],
+)
+
+exports_files(["common/icudtl.dat"])

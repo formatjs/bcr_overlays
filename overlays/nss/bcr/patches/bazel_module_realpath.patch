@@ -1,0 +1,31 @@
+Resolve loader symlinks before locating the module's companion checksum.
+
+--- a/nss/lib/freebl/shvfy.c
++++ b/nss/lib/freebl/shvfy.c
+@@ -18,6 +18,9 @@
+ #include "hasht.h"
+ #include "pqg.h"
+ #include "blapii.h"
++#ifdef XP_UNIX
++#include <stdlib.h>
++#endif
+ 
+ #ifndef NSS_FIPS_DISABLED
+ 
+@@ -298,7 +301,16 @@
+     if (!shName) {
+         goto loser;
+     }
++#ifdef XP_UNIX
++    char *realName = realpath(shName, NULL);
++    if (!realName) {
++        goto loser;
++    }
++    result = blapi_SHVerifyFile(realName, self);
++    free(realName);
++#else
+     result = blapi_SHVerifyFile(shName, self);
++#endif
+ 
+ loser:
+     if (shName != NULL) {

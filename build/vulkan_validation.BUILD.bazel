@@ -1,0 +1,12 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["layers/**", "scripts/**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["layers/**/*.h"]),
+    include_prefix = "third_party/vulkan-validation-layers/src",
+    includes = ["layers", "layers/external", "layers/vulkan"],
+)

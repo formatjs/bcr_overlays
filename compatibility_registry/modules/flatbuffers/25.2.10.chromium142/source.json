@@ -1,0 +1,13 @@
+{
+    "url": "https://github.com/google/flatbuffers/archive/refs/tags/v25.2.10.tar.gz",
+    "integrity": "sha256-ucLfSXB8V6SPwJI9UrjHO+ty1nX51EsiEeRWm+QKdCE=",
+    "strip_prefix": "flatbuffers-25.2.10",
+    "patches": {},
+    "overlay": {
+        "MODULE.bazel": "sha256-DiTkdVgsGaqlIwQcRpjUQpf5vCBaWU1Va03fqZte15k=",
+        "bcr_test/MODULE.bazel": "sha256-euMaSXT473pk4SJpqUeco6i471Hcr5SvZAAdyJ5jVm4=",
+        "bcr_test/BUILD.bazel": "sha256-WOGxEPEttKpKsyunzx6wk7qwtId1WCF3Xwj0wA5r9wE=",
+        "bcr_test/.bazelrc": "sha256-aJshsGcxO/WgE3/UZTJEhPTcCW8H4QOvqP6QXhEWk6E=",
+        "bcr_test/.bazelversion": "sha256-G5SH1VvqR/6lDSJsycU7xUiHetKjGLrI+8izIPQp5cU="
+    }
+}

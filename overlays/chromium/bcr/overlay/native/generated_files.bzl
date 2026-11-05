@@ -3460,6 +3460,8 @@ _FILES = {
     "obj/ui/webui/resources/resources_expected_outputs.txt": "gen/ui/webui/resources/grit/webui_resources.h\ngen/ui/webui/resources/grit/webui_resources_map.cc\ngen/ui/webui/resources/grit/webui_resources_map.h\ngen/ui/webui/resources/webui_resources.pak\n",
 }
 
+CAPTURED_FILES = _FILES
+
 def _generated_files_impl(ctx):
     outputs = []
     for output, contents in zip(ctx.outputs.outs, _FILES.values()):

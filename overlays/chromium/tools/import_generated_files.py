@@ -24,6 +24,8 @@ def main():
             '',
             '_FILES = ' + json.dumps(outputs, indent=4),
             '',
+            'CAPTURED_FILES = _FILES',
+            '',
             'def _generated_files_impl(ctx):',
             '    outputs = []',
             '    for output, contents in zip(ctx.outputs.outs, _FILES.values()):',

@@ -89,6 +89,45 @@ class CaptureNativeGraphTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'unproduced generated input unavailable'):
             self.run_capture()
 
+    def test_declared_sdk_runtime_preserves_source_and_digest(self):
+        import hashlib
+        source = '//sdk/dbghelp.dll'
+        output = '//out/import/dbghelp.dll'
+        binary = b'MZ\x00\xffSDK runtime'
+        path = self.root / source[2:]
+        path.parent.mkdir()
+        path.write_bytes(binary)
+        self.runtime['//:browser']['runtime_deps'].append('dbghelp.dll')
+        self.project['targets']['//:browser']['inputs'] = [output]
+        result = capture(self.project, self.runtime, self.root, [],
+                         runtime_inputs={output: source})
+        self.assertEqual(result['runtime_inputs'][output], {
+            'source': source, 'sha256': hashlib.sha256(binary).hexdigest(),
+        })
+        self.runtime['//:browser']['runtime_deps'].append('undeclared.dll')
+        with self.assertRaisesRegex(ValueError, 'missing runtime producer'):
+            capture(self.project, self.runtime, self.root, [],
+                    runtime_inputs={output: source})
+
+    def test_captures_gn_time_generator_output_manifest(self):
+        output = '//out/import/gen/dawn.expected_outputs'
+        (self.root / output[2:]).write_text('include/dawn/webgpu.h\n')
+        self.project['targets']['//:browser']['args'] = [
+            '--expected-outputs-file', 'gen/dawn.expected_outputs',
+        ]
+        result = self.run_capture()
+        self.assertEqual(result['generated_files'][output], 'include/dawn/webgpu.h\n')
+
+    def test_rejects_unused_or_escaping_sdk_runtime_inputs(self):
+        output = '//out/import/dbghelp.dll'
+        with self.assertRaisesRegex(ValueError, 'unused runtime input'):
+            capture(self.project, self.runtime, self.root, [],
+                    runtime_inputs={output: '//sdk/dbghelp.dll'})
+        self.runtime['//:browser']['runtime_deps'].append('dbghelp.dll')
+        with self.assertRaisesRegex(ValueError, 'invalid runtime input source'):
+            capture(self.project, self.runtime, self.root, [],
+                    runtime_inputs={output: '//sdk/../../outside.dll'})
+
 
 if __name__ == '__main__':
     unittest.main()

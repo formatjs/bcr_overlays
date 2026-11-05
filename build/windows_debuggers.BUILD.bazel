@@ -1,0 +1,26 @@
+package(default_visibility = ["//visibility:public"])
+
+exports_files([
+    "content/amd64/dbgcore.dll",
+    "content/amd64/dbghelp.dll",
+    "content/arm64/dbgcore.dll",
+    "content/arm64/dbghelp.dll",
+])
+
+filegroup(
+    name = "dbghelp",
+    srcs = select({
+        "@platforms//cpu:x86_64": ["content/amd64/dbghelp.dll"],
+        "@platforms//cpu:aarch64": ["content/arm64/dbghelp.dll"],
+    }),
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+filegroup(
+    name = "dbgcore",
+    srcs = select({
+        "@platforms//cpu:x86_64": ["content/amd64/dbgcore.dll"],
+        "@platforms//cpu:aarch64": ["content/arm64/dbgcore.dll"],
+    }),
+    target_compatible_with = ["@platforms//os:windows"],
+)

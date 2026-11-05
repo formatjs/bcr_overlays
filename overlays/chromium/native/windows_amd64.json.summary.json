@@ -1,0 +1,29 @@
+{
+    "schema_version": 1,
+    "provenance": {
+        "chromium_revision": "4b8153ab58d3c3f4c9f7e4baad9616ecf80db5fa",
+        "gn_version": "2285 (81b24e01531e)",
+        "args_gn": "is_debug = false\nis_component_build = false\ntarget_os = \"win\"\ntarget_cpu = \"x64\"\nclang_base_path = \"$LLVM_ROOT\"\nclang_use_chrome_plugins = false\nvisual_studio_path = \"$SOURCE_ROOT/build/win_toolchain\"\nvisual_studio_version = \"2022\"\nwindows_sdk_path = \"$SOURCE_ROOT/build/win_toolchain/Windows Kits/10\"\nwindows_sdk_version = \"10.0.26100.0\"\nwdk_path = \"$SOURCE_ROOT/build/win_toolchain/Windows Kits/10\"\n",
+        "deps_sha256": "2bcbc993c76bf81b692d391cd150a849797372b8418df5df8d9a29ac6b058a99"
+    },
+    "graph_sha256": "6eafe059679825500f29bb1dee11d2eb7417a733a92f153f8192a37ebf466e82",
+    "compressed_sha256": "9a493d57bcc08851c60d786ba07c6cf25aee2220d82f01de1f821b224749b320",
+    "target_types": {
+        "action": 7844,
+        "action_foreach": 48,
+        "copy": 119,
+        "executable": 47,
+        "generated_file": 380,
+        "group": 2223,
+        "rust_library": 208,
+        "rust_proc_macro": 11,
+        "shared_library": 11,
+        "source_set": 4466,
+        "static_library": 2158
+    },
+    "runtime_file_count": {
+        "//chrome:chrome": 4783
+    },
+    "generated_file_count": 3466,
+    "pool_entries": 6461
+}

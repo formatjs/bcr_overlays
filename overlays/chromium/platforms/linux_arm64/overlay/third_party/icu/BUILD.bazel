@@ -216,9 +216,3 @@ alias(
 )
 
 exports_files(["BUILD.bazel"])
-
-# BEGIN BROWSER INPUTS
-exports_files([
-    "common/icudtl.dat",
-])
-# END BROWSER INPUTS

@@ -1,4 +1,5 @@
 exports_files([
+    "windows_debuggers.BUILD.bazel",
     "platform_runtime.bzl",
     "browser_sources.bzl",
     "browser_sources.BUILD.bazel",

@@ -6,8 +6,8 @@
         "args_gn": "is_debug = false\nis_component_build = false\ntarget_os = \"linux\"\ntarget_cpu = \"arm64\"\nclang_base_path = \"$LLVM_ROOT\"\nclang_use_chrome_plugins = false\n",
         "deps_sha256": "2bcbc993c76bf81b692d391cd150a849797372b8418df5df8d9a29ac6b058a99"
     },
-    "graph_sha256": "5261349d5a6c979dbc27d5345a7361b9a19e3bdec44d13f9d03718a597ba27a3",
-    "compressed_sha256": "32cd376aa2cf0c42ab8d7c8816737e5dcfc55e8d9ad03a192148da7972d15922",
+    "graph_sha256": "31545eb8919ffcde4e4c0f05ec681cbdb761187628083fd5e9322a0c649f84bd",
+    "compressed_sha256": "169cdaf471fd3a0d909568f094218a885fc85eac43b719e3040b28200b082baf",
     "target_types": {
         "action": 10201,
         "action_foreach": 53,
@@ -24,6 +24,6 @@
     "runtime_file_count": {
         "//chrome:chrome": 4753
     },
-    "generated_file_count": 5117,
+    "generated_file_count": 5138,
     "pool_entries": 7825
 }

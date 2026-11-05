@@ -1,0 +1,15 @@
+{
+  "source": "third_party/dawn/src/dawn/native/BUILD.gn",
+  "source_sha256": "5485a4fcaa4378b9192d89a9f96fc8184d244bee93370576571e726d03a566d9",
+  "graph_sha256": "169cdaf471fd3a0d909568f094218a885fc85eac43b719e3040b28200b082baf",
+  "runtime_deps": {
+    "//third_party/dawn/src/dawn/native:sources": [
+      "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan",
+      "//third_party/vulkan-loader/src:libvulkan"
+    ],
+    "//third_party/dawn/src/dawn/native:static": [
+      "//third_party/vulkan-validation-layers/src:vulkan_gen_json_files",
+      "//third_party/vulkan-validation-layers/src:vulkan_validation_layers"
+    ]
+  }
+}

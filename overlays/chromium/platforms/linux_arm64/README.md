@@ -14,3 +14,15 @@ Validated from Linux AMD64 with `--config=browser` and
 Full browser analysis passes. `//tools/ci:linux-arm64` uses this overlay for
 cross-compilation on AMD64. ARM64 binaries have not been executed; full browser
 compilation, packaging, and native rendering smoke remain pending.
+
+Maintainer capture catalogs live in `capture/`. Copy these into a separate
+Chromium overlay's `native/` directory before running importers against
+`native/linux_arm64.json.gz`. Project the imported delta with:
+
+```sh
+python3 overlays/chromium/tools/project_platform_overlay.py \
+  /path/to/imported/bcr/overlay --variant linux_arm64
+```
+
+The projector preserves hand-written host dispatch and runtime rules. Format
+generated Starlark with buildifier before building.

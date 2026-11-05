@@ -4,6 +4,7 @@ load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_python//python:py_info.bzl", "PyInfo")
 load(":content_sources.bzl", "ACTIONS", "COPIES", "LIBRARIES", "METADATA", "SHARED_HEADERS", "TOOLS")
+load(":generated_files.bzl", "CAPTURED_FILES")
 load(":python_action.bzl", "ChromiumFilesInfo", "ChromiumGeneratedFilesInfo", "chromium_python_action")
 load(":resource_copy.bzl", "chromium_resource_copy")
 load(":tool_inputs.bzl", "chromium_tool_inputs")
@@ -29,6 +30,8 @@ _protobuf_python_inputs = rule(
 
 def native_content():
     for path, content in METADATA.items():
+        if path in CAPTURED_FILES:
+            continue
         write_file(
             name = "content_metadata_" + path.replace("/", "_"),
             out = path,

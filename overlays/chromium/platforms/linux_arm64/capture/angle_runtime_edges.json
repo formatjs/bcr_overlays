@@ -1,0 +1,31 @@
+{
+  "source": "third_party/angle/gni/angle.gni",
+  "source_sha256": "2bba8b0ddeae1ba739d3f22e3287d4fe7879655b0d94fb34905302fea4946188",
+  "graph_sha256": "169cdaf471fd3a0d909568f094218a885fc85eac43b719e3040b28200b082baf",
+  "runtime_deps": {
+    "//third_party/angle/src/common/vulkan:angle_libvulkan": [
+      "//third_party/vulkan-loader/src:libvulkan",
+      "//third_party/vulkan-tools/src:VkICD_mock_icd"
+    ],
+    "//third_party/angle/src/common/vulkan:angle_vulkan_entry_points": [
+      "//third_party/vulkan-loader/src:libvulkan"
+    ],
+    "//third_party/angle/src/common/vulkan:angle_vulkan_icd": [
+      "//third_party/swiftshader/src/Vulkan:icd_file",
+      "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan"
+    ],
+    "//third_party/angle/src/common/vulkan:vulkan_validation_layers": [
+      "//third_party/vulkan-validation-layers/src:vulkan_gen_json_files",
+      "//third_party/vulkan-validation-layers/src:vulkan_validation_layers"
+    ],
+    "//third_party/angle/src/libANGLE/renderer/vulkan:angle_vulkan_backend": [
+      "//third_party/angle/src/common/vulkan:vulkan_validation_layers"
+    ],
+    "//third_party/angle:libEGL": [
+      "//third_party/angle:libGLESv2"
+    ]
+  },
+  "additional_sources": {
+    "third_party/angle/src/common/vulkan/BUILD.gn": "81ae667a4517dfbad5121030f93c49fcfbd1d106eadd30f5ab8eb2292cc3babb"
+  }
+}

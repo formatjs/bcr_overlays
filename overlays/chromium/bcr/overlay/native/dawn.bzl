@@ -3,10 +3,13 @@
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":dawn_sources.bzl", "ACTIONS", "LIBRARIES", "METADATA", "SHARED_HEADERS")
+load(":generated_files.bzl", "CAPTURED_FILES")
 load(":python_action.bzl", "chromium_python_action")
 
 def native_dawn():
     for path, content in METADATA.items():
+        if path in CAPTURED_FILES:
+            continue
         write_file(
             name = "dawn_metadata_" + path.replace("/", "_"),
             out = path if path.startswith("gen/") else "metadata/" + path,

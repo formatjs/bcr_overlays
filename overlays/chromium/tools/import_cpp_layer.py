@@ -1201,7 +1201,7 @@ def main():
         metadata['gpu/webgpu/DAWN_VERSION'] = json.loads((ROOT.parent / 'dawn/upstream.json').read_text())['revision']
 
     dawn_support = []
-    if layer in ('dawn', 'dawn_native', 'gpu_service'):
+    if layer in ('dawn', 'dawn_native', 'gpu_service', 'browser'):
         for directory, patterns in [('third_party/dawn/generator', ['*']), ('third_party/jinja2', ['*.py']), ('third_party/markupsafe', ['*.py'])]:
             for pattern in patterns:
                 dawn_support.extend('//'+str(p.relative_to(args.source_root))
@@ -1417,12 +1417,13 @@ def main():
                                   if not p.name.endswith('_test.py'))
                 if target['script'] == '//tools/variations/fieldtrial_to_struct.py':
                     inputs.add('//components/variations/service/generate_ui_string_overrider.py')
-            if layer in ('dawn', 'dawn_native', 'gpu_service'):
+            if layer in ('dawn', 'dawn_native', 'gpu_service') or target['script'].startswith('//third_party/dawn/'):
                 inputs.update(dawn_support)
                 arguments = target.get('args', [])
                 if '--expected-outputs-file' in arguments:
                     expected = arguments[arguments.index('--expected-outputs-file')+1]
-                    metadata[expected] = (args.source_root / BUILD[2:] / expected).read_text()
+                    captured = graph['generated_files'].get(BUILD + expected)
+                    metadata[expected] = captured if captured is not None else (args.source_root / BUILD[2:] / expected).read_text()
                     inputs.add(BUILD + expected)
                 if '--version-file' in arguments:
                     inputs.add('//' + arguments[arguments.index('--version-file')+1].removeprefix('../../'))

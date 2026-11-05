@@ -33,7 +33,7 @@ def target_closure(project, roots):
     return {**project, 'targets': selected}
 
 
-def capture(project, runtime, source_root, replacements):
+def capture(project, runtime, source_root, replacements, runtime_inputs=None):
     """Reject incomplete graphs; preserve target semantics and generated contents."""
     def portable(value):
         if isinstance(value, str):
@@ -62,6 +62,25 @@ def capture(project, runtime, source_root, replacements):
             producers[output] = label
 
     build_dir = project['build_settings']['build_dir'].rstrip('/')
+    runtime_inputs = runtime_inputs or {}
+    runtime_paths = {posixpath.normpath(build_dir + '/' + path)
+                     for value in runtime.values() for path in value['runtime_deps']}
+    captured_runtime = {}
+    for output, source in sorted(runtime_inputs.items()):
+        if output not in runtime_paths:
+            raise ValueError(f'unused runtime input: {output}')
+        if not output.startswith(build_dir + '/') or posixpath.normpath(output) != output:
+            raise ValueError(f'invalid runtime input output: {output}')
+        if output in producers:
+            raise ValueError(f'runtime input already has a producer: {output}')
+        if (not source.startswith('//') or source.startswith('///')
+                or posixpath.normpath(source) != source
+                or source.startswith(build_dir + '/')):
+            raise ValueError(f'invalid runtime input source: {source}')
+        captured_runtime[output] = {
+            'source': source,
+            'sha256': hashlib.sha256((source_root / source[2:]).read_bytes()).hexdigest(),
+        }
     runtime_files = {}
     for label, value in runtime.items():
         if label not in targets:
@@ -69,7 +88,8 @@ def capture(project, runtime, source_root, replacements):
         files = sorted({posixpath.normpath(build_dir + '/' + p)
                         for p in value['runtime_deps']})
         for name in files:
-            if name.startswith(build_dir + '/') and name not in producers:
+            if (name.startswith(build_dir + '/') and name not in producers
+                    and name not in captured_runtime):
                 raise ValueError(f'{label}: missing runtime producer {name}')
             if not name.startswith('//') or name.startswith('///'):
                 raise ValueError(f'invalid runtime path {name}')
@@ -100,8 +120,14 @@ def capture(project, runtime, source_root, replacements):
                 generated[output] = portable(path.read_text())
 
     for target in targets.values():
-        for name in target.get('inputs', []) + target.get('sources', []):
-            if not name.startswith(build_dir + '/') or name in producers:
+        inputs = target.get('inputs', []) + target.get('sources', [])
+        arguments = target.get('args', [])
+        if '--expected-outputs-file' in arguments:
+            index = arguments.index('--expected-outputs-file')
+            inputs.append(posixpath.normpath(build_dir + '/' + arguments[index + 1]))
+        for name in inputs:
+            if (not name.startswith(build_dir + '/') or name in producers
+                    or name in captured_runtime):
                 continue
             if posixpath.normpath(name) != name:
                 raise ValueError(f'invalid generated input path: {name}')
@@ -112,7 +138,7 @@ def capture(project, runtime, source_root, replacements):
 
     settings = {k: v for k, v in project['build_settings'].items()
                 if k != 'root_path'}
-    return {
+    result = {
         'schema_version': 1,
         'build_settings': portable(settings),
         'pool': pool,
@@ -120,6 +146,9 @@ def capture(project, runtime, source_root, replacements):
         'runtime_files': runtime_files,
         'generated_files': generated,
     }
+    if captured_runtime:
+        result['runtime_inputs'] = captured_runtime
+    return result
 
 
 def main():
@@ -132,14 +161,22 @@ def main():
     parser.add_argument('--gn-version', required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--target', action='append', help='Capture this complete dependency closure')
+    parser.add_argument('--runtime-input', action='append', default=[], metavar='OUTPUT=SOURCE',
+                        help='Declare a source runtime file normally copied by an SDK setup hook')
     args = parser.parse_args()
     project = json.loads(args.project.read_text())
     if args.target:
         project = target_closure(project, args.target)
+    runtime_inputs = {}
+    for value in args.runtime_input:
+        output, separator, source = value.partition('=')
+        if not separator or output in runtime_inputs:
+            parser.error('runtime inputs must be unique OUTPUT=SOURCE pairs')
+        runtime_inputs[output] = source
     graph = capture(project,
                     json.loads(args.runtime_deps.read_text()), args.source_root,
                     [(str(args.llvm_root), '$LLVM_ROOT'),
-                     (str(args.source_root), '$SOURCE_ROOT')])
+                     (str(args.source_root), '$SOURCE_ROOT')], runtime_inputs=runtime_inputs)
     args_file = args.source_root / graph['build_settings']['build_dir'][2:] / 'args.gn'
     configuration = (args_file.read_text()
                      .replace(str(args.llvm_root), '$LLVM_ROOT')

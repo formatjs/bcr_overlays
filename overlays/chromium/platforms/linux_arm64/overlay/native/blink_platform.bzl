@@ -4,12 +4,15 @@ load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":blink_platform_sources.bzl", "ACTIONS", "LIBRARIES", "METADATA", "SHARED_HEADERS", "TOOLS")
+load(":generated_files.bzl", "CAPTURED_FILES")
 load(":public_dependency.bzl", "chromium_public_dependency")
 load(":python_action.bzl", "chromium_python_action")
 load(":tool_inputs.bzl", "chromium_tool_inputs")
 
 def native_blink_platform():
     for path, content in METADATA.items():
+        if path in CAPTURED_FILES:
+            continue
         write_file(
             name = "blink_platform_metadata_" + path.replace("/", "_"),
             out = path,

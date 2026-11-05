@@ -36,6 +36,21 @@ registered hermeticbuild LLVM.
 The graph is migration input, not a working browser build. Native C++/Rust,
 host-tool, binding, resource and platform integration remain incomplete.
 
+## Cross-platform captures
+
+`linux_arm64.json.gz` supplies the ARM64 browser overlay. Full analysis passes;
+compilation and native artifact smoke are still in progress.
+
+`windows_amd64.json.gz` and `windows_arm64.json.gz` capture the MSVC browser
+closures. They are extraction inputs; Windows browser translation remains pending.
+Both declare `dbghelp.dll` and `dbgcore.dll` as SDK runtime inputs with source
+paths and SHA-256 digests. These files normally come from Chromium's SDK setup
+hook rather than a GN action. The pinned Microsoft debugger package lives in
+`build/dependencies.bzl`; source-built browser binaries remain separate.
+
+`tools/capture_native_graph.py --runtime-input OUTPUT=SOURCE` records those
+explicit inputs. Undeclared runtime outputs still fail capture.
+
 ## Regenerate
 
 Populate exact Chromium DEPS revisions, configure pinned GN and toolchains, then:

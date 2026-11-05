@@ -3,6 +3,7 @@
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":dawn_native_sources.bzl", "ACTIONS", "LIBRARIES", "METADATA", "PUBLIC_DEFINES", "RUNTIME_DEPS", "SHARED_HEADERS")
+load(":generated_files.bzl", "CAPTURED_FILES")
 load(":python_action.bzl", "chromium_python_action")
 
 def native_dawn_backend():
@@ -16,6 +17,8 @@ def native_dawn_backend():
         content = [json.encode_indent(RUNTIME_DEPS, indent = "  ")],
     )
     for path, content in METADATA.items():
+        if path in CAPTURED_FILES:
+            continue
         if path == "gpu/webgpu/DAWN_VERSION":
             continue
         write_file(

@@ -70,10 +70,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('directory', type=Path, help='Assembled browser bundle containing chrome')
     parser.add_argument('--expected-version', default='142.0.7444.59')
+    parser.add_argument('--executable', default='chrome', help='Executable path relative to the bundle')
     parser.add_argument('--timeout', type=float, default=60)
     parser.add_argument('--no-sandbox', action='store_true', help='For hosts without Chromium sandbox support')
     args = parser.parse_args()
-    browser = args.directory.resolve() / 'chrome'
+    browser = args.directory.resolve() / args.executable
     if not browser.is_file() or not os.access(browser, os.X_OK):
         raise ValueError(f'missing browser executable: {browser}')
     environment = dict(os.environ)

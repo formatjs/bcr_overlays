@@ -1,0 +1,33 @@
+:root { color-scheme: light; font-family: sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; width: 800px; background: #f1f5fb; color: #15243a; }
+header { position: absolute; left: 40px; top: 32px; }
+h1 { font-size: 30px; letter-spacing: -1px; margin: 0 0 10px; }
+p { font-size: 15px; margin: 0; }
+footer { position: absolute; top: 542px; left: 40px; font-size: 13px; }
+#result { display: none; }
+#scene { position: absolute; left: 40px; top: 150px; width: 720px; height: 360px; }
+.grid { display: grid; grid-template-columns: 1fr 2fr 1fr; grid-template-rows: 120px 1fr;
+  gap: 16px; padding: 20px; border: 2px solid #c7d3e4; background: white; }
+.card { border-radius: 14px; overflow: hidden; position: relative; }
+#a { background: #244b7b; display: flex; align-items: flex-end; justify-content: space-evenly; padding: 16px; }
+#a i { width: 20px; background: #53d6bd; border-radius: 4px 4px 0 0; }
+#a i:nth-child(1) { height: 28px; } #a i:nth-child(2) { height: 58px; }
+#a i:nth-child(3) { height: 42px; } #a i:nth-child(4) { height: 78px; }
+#b { background: linear-gradient(110deg, #4e54c8, #8f94fb); }
+#b:before { content: ''; display: block; width: 180px; height: 180px; border: 24px solid #ffffff66;
+  border-radius: 50%; position: absolute; top: -90px; right: -20px; }
+#c { background: #f6b44b; display: grid; place-items: center; }
+#c div { width: 60px; height: 60px; border: 10px solid white; transform: rotate(45deg); }
+#d { background: #e4edf8; display: grid; place-items: center; }
+#d img { width: 100px; height: 100px; }
+#e { background: #15243a; display: flex; align-items: center; justify-content: space-evenly; }
+#e i { width: 54px; height: 54px; background: #53d6bd; border-radius: 50%; }
+#e i:nth-child(2) { background: #f6b44b; border-radius: 12px; transform: rotate(30deg); }
+#e i:nth-child(3) { background: #8f94fb; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+#f { background: repeating-linear-gradient(135deg, #2b8bcf 0 16px, #53d6bd 16px 32px); }
+.graphics { background: #15243a; border-radius: 12px; overflow: hidden; }
+.graphics svg { position: absolute; inset: 0; width: 720px; height: 360px; }
+.graphics canvas { position: absolute; left: 420px; top: 40px; width: 280px; height: 280px; border-radius: 12px; }
+.orbit { position: absolute; left: 300px; top: 240px; width: 64px; height: 64px;
+  border: 10px solid #53d6bd; transform: rotate(25deg); opacity: .8; }

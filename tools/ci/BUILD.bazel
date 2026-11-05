@@ -1,0 +1,35 @@
+load(
+    ":browser_targets.bzl",
+    "darwin_arm64_browser",
+    "linux_amd64_browser",
+    "linux_arm64_browser",
+    "windows_amd64_browser",
+    "windows_arm64_browser",
+)
+
+package(default_visibility = ["//visibility:public"])
+
+linux_amd64_browser(
+    name = "linux-amd64",
+    srcs = ["@chromium//native:browser_bundle"],
+)
+
+linux_arm64_browser(
+    name = "linux-arm64",
+    srcs = ["@chromium//native:browser_bundle"],
+)
+
+darwin_arm64_browser(
+    name = "darwin-arm64",
+    srcs = ["@chromium//native:browser_bundle"],
+)
+
+windows_amd64_browser(
+    name = "windows-amd64",
+    srcs = ["@chromium//native:browser_bundle"],
+)
+
+windows_arm64_browser(
+    name = "windows-arm64",
+    srcs = ["@chromium//native:browser_bundle"],
+)

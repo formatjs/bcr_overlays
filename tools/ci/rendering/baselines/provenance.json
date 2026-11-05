@@ -1,0 +1,14 @@
+{
+  "browser": "Chromium 142.0.7444.59",
+  "viewport": [
+    800,
+    600
+  ],
+  "scene": [
+    40,
+    150,
+    760,
+    510
+  ],
+  "renderer": "headless software, sRGB, scale factor 1"
+}

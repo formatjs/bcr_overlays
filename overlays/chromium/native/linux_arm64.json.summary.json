@@ -1,0 +1,29 @@
+{
+    "schema_version": 1,
+    "provenance": {
+        "chromium_revision": "4b8153ab58d3c3f4c9f7e4baad9616ecf80db5fa",
+        "gn_version": "2285 (81b24e01531e)",
+        "args_gn": "is_debug = false\nis_component_build = false\ntarget_os = \"linux\"\ntarget_cpu = \"arm64\"\nclang_base_path = \"$LLVM_ROOT\"\nclang_use_chrome_plugins = false\n",
+        "deps_sha256": "2bcbc993c76bf81b692d391cd150a849797372b8418df5df8d9a29ac6b058a99"
+    },
+    "graph_sha256": "5261349d5a6c979dbc27d5345a7361b9a19e3bdec44d13f9d03718a597ba27a3",
+    "compressed_sha256": "32cd376aa2cf0c42ab8d7c8816737e5dcfc55e8d9ad03a192148da7972d15922",
+    "target_types": {
+        "action": 10201,
+        "action_foreach": 53,
+        "copy": 147,
+        "executable": 43,
+        "generated_file": 568,
+        "group": 3248,
+        "rust_library": 301,
+        "rust_proc_macro": 11,
+        "shared_library": 14,
+        "source_set": 6249,
+        "static_library": 3314
+    },
+    "runtime_file_count": {
+        "//chrome:chrome": 4753
+    },
+    "generated_file_count": 5117,
+    "pool_entries": 7825
+}

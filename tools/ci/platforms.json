@@ -1,0 +1,50 @@
+{
+  "version": "142.0.7444.59",
+  "platforms": [
+    {
+      "id": "linux-amd64",
+      "platform": "@llvm//platforms:linux_x86_64_gnu.2.31",
+      "build_runner": "ubuntu-24.04",
+      "smoke_runner": "ubuntu-24.04",
+      "os": "linux",
+      "arch": "amd64",
+      "executable": "chrome"
+    },
+    {
+      "id": "linux-arm64",
+      "platform": "@llvm//platforms:linux_aarch64_gnu.2.31",
+      "build_runner": "ubuntu-24.04",
+      "smoke_runner": "ubuntu-24.04-arm",
+      "os": "linux",
+      "arch": "arm64",
+      "executable": "chrome"
+    },
+    {
+      "id": "darwin-arm64",
+      "platform": "@llvm//platforms:macos_aarch64",
+      "build_runner": "macos-15",
+      "smoke_runner": "macos-15",
+      "os": "darwin",
+      "arch": "arm64",
+      "executable": "Chromium.app/Contents/MacOS/Chromium"
+    },
+    {
+      "id": "windows-amd64",
+      "platform": "@llvm//platforms:windows_x86_64_msvc",
+      "build_runner": "ubuntu-24.04",
+      "smoke_runner": "windows-2022",
+      "os": "windows",
+      "arch": "amd64",
+      "executable": "chrome.exe"
+    },
+    {
+      "id": "windows-arm64",
+      "platform": "@llvm//platforms:windows_aarch64_msvc",
+      "build_runner": "ubuntu-24.04",
+      "smoke_runner": "windows-11-arm",
+      "os": "windows",
+      "arch": "arm64",
+      "executable": "chrome.exe"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+name: Chromium cross-build smoke
+
+on:
+  status:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: chromium-smoke-${{ github.event.context }}-${{ github.event.sha }}
+  cancel-in-progress: true
+
+jobs:
+  platform:
+    if: >-
+      github.event.sender.login == 'buildbuddy-io[bot]' &&
+      startsWith(github.event.context, 'Chromium ')
+    runs-on: ubuntu-24.04
+    outputs:
+      id: ${{ steps.target.outputs.id }}
+      runner: ${{ steps.target.outputs.runner }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - id: target
+        env:
+          STATUS_CONTEXT: ${{ github.event.context }}
+        run: |
+          python3 - <<'PY'
+          import os
+          from tools.ci.chromium import PLATFORMS
+          target = PLATFORMS[os.environ['STATUS_CONTEXT'].removeprefix('Chromium ')]
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('id=' + target['id'] + '\n')
+              output.write('runner=' + target['smoke_runner'] + '\n')
+          PY
+
+  record_status:
+    needs: platform
+    runs-on: ubuntu-24.04
+    permissions:
+      statuses: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BUILD_SHA: ${{ github.event.sha }}
+      CHECK_STATE: ${{ github.event.state == 'success' && 'pending' || github.event.state }}
+      TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+    steps:
+      - name: Record smoke status
+        run: |
+          gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$BUILD_SHA" \
+            -f state="$CHECK_STATE" -f context="Chromium smoke $TARGET_PLATFORM" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            -f description="BuildBuddy cross-build: $CHECK_STATE"
+
+  download:
+    needs: [platform, record_status]
+    if: github.event.state == 'success'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - name: Download verified BuildBuddy artifacts
+        env:
+          BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_RO_PUBLIC_KEY }}
+          INVOCATION_URL: ${{ github.event.target_url }}
+          BUILD_SHA: ${{ github.event.sha }}
+          TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+          ARTIFACT_DIRECTORY: ${{ runner.temp }}/chromium-artifact
+        run: python3 -m tools.ci.buildbuddy_artifacts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chromium-${{ needs.platform.outputs.id }}-${{ github.event.sha }}
+          path: ${{ runner.temp }}/chromium-artifact/*
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+
+  smoke:
+    needs: [platform, download]
+    uses: ./.github/workflows/smoke.yml
+    with:
+      platform: ${{ needs.platform.outputs.id }}
+      runner: ${{ needs.platform.outputs.runner }}
+      revision: ${{ github.event.sha }}
+
+  publish_status:
+    needs: [platform, record_status, download, smoke]
+    if: >-
+      always() && !cancelled() &&
+      needs.record_status.result != 'skipped' &&
+      github.event.state == 'success'
+    runs-on: ubuntu-24.04
+    permissions:
+      statuses: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BUILD_SHA: ${{ github.event.sha }}
+      TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+      RESULTS: ${{ toJSON(needs) }}
+    steps:
+      - name: Publish native smoke result
+        run: |
+          state=$(jq -r 'if all(.[]; .result == "success") then "success" else "failure" end' <<< "$RESULTS")
+          gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$BUILD_SHA" \
+            -f state="$state" -f context="Chromium smoke $TARGET_PLATFORM" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            -f description="Native smoke tests: $state"

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Chromium rendering lab — graphics</title>
+<link rel="stylesheet" href="page.css">
+<header><h1>Rendering lab / Graphics</h1><p>SVG paths · gradients · clip paths · Canvas 2D · compositing</p></header>
+<main id="scene" class="graphics">
+  <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gradient"><stop stop-color="#53d6bd"/><stop offset="1" stop-color="#8f94fb"/></linearGradient>
+      <clipPath id="clip"><circle cx="125" cy="125" r="85"/></clipPath>
+    </defs>
+    <circle cx="125" cy="125" r="96" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <g clip-path="url(#clip)">
+      <rect x="20" y="20" width="210" height="210" fill="url(#gradient)"/>
+      <path d="M 20 170 Q 90 35 150 160 T 245 100 V 230 H 20 Z" fill="#ffffff" opacity=".7"/>
+    </g>
+    <path d="M 40 310 C 100 190 150 350 220 260 S 300 200 370 235" fill="none" stroke="url(#gradient)" stroke-width="12" stroke-linecap="round"/>
+    <rect x="270" y="45" width="105" height="105" rx="18" fill="#f6b44b" transform="rotate(12 322 97)"/>
+  </svg>
+  <div class="orbit"></div><canvas width="280" height="280"></canvas>
+</main>
+<footer>Local fixture · deterministic software rendering · native artifact under test</footer>
+<output id="result">pending</output><script defer src="page.js"></script>
+</html>

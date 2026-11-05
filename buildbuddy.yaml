@@ -1,0 +1,95 @@
+actions:
+  - name: Chromium linux-amd64
+    container_image: ubuntu-24.04
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: [main]
+      pull_request:
+        branches: ["*"]
+        merge_with_base: false
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted \
+            --platform linux-amd64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/linux-amd64"
+
+  - name: Chromium linux-arm64
+    container_image: ubuntu-24.04
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: [main]
+      pull_request:
+        branches: ["*"]
+        merge_with_base: false
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted \
+            --platform linux-arm64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/linux-arm64"
+
+  - name: Chromium darwin-arm64
+    container_image: ubuntu-24.04
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: [main]
+      pull_request:
+        branches: ["*"]
+        merge_with_base: false
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted \
+            --platform darwin-arm64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/darwin-arm64"
+
+  - name: Chromium windows-amd64
+    container_image: ubuntu-24.04
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: [main]
+      pull_request:
+        branches: ["*"]
+        merge_with_base: false
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted \
+            --platform windows-amd64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/windows-amd64"
+
+  - name: Chromium windows-arm64
+    container_image: ubuntu-24.04
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: [main]
+      pull_request:
+        branches: ["*"]
+        merge_with_base: false
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted \
+            --platform windows-arm64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/windows-arm64"

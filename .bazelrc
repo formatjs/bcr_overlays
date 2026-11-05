@@ -10,6 +10,16 @@ build:browser --jobs=4
 build:browser --discard_analysis_cache
 build:browser --notrack_incremental_state
 build:browser --nokeep_state_after_build
+
+# Hosted workflows supply authentication through their Bazel wrapper.
+build:buildbuddy --build_metadata=REPO_URL=https://github.com/formatjs/chromium.git
+build:buildbuddy --build_metadata=VISIBILITY=PUBLIC
+build:buildbuddy --bes_backend=grpcs://formatjs.buildbuddy.io
+build:buildbuddy --bes_results_url=https://formatjs.buildbuddy.io/invocation/
+build:buildbuddy --remote_cache=grpcs://formatjs.buildbuddy.io
+build:buildbuddy --remote_executor=grpcs://formatjs.buildbuddy.io
+build:buildbuddy --remote_download_outputs=toplevel
+build:buildbuddy --jobs=64
 test --test_output=errors
 
 # Keep Chromium and LLVM's C++ runtime in the same hardening mode.

@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from tools.capture_native_graph import capture
+from tools.capture_native_graph import capture, target_closure
 
 
 class CaptureNativeGraphTest(unittest.TestCase):
@@ -29,6 +29,18 @@ class CaptureNativeGraphTest(unittest.TestCase):
 
     def run_capture(self):
         return capture(self.project, self.runtime, self.root, [])
+
+    def test_closure_keeps_host_and_data_dependencies(self):
+        host = '//:generator(//toolchain:host)'
+        self.project['targets']['//:config']['deps'] = [host]
+        self.project['targets'][host] = {'type': 'executable'}
+        self.project['targets']['//:unrelated'] = {'type': 'source_set'}
+        selected = target_closure(self.project, ['//:browser'])
+        self.assertEqual(set(selected['targets']), {'//:browser', '//:config', host})
+        self.assertIn('//:unrelated', self.project['targets'])
+        del self.project['targets'][host]
+        with self.assertRaisesRegex(ValueError, 'missing dependency'):
+            target_closure(self.project, ['//:browser'])
 
     def test_preserves_flags_generated_contents_and_runtime(self):
         result = self.run_capture()

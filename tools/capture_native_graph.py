@@ -17,6 +17,22 @@ POOL_FIELDS = frozenset((
 ))
 
 
+def target_closure(project, roots):
+    """Retain data and host-tool dependencies omitted by GN IDE filters."""
+    targets = project['targets']
+    selected = {}
+    pending = list(roots)
+    while pending:
+        label = pending.pop()
+        if label in selected:
+            continue
+        if label not in targets:
+            raise ValueError(f'missing dependency in complete GN graph: {label}')
+        selected[label] = targets[label]
+        pending.extend(targets[label].get('deps', []))
+    return {**project, 'targets': selected}
+
+
 def capture(project, runtime, source_root, replacements):
     """Reject incomplete graphs; preserve target semantics and generated contents."""
     def portable(value):
@@ -115,13 +131,19 @@ def main():
     parser.add_argument('--revision', required=True)
     parser.add_argument('--gn-version', required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--target', action='append', help='Capture this complete dependency closure')
     args = parser.parse_args()
-    graph = capture(json.loads(args.project.read_text()),
+    project = json.loads(args.project.read_text())
+    if args.target:
+        project = target_closure(project, args.target)
+    graph = capture(project,
                     json.loads(args.runtime_deps.read_text()), args.source_root,
                     [(str(args.llvm_root), '$LLVM_ROOT'),
                      (str(args.source_root), '$SOURCE_ROOT')])
     args_file = args.source_root / graph['build_settings']['build_dir'][2:] / 'args.gn'
-    configuration = args_file.read_text().replace(str(args.llvm_root), '$LLVM_ROOT')
+    configuration = (args_file.read_text()
+                     .replace(str(args.llvm_root), '$LLVM_ROOT')
+                     .replace(str(args.source_root), '$SOURCE_ROOT'))
     graph['provenance'] = {
         'chromium_revision': args.revision,
         'gn_version': args.gn_version,

@@ -53,6 +53,17 @@ class CrossCompilerMetadataTest(unittest.TestCase):
                 'cflags_cc': [], 'defines': [],
             })
 
+    def test_msvc_flags_preserve_crt_and_constructor_debug_info(self):
+        flags, _ = compiler_configuration({}, {
+            'cflags': ['/WX', '/MT', '-Xclang', '-fuse-ctor-homing',
+                       '-mllvm', '-pick-merged-source-locations', '-fmsc-version=1934'],
+            'cflags_cc': ['/std:c++20', '-I../../third_party/libc++/src/include'],
+            'defines': [],
+        })
+        self.assertEqual(flags, ['/MT', '/clang:-Xclang', '/clang:-fuse-ctor-homing',
+                                 '/clang:-mllvm', '/clang:-pick-merged-source-locations',
+                                 '/std:c++20', '/EHs-c-'])
+
     def test_cross_snapshot_keeps_its_v8_and_blink_libraries(self):
         host = '(//build/toolchain/linux:clang_x64)'
         snapshot = '(//build/toolchain/linux:clang_x64_v8_arm64)'

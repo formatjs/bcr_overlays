@@ -1,0 +1,14 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load(":buildflags.bzl", "native_buildflags")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["python_action.py"])
+
+native_buildflags(name = "all_buildflags")
+
+cc_library(
+    name = "partition_alloc_buildflags",
+    hdrs = [":flags_4a0fe733a7b9f6e6"],
+    includes = ["gen/base/allocator/partition_allocator/src"],
+)

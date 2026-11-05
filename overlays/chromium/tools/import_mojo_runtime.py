@@ -34,8 +34,14 @@ TARGETS = {
 def compiler_configuration(graph, target):
     unpack = lambda value: graph['pool'][value['pool']] if isinstance(value, dict) else value
     flags = []
-    iterator = iter(unpack(target['cflags']) + unpack(target['cflags_cc']))
+    original = unpack(target['cflags']) + unpack(target['cflags_cc'])
+    msvc = any(flag.startswith(('/W', '/std:')) for flag in original)
+    iterator = iter(original)
     for flag in iterator:
+        if flag == '-mllvm':
+            argument = next(iterator)
+            flags.extend(['/clang:-mllvm', '/clang:' + argument] if msvc else [flag, argument])
+            continue
         if flag == '-Xclang':
             argument = next(iterator)
             if argument == '-target-feature':
@@ -46,15 +52,26 @@ def compiler_configuration(graph, target):
                     raise ValueError(f'unmapped Clang target feature: {feature}')
                 flags.extend(['-Xclang', argument, '-Xclang', feature])
                 continue
+            if argument == '-fuse-ctor-homing':
+                flags.extend(['/clang:-Xclang', '/clang:' + argument] if msvc else ['-Xclang', argument])
+                continue
             if argument not in ('-fmodule-file-home-is-cwd', '-fmodules-local-submodule-visibility'):
                 raise ValueError(f'unmapped frontend flag: {argument}')
             continue
-        if flag in ('-Werror', '-nostdinc++') or flag.startswith((
+        if flag in ('-Werror', '/WX', '-nostdinc++', '-I../../third_party/libc++/src/include') or flag.startswith((
                 '-fcrash-diagnostics-dir=', '--warning-suppression-mappings=', '--target=',
+                '-fmsc-version=', '/clang:-fmsc-version=',
                 '--sysroot=', '-isystem', '-fmodules', '-fno-implicit-module',
                 '-fbuiltin-module-map', '-fmodule-map-file=')):
             continue
         flags.append(flag)
+    if msvc and not any(flag.startswith('/EH') for flag in original):
+        # GN leaves clang-cl exceptions off; Bazel enables them by default.
+        flags.append('/EHs-c-')
+    if msvc:
+        flags = [flag for flag in flags if flag not in (
+            '-D__DATE__=', '-D__TIME__=', '-D__TIMESTAMP__=',
+        )]
     defines = [value for value in unpack(target['defines']) if not value.startswith((
         'CR_LIBCXX_REVISION=', 'CR_SYSROOT_KEY=', 'USE_LIBCXX_MODULES'))]
     return flags, defines

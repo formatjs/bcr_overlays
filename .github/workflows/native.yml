@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: bazel-contrib/setup-bazel@0.15.0
-      - name: Cross-compile Rust and XML parser with MSVC on Windows targets
+      - name: Cross-compile Rust, XML parser and Windows allocator
         env:
           BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA: '1'
           BAZEL_WINDOWS_SDK_EULA: '1'
@@ -34,10 +34,39 @@ jobs:
           //tools/ci:expat-linux-amd64 //tools/ci:expat-linux-arm64
           //tools/ci:expat-darwin-arm64 //tools/ci:expat-windows-amd64
           //tools/ci:expat-windows-arm64
+          //tools/ci:allocator-windows-amd64 //tools/ci:allocator-windows-arm64
+      - name: Collect Windows allocator smoke executables
+        run: python3 -m tools.ci.collect_allocator_probes --output "$RUNNER_TEMP/allocator-probes"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: windows-allocators-${{ github.sha }}
+          path: ${{ runner.temp }}/allocator-probes/*.exe
+          if-no-files-found: error
       - name: Run native XML parser probe
         run: bazel run --jobs=4 //tools/ci:expat_toolchain_probe
       - name: Run native Rust probe
         run: bazel run --jobs=4 //tools/ci:rust_toolchain_probe
+  windows-allocator:
+    needs: toolchains
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: windows-2022
+          - arch: arm64
+            runner: windows-11-arm
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: windows-allocators-${{ github.sha }}
+          path: ${{ runner.temp }}/allocator-probes
+      - name: Exercise cross-compiled allocator
+        shell: pwsh
+        run: |
+          & "$env:RUNNER_TEMP/allocator-probes/allocator-windows-${{ matrix.arch }}.exe"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
   compatibility:
     runs-on: ubuntu-24.04
     steps:

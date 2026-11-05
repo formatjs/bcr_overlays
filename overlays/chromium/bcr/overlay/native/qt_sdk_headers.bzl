@@ -9,16 +9,20 @@ def _qt_sdk_headers_impl(ctx):
     resources = [file for file in toolchain.all_files.to_list() if "/lib/clang/" in file.path and "/" not in file.path.split("/lib/clang/", 1)[1]]
     if len(resources) != 1:
         fail("Qt SDK profile needs one Clang resource directory from the selected toolchain")
-    root = ctx.attr.sdk.label.workspace_root
     headers = ctx.attr.sdk[CcInfo].compilation_context.headers
+    configs = [file for file in headers.to_list() if file.path.endswith("/c++/10/bits/c++config.h")]
+    if len(configs) != 1:
+        fail("Qt SDK profile needs one architecture-specific GNU C++ configuration header")
+    multiarch = configs[0].path.removesuffix("/c++/10/bits/c++config.h")
+    root = multiarch.split("/usr/include/", 1)[0]
     return [CcInfo(
         compilation_context = cc_common.create_compilation_context(
             headers = headers,
             includes = depset([
                 root + "/usr/include/c++/10",
-                root + "/usr/include/x86_64-linux-gnu/c++/10",
+                multiarch + "/c++/10",
                 resources[0].path + "/include",
-                root + "/usr/include/x86_64-linux-gnu",
+                multiarch,
                 root + "/usr/include",
             ], order = "preorder"),
         ),

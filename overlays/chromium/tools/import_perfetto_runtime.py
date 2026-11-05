@@ -14,6 +14,8 @@ BUILD = '//out/bazel-import/'
 def main():
     graph = json.loads(gzip.decompress(Path(sys.argv[1]).read_bytes()))
     source = Path(sys.argv[2])
+    if not (source / 'python/generators/trace_processor_table/public.py').is_file():
+        raise ValueError('expected the Perfetto source root as the second argument')
     targets = graph['targets']
     seen, pending = set(), ['//third_party/perfetto:libperfetto']
     while pending:

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Import PartitionAlloc's pinned Linux sources and native compiler settings."""
+"""Import pinned PartitionAlloc sources and compiler settings."""
 
 import gzip
 import json
@@ -50,7 +50,7 @@ def main():
     output = ROOT / 'bcr/overlay/base/allocator/partition_allocator/src/partition_alloc'
     output.mkdir(parents=True, exist_ok=True)
     (output / 'sources.bzl').write_text(
-        '"""Generated from pinned Linux graph; run tools/import_partition_alloc.py."""\n\n' +
+        '"""Generated from pinned GN graph; run tools/import_partition_alloc.py."""\n\n' +
         '\n\n'.join(key + ' = ' + json.dumps(value, indent=4) for key, value in data.items()) + '\n')
     print(f'Imported {sum(map(len, records.values()))} C++ sources, {len(headers)} headers')
 

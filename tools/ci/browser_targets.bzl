@@ -2,6 +2,11 @@
 
 load("@with_cfg.bzl", "with_cfg")
 
+msvc_static_crt, _msvc_static_crt = with_cfg(native.filegroup).set(
+    "features",
+    ["static_link_msvcrt", "-dynamic_link_msvcrt"],
+).build()
+
 linux_amd64_browser, _linux_amd64_browser = with_cfg(native.filegroup).set(
     "platforms",
     [Label("@llvm//platforms:linux_x86_64_gnu.2.31")],

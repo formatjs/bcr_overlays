@@ -33,11 +33,15 @@ generate = rule(
     },
 )
 
+def _sign_libraries(tool):
+    return [file for file in tool[DefaultInfo].default_runfiles.files.to_list() if file.basename.endswith(".so")]
+
 def _sign_impl(ctx):
+    libraries = _sign_libraries(ctx.attr.tool)
     ctx.actions.run(
         executable = ctx.executable._driver,
-        arguments = [ctx.executable.tool.path, ctx.file.library.path, ctx.outputs.out.path],
-        inputs = [ctx.file.library],
+        arguments = [ctx.executable.tool.path, ctx.file.library.path, ctx.outputs.out.path] + [file.path for file in libraries],
+        inputs = [ctx.file.library] + libraries,
         outputs = [ctx.outputs.out],
         tools = [ctx.attr.tool[DefaultInfo].files_to_run, ctx.attr._driver[DefaultInfo].files_to_run],
         mnemonic = "NssModuleSign",
@@ -52,4 +56,12 @@ sign_module = rule(
         "library": attr.label(allow_single_file = True, mandatory = True),
         "out": attr.output(mandatory = True),
     },
+)
+
+def _sign_runtime_impl(ctx):
+    return [DefaultInfo(files = depset([ctx.executable.tool] + _sign_libraries(ctx.attr.tool)))]
+
+sign_runtime = rule(
+    implementation = _sign_runtime_impl,
+    attrs = {"tool": attr.label(executable = True, cfg = "exec", mandatory = True)},
 )

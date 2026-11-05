@@ -1,4 +1,5 @@
-load("@rules_python//python:defs.bzl", "py_binary")
+load("@rules_python//python:defs.bzl", "py_binary", "py_test")
+load(":actions.bzl", "sign_runtime")
 
 exports_files([
     "actions.bzl",
@@ -18,4 +19,30 @@ py_binary(
     srcs = ["sign.py"],
     main = "sign.py",
     visibility = ["//visibility:public"],
+)
+
+sign_runtime(
+    name = "sign_replay_inputs",
+    tool = "//:shlibsign",
+)
+
+py_test(
+    name = "sign_test",
+    size = "small",
+    srcs = [
+        "sign.py",
+        "sign_test.py",
+    ],
+    args = [
+        "$(rlocationpaths :sign_replay_inputs)",
+        "$(rlocationpath //:libfreebl3.so)",
+    ],
+    data = [
+        ":sign_replay_inputs",
+        "//:libfreebl3.so",
+    ],
+    imports = ["."],
+    main = "sign_test.py",
+    visibility = ["//visibility:public"],
+    deps = ["@rules_python//python/runfiles"],
 )

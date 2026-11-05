@@ -1710879,7 +1710879,7 @@ ACTIONS = [
             "../../",
             "components/webapps/isolated_web_apps/proto/key_distribution.proto",
         ],
-        "deps": [],
+        "deps": [":protoc_tool"],
     },
     {
         "response_file_contents": [],

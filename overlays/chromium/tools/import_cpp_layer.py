@@ -1472,7 +1472,8 @@ def main():
             if set(target.get('deps', [])) & {'//third_party/protobuf:py_proto',
                                              '//third_party/protobuf:py_proto_runtime'}:
                 deps.append(':protobuf_python_runtime')
-            if '//third_party/protobuf:protoc' in target.get('deps', []):
+            if any(dep.partition('(')[0] == '//third_party/protobuf:protoc'
+                   for dep in target.get('deps', [])):
                 deps.append(':protoc_tool')
             plugin = '//third_party/dom_distiller_js/protoc_plugins/json_values_converter.py'
             if target['script'] == '//tools/protoc_wrapper/protoc_wrapper.py' and plugin in inputs:

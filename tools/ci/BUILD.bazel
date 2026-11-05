@@ -1,3 +1,5 @@
+load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
+load(":archive.bzl", "chromium_archive")
 load(
     ":browser_targets.bzl",
     "darwin_arm64_browser",
@@ -32,4 +34,44 @@ windows_amd64_browser(
 windows_arm64_browser(
     name = "windows-arm64",
     srcs = ["@chromium//native:browser_bundle"],
+)
+
+string_flag(
+    name = "revision",
+    build_setting_default = "",
+)
+
+exports_files([
+    "chromium.py",
+    "platforms.json",
+])
+
+chromium_archive(
+    name = "linux-amd64_archive",
+    bundle = ":linux-amd64",
+    platform = "linux-amd64",
+)
+
+chromium_archive(
+    name = "linux-arm64_archive",
+    bundle = ":linux-arm64",
+    platform = "linux-arm64",
+)
+
+chromium_archive(
+    name = "darwin-arm64_archive",
+    bundle = ":darwin-arm64",
+    platform = "darwin-arm64",
+)
+
+chromium_archive(
+    name = "windows-amd64_archive",
+    bundle = ":windows-amd64",
+    platform = "windows-amd64",
+)
+
+chromium_archive(
+    name = "windows-arm64_archive",
+    bundle = ":windows-arm64",
+    platform = "windows-arm64",
 )

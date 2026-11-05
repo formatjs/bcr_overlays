@@ -1,4 +1,5 @@
 import io
+import json
 import os
 from pathlib import Path
 import struct
@@ -7,7 +8,7 @@ import tempfile
 import unittest
 from unittest import mock
 
-from tools.ci.chromium import PLATFORMS, ROOT, binary_platform, build, checksum, package, unpack
+from tools.ci.chromium import PLATFORMS, ROOT, binary_platform, build, checksum, package, unpack, artifact_outputs
 
 
 REVISION = '1' * 40
@@ -88,22 +89,54 @@ class ArtifactsTest(unittest.TestCase):
                 binary.write_bytes(header)
                 self.assertEqual(binary_platform(binary), expected)
 
-    def test_hosted_build_uses_managed_credentials_and_packages_output(self):
+    def test_hosted_build_uses_one_invocation_and_cached_archive(self):
+        source = self.archive()
+        sidecar = source.with_suffix('.gz.sha256')
+        label = '//tools/ci:linux-amd64_archive'
+
+        def execute(command, **kwargs):
+            self.assertEqual(command[:4], ['bazel', 'build', '--config=browser', '--config=buildbuddy'])
+            self.assertIn('--//tools/ci:revision=' + REVISION, command)
+            self.assertEqual(command[-1], label)
+            self.assertEqual(kwargs, {'cwd': ROOT, 'check': True})
+            events = Path(next(value.split('=', 1)[1] for value in command
+                               if value.startswith('--build_event_json_file=')))
+            events.write_text('\n'.join(json.dumps(event) for event in [
+                {'id': {'namedSet': {'id': 'artifacts'}}, 'namedSetOfFiles': {
+                    'files': [{'uri': item.as_uri()} for item in [source, sidecar]]}},
+                {'id': {'targetCompleted': {'label': label}}, 'completed': {
+                    'success': True, 'outputGroup': [{'name': 'default', 'fileSets': [{'id': 'artifacts'}]}]}},
+            ]))
+
         environment = {'BUILDBUDDY_CI_RUNNER_ABSPATH': '/runner/ci_runner'}
         with mock.patch.dict(os.environ, environment, clear=True), \
-                mock.patch('tools.ci.chromium.subprocess.run') as execute, \
-                mock.patch('tools.ci.chromium.subprocess.check_output',
-                           return_value=str(self.bundle) + '\n') as query:
-            archive = build(self.target, self.root / 'artifacts', REVISION, hosted=True)
-        command = ['bazel', 'build', '--config=browser', '--config=buildbuddy',
-                   '//tools/ci:linux-amd64']
-        execute.assert_called_once_with(command, cwd=ROOT, check=True)
-        query.assert_called_once_with(
-            ['bazel', 'cquery', '--config=browser', '--config=buildbuddy',
-             '--output=files', '//tools/ci:linux-amd64'], cwd=ROOT, text=True,
-        )
+                mock.patch('tools.ci.chromium.subprocess.run', side_effect=execute) as process:
+            archive = build(self.target, self.root / 'hosted-artifacts', REVISION, hosted=True)
+        self.assertEqual(process.call_count, 1)
         destination = unpack(archive, self.root / 'hosted-output', self.target, REVISION)
         self.assertEqual((destination / 'resources.pak').read_bytes(), b'locale data')
+
+    def test_archive_bytes_ignore_input_mtime_and_non_executable_permissions(self):
+        first = package(self.bundle, self.root / 'first', self.target, REVISION).read_bytes()
+        for path in self.bundle.rglob('*'):
+            os.utime(path, (1234567890, 1234567890))
+        (self.bundle / 'resources.pak').chmod(0o600)
+        second = package(self.bundle, self.root / 'second', self.target, REVISION).read_bytes()
+        self.assertEqual(first, second)
+        with tarfile.open(fileobj=io.BytesIO(second), mode='r:gz') as archive:
+            self.assertTrue(all(item.mtime == item.uid == item.gid == 0 for item in archive))
+
+    def test_failed_or_remote_only_build_outputs_are_rejected(self):
+        events = self.root / 'events.json'
+        label = '//tools/ci:linux-amd64_archive'
+        for success, uri in [(False, (self.root / 'archive').as_uri()), (True, 'bytestream://remote/archive')]:
+            events.write_text('\n'.join(json.dumps(event) for event in [
+                {'id': {'namedSet': {'id': 'files'}}, 'namedSetOfFiles': {'files': [{'uri': uri}]}},
+                {'id': {'targetCompleted': {'label': label}}, 'completed': {
+                    'success': success, 'outputGroup': [{'name': 'default', 'fileSets': [{'id': 'files'}]}]}},
+            ]))
+            with self.subTest(success=success), self.assertRaises(ValueError):
+                artifact_outputs(events, label)
 
     def test_hosted_mode_requires_managed_runner(self):
         with mock.patch.dict(os.environ, {}, clear=True), \

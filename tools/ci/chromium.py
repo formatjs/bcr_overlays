@@ -2,16 +2,21 @@
 """Build, package and smoke-test the same Chromium artifact on every target."""
 
 import argparse
+import gzip
 import hashlib
+import io
 import json
 import os
 from pathlib import Path, PurePosixPath
 import platform
 import re
+import shutil
 import struct
 import subprocess
 import sys
 import tarfile
+import tempfile
+from urllib.parse import unquote, urlparse
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -57,18 +62,28 @@ def package(bundle, destination, target, revision):
         raise ValueError('Expected a full source commit SHA')
     destination.mkdir(parents=True, exist_ok=True)
     archive = destination / ('chromium-' + target['id'] + '.tar.gz')
-    manifest = destination / 'artifact.json'
-    manifest.write_text(json.dumps({
+    manifest = (json.dumps({
         'schema_version': 1,
         'platform': target['id'],
         'version': CONFIGURATION['version'],
         'revision': revision,
         'executable': target['executable'],
-    }, indent=2) + '\n')
-    with tarfile.open(archive, 'w:gz') as output:
-        output.add(manifest, arcname='artifact.json')
-        output.add(bundle, arcname='bundle')
-    manifest.unlink()
+    }, indent=2) + '\n').encode()
+
+    def normalize(member):
+        member.uid = member.gid = member.mtime = 0
+        member.uname = member.gname = ''
+        member.pax_headers = {}
+        member.mode = 0o755 if member.isdir() or member.mode & 0o111 else 0o644
+        return member
+
+    with archive.open('wb') as raw, gzip.GzipFile(
+            filename='', mode='wb', fileobj=raw, mtime=0, compresslevel=6) as compressed:
+        with tarfile.open(fileobj=compressed, mode='w|', format=tarfile.PAX_FORMAT) as output:
+            member = normalize(tarfile.TarInfo('artifact.json'))
+            member.size = len(manifest)
+            output.addfile(member, io.BytesIO(manifest))
+            output.add(bundle, arcname='bundle', filter=normalize)
     archive.with_suffix(archive.suffix + '.sha256').write_text(checksum(archive) + '\n')
     return archive
 
@@ -111,14 +126,56 @@ def build(target, destination, revision, hosted=False):
             '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',
             '--repo_env=BAZEL_WINDOWS_SDK_EULA=1',
         ])
-    label = '//tools/ci:' + target['id']
-    subprocess.run([*bazel, 'build', *flags, label], cwd=ROOT, check=True)
-    outputs = subprocess.check_output(
-        [*bazel, 'cquery', *flags, '--output=files', label], cwd=ROOT, text=True,
-    ).splitlines()
-    if len(outputs) != 1:
-        raise ValueError(f'Expected one browser bundle, got {outputs!r}')
-    return package(ROOT / outputs[0], destination, target, revision)
+    if not re.fullmatch(r'[0-9a-f]{40}', revision):
+        raise ValueError('Expected a full source commit SHA')
+    label = '//tools/ci:' + target['id'] + '_archive'
+    with tempfile.TemporaryDirectory(prefix='chromium-build-') as temporary:
+        events = Path(temporary) / 'events.json'
+        subprocess.run([
+            *bazel, 'build', *flags, '--//tools/ci:revision=' + revision,
+            '--build_event_json_file=' + str(events),
+            '--nobuild_event_json_file_path_conversion', label,
+        ], cwd=ROOT, check=True)
+        outputs = artifact_outputs(events, label)
+        destination.mkdir(parents=True, exist_ok=True)
+        for source in outputs:
+            shutil.copyfile(source, destination / source.name)
+    return destination / ('chromium-' + target['id'] + '.tar.gz')
+
+
+def artifact_outputs(events, label):
+    """Read this target's default output group from the completed build."""
+    named_sets = {}
+    roots = []
+    completed = False
+    with events.open() as stream:
+        for line in stream:
+            event = json.loads(line)
+            if 'namedSetOfFiles' in event:
+                named_sets[event['id']['namedSet']['id']] = event['namedSetOfFiles']
+            if event.get('id', {}).get('targetCompleted', {}).get('label') == label:
+                completed = event['completed']['success']
+                for group in event['completed'].get('outputGroup', []):
+                    if group['name'] == 'default':
+                        roots.extend(item['id'] for item in group.get('fileSets', []))
+    files = set()
+    visited = set()
+    while roots:
+        identifier = roots.pop()
+        if identifier in visited:
+            continue
+        visited.add(identifier)
+        group = named_sets[identifier]
+        roots.extend(item['id'] for item in group.get('fileSets', []))
+        for item in group.get('files', []):
+            uri = urlparse(item['uri'])
+            if uri.scheme != 'file' or uri.netloc:
+                raise ValueError('Artifact outputs must be downloaded locally')
+            files.add(Path(unquote(uri.path)))
+    name = 'chromium-' + label.rsplit(':', 1)[1].removesuffix('_archive') + '.tar.gz'
+    if not completed or {path.name for path in files} != {name, name + '.sha256'} or len(files) != 2:
+        raise ValueError('Build did not produce exactly one archive and checksum')
+    return sorted(files)
 
 
 def main():

@@ -82,9 +82,9 @@ def _python_action_impl(ctx):
         description["symlink_inputs"] = [logical for _, logical in executables]
     ctx.actions.write(manifest, json.encode(description))
     ctx.actions.run(
-        executable = ctx.attr._runner[DefaultInfo].files_to_run,
-        arguments = [manifest.path],
-        inputs = depset(inputs + [manifest], transitive = [dep[DefaultInfo].files for dep in ctx.attr.deps]),
+        executable = ctx.attr._python[platform_common.ToolchainInfo].py3_runtime.interpreter,
+        arguments = ["-I", "-B", ctx.file._script.path, manifest.path],
+        inputs = depset(inputs + [manifest, ctx.file._script], transitive = [ctx.attr._python[platform_common.ToolchainInfo].py3_runtime.files] + [dep[DefaultInfo].files for dep in ctx.attr.deps]),
         outputs = outputs,
         tools = [runner for runner, _ in executables],
         mnemonic = "ChromiumPython",
@@ -118,11 +118,8 @@ _python_action = rule(
         "script": attr.string(mandatory = True),
         "args": attr.string_list(),
         "response_file_contents": attr.string_list(),
-        "_runner": attr.label(
-            default = Label("//native:python_action_runner"),
-            executable = True,
-            cfg = "exec",
-        ),
+        "_script": attr.label(default = Label("//native:python_action.py"), allow_single_file = True),
+        "_python": attr.label(default = Label("@rules_python//python:current_py_toolchain"), cfg = "exec"),
     },
 )
 

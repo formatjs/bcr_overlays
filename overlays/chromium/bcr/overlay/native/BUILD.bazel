@@ -1,7 +1,7 @@
 load("@ipcz//bazel:ipcz.bzl", "ipcz_library", "ipcz_reference_drivers")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_cc//cc:cc_test.bzl", "cc_test")
-load("@rules_python//python:defs.bzl", "py_binary", "py_library")
+load("@rules_python//python:defs.bzl", "py_library")
 load(":angle_runtime.bzl", "native_angle_runtime")
 load(":base.bzl", "native_base")
 load(":blink_core.bzl", "native_blink_core")
@@ -49,7 +49,6 @@ load(":pthreadpool.bzl", "native_pthreadpool")
 load(":quiche.bzl", "native_quiche")
 load(":skia.bzl", "native_skia")
 load(":sqlite.bzl", "native_sqlite")
-load(":xslt.bzl", "native_xslt")
 load(":swiftshader.bzl", "native_swiftshader")
 load(":tint.bzl", "native_tint")
 load(":url.bzl", "native_url")
@@ -58,16 +57,11 @@ load(":vulkan_tools.bzl", "native_vulkan_tools")
 load(":vulkan_validation.bzl", "native_vulkan_validation")
 load(":webui_actions.bzl", "native_webui")
 load(":x11.bzl", "native_x11")
+load(":xslt.bzl", "native_xslt")
 
 package(default_visibility = ["//visibility:public"])
 
-py_binary(
-    name = "python_action_runner",
-    srcs = ["python_action.py"],
-    main = "python_action.py",
-)
-
-py_binary(name = "runtime_bundle_runner", srcs = ["assemble_runtime.py"], main = "assemble_runtime.py")
+exports_files(["python_action.py"])
 
 native_buildflags(name = "all_buildflags")
 

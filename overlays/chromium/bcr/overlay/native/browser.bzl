@@ -33,6 +33,9 @@ def native_browser():
     for group in ASSET_GROUPS:
         chromium_filegroup(**group)
     for action in ACTIONS:
+        if any([argument.endswith("/front_end/core/i18n/collect-ui-strings.js") for argument in action.get("args", [])]):
+            action = dict(action)
+            action["deps"] = [":devtools_i18n_npm" if dependency == ":devtools_inspector_npm" else dependency for dependency in action["deps"] if dependency != ":node_npm_sources"]
         standalone = action["script"].startswith("third_party/catapult/") or action["script"].endswith("/generate_devtools_grd.py")
         devtools = action["script"].startswith("third_party/devtools-frontend/") or any(["third_party/devtools-frontend/" in value for value in action["args"]])
         chromium_python_action(

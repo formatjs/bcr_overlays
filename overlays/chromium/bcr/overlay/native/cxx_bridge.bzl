@@ -4,12 +4,12 @@ load(":python_action.bzl", "ChromiumFilesInfo", "ChromiumGeneratedFilesInfo", "c
 load(":tool_inputs.bzl", "chromium_tool_inputs")
 
 def _rustc_cfg_impl(ctx):
-    logical = "gen/build/rust/gni_impl/rustc-print-cfg-x86_64-unknown-linux-gnu.txt"
+    logical = "gen/build/rust/gni_impl/bazel-rustc-print-cfg.txt"
     output = ctx.actions.declare_file(logical)
     rust = ctx.attr._rust[platform_common.ToolchainInfo]
     ctx.actions.run(
         executable = rust.rustc,
-        arguments = ["--print=cfg=" + output.path, "--target=x86_64-unknown-linux-gnu"],
+        arguments = ["--print=cfg=" + output.path, "--target=" + str(rust.target_flag_value)],
         inputs = rust.all_files,
         outputs = [output],
         mnemonic = "ChromiumRustcCfg",
@@ -24,7 +24,7 @@ def _rustc_cfg_impl(ctx):
 _rustc_cfg = rule(
     implementation = _rustc_cfg_impl,
     attrs = {
-        "_rust": attr.label(default = Label("@rules_rust//rust/toolchain:current_rust_toolchain"), cfg = "exec"),
+        "_rust": attr.label(default = Label("@rules_rust//rust/toolchain:current_rust_toolchain")),
     },
 )
 
@@ -70,7 +70,7 @@ def chromium_cxx_bridge(name, src, logical_source, **kwargs):
             "--cc",
             "gen/" + logical_source + ".cc",
             "--rustc-print-cfg-path",
-            "gen/build/rust/gni_impl/rustc-print-cfg-x86_64-unknown-linux-gnu.txt",
+            "gen/build/rust/gni_impl/bazel-rustc-print-cfg.txt",
             "../../" + logical_source,
             "--",
         ],

@@ -7,14 +7,15 @@ def _tool_inputs_impl(ctx):
     executable = runner.executable
     mappings = [(executable, ctx.attr.logical_path)]
     if ctx.attr.runtime_data:
+        directory = ctx.attr.logical_path.rsplit("/", 1)[0]
+
         # Preserve native loader paths when the executable must move beside data.
         for file in ctx.attr.tool[DefaultInfo].default_runfiles.files.to_list():
             if file == executable:
                 continue
             path = file.short_path
             runfile = path[3:] if path.startswith("../") else ctx.workspace_name + "/" + path
-            mappings.append((file, ctx.attr.logical_path + ".runfiles/" + runfile))
-        directory = ctx.attr.logical_path.rsplit("/", 1)[0]
+            mappings.append((file, directory + "/" + executable.basename + ".runfiles/" + runfile))
         for target, relative in ctx.attr.runtime_data.items():
             files = target[DefaultInfo].files.to_list()
             if len(files) != 1:

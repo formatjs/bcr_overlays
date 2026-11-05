@@ -1,6 +1,7 @@
 load("@chromium//native:python_action.bzl", "chromium_python_action")
 load("@chromium//native:tool_inputs.bzl", "chromium_tool_inputs")
 load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+load("@rules_cc//cc:cc_import.bzl", "cc_import")
 load("@rules_cc//cc:cc_test.bzl", "cc_test")
 load("@rules_python//python:defs.bzl", "py_test")
 load("@rules_rs//rs:rust_test.bzl", "rust_test")
@@ -915,6 +916,7 @@ cc_binary(
     name = "generator_runtime_probe",
     srcs = ["tests/generator_runtime_probe.c"],
     data = ["tests/generator_payload.txt"],
+    deps = [":generator_runtime_library"],
 )
 
 chromium_tool_inputs(
@@ -943,4 +945,16 @@ py_test(
     args = ["$(rlocationpath :generator_runtime_output)"],
     data = [":generator_runtime_output"],
     deps = ["@rules_python//python/runfiles"],
+)
+
+cc_binary(
+    name = "libgenerator_runtime.so",
+    srcs = ["tests/generator_runtime_library.c"],
+    linkopts = ["-Wl,-soname,libgenerator_runtime.so"],
+    linkshared = True,
+)
+
+cc_import(
+    name = "generator_runtime_library",
+    shared_library = ":libgenerator_runtime.so",
 )

@@ -1,11 +1,12 @@
 diff --git a/BUILD.bazel b/BUILD.bazel
 --- a/BUILD.bazel
 +++ b/BUILD.bazel
-@@ -26,6 +26,7 @@
- exports_files([
+@@ -27,6 +27,8 @@
      "CHANGES",
      "LICENSE",
-+    "utils/generate_language_headers.py",
  ])
++
++exports_files(glob(["utils/**/*.py", "source/**", "include/**"]))
  
  py_binary(
+     # The script that generates compressed grammar tables for

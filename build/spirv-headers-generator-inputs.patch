@@ -6,7 +6,7 @@ diff --git a/BUILD.bazel b/BUILD.bazel
  
  exports_files(["LICENSE"])
 +
-+exports_files(glob(["include/spirv/**/*.json"]))
++exports_files(glob(["include/spirv/**"]))
  
  filegroup(
      name = "spirv_core_grammar_1.0",

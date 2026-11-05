@@ -15,10 +15,10 @@ class SignTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             copied = []
-            for index, name in enumerate(RUNTIME):
+            for name in RUNTIME:
                 source = Path(resolver.Rlocation(name))
-                target = root / str(index) / source.name
-                target.parent.mkdir()
+                target = root / "shlibsign.runfiles" / name if source.suffix == ".so" else root / source.name
+                target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(source, target)
                 target.chmod(source.stat().st_mode)
                 self.assertFalse(target.is_symlink())

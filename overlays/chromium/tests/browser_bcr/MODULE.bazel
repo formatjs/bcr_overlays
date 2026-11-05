@@ -2,11 +2,11 @@ module(name = "chromium_browser_consumer")
 
 bazel_dep(name = "chromium", version = "142.0.7444.59")
 bazel_dep(name = "llvm", version = "0.8.26")
-bazel_dep(name = "rules_rust", version = "0.75.0")
+bazel_dep(name = "rules_rs", version = "0.2.1")
+
+rules_rust = use_extension("@rules_rs//rs:rules_rust.bzl", "rules_rust")
+use_repo(rules_rust, "rules_rust")
 
 register_toolchains(
     "@llvm//toolchain:all",
-    "@chromium//native/rust:toolchain",
-    "@chromium//native/rust:bindgen_toolchain",
-    "@chromium//native/rust:cargo_toolchain",
 )

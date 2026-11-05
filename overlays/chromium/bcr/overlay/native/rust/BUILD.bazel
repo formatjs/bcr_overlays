@@ -1,94 +1,18 @@
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_python//python:defs.bzl", "py_binary")
-load("@rules_rust//cargo:cargo_toolchain.bzl", "cargo_toolchain")
-load("@rules_rust//rust:defs.bzl", "rust_library")
-load("@rules_rust//rust:rust_toolchain.bzl", "rust_toolchain")
-load("@rules_rust_bindgen//:defs.bzl", "rust_bindgen_toolchain")
+load("@rules_rs//rs:rust_library.bzl", "rust_library")
 load(":bindings.bzl", "chromium_bindgen_library")
 load(":crates.bzl", "native_rust_crates")
-load(":tools.bzl", "import_executable")
-load(":unsupported.bzl", "unsupported_rustdoc")
 
 package(default_visibility = ["//visibility:public"])
 
 exports_files([
     "BUILD.bazel",
     "bindings.bzl",
+    "msvc_linker.patch",
     "crates.bzl",
     "copy_bindings.py",
-    "compiler.BUILD.bazel",
-    "extensions.bzl",
-    "unsupported.bzl",
 ])
-
-unsupported_rustdoc(name = "rustdoc_unavailable")
-
-rust_toolchain(
-    name = "compiler",
-    binary_ext = "",
-    channel = "nightly",
-    default_edition = "2021",
-    dylib_ext = ".so",
-    exec_triple = "x86_64-unknown-linux-gnu",
-    extra_rustc_flags = [
-        "-Cpanic=abort",
-        "-Cforce-unwind-tables=yes",
-        "-Cdebug-assertions",
-        "-Dunsafe_op_in_unsafe_fn",
-    ],
-    rust_doc = ":rustdoc_unavailable",
-    rust_std = "@chromium_rust_compiler//:stdlib",
-    rustc = "@chromium_rust_compiler//:bin/rustc",
-    rustc_lib = "@chromium_rust_compiler//:compiler_libraries",
-    staticlib_ext = ".a",
-    stdlib_linkflags = [
-        "-ldl",
-        "-lpthread",
-        "-lm",
-    ],
-    target_triple = "x86_64-unknown-linux-gnu",
-    version = "1.92.0",
-)
-
-toolchain(
-    name = "toolchain",
-    exec_compatible_with = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-    ],
-    target_compatible_with = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-    ],
-    toolchain = ":compiler",
-    toolchain_type = "@rules_rust//rust:toolchain_type",
-)
-
-import_executable(
-    name = "bindgen",
-    src = "@chromium_rust_compiler//:bin/bindgen",
-)
-
-rust_bindgen_toolchain(
-    name = "bindgen_compiler",
-    bindgen = ":bindgen",
-    default_rustfmt = False,
-    libclang = "@chromium_rust_compiler//:libclang",
-)
-
-toolchain(
-    name = "bindgen_toolchain",
-    exec_compatible_with = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-    ],
-    target_compatible_with = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-    ],
-    toolchain = ":bindgen_compiler",
-    toolchain_type = "@rules_rust_bindgen//:toolchain_type",
-)
 
 py_binary(
     name = "copy_bindings",
@@ -133,33 +57,6 @@ chromium_bindgen_library(
     crate_name = "base_clogging_ulog_useverity_ubindgen",
     edition = "2021",
     header = "//:base/logging/log_severity.h",
-)
-
-cargo_toolchain(
-    name = "cargo_compiler",
-    cargo = "@chromium_rust_compiler//:bin/cargo",
-    channel = "nightly",
-    version = "1.92.0",
-)
-
-toolchain(
-    name = "cargo_toolchain",
-    exec_compatible_with = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-    ],
-    target_compatible_with = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-    ],
-    toolchain = ":cargo_compiler",
-    toolchain_type = "@rules_rust//cargo:toolchain_type",
-)
-
-import_executable(
-    name = "rustc_tool",
-    src = "@chromium_rust_compiler//:bin/rustc",
-    runtime = "@chromium_rust_compiler//:compiler_libraries",
 )
 
 cc_library(

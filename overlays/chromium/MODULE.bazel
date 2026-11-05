@@ -193,13 +193,11 @@ http_archive(
         "native/resource_copy.bzl": "//bcr/overlay/native:resource_copy.bzl",
         "native/runtime_bundle.bzl": "//bcr/overlay/native:runtime_bundle.bzl",
         "native/rust/BUILD.bazel": "//bcr/overlay/native/rust:BUILD.bazel",
+        "native/rust/msvc_linker.patch": "//bcr/overlay/native/rust:msvc_linker.patch",
         "native/rust/bindings.bzl": "//bcr/overlay/native/rust:bindings.bzl",
-        "native/rust/compiler.BUILD.bazel": "//bcr/overlay/native/rust:compiler.BUILD.bazel",
         "native/rust/copy_bindings.py": "//bcr/overlay/native/rust:copy_bindings.py",
         "native/rust/crates.bzl": "//bcr/overlay/native/rust:crates.bzl",
-        "native/rust/extensions.bzl": "//bcr/overlay/native/rust:extensions.bzl",
         "native/rust/tools.bzl": "//bcr/overlay/native/rust:tools.bzl",
-        "native/rust/unsupported.bzl": "//bcr/overlay/native/rust:unsupported.bzl",
         "native/skia.bzl": "//bcr/overlay/native:skia.bzl",
         "native/skia_sources.bzl": "//bcr/overlay/native:skia_sources.bzl",
         "native/sqlite.bzl": "//bcr/overlay/native:sqlite.bzl",
@@ -1008,18 +1006,38 @@ register_toolchains("@llvm//toolchain:all")
 
 bazel_dep(name = "protobuf", version = "33.4")
 bazel_dep(name = "perfetto", version = "52.0.chromium142")
-bazel_dep(name = "rules_rust", version = "0.75.0")
+bazel_dep(name = "rules_rs", version = "0.2.1")
 
-chromium_rust = use_extension("//bcr/overlay/native/rust:extensions.bzl", "chromium_rust")
-use_repo(chromium_rust, "chromium_rust_compiler")
+rules_rust = use_extension("@rules_rs//rs:rules_rust.bzl", "rules_rust")
+rules_rust.patch(
+    patches = ["//bcr/overlay/native/rust:msvc_linker.patch"],
+    strip = 1,
+)
+use_repo(rules_rust, "rules_rust")
 
-register_toolchains("@chromium//native/rust:toolchain")
+rust_toolchains = use_extension("@rules_rs//rs/toolchains:module_extension.bzl", "toolchains")
+rust_toolchains.toolchain(
+    edition = "2021",
+    extra_rustc_flags = {
+        triple: [
+            "-Cpanic=abort",
+            "-Cforce-unwind-tables=yes",
+            "-Cdebug-assertions",
+            "-Dunsafe_op_in_unsafe_fn",
+        ]
+        for triple in [
+            "x86_64-unknown-linux-gnu",
+            "aarch64-unknown-linux-gnu",
+            "aarch64-apple-darwin",
+            "x86_64-pc-windows-msvc",
+            "aarch64-pc-windows-msvc",
+        ]
+    },
+    version = "nightly/2025-09-25",
+)
+use_repo(rust_toolchains, "default_rust_toolchains")
 
-bazel_dep(name = "rules_rust_bindgen", version = "0.75.0")
-
-register_toolchains("@chromium//native/rust:bindgen_toolchain")
-
-register_toolchains("@chromium//native/rust:cargo_toolchain")
+register_toolchains("@default_rust_toolchains//...")
 
 bazel_dep(name = "abseil-cpp", version = "20250814.1.chromium142")
 bazel_dep(name = "boringssl", version = "0.20251002.0.chromium142")

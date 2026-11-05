@@ -1,7 +1,7 @@
 module(
     name = "chromium",
     version = "",
-    bazel_compatibility = [">=8.0.0"],
+    bazel_compatibility = [">=8.7.0"],
 )
 
 bazel_dep(name = "rules_cc", version = "0.2.26")
@@ -11,12 +11,37 @@ bazel_dep(name = "double-conversion", version = "3.3.1.bcr.1")
 bazel_dep(name = "protobuf", version = "33.4")
 bazel_dep(name = "re2", version = "2025-08-12.bcr.1")
 bazel_dep(name = "perfetto", version = "52.0.chromium142")
-bazel_dep(name = "rules_rust", version = "0.75.0")
+bazel_dep(name = "rules_rs", version = "0.2.1")
 
-chromium_rust = use_extension("//native/rust:extensions.bzl", "chromium_rust")
-use_repo(chromium_rust, "chromium_rust_compiler")
+rules_rust = use_extension("@rules_rs//rs:rules_rust.bzl", "rules_rust")
+rules_rust.patch(
+    patches = ["//native/rust:msvc_linker.patch"],
+    strip = 1,
+)
+use_repo(rules_rust, "rules_rust")
 
-bazel_dep(name = "rules_rust_bindgen", version = "0.75.0")
+rust_toolchains = use_extension("@rules_rs//rs/toolchains:module_extension.bzl", "toolchains")
+rust_toolchains.toolchain(
+    edition = "2021",
+    extra_rustc_flags = {
+        triple: [
+            "-Cpanic=abort",
+            "-Cforce-unwind-tables=yes",
+            "-Cdebug-assertions",
+            "-Dunsafe_op_in_unsafe_fn",
+        ]
+        for triple in [
+            "x86_64-unknown-linux-gnu",
+            "aarch64-unknown-linux-gnu",
+            "aarch64-apple-darwin",
+            "x86_64-pc-windows-msvc",
+            "aarch64-pc-windows-msvc",
+        ]
+    },
+    version = "nightly/2025-09-25",
+)
+use_repo(rust_toolchains, "default_rust_toolchains")
+
 bazel_dep(name = "abseil-cpp", version = "20250814.1.chromium142")
 bazel_dep(name = "boringssl", version = "0.20251002.0.chromium142")
 bazel_dep(name = "chromium_icu", version = "74.2.chromium142")

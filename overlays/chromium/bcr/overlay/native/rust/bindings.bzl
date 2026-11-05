@@ -1,9 +1,9 @@
 """Preserve Chromium's bindings.rs wrapper around native BCR bindgen."""
 
 load("@rules_cc//cc/common:cc_info.bzl", "CcInfo")
-load("@rules_rust//rust:defs.bzl", "rust_library")
+load("@rules_rs//rs:rules_rust_bindgen.bzl", "rust_bindgen")
+load("@rules_rs//rs:rust_library.bzl", "rust_library")
 load("@rules_rust//rust:rust_common.bzl", "BuildInfo")
-load("@rules_rust_bindgen//:defs.bzl", "rust_bindgen")
 
 def _directory_impl(ctx):
     output = ctx.actions.declare_directory(ctx.label.name)
@@ -19,14 +19,15 @@ def _directory_impl(ctx):
     )
     return [
         DefaultInfo(files = depset([output])),
-        ctx.attr.src[CcInfo],
+        ctx.attr.cc_lib[CcInfo],
         BuildInfo(out_dir = output, compile_data = depset([output]), dep_env = None, rustc_env = None, flags = None, linker_flags = None, link_search_paths = None),
     ]
 
 _bindings_directory = rule(
     implementation = _directory_impl,
     attrs = {
-        "src": attr.label(allow_single_file = True, providers = [CcInfo]),
+        "src": attr.label(allow_single_file = True),
+        "cc_lib": attr.label(providers = [CcInfo], mandatory = True),
         "output_name": attr.string(default = "bindings.rs"),
         "_tool": attr.label(default = Label("//native/rust:copy_bindings"), executable = True, cfg = "exec"),
     },
@@ -51,9 +52,8 @@ def chromium_bindgen_library(name, header, cc_lib, bindgen_flags = None, clang_f
         cc_lib = cc_lib,
         bindgen_flags = ["--enable-cxx-namespaces", "--no-layout-tests"] if bindgen_flags == None else bindgen_flags,
         clang_flags = ["-x", "c++", "-std=c++20"] if clang_flags == None else clang_flags,
-        merge_cc_lib_objects_into_rlib = False,
     )
-    _bindings_directory(name = name + "_bindings", src = ":" + name + "_generator")
+    _bindings_directory(name = name + "_bindings", src = ":" + name + "_generator", cc_lib = cc_lib)
     rust_library(
         name = name,
         srcs = ["//build:rust/bindings.rs"],
@@ -71,6 +71,5 @@ def chromium_bindgen_inputs(name, header, cc_lib, bindgen_flags, clang_flags, ou
         cc_lib = cc_lib,
         bindgen_flags = bindgen_flags,
         clang_flags = clang_flags,
-        merge_cc_lib_objects_into_rlib = False,
     )
-    _bindings_directory(name = name, src = ":" + name + "_generator", output_name = output_name)
+    _bindings_directory(name = name, src = ":" + name + "_generator", output_name = output_name, cc_lib = cc_lib)

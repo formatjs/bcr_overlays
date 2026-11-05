@@ -8,3 +8,6 @@ build --cxxopt=-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS
 build --host_cxxopt=-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS
 build --cxxopt=-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS
 build --host_cxxopt=-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS
+
+# Chromium allocator uses nightly Rust features.
+build --@rules_rust//rust/toolchain/channel=nightly

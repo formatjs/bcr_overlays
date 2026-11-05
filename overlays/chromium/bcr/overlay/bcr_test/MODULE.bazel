@@ -12,12 +12,9 @@ local_path_override(
 )
 
 bazel_dep(name = "rules_python", version = "1.8.0")
-bazel_dep(name = "rules_rust", version = "0.75.0")
+bazel_dep(name = "rules_rs", version = "0.2.1")
 
-register_toolchains("@chromium//native/rust:toolchain")
-
-register_toolchains("@chromium//native/rust:bindgen_toolchain")
-
-register_toolchains("@chromium//native/rust:cargo_toolchain")
+rules_rust = use_extension("@rules_rs//rs:rules_rust.bzl", "rules_rust")
+use_repo(rules_rust, "rules_rust")
 
 bazel_dep(name = "chromium_icu", version = "74.2.chromium142")

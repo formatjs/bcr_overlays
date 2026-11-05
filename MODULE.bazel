@@ -31,8 +31,15 @@ bazel_dep(name = "llvm", version = "0.8.26")
 bazel_dep(name = "with_cfg.bzl", version = "0.12.0")
 bazel_dep(name = "rules_cc", version = "0.2.26")
 bazel_dep(name = "rules_python", version = "1.9.0")
-bazel_dep(name = "rules_rust", version = "0.75.0")
-bazel_dep(name = "rules_rust_bindgen", version = "0.75.0")
+bazel_dep(name = "rules_rs", version = "0.2.1")
+
+rules_rust = use_extension("@rules_rs//rs:rules_rust.bzl", "rules_rust")
+rules_rust.patch(
+    patches = ["//overlays/chromium/bcr/overlay/native/rust:msvc_linker.patch"],
+    strip = 1,
+)
+use_repo(rules_rust, "rules_rust")
+
 bazel_dep(name = "rules_perl", version = "2.1.0")
 bazel_dep(name = "rules_nodejs", version = "6.7.7")
 bazel_dep(name = "rules_license", version = "1.0.0")
@@ -112,10 +119,29 @@ pip.parse(
 )
 use_repo(pip, "v8_python_deps")
 
-chromium_rust = use_extension("//overlays/chromium/bcr/overlay/native/rust:extensions.bzl", "chromium_rust")
-use_repo(chromium_rust, "chromium_rust_compiler")
+rust_toolchains = use_extension("@rules_rs//rs/toolchains:module_extension.bzl", "toolchains")
+rust_toolchains.toolchain(
+    edition = "2021",
+    extra_rustc_flags = {
+        triple: [
+            "-Cpanic=abort",
+            "-Cforce-unwind-tables=yes",
+            "-Cdebug-assertions",
+            "-Dunsafe_op_in_unsafe_fn",
+        ]
+        for triple in [
+            "x86_64-unknown-linux-gnu",
+            "aarch64-unknown-linux-gnu",
+            "aarch64-apple-darwin",
+            "x86_64-pc-windows-msvc",
+            "aarch64-pc-windows-msvc",
+        ]
+    },
+    version = "nightly/2025-09-25",
+)
+use_repo(rust_toolchains, "default_rust_toolchains")
 
-register_toolchains("@chromium//native/rust:toolchain", "@chromium//native/rust:bindgen_toolchain", "@chromium//native/rust:cargo_toolchain")
+register_toolchains("@default_rust_toolchains//...")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
 node.toolchain(node_version = "22.11.0")

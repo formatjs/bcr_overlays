@@ -15,6 +15,24 @@ jobs:
           -r tools/ci/rendering/requirements.txt
       - run: python3 -m unittest discover -s tests
       - run: python3 overlays/chromium/tests/validate_bcr.py
+  rust-toolchains:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bazel-contrib/setup-bazel@0.15.0
+      - name: Cross-compile Rust with MSVC on Windows targets
+        env:
+          BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA: '1'
+          BAZEL_WINDOWS_SDK_EULA: '1'
+        run: >-
+          bazel build --jobs=4
+          --repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA
+          --repo_env=BAZEL_WINDOWS_SDK_EULA
+          //tools/ci:rust-linux-amd64 //tools/ci:rust-linux-arm64
+          //tools/ci:rust-darwin-arm64 //tools/ci:rust-windows-amd64
+          //tools/ci:rust-windows-arm64
+      - name: Run native Rust probe
+        run: bazel run --jobs=4 //tools/ci:rust_toolchain_probe
   compatibility:
     runs-on: ubuntu-24.04
     steps:

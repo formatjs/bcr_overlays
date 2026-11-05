@@ -1,7 +1,32 @@
 """Run Chromium's original CXX wrapper with native compiled tools."""
 
-load(":python_action.bzl", "chromium_python_action")
+load(":python_action.bzl", "ChromiumFilesInfo", "ChromiumGeneratedFilesInfo", "chromium_python_action")
 load(":tool_inputs.bzl", "chromium_tool_inputs")
+
+def _rustc_cfg_impl(ctx):
+    logical = "gen/build/rust/gni_impl/rustc-print-cfg-x86_64-unknown-linux-gnu.txt"
+    output = ctx.actions.declare_file(logical)
+    rust = ctx.attr._rust[platform_common.ToolchainInfo]
+    ctx.actions.run(
+        executable = rust.rustc,
+        arguments = ["--print=cfg=" + output.path, "--target=x86_64-unknown-linux-gnu"],
+        inputs = rust.all_files,
+        outputs = [output],
+        mnemonic = "ChromiumRustcCfg",
+    )
+    mappings = depset([(output, "out/bazel-import/" + logical)])
+    return [
+        DefaultInfo(files = depset([output])),
+        ChromiumFilesInfo(mappings = mappings),
+        ChromiumGeneratedFilesInfo(mappings = mappings),
+    ]
+
+_rustc_cfg = rule(
+    implementation = _rustc_cfg_impl,
+    attrs = {
+        "_rust": attr.label(default = Label("@rules_rust//rust/toolchain:current_rust_toolchain"), cfg = "exec"),
+    },
+)
 
 def native_cxx_tools(name):
     """Expose native tools and query the pinned compiler's target configuration.
@@ -10,23 +35,11 @@ def native_cxx_tools(name):
         name: Compiled tool output group.
     """
     chromium_tool_inputs(
-        name = "rustc_inputs",
-        tool = "//native/rust:rustc_tool",
-        logical_path = "third_party/rust-toolchain/bin/rustc",
-    )
-    chromium_tool_inputs(
         name = "cxxbridge_inputs",
         tool = "//native/rust:cxxbridge",
         logical_path = "out/bazel-import/clang_x64_for_rust_host_build_tools/cxxbridge",
     )
-    chromium_python_action(
-        name = "rustc_cfg",
-        srcs = {"//build:rust/gni_impl/rustc_print_cfg.py": "build/rust/gni_impl/rustc_print_cfg.py"},
-        outs = {"gen/build/rust/gni_impl/rustc-print-cfg-x86_64-unknown-linux-gnu.txt": "gen/build/rust/gni_impl/rustc-print-cfg-x86_64-unknown-linux-gnu.txt"},
-        script = "build/rust/gni_impl/rustc_print_cfg.py",
-        args = ["--rust-prefix", "../../third_party/rust-toolchain/bin", "--target", "x86_64-unknown-linux-gnu", "--output-path", "gen/build/rust/gni_impl/rustc-print-cfg-x86_64-unknown-linux-gnu.txt"],
-        deps = [":rustc_inputs"],
-    )
+    _rustc_cfg(name = "rustc_cfg")
 
     native.filegroup(name = name, srcs = [":cxxbridge_inputs", ":rustc_cfg"])
 

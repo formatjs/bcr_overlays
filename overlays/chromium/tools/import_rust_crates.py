@@ -140,8 +140,10 @@ def main():
     script_binaries = set(scripts.values())
     sources = {'third_party/rust/serde_json_lenient/v0_2/wrapper/functions.h'}
     lines = ['"""Generated from Chromium native graph by tools/import_rust_crates.py."""', '',
-             'load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_library", "rust_proc_macro")',
-             'load("@rules_rust//cargo:defs.bzl", "cargo_build_script")',
+             'load("@rules_rs//rs:rust_binary.bzl", "rust_binary")',
+             'load("@rules_rs//rs:rust_library.bzl", "rust_library")',
+             'load("@rules_rs//rs:rust_proc_macro.bzl", "rust_proc_macro")',
+             'load("@rules_rs//rs:cargo_build_script.bzl", "cargo_build_script")',
              'load("@rules_cc//cc:cc_library.bzl", "cc_library")',
              'load(":bindings.bzl", "chromium_bindgen_inputs")', '',
              'def native_rust_crates(name):', '    """Build original CXX, logging, JSON, font, PNG and Temporal crates.', '', '    Args:', '        name: Compiled crate output group.', '    """',
@@ -169,7 +171,8 @@ def main():
                 if '//out/bazel-import/' + flag[1:] not in generated_flags:
                     raise ValueError(f'unmapped compiler response file: {flag}')
             elif flag == '--cfg':
-                retained.extend(flags[index:index + 2])
+                if not flags[index + 1].startswith('cr_rustc_revision='):
+                    retained.extend(flags[index:index + 2])
                 index += 1
             elif flag.startswith(('--cfg=', '-Zallow-features=', '-D', '-A', '-F', '-Cpanic=', '-Copt-level=', '-Cdebug-assertions')):
                 retained.append(flag)
@@ -246,8 +249,7 @@ def main():
             attrs['use_default_shell_env'] = False
         lines += [f'    {rule}('] + [f'        {key} = {str(value) if isinstance(value, bool) else json.dumps(value, ensure_ascii=False)},' for key, value in attrs.items()]
         if rule == 'cargo_build_script':
-            lines += [f'        build_script_env = {{"CARGO_MANIFEST_DIR": "$${{pwd}}/" + repository_root + "/{vendor}"}},',
-                      f'        rundir = repository_root + "/{vendor}",']
+            lines += [f'        build_script_env = {{"CARGO_MANIFEST_DIR": repository_root + "/{vendor}"}},']
         lines += ['    )']
     for library, cc_lib in [('dav1d', '@dav1d//:dav1d'), ('libyuv', '//native:libyuv')]:
         label = '//third_party/crabbyavif:crabbyavif_' + library + '_bindings'

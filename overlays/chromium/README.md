@@ -173,40 +173,39 @@ integration remains pending.
 
 ## Native Rust and CXX
 
-Chromium's exact Rust 1.92.0-dev compiler archive is pinned by the original DEPS
-SHA-256 and GCS generation. BCR `rules_rust@0.75.0` and
-`rules_rust_bindgen@0.75.0` provide native Rust compilation, C++ bindings, and
-build-script actions. C++ compilation and final linking use hermeticbuild LLVM.
-No Cargo build, GN, Ninja, or system Rust compiler drives these targets.
+`rules_rs@0.2.1` supplies upstream Rust `nightly/2025-09-25`, matching
+standard libraries, patched compilation rules and hermetic bindgen. C++ compilation
+and final linking use hermeticbuild LLVM. Compiler downloads and hashes are locked
+in `MODULE.bazel.lock`; the custom Chromium compiler archive is no longer used.
 
-`@chromium//native/rust:all_crates` builds 25 original Rust targets, including
-CXX 1.0.185 compiler/runtime, Chromium's prelude/import macro, and Rust log crate.
-Two upstream build scripts execute natively. Exact captured features and
-per-crate lint policy remain intact; generated Cargo flags come from native
-build-script providers. Vendored source inputs include compile-time documents
-and honor existing Bazel package boundaries.
+`@chromium//native/rust:all_crates` builds the imported crate graph, including CXX,
+Chromium's allocator, logger, JSON, font and PNG code. Cargo build scripts execute
+as declared Bazel actions. Captured features and per-crate lint policy remain;
+`cr_rustc_revision` stamps from the old compiler are removed.
 
-`@chromium//build/rust/allocator` compiles the original global allocator against
-PartitionAlloc. Native bindgen uses Chromium's original `bindings.rs` namespace
-wrapper. Integration tests cover aligned Rust boxes, vector growth, pool
-ownership, rejected alignment, and the original fatal allocation handler.
-CXX test generates original bridge code and checks Rust/C++ string, slice,
-and ownership transfers, including Chromium's import macro.
+Bindgen keeps Chromium's `bindings.rs` namespace wrapper. Compiler configuration
+queries invoke the selected execution toolchain directly, with its complete
+sysroot declared as inputs. A small patched-rules_rust fix sends MSVC linker
+arguments to LLVM's `lld-link`, preserving SDK paths and its VFS case overlay.
 
-Development and BCR consumer harnesses register the pinned Rust toolchains.
-Other consumers building Rust targets need:
+Consumers that need direct Rust rule loads can expose the shared repository:
 
 ```starlark
-register_toolchains(
-    "@chromium//native/rust:toolchain",
-    "@chromium//native/rust:bindgen_toolchain",
-    "@chromium//native/rust:cargo_toolchain",
-)
+bazel_dep(name = "rules_rs", version = "0.2.1")
+rules_rust = use_extension("@rules_rs//rs:rules_rust.bzl", "rules_rust")
+use_repo(rules_rust, "rules_rust")
 ```
 
-Compiler archive omits rustdoc; documentation targets fail explicitly.
-Full `base`, Rust logger integration and the captured browser crate graph now
-build. Browser startup and headless HTTP checks pass.
+Select the nightly channel in `.bazelrc`:
+
+```bazelrc
+build --@rules_rust//rust/toolchain/channel=nightly
+```
+
+CI cross-compiles standard-library probes for Linux amd64/arm64, Darwin arm64
+and Windows MSVC amd64/arm64, then runs the native Linux probe. The font-outline
+and PNG runtime test also passes with this compiler. These probes do not establish
+full browser ports; their platform-specific graphs remain unfinished.
 
 Regenerate the imported crate graph from the pinned checkout:
 

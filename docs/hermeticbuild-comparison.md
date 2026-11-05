@@ -2,6 +2,17 @@
 
 Review: 2026-11-05. Source snapshots pinned below. Code inspection; no upstream builds or performance benchmarks run.
 
+## Rust migration
+
+The Chromium import now uses `rules_rs@0.2.1` and upstream
+`nightly/2025-09-25`, with matching target standard libraries. The full imported
+Rust crate set and native font/PNG runtime test pass. Five compile/link probes
+produced the expected ELF, Mach-O and PE architectures; Windows uses MSVC.
+A local patched-rules_rust fix routes MSVC linker arguments to `lld-link`.
+The exact Chromium compiler was a conservative starting point, not a requirement
+for this validated crate set. Full browser builds with the replacement remain
+unverified.
+
 ## Fix validation
 
 - Remote execution now selects `//platforms:buildbuddy_linux_amd64`, using Node's pinned image digest and Chromium's GNU 2.31 constraint. Hosted rerun still required to validate the worker.

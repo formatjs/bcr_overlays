@@ -1,0 +1,55 @@
+--- a/rust/private/rustc.bzl
++++ b/rust/private/rustc.bzl
+@@ -412,6 +412,7 @@
+     "action_name",
+     "feature_configuration",
+     "is_direct_driver",
++    "is_clang_cl",
+     "rpaths",
+     "rust_linker",
+     "target_arch",
+@@ -469,6 +470,7 @@
+         variables = link_variables,
+         rust_linker = toolchain.linker if use_rust_linker else None,
+         is_direct_driver = use_rust_linker and toolchain.linker_type == "direct",
++        is_clang_cl = not use_rust_linker and cc_toolchain != None and cc_toolchain.compiler == "clang-cl",
+         target_arch = toolchain.target_arch,
+         rpaths = rpaths,
+     )
+@@ -476,10 +478,18 @@
+ def _get_linker_path(linker_config):
+     if linker_config.rust_linker:
+         return linker_config.rust_linker.path
+-    return cc_common.get_tool_for_action(
++    path = cc_common.get_tool_for_action(
+         feature_configuration = linker_config.feature_configuration,
+         action_name = linker_config.action_name,
+     )
++    if linker_config.is_clang_cl:
++        # rustc emits link.exe arguments for MSVC targets.
++        if path.endswith("/clang-cl"):
++            return path[:-len("clang-cl")] + "lld-link"
++        if path.endswith("/clang-cl.exe"):
++            return path[:-len("clang-cl.exe")] + "lld-link.exe"
++    return path
++
+ 
+ def _get_linker_env(linker_config):
+     if linker_config.variables == None:
+@@ -555,6 +565,16 @@
+                 elif processed_arg.startswith("-rpath") or processed_arg.startswith("--rpath"):
+                     filtered_args.append(processed_arg)
+             link_args = filtered_args
++
++    if linker_config.is_clang_cl:
++        # Preserve LLVM's SDK paths, library choices and VFS case overlay.
++        direct_args = []
++        for arg in link_args:
++            if arg.startswith("/clang:"):
++                arg = arg[len("/clang:"):]
++            if arg.startswith("/") and arg not in ["/MD", "/MDd", "/MT", "/MTd"]:
++                direct_args.append(arg)
++        link_args = direct_args
+ 
+     link_env = _get_linker_env(linker_config)
+     if "LIB" in link_env:

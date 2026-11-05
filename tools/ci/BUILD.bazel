@@ -1,4 +1,5 @@
 load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
+load("@rules_rs//rs:rust_binary.bzl", "rust_binary")
 load(":archive.bzl", "chromium_archive")
 load(
     ":browser_targets.bzl",
@@ -74,4 +75,35 @@ chromium_archive(
     name = "windows-arm64_archive",
     bundle = ":windows-arm64",
     platform = "windows-arm64",
+)
+
+rust_binary(
+    name = "rust_toolchain_probe",
+    srcs = ["rust_toolchain_probe.rs"],
+    edition = "2021",
+)
+
+linux_amd64_browser(
+    name = "rust-linux-amd64",
+    srcs = [":rust_toolchain_probe"],
+)
+
+linux_arm64_browser(
+    name = "rust-linux-arm64",
+    srcs = [":rust_toolchain_probe"],
+)
+
+darwin_arm64_browser(
+    name = "rust-darwin-arm64",
+    srcs = [":rust_toolchain_probe"],
+)
+
+windows_amd64_browser(
+    name = "rust-windows-amd64",
+    srcs = [":rust_toolchain_probe"],
+)
+
+windows_arm64_browser(
+    name = "rust-windows-arm64",
+    srcs = [":rust_toolchain_probe"],
 )

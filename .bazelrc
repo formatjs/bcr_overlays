@@ -39,3 +39,6 @@ build --platforms=@llvm//platforms:linux_x86_64_gnu.2.31
 
 # Keep BCR audio/video codec kernels optimized in the combined build.
 build --per_file_copt=external/(opus|libvpx|aom|dav1d|flac|libwebm|crc32c)[+]/.*@-O2
+
+# Chromium allocator uses nightly Rust features.
+build --@rules_rust//rust/toolchain/channel=nightly

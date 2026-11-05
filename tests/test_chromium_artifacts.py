@@ -126,6 +126,18 @@ class ArtifactsTest(unittest.TestCase):
         with tarfile.open(fileobj=io.BytesIO(second), mode='r:gz') as archive:
             self.assertTrue(all(item.mtime == item.uid == item.gid == 0 for item in archive))
 
+    def test_archive_bytes_ignore_input_hardlink_layout(self):
+        source = self.bundle / 'resources.pak'
+        duplicate = self.bundle / 'resources-copy.pak'
+        duplicate.write_bytes(source.read_bytes())
+        copied = package(self.bundle, self.root / 'copied', self.target, REVISION).read_bytes()
+        duplicate.unlink()
+        duplicate.hardlink_to(source)
+        linked = package(self.bundle, self.root / 'linked', self.target, REVISION).read_bytes()
+        self.assertEqual(copied, linked)
+        with tarfile.open(fileobj=io.BytesIO(linked), mode='r:gz') as archive:
+            self.assertTrue(all(not item.islnk() for item in archive))
+
     def test_failed_or_remote_only_build_outputs_are_rejected(self):
         events = self.root / 'events.json'
         label = '//tools/ci:linux-amd64_archive'

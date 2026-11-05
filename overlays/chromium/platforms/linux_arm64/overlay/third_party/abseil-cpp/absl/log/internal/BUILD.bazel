@@ -27,3 +27,21 @@ exports_files(
     ],
     visibility = ["//visibility:public"],
 )
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "check_impl.h",
+    "check_op.h",
+    "conditions.h",
+    "config.h",
+    "log_impl.h",
+    "log_message.h",
+    "nullguard.h",
+    "nullstream.h",
+    "proto.h",
+    "strip.h",
+    "structured_proto.h",
+    "vlog_config.h",
+    "voidify.h",
+])
+# END BROWSER INPUTS

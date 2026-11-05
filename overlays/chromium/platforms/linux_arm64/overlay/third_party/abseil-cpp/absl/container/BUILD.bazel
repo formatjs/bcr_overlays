@@ -137,3 +137,32 @@ exports_files([
     "node_hash_map.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "btree_map.h",
+    "fixed_array.h",
+    "flat_hash_map.h",
+    "flat_hash_set.h",
+    "hash_container_defaults.h",
+    "inlined_vector.h",
+    "internal/btree.h",
+    "internal/btree_container.h",
+    "internal/common.h",
+    "internal/common_policy_traits.h",
+    "internal/compressed_tuple.h",
+    "internal/container_memory.h",
+    "internal/hash_function_defaults.h",
+    "internal/hash_policy_traits.h",
+    "internal/hashtable_control_bytes.h",
+    "internal/hashtable_debug_hooks.h",
+    "internal/hashtablez_sampler.h",
+    "internal/inlined_vector.h",
+    "internal/layout.h",
+    "internal/node_slot_policy.h",
+    "internal/raw_hash_map.h",
+    "internal/raw_hash_set.h",
+    "node_hash_map.h",
+    "node_hash_set.h",
+])
+# END BROWSER INPUTS

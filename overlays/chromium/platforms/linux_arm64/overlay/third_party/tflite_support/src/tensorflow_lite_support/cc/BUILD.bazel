@@ -12,3 +12,10 @@ exports_files([
     "common.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "common.cc",
+    "common.h",
+])
+# END BROWSER INPUTS

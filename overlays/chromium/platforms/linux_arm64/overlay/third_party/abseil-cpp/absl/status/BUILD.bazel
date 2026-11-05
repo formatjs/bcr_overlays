@@ -45,3 +45,12 @@ exports_files([
     "statusor.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "internal/status_internal.h",
+    "internal/statusor_internal.h",
+    "status.h",
+    "statusor.h",
+])
+# END BROWSER INPUTS

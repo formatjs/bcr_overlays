@@ -121,6 +121,9 @@ def reuse_host_targets(targets, reused, provided):
         if original not in reused:
             continue
         dependency = reused[original]
+        if dependency == ':all_buildflags':
+            reused[label] = dependency
+            continue
         host_support = original in REUSED or dependency.startswith(('@', '//native/rust:')) or dependency in (
             ':libvpx_public', ':ffmpeg_opus',
         ) or original in (
@@ -695,6 +698,8 @@ def main():
         if not path.startswith('//'):
             raise ValueError('not a Chromium input: ' + path)
         relative = path[2:]
+        if relative == 'third_party/icu/common/icudtl.dat':
+            return '@chromium_icu//:common/icudtl.dat'
         generated = BUILD + 'gen/' + relative
         if not (args.source_root / relative).is_file() and generated in generated_paths:
             return ':gen/' + relative

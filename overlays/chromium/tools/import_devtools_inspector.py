@@ -33,7 +33,7 @@ def main():
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     targets = graph['targets']
     selected = {}
-    pending = [ROOT_TARGET]
+    pending = [label for label in targets if label.partition('(')[0] == ROOT_TARGET]
     while pending:
         label = pending.pop()
         if label in selected:

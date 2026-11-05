@@ -29,3 +29,9 @@ exports_files([
     "memory.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "memory.h",
+])
+# END BROWSER INPUTS

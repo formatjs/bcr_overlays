@@ -57,3 +57,13 @@ exports_files([
     "mutex.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "internal/create_thread_identity.h",
+    "internal/kernel_timeout.h",
+    "internal/per_thread_sem.h",
+    "mutex.h",
+    "notification.h",
+])
+# END BROWSER INPUTS

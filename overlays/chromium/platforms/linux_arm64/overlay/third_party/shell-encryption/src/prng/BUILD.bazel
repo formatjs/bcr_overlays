@@ -1,1 +1,10 @@
 package(default_visibility = ["//visibility:public"])
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "chacha_prng.h",
+    "integral_prng_types.h",
+    "prng.h",
+    "single_thread_chacha_prng.h",
+])
+# END BROWSER INPUTS

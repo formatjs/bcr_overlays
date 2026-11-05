@@ -8,3 +8,12 @@ exports_files([
     "image_embedder.h",
 ])
 # END BLINK_PLATFORM INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "image_classifier.cc",
+    "image_classifier.h",
+    "image_embedder.cc",
+    "image_embedder.h",
+])
+# END BROWSER INPUTS

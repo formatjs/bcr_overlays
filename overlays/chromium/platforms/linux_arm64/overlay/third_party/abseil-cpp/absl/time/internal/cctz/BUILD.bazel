@@ -48,3 +48,11 @@ exports_files([
     "include/cctz/time_zone.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "include/cctz/civil_time.h",
+    "include/cctz/civil_time_detail.h",
+    "include/cctz/time_zone.h",
+])
+# END BROWSER INPUTS

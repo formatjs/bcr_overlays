@@ -40,3 +40,11 @@ exports_files([
     "time.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "civil_time.h",
+    "clock.h",
+    "time.h",
+])
+# END BROWSER INPUTS

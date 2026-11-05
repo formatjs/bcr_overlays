@@ -5,3 +5,20 @@ exports_files([
     "serialization.proto",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "bits_util.h",
+    "constants.h",
+    "error_params.h",
+    "int256.h",
+    "integral_types.h",
+    "montgomery.h",
+    "ntt_parameters.h",
+    "polynomial.h",
+    "sample_error.h",
+    "status_macros.h",
+    "statusor.h",
+    "symmetric_encryption.h",
+])
+# END BROWSER INPUTS

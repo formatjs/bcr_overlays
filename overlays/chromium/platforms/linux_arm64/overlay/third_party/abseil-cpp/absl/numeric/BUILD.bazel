@@ -48,3 +48,13 @@ exports_files([
     "internal/bits.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "bits.h",
+    "int128.h",
+    "int128_have_intrinsic.inc",
+    "int128_no_intrinsic.inc",
+    "internal/bits.h",
+])
+# END BROWSER INPUTS

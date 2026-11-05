@@ -34,3 +34,10 @@ exports_files([
     "internal/cleanup.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "cleanup.h",
+    "internal/cleanup.h",
+])
+# END BROWSER INPUTS

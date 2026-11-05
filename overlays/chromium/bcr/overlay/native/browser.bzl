@@ -104,7 +104,7 @@ def native_browser():
             common["linkopts"] = common["linkopts"] + ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"]
             outputs = library["outputs"]
             shared = library["kind"] == "shared_library"
-            primary = [path for path in outputs if path.endswith(".so")][0] if shared else outputs[0]
+            primary = [path for path in outputs if path.endswith(".so") or (".so." in path and not path.endswith(".TOC"))][0] if shared else outputs[0]
             main = original == "//chrome:chrome_initial"
             if not main and not shared:
                 common["deps"] = [":base_headers", ":browser_tool_headers"] + library["deps"]

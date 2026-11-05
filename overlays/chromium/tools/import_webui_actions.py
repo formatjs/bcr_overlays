@@ -40,8 +40,13 @@ def main():
                    if label.partition('(')[0] == '//third_party/protobuf:protoc'})
     grit = json.loads((overlay / 'native/grit_targets.json').read_text())['native']
     # Reuse GRIT behind the header-only GN wrapper.
-    reused['//third_party/blink/public/strings:permission_element_strings'] = (
-        '//native:' + grit['//third_party/blink/public/strings:permission_element_strings_grit'])
+    permission = '//third_party/blink/public/strings:permission_element_strings'
+    for label in targets:
+        original, separator, toolchain = label.partition('(')
+        if original == permission:
+            producer = permission + '_grit' + ('(' + toolchain if separator else '')
+            if producer in grit:
+                reused[label] = '//native:' + grit[producer]
     owners = {output: label for label, target in targets.items() for output in target.get('outputs', [])}
     inputs = {'', 'build'}
     exports = {key: set() for key in inputs}

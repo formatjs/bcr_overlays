@@ -18,3 +18,15 @@ exports_files([
     "tokenizer.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "bert_tokenizer.cc",
+    "bert_tokenizer.h",
+    "regex_tokenizer.cc",
+    "regex_tokenizer.h",
+    "tokenizer.h",
+    "tokenizer_utils.cc",
+    "tokenizer_utils.h",
+])
+# END BROWSER INPUTS

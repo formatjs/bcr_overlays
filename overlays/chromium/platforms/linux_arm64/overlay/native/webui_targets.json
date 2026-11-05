@@ -1246,6 +1246,7 @@
     "//mojo/public/mojom/base:base_ts__copy_converters": "//native:webui_07ebf42e78694da7",
     "//mojo/public/mojom/base:base_ts__copy_converters(//build/toolchain/linux:clang_x64_v8_arm64)": "//native:webui_834020915a905d69",
     "//third_party/blink/public/strings:generate_permission_element_strings_mono_grd": "//native:webui_a8c787b0864a18d4",
+    "//third_party/blink/public/strings:generate_permission_element_strings_mono_grd(//build/toolchain/linux:clang_x64_v8_arm64)": "//native:webui_19ab9e60838a27ea",
     "//third_party/d3:build_grdp": "//native:webui_32ca88323398668d",
     "//third_party/d3:build_grdp(//build/toolchain/linux:clang_x64_v8_arm64)": "//native:webui_5e504c167aa89c61",
     "//third_party/d3:library": "//native:webui_b36e4d8a7a8e2dbd",
@@ -1608,8 +1609,6 @@
   },
   "pending": {
     "//content/browser/tracing:build_grd": "unresolved dependencies: //third_party/catapult/tracing:generate_about_tracing",
-    "//third_party/blink/public/strings:generate_permission_element_strings_mono_grd(//build/toolchain/linux:clang_x64_v8_arm64)": "unresolved dependencies: //third_party/blink/public/strings:permission_element_strings(//build/toolchain/linux:clang_x64_v8_arm64)",
-    "//third_party/blink/public/strings:permission_element_strings(//build/toolchain/linux:clang_x64_v8_arm64)": "native prerequisite: source_set",
     "//third_party/catapult/tracing:generate_about_tracing": "unported script: //third_party/catapult/tracing/bin/generate_about_tracing_contents"
   }
 }

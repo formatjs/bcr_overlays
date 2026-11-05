@@ -6,3 +6,10 @@ exports_files([
     "common_utils.h",
 ])
 # END BLINK_PLATFORM INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "common_utils.cc",
+    "common_utils.h",
+])
+# END BROWSER INPUTS

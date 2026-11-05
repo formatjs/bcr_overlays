@@ -51,3 +51,12 @@ exports_files([
     "internal/crc_cord_state.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "crc32c.h",
+    "internal/crc32_x86_arm_combined_simd.h",
+    "internal/crc32c_inline.h",
+    "internal/crc_cord_state.h",
+])
+# END BROWSER INPUTS

@@ -14,3 +14,12 @@ exports_files([
     "bert_nl_classifier.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "bert_nl_classifier.cc",
+    "bert_nl_classifier.h",
+    "text_embedder.cc",
+    "text_embedder.h",
+])
+# END BROWSER INPUTS

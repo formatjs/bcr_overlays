@@ -44,3 +44,15 @@ exports_files([
     "src/util/string_util.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "src/compact_enc_det/compact_enc_det.h",
+    "src/util/encodings/encodings.h",
+    "src/util/encodings/encodings.pb.h",
+    "src/util/languages/languages.h",
+    "src/util/languages/languages.pb.h",
+    "src/util/logging.h",
+    "src/util/string_util.h",
+])
+# END BROWSER INPUTS

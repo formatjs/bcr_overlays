@@ -33,3 +33,20 @@ exports_files([
     "tflite_engine.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "base_task_api.h",
+    "category.h",
+    "error_reporter.cc",
+    "error_reporter.h",
+    "external_file_handler.cc",
+    "external_file_handler.h",
+    "task_api_factory.cc",
+    "task_api_factory.h",
+    "task_utils.cc",
+    "task_utils.h",
+    "tflite_engine.cc",
+    "tflite_engine.h",
+])
+# END BROWSER INPUTS

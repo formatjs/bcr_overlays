@@ -1,1 +1,7 @@
 package(default_visibility = ["//visibility:public"])
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "stubdata.cpp",
+])
+# END BROWSER INPUTS

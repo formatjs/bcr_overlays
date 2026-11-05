@@ -34,3 +34,10 @@ exports_files([
     "container.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "algorithm.h",
+    "container.h",
+])
+# END BROWSER INPUTS

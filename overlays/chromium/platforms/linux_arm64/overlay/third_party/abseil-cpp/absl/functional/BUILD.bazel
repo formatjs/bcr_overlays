@@ -51,3 +51,15 @@ exports_files([
     "overload.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "any_invocable.h",
+    "bind_front.h",
+    "function_ref.h",
+    "internal/any_invocable.h",
+    "internal/front_binder.h",
+    "internal/function_ref.h",
+    "overload.h",
+])
+# END BROWSER INPUTS

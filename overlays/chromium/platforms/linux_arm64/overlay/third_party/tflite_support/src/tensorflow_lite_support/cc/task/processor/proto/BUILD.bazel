@@ -6,3 +6,10 @@ exports_files([
     "embedding_options.proto",
 ])
 # END BLINK_PLATFORM INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "embedding.proto",
+    "embedding_options.proto",
+])
+# END BROWSER INPUTS

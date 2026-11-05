@@ -59,11 +59,15 @@ class CrossCompilerMetadataTest(unittest.TestCase):
         base = '//base:base'
         v8 = '//v8:v8_base_without_compiler'
         blink = '//third_party/blink/renderer/core:core'
-        reused = {base: ':base', v8: ':v8_target', blink: ':blink_target'}
+        flags = '//build:branding_buildflags'
+        reused = {base: ':base', v8: ':v8_target', blink: ':blink_target',
+                  flags: ':all_buildflags'}
         provided = set()
-        targets = {label + suffix: {} for label in (base, v8, blink)
+        targets = {label + suffix: {} for label in (base, v8, blink, flags)
                    for suffix in (host, snapshot)}
         reuse_host_targets(targets, reused, provided)
+        self.assertEqual(reused[flags + host], ':all_buildflags')
+        self.assertEqual(reused[flags + snapshot], ':all_buildflags')
         self.assertEqual(reused[base + host], '@chromium//native:base')
         self.assertEqual(reused[base + snapshot], '@chromium//native:base')
         self.assertEqual(reused[v8 + host], '@chromium//native:v8_target')

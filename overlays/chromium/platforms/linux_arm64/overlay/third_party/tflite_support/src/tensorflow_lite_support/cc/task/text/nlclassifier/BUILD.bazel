@@ -12,3 +12,10 @@ exports_files([
     "nl_classifier.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "nl_classifier.cc",
+    "nl_classifier.h",
+])
+# END BROWSER INPUTS

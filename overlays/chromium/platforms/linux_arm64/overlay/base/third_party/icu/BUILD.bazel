@@ -32,3 +32,9 @@ exports_files([
     "icu_utf.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "icu_utf.h",
+])
+# END BROWSER INPUTS

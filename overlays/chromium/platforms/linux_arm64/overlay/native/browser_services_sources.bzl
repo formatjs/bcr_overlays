@@ -5097,7 +5097,6 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            "@chromium//native:all_buildflags",
             "@protobuf//:protoc_lib",
         ],
         "linkopts": [

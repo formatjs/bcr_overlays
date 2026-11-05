@@ -29,3 +29,9 @@ exports_files([
     "utility.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "utility.h",
+])
+# END BROWSER INPUTS

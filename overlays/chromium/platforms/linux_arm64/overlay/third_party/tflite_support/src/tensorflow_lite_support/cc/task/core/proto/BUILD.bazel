@@ -15,3 +15,12 @@ exports_files([
     "external_file_proto_inc.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "base_options.proto",
+    "base_options_proto_inc.h",
+    "external_file.proto",
+    "external_file_proto_inc.h",
+])
+# END BROWSER INPUTS

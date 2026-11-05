@@ -29,3 +29,9 @@ exports_files([
     "type_traits.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "type_traits.h",
+])
+# END BROWSER INPUTS

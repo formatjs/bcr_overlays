@@ -8,5 +8,5 @@ def chromium_swiftshader_sources():
         remote = "https://swiftshader.googlesource.com/SwiftShader.git",
         commit = "5f1c459a11bb4899301e89609cbf7547f9f31e20",
         build_file = Label("//build:swiftshader.BUILD.bazel"),
-        patch_cmds = ["rm -f third_party/marl/BUILD.bazel third_party/marl/examples/BUILD.bazel"],
+        patch_cmds = ["rm -f third_party/marl/BUILD.bazel third_party/marl/examples/BUILD.bazel third_party/SPIRV-Tools/BUILD.bazel third_party/SPIRV-Headers/BUILD.bazel"],
     )

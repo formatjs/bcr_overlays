@@ -187,3 +187,40 @@ exports_files([
     "thread_annotations.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "attributes.h",
+    "call_once.h",
+    "casts.h",
+    "config.h",
+    "const_init.h",
+    "dynamic_annotations.h",
+    "internal/atomic_hook.h",
+    "internal/endian.h",
+    "internal/errno_saver.h",
+    "internal/identity.h",
+    "internal/iterator_traits.h",
+    "internal/low_level_scheduling.h",
+    "internal/per_thread_tls.h",
+    "internal/raw_logging.h",
+    "internal/scheduling_mode.h",
+    "internal/spinlock.h",
+    "internal/spinlock_wait.h",
+    "internal/thread_identity.h",
+    "internal/throw_delegate.h",
+    "internal/tracing.h",
+    "internal/tsan_mutex_interface.h",
+    "internal/unaligned_access.h",
+    "log_severity.h",
+    "macros.h",
+    "no_destructor.h",
+    "nullability.h",
+    "optimization.h",
+    "options.h",
+    "policy_checks.h",
+    "port.h",
+    "prefetch.h",
+    "thread_annotations.h",
+])
+# END BROWSER INPUTS

@@ -34,3 +34,9 @@ exports_files([
     "include/gtest/gtest_prod.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "include/gtest/gtest_prod.h",
+])
+# END BROWSER INPUTS

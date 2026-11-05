@@ -3392,7 +3392,6 @@ LIBRARIES = {
         "deps": [
             ":browser_v8_0d624ff5f5a6af27",
             ":browser_v8_875ee677d9626a86",
-            "@chromium//native:all_buildflags",
         ],
         "linkopts": [
             "-ldl",
@@ -5181,7 +5180,6 @@ LIBRARIES = {
         "deps": [
             ":browser_v8_0d624ff5f5a6af27",
             ":browser_v8_875ee677d9626a86",
-            "@chromium//native:all_buildflags",
             "@chromium//third_party/icu:icu",
         ],
         "linkopts": [
@@ -5945,7 +5943,6 @@ LIBRARIES = {
             ":browser_v8_875ee677d9626a86",
             ":browser_v8_8b11edfa3f990b46",
             ":browser_v8_8fbfc6b78235bc0a",
-            "@chromium//native:all_buildflags",
         ],
         "linkopts": [
             "-ldl",
@@ -6242,7 +6239,6 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_v8_361691bfe85d264b",
-            "@chromium//native:all_buildflags",
         ],
         "linkopts": [
             "-ldl",

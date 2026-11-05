@@ -160,3 +160,9 @@ exports_files([
     "include/cxx.h",
 ])
 # END BLINK_PLATFORM INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "include/cxx.h",
+])
+# END BROWSER INPUTS

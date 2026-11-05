@@ -33,3 +33,9 @@ exports_files([
     "internal/sample_recorder.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "internal/sample_recorder.h",
+])
+# END BROWSER INPUTS

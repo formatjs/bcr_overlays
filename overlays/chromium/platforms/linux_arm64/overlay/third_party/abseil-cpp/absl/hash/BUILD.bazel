@@ -47,3 +47,12 @@ exports_files([
     "internal/weakly_mixed_integer.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "hash.h",
+    "internal/city.h",
+    "internal/hash.h",
+    "internal/weakly_mixed_integer.h",
+])
+# END BROWSER INPUTS

@@ -12,3 +12,10 @@ exports_files([
     "metadata_extractor.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "metadata_extractor.cc",
+    "metadata_extractor.h",
+])
+# END BROWSER INPUTS

@@ -50,3 +50,13 @@ exports_files([
     "variant.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "compare.h",
+    "internal/span.h",
+    "optional.h",
+    "span.h",
+    "variant.h",
+])
+# END BROWSER INPUTS

@@ -20,3 +20,15 @@ exports_files(
     ],
     visibility = ["//visibility:public"],
 )
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "absl_check.h",
+    "absl_log.h",
+    "absl_vlog_is_on.h",
+    "check.h",
+    "log.h",
+    "log_entry.h",
+    "log_sink.h",
+])
+# END BROWSER INPUTS

@@ -22,3 +22,11 @@ exports_files([
     "modp_b64.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "modp_b64.cc",
+    "modp_b64.h",
+    "modp_b64_data.h",
+])
+# END BROWSER INPUTS

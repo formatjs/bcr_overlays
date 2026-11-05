@@ -8,3 +8,12 @@ exports_files([
     "universal_sentence_encoder_utils.h",
 ])
 # END BLINK_PLATFORM INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "bert_utils.cc",
+    "bert_utils.h",
+    "universal_sentence_encoder_utils.cc",
+    "universal_sentence_encoder_utils.h",
+])
+# END BROWSER INPUTS

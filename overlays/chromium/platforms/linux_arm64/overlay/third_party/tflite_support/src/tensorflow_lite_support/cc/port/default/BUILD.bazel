@@ -14,3 +14,11 @@ exports_files([
     "tflite_wrapper.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "status_macros.h",
+    "tflite_wrapper.cc",
+    "tflite_wrapper.h",
+])
+# END BROWSER INPUTS

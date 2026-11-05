@@ -11,6 +11,6 @@ Validated from Linux AMD64 with `--config=browser` and
 - ARM64 PartitionAlloc, including MTE compiler features
 - ARM64 NSS/NSPR libraries, runtime consumers, and module checksums
 
-ARM64 binaries have not been executed. Full browser compilation, packaging,
-and native rendering smoke remain pending. The existing browser CI entry point
-still uses the Linux AMD64 overlay.
+Full browser analysis passes. `//tools/ci:linux-arm64` uses this overlay for
+cross-compilation on AMD64. ARM64 binaries have not been executed; full browser
+compilation, packaging, and native rendering smoke remain pending.

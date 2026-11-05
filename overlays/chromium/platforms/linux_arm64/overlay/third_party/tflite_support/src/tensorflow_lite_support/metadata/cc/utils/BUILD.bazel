@@ -8,3 +8,12 @@ exports_files([
     "zip_writable_mem_file.h",
 ])
 # END BLINK_PLATFORM INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "zip_readonly_mem_file.cc",
+    "zip_readonly_mem_file.h",
+    "zip_writable_mem_file.cc",
+    "zip_writable_mem_file.h",
+])
+# END BROWSER INPUTS

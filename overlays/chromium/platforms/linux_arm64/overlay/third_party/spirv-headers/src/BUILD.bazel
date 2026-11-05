@@ -1,1 +1,33 @@
 package(default_visibility = ["//visibility:public"])
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "include/spirv/1.2/GLSL.std.450.h",
+    "include/spirv/1.2/OpenCL.std.h",
+    "include/spirv/1.2/spirv.h",
+    "include/spirv/1.2/spirv.hpp",
+    "include/spirv/spir-v.xml",
+    "include/spirv/unified1/GLSL.std.450.h",
+    "include/spirv/unified1/NonSemanticClspvReflection.h",
+    "include/spirv/unified1/NonSemanticDebugPrintf.h",
+    "include/spirv/unified1/NonSemanticShaderDebugInfo100.h",
+    "include/spirv/unified1/NonSemanticVkspReflection.h",
+    "include/spirv/unified1/OpenCL.std.h",
+    "include/spirv/unified1/OpenCLDebugInfo100.h",
+    "include/spirv/unified1/extinst.debuginfo.grammar.json",
+    "include/spirv/unified1/extinst.glsl.std.450.grammar.json",
+    "include/spirv/unified1/extinst.nonsemantic.clspvreflection.grammar.json",
+    "include/spirv/unified1/extinst.nonsemantic.shader.debuginfo.100.grammar.json",
+    "include/spirv/unified1/extinst.nonsemantic.vkspreflection.grammar.json",
+    "include/spirv/unified1/extinst.opencl.debuginfo.100.grammar.json",
+    "include/spirv/unified1/extinst.opencl.std.100.grammar.json",
+    "include/spirv/unified1/extinst.spv-amd-gcn-shader.grammar.json",
+    "include/spirv/unified1/extinst.spv-amd-shader-ballot.grammar.json",
+    "include/spirv/unified1/extinst.spv-amd-shader-explicit-vertex-parameter.grammar.json",
+    "include/spirv/unified1/extinst.spv-amd-shader-trinary-minmax.grammar.json",
+    "include/spirv/unified1/spirv.core.grammar.json",
+    "include/spirv/unified1/spirv.h",
+    "include/spirv/unified1/spirv.hpp",
+    "include/spirv/unified1/spirv.hpp11",
+])
+# END BROWSER INPUTS

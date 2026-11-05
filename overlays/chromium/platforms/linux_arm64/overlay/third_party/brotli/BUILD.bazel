@@ -35,3 +35,17 @@ exports_files([
     "include/brotli/types.h",
 ])
 # END BLINK_PLATFORM INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "common/constants.h",
+    "common/platform.h",
+    "common/version.h",
+    "include/brotli/decode.h",
+    "include/brotli/encode.h",
+    "include/brotli/port.h",
+    "include/brotli/shared_dictionary.h",
+    "include/brotli/types.h",
+    "tools/brotli.c",
+])
+# END BROWSER INPUTS

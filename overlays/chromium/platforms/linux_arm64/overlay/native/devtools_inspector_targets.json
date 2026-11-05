@@ -1,0 +1,14 @@
+{
+  "//third_party/devtools-frontend/src/front_end/core/common:ColorUtils": "devtools_inspector_ba48355cb63e0940",
+  "//third_party/devtools-frontend/src/front_end/core/common:ColorUtils(//build/toolchain/linux:clang_x64_v8_arm64)": "devtools_inspector_5c849164f08ebadd",
+  "//third_party/devtools-frontend/src/inspector_overlay:build_inspector_overlay": "devtools_inspector_19d4f6a3b7a3271b",
+  "//third_party/devtools-frontend/src/inspector_overlay:build_inspector_overlay(//build/toolchain/linux:clang_x64_v8_arm64)": "devtools_inspector_613ff3d7b8fbfe75",
+  "//third_party/devtools-frontend/src/inspector_overlay:copy_css_to_gen": "devtools_inspector_ae03e8b5fad0926c",
+  "//third_party/devtools-frontend/src/inspector_overlay:copy_css_to_gen(//build/toolchain/linux:clang_x64_v8_arm64)": "devtools_inspector_7acd86bd83ede8bf",
+  "//third_party/devtools-frontend/src/inspector_overlay:copy_resources": "devtools_inspector_88438cfa677bfead",
+  "//third_party/devtools-frontend/src/inspector_overlay:copy_resources(//build/toolchain/linux:clang_x64_v8_arm64)": "devtools_inspector_b20d8bed6de13bad",
+  "//third_party/devtools-frontend/src/inspector_overlay:inspector_overlay": "devtools_inspector_5f1aad7ab1e7e9f0",
+  "//third_party/devtools-frontend/src/inspector_overlay:inspector_overlay(//build/toolchain/linux:clang_x64_v8_arm64)": "devtools_inspector_e19029f1425bfbf2",
+  "//third_party/devtools-frontend/src:generate_devtools_inspector_overlay_resources": "devtools_inspector_9245fbe42e22b09a",
+  "//third_party/devtools-frontend/src:generate_devtools_inspector_overlay_resources(//build/toolchain/linux:clang_x64_v8_arm64)": "devtools_inspector_92af2a73f41ab67d"
+}

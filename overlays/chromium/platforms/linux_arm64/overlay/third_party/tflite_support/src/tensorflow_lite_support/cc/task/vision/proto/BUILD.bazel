@@ -16,3 +16,20 @@ exports_files([
     "image_embedder_options_proto_inc.h",
 ])
 # END BLINK_PLATFORM INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "bounding_box.proto",
+    "bounding_box_proto_inc.h",
+    "class.proto",
+    "class_proto_inc.h",
+    "classifications.proto",
+    "classifications_proto_inc.h",
+    "embeddings.proto",
+    "embeddings_proto_inc.h",
+    "image_classifier_options.proto",
+    "image_classifier_options_proto_inc.h",
+    "image_embedder_options.proto",
+    "image_embedder_options_proto_inc.h",
+])
+# END BROWSER INPUTS

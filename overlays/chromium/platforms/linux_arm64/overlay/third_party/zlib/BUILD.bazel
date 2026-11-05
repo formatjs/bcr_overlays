@@ -72,3 +72,26 @@ exports_files([
     "zlib.h",
 ])
 # END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "chromeconf.h",
+    "contrib/minizip/crypt.h",
+    "contrib/minizip/ints.h",
+    "contrib/minizip/ioapi.c",
+    "contrib/minizip/ioapi.h",
+    "contrib/minizip/skipset.h",
+    "contrib/minizip/unzip.c",
+    "contrib/minizip/unzip.h",
+    "contrib/minizip/zip.c",
+    "contrib/minizip/zip.h",
+    "google/compression_utils.cc",
+    "google/compression_utils.h",
+    "google/compression_utils_portable.h",
+    "google/redact.h",
+    "google/zip.h",
+    "google/zip_reader.h",
+    "zconf.h",
+    "zlib.h",
+])
+# END BROWSER INPUTS

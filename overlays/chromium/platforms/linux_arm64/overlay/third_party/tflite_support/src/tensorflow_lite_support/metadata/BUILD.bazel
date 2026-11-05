@@ -5,3 +5,9 @@ exports_files([
     "metadata_schema.fbs",
 ])
 # END BLINK_PLATFORM INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "metadata_schema.fbs",
+])
+# END BROWSER INPUTS

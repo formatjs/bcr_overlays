@@ -21,3 +21,9 @@ exports_files(
     ],
     visibility = ["//visibility:public"],
 )
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "internal/demangle.h",
+])
+# END BROWSER INPUTS

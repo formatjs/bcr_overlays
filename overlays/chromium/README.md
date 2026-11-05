@@ -155,7 +155,7 @@ Missing dependency overlays and existing BCR alternatives are recorded in the
 
 ## License
 
-Overlay code: BSD-3-Clause. Upstream Chromium and bundled third-party files retain
+Repository-owned overlay code: MIT. Upstream Chromium and bundled third-party files retain
 their own licenses. Registry staging script adapted from perplexityai/rocksdb
 (Apache-2.0); see `../../NOTICE` and `../../tools/LICENSE`.
 

@@ -100,5 +100,5 @@ BCR presubmits have not run; no module has been published.
 
 ## License
 
-Overlay scaffolding: BSD-3-Clause. Shared staging tool: Apache-2.0, adapted from
+Repository-owned overlay code: MIT. Shared staging tool: Apache-2.0, adapted from
 perplexityai/rocksdb. Upstream projects retain their own licenses.

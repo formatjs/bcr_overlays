@@ -72,7 +72,7 @@ jobs:
           TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
           ARTIFACT_DIRECTORY: ${{ runner.temp }}/chromium-artifact
         run: python3 -m tools.ci.buildbuddy_artifacts
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: chromium-${{ needs.platform.outputs.id }}-${{ github.event.sha }}
           path: ${{ runner.temp }}/chromium-artifact/*

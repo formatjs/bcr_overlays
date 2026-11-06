@@ -207,6 +207,9 @@ def reuse_host_graphics(graph, reference, libraries, providers):
                 '//third_party/vulkan-tools/', '//third_party/fontconfig:',
                 '//third_party/freetype:', '//third_party/harfbuzz-ng:',
                 '//third_party/libpng:', '//third_party/libxml:', '//third_party/tflite:',
+                '//third_party/fft2d:', '//third_party/xnnpack:', '//third_party/ruy:',
+                '//third_party/eigen3:', '//third_party/gemmlowp:', '//third_party/farmhash:',
+                '//third_party/neon_2_sse:',
                 '//third_party/libwebp:', '//third_party/libjpeg_turbo:', '//third_party/wuffs:',
                 '//third_party/ffmpeg:', '//skia:', '//net:', '//third_party/webrtc/', '//components/viz/common:shared_image_format')
     fields = ('type', 'sources', 'defines', 'cflags', 'cflags_cc', 'cflags_c',

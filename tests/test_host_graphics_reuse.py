@@ -101,3 +101,20 @@ class HostGraphicsReuseTest(unittest.TestCase):
         original = copy.deepcopy(libraries)
         self.assertEqual(reuse_host_graphics(capture, native, libraries, providers), 0)
         self.assertEqual(libraries, original)
+
+    def test_matching_fft_has_one_native_implementation(self):
+        label = '//third_party/fft2d:fft2d'
+        capture, native, libraries, _ = self.capture(label, kind='source_set')
+        self.assertEqual(reuse_host_graphics(capture, native, libraries,
+                                            {label: ':ml_fft2d'}), 1)
+        library = next(iter(libraries.values()))
+        self.assertEqual(library['deps'], ['@chromium//native:ml_fft2d'])
+        self.assertEqual(library['srcs'], [])
+
+    def test_different_fft_c_flags_keep_separate_implementation(self):
+        label = '//third_party/fft2d:fft2d'
+        capture, native, libraries, providers = self.capture(label, kind='source_set')
+        next(iter(capture['targets'].values()))['cflags_c'] = ['-ffast-math']
+        original = copy.deepcopy(libraries)
+        self.assertEqual(reuse_host_graphics(capture, native, libraries, providers), 0)
+        self.assertEqual(libraries, original)

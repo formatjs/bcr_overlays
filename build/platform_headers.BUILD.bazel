@@ -259,10 +259,25 @@ cc_import(
 
 cc_library(
     name = "cups",
-    hdrs = glob(["usr/include/cups/*.h"]),
+    hdrs = select({
+        ":macos": [],
+        "//conditions:default": glob(["usr/include/cups/*.h"]),
+    }),
+    linkopts = select({
+        ":macos": ["-lcups"],
+        "//conditions:default": [],
+    }),
     strip_include_prefix = "usr/include",
     visibility = ["//visibility:public"],
-    deps = [":cups_shared"],
+    deps = select({
+        ":macos": [],
+        "//conditions:default": [":cups_shared"],
+    }),
+)
+
+config_setting(
+    name = "macos",
+    constraint_values = ["@platforms//os:macos"],
 )
 
 cc_import(

@@ -25,7 +25,11 @@ Regenerate source configuration from Chromium's pinned graph:
 
 ```sh
 python3 overlays/compact_enc_det/tools/import_sources.py \
-  overlays/chromium/native/linux_x64.json.gz /path/to/pinned/compact_enc_det
+  overlays/chromium/native/linux_x64.json.gz /path/to/pinned/compact_enc_det \
+  --arm64-graph overlays/chromium/native/linux_arm64.json.gz \
+  --darwin-arm64-graph overlays/chromium/native/darwin_arm64.json.gz \
+  --windows-amd64-graph overlays/chromium/native/windows_amd64.json.gz \
+  --windows-arm64-graph overlays/chromium/native/windows_arm64.json.gz
 ```
 
 No BCR publication yet. Maintainers recorded in [bcr/metadata.json](bcr/metadata.json).

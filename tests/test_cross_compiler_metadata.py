@@ -104,6 +104,32 @@ class CrossCompilerMetadataTest(unittest.TestCase):
         self.assertNotIn(blink + snapshot, reused)
         self.assertEqual(reused[v8], ':v8_target')
 
+    def test_rust_host_tools_use_linux_allocator(self):
+        suffix = '(//build/toolchain/linux:clang_x64_for_rust_host_build_tools)'
+        labels = ['//build/rust/allocator:allocator_impls_ffi',
+                  '//build/rust/allocator:alloc_error_handler_impl_ffi']
+        reused = {label: REUSED[label] for label in labels}
+        reuse_host_targets({label + suffix: {} for label in labels}, reused, set())
+        for label in labels:
+            self.assertEqual(reused[label + suffix], '@chromium' + REUSED[label])
+
+    def test_host_library_uses_native_layer_owner(self):
+        label = '//components/url_formatter/spoof_checks/common_words:common'
+        host = label + '(//build/toolchain/linux:clang_x64)'
+        platform = ':blink_platform_e3b8293788f3d44c'
+        native = ':ozone_e3b8293788f3d44c'
+        reused = {label: platform}
+        reuse_host_targets({host: {}}, reused, set(), {label: native})
+        self.assertEqual(reused[host], '@chromium//native' + native)
+        self.assertEqual(reused[label], platform)
+
+    def test_host_library_without_native_owner_keeps_captured_build(self):
+        label = '//components/platform_only:helper'
+        host = label + '(//build/toolchain/linux:clang_x64)'
+        reused = {label: ':blink_platform_0123456789abcdef'}
+        reuse_host_targets({host: {}}, reused, set(), {})
+        self.assertNotIn(host, reused)
+
     def test_cross_snapshot_uses_canonical_host_icu(self):
         suffix = '(//build/toolchain/linux:clang_x64_v8_arm64)'
         labels = ['//third_party/icu:' + name for name in

@@ -19,25 +19,37 @@ def capture(source_root, gn, graph_path, label):
     source = source_root / relative
     original_bytes = source.read_bytes()
     original = original_bytes.decode()
-    opening = re.search(r'^(?:component|source_set|static_library|shared_library|group)\("' +
-                        re.escape(name) + r'"\) \{', original, re.MULTILINE)
-    if not opening:
-        raise ValueError('top-level GN target declaration not found: ' + label)
-    end = original.index('\n}', opening.end())
+    declarations = list(re.finditer(
+        r'^(?P<indent>[ \t]*)(?:component|source_set|static_library|shared_library|executable|group)\("' +
+        re.escape(name) + r'"\) \{', original, re.MULTILINE))
+    if not declarations:
+        raise ValueError('GN target declaration not found: ' + label)
     filename = 'runtime_edges_' + hashlib.sha256(label.encode()).hexdigest()[:16] + '.json'
     statement = '''
-  captured_runtime_labels = []
-  if (defined(data_deps)) {
-    foreach(captured_runtime_dep, data_deps) {
-      captured_runtime_labels += [ get_label_info(captured_runtime_dep, "label_no_toolchain") ]
+  if (current_toolchain == default_toolchain) {
+    captured_runtime_labels = []
+    if (defined(data_deps)) {
+      foreach(captured_runtime_dep, data_deps) {
+        captured_runtime_labels += [ get_label_info(captured_runtime_dep, "label_no_toolchain") ]
+      }
     }
+    write_file("$root_build_dir/''' + filename + '''", captured_runtime_labels, "json")
   }
-  write_file("$root_build_dir/''' + filename + '''", captured_runtime_labels, "json")
 '''
     output = source_root / 'out/bazel-import' / filename
     output.unlink(missing_ok=True)
     try:
-        source.write_text(original[:end] + statement + original[end:])
+        patched = original
+        for opening in reversed(declarations):
+            indent = opening.group('indent')
+            closing = re.search(r'^' + re.escape(indent) + r'\}',
+                                original[opening.end():], re.MULTILINE)
+            if not closing:
+                raise ValueError('GN target closing brace not found: ' + label)
+            end = opening.end() + closing.start()
+            inserted = ''.join(indent + line + '\n' for line in statement.splitlines())
+            patched = patched[:end] + inserted + patched[end:]
+        source.write_text(patched)
         subprocess.run([str(gn), 'desc', 'out/bazel-import', label, '--format=json',
                         '--root-target=//chrome:chrome', '--root-pattern=//chrome:chrome'],
                        cwd=source_root, stdout=subprocess.DEVNULL, check=True)

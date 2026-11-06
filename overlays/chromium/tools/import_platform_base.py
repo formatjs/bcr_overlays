@@ -3,8 +3,10 @@
 
 import argparse
 import gzip
+import hashlib
 import json
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -22,6 +24,34 @@ def atomic_copy(source, target):
         temporary.replace(target)
     finally:
         temporary.unlink(missing_ok=True)
+
+
+def copy_package_inputs(overlay, destination, layers):
+    """Merge generated exports while preserving platform rule adapters."""
+    packages = {path.relative_to(root) for root in [overlay, destination]
+                for path in root.rglob('BUILD.bazel')}
+    for package in sorted(packages):
+        if package.as_posix() in ('BUILD.bazel', 'native/BUILD.bazel'):
+            continue
+        source, target = overlay / package, destination / package
+        captured = source.read_text() if source.exists() else ''
+        original = target.read_text() if target.exists() else captured
+        text = original
+        for layer in layers:
+            begin, end = '# BEGIN ' + layer.upper() + ' INPUTS', '# END ' + layer.upper() + ' INPUTS'
+            pattern = re.escape(begin) + r'.*?' + re.escape(end) + r'\n?'
+            block = re.search(pattern, captured, re.S)
+            if re.search(pattern, text, re.S):
+                text = re.sub(pattern, lambda _: block[0] if block else '', text, flags=re.S)
+            elif block:
+                text += '\n' + block[0]
+        if text == original and (target.exists() or not any(
+                '# BEGIN ' + layer.upper() + ' INPUTS' in text for layer in layers)):
+            continue
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(mode='w', dir=target.parent, delete=False) as output:
+            output.write(text)
+        Path(output.name).replace(target)
 
 
 def main():
@@ -44,8 +74,16 @@ def main():
     parser.add_argument('--generated-root', type=Path, help='Built platform native output directory for GRIT input discovery')
     parser.add_argument('--compositor', action='store_true', help='Also import the compositor closure')
     parser.add_argument('--blink-platform', action='store_true', help='Also import Blink platform and its Rust bridges')
+    parser.add_argument('--blink-core', action='store_true', help='Also import Blink DOM, layout and paint')
+    parser.add_argument('--blink-modules', action='store_true', help='Also import Blink web API modules')
+    parser.add_argument('--content', action='store_true', help='Also import content browser and renderer services')
+    parser.add_argument('--browser', action='store_true', help='Import the complete browser and its runtime assets')
     parser.add_argument('--gpu-client', action='store_true', help='Also import GPU command producers and Viz types')
     args = parser.parse_args()
+    args.content = args.content or args.browser
+    args.blink_modules = args.blink_modules or args.content
+    args.blink_core = args.blink_core or args.blink_modules
+    args.blink_platform = args.blink_platform or args.blink_core
     args.compositor = args.compositor or args.blink_platform
     args.media = args.media or args.compositor
     args.gpu_client = args.gpu_client or args.media
@@ -78,6 +116,11 @@ def main():
             target = overlay / path.relative_to(ROOT / 'bcr/overlay')
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(path, target)
+        maintained = ROOT / 'platforms' / args.variant / 'overlay'
+        for path in maintained.rglob('BUILD.bazel'):
+            target = overlay / path.relative_to(maintained)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(path, target)
         commands = [
             ['import_base.py', str(graph), '--source-root', str(source)],
             ['import_generated_files.py', str(graph)],
@@ -97,6 +140,11 @@ def main():
         if args.blink_platform:
             for crate in ['font_format_check', 'blink_rust_crash', 'crabbyavif',
                           'crabbyavif_libyuv_sys', 'crabbyavif_dav1d_sys']:
+                commands[-1].extend(['--root', crate])
+        if args.content:
+            commands[-1].extend(['--root', 'llguidance'])
+        if args.browser:
+            for crate in ['qr_code_generator', 'user_data_importer_zip']:
                 commands[-1].extend(['--root', crate])
         if args.variant == 'darwin_arm64' or args.network:
             commands.append(['import_crypto.py', str(graph), '--source-root', str(source)])
@@ -159,6 +207,22 @@ def main():
         if args.blink_platform:
             for layer in ['blink_rust', 'blink_platform']:
                 commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
+            commands.append(['import_devtools_inspector.py', str(graph), '--source-root', str(source)])
+        if args.blink_core:
+            commands.append(['import_xslt.py', str(graph), '--source-root', str(source)])
+        for layer in ['blink_core', 'blink_modules', 'content']:
+            if getattr(args, layer):
+                commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
+        if args.browser:
+            targets = json.loads(gzip.decompress(graph.read_bytes()))['targets']
+            assets = json.loads((ROOT / 'native/browser_asset_roots.json').read_text())
+            assets['roots'] = [label for label in assets['roots'] if label in targets]
+            assets['graph_sha256'] = hashlib.sha256(graph.read_bytes()).hexdigest()
+            (stage / 'native/browser_asset_roots.json').write_text(json.dumps(assets, indent=2) + '\n')
+            commands.append(['capture_runtime_edges.py', '--source-root', str(source),
+                             '--gn', str(args.gn.resolve()), '--graph', str(graph),
+                             '--target', '//chrome:chrome', '--output', str(stage / 'native/browser_runtime_edges.json')])
+            commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', 'browser'])
         if args.gl:
             commands.append(['import_webui_actions.py', str(graph), '--source-root', str(source),
                              '--root', '//ui/webui/resources:build_grd'])
@@ -175,8 +239,32 @@ def main():
                 grit.extend(['--generated-root', str(args.generated_root.resolve())])
             if args.compositor:
                 grit.extend(['--root', '//components/metrics:server_urls_grd_grit'])
+            if args.blink_platform:
+                for root in ['//third_party/blink/public/strings:strings_grit',
+                             '//third_party/blink/public:image_resources_grit',
+                             '//third_party/blink/public:resources_grit',
+                             '//third_party/blink/public:devtools_inspector_resources_grit',
+                             '//ui/resources:ui_lottie_resources_grd_grit',
+                             '//device/bluetooth/strings:strings_grit',
+                             '//device/fido/strings:strings_grit']:
+                    if args.bootstrap_webui and root == '//third_party/blink/public:devtools_inspector_resources_grit':
+                        continue
+                    grit.extend(['--root', root])
+            if args.blink_core:
+                for root in ['//third_party/blink/public/strings:permission_element_strings_grit',
+                             '//third_party/blink/public/strings:permission_element_generated_strings_grit',
+                             '//third_party/blink/renderer/modules/media_controls:media_controls_resources_grit']:
+                    if args.bootstrap_webui and root.endswith(':permission_element_generated_strings_grit'):
+                        continue
+                    grit.extend(['--root', root])
+            if args.browser:
+                grit = ['import_grit_actions.py', str(graph), '--source-root', str(source)]
+                if args.generated_root:
+                    grit.extend(['--generated-root', str(args.generated_root.resolve())])
             commands.append(grit)
         for command in commands:
+            if command[0] == 'import_cpp_layer.py':
+                command.extend(['--native-overlay', str(ROOT / 'bcr/overlay')])
             subprocess.run([sys.executable, str(stage / 'tools' / command[0]), *command[1:]], check=True)
         files = [
             'BUILD.bazel', 'build/BUILD.bazel', 'native/base_sources.bzl',
@@ -238,6 +326,7 @@ def main():
             files.extend(str(path.relative_to(overlay)) for path in
                          sorted((overlay / 'native/compositor_forwarders').rglob('*')) if path.is_file())
         if args.blink_platform:
+            files.extend(['native/devtools_inspector_sources.bzl', 'native/devtools_inspector_targets.json'])
             for layer in ['blink_rust', 'blink_platform']:
                 files.append('native/' + layer + '_sources.bzl')
                 files.extend(str(path.relative_to(overlay)) for path in
@@ -246,6 +335,20 @@ def main():
             files.append('native/browser_v8_sources.bzl')
             files.extend(str(path.relative_to(overlay)) for path in
                          sorted((overlay / 'native/browser_v8_forwarders').rglob('*')) if path.is_file())
+        for layer in ['blink_core', 'blink_modules', 'content']:
+            if getattr(args, layer):
+                files.append('native/' + layer + '_sources.bzl')
+                files.append('native/' + layer + '_targets.json')
+                files.extend(str(path.relative_to(overlay)) for path in
+                             sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())
+        if args.blink_core:
+            files.append('native/xslt.bzl')
+        if args.browser:
+            files.extend(['native/browser_sources.bzl', 'native/browser_targets.json'])
+            if (overlay / 'build/util/LASTCHANGE').is_file():
+                files.append('build/util/LASTCHANGE')
+            files.extend(str(path.relative_to(overlay)) for path in
+                         sorted((overlay / 'native/browser_forwarders').rglob('*')) if path.is_file())
         if args.variant.startswith('windows_'):
             build = overlay / 'build/BUILD.bazel'
             build.write_text(build.read_text() + '\nexports_files(["precompile.h"])\n')
@@ -253,6 +356,9 @@ def main():
             target = destination / name
             target.parent.mkdir(parents=True, exist_ok=True)
             atomic_copy(overlay / name, target)
+        layers = [command[command.index('--layer') + 1] for command in commands
+                  if command[0] == 'import_cpp_layer.py']
+        copy_package_inputs(overlay, destination, layers)
     print('Regenerated ' + args.variant + '; platform rule adapters preserved')
 
 

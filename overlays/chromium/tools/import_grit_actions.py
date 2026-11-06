@@ -53,6 +53,11 @@ def main():
         catalog = overlay / 'native' / filename
         if catalog.exists():
             webui_actions.update({label: '//native:' + name for label, name in json.loads(catalog.read_text()).items()})
+    required_assets = set(webui_actions)
+    for filename in ['blink_core_targets.json', 'blink_modules_targets.json', 'content_targets.json']:
+        catalog = overlay / 'native' / filename
+        if catalog.exists():
+            webui_actions.update({label: '//native:' + name for label, name in json.loads(catalog.read_text()).items()})
     native_outputs = set(graph['generated_files'])
     for target in set(proto_actions) | set(mojo_actions) | set(webui_actions):
         native_outputs.update(graph['targets'][target].get('outputs', []))
@@ -69,7 +74,7 @@ def main():
             relative = path.removeprefix('//out/bazel-import/')
             artifact = args.generated_root / relative
             if not artifact.is_file():
-                if producers.get(path) in webui_actions and path not in graph['generated_files']:
+                if producers.get(path) in required_assets and path not in graph['generated_files']:
                     raise FileNotFoundError(f'missing native asset output: {artifact}')
                 continue
             destination = build / relative
@@ -211,6 +216,12 @@ def main():
                             raw.add('//' + str(absolute.relative_to(source)))
                     fragments = part_closure(path[2:] for path in raw if not path.startswith('//out/'))
                     raw.update('//' + path for path in fragments)
+                    if '//components/policy/resources/policy_templates.py' in raw:
+                        raw.update('//' + path.relative_to(source).as_posix()
+                                   for path in (source / 'third_party/pyyaml').glob('*.py'))
+                        raw.update('//' + path.relative_to(source).as_posix()
+                                   for path in (source / 'components/policy/resources/templates').rglob('*')
+                                   if path.is_file() and '__pycache__' not in path.parts)
                     for path in sorted(raw):
                         if producers.get(path) in ids_names:
                             continue

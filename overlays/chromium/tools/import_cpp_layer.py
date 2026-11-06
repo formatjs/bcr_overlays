@@ -132,7 +132,7 @@ def header_resolver(source_root, include_directories):
     return resolve
 
 
-def reuse_host_targets(targets, reused, provided):
+def reuse_host_targets(targets, reused, provided, providers=None):
     """Keep ordinary host dependencies separate from cross-V8 generators."""
     for label in targets:
         original, separator, toolchain = label.partition('(')
@@ -140,6 +140,7 @@ def reuse_host_targets(targets, reused, provided):
             continue
         if toolchain not in (
                 '//build/toolchain/linux:clang_x64)',
+                '//build/toolchain/linux:clang_x64_for_rust_host_build_tools)',
                 '//build/toolchain/linux:clang_x64_v8_arm64)'):
             continue
         if original in PROVIDED:
@@ -162,11 +163,26 @@ def reuse_host_targets(targets, reused, provided):
         )
         if cross_v8 and not host_support:
             continue
+        if dependency.startswith(':') and providers is not None:
+            if original in providers:
+                dependency = providers[original]
+            elif re.fullmatch(r':[a-z][a-z0-9_]*_[0-9a-f]{16}', dependency):
+                continue
         if dependency.startswith(':'):
             dependency = '@chromium//native' + dependency
         elif dependency.startswith('//'):
             dependency = '@chromium' + dependency
         reused[label] = dependency
+
+
+@cache
+def native_library_providers(overlay):
+    """Resolve GN identities across native and platform layer boundaries."""
+    providers = {}
+    pattern = re.compile(r'^    "(//[^"\n]+)": \{\n        "name": "([^"\n]+)"', re.M)
+    for source in sorted((overlay / 'native').glob('*_sources.bzl')):
+        providers.update({label: ':' + name for label, name in pattern.findall(source.read_text())})
+    return providers
 
 
 def native_graphics_providers(overlay):
@@ -737,6 +753,9 @@ def main():
             '//third_party/flatbuffers:flatc': '@flatbuffers//:flatc',
         })
     font_repositories = {
+        'third_party/microsoft_webauthn/src/': '@chromium_microsoft_webauthn//:',
+        'ui/gl/resources/angle-metal/': '@chromium_angle_metal_shaders//:',
+        'third_party/google_toolbox_for_mac/src/': '@chromium_google_toolbox_for_mac//:',
         'third_party/dawn/third_party/dxc/': '@chromium_dxc//:',
         'third_party/spirv-tools/src/': '@spirv_tools//:',
         'third_party/spirv-headers/src/': '@spirv_headers//:',
@@ -880,7 +899,12 @@ def main():
                               if path.endswith('.cc') and not path.endswith(interface_provider_suffixes)]
                 if additional:
                     reused.pop(label, None)
-    reuse_host_targets(targets, reused, extra_provided)
+    needs_native_providers = any(
+        '(' in label and re.fullmatch(r':[a-z][a-z0-9_]*_[0-9a-f]{16}',
+                                     reused.get(label.partition('(')[0], ''))
+        for label in targets)
+    reuse_host_targets(targets, reused, extra_provided,
+                       native_library_providers(args.native_overlay) if needs_native_providers else None)
     existing_actions = {label for label in targets if hashlib.sha256(label.encode()).hexdigest()[:16] in existing_action_hashes}
     reused_asset_roots = {}
     for label in browser_asset_roots:
@@ -927,8 +951,13 @@ def main():
     overlay = ROOT / "bcr/overlay"
     generated_paths = {path for target in targets.values() for path in target.get('outputs', [])}
 
+    bundle_outputs = {target['bundle_data']['root_dir_output']: ':' + name(label) + '_bundle'
+                      for label, target in selected.items() if target['type'] == 'create_bundle'}
+
     @cache
     def file_label(path):
+        if path in bundle_outputs:
+            return bundle_outputs[path]
         if path.startswith(BUILD):
             return ':' + path.removeprefix(BUILD)
         if not path.startswith('//'):
@@ -1038,7 +1067,7 @@ def main():
     for label, target in sorted(selected.items()):
         if label in mojo_targets or target['type'] in ('action', 'action_foreach', 'copy', 'generated_file'):
             continue
-        if target['type'] not in ('source_set', 'static_library', 'shared_library', 'group', 'executable'):
+        if target['type'] not in ('source_set', 'static_library', 'shared_library', 'group', 'executable', 'bundle_data', 'create_bundle'):
             raise ValueError('unmapped network target type: ' + label)
         public = target.get('public', [])
         paths = target.get('sources', []) + (public if isinstance(public, list) else [])
@@ -1178,6 +1207,14 @@ def main():
             if option in ('-isysroot', '--sysroot'):
                 next(linker_flags)
                 continue
+            if layer == 'browser' and option in ('-Wl,-order_file', '-Wl,-exported_symbols_list'):
+                path = next(linker_flags).removeprefix('-Wl,')
+                if not path.startswith('../../'):
+                    raise ValueError('unmapped linker input: ' + path)
+                dependency = file_label('//' + path.removeprefix('../../'))
+                linker_inputs.append(dependency)
+                linkopts.extend([option, '-Wl,$(location ' + dependency + ')'])
+                continue
             if layer == 'browser' and option.startswith('-Wl,--version-script='):
                 path = option.partition('=')[2]
                 if not path.startswith('../../'):
@@ -1194,6 +1231,8 @@ def main():
             for field, option in [('frameworks', '-framework'), ('weak_frameworks', '-weak_framework')]:
                 for framework in unpack(target.get(field, [])):
                     linkopts.extend([option, framework.removesuffix('.framework')])
+            linkopts = [shlex.quote(option) if any(character.isspace() for character in option)
+                        and '$(location ' not in option else option for option in linkopts]
         if label.split('(', 1)[0] == '//third_party/libsecret:libsecret':
             includes.append('../third_party/libsecret')
             dependencies.append('@glib//gio')
@@ -1201,7 +1240,8 @@ def main():
             dependencies.append('@chromium_libdrm//:webrtc_headers')
         if layer in ('blink_platform', 'blink_core', 'blink_modules', 'content', 'browser') and shared_interface:
             dependencies.append(':mojo_interface_provider')
-        libraries[label] = dict(name=name(label), kind=target['type'], srcs=sources,
+        kind = 'group' if target['type'] in ('bundle_data', 'create_bundle') else target['type']
+        libraries[label] = dict(name=name(label), kind=kind, srcs=sources,
                                 hdrs=sorted(set(headers)), copts=copts, defines=defines,
                                 includes=sorted(set(includes)), deps=sorted(set(dependencies)),
                                 linkopts=linkopts)
@@ -1652,6 +1692,17 @@ def main():
             if target['script'] == '//ui/webui/resources/tools/bundle_js.py':
                 arguments = target.get('args', [])
                 directory = arguments[arguments.index('--input') + 1]
+                if '--external_paths' in arguments:
+                    for mapping in arguments[arguments.index('--external_paths') + 1:]:
+                        if mapping.startswith('--'):
+                            break
+                        external = Path(os.path.abspath(args.source_root / 'out/bazel-import' / mapping.split('|', 1)[1]))
+                        if external.is_relative_to(args.source_root / 'out/bazel-import'):
+                            continue
+                        if not external.is_relative_to(args.source_root) or not external.is_dir():
+                            raise ValueError('invalid WebUI external source directory: ' + str(external))
+                        inputs.update('//' + path.relative_to(args.source_root).as_posix()
+                                      for path in external.rglob('*') if path.is_file())
                 if directory.startswith('../../'):
                     # Source bundles resolve entry names relative to --input.
                     inputs.update('//' + path.relative_to(args.source_root).as_posix()
@@ -1670,10 +1721,31 @@ def main():
                 inputs.update(python_support)
             if target['script'] == '//chrome/tools/build/sha256_file.py':
                 inputs.update(['//build/action_helpers.py', '//build/gn_helpers.py'])
-            if target['script'].startswith('//tools/grit/'):
+            if target['script'] == '//build/toolchain/win/midl.py':
+                generated = args.source_root / target['args'][1].removeprefix('../../')
+                inputs.update('//' + path.relative_to(args.source_root).as_posix()
+                              for path in generated.rglob('*') if path.is_file())
+            if '//build/util/version.py' in inputs:
+                inputs.add('//build/util/android_chrome_version.py')
+            if target['script'] == '//build/apple/tweak_info_plist.py' and '--scm=1' in target.get('args', []):
+                inputs.add('//build/util/LASTCHANGE')
+                revision = overlay / 'build/util/LASTCHANGE'
+                revision.parent.mkdir(parents=True, exist_ok=True)
+                revision.write_bytes((args.source_root / 'build/util/LASTCHANGE').read_bytes())
+            if (target['script'].startswith('//tools/grit/')
+                    or target['script'].endswith('/generate_permission_element_grd.py')):
                 inputs.update('//' + str(path.relative_to(args.source_root))
                               for path in (args.source_root / 'tools/grit').rglob('*.py')
                               if '__pycache__' not in path.parts)
+            if target['script'].endswith('/generate_permission_element_grd.py'):
+                arguments = target['args']
+                directory = arguments[arguments.index('--input_base_dir') + 1]
+                if not directory.startswith('../../'):
+                    raise ValueError('unmapped permission strings directory: ' + directory)
+                base = args.source_root / directory[6:]
+                inputs.add('//' + (base / 'permission_element_strings.grd').relative_to(args.source_root).as_posix())
+                inputs.update('//' + path.relative_to(args.source_root).as_posix()
+                              for path in base.glob('translations/permission_element_strings_*') if path.is_file())
             if target['script'].startswith('//tools/flags/'):
                 inputs.update('//' + str(path.relative_to(args.source_root))
                               for directory in ['tools/flags', 'third_party/pyjson5/src']
@@ -1834,6 +1906,11 @@ def main():
             if set(target.get('deps', [])) & {'//third_party/protobuf:py_proto',
                                              '//third_party/protobuf:py_proto_runtime'}:
                 deps.append(':protobuf_python_runtime')
+            if target['script'] in ('//ui/webui/resources/tools/eslint_ts.py', '//tools/typescript/ts_library.py'):
+                deps.extend(existing_asset_providers.get(dependency,
+                                ':' + existing_action_names.get(hashlib.sha256(dependency.encode()).hexdigest()[:16], name(dependency) + '_0'))
+                            for dependency in target.get('deps', [])
+                            if targets[dependency].get('script') == '//tools/typescript/ts_library.py')
             for dependency in target.get('deps', []):
                 if dependency.partition('(')[0] != '//third_party/protobuf:protoc':
                     continue
@@ -1986,6 +2063,22 @@ def main():
     if layer in ('angle_runtime', 'linux_ui', 'browser'):
         data['RUNTIME_DEPS'] = runtime_edges
     if layer == 'browser':
+        bundles = []
+        for label, target in sorted(selected.items()):
+            if target['type'] != 'create_bundle':
+                continue
+            bundle = target['bundle_data']
+            paths = bundle['source_files']
+            outputs = target['outputs']
+            if len(outputs) != len(paths) + 1 or outputs[-1] != bundle['root_dir_output']:
+                raise ValueError('bundle source/output mismatch: ' + label)
+            root = bundle['root_dir']
+            if any(not output.startswith(root) for output in outputs[:-1]):
+                raise ValueError('bundle output escapes root: ' + label)
+            bundles.append(dict(name=name(label) + '_bundle', root=root.removeprefix(BUILD).rstrip('/'),
+                                srcs=[file_label(path) for path in paths],
+                                destinations=[output.removeprefix(root) for output in outputs[:-1]]))
+        data['BUNDLES'] = bundles
         data['ASSET_GROUPS'] = [dict(name=library['name'] + '_assets', srcs={}, deps=devtools_asset_deps(label))
                                 for label, library in libraries.items()
                                 if label.startswith('//third_party/devtools-frontend/src') and library['kind'] == 'group']
@@ -2041,6 +2134,10 @@ def main():
         catalog.update({label: provider.removeprefix('//native:').removeprefix(':')
                         for label, provider in reused_asset_roots.items()})
         (overlay / 'native/browser_targets.json').write_text(json.dumps(catalog, indent=2) + '\n')
+    elif layer in ('blink_core', 'blink_modules', 'content'):
+        catalog = {label: name(label) + '_0' for label in actions if targets[label]['type'] == 'action'}
+        catalog.update({label: copy['name'] for label, copy in copies.items()})
+        (overlay / ('native/' + layer + '_targets.json')).write_text(json.dumps(catalog, indent=2) + '\n')
     begin, end = '# BEGIN ' + layer.upper() + ' INPUTS', '# END ' + layer.upper() + ' INPUTS'
     for build_file in overlay.rglob('BUILD.bazel'):
         package = build_file.parent.relative_to(overlay).as_posix()
@@ -2070,6 +2167,11 @@ def main():
         if line not in text:
             marker = text.index('        "native/BUILD.bazel":')
             text = text[:marker]+line+text[marker:]
+    if (overlay / 'build/util/LASTCHANGE').is_file():
+        line = '        "build/util/LASTCHANGE": "//bcr/overlay/build:util/LASTCHANGE",\n'
+        if line not in text:
+            marker = text.index('        "native/BUILD.bazel":')
+            text = text[:marker] + line + text[marker:]
     module.write_text(sort_archive_files(text))
     print(len(libraries), 'native libraries/tools;', len(records), 'generator actions;',
           sum(sum(p.endswith(('.c', '.cc', '.cpp', '.cxx')) for p in v['srcs']) for v in libraries.values()), 'C/C++ units')

@@ -46,6 +46,8 @@ def _resource_impl(ctx):
         ctx.actions.write(anchor, "")
         assets.append(anchor)
         include_options = ["/I", anchor.dirname]
+        if ctx.attr.include_root:
+            include_options += ["/I", paths.join(anchor.dirname, "../..", ctx.attr.include_root)]
         for target, logical in ctx.attr.assets.items():
             if paths.is_absolute(logical) or ".." in logical.split("/"):
                 fail("invalid resource input path: " + logical)
@@ -81,6 +83,7 @@ chromium_windows_resource = rule(
         "assets": attr.label_keyed_string_dict(allow_files = True),
         "defines": attr.string_list(),
         "includes": attr.string_list(),
+        "include_root": attr.string(),
         "deps": attr.label_list(providers = [CcInfo]),
         "_arm64": attr.label(default = Label("@platforms//cpu:aarch64")),
         "_coff_converter": attr.label(default = Label("@llvm//tools:llvm-windres"), executable = True, cfg = "exec", allow_single_file = True),

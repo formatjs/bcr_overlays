@@ -30,7 +30,7 @@ def _runtime_bundle_impl(ctx):
     ctx.actions.run(
         executable = ctx.attr._python[platform_common.ToolchainInfo].py3_runtime.interpreter,
         arguments = ["-I", "-B", ctx.file._script.path, manifest.path],
-        inputs = depset([manifest, ctx.file._script] + files.values(), transitive = [ctx.attr._python[platform_common.ToolchainInfo].py3_runtime.files]),
+        inputs = depset([manifest, ctx.file._script] + files.values(), transitive = [ctx.attr._python[platform_common.ToolchainInfo].py3_runtime.files] + [target[DefaultInfo].files for target in ctx.attr.validations]),
         outputs = [output],
         mnemonic = "ChromiumRuntimeBundle",
         progress_message = "Assembling %s" % ctx.label,
@@ -43,6 +43,7 @@ chromium_runtime_bundle = rule(
         "srcs": attr.label_keyed_string_dict(allow_files = True),
         "directory": attr.string(),
         "symlinks": attr.string_dict(),
+        "validations": attr.label_list(allow_files = True),
         "deps": attr.label_list(providers = [ChromiumFilesInfo]),
         "_script": attr.label(default = Label("//native:assemble_runtime.py"), allow_single_file = True),
         "_python": attr.label(default = Label("@rules_python//python:current_py_toolchain"), cfg = "exec"),

@@ -198,6 +198,26 @@ def native_graphics_providers(overlay):
     return providers
 
 
+def resource_asset_inputs(source_root, resource):
+    """Find checked-in files referenced by Windows resource scripts."""
+    pending = [source_root / resource.removeprefix('//')]
+    seen, assets = set(), set()
+    while pending:
+        script = pending.pop()
+        if script in seen or not script.is_file():
+            continue
+        seen.add(script)
+        text = script.read_text(errors='replace')
+        for filename in re.findall(r'"([^"\r\n]+\.(?:ico|bmp|cur|manifest|bin|png|rc|dlg|h))"', text, re.I):
+            path = Path(os.path.abspath(script.parent / filename.replace('\\', '/')))
+            if not path.is_relative_to(source_root) or not path.is_file():
+                continue
+            assets.add('//' + path.relative_to(source_root).as_posix())
+            if path.suffix.lower() in ('.rc', '.dlg', '.h'):
+                pending.append(path)
+    return assets
+
+
 def protocol_inputs(source_root, protocols):
     """Follow PDL includes in the checkout's logical namespace."""
     root = Path(os.path.abspath(source_root))
@@ -502,6 +522,7 @@ def main():
             existing_action_hashes.update(hashlib.sha256(label.encode()).hexdigest()[:16]
                                           for label in catalog.get('native', catalog))
     reused = dict(REUSED)
+    reused['//third_party/microsoft_dxheaders:dxguids'] = '@chromium_directx_headers//:dxguids'
     reused.update({label: '@protobuf//:protoc_lib' for label in [
         '//third_party/protobuf:protoc_lib',
         '//third_party/protobuf:protoc_cpp',
@@ -696,7 +717,7 @@ def main():
             '//third_party/spirv-tools/src:spvtools_opt': '@spirv_tools//:spirv_tools_opt',
             '//third_party/spirv-tools/src:spvtools_link': '@spirv_tools//:spirv_tools_link',
         })
-    if layer == 'swiftshader':
+    if layer in ('swiftshader', 'browser'):
         reused.update({
             '//third_party/swiftshader/third_party/SPIRV-Headers:spv_headers': ':spirv_headers',
             '//third_party/swiftshader/third_party/SPIRV-Tools:spvtools_headers': '@spirv_tools//:spirv_tools',
@@ -753,6 +774,7 @@ def main():
             '//third_party/flatbuffers:flatc': '@flatbuffers//:flatc',
         })
     font_repositories = {
+        'third_party/breakpad/breakpad/': '@chromium_breakpad//:',
         'third_party/microsoft_webauthn/src/': '@chromium_microsoft_webauthn//:',
         'ui/gl/resources/angle-metal/': '@chromium_angle_metal_shaders//:',
         'third_party/google_toolbox_for_mac/src/': '@chromium_google_toolbox_for_mac//:',
@@ -824,6 +846,9 @@ def main():
         return layer + '_' + hashlib.sha256(label.encode()).hexdigest()[:16]
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     targets = graph['targets']
+    if layer == 'browser':
+        roots += [label for label, target in targets.items()
+                  if target.get('script') == '//tools/grit/grit.py']
     interface_provider_sources = {
         BUILD + 'gen/services/service_manager/public/mojom/interface_provider.mojom.cc',
         BUILD + 'gen/services/service_manager/public/mojom/interface_provider.mojom-shared.cc',
@@ -934,7 +959,9 @@ def main():
     boundaries = set()
     while stack:
         label = stack.pop()
-        if label in selected or label in reused or label in PROVIDED or label in extra_provided or label in existing_actions:
+        reuse_action = label in existing_actions and not (
+            layer == 'browser' and targets[label].get('script') == '//tools/grit/grit.py')
+        if label in selected or label in reused or label in PROVIDED or label in extra_provided or reuse_action:
             continue
         if not label.startswith(prefixes):
             boundaries.add(label)
@@ -963,6 +990,8 @@ def main():
         if not path.startswith('//'):
             raise ValueError('not a Chromium input: ' + path)
         relative = path[2:]
+        if relative.startswith('third_party/node/node_modules/'):
+            return '@chromium_node_modules//:node_modules/' + relative.removeprefix('third_party/node/node_modules/')
         if relative == 'third_party/icu/common/icudtl.dat':
             return '@chromium_icu//:common/icudtl.dat'
         generated = BUILD + 'gen/' + relative
@@ -1266,6 +1295,16 @@ def main():
         if resource_sources:
             libraries[label]['resource_srcs'] = resource_sources
             libraries[label]['resource_defines'] = unpack(target.get('defines', []))
+            generated_assets = {path for dependency in target.get('deps', [])
+                                for path in targets[dependency].get('outputs', [])
+                                if path.endswith(('.bin', '.ico', '.bmp', '.cur', '.manifest', '.png'))}
+            libraries[label]['resource_assets'] = {file_label(path):
+                {file_label(asset): asset[2:] for asset in sorted({asset for asset in generated_assets
+                    if posixpath.dirname(asset) == posixpath.dirname(path)} | (
+                    set() if path.startswith(BUILD) else resource_asset_inputs(args.source_root, path)))}
+                for path in target.get('sources', []) if path.endswith('.rc')}
+            libraries[label]['resource_include_roots'] = {file_label(path): str(Path(path[2:]).parent)
+                for path in target.get('sources', []) if path.endswith('.rc')}
             if not sources and not objcxx_sources and not objc_sources:
                 libraries[label]['defines'] = []
         if objc_sources:
@@ -1649,10 +1688,13 @@ def main():
         return sorted(result)
 
     tools = {}
+    cross_browser = layer == 'browser' and targets['//chrome:chrome'].get('toolchain', '').startswith(
+        ('//build/toolchain/mac:', '//build/toolchain/win:'))
     executable_outputs = {output: label for label, target in targets.items()
                           if target['type'] == 'executable'
+                          and (not cross_browser or target.get('toolchain', '').startswith('//build/toolchain/linux:'))
                           and (label in selected or reused.get(label, '').startswith((':', '@', '//')))
-                          for output in target.get('outputs', [])}
+                          for output in target.get('outputs', [])[:1]}
 
     def native_tool(label, path):
         tool = dict(tool=reused.get(label, ':' + name(label)), logical_path=path[2:],
@@ -1725,9 +1767,18 @@ def main():
                 generated = args.source_root / target['args'][1].removeprefix('../../')
                 inputs.update('//' + path.relative_to(args.source_root).as_posix()
                               for path in generated.rglob('*') if path.is_file())
+            if target['script'] == '//build/win/message_compiler.py':
+                arguments = target['args']
+                directory = re.sub(r'^(?:[^/]+/)?gen/', 'mc/', arguments[arguments.index('-h') + 1])
+                generated = args.source_root / 'third_party/win_build_output' / directory
+                inputs.update('//' + path.relative_to(args.source_root).as_posix()
+                              for path in generated.rglob('*') if path.is_file())
+            if target['script'] == '//build/win/reorder-imports.py':
+                inputs.update('//' + path.relative_to(args.source_root).as_posix()
+                              for path in (args.source_root / 'third_party/pefile_py3').rglob('*.py'))
             if '//build/util/version.py' in inputs:
                 inputs.add('//build/util/android_chrome_version.py')
-            if target['script'] == '//build/apple/tweak_info_plist.py' and '--scm=1' in target.get('args', []):
+            if target['script'] == '//build/apple/tweak_info_plist.py' and '--scm=0' not in target.get('args', []):
                 inputs.add('//build/util/LASTCHANGE')
                 revision = overlay / 'build/util/LASTCHANGE'
                 revision.parent.mkdir(parents=True, exist_ok=True)
@@ -1811,6 +1862,9 @@ def main():
                     if provider['type'] in ('group', 'static_library', 'source_set'):
                         pending.extend(provider.get('deps', []))
             if target['script'].startswith('//components/policy/'):
+                inputs.update('//' + path.relative_to(args.source_root).as_posix()
+                              for path in (args.source_root / 'components/policy/tools').rglob('*.py')
+                              if '__pycache__' not in path.parts)
                 inputs.update('//' + str(path.relative_to(args.source_root))
                               for path in (args.source_root / 'third_party/pyyaml').glob('*.py'))
                 inputs.update('//' + str(path.relative_to(args.source_root))

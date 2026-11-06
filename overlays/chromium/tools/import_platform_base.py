@@ -12,6 +12,8 @@ import subprocess
 import sys
 import tempfile
 
+from import_cpp_layer import native_library_providers
+
 ROOT = Path(__file__).resolve().parents[1]
 CXX = 'third_party/rust/chromium_crates_io/vendor/cxx-v1'
 
@@ -52,6 +54,32 @@ def copy_package_inputs(overlay, destination, layers):
         with tempfile.NamedTemporaryFile(mode='w', dir=target.parent, delete=False) as output:
             output.write(text)
         Path(output.name).replace(target)
+
+
+
+def write_host_support(destination, variant):
+    """Resolve Linux host providers by GN identity across layer boundaries."""
+    native = native_library_providers(ROOT / 'bcr/overlay')
+    cross = native_library_providers(destination)
+    aliases = {name.removeprefix(':'): native[label].removeprefix(':')
+               for label, name in cross.items() if label in native and native[label] != name}
+    suffix, system = ('mac', 'macos') if variant == 'darwin_arm64' else ('windows', 'windows')
+    text = '\n'.join([
+        '"""Keep Linux host tools on their native library configuration."""',
+        '',
+        'load("@rules_cc//cc:cc_library.bzl", _cc_library = "cc_library")',
+        '',
+        '_HOST_TARGETS = ' + json.dumps(dict(sorted(aliases.items())), indent=4),
+        '',
+        'def platform_cc_library(name, **kwargs):',
+        '    _cc_library(name = name + "_' + suffix + '", **kwargs)',
+        '    native.alias(name = name, actual = select({',
+        '        "@platforms//os:' + system + '": ":" + name + "_' + suffix + '",',
+        '        "//conditions:default": "@chromium//" + native.package_name() + ":" + _HOST_TARGETS.get(name, name),',
+        '    }))',
+        '',
+    ])
+    (destination / 'native/host_support.bzl').write_text(text)
 
 
 def main():
@@ -208,6 +236,9 @@ def main():
             for layer in ['blink_rust', 'blink_platform']:
                 commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
             commands.append(['import_devtools_inspector.py', str(graph), '--source-root', str(source)])
+        if args.gl:
+            commands.append(['import_webui_actions.py', str(graph), '--source-root', str(source),
+                             '--root', '//ui/webui/resources:build_grd'])
         if args.blink_core:
             commands.append(['import_xslt.py', str(graph), '--source-root', str(source)])
         for layer in ['blink_core', 'blink_modules', 'content']:
@@ -224,8 +255,6 @@ def main():
                              '--target', '//chrome:chrome', '--output', str(stage / 'native/browser_runtime_edges.json')])
             commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', 'browser'])
         if args.gl:
-            commands.append(['import_webui_actions.py', str(graph), '--source-root', str(source),
-                             '--root', '//ui/webui/resources:build_grd'])
             grit = ['import_grit_actions.py', str(graph), '--source-root', str(source)]
             for root in ['//net:net_resources_grit', '//ui/resources:ui_resources_grd_grit',
                          '//ui/resources:ui_unscaled_resources_grd_grit',
@@ -359,6 +388,7 @@ def main():
         layers = [command[command.index('--layer') + 1] for command in commands
                   if command[0] == 'import_cpp_layer.py']
         copy_package_inputs(overlay, destination, layers)
+        write_host_support(destination, args.variant)
     print('Regenerated ' + args.variant + '; platform rule adapters preserved')
 
 

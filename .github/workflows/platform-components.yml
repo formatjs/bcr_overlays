@@ -37,6 +37,7 @@ jobs:
           //tools/ci:graphics-windows-amd64 //tools/ci:graphics-windows-arm64
           //tools/ci:v8-darwin-arm64
           //tools/ci:v8-windows-amd64 //tools/ci:v8-windows-arm64
+          //tools/ci:dawn-darwin-arm64
       - name: Collect native smoke artifacts
         run: python3 -m tools.ci.collect_allocator_probes --output "$RUNNER_TEMP/allocator-probes"
       - uses: actions/upload-artifact@v7
@@ -130,6 +131,10 @@ jobs:
         run: |
           chmod +x "$RUNNER_TEMP/allocator-probes/v8-darwin-arm64/v8-darwin-arm64"
           "$RUNNER_TEMP/allocator-probes/v8-darwin-arm64/v8-darwin-arm64"
+      - name: Exercise Dawn validation and buffer mapping
+        run: |
+          chmod +x "$RUNNER_TEMP/allocator-probes/dawn-darwin-arm64"
+          "$RUNNER_TEMP/allocator-probes/dawn-darwin-arm64"
       - name: Render and round-trip PNG pixels
         run: |
           chmod +x "$RUNNER_TEMP/allocator-probes/graphics-darwin-arm64"

@@ -32,7 +32,12 @@ def main():
     parser.add_argument('--v8', action='store_true', help='Also import V8, Temporal and its platform prerequisites')
     parser.add_argument('--graphics', action='store_true', help='Also import geometry, fonts, codecs, Dawn and Skia')
     parser.add_argument('--desktop', action='store_true', help='Also import paint, Crashpad and gfx')
+    parser.add_argument('--gn', type=Path, help='GN executable for capturing GPU runtime edges')
+    parser.add_argument('--gpu', action='store_true', help='Also import Tint, Dawn native and GPU command protocol')
     args = parser.parse_args()
+    if args.gpu and not args.gn:
+        parser.error('--gpu requires --gn')
+    args.desktop = args.desktop or args.gpu
     args.graphics = args.graphics or args.desktop
     args.v8 = args.v8 or args.graphics
     args.network = args.network or args.v8
@@ -92,6 +97,12 @@ def main():
         if args.desktop:
             for layer in ['paint', 'gfx']:
                 commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
+        if args.gpu:
+            commands.append(['capture_dawn_runtime_edges.py', '--source-root', str(source),
+                             '--gn', str(args.gn.resolve()), '--graph', str(graph),
+                             '--output', str(stage / 'native/dawn_runtime_edges.json')])
+            for layer in ['tint', 'dawn_native', 'gpu_protocol']:
+                commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
         for command in commands:
             subprocess.run([sys.executable, str(stage / 'tools' / command[0]), *command[1:]], check=True)
         files = [
@@ -118,6 +129,11 @@ def main():
                              sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())
         if args.desktop:
             for layer in ['paint', 'gfx']:
+                files.append('native/' + layer + '_sources.bzl')
+                files.extend(str(path.relative_to(overlay)) for path in
+                             sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())
+        if args.gpu:
+            for layer in ['tint', 'dawn_native', 'gpu_protocol']:
                 files.append('native/' + layer + '_sources.bzl')
                 files.extend(str(path.relative_to(overlay)) for path in
                              sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())

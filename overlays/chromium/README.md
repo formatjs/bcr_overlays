@@ -226,6 +226,10 @@ geometry, fonts, codecs, Dawn, Skia, paint and gfx. Darwin retains Objective-C++
 ARC flags and generates Crashpad interfaces with pinned Clang and MIG tools.
 Windows uses MSVC, `llvm-ml` for MASM and `llvm-nasm` for NASM.
 
+Darwin also cross-links Tint, Dawn native (including Metal), and GPU command
+protocol libraries. Its native Dawn probe checks shader validation and buffer
+mapping with the null backend. Regenerate with `--gpu --gn /path/to/gn`.
+
 ARM64 host generators reuse native graphics libraries only when captured sources,
 compiler/linker flags, outputs and dependencies match the Linux AMD64 graph.
 Shared libraries keep their original GN runtime paths. V8 and Blink retain their

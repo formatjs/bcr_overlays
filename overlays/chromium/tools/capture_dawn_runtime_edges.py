@@ -17,8 +17,12 @@ def capture(source_root, gn, graph_path):
     for name, opening in scopes.items():
         start = instrumented.index(opening)
         end = instrumented.index('\n}', start)
-        statement = ('\n  write_file("$root_build_dir/dawn_' + name + '_data_deps.json", '
-                     'data_deps, "json")\n')
+        statement = ('\n  captured_runtime_labels = []\n'
+                     '  foreach(captured_runtime_dep, data_deps) {\n'
+                     '    captured_runtime_labels += [ get_label_info(captured_runtime_dep, "label_no_toolchain") ]\n'
+                     '  }\n'
+                     '  write_file("$root_build_dir/dawn_' + name + '_data_deps.json", '
+                     'captured_runtime_labels, "json")\n')
         instrumented = instrumented[:end] + statement + instrumented[end:]
     try:
         source.write_text(instrumented)

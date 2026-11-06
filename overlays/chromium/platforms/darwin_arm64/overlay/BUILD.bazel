@@ -1532,7 +1532,7 @@ exports_files([
     "ui/webui/resources/js/tracked_element/tracked_element.mojom",
     "url/mojom/origin.mojom",
     "url/mojom/scheme_host_port.mojom",
-    "url/mojom/url.mojom",
+    "url/mojom/url.mojom"
 ])
 # END GENERATED MOJO INPUTS
 
@@ -4694,7 +4694,7 @@ exports_files([
     "third_party/rust/chromium_crates_io/vendor/zoneinfo64-v0_2/src/rule.rs",
     "third_party/rust/serde_json_lenient/v0_2/wrapper/functions.h",
     "third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs",
-    "third_party/rust/serde_json_lenient/v0_2/wrapper/visitor.rs",
+    "third_party/rust/serde_json_lenient/v0_2/wrapper/visitor.rs"
 ])
 # END GENERATED RUST INPUTS
 
@@ -6266,7 +6266,7 @@ exports_files([
     "base/win/wmi.h",
     "base/win/wrapped_window_proc.h",
     "base/write_build_date_header.py",
-    "chrome/VERSION",
+    "chrome/VERSION"
 ])
 # END GENERATED BASE INPUTS
 
@@ -6600,7 +6600,7 @@ exports_files([
     "ui/strings/ui_strings.grd",
     "ui/views/examples/views_examples_resources.grd",
     "ui/views/resources/views_resources.grd",
-    "ui/webui/examples/resources/webui_examples_resources.grd",
+    "ui/webui/examples/resources/webui_examples_resources.grd"
 ])
 # END GENERATED GRIT INPUTS
 
@@ -10789,7 +10789,7 @@ exports_files([
     "net/base/sockaddr_storage.cc",
     "net/base/sockaddr_storage.h",
     "net/base/sockaddr_util_posix.cc",
-    "net/base/sockaddr_util_posix.h",
+    "net/base/sockaddr_util_posix.h"
 ])
 # END GENERATED MOJO RUNTIME INPUTS
 
@@ -10853,7 +10853,7 @@ exports_files([
     "url/url_test_utils.h",
     "url/url_util.cc",
     "url/url_util.h",
-    "url/url_util_internal.h",
+    "url/url_util_internal.h"
 ])
 # END GENERATED URL INPUTS
 
@@ -10957,7 +10957,7 @@ exports_files([
     "crypto/unexportable_key_win.h",
     "crypto/user_verifying_key.cc",
     "crypto/user_verifying_key.h",
-    "crypto/user_verifying_key_mac.mm",
+    "crypto/user_verifying_key_mac.mm"
 ])
 # END GENERATED CRYPTO INPUTS
 
@@ -10976,7 +10976,7 @@ exports_files([
     "net/third_party/quiche/overrides/quiche_platform_impl/quiche_url_utils_impl.cc",
     "net/third_party/quiche/overrides/quiche_platform_impl/quiche_url_utils_impl.h",
     "net/third_party/uri_template/uri_template.cc",
-    "net/third_party/uri_template/uri_template.h",
+    "net/third_party/uri_template/uri_template.h"
 ])
 # END GENERATED QUICHE INPUTS
 
@@ -10984,7 +10984,7 @@ exports_files([
 exports_files([
     "third_party/sqlite/sqlite3_shim.c",
     "third_party/sqlite/sqlite3_shim_fixups.h",
-    "third_party/sqlite/sqlite3.h",
+    "third_party/sqlite/sqlite3.h"
 ])
 # END BUNDLED SQLITE INPUTS
 
@@ -12642,7 +12642,7 @@ exports_files([
     "tools/metrics/ukm/validate_format.py",
     "tools/metrics/ukm/xml_validations.py",
     "tools/metrics/ukm/xml_validations_test.py",
-    "tools/protoc_wrapper/protoc_wrapper.py",
+    "tools/protoc_wrapper/protoc_wrapper.py"
 ])
 # END NETWORK INPUTS
 
@@ -12743,7 +12743,7 @@ exports_files([
     "ui/gfx/range/range.h",
     "ui/gfx/range/range_f.cc",
     "ui/gfx/range/range_f.h",
-    "ui/gfx/range/range_mac.mm",
+    "ui/gfx/range/range_mac.mm"
 ])
 # END GEOMETRY INPUTS
 
@@ -12781,7 +12781,7 @@ exports_files([
     "third_party/markupsafe/__init__.py",
     "third_party/markupsafe/_compat.py",
     "third_party/markupsafe/_constants.py",
-    "third_party/markupsafe/_native.py",
+    "third_party/markupsafe/_native.py"
 ])
 # END DAWN INPUTS
 
@@ -12814,7 +12814,7 @@ exports_files([
     "third_party/libpng/pngwio.c",
     "third_party/libpng/pngwrite.c",
     "third_party/libpng/pngwtran.c",
-    "third_party/libpng/pngwutil.c",
+    "third_party/libpng/pngwutil.c"
 ])
 # END FONTS INPUTS
 
@@ -12882,7 +12882,7 @@ exports_files([
     "skia/ext/switches_export.h",
     "ui/base/shortcut_mapping_pref_delegate.h",
     "ui/base/ui_base_features.cc",
-    "ui/base/ui_base_features.h",
+    "ui/base/ui_base_features.h"
 ])
 # END SKIA INPUTS
 
@@ -13442,7 +13442,7 @@ exports_files([
     "ui/gfx/swap_result.h",
     "ui/gfx/switches.cc",
     "ui/gfx/switches.h",
-    "ui/gfx/switches_export.h",
+    "ui/gfx/switches_export.h"
 ])
 # END PAINT INPUTS
 
@@ -13694,7 +13694,7 @@ exports_files([
     "ui/gfx/video_types.h",
     "ui/gfx/vsync_provider.cc",
     "ui/gfx/vsync_provider.h",
-    "ui/gfx/win/direct_write.h",
+    "ui/gfx/win/direct_write.h"
 ])
 # END GFX INPUTS
 
@@ -13728,7 +13728,7 @@ exports_files([
     "third_party/markupsafe/__init__.py",
     "third_party/markupsafe/_compat.py",
     "third_party/markupsafe/_constants.py",
-    "third_party/markupsafe/_native.py",
+    "third_party/markupsafe/_native.py"
 ])
 # END DAWN_NATIVE INPUTS
 
@@ -13741,10 +13741,7 @@ exports_files([
 
 # BEGIN GPU_PROTOCOL INPUTS
 exports_files([
-    "components/viz/common/resources/resource_sizes.h",
-    "components/viz/common/resources/shared_image_format.cc",
     "components/viz/common/resources/shared_image_format.h",
-    "components/viz/common/resources/shared_image_format_utils.cc",
     "components/viz/common/resources/shared_image_format_utils.h",
     "gpu/GLES2/gl2extchromium.h",
     "gpu/command_buffer/client/gles2_interface.cc",
@@ -13819,7 +13816,7 @@ exports_files([
     "ui/gl/gl_enums.h",
     "ui/gl/gl_enums_implementation_autogen.h",
     "ui/gl/gl_export.h",
-    "ui/gl/gpu_preference.h",
+    "ui/gl/gpu_preference.h"
 ])
 # END GPU_PROTOCOL INPUTS
 
@@ -16895,7 +16892,7 @@ exports_files([
     "third_party/markupsafe/__init__.py",
     "third_party/markupsafe/_compat.py",
     "third_party/markupsafe/_constants.py",
-    "third_party/markupsafe/_native.py",
+    "third_party/markupsafe/_native.py"
 ])
 # END BROWSER_V8 INPUTS
 
@@ -19908,7 +19905,7 @@ exports_files([
 exports_files([
     "third_party/blink/common/rust_crash/rust_crash.h",
     "third_party/blink/common/rust_crash/src/lib.rs",
-    "third_party/blink/renderer/platform/fonts/opentype/format_check.rs",
+    "third_party/blink/renderer/platform/fonts/opentype/format_check.rs"
 ])
 # END BLINK_RUST INPUTS
 
@@ -30194,7 +30191,7 @@ exports_files([
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
     "url/url_features.h",
-    "url/url_util.h",
+    "url/url_util.h"
 ])
 # END BLINK_PLATFORM INPUTS
 
@@ -38713,7 +38710,7 @@ exports_files([
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
     "url/url_features.h",
-    "url/url_util.h",
+    "url/url_util.h"
 ])
 # END BLINK_CORE INPUTS
 
@@ -45857,7 +45854,7 @@ exports_files([
     "url/url_canon_ip.h",
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
-    "url/url_util.h",
+    "url/url_util.h"
 ])
 # END BLINK_MODULES INPUTS
 
@@ -61286,7 +61283,7 @@ exports_files([
     "url/url_canon_ip.h",
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
-    "url/url_util.h",
+    "url/url_util.h"
 ])
 # END CONTENT INPUTS
 
@@ -94262,7 +94259,7 @@ exports_files([
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
     "url/url_features.h",
-    "url/url_util.h",
+    "url/url_util.h"
 ])
 # END BROWSER INPUTS
 
@@ -94313,6 +94310,6 @@ exports_files([
     "third_party/libxslt/src/libxslt/xsltlocale.h",
     "third_party/libxslt/src/libxslt/xsltutils.c",
     "third_party/libxslt/src/libxslt/xsltutils.h",
-    "third_party/libxslt/win32/config.h",
+    "third_party/libxslt/win32/config.h"
 ])
 # END NATIVE XSLT INPUTS

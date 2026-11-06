@@ -50,6 +50,7 @@ def main():
         ('network-windows-amd64', 'windows-amd64'),
         ('network-windows-arm64', 'windows-arm64'),
         ('graphics-darwin-arm64', 'darwin-arm64'),
+        ('dawn-darwin-arm64', 'darwin-arm64'),
         ('graphics-windows-amd64', 'windows-amd64'),
         ('graphics-windows-arm64', 'windows-arm64'),
     ]

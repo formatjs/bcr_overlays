@@ -1093,3 +1093,8 @@ chromium_python_action(
     script = "build/gn_run_binary.py",
     deps = [":generator_nested_runtime_inputs"],
 )
+
+exports_files(
+    ["tests/dawn_native_runtime_test.cc"],
+    visibility = ["//tools/ci:__pkg__"],
+)

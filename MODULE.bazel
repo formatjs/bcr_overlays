@@ -383,3 +383,10 @@ single_version_override(
     patches = ["//build:autoconf-clang-cl-driver.patch"],
     version = "0.35.0",
 )
+
+single_version_override(
+    module_name = "opus",
+    patch_strip = 1,
+    patches = ["//build:opus-private-headers.patch"],
+    version = "1.6.1",
+)

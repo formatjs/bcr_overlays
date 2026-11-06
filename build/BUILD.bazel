@@ -1,4 +1,5 @@
 exports_files([
+    "opus-private-headers.patch",
     "autoconf-clang-cl-driver.patch",
     "simdutf-msvc-cxx20.patch",
     "msvc_atl.bzl",

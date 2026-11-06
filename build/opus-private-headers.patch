@@ -1,0 +1,14 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -431,8 +431,8 @@
+     copts = OPUS_COPTS,
+     includes = ["include"],
+-    deps = [
++    deps = [":opus_headers"],
++    implementation_deps = [
+         ":celt",
+         ":silk",
+-        ":opus_headers",
+         ":config",
+     ],

@@ -268,25 +268,38 @@ def host_webui_resource_copy(graph, reference):
         if isinstance(value, list):
             return [normalize(capture, item) for item in value]
         if isinstance(value, str):
+            if value == 'SHARED_INTERMEDIATE_DIR=clang_x64_v8_arm64':
+                return 'SHARED_INTERMEDIATE_DIR=.'
             return value.replace(suffix, '').replace(prefix, '')
         return value
 
-    for label in [root, '//ui/webui/resources:build_grd']:
-        native = reference['targets'][label]
-        host = graph['targets'][label + suffix]
-        for field in ['type', 'script', 'args', 'inputs', 'sources', 'outputs', 'deps']:
-            native_value = normalize(reference, native.get(field, []))
-            host_value = normalize(graph, host.get(field, []))
-            if label == root and field == 'args':
-                # GRIT defaults to Linux; the cross-toolchain capture spells it out.
-                for arguments in [native_value, host_value]:
-                    if '-t' in arguments and arguments[arguments.index('-t') + 1] == 'linux':
-                        index = arguments.index('-t')
-                        del arguments[index:index + 2]
-            if native_value != host_value:
-                raise ValueError('host WebUI resource configuration differs: ' + label + ' ' + field)
-    paths = [path.removeprefix(BUILD) for path in reference['targets'][root]['outputs']
-             if path.endswith(('.h', '.cc'))]
+    roots = {
+        root: '//ui/webui/resources:build_grd',
+        '//third_party/blink/public:devtools_inspector_resources_grit':
+            '//third_party/devtools-frontend/src:generate_devtools_inspector_overlay_resources',
+        '//third_party/blink/public/strings:permission_element_generated_strings_grit':
+            '//third_party/blink/public/strings:generate_permission_element_strings_mono_grd',
+    }
+    paths = []
+    for resource, producer in roots.items():
+        if resource + suffix not in graph['targets']:
+            continue
+        for label in [resource, producer]:
+            native = reference['targets'][label]
+            host = graph['targets'][label + suffix]
+            for field in ['type', 'script', 'args', 'inputs', 'sources', 'outputs', 'deps']:
+                native_value = normalize(reference, native.get(field, []))
+                host_value = normalize(graph, host.get(field, []))
+                if label == resource and field == 'args':
+                    # GRIT defaults to Linux; cross captures spell it out.
+                    for arguments in [native_value, host_value]:
+                        if '-t' in arguments and arguments[arguments.index('-t') + 1] == 'linux':
+                            index = arguments.index('-t')
+                            del arguments[index:index + 2]
+                if native_value != host_value:
+                    raise ValueError('host WebUI resource configuration differs: ' + label + ' ' + field)
+        paths.extend(path.removeprefix(BUILD) for path in reference['targets'][resource]['outputs']
+                     if path.endswith(('.h', '.cc')))
     return dict(
         name='browser_host_webui_resource_declarations',
         srcs={'@chromium//native:' + path: path for path in paths},

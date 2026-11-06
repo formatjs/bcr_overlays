@@ -36,6 +36,41 @@ class ArtifactsTest(unittest.TestCase):
     def archive(self):
         return package(self.bundle, self.root / 'artifacts', self.target, REVISION)
 
+    def windows_archive(self):
+        self.target = PLATFORMS['windows-amd64']
+        binary = bytearray(128)
+        binary[:2] = b'MZ'
+        struct.pack_into('<I', binary, 60, 64)
+        binary[64:68] = b'PE\0\0'
+        struct.pack_into('<H', binary, 68, 0x8664)
+        (self.bundle / 'chrome.exe').write_bytes(binary)
+        return self.archive()
+
+    def test_windows_extraction_grants_installer_capabilities_read_execute(self):
+        archive = self.windows_archive()
+        with mock.patch('tools.ci.chromium.platform.system', return_value='Windows'), \
+                mock.patch('tools.ci.chromium.subprocess.run') as process:
+            bundle = unpack(archive, self.root / 'relocated', self.target, REVISION)
+        grants = set()
+        for call in process.call_args_list:
+            arguments = call.args[0]
+            self.assertEqual(arguments[:2], ['icacls', str(bundle)])
+            self.assertTrue(call.kwargs['check'])
+            grants.update(value for value in arguments if value.startswith('*S-'))
+        self.assertEqual(grants, {
+            '*S-1-15-3-1024-3424233489-972189580-2057154623-747635277-1604371224-'
+            '316187997-3786583170-1043257646:(OI)(CI)(RX)',
+            '*S-1-15-3-1024-2302894289-466761758-1166120688-1039016420-2430351297-'
+            '4240214049-4028510897-3317428798:(OI)(CI)(RX)',
+        })
+
+    def test_invalid_windows_provenance_cannot_change_permissions(self):
+        archive = self.windows_archive()
+        with mock.patch('tools.ci.chromium.platform.system', return_value='Windows'), \
+                mock.patch('tools.ci.chromium.subprocess.run', side_effect=AssertionError('unverified ACL change')):
+            with self.assertRaisesRegex(ValueError, 'provenance'):
+                unpack(archive, self.root / 'relocated', self.target, '2' * 40)
+
     def test_round_trip_preserves_executable_and_resources(self):
         destination = unpack(self.archive(), self.root / 'relocated', self.target, REVISION)
         self.assertEqual((destination / 'resources.pak').read_bytes(), b'locale data')

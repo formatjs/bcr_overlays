@@ -94,6 +94,18 @@ def package(bundle, destination, target, revision):
     return archive
 
 
+def grant_windows_sandbox_access(bundle):
+    # Match chrome/installer/setup/configure_app_container_sandbox.cc.
+    capabilities = (
+        'S-1-15-3-1024-3424233489-972189580-2057154623-747635277-1604371224-'
+        '316187997-3786583170-1043257646',
+        'S-1-15-3-1024-2302894289-466761758-1166120688-1039016420-2430351297-'
+        '4240214049-4028510897-3317428798',
+    )
+    for sid in capabilities:
+        subprocess.run(['icacls', str(bundle), '/grant', f'*{sid}:(OI)(CI)(RX)', '/Q'], check=True)
+
+
 def unpack(artifact, destination, target, revision):
     expected = artifact.with_suffix(artifact.suffix + '.sha256').read_text().strip()
     if not re.fullmatch(r'[0-9a-f]{64}', expected) or checksum(artifact) != expected:
@@ -117,6 +129,8 @@ def unpack(artifact, destination, target, revision):
         raise ValueError('Artifact provenance does not match this workflow run')
     bundle = destination / 'bundle'
     validate_binary(bundle, target)
+    if target['os'] == 'windows' and platform.system() == 'Windows':
+        grant_windows_sandbox_access(bundle)
     return bundle
 
 

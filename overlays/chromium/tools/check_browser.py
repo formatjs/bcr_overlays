@@ -90,7 +90,7 @@ def run(browser, arguments, environment, directory, timeout):
                 captured.append(name + ': ' + value[-8000:])
         raise RuntimeError(f'browser timed out after {timeout}s: ' + '\n'.join(captured)) from error
     if result.returncode:
-        raise RuntimeError(f'browser exited {result.returncode}: {result.stderr[-2000:]}')
+        raise RuntimeError(f'browser exited {result.returncode}: {result.stderr[-8000:]}')
     return result.stdout
 
 

@@ -1,0 +1,25 @@
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -774 +774 @@
+-# MSVC enables SSE2-SSE4.2 by default on x86_64; only AVX/AVX2 need flags.
++# clang-cl needs target features for intrinsic inlining.
+@@ -776 +776,2 @@
+-    "@platforms//os:windows": [],
++    "@rules_cc//cc/compiler:clang-cl": ["/clang:-msse2"],
++    "@rules_cc//cc/compiler:msvc-cl": [],
+@@ -781 +782,2 @@
+-    "@platforms//os:windows": [],
++    "@rules_cc//cc/compiler:clang-cl": ["/clang:-msse3"],
++    "@rules_cc//cc/compiler:msvc-cl": [],
+@@ -786 +788,2 @@
+-    "@platforms//os:windows": [],
++    "@rules_cc//cc/compiler:clang-cl": ["/clang:-mssse3"],
++    "@rules_cc//cc/compiler:msvc-cl": [],
+@@ -791 +794,2 @@
+-    "@platforms//os:windows": [],
++    "@rules_cc//cc/compiler:clang-cl": ["/clang:-msse4.1"],
++    "@rules_cc//cc/compiler:msvc-cl": [],
+@@ -796 +800,2 @@
+-    "@platforms//os:windows": [],
++    "@rules_cc//cc/compiler:clang-cl": ["/clang:-msse4.2"],
++    "@rules_cc//cc/compiler:msvc-cl": [],

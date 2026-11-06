@@ -373,6 +373,6 @@ single_version_override(
 single_version_override(
     module_name = "aom",
     patch_strip = 1,
-    patches = ["//build:aom-rate-control.patch"],
+    patches = ["//build:aom-rate-control.patch", "//build:aom-clang-cl-simd.patch"],
     version = "3.13.3.bcr.1",
 )

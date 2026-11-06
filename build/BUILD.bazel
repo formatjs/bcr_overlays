@@ -15,6 +15,7 @@ exports_files([
     "blink_sources.BUILD.bazel",
     "libvpx-rate-control.patch",
     "aom-rate-control.patch",
+    "aom-clang-cl-simd.patch",
     "libsrtp-private-config.patch",
     "xcomposite.BUILD.bazel",
     "xtst.BUILD.bazel",

@@ -112,6 +112,7 @@ def native_browser():
             include_options.append("-I" + Label("@chromium_angle//:headers").workspace_root + "/third_party/angle/include")
         if original.startswith("//v8:") or original.startswith("//v8/"):
             include_options.insert(0, "-I" + Label("@chromium_v8//:headers").workspace_root + "/v8")
+            common["deps"] = common["deps"] + ["@chromium_v8//:headers"]
         cpp_options = library["copts"] + include_options
         if qt:
             common["deps"] = library["deps"]

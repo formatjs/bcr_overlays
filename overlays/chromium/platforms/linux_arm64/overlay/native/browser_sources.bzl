@@ -1170149,6 +1170149,7 @@ LIBRARIES = {
             ":browser_8b7cb754b911bb9c",
             ":browser_be5a65d202026b61",
             ":browser_ee3ff8cbeec1f3c5",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1170361,7 +1170362,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@chromium_swiftshader//:headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1170589,6 +1170592,7 @@ LIBRARIES = {
             ":browser_8b7cb754b911bb9c",
             ":browser_be5a65d202026b61",
             ":browser_ee3ff8cbeec1f3c5",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1170799,7 +1170803,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@chromium_swiftshader//:headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1170997,6 +1171003,7 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_62e425479bf461f0",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1171201,7 +1171208,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@chromium_swiftshader//:headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1171477,7 +1171486,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@chromium_swiftshader//:headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1171699,6 +1171710,7 @@ LIBRARIES = {
             ":browser_02537067e820c495",
             ":browser_59f9cf068b2075c3",
             ":browser_f7adeff71058c677",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1171912,6 +1171924,7 @@ LIBRARIES = {
         "deps": [
             ":browser_2e4f1a76c1758615",
             ":browser_f7adeff71058c677",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1172123,7 +1172136,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@chromium_swiftshader//:headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1172379,6 +1172394,7 @@ LIBRARIES = {
             ":browser_f7adeff71058c677",
             ":browser_fb8e12b5ec23a45e",
             "@libffi//:libffi",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1172581,6 +1172597,7 @@ LIBRARIES = {
         "deps": [
             ":browser_a1e1da01e0be3270",
             "@libffi//:libffi",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-ldl",
@@ -1172833,7 +1172850,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@chromium_swiftshader//:headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1173063,6 +1173082,7 @@ LIBRARIES = {
             ":browser_ee3ff8cbeec1f3c5",
             "@libffi//:libffi",
             "@wayland//:wayland_client",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1173285,7 +1173305,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@chromium_swiftshader//:headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1173577,6 +1173599,7 @@ LIBRARIES = {
         "deps": [
             ":browser_037a8968fc505689",
             ":browser_bfcbe084af2a359c",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1173793,7 +1173816,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@chromium_swiftshader//:headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1174252,6 +1174277,7 @@ LIBRARIES = {
         "deps": [
             ":browser_037a8968fc505689",
             ":browser_05064d292a68431e",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1174518,6 +1174544,7 @@ LIBRARIES = {
         "deps": [
             ":browser_037a8968fc505689",
             ":browser_05064d292a68431e",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1174730,6 +1174757,7 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_be5a65d202026b61",
+            "@chromium_swiftshader//:headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1174947,7 +1174975,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@chromium_swiftshader//:headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",

@@ -29,8 +29,13 @@ def run(manifest):
             staged.add(logical)
             destination = logical_path(root, logical)
             destination.parent.mkdir(parents=True, exist_ok=True)
-            if logical in manifest.get('symlink_inputs', []):
-                destination.symlink_to(execution_root / actual)
+            if logical in manifest.get('executable_inputs', manifest.get('symlink_inputs', [])):
+                executable = str((execution_root / actual).resolve())
+                # Startup data lookup must use the physical tool directory.
+                destination.write_text(
+                    '#!' + sys.executable + ' -I\nimport os, sys\n'
+                    'os.execv(' + repr(executable) + ', [' + repr(executable) + '] + sys.argv[1:])\n')
+                destination.chmod(0o755)
             else:
                 shutil.copy2(execution_root / actual, destination)
         build = logical_path(root, manifest['build_dir'])

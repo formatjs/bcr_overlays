@@ -38,6 +38,16 @@ int main(int argc, char **argv) {
   if (!host_icu || !fgets(snapshot, sizeof(snapshot), host_icu)) return 13;
   fclose(host_icu);
   if (strcmp(snapshot, "host ICU data\n") != 0) return 14;
+  char argument_executable[4096];
+  if (strlen(argv[0]) + sizeof("/icudtl.dat") >= sizeof(argument_executable)) return 17;
+  strcpy(argument_executable, argv[0]);
+  char *argument_name = strrchr(argument_executable, '/');
+  if (!argument_name) return 18;
+  strcpy(argument_name, "/icudtl.dat");
+  FILE *argument_icu = fopen(argument_executable, "r");
+  if (!argument_icu || !fgets(snapshot, sizeof(snapshot), argument_icu)) return 19;
+  fclose(argument_icu);
+  if (strcmp(snapshot, "host ICU data\n") != 0) return 20;
   FILE *target_icu = fopen(argv[3], "r");
   if (!target_icu || !fgets(snapshot, sizeof(snapshot), target_icu)) return 15;
   fclose(target_icu);

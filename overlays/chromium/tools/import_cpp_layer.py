@@ -979,6 +979,22 @@ def main():
                 '@chromium_swiftshader//:headers',
                 '@spirv_tools//:chromium_headers',
             ])
+        swiftshader_spirv = {
+            '//third_party/swiftshader/third_party/SPIRV-Headers:spv_headers': [
+                '@spirv_headers//:spirv_c_headers',
+                '@spirv_headers//:spirv_cpp_headers',
+                '@spirv_headers//:spirv_cpp11_headers',
+            ],
+            '//third_party/swiftshader/third_party/SPIRV-Tools:spvtools_headers': ['@spirv_tools//:chromium_headers'],
+            '//third_party/swiftshader/third_party/SPIRV-Tools:spvtools': ['@spirv_tools//:spirv_tools'],
+            '//third_party/swiftshader/third_party/SPIRV-Tools:spvtools_val': ['@spirv_tools//:spirv_tools'],
+            '//third_party/swiftshader/third_party/SPIRV-Tools:spvtools_opt': ['@spirv_tools//:spirv_tools_opt'],
+        }
+        if label.partition('(')[0] in swiftshader_spirv:
+            for field in ('srcs', 'hdrs', 'copts', 'defines', 'includes', 'linkopts'):
+                libraries[label][field] = []
+            libraries[label]['kind'] = 'group'
+            libraries[label]['deps'] = swiftshader_spirv[label.partition('(')[0]]
         if label.startswith('//third_party/spirv-tools/src:'):
             libraries[label]['deps'].append('@spirv_tools//:chromium_headers')
         if linker_inputs:

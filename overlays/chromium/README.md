@@ -227,6 +227,8 @@ ARM64 host generators reuse native graphics libraries only when captured sources
 compiler/linker flags, outputs and dependencies match the Linux AMD64 graph.
 Shared libraries keep their original GN runtime paths. V8 and Blink retain their
 target-specific layouts.
+For isolated import stages, pass `--native-overlay /path/to/native/bcr/overlay`
+to `import_cpp_layer.py` so provider names come from the native profile.
 
 Regenerate the imported crate graph from the pinned checkout:
 

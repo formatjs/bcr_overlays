@@ -7,6 +7,7 @@ from functools import cache
 import gzip
 import hashlib
 import json
+import os
 import posixpath
 import re
 import shlex
@@ -163,6 +164,36 @@ def reuse_host_targets(targets, reused, provided):
         reused[label] = dependency
 
 
+def native_graphics_providers(overlay):
+    """Read providers from the native overlay, not the cross-import staging tree."""
+    providers = {}
+    for component in ('angle_runtime', 'swiftshader', 'vulkan_loader',
+                      'vulkan_validation', 'vulkan_tools'):
+        tree = ast.parse((overlay / 'native' / (component + '_sources.bzl')).read_text())
+        records = next(ast.literal_eval(node.value) for node in tree.body
+                       if isinstance(node, ast.Assign) and node.targets[0].id == 'LIBRARIES')
+        providers.update({label: ':' + library['name'] for label, library in records.items()
+                          if library['kind'] in ('source_set', 'static_library', 'shared_library')})
+    return providers
+
+
+def protocol_inputs(source_root, protocols):
+    """Follow PDL includes in the checkout's logical namespace."""
+    root = Path(os.path.abspath(source_root))
+    pending = [root / path.removeprefix('//') for path in protocols]
+    seen, inputs = set(), set()
+    while pending:
+        path = Path(os.path.abspath(pending.pop()))
+        relative = path.relative_to(root)
+        if path in seen:
+            continue
+        seen.add(path)
+        inputs.add('//' + relative.as_posix())
+        pending.extend(path.parent / included.strip()
+                       for included in re.findall(r'^include (.+)$', path.read_text(), re.MULTILINE))
+    return inputs
+
+
 def reuse_host_graphics(graph, reference, libraries, providers):
     """Share native graphics only when both captured configurations match."""
     suffix = '(//build/toolchain/linux:clang_x64_v8_arm64)'
@@ -239,6 +270,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('graph', type=Path)
     parser.add_argument('--source-root', type=Path, required=True)
+    parser.add_argument('--native-overlay', type=Path, default=ROOT / 'bcr/overlay',
+                        help='Linux AMD64 overlay supplying shared host graphics providers')
     parser.add_argument('--assets-only', action='store_true', help='Import browser resource prerequisites before browser assembly')
     parser.add_argument('--layer', choices=['network', 'geometry', 'dawn', 'fonts', 'codecs', 'skia', 'paint', 'gfx', 'tint', 'dawn_native', 'vulkan_loader', 'vulkan_validation', 'swiftshader', 'angle_runtime', 'vulkan_tools', 'gpu_protocol', 'x11', 'linux_buffers', 'browser_services', 'linux_ui', 'ozone', 'gpu_service', 'browser_v8', 'pthreadpool', 'ml', 'ffmpeg', 'gpu_client', 'media', 'compositor', 'blink_platform', 'blink_core', 'blink_modules', 'content', 'browser', 'blink_rust'], default='network')
     args = parser.parse_args()
@@ -1094,12 +1127,6 @@ def main():
         if layer in ('fonts', 'codecs', 'skia', 'paint', 'gfx', 'tint', 'dawn_native', 'vulkan_loader', 'vulkan_validation', 'swiftshader', 'angle_runtime', 'vulkan_tools', 'gpu_protocol', 'x11', 'linux_buffers', 'browser_services', 'linux_ui', 'ozone', 'gpu_service', 'browser_v8', 'pthreadpool', 'ml', 'ffmpeg', 'gpu_client', 'media', 'compositor', 'blink_platform', 'blink_core', 'blink_modules', 'content', 'browser'):
             libraries[label]['c_copts'] = compiler_configuration(graph, dict(target, cflags=target.get('cflags', []), cflags_cc=target.get('cflags_c', []), defines=target.get('defines', [])))[0]
 
-    if layer == 'browser' and any(label.endswith('(//build/toolchain/linux:clang_x64_v8_arm64)')
-                                  for label in libraries):
-        reference = json.loads(gzip.decompress((ROOT / 'native/linux_x64.json.gz').read_bytes()))
-        print('Reused', reuse_host_graphics(graph, reference, libraries, reused),
-              'matching native graphics libraries')
-
     # Capture included project headers omitted from GN source lists as well.
     forwarders = {
         'third_party/re2/src/re2/re2.h': 're2/re2.h',
@@ -1589,18 +1616,8 @@ def main():
                               for path in (args.source_root / directory).rglob('*.py')
                               if '__pycache__' not in path.parts)
             if target['script'].startswith('//third_party/inspector_protocol/'):
-                pending_protocols = [args.source_root / item[2:] for item in inputs
-                                     if item.startswith('//') and item.endswith('.pdl')]
-                seen_protocols = set()
-                while pending_protocols:
-                    protocol = pending_protocols.pop()
-                    if protocol in seen_protocols:
-                        continue
-                    seen_protocols.add(protocol)
-                    for included in re.findall(r'^include (.+)$', protocol.read_text(), re.MULTILINE):
-                        path = (protocol.parent / included.strip()).resolve()
-                        inputs.add('//' + str(path.relative_to(args.source_root.resolve())))
-                        pending_protocols.append(path)
+                inputs.update(protocol_inputs(args.source_root,
+                              [item for item in inputs if item.startswith('//') and item.endswith('.pdl')]))
                 inputs.update('//' + str(path.relative_to(args.source_root))
                               for directory in ['third_party/inspector_protocol', 'third_party/jinja2', 'third_party/markupsafe']
                               for path in (args.source_root / directory).rglob('*.py')
@@ -1721,6 +1738,13 @@ def main():
             records.append(record)
     if layer == 'browser':
         deduplicate_source_sets(libraries)
+    if layer == 'browser' and any(label.endswith('(//build/toolchain/linux:clang_x64_v8_arm64)')
+                                  for label in libraries):
+        reference = json.loads(gzip.decompress((ROOT / 'native/linux_x64.json.gz').read_bytes()))
+        print('Reused', reuse_host_graphics(graph, reference, libraries,
+                                          native_graphics_providers(args.native_overlay)),
+              'matching native graphics libraries')
+
     overlay = ROOT / 'bcr/overlay'
     data = {'LIBRARIES': libraries, 'SHARED_HEADERS': sorted(shared_headers),
             'ACTIONS': records, 'TOOLS': tools}

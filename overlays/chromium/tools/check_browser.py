@@ -35,10 +35,19 @@ class PageResult(HTMLParser):
 
 
 def run(browser, arguments, environment, directory, timeout):
-    result = subprocess.run(
-        [str(browser), *arguments], cwd=directory, env=environment,
-        text=True, encoding='utf-8', capture_output=True, timeout=timeout,
-    )
+    try:
+        result = subprocess.run(
+            [str(browser), *arguments], cwd=directory, env=environment,
+            text=True, encoding='utf-8', capture_output=True, timeout=timeout,
+        )
+    except subprocess.TimeoutExpired as error:
+        captured = []
+        for name, value in [('stdout', error.stdout), ('stderr', error.stderr)]:
+            if isinstance(value, bytes):
+                value = value.decode('utf-8', errors='replace')
+            if value:
+                captured.append(name + ': ' + value[-8000:])
+        raise RuntimeError(f'browser timed out after {timeout}s: ' + '\n'.join(captured)) from error
     if result.returncode:
         raise RuntimeError(f'browser exited {result.returncode}: {result.stderr[-2000:]}')
     return result.stdout
@@ -102,7 +111,7 @@ Promise.resolve().then(() => {
 });
 ''', encoding='utf-8')
         arguments = [
-            '--headless', '--disable-gpu', '--no-first-run',
+            '--headless', '--disable-gpu', '--no-first-run', '--enable-logging=stderr',
             '--no-default-browser-check', '--disable-background-networking',
             '--user-data-dir=' + str(directory / 'profile'),
             '--dump-dom',

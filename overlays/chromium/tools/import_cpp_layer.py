@@ -574,6 +574,8 @@ def main():
             '//mojo/public/cpp/system:system': ':mojo_cpp_system',
             '//ui/gfx:memory_buffer': ':gfx_memory_buffer',
         })
+    if layer == 'gpu_protocol':
+        reused['//third_party/angle:includes'] = '@chromium_angle//:headers'
     if layer in ('tint', 'dawn_native'):
         reused['//third_party/spirv-headers/src:spv_headers'] = ':spirv_headers'
     if layer in ('linux_ui', 'ozone', 'gpu_service', 'browser_v8', 'ml', 'ffmpeg', 'gpu_client', 'media', 'compositor', 'blink_platform', 'blink_core', 'blink_modules', 'content', 'browser'):

@@ -13,6 +13,10 @@ LLVM's MSVC profile includes the pinned runtime's `delayimp.h` and `delayimp.lib
 ATL headers come from the matching 14.50.35717 Visual Studio payload, pinned by
 SHA-256 in `build/msvc_atl.bzl`. Download uses the existing MSVC license flag.
 
+GPU command services and the media closure cross-build on Linux with the MSVC
+ABI and static CRT. FFmpeg SIMD objects and libaom SSE targets use clang-cl
+feature flags. Full browser translation and packaging remain pending.
+
 Regenerate metadata without touching the Linux overlay:
 
 ```sh

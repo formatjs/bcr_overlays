@@ -1,10 +1,10 @@
 """Generated from Chromium native graph by tools/import_rust_crates.py."""
 
-load("@rules_cc//cc:cc_library.bzl", "cc_library")
-load("@rules_rs//rs:cargo_build_script.bzl", "cargo_build_script")
 load("@rules_rs//rs:rust_binary.bzl", "rust_binary")
 load("@rules_rs//rs:rust_library.bzl", "rust_library")
 load("@rules_rs//rs:rust_proc_macro.bzl", "rust_proc_macro")
+load("@rules_rs//rs:cargo_build_script.bzl", "cargo_build_script")
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":bindings.bzl", "chromium_bindgen_inputs")
 
 def native_rust_crates(name):

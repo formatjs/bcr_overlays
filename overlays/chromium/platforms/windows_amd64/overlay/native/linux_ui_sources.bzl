@@ -6,11 +6,11 @@ LIBRARIES = {
         "kind": "static_library",
         "srcs": [
             "//:components/device_event_log/device_event_log.cc",
-            "//:components/device_event_log/device_event_log_impl.cc",
+            "//:components/device_event_log/device_event_log_impl.cc"
         ],
         "hdrs": [
             "//:components/device_event_log/device_event_log.h",
-            "//:components/device_event_log/device_event_log_impl.h",
+            "//:components/device_event_log/device_event_log_impl.h"
         ],
         "copts": [
             "/W4",
@@ -89,7 +89,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "DEVICE_EVENT_LOG_IMPLEMENTATION",
@@ -128,7 +128,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -136,12 +136,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             "//third_party/icu:icu",
             ":base",
-            ":base_i18n",
+            ":base_i18n"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -183,7 +183,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -259,17 +259,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/headless/screen_info:screen_info": {
         "name": "linux_ui_68733da57d64a044",
         "kind": "source_set",
         "srcs": [
-            "//:components/headless/screen_info/headless_screen_info.cc",
+            "//:components/headless/screen_info/headless_screen_info.cc"
         ],
         "hdrs": [
-            "//:components/headless/screen_info/headless_screen_info.h",
+            "//:components/headless/screen_info/headless_screen_info.h"
         ],
         "copts": [
             "/W4",
@@ -348,7 +348,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -379,7 +379,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -387,12 +387,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":geometry_08e263e6d1b42686",
-            "@re2//:re2",
+            "@re2//:re2"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -434,7 +434,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -510,17 +510,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/stylus_handwriting/win:win": {
         "name": "linux_ui_7eec0297ab243986",
         "kind": "static_library",
         "srcs": [
-            "//:components/stylus_handwriting/win/features.cc",
+            "//:components/stylus_handwriting/win/features.cc"
         ],
         "hdrs": [
-            "//:components/stylus_handwriting/win/features.h",
+            "//:components/stylus_handwriting/win/features.h"
         ],
         "copts": [
             "/W4",
@@ -599,7 +599,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_STYLUS_HANDWRITING_WIN_IMPL",
@@ -631,7 +631,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -639,10 +639,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -684,7 +684,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -760,8 +760,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ipc:ipc": {
         "name": "linux_ui_cee6806d3ced4587",
@@ -777,7 +777,7 @@ LIBRARIES = {
             "//:ipc/ipc_message_pipe_reader.cc",
             "//:ipc/ipc_mojo_bootstrap.cc",
             "//:ipc/ipc_sync_channel.cc",
-            "//:ipc/trace_ipc_message.cc",
+            "//:ipc/trace_ipc_message.cc"
         ],
         "hdrs": [
             "//:ipc/ipc_channel.h",
@@ -801,7 +801,7 @@ LIBRARIES = {
             "//:ipc/trace_ipc_message.h",
             "//:ipc/tracing_helpers.h",
             "//:ipc/tracing_helpers_internal.h",
-            "//:ipc/urgent_message_observer.h",
+            "//:ipc/urgent_message_observer.h"
         ],
         "copts": [
             "/W4",
@@ -880,7 +880,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_IPC_IMPL",
@@ -920,7 +920,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -928,7 +928,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -939,7 +939,7 @@ LIBRARIES = {
             ":mojo_base_types",
             ":mojo_cpp_bindings",
             ":mojo_cpp_system",
-            ":mojo_ipc_messages",
+            ":mojo_ipc_messages"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -987,7 +987,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -1063,8 +1063,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ipc:mojom": {
         "name": "linux_ui_130fbe338eeccd2d",
@@ -1072,7 +1072,7 @@ LIBRARIES = {
         "srcs": [
             ":gen/ipc/ipc.mojom.cc",
             "//:ipc/message_mojom_traits.cc",
-            "//:ipc/message_view.cc",
+            "//:ipc/message_view.cc"
         ],
         "hdrs": [
             "//:ipc/message_view.h",
@@ -1080,7 +1080,7 @@ LIBRARIES = {
             ":gen/ipc/ipc.mojom-import-headers.h",
             ":gen/ipc/ipc.mojom-shared-message-ids.h",
             ":gen/ipc/ipc.mojom-test-utils.h",
-            ":gen/ipc/ipc.mojom.h",
+            ":gen/ipc/ipc.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -1159,7 +1159,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_IPC_MOJOM_IMPL",
@@ -1199,7 +1199,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -1207,7 +1207,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -1215,7 +1215,7 @@ LIBRARIES = {
             ":mojo_base_types",
             ":mojo_binding_headers",
             ":mojo_cpp_bindings",
-            ":mojo_ipc_messages",
+            ":mojo_ipc_messages"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1259,7 +1259,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -1335,21 +1335,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ipc:mojom_constants": {
         "name": "linux_ui_ee7197c5ab2ad1d1",
         "kind": "source_set",
         "srcs": [
-            ":gen/ipc/constants.mojom.cc",
+            ":gen/ipc/constants.mojom.cc"
         ],
         "hdrs": [
             ":gen/ipc/constants.mojom-forward.h",
             ":gen/ipc/constants.mojom-import-headers.h",
             ":gen/ipc/constants.mojom-shared-message-ids.h",
             ":gen/ipc/constants.mojom-test-utils.h",
-            ":gen/ipc/constants.mojom.h",
+            ":gen/ipc/constants.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -1428,7 +1428,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1460,7 +1460,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -1468,13 +1468,13 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":linux_ui_c324ab006b239e18",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1518,7 +1518,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -1594,8 +1594,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ipc:mojom_constants_shared": {
         "name": "linux_ui_c324ab006b239e18",
@@ -1606,10 +1606,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":linux_ui_eac48fced60d4013",
+            ":linux_ui_eac48fced60d4013"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1625,15 +1625,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ipc:mojom_constants_shared_cpp_sources": {
         "name": "linux_ui_eac48fced60d4013",
         "kind": "source_set",
         "srcs": [
-            ":gen/ipc/constants.mojom-shared.cc",
+            ":gen/ipc/constants.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ipc/constants.mojom-data-view.h",
@@ -1641,7 +1641,7 @@ LIBRARIES = {
             ":gen/ipc/constants.mojom-params-data.h",
             ":gen/ipc/constants.mojom-send-validation.h",
             ":gen/ipc/constants.mojom-shared-internal.h",
-            ":gen/ipc/constants.mojom-shared.h",
+            ":gen/ipc/constants.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -1720,7 +1720,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1752,7 +1752,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -1760,10 +1760,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1807,7 +1807,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -1883,8 +1883,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ipc:mojom_shared": {
         "name": "linux_ui_b8cacd931b237a2e",
@@ -1968,7 +1968,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2000,7 +2000,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -2008,10 +2008,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":linux_ui_670e3d7068917763",
+            ":linux_ui_670e3d7068917763"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2055,7 +2055,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -2131,14 +2131,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ipc:mojom_shared_cpp_sources": {
         "name": "linux_ui_670e3d7068917763",
         "kind": "source_set",
         "srcs": [
-            ":gen/ipc/ipc.mojom-shared.cc",
+            ":gen/ipc/ipc.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ipc/ipc.mojom-data-view.h",
@@ -2146,7 +2146,7 @@ LIBRARIES = {
             ":gen/ipc/ipc.mojom-params-data.h",
             ":gen/ipc/ipc.mojom-send-validation.h",
             ":gen/ipc/ipc.mojom-shared-internal.h",
-            ":gen/ipc/ipc.mojom-shared.h",
+            ":gen/ipc/ipc.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -2225,7 +2225,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_IPC_MOJOM_SHARED_IMPL",
@@ -2258,7 +2258,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -2266,12 +2266,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":mojo_base_types",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2315,7 +2315,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -2391,15 +2391,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ipc:param_traits": {
         "name": "linux_ui_666d7e4d402c4545",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:ipc/ipc_param_traits.h",
+            "//:ipc/ipc_param_traits.h"
         ],
         "copts": [
             "/W4",
@@ -2478,7 +2478,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2509,12 +2509,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -2529,7 +2529,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -2605,8 +2605,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/clipboard:clipboard": {
         "name": "linux_ui_a405ea09de23c84e",
@@ -2623,7 +2623,7 @@ LIBRARIES = {
             "//:ui/base/clipboard/clipboard_data.cc",
             "//:ui/base/clipboard/clipboard_non_backed.cc",
             "//:ui/base/clipboard/clipboard_util_win.cc",
-            "//:ui/base/clipboard/clipboard_win.cc",
+            "//:ui/base/clipboard/clipboard_win.cc"
         ],
         "hdrs": [
             "//:ui/base/clipboard/clipboard.h",
@@ -2639,7 +2639,7 @@ LIBRARIES = {
             "//:ui/base/clipboard/clipboard_util_win.h",
             "//:ui/base/clipboard/clipboard_win.h",
             "//:ui/base/clipboard/custom_data_helper.h",
-            "//:ui/base/clipboard/scoped_clipboard_writer.h",
+            "//:ui/base/clipboard/scoped_clipboard_writer.h"
         ],
         "copts": [
             "/W4",
@@ -2718,7 +2718,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_CLIPBOARD_IMPL",
@@ -2775,7 +2775,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -2786,7 +2786,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -2798,7 +2798,7 @@ LIBRARIES = {
             ":mojo_base_types",
             ":network_211be4e8e759f7c4",
             ":skia",
-            ":skia_3e2be659073cb989",
+            ":skia_3e2be659073cb989"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2854,7 +2854,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -2930,19 +2930,19 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/clipboard:clipboard_types": {
         "name": "linux_ui_a341491109a4e736",
         "kind": "static_library",
         "srcs": [
-            "//:ui/base/clipboard/clipboard_format_type_win.cc",
+            "//:ui/base/clipboard/clipboard_format_type_win.cc"
         ],
         "hdrs": [
             "//:ui/base/clipboard/clipboard_buffer.h",
             "//:ui/base/clipboard/clipboard_constants.h",
-            "//:ui/base/clipboard/clipboard_format_type.h",
+            "//:ui/base/clipboard/clipboard_format_type.h"
         ],
         "copts": [
             "/W4",
@@ -3021,7 +3021,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_CLIPBOARD_TYPES_IMPL",
@@ -3053,7 +3053,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -3061,10 +3061,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3106,7 +3106,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -3182,17 +3182,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/clipboard:file_info": {
         "name": "linux_ui_2297dca9dd20d7c9",
         "kind": "static_library",
         "srcs": [
-            "//:ui/base/clipboard/file_info.cc",
+            "//:ui/base/clipboard/file_info.cc"
         ],
         "hdrs": [
-            "//:ui/base/clipboard/file_info.h",
+            "//:ui/base/clipboard/file_info.h"
         ],
         "copts": [
             "/W4",
@@ -3271,7 +3271,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_FILE_INFO_IMPL",
@@ -3303,7 +3303,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -3311,10 +3311,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3356,7 +3356,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -3432,21 +3432,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/cursor/mojom:cursor_type": {
         "name": "linux_ui_ffd8acf9fb8c08e4",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/base/cursor/mojom/cursor_type.mojom.cc",
+            ":gen/ui/base/cursor/mojom/cursor_type.mojom.cc"
         ],
         "hdrs": [
             ":gen/ui/base/cursor/mojom/cursor_type.mojom-forward.h",
             ":gen/ui/base/cursor/mojom/cursor_type.mojom-import-headers.h",
             ":gen/ui/base/cursor/mojom/cursor_type.mojom-shared-message-ids.h",
             ":gen/ui/base/cursor/mojom/cursor_type.mojom-test-utils.h",
-            ":gen/ui/base/cursor/mojom/cursor_type.mojom.h",
+            ":gen/ui/base/cursor/mojom/cursor_type.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -3525,7 +3525,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3557,7 +3557,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -3565,13 +3565,13 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":linux_ui_42eb6b3b65ae1968",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3615,7 +3615,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -3691,8 +3691,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/cursor/mojom:cursor_type_shared": {
         "name": "linux_ui_42eb6b3b65ae1968",
@@ -3703,10 +3703,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":linux_ui_9dedf3d4081c9776",
+            ":linux_ui_9dedf3d4081c9776"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3722,15 +3722,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/base/cursor/mojom:cursor_type_shared_cpp_sources": {
         "name": "linux_ui_9dedf3d4081c9776",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/base/cursor/mojom/cursor_type.mojom-shared.cc",
+            ":gen/ui/base/cursor/mojom/cursor_type.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/base/cursor/mojom/cursor_type.mojom-data-view.h",
@@ -3738,7 +3738,7 @@ LIBRARIES = {
             ":gen/ui/base/cursor/mojom/cursor_type.mojom-params-data.h",
             ":gen/ui/base/cursor/mojom/cursor_type.mojom-send-validation.h",
             ":gen/ui/base/cursor/mojom/cursor_type.mojom-shared-internal.h",
-            ":gen/ui/base/cursor/mojom/cursor_type.mojom-shared.h",
+            ":gen/ui/base/cursor/mojom/cursor_type.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -3817,7 +3817,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3849,7 +3849,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -3857,10 +3857,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3904,7 +3904,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -3980,21 +3980,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/cursor:cursor": {
         "name": "linux_ui_ae3eb542fa9db3d5",
         "kind": "static_library",
         "srcs": [
             "//:ui/base/cursor/cursor.cc",
-            "//:ui/base/cursor/cursor_factory.cc",
+            "//:ui/base/cursor/cursor_factory.cc"
         ],
         "hdrs": [
             "//:ui/base/cursor/cursor.h",
             "//:ui/base/cursor/cursor_factory.h",
             "//:ui/base/cursor/cursor_size.h",
-            "//:ui/base/cursor/platform_cursor.h",
+            "//:ui/base/cursor/platform_cursor.h"
         ],
         "copts": [
             "/W4",
@@ -4073,7 +4073,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_CURSOR_IMPL",
@@ -4120,7 +4120,7 @@ LIBRARIES = {
             "SK_GL",
             "SK_GRAPHITE",
             "SK_DAWN",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -4130,7 +4130,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -4138,7 +4138,7 @@ LIBRARIES = {
             ":geometry_21b6eca5291c98f8",
             ":linux_ui_ffd8acf9fb8c08e4",
             ":paint_8a34cfe2f279433b",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4183,7 +4183,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -4259,19 +4259,19 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/data_transfer_policy:data_transfer_policy": {
         "name": "linux_ui_b972315635ab71b1",
         "kind": "static_library",
         "srcs": [
             "//:ui/base/data_transfer_policy/data_transfer_endpoint.cc",
-            "//:ui/base/data_transfer_policy/data_transfer_policy_controller.cc",
+            "//:ui/base/data_transfer_policy/data_transfer_policy_controller.cc"
         ],
         "hdrs": [
             "//:ui/base/data_transfer_policy/data_transfer_endpoint.h",
-            "//:ui/base/data_transfer_policy/data_transfer_policy_controller.h",
+            "//:ui/base/data_transfer_policy/data_transfer_policy_controller.h"
         ],
         "copts": [
             "/W4",
@@ -4350,7 +4350,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_DATA_TRANSFER_POLICY_IMPL",
@@ -4382,7 +4382,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -4390,11 +4390,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":url",
+            ":url"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4436,7 +4436,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -4512,21 +4512,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/dragdrop/mojom:mojom": {
         "name": "linux_ui_cbe30bbd78f0725d",
         "kind": "static_library",
         "srcs": [
-            ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom.cc",
+            ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom.cc"
         ],
         "hdrs": [
             ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-forward.h",
             ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-import-headers.h",
             ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-shared-message-ids.h",
             ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-test-utils.h",
-            ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom.h",
+            ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -4605,7 +4605,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_DRAGDROP_MOJOM_IMPL",
@@ -4638,7 +4638,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -4646,13 +4646,13 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":linux_ui_bea7902ba73b54b8",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4696,7 +4696,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -4772,8 +4772,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/dragdrop/mojom:mojom_shared": {
         "name": "linux_ui_bea7902ba73b54b8",
@@ -4857,7 +4857,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4889,7 +4889,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -4897,10 +4897,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":linux_ui_bd06d04570cd8910",
+            ":linux_ui_bd06d04570cd8910"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4944,7 +4944,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -5020,14 +5020,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/dragdrop/mojom:mojom_shared_cpp_sources": {
         "name": "linux_ui_bd06d04570cd8910",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-shared.cc",
+            ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-data-view.h",
@@ -5035,7 +5035,7 @@ LIBRARIES = {
             ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-params-data.h",
             ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-send-validation.h",
             ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-shared-internal.h",
-            ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-shared.h",
+            ":gen/ui/base/dragdrop/mojom/drag_drop_types.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -5114,7 +5114,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_DRAGDROP_MOJOM_SHARED_IMPL",
@@ -5147,7 +5147,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -5155,10 +5155,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5202,7 +5202,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -5278,8 +5278,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/interaction:interaction": {
         "name": "linux_ui_b278a71f6b9be82b",
@@ -5290,7 +5290,7 @@ LIBRARIES = {
             "//:ui/base/interaction/element_tracker.cc",
             "//:ui/base/interaction/framework_specific_implementation.cc",
             "//:ui/base/interaction/interaction_sequence.cc",
-            "//:ui/base/interaction/typed_data_collection.cc",
+            "//:ui/base/interaction/typed_data_collection.cc"
         ],
         "hdrs": [
             "//:ui/base/interaction/element_identifier.h",
@@ -5301,7 +5301,7 @@ LIBRARIES = {
             "//:ui/base/interaction/interaction_sequence.h",
             "//:ui/base/interaction/typed_data.h",
             "//:ui/base/interaction/typed_data_collection.h",
-            "//:ui/base/interaction/typed_identifier.h",
+            "//:ui/base/interaction/typed_identifier.h"
         ],
         "copts": [
             "/W4",
@@ -5380,7 +5380,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_INTERACTION_IMPL",
@@ -5412,7 +5412,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -5420,12 +5420,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":geometry_08e263e6d1b42686",
-            ":linux_ui_602674b5a9fb5feb",
+            ":linux_ui_602674b5a9fb5feb"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5467,7 +5467,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -5543,8 +5543,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/mojom:ui_base_types": {
         "name": "linux_ui_d121331097aa5a2b",
@@ -5552,7 +5552,7 @@ LIBRARIES = {
         "srcs": [
             ":gen/ui/base/mojom/dialog_button.mojom.cc",
             ":gen/ui/base/mojom/menu_source_type.mojom.cc",
-            ":gen/ui/base/mojom/window_show_state.mojom.cc",
+            ":gen/ui/base/mojom/window_show_state.mojom.cc"
         ],
         "hdrs": [
             ":gen/ui/base/mojom/dialog_button.mojom-forward.h",
@@ -5569,7 +5569,7 @@ LIBRARIES = {
             ":gen/ui/base/mojom/window_show_state.mojom-import-headers.h",
             ":gen/ui/base/mojom/window_show_state.mojom-shared-message-ids.h",
             ":gen/ui/base/mojom/window_show_state.mojom-test-utils.h",
-            ":gen/ui/base/mojom/window_show_state.mojom.h",
+            ":gen/ui/base/mojom/window_show_state.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -5648,7 +5648,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5680,7 +5680,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -5688,13 +5688,13 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":linux_ui_3ca1bfb2076766e7",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5738,7 +5738,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -5814,8 +5814,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base/mojom:ui_base_types_shared": {
         "name": "linux_ui_3ca1bfb2076766e7",
@@ -5826,10 +5826,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":linux_ui_a6ab2b26d1a38328",
+            ":linux_ui_a6ab2b26d1a38328"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5845,9 +5845,9 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/base/mojom:ui_base_types_shared_cpp_sources": {
         "name": "linux_ui_a6ab2b26d1a38328",
@@ -5855,7 +5855,7 @@ LIBRARIES = {
         "srcs": [
             ":gen/ui/base/mojom/dialog_button.mojom-shared.cc",
             ":gen/ui/base/mojom/menu_source_type.mojom-shared.cc",
-            ":gen/ui/base/mojom/window_show_state.mojom-shared.cc",
+            ":gen/ui/base/mojom/window_show_state.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/base/mojom/dialog_button.mojom-data-view.h",
@@ -5875,7 +5875,7 @@ LIBRARIES = {
             ":gen/ui/base/mojom/window_show_state.mojom-params-data.h",
             ":gen/ui/base/mojom/window_show_state.mojom-send-validation.h",
             ":gen/ui/base/mojom/window_show_state.mojom-shared-internal.h",
-            ":gen/ui/base/mojom/window_show_state.mojom-shared.h",
+            ":gen/ui/base/mojom/window_show_state.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -5954,7 +5954,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5986,7 +5986,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -5994,10 +5994,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6041,7 +6041,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -6117,8 +6117,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base:base": {
         "name": "linux_ui_f808491510315941",
@@ -6201,7 +6201,7 @@ LIBRARIES = {
             "//:ui/base/menu_source_utils.cc",
             "//:ui/base/pointer/pointer_device_win.cc",
             "//:ui/base/accelerators/global_media_keys_listener_win.cc",
-            "//:ui/base/accelerators/media_keys_listener_win.cc",
+            "//:ui/base/accelerators/media_keys_listener_win.cc"
         ],
         "hdrs": [
             "//:ui/base/accelerators/accelerator.h",
@@ -6303,7 +6303,7 @@ LIBRARIES = {
             "//:ui/base/window_open_disposition_utils.h",
             ":gen/ui/webui/resources/grit/webui_resources.h",
             ":gen/ui/webui/resources/grit/webui_resources_map.cc",
-            ":gen/ui/webui/resources/grit/webui_resources_map.h",
+            ":gen/ui/webui/resources/grit/webui_resources_map.h"
         ],
         "copts": [
             "/W4",
@@ -6387,7 +6387,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_IMPL",
@@ -6444,7 +6444,7 @@ LIBRARIES = {
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
             "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
@@ -6455,7 +6455,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -6499,7 +6499,7 @@ LIBRARIES = {
             ":skia_3e2be659073cb989",
             ":url",
             "@brotli//:brotlidec",
-            "@re2//:re2",
+            "@re2//:re2"
         ],
         "linkopts": [
             "-DEFAULTLIB:dwmapi.lib",
@@ -6557,7 +6557,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -6638,21 +6638,21 @@ LIBRARIES = {
             "-Wtautological-unsigned-zero-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base:data_exchange": {
         "name": "linux_ui_15e888587f2d07a8",
         "kind": "static_library",
         "srcs": [
             "//:ui/base/dragdrop/download_file_info.cc",
-            "//:ui/base/dragdrop/os_exchange_data_provider_factory_ozone.cc",
+            "//:ui/base/dragdrop/os_exchange_data_provider_factory_ozone.cc"
         ],
         "hdrs": [
             "//:ui/base/dragdrop/download_file_info.h",
             "//:ui/base/dragdrop/download_file_interface.h",
             "//:ui/base/dragdrop/os_exchange_data_provider.h",
-            "//:ui/base/dragdrop/os_exchange_data_provider_factory_ozone.h",
+            "//:ui/base/dragdrop/os_exchange_data_provider_factory_ozone.h"
         ],
         "copts": [
             "/W4",
@@ -6731,7 +6731,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_DATA_EXCHANGE_IMPL",
@@ -6786,7 +6786,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -6796,7 +6796,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -6805,7 +6805,7 @@ LIBRARIES = {
             ":linux_ui_2297dca9dd20d7c9",
             ":linux_ui_a341491109a4e736",
             ":linux_ui_b972315635ab71b1",
-            ":url",
+            ":url"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6861,7 +6861,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -6937,17 +6937,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base:hit_test": {
         "name": "linux_ui_6aa947210c13067e",
         "kind": "source_set",
         "srcs": [
-            "//:ui/base/hit_test.cc",
+            "//:ui/base/hit_test.cc"
         ],
         "hdrs": [
-            "//:ui/base/hit_test.h",
+            "//:ui/base/hit_test.h"
         ],
         "copts": [
             "/W4",
@@ -7026,7 +7026,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7057,12 +7057,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -7077,7 +7077,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -7153,15 +7153,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base:locales_list": {
         "name": "linux_ui_6d763edd5d7e6306",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/ui/base/l10n/l10n_util_locales_list.inc",
+            ":gen/ui/base/l10n/l10n_util_locales_list.inc"
         ],
         "copts": [
             "/W4",
@@ -7240,7 +7240,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7271,12 +7271,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -7291,7 +7291,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -7367,8 +7367,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base:types": {
         "name": "linux_ui_53a4d59e75a4bdb0",
@@ -7376,7 +7376,7 @@ LIBRARIES = {
         "srcs": [],
         "hdrs": [
             "//:ui/base/ui_base_types.h",
-            "//:ui/base/window_open_disposition.h",
+            "//:ui/base/window_open_disposition.h"
         ],
         "copts": [
             "/W4",
@@ -7455,7 +7455,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7486,12 +7486,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -7506,7 +7506,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -7582,8 +7582,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/color:color": {
         "name": "linux_ui_1806f96eccf7ad24",
@@ -7597,14 +7597,14 @@ LIBRARIES = {
             "//:ui/color/color_provider_utils.cc",
             "//:ui/color/color_recipe.cc",
             "//:ui/color/color_transform.cc",
-            "//:ui/color/color_variant.cc",
+            "//:ui/color/color_variant.cc"
         ],
         "hdrs": [
             "//:ui/color/color_provider_source.h",
             "//:ui/color/color_provider_source_observer.h",
             "//:ui/color/color_provider_utils.h",
             "//:ui/color/color_recipe.h",
-            "//:ui/color/color_transform.h",
+            "//:ui/color/color_transform.h"
         ],
         "copts": [
             "/W4",
@@ -7688,7 +7688,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_COLOR_IMPL",
@@ -7735,7 +7735,7 @@ LIBRARIES = {
             "SK_GL",
             "SK_GRAPHITE",
             "SK_DAWN",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -7745,7 +7745,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -7753,7 +7753,7 @@ LIBRARIES = {
             ":gfx_850ae577775bbc35",
             ":linux_ui_bae465d59f6ef523",
             ":skia",
-            ":skia_3e2be659073cb989",
+            ":skia_3e2be659073cb989"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7798,7 +7798,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -7879,8 +7879,8 @@ LIBRARIES = {
             "-Wtautological-unsigned-zero-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/color:color_headers": {
         "name": "linux_ui_bae465d59f6ef523",
@@ -7895,7 +7895,7 @@ LIBRARIES = {
             "//:ui/color/color_provider.h",
             "//:ui/color/color_provider_manager.h",
             "//:ui/color/color_provider_utils.h",
-            "//:ui/color/color_variant.h",
+            "//:ui/color/color_variant.h"
         ],
         "copts": [
             "/W4",
@@ -7974,7 +7974,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8020,7 +8020,7 @@ LIBRARIES = {
             "SK_GL",
             "SK_GRAPHITE",
             "SK_DAWN",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -8030,7 +8030,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -8038,7 +8038,7 @@ LIBRARIES = {
             ":gfx_850ae577775bbc35",
             ":linux_ui_6bff2d684538d1a9",
             ":linux_ui_a5c7192565f5718d",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -8083,7 +8083,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -8159,18 +8159,18 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/color:color_provider_key": {
         "name": "linux_ui_a5c7192565f5718d",
         "kind": "static_library",
         "srcs": [
-            "//:ui/color/color_provider_key.cc",
+            "//:ui/color/color_provider_key.cc"
         ],
         "hdrs": [
             "//:ui/color/color_provider_key.h",
-            "//:ui/color/system_theme.h",
+            "//:ui/color/system_theme.h"
         ],
         "copts": [
             "/W4",
@@ -8249,7 +8249,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_COLOR_PROVIDER_KEY_IMPL",
@@ -8295,7 +8295,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -8305,12 +8305,12 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
             ":base",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -8353,7 +8353,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -8429,15 +8429,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/color:mojom": {
         "name": "linux_ui_6bff2d684538d1a9",
         "kind": "source_set",
         "srcs": [
             ":gen/ui/color/color_id.mojom.cc",
-            ":gen/ui/color/scheme_variant.mojom.cc",
+            ":gen/ui/color/scheme_variant.mojom.cc"
         ],
         "hdrs": [
             ":gen/ui/color/color_id.mojom-forward.h",
@@ -8449,7 +8449,7 @@ LIBRARIES = {
             ":gen/ui/color/scheme_variant.mojom-import-headers.h",
             ":gen/ui/color/scheme_variant.mojom-shared-message-ids.h",
             ":gen/ui/color/scheme_variant.mojom-test-utils.h",
-            ":gen/ui/color/scheme_variant.mojom.h",
+            ":gen/ui/color/scheme_variant.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -8528,7 +8528,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8560,7 +8560,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -8568,13 +8568,13 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":linux_ui_85b699c89e66c290",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -8618,7 +8618,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -8694,8 +8694,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/color:mojom_shared": {
         "name": "linux_ui_85b699c89e66c290",
@@ -8706,10 +8706,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":linux_ui_c4bd5cbeb36500bd",
+            ":linux_ui_c4bd5cbeb36500bd"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -8725,16 +8725,16 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/color:mojom_shared_cpp_sources": {
         "name": "linux_ui_c4bd5cbeb36500bd",
         "kind": "source_set",
         "srcs": [
             ":gen/ui/color/color_id.mojom-shared.cc",
-            ":gen/ui/color/scheme_variant.mojom-shared.cc",
+            ":gen/ui/color/scheme_variant.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/color/color_id.mojom-data-view.h",
@@ -8748,7 +8748,7 @@ LIBRARIES = {
             ":gen/ui/color/scheme_variant.mojom-params-data.h",
             ":gen/ui/color/scheme_variant.mojom-send-validation.h",
             ":gen/ui/color/scheme_variant.mojom-shared-internal.h",
-            ":gen/ui/color/scheme_variant.mojom-shared.h",
+            ":gen/ui/color/scheme_variant.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -8827,7 +8827,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8859,7 +8859,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -8867,10 +8867,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -8914,7 +8914,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -8990,8 +8990,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/display/mojom:mojom_shared_cpp_sources": {
         "name": "linux_ui_335188a4b43defc2",
@@ -9007,7 +9007,7 @@ LIBRARIES = {
             ":gen/ui/display/mojom/gamma_ramp_rgb_entry.mojom-shared.cc",
             ":gen/ui/display/mojom/screen_info.mojom-shared.cc",
             ":gen/ui/display/mojom/screen_infos.mojom-shared.cc",
-            ":gen/ui/display/mojom/screen_orientation.mojom-shared.cc",
+            ":gen/ui/display/mojom/screen_orientation.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/display/mojom/display.mojom-data-view.h",
@@ -9075,7 +9075,7 @@ LIBRARIES = {
             ":gen/ui/display/mojom/screen_orientation.mojom-params-data.h",
             ":gen/ui/display/mojom/screen_orientation.mojom-send-validation.h",
             ":gen/ui/display/mojom/screen_orientation.mojom-shared-internal.h",
-            ":gen/ui/display/mojom/screen_orientation.mojom-shared.h",
+            ":gen/ui/display/mojom/screen_orientation.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -9154,7 +9154,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9186,7 +9186,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -9194,14 +9194,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":geometry_c8fced2c712ec0b3",
             ":linux_ui_9fd2d31dd75f7d3c",
             ":mojo_base_types",
             ":mojo_cpp_bindings",
-            ":paint_f882495ee5f8cad9",
+            ":paint_f882495ee5f8cad9"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -9245,7 +9245,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -9321,8 +9321,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/display/types:types": {
         "name": "linux_ui_ec273e4b49e3fb9d",
@@ -9334,7 +9334,7 @@ LIBRARIES = {
             "//:ui/display/types/display_constants.cc",
             "//:ui/display/types/display_mode.cc",
             "//:ui/display/types/display_snapshot.cc",
-            "//:ui/display/types/native_display_delegate.cc",
+            "//:ui/display/types/native_display_delegate.cc"
         ],
         "hdrs": [
             "//:ui/display/types/display_color_management.h",
@@ -9348,7 +9348,7 @@ LIBRARIES = {
             "//:ui/display/types/fake_display_controller.h",
             "//:ui/display/types/gamma_ramp_rgb_entry.h",
             "//:ui/display/types/native_display_delegate.h",
-            "//:ui/display/types/native_display_observer.h",
+            "//:ui/display/types/native_display_observer.h"
         ],
         "copts": [
             "/W4",
@@ -9427,7 +9427,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "DISPLAY_TYPES_IMPLEMENTATION",
@@ -9473,7 +9473,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -9483,7 +9483,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -9491,7 +9491,7 @@ LIBRARIES = {
             ":paint_72198bff3a66bb77",
             ":paint_bb87af8d9cf34ed6",
             ":skia",
-            ":skia_5280fdd4ac24420e",
+            ":skia_5280fdd4ac24420e"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -9534,7 +9534,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -9610,17 +9610,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/display/util:gpu_info_util": {
         "name": "linux_ui_9346334bc441da56",
         "kind": "source_set",
         "srcs": [
-            "//:ui/display/util/gpu_info_util.cc",
+            "//:ui/display/util/gpu_info_util.cc"
         ],
         "hdrs": [
-            "//:ui/display/util/gpu_info_util.h",
+            "//:ui/display/util/gpu_info_util.h"
         ],
         "copts": [
             "/W4",
@@ -9699,7 +9699,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9730,7 +9730,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -9738,10 +9738,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -9783,7 +9783,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -9859,20 +9859,20 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/display/util:util": {
         "name": "linux_ui_1f521340b96b99f0",
         "kind": "static_library",
         "srcs": [
             "//:ui/display/util/display_util.cc",
-            "//:ui/display/util/edid_parser.cc",
+            "//:ui/display/util/edid_parser.cc"
         ],
         "hdrs": [
             "//:ui/display/util/display_util.h",
             "//:ui/display/util/display_util_export.h",
-            "//:ui/display/util/edid_parser.h",
+            "//:ui/display/util/edid_parser.h"
         ],
         "copts": [
             "/W4",
@@ -9951,7 +9951,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "DISPLAY_UTIL_IMPLEMENTATION",
@@ -9997,7 +9997,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -10007,7 +10007,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -10016,7 +10016,7 @@ LIBRARIES = {
             ":linux_ui_d11f329b2718b8b5",
             ":linux_ui_ec273e4b49e3fb9d",
             ":paint_72198bff3a66bb77",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -10059,7 +10059,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -10135,8 +10135,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/display:display": {
         "name": "linux_ui_af5ca476624e4dba",
@@ -10172,7 +10172,7 @@ LIBRARIES = {
             "//:ui/display/win/screen_win_display.cc",
             "//:ui/display/win/screen_win_headless.cc",
             "//:ui/display/win/uwp_text_scale_factor.cc",
-            "//:ui/display/screen_aura.cc",
+            "//:ui/display/screen_aura.cc"
         ],
         "hdrs": [
             "//:ui/display/display.h",
@@ -10205,7 +10205,7 @@ LIBRARIES = {
             "//:ui/display/win/screen_win.h",
             "//:ui/display/win/screen_win_display.h",
             "//:ui/display/win/screen_win_headless.h",
-            "//:ui/display/win/uwp_text_scale_factor.h",
+            "//:ui/display/win/uwp_text_scale_factor.h"
         ],
         "copts": [
             "/W4",
@@ -10284,7 +10284,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "DISPLAY_IMPLEMENTATION",
@@ -10339,7 +10339,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -10349,7 +10349,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -10364,7 +10364,7 @@ LIBRARIES = {
             ":linux_ui_d11f329b2718b8b5",
             ":linux_ui_ec273e4b49e3fb9d",
             ":mojo_cpp_bindings",
-            ":paint_72198bff3a66bb77",
+            ":paint_72198bff3a66bb77"
         ],
         "linkopts": [
             "-DEFAULTLIB:shcore.lib",
@@ -10421,7 +10421,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -10497,17 +10497,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/display:display_features": {
         "name": "linux_ui_1d7b698f5aa6bc37",
         "kind": "static_library",
         "srcs": [
-            "//:ui/display/display_features.cc",
+            "//:ui/display/display_features.cc"
         ],
         "hdrs": [
-            "//:ui/display/display_features.h",
+            "//:ui/display/display_features.h"
         ],
         "copts": [
             "/W4",
@@ -10586,7 +10586,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_DISPLAY_FEATURES_IMPL",
@@ -10618,7 +10618,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -10626,10 +10626,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -10671,7 +10671,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -10747,8 +10747,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events/devices:devices": {
         "name": "linux_ui_4d1565ba75ceeb08",
@@ -10762,7 +10762,7 @@ LIBRARIES = {
             "//:ui/events/devices/touch_device_transform.cc",
             "//:ui/events/devices/touchpad_device.cc",
             "//:ui/events/devices/touchscreen_device.cc",
-            "//:ui/events/devices/input_device_observer_win.cc",
+            "//:ui/events/devices/input_device_observer_win.cc"
         ],
         "hdrs": [
             "//:ui/events/devices/device_data_manager.h",
@@ -10778,7 +10778,7 @@ LIBRARIES = {
             "//:ui/events/devices/stylus_state.h",
             "//:ui/events/devices/touch_device_transform.h",
             "//:ui/events/devices/touchpad_device.h",
-            "//:ui/events/devices/touchscreen_device.h",
+            "//:ui/events/devices/touchscreen_device.h"
         ],
         "copts": [
             "/W4",
@@ -10857,7 +10857,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "EVENTS_DEVICES_IMPLEMENTATION",
@@ -10912,7 +10912,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -10922,7 +10922,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -10931,7 +10931,7 @@ LIBRARIES = {
             ":gfx_4d8d22d2d647e8f3",
             ":linux_ui_0adef59f2606528e",
             ":linux_ui_ec273e4b49e3fb9d",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -10987,7 +10987,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -11063,8 +11063,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events/platform:platform": {
         "name": "linux_ui_ee2192658dd01344",
@@ -11072,14 +11072,14 @@ LIBRARIES = {
         "srcs": [
             "//:ui/events/platform/platform_event_source.cc",
             "//:ui/events/platform/platform_event_source_stub.cc",
-            "//:ui/events/platform/scoped_event_dispatcher.cc",
+            "//:ui/events/platform/scoped_event_dispatcher.cc"
         ],
         "hdrs": [
             "//:ui/events/events_export.h",
             "//:ui/events/platform/platform_event_dispatcher.h",
             "//:ui/events/platform/platform_event_observer.h",
             "//:ui/events/platform/platform_event_source.h",
-            "//:ui/events/platform/scoped_event_dispatcher.h",
+            "//:ui/events/platform/scoped_event_dispatcher.h"
         ],
         "copts": [
             "/W4",
@@ -11158,7 +11158,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "EVENTS_IMPLEMENTATION",
@@ -11190,7 +11190,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -11198,11 +11198,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":linux_ui_0adef59f2606528e",
+            ":linux_ui_0adef59f2606528e"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -11244,7 +11244,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -11320,8 +11320,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events/types:headers": {
         "name": "linux_ui_4e8bbc0b26c60a2f",
@@ -11330,7 +11330,7 @@ LIBRARIES = {
         "hdrs": [
             "//:ui/events/types/event_type.h",
             "//:ui/events/types/scroll_input_type.h",
-            "//:ui/events/types/scroll_types.h",
+            "//:ui/events/types/scroll_types.h"
         ],
         "copts": [
             "/W4",
@@ -11409,7 +11409,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11440,12 +11440,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -11460,7 +11460,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -11536,14 +11536,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events:dom_keycode_converter": {
         "name": "linux_ui_cf279c3f9c36d8d5",
         "kind": "static_library",
         "srcs": [
-            "//:ui/events/keycodes/dom/keycode_converter.cc",
+            "//:ui/events/keycodes/dom/keycode_converter.cc"
         ],
         "hdrs": [
             "//:ui/events/keycodes/dom/dom_code.h",
@@ -11551,7 +11551,7 @@ LIBRARIES = {
             "//:ui/events/keycodes/dom/dom_codes_array.h",
             "//:ui/events/keycodes/dom/dom_key.h",
             "//:ui/events/keycodes/dom/dom_key_data.inc",
-            "//:ui/events/keycodes/dom/keycode_converter.h",
+            "//:ui/events/keycodes/dom/keycode_converter.h"
         ],
         "copts": [
             "/W4",
@@ -11630,7 +11630,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11661,7 +11661,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -11669,11 +11669,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":linux_ui_666d7e4d402c4545",
+            ":linux_ui_666d7e4d402c4545"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -11715,7 +11715,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -11791,15 +11791,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events:event_constants": {
         "name": "linux_ui_62200aff079ef3f1",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:ui/events/event_constants.h",
+            "//:ui/events/event_constants.h"
         ],
         "copts": [
             "/W4",
@@ -11878,7 +11878,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11909,12 +11909,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -11929,7 +11929,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -12005,8 +12005,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events:events": {
         "name": "linux_ui_15fe1bd660eb069c",
@@ -12036,7 +12036,7 @@ LIBRARIES = {
             "//:ui/events/keyboard_event_counter.cc",
             "//:ui/events/gestures/gesture_provider_aura.cc",
             "//:ui/events/gestures/gesture_recognizer_impl.cc",
-            "//:ui/events/gestures/motion_event_aura.cc",
+            "//:ui/events/gestures/motion_event_aura.cc"
         ],
         "hdrs": [
             "//:ui/events/cocoa/cocoa_event_utils.h",
@@ -12067,7 +12067,7 @@ LIBRARIES = {
             "//:ui/events/scoped_target_handler.h",
             "//:ui/events/win/events_win_utils.h",
             "//:ui/events/win/stylus_handwriting_properties_win.h",
-            "//:ui/events/win/system_event_state_lookup.h",
+            "//:ui/events/win/system_event_state_lookup.h"
         ],
         "copts": [
             "/W4",
@@ -12147,7 +12147,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "EVENTS_IMPLEMENTATION",
@@ -12204,7 +12204,7 @@ LIBRARIES = {
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
             "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
@@ -12215,7 +12215,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":geometry_08e263e6d1b42686",
@@ -12227,7 +12227,7 @@ LIBRARIES = {
             ":linux_ui_af5ca476624e4dba",
             ":linux_ui_cf279c3f9c36d8d5",
             ":skia",
-            ":skia_3e2be659073cb989",
+            ":skia_3e2be659073cb989"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -12283,7 +12283,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -12360,8 +12360,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events:events_base": {
         "name": "linux_ui_6aa4e7c5c1ed4398",
@@ -12376,7 +12376,7 @@ LIBRARIES = {
             "//:ui/events/keycodes/keyboard_code_conversion.cc",
             "//:ui/events/mobile_scroller.cc",
             "//:ui/events/pointer_details.cc",
-            "//:ui/events/keycodes/keyboard_code_conversion_win.cc",
+            "//:ui/events/keycodes/keyboard_code_conversion_win.cc"
         ],
         "hdrs": [
             "//:ui/events/base_event_utils.h",
@@ -12395,7 +12395,7 @@ LIBRARIES = {
             "//:ui/events/keycodes/keyboard_codes_win.h",
             "//:ui/events/keycodes/keyboard_defines_win.h",
             "//:ui/events/mobile_scroller.h",
-            "//:ui/events/pointer_details.h",
+            "//:ui/events/pointer_details.h"
         ],
         "copts": [
             "/W4",
@@ -12474,7 +12474,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "EVENTS_BASE_IMPLEMENTATION",
@@ -12506,7 +12506,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -12514,7 +12514,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -12524,7 +12524,7 @@ LIBRARIES = {
             ":linux_ui_62200aff079ef3f1",
             ":linux_ui_666d7e4d402c4545",
             ":linux_ui_cf279c3f9c36d8d5",
-            ":linux_ui_ee2192658dd01344",
+            ":linux_ui_ee2192658dd01344"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -12566,7 +12566,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -12642,8 +12642,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events:gesture_detection": {
         "name": "linux_ui_095775490c635255",
@@ -12662,7 +12662,7 @@ LIBRARIES = {
             "//:ui/events/gesture_detection/scale_gesture_listeners.cc",
             "//:ui/events/gesture_detection/snap_scroll_controller.cc",
             "//:ui/events/gesture_detection/touch_disposition_gesture_filter.cc",
-            "//:ui/events/gesture_detection/gesture_configuration_aura.cc",
+            "//:ui/events/gesture_detection/gesture_configuration_aura.cc"
         ],
         "hdrs": [
             "//:ui/events/gesture_detection/filtered_gesture_provider.h",
@@ -12678,7 +12678,7 @@ LIBRARIES = {
             "//:ui/events/gesture_detection/scale_gesture_detector.h",
             "//:ui/events/gesture_detection/scale_gesture_listeners.h",
             "//:ui/events/gesture_detection/snap_scroll_controller.h",
-            "//:ui/events/gesture_detection/touch_disposition_gesture_filter.h",
+            "//:ui/events/gesture_detection/touch_disposition_gesture_filter.h"
         ],
         "copts": [
             "/W4",
@@ -12757,7 +12757,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GESTURE_DETECTION_IMPLEMENTATION",
@@ -12814,7 +12814,7 @@ LIBRARIES = {
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
             "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
@@ -12825,7 +12825,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -12835,7 +12835,7 @@ LIBRARIES = {
             ":linux_ui_6aa4e7c5c1ed4398",
             ":linux_ui_a05a3726686adb6b",
             ":linux_ui_af5ca476624e4dba",
-            ":skia_3e2be659073cb989",
+            ":skia_3e2be659073cb989"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -12891,7 +12891,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -12967,15 +12967,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events:platform_event": {
         "name": "linux_ui_0adef59f2606528e",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:ui/events/platform_event.h",
+            "//:ui/events/platform_event.h"
         ],
         "copts": [
             "/W4",
@@ -13054,7 +13054,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -13085,7 +13085,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -13093,10 +13093,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -13138,7 +13138,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -13214,8 +13214,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/events:velocity_tracker": {
         "name": "linux_ui_a05a3726686adb6b",
@@ -13224,14 +13224,14 @@ LIBRARIES = {
             "//:ui/events/velocity_tracker/motion_event.cc",
             "//:ui/events/velocity_tracker/motion_event_generic.cc",
             "//:ui/events/velocity_tracker/velocity_tracker.cc",
-            "//:ui/events/velocity_tracker/velocity_tracker_state.cc",
+            "//:ui/events/velocity_tracker/velocity_tracker_state.cc"
         ],
         "hdrs": [
             "//:ui/events/velocity_tracker/bitset_32.h",
             "//:ui/events/velocity_tracker/motion_event.h",
             "//:ui/events/velocity_tracker/motion_event_generic.h",
             "//:ui/events/velocity_tracker/velocity_tracker.h",
-            "//:ui/events/velocity_tracker/velocity_tracker_state.h",
+            "//:ui/events/velocity_tracker/velocity_tracker_state.h"
         ],
         "copts": [
             "/W4",
@@ -13310,7 +13310,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_VELOCITY_TRACKER_IMPL",
@@ -13365,7 +13365,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -13375,13 +13375,13 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":geometry_08e263e6d1b42686",
             ":gfx_4d8d22d2d647e8f3",
-            ":linux_ui_6aa4e7c5c1ed4398",
+            ":linux_ui_6aa4e7c5c1ed4398"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -13437,7 +13437,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -13513,19 +13513,19 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/ipc/buffer_types:buffer_types": {
         "name": "linux_ui_c9620d03c8b4301c",
         "kind": "static_library",
         "srcs": [
-            "//:ui/gfx/ipc/buffer_types/gfx_param_traits.cc",
+            "//:ui/gfx/ipc/buffer_types/gfx_param_traits.cc"
         ],
         "hdrs": [
             "//:ui/gfx/ipc/buffer_types/gfx_ipc_export.h",
             "//:ui/gfx/ipc/buffer_types/gfx_param_traits.h",
-            "//:ui/gfx/ipc/buffer_types/gfx_param_traits_macros.h",
+            "//:ui/gfx/ipc/buffer_types/gfx_param_traits_macros.h"
         ],
         "copts": [
             "/W4",
@@ -13604,7 +13604,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GFX_IPC_BUFFER_TYPES_IMPLEMENTATION",
@@ -13644,7 +13644,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -13652,12 +13652,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":linux_ui_cee6806d3ced4587",
-            ":paint_bb87af8d9cf34ed6",
+            ":paint_bb87af8d9cf34ed6"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -13705,7 +13705,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -13781,19 +13781,19 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/ipc/color:color": {
         "name": "linux_ui_ed4d3d1817da2248",
         "kind": "static_library",
         "srcs": [
-            "//:ui/gfx/ipc/color/gfx_param_traits.cc",
+            "//:ui/gfx/ipc/color/gfx_param_traits.cc"
         ],
         "hdrs": [
             "//:ui/gfx/ipc/color/gfx_ipc_color_export.h",
             "//:ui/gfx/ipc/color/gfx_param_traits.h",
-            "//:ui/gfx/ipc/color/gfx_param_traits_macros.h",
+            "//:ui/gfx/ipc/color/gfx_param_traits_macros.h"
         ],
         "copts": [
             "/W4",
@@ -13872,7 +13872,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GFX_IPC_COLOR_IMPLEMENTATION",
@@ -13926,7 +13926,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -13936,13 +13936,13 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":linux_ui_c9620d03c8b4301c",
             ":linux_ui_cee6806d3ced4587",
-            ":paint_72198bff3a66bb77",
+            ":paint_72198bff3a66bb77"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -13991,7 +13991,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -14067,18 +14067,18 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/ipc/geometry:geometry": {
         "name": "linux_ui_003ff17be8a1c115",
         "kind": "static_library",
         "srcs": [
-            "//:ui/gfx/ipc/geometry/gfx_param_traits.cc",
+            "//:ui/gfx/ipc/geometry/gfx_param_traits.cc"
         ],
         "hdrs": [
             "//:ui/gfx/ipc/geometry/gfx_ipc_geometry_export.h",
-            "//:ui/gfx/ipc/geometry/gfx_param_traits.h",
+            "//:ui/gfx/ipc/geometry/gfx_param_traits.h"
         ],
         "copts": [
             "/W4",
@@ -14157,7 +14157,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GFX_IPC_GEOMETRY_IMPLEMENTATION",
@@ -14197,7 +14197,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -14205,12 +14205,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":geometry_08e263e6d1b42686",
-            ":linux_ui_cee6806d3ced4587",
+            ":linux_ui_cee6806d3ced4587"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -14258,7 +14258,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -14334,18 +14334,18 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/ipc/skia:skia": {
         "name": "linux_ui_89e3b42584186f89",
         "kind": "static_library",
         "srcs": [
-            "//:ui/gfx/ipc/skia/gfx_skia_param_traits.cc",
+            "//:ui/gfx/ipc/skia/gfx_skia_param_traits.cc"
         ],
         "hdrs": [
             "//:ui/gfx/ipc/skia/gfx_skia_ipc_export.h",
-            "//:ui/gfx/ipc/skia/gfx_skia_param_traits.h",
+            "//:ui/gfx/ipc/skia/gfx_skia_param_traits.h"
         ],
         "copts": [
             "/W4",
@@ -14424,7 +14424,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GFX_SKIA_IPC_IMPLEMENTATION",
@@ -14479,7 +14479,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -14489,7 +14489,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -14497,7 +14497,7 @@ LIBRARIES = {
             ":gfx_4d8d22d2d647e8f3",
             ":linux_ui_cee6806d3ced4587",
             ":linux_ui_f22f4902c4399a41",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -14553,7 +14553,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -14629,19 +14629,19 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/ipc:ipc": {
         "name": "linux_ui_f22f4902c4399a41",
         "kind": "static_library",
         "srcs": [
-            "//:ui/gfx/ipc/gfx_param_traits.cc",
+            "//:ui/gfx/ipc/gfx_param_traits.cc"
         ],
         "hdrs": [
             "//:ui/gfx/ipc/gfx_ipc_export.h",
             "//:ui/gfx/ipc/gfx_param_traits.h",
-            "//:ui/gfx/ipc/gfx_param_traits_macros.h",
+            "//:ui/gfx/ipc/gfx_param_traits_macros.h"
         ],
         "copts": [
             "/W4",
@@ -14720,7 +14720,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GFX_IPC_IMPLEMENTATION",
@@ -14760,7 +14760,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -14768,7 +14768,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -14776,7 +14776,7 @@ LIBRARIES = {
             ":gfx_memory_buffer",
             ":linux_ui_003ff17be8a1c115",
             ":linux_ui_91c71d6fb83d11b1",
-            ":linux_ui_cee6806d3ced4587",
+            ":linux_ui_cee6806d3ced4587"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -14824,7 +14824,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -14900,21 +14900,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:dxgi_info": {
         "name": "linux_ui_214f2ff99e25ef61",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/gfx/mojom/dxgi_info.mojom.cc",
+            ":gen/ui/gfx/mojom/dxgi_info.mojom.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/mojom/dxgi_info.mojom-forward.h",
             ":gen/ui/gfx/mojom/dxgi_info.mojom-import-headers.h",
             ":gen/ui/gfx/mojom/dxgi_info.mojom-shared-message-ids.h",
             ":gen/ui/gfx/mojom/dxgi_info.mojom-test-utils.h",
-            ":gen/ui/gfx/mojom/dxgi_info.mojom.h",
+            ":gen/ui/gfx/mojom/dxgi_info.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -14993,7 +14993,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -15046,7 +15046,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -15056,7 +15056,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -15064,7 +15064,7 @@ LIBRARIES = {
             ":mojo_base_types",
             ":mojo_binding_headers",
             ":mojo_cpp_bindings",
-            ":paint_20b148d6d75beadf",
+            ":paint_20b148d6d75beadf"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -15109,7 +15109,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -15185,8 +15185,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:dxgi_info_shared": {
         "name": "linux_ui_6bfde7008bcda6b4",
@@ -15197,10 +15197,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":linux_ui_6be8b646cf839608",
+            ":linux_ui_6be8b646cf839608"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -15216,15 +15216,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/gfx/mojom:dxgi_info_shared_cpp_sources": {
         "name": "linux_ui_6be8b646cf839608",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/gfx/mojom/dxgi_info.mojom-shared.cc",
+            ":gen/ui/gfx/mojom/dxgi_info.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/mojom/dxgi_info.mojom-data-view.h",
@@ -15232,7 +15232,7 @@ LIBRARIES = {
             ":gen/ui/gfx/mojom/dxgi_info.mojom-params-data.h",
             ":gen/ui/gfx/mojom/dxgi_info.mojom-send-validation.h",
             ":gen/ui/gfx/mojom/dxgi_info.mojom-shared-internal.h",
-            ":gen/ui/gfx/mojom/dxgi_info.mojom-shared.h",
+            ":gen/ui/gfx/mojom/dxgi_info.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -15311,7 +15311,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -15343,7 +15343,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -15351,12 +15351,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":mojo_base_types",
             ":mojo_cpp_bindings",
-            ":paint_f882495ee5f8cad9",
+            ":paint_f882495ee5f8cad9"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -15400,7 +15400,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -15476,8 +15476,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:mojom": {
         "name": "linux_ui_459b0bcff26aeefc",
@@ -15511,7 +15511,7 @@ LIBRARIES = {
             "//:ui/gfx/mojom/delegated_ink_point_mojom_traits.cc",
             "//:ui/gfx/mojom/mask_filter_info_mojom_traits.cc",
             "//:ui/gfx/mojom/linear_gradient_mojom_traits.cc",
-            "//:ui/gfx/mojom/ca_layer_params_mojom_traits.cc",
+            "//:ui/gfx/mojom/ca_layer_params_mojom_traits.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/mojom/accelerated_widget.mojom-forward.h",
@@ -15633,7 +15633,7 @@ LIBRARIES = {
             ":gen/ui/gfx/mojom/transform.mojom-import-headers.h",
             ":gen/ui/gfx/mojom/transform.mojom-shared-message-ids.h",
             ":gen/ui/gfx/mojom/transform.mojom-test-utils.h",
-            ":gen/ui/gfx/mojom/transform.mojom.h",
+            ":gen/ui/gfx/mojom/transform.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -15712,7 +15712,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -15766,7 +15766,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -15776,7 +15776,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -15791,7 +15791,7 @@ LIBRARIES = {
             ":mojo_binding_headers",
             ":mojo_cpp_bindings",
             ":paint_20b148d6d75beadf",
-            ":paint_f4aa738e09e5eb07",
+            ":paint_f4aa738e09e5eb07"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -15847,7 +15847,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -15923,8 +15923,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:mojom_shared": {
         "name": "linux_ui_9fd2d31dd75f7d3c",
@@ -15935,10 +15935,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":linux_ui_c5af6b0742ab3129",
+            ":linux_ui_c5af6b0742ab3129"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -15954,9 +15954,9 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/gfx/mojom:mojom_shared_cpp_sources": {
         "name": "linux_ui_c5af6b0742ab3129",
@@ -15985,7 +15985,7 @@ LIBRARIES = {
             ":gen/ui/gfx/mojom/selection_bound.mojom-shared.cc",
             ":gen/ui/gfx/mojom/swap_result.mojom-shared.cc",
             ":gen/ui/gfx/mojom/swap_timings.mojom-shared.cc",
-            ":gen/ui/gfx/mojom/transform.mojom-shared.cc",
+            ":gen/ui/gfx/mojom/transform.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/mojom/accelerated_widget.mojom-data-view.h",
@@ -16131,7 +16131,7 @@ LIBRARIES = {
             ":gen/ui/gfx/mojom/transform.mojom-params-data.h",
             ":gen/ui/gfx/mojom/transform.mojom-send-validation.h",
             ":gen/ui/gfx/mojom/transform.mojom-shared-internal.h",
-            ":gen/ui/gfx/mojom/transform.mojom-shared.h",
+            ":gen/ui/gfx/mojom/transform.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -16210,7 +16210,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -16242,7 +16242,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -16250,7 +16250,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":geometry_c8fced2c712ec0b3",
@@ -16258,7 +16258,7 @@ LIBRARIES = {
             ":mojo_base_types",
             ":mojo_cpp_bindings",
             ":paint_2142fbf5cd1ea552",
-            ":paint_f882495ee5f8cad9",
+            ":paint_f882495ee5f8cad9"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -16302,7 +16302,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -16378,21 +16378,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:native_handle_types": {
         "name": "linux_ui_29bccf061115204c",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/gfx/mojom/native_handle_types.mojom.cc",
+            ":gen/ui/gfx/mojom/native_handle_types.mojom.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/mojom/native_handle_types.mojom-forward.h",
             ":gen/ui/gfx/mojom/native_handle_types.mojom-import-headers.h",
             ":gen/ui/gfx/mojom/native_handle_types.mojom-shared-message-ids.h",
             ":gen/ui/gfx/mojom/native_handle_types.mojom-test-utils.h",
-            ":gen/ui/gfx/mojom/native_handle_types.mojom.h",
+            ":gen/ui/gfx/mojom/native_handle_types.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -16471,7 +16471,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -16525,7 +16525,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -16535,7 +16535,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -16543,7 +16543,7 @@ LIBRARIES = {
             ":linux_ui_4880b9c5f6097ae5",
             ":mojo_base_types",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -16599,7 +16599,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -16675,17 +16675,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:native_handle_types_mojom_traits": {
         "name": "linux_ui_07a2e1d503742bec",
         "kind": "static_library",
         "srcs": [
-            "//:ui/gfx/mojom/native_handle_types_mojom_traits.cc",
+            "//:ui/gfx/mojom/native_handle_types_mojom_traits.cc"
         ],
         "hdrs": [
-            "//:ui/gfx/mojom/native_handle_types_mojom_traits.h",
+            "//:ui/gfx/mojom/native_handle_types_mojom_traits.h"
         ],
         "copts": [
             "/W4",
@@ -16764,7 +16764,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_GFX_NATIVE_HANDLE_TYPES_SHARED_MOJOM_TRAITS_IMPL",
@@ -16819,7 +16819,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -16829,13 +16829,13 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":gfx_4d8d22d2d647e8f3",
             ":linux_ui_4880b9c5f6097ae5",
-            ":mojo_base_types",
+            ":mojo_base_types"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -16891,7 +16891,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -16967,8 +16967,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:native_handle_types_shared": {
         "name": "linux_ui_4880b9c5f6097ae5",
@@ -16979,10 +16979,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":linux_ui_b045297d32806aad",
+            ":linux_ui_b045297d32806aad"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -16998,15 +16998,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/gfx/mojom:native_handle_types_shared_cpp_sources": {
         "name": "linux_ui_b045297d32806aad",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/gfx/mojom/native_handle_types.mojom-shared.cc",
+            ":gen/ui/gfx/mojom/native_handle_types.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/mojom/native_handle_types.mojom-data-view.h",
@@ -17014,7 +17014,7 @@ LIBRARIES = {
             ":gen/ui/gfx/mojom/native_handle_types.mojom-params-data.h",
             ":gen/ui/gfx/mojom/native_handle_types.mojom-send-validation.h",
             ":gen/ui/gfx/mojom/native_handle_types.mojom-shared-internal.h",
-            ":gen/ui/gfx/mojom/native_handle_types.mojom-shared.h",
+            ":gen/ui/gfx/mojom/native_handle_types.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -17093,7 +17093,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -17125,7 +17125,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -17133,11 +17133,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":mojo_base_types",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -17181,7 +17181,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -17257,8 +17257,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:shared_mojom_traits": {
         "name": "linux_ui_1d479fd4109c4848",
@@ -17269,7 +17269,7 @@ LIBRARIES = {
             "//:ui/gfx/mojom/display_color_spaces_mojom_traits.cc",
             "//:ui/gfx/mojom/gpu_extra_info_mojom_traits.cc",
             "//:ui/gfx/mojom/gpu_fence_handle_mojom_traits.cc",
-            "//:ui/gfx/mojom/hdr_static_metadata_mojom_traits.cc",
+            "//:ui/gfx/mojom/hdr_static_metadata_mojom_traits.cc"
         ],
         "hdrs": [
             "//:ui/gfx/mojom/buffer_types_mojom_traits.h",
@@ -17277,7 +17277,7 @@ LIBRARIES = {
             "//:ui/gfx/mojom/display_color_spaces_mojom_traits.h",
             "//:ui/gfx/mojom/gpu_extra_info_mojom_traits.h",
             "//:ui/gfx/mojom/gpu_fence_handle_mojom_traits.h",
-            "//:ui/gfx/mojom/hdr_static_metadata_mojom_traits.h",
+            "//:ui/gfx/mojom/hdr_static_metadata_mojom_traits.h"
         ],
         "copts": [
             "/W4",
@@ -17356,7 +17356,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_GFX_SHARED_MOJOM_TRAITS_IMPL",
@@ -17411,7 +17411,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -17421,13 +17421,13 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":gfx_4d8d22d2d647e8f3",
             ":linux_ui_29bccf061115204c",
             ":linux_ui_9fd2d31dd75f7d3c",
-            ":paint_20b148d6d75beadf",
+            ":paint_20b148d6d75beadf"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -17483,7 +17483,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -17559,8 +17559,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:native_widget_types": {
         "name": "linux_ui_602674b5a9fb5feb",
@@ -17571,10 +17571,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gfx_22d333b1908eb24e",
+            ":gfx_22d333b1908eb24e"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -17588,9 +17588,9 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:wbemuuid.lib",
             "-DEFAULTLIB:winmm.lib",
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/gfx:selection_bound": {
         "name": "linux_ui_91c71d6fb83d11b1",
@@ -17601,10 +17601,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gfx_3e0e39fc6b76a43d",
+            ":gfx_3e0e39fc6b76a43d"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -17618,9 +17618,9 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:wbemuuid.lib",
             "-DEFAULTLIB:winmm.lib",
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/gl/init:init": {
         "name": "linux_ui_0e0e2235d98b7080",
@@ -17630,14 +17630,14 @@ LIBRARIES = {
             "//:ui/gl/init/gl_display_initializer.cc",
             "//:ui/gl/init/gl_factory.cc",
             "//:ui/gl/init/gl_factory_win.cc",
-            "//:ui/gl/init/gl_initializer_win.cc",
+            "//:ui/gl/init/gl_initializer_win.cc"
         ],
         "hdrs": [
             "//:ui/gl/init/create_gr_gl_interface.h",
             "//:ui/gl/init/gl_display_initializer.h",
             "//:ui/gl/init/gl_factory.h",
             "//:ui/gl/init/gl_init_export.h",
-            "//:ui/gl/init/gl_initializer.h",
+            "//:ui/gl/init/gl_initializer.h"
         ],
         "copts": [
             "/W4",
@@ -17716,7 +17716,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GL_INIT_IMPLEMENTATION",
@@ -17771,7 +17771,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -17781,14 +17781,14 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":gfx_4d8d22d2d647e8f3",
             ":linux_ui_6aed93e9638c7edf",
             ":mojo_cpp_bindings",
-            ":skia_3e2be659073cb989",
+            ":skia_3e2be659073cb989"
         ],
         "linkopts": [
             "-DEFAULTLIB:dwmapi.lib",
@@ -17848,7 +17848,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -17924,8 +17924,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gl/mojom:mojom": {
         "name": "linux_ui_6963c2ae5af81b8c",
@@ -17933,7 +17933,7 @@ LIBRARIES = {
         "srcs": [
             ":gen/ui/gl/mojom/gl_implementation.mojom.cc",
             ":gen/ui/gl/mojom/gpu_preference.mojom.cc",
-            "//:ui/gl/mojom/gl_implementation_mojom_traits.cc",
+            "//:ui/gl/mojom/gl_implementation_mojom_traits.cc"
         ],
         "hdrs": [
             ":gen/ui/gl/mojom/gl_implementation.mojom-forward.h",
@@ -17945,7 +17945,7 @@ LIBRARIES = {
             ":gen/ui/gl/mojom/gpu_preference.mojom-import-headers.h",
             ":gen/ui/gl/mojom/gpu_preference.mojom-shared-message-ids.h",
             ":gen/ui/gl/mojom/gpu_preference.mojom-test-utils.h",
-            ":gen/ui/gl/mojom/gpu_preference.mojom.h",
+            ":gen/ui/gl/mojom/gpu_preference.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -18024,7 +18024,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_GL_MOJOM_IMPL",
@@ -18079,7 +18079,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -18089,7 +18089,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -18097,7 +18097,7 @@ LIBRARIES = {
             ":linux_ui_6aed93e9638c7edf",
             ":mojo_base_types",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -18156,7 +18156,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -18232,8 +18232,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gl/mojom:mojom_shared": {
         "name": "linux_ui_0a83820543c66825",
@@ -18317,7 +18317,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -18349,7 +18349,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -18357,10 +18357,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":linux_ui_08af26996c59ae99",
+            ":linux_ui_08af26996c59ae99"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -18404,7 +18404,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -18480,15 +18480,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gl/mojom:mojom_shared_cpp_sources": {
         "name": "linux_ui_08af26996c59ae99",
         "kind": "source_set",
         "srcs": [
             ":gen/ui/gl/mojom/gl_implementation.mojom-shared.cc",
-            ":gen/ui/gl/mojom/gpu_preference.mojom-shared.cc",
+            ":gen/ui/gl/mojom/gpu_preference.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/gl/mojom/gl_implementation.mojom-data-view.h",
@@ -18502,7 +18502,7 @@ LIBRARIES = {
             ":gen/ui/gl/mojom/gpu_preference.mojom-params-data.h",
             ":gen/ui/gl/mojom/gpu_preference.mojom-send-validation.h",
             ":gen/ui/gl/mojom/gpu_preference.mojom-shared-internal.h",
-            ":gen/ui/gl/mojom/gpu_preference.mojom-shared.h",
+            ":gen/ui/gl/mojom/gpu_preference.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -18581,7 +18581,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_GL_MOJOM_SHARED_IMPL",
@@ -18614,7 +18614,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -18622,11 +18622,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":mojo_base_types",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -18670,7 +18670,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -18746,8 +18746,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gl:gl": {
         "name": "linux_ui_6aed93e9638c7edf",
@@ -18816,7 +18816,7 @@ LIBRARIES = {
             "//:ui/gl/vsync_provider_win_dcomp.cc",
             "//:ui/gl/vsync_thread_win.cc",
             "//:ui/gl/vsync_thread_win_dcomp.cc",
-            "//:ui/gl/vsync_thread_win_dxgi.cc",
+            "//:ui/gl/vsync_thread_win_dxgi.cc"
         ],
         "hdrs": [
             "//:ui/gl/angle_implementation.h",
@@ -18889,7 +18889,7 @@ LIBRARIES = {
             "//:ui/gl/vsync_provider_win_dcomp.h",
             "//:ui/gl/vsync_thread_win.h",
             "//:ui/gl/vsync_thread_win_dcomp.h",
-            "//:ui/gl/vsync_thread_win_dxgi.h",
+            "//:ui/gl/vsync_thread_win_dxgi.h"
         ],
         "copts": [
             "/W4",
@@ -18970,7 +18970,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GL_IMPLEMENTATION",
@@ -19025,7 +19025,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -19035,7 +19035,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -19048,7 +19048,7 @@ LIBRARIES = {
             ":linux_ui_af5ca476624e4dba",
             ":linux_ui_ee2192658dd01344",
             ":linux_ui_f808491510315941",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:dxgi.lib",
@@ -19109,7 +19109,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -19187,8 +19187,8 @@ LIBRARIES = {
             "/FIbuild/precompile.h",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gl:gl_headers": {
         "name": "linux_ui_47cc4976aeff9383",
@@ -19272,7 +19272,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -19303,15 +19303,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":angle_runtime_8630f6c75a229ab8",
+            ":angle_runtime_8630f6c75a229ab8"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -19325,7 +19325,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -19401,17 +19401,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/latency:latency": {
         "name": "linux_ui_0441c819201923d9",
         "kind": "source_set",
         "srcs": [
-            "//:ui/latency/latency_info.cc",
+            "//:ui/latency/latency_info.cc"
         ],
         "hdrs": [
-            "//:ui/latency/latency_info.h",
+            "//:ui/latency/latency_info.h"
         ],
         "copts": [
             "/W4",
@@ -19491,7 +19491,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -19547,7 +19547,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -19558,13 +19558,13 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":browser_services_a1c38d95c2c0bcd0",
             ":browser_services_e512055887872644",
-            ":gfx_4d8d22d2d647e8f3",
+            ":gfx_4d8d22d2d647e8f3"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -19620,7 +19620,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -19697,18 +19697,18 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/lottie:lottie": {
         "name": "linux_ui_f23e85712b2c8d9d",
         "kind": "static_library",
         "srcs": [
-            "//:ui/lottie/animation.cc",
+            "//:ui/lottie/animation.cc"
         ],
         "hdrs": [
             "//:ui/lottie/animation.h",
-            "//:ui/lottie/animation_observer.h",
+            "//:ui/lottie/animation_observer.h"
         ],
         "copts": [
             "/W4",
@@ -19787,7 +19787,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_LOTTIE_IMPL",
@@ -19842,7 +19842,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -19852,13 +19852,13 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":gfx_4d8d22d2d647e8f3",
             ":linux_ui_1806f96eccf7ad24",
-            ":paint_6c7e7ea8bec39a32",
+            ":paint_6c7e7ea8bec39a32"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -19914,7 +19914,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -19990,15 +19990,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/resources:ui_unscaled_resources_grd": {
         "name": "linux_ui_136b5004406e21ee",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/ui/resources/grit/ui_unscaled_resources.h",
+            ":gen/ui/resources/grit/ui_unscaled_resources.h"
         ],
         "copts": [
             "/W4",
@@ -20077,13 +20077,13 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -20098,10 +20098,10 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "resource_srcs": [
-            ":gen/ui/resources/ui_unscaled_resources.rc",
+            ":gen/ui/resources/ui_unscaled_resources.rc"
         ],
         "resource_defines": [
             "_HAS_NODISCARD",
@@ -20133,7 +20133,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "c_copts": [
             "/W4",
@@ -20209,15 +20209,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/strings:app_locale_settings": {
         "name": "linux_ui_45865ada443053ff",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/ui/strings/grit/app_locale_settings.h",
+            ":gen/ui/strings/grit/app_locale_settings.h"
         ],
         "copts": [
             "/W4",
@@ -20296,7 +20296,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -20327,12 +20327,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -20347,7 +20347,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -20423,15 +20423,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/strings:auto_image_annotation_strings": {
         "name": "linux_ui_a9631ccf1760105c",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/ui/strings/grit/auto_image_annotation_strings.h",
+            ":gen/ui/strings/grit/auto_image_annotation_strings.h"
         ],
         "copts": [
             "/W4",
@@ -20510,7 +20510,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -20541,12 +20541,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -20561,7 +20561,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -20637,15 +20637,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/strings:ax_strings": {
         "name": "linux_ui_2de0e1bd6ca838cd",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/ui/strings/grit/ax_strings.h",
+            ":gen/ui/strings/grit/ax_strings.h"
         ],
         "copts": [
             "/W4",
@@ -20724,7 +20724,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -20755,12 +20755,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -20775,7 +20775,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -20851,8 +20851,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/strings:strings": {
         "name": "linux_ui_67fe2a67ec7e81a3",
@@ -20863,23 +20863,23 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":linux_ui_2de0e1bd6ca838cd",
             ":linux_ui_348c8ce9fae79b28",
             ":linux_ui_45865ada443053ff",
-            ":linux_ui_a9631ccf1760105c",
+            ":linux_ui_a9631ccf1760105c"
         ],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/strings:ui_strings": {
         "name": "linux_ui_348c8ce9fae79b28",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/ui/strings/grit/ui_strings.h",
+            ":gen/ui/strings/grit/ui_strings.h"
         ],
         "copts": [
             "/W4",
@@ -20958,7 +20958,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -20989,12 +20989,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -21009,7 +21009,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -21085,9 +21085,9 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -21679,7 +21679,7 @@ SHARED_HEADERS = [
     "//:ui/lottie/animation_observer.h",
     "//:ui/ozone/public/ozone_platform.h",
     "//:ui/platform_window/platform_window.h",
-    "//:ui/platform_window/platform_window_delegate.h",
+    "//:ui/platform_window/platform_window_delegate.h"
 ]
 
 ACTIONS = [
@@ -21687,10 +21687,10 @@ ACTIONS = [
         "response_file_contents": [],
         "name": "linux_ui_8999cff87c6f57d7_0",
         "srcs": {
-            "//:tools/l10n/generate_locales_list.py": "tools/l10n/generate_locales_list.py",
+            "//:tools/l10n/generate_locales_list.py": "tools/l10n/generate_locales_list.py"
         },
         "outs": {
-            "gen/ui/base/l10n/l10n_util_locales_list.inc": "gen/ui/base/l10n/l10n_util_locales_list.inc",
+            "gen/ui/base/l10n/l10n_util_locales_list.inc": "gen/ui/base/l10n/l10n_util_locales_list.inc"
         },
         "script": "tools/l10n/generate_locales_list.py",
         "args": [
@@ -21751,10 +21751,10 @@ ACTIONS = [
             "zh-CN",
             "zh-TW",
             "ar-XB",
-            "en-XA",
+            "en-XA"
         ],
-        "deps": [],
-    },
+        "deps": []
+    }
 ]
 
 TOOLS = {}
@@ -21765,6 +21765,6 @@ RUNTIME_DEPS = {
         "//third_party/angle:libGLESv2",
         "//third_party/swiftshader/src/Vulkan:icd_file",
         "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan",
-        "//third_party/vulkan-loader/src:libvulkan",
-    ],
+        "//third_party/vulkan-loader/src:libvulkan"
+    ]
 }

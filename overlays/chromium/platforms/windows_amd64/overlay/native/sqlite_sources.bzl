@@ -69,7 +69,7 @@ COPTS = [
     "-Wno-string-conversion",
     "/std:c11",
     "/TC",
-    "/EHs-c-",
+    "/EHs-c-"
 ]
 
 DEFINES = [
@@ -149,5 +149,5 @@ DEFINES = [
     "U_ENABLE_TRACING=1",
     "U_ENABLE_RESOURCE_TRACING=0",
     "U_STATIC_IMPLEMENTATION",
-    "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+    "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
 ]

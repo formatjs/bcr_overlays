@@ -24,7 +24,7 @@ exports_files(["write_buildflag_header.py"])
 exports_files([
     "action_helpers.py",
     "gn_helpers.py",
-    "zip_helpers.py",
+    "zip_helpers.py"
 ])
 # END GENERATED MOJO INPUTS
 
@@ -34,25 +34,21 @@ exports_files(["rust/bindings.rs"])
 exports_files([
     "rust/chromium_prelude/chromium_prelude.rs",
     "rust/chromium_prelude/import_attribute.rs",
-    "rust/gni_impl/allow_all_warnings.rsp",
+    "rust/gni_impl/allow_all_warnings.rsp"
 ])
 # END GENERATED RUST INPUTS
 
 exports_files(["rust/gni_impl/rustc_print_cfg.py"])
 
 # BEGIN GENERATED BASE INPUTS
-exports_files([
-    "util/version.py",
-    "util/android_chrome_version.py",
-    "util/LASTCHANGE.dummy",
-])
+exports_files(["util/version.py", "util/android_chrome_version.py", "util/LASTCHANGE.dummy"])
 # END GENERATED BASE INPUTS
 
 # BEGIN GENERATED WEBUI INPUTS
 exports_files([
     "action_helpers.py",
     "gn_helpers.py",
-    "zip_helpers.py",
+    "zip_helpers.py"
 ])
 # END GENERATED WEBUI INPUTS
 
@@ -103,13 +99,13 @@ exports_files([
     "util/lib/results/result_types.py",
     "util/tast_control.py",
     "util/version.py",
-    "util/version_test.py",
+    "util/version_test.py"
 ])
 # END NETWORK INPUTS
 
 # BEGIN CODECS INPUTS
 exports_files([
-    "gn_run_binary.py",
+    "gn_run_binary.py"
 ])
 # END CODECS INPUTS
 
@@ -121,13 +117,13 @@ exports_files([
 
 # BEGIN ML INPUTS
 exports_files([
-    "gn_run_binary.py",
+    "gn_run_binary.py"
 ])
 # END ML INPUTS
 
 # BEGIN FFMPEG INPUTS
 exports_files([
-    "gn_run_binary.py",
+    "gn_run_binary.py"
 ])
 # END FFMPEG INPUTS
 
@@ -176,7 +172,7 @@ exports_files([
     "util/lib/results/result_types.py",
     "util/tast_control.py",
     "util/version.py",
-    "util/version_test.py",
+    "util/version_test.py"
 ])
 # END COMPOSITOR INPUTS
 
@@ -309,5 +305,7 @@ exports_files([
     "util/version_test.py",
 ])
 # END BROWSER INPUTS
+
+exports_files(["precompile.h"])
 
 exports_files(["precompile.h"])

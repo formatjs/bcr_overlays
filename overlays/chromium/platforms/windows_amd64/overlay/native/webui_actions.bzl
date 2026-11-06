@@ -1,11 +1,12 @@
 """Generated WebUI action graph; run tools/import_webui_actions.py."""
 
+load(":python_action.bzl", "chromium_python_action", "chromium_filegroup")
+load(":resource_copy.bzl", "chromium_resource_copy")
+
+load(":tool_inputs.bzl", "chromium_tool_inputs")
+load(":node_python_tool.bzl", "chromium_node_python_tool")
 load("@rules_python//python:defs.bzl", "py_binary")
 load("//native/rust:tools.bzl", "import_executable")
-load(":node_python_tool.bzl", "chromium_node_python_tool")
-load(":python_action.bzl", "chromium_filegroup", "chromium_python_action")
-load(":resource_copy.bzl", "chromium_resource_copy")
-load(":tool_inputs.bzl", "chromium_tool_inputs")
 
 def native_webui(name):
     """Build original WebUI assets with declared native tools.

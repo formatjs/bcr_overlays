@@ -7,6 +7,7 @@ load(":browser_services.bzl", "native_browser_services")
 load(":browser_v8.bzl", "native_browser_v8")
 load(":buildflags.bzl", "native_buildflags")
 load(":codecs.bzl", "native_codecs")
+load(":compositor.bzl", "native_compositor")
 load(":crypto.bzl", "native_crypto")
 load(":cxx_bridge.bzl", "chromium_cxx_bridge", "native_cxx_tools")
 load(":dawn.bzl", "native_dawn")
@@ -165,3 +166,5 @@ native_ml()
 native_ffmpeg()
 
 native_media()
+
+native_compositor()

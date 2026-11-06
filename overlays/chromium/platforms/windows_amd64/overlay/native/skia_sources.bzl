@@ -5,10 +5,10 @@ LIBRARIES = {
         "name": "skia_a3e10cd4a981a9fa",
         "kind": "static_library",
         "srcs": [
-            ":gen/third_party/skia/src/ports/fontations/src/ffi.rs.cc",
+            ":gen/third_party/skia/src/ports/fontations/src/ffi.rs.cc"
         ],
         "hdrs": [
-            ":gen/third_party/skia/src/ports/fontations/src/ffi.rs.h",
+            ":gen/third_party/skia/src/ports/fontations/src/ffi.rs.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -80,7 +80,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -124,21 +124,21 @@ LIBRARIES = {
             "SK_GRAPHITE",
             "SK_DAWN",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//native/rust:font_types",
             "//native/rust:read_fonts",
             "//native/rust:skrifa",
             "//third_party/rust/chromium_crates_io/vendor/cxx-v1:core-lib",
-            ":skia_f3189baa8a20bd31",
+            ":skia_f3189baa8a20bd31"
         ],
         "linkopts": [
             "-DEFAULTLIB:winmm.lib",
@@ -161,7 +161,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -229,15 +229,15 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:path_bridge": {
         "name": "skia_f3189baa8a20bd31",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_skia//:third_party/skia/src/ports/fontations/src/skpath_bridge.h",
+            "@chromium_skia//:third_party/skia/src/ports/fontations/src/skpath_bridge.h"
         ],
         "copts": [
             "/W4",
@@ -317,7 +317,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -348,12 +348,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -368,7 +368,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -444,15 +444,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:rust_png_ffi_cpp": {
         "name": "skia_a17e85e7030780da",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_skia//:third_party/skia/rust/png/FFI.h",
+            "@chromium_skia//:third_party/skia/rust/png/FFI.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -524,7 +524,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -568,14 +568,14 @@ LIBRARIES = {
             "SK_GRAPHITE",
             "SK_DAWN",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [],
         "linkopts": [
@@ -590,7 +590,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -658,17 +658,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:rust_png_ffi_cxx_generated": {
         "name": "skia_9cc29d2e6d74e2ff",
         "kind": "static_library",
         "srcs": [
-            ":gen/third_party/skia/rust/png/FFI.rs.cc",
+            ":gen/third_party/skia/rust/png/FFI.rs.cc"
         ],
         "hdrs": [
-            ":gen/third_party/skia/rust/png/FFI.rs.h",
+            ":gen/third_party/skia/rust/png/FFI.rs.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -740,7 +740,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -784,19 +784,19 @@ LIBRARIES = {
             "SK_GRAPHITE",
             "SK_DAWN",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//native/rust:png",
             "//third_party/rust/chromium_crates_io/vendor/cxx-v1:core-lib",
-            ":skia_a17e85e7030780da",
+            ":skia_a17e85e7030780da"
         ],
         "linkopts": [
             "-DEFAULTLIB:winmm.lib",
@@ -819,7 +819,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -887,15 +887,15 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skcms": {
         "name": "skia_5280fdd4ac24420e",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_skia//:third_party/skia/modules/skcms/skcms.h",
+            "@chromium_skia//:third_party/skia/modules/skcms/skcms.h"
         ],
         "copts": [
             "/W4",
@@ -975,7 +975,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1020,19 +1020,19 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":skia_252c4ec507b1d915",
             ":skia_a1e436c76ee894c2",
-            ":skia_b13884bc42354455",
+            ":skia_b13884bc42354455"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1046,7 +1046,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -1122,21 +1122,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skcms_TransformBaseline_and_public": {
         "name": "skia_b13884bc42354455",
         "kind": "source_set",
         "srcs": [
             "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_TransformBaseline.cc",
-            "@chromium_skia//:third_party/skia/modules/skcms/skcms.cc",
+            "@chromium_skia//:third_party/skia/modules/skcms/skcms.cc"
         ],
         "hdrs": [
             "@chromium_skia//:third_party/skia/modules/skcms/skcms.h",
             "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_Transform.h",
             "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_internals.h",
-            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_public.h",
+            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_public.h"
         ],
         "copts": [
             "-w",
@@ -1218,7 +1218,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1249,12 +1249,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -1269,7 +1269,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-w",
@@ -1347,19 +1347,19 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skcms_TransformHsw": {
         "name": "skia_a1e436c76ee894c2",
         "kind": "source_set",
         "srcs": [
-            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_TransformHsw.cc",
+            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_TransformHsw.cc"
         ],
         "hdrs": [
             "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_Transform.h",
             "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_internals.h",
-            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_public.h",
+            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_public.h"
         ],
         "copts": [
             "/arch:AVX2",
@@ -1433,7 +1433,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -1491,14 +1491,14 @@ LIBRARIES = {
             "SK_DEFAULT_FONT_CACHE_LIMIT=20971520",
             "SK_DEFAULT_FONT_CACHE_COUNT_LIMIT=256",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [],
         "linkopts": [
@@ -1513,7 +1513,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/arch:AVX2",
@@ -1582,19 +1582,19 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skcms_TransformSkx": {
         "name": "skia_252c4ec507b1d915",
         "kind": "source_set",
         "srcs": [
-            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_TransformSkx.cc",
+            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_TransformSkx.cc"
         ],
         "hdrs": [
             "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_Transform.h",
             "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_internals.h",
-            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_public.h",
+            "@chromium_skia//:third_party/skia/modules/skcms/src/skcms_public.h"
         ],
         "copts": [
             "/arch:AVX512",
@@ -1668,7 +1668,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -1726,14 +1726,14 @@ LIBRARIES = {
             "SK_DEFAULT_FONT_CACHE_LIMIT=20971520",
             "SK_DEFAULT_FONT_CACHE_COUNT_LIMIT=256",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [],
         "linkopts": [
@@ -1748,7 +1748,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/arch:AVX512",
@@ -1817,8 +1817,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skia": {
         "name": "skia_d2def6d24ab12058",
@@ -2451,7 +2451,7 @@ LIBRARIES = {
             "@chromium_skia//:third_party/skia/modules/sksg/src/SkSGRenderNode.cpp",
             "@chromium_skia//:third_party/skia/modules/sksg/src/SkSGScene.cpp",
             "@chromium_skia//:third_party/skia/modules/sksg/src/SkSGText.cpp",
-            "@chromium_skia//:third_party/skia/modules/sksg/src/SkSGTransform.cpp",
+            "@chromium_skia//:third_party/skia/modules/sksg/src/SkSGTransform.cpp"
         ],
         "hdrs": [
             "//:skia/config/SkUserConfig.h",
@@ -3119,7 +3119,7 @@ LIBRARIES = {
             "@chromium_skia//:third_party/skia/src/xml/SkDOM.h",
             "@chromium_skia//:third_party/skia/src/xml/SkXMLParser.h",
             "@chromium_skia//:third_party/skia/src/xml/SkXMLWriter.h",
-            "@chromium_skia//:third_party/skia/src/xps/SkXPSDevice.h",
+            "@chromium_skia//:third_party/skia/src/xps/SkXPSDevice.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3191,7 +3191,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "SK_CODEC_DECODES_JPEG_GAINMAPS",
@@ -3261,7 +3261,7 @@ LIBRARIES = {
             "PDFIUM_REQUIRED_MODULES",
             "CHROMIUM_RESTRICT_VISIBILITY",
             "USE_LIBJPEG_TURBO=1",
-            "MANGLE_JPEG_NAMES",
+            "MANGLE_JPEG_NAMES"
         ],
         "includes": [
             "..",
@@ -3274,7 +3274,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//native/rust:skia_fontations",
@@ -3297,7 +3297,7 @@ LIBRARIES = {
             ":skia_f3189baa8a20bd31",
             ":webp",
             ":wuffs",
-            "@libexpat//:libexpat",
+            "@libexpat//:libexpat"
         ],
         "linkopts": [
             "-DEFAULTLIB:fontsub.lib",
@@ -3340,7 +3340,7 @@ LIBRARIES = {
             "/DELAYLOAD:cfgmgr32.dll",
             "/DELAYLOAD:powrprof.dll",
             "/DELAYLOAD:setupapi.dll",
-            "/DELAYLOAD:shcore.dll",
+            "/DELAYLOAD:shcore.dll"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3408,8 +3408,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skia_core_and_effects": {
         "name": "skia_4299e13b8f55f322",
@@ -3753,7 +3753,7 @@ LIBRARIES = {
             "@chromium_skia//:third_party/skia/src/pathops/SkPathOpsTypes.cpp",
             "@chromium_skia//:third_party/skia/src/pathops/SkPathOpsWinding.cpp",
             "@chromium_skia//:third_party/skia/src/pathops/SkPathWriter.cpp",
-            "@chromium_skia//:third_party/skia/src/pathops/SkReduceOrder.cpp",
+            "@chromium_skia//:third_party/skia/src/pathops/SkReduceOrder.cpp"
         ],
         "hdrs": [
             ":gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
@@ -4094,7 +4094,7 @@ LIBRARIES = {
             "@chromium_skia//:third_party/skia/src/shaders/gradients/SkRadialGradient.h",
             "@chromium_skia//:third_party/skia/src/shaders/gradients/SkSweepGradient.h",
             "@chromium_skia//:third_party/skia/src/text/GlyphRun.h",
-            "@chromium_skia//:third_party/skia/src/text/StrikeForGPU.h",
+            "@chromium_skia//:third_party/skia/src/text/StrikeForGPU.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4167,7 +4167,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -4225,19 +4225,19 @@ LIBRARIES = {
             "SK_DEFAULT_FONT_CACHE_LIMIT=20971520",
             "SK_DEFAULT_FONT_CACHE_COUNT_LIMIT=256",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//native/rust:skia_fontations",
             ":dawn_cpp_headers",
-            ":skia_f3189baa8a20bd31",
+            ":skia_f3189baa8a20bd31"
         ],
         "linkopts": [
             "-DEFAULTLIB:winmm.lib",
@@ -4260,7 +4260,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4328,8 +4328,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skia_core_public_headers": {
         "name": "skia_0eb6ba101242a344",
@@ -4430,7 +4430,7 @@ LIBRARIES = {
             "@chromium_skia//:third_party/skia/include/core/SkVertices.h",
             "@chromium_skia//:third_party/skia/include/core/SkYUVAInfo.h",
             "@chromium_skia//:third_party/skia/include/core/SkYUVAPixmaps.h",
-            "@chromium_skia//:third_party/skia/include/pathops/SkPathOps.h",
+            "@chromium_skia//:third_party/skia/include/pathops/SkPathOps.h"
         ],
         "copts": [
             "/W4",
@@ -4510,7 +4510,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4541,12 +4541,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -4561,7 +4561,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -4637,8 +4637,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skia_graphite_private": {
         "name": "skia_f088f1ebb49b3077",
@@ -4763,7 +4763,7 @@ LIBRARIES = {
             "@chromium_skia//:third_party/skia/src/gpu/graphite/dawn/DawnSampler.cpp",
             "@chromium_skia//:third_party/skia/src/gpu/graphite/dawn/DawnSharedContext.cpp",
             "@chromium_skia//:third_party/skia/src/gpu/graphite/dawn/DawnTexture.cpp",
-            "@chromium_skia//:third_party/skia/src/gpu/graphite/dawn/DawnTextureInfo.cpp",
+            "@chromium_skia//:third_party/skia/src/gpu/graphite/dawn/DawnTextureInfo.cpp"
         ],
         "hdrs": [
             ":gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
@@ -4918,7 +4918,7 @@ LIBRARIES = {
             "@chromium_skia//:third_party/skia/src/gpu/graphite/task/TaskList.h",
             "@chromium_skia//:third_party/skia/src/gpu/graphite/task/UploadTask.h",
             "@chromium_skia//:third_party/skia/src/gpu/graphite/text/TextAtlasManager.h",
-            "@chromium_skia//:third_party/skia/src/sksl/SkSLGraphiteModules.h",
+            "@chromium_skia//:third_party/skia/src/sksl/SkSLGraphiteModules.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4991,7 +4991,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -5049,17 +5049,17 @@ LIBRARIES = {
             "SK_DEFAULT_FONT_CACHE_LIMIT=20971520",
             "SK_DEFAULT_FONT_CACHE_COUNT_LIMIT=256",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
-            ":dawn_cpp_headers",
+            ":dawn_cpp_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -5073,7 +5073,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5141,8 +5141,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skia_graphite_public": {
         "name": "skia_a098dac7070d9652",
@@ -5176,7 +5176,7 @@ LIBRARIES = {
             "@chromium_skia//:third_party/skia/include/gpu/graphite/precompile/PrecompileImageFilter.h",
             "@chromium_skia//:third_party/skia/include/gpu/graphite/precompile/PrecompileMaskFilter.h",
             "@chromium_skia//:third_party/skia/include/gpu/graphite/precompile/PrecompileRuntimeEffect.h",
-            "@chromium_skia//:third_party/skia/include/gpu/graphite/precompile/PrecompileShader.h",
+            "@chromium_skia//:third_party/skia/include/gpu/graphite/precompile/PrecompileShader.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -5249,7 +5249,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -5307,18 +5307,18 @@ LIBRARIES = {
             "SK_DEFAULT_FONT_CACHE_LIMIT=20971520",
             "SK_DEFAULT_FONT_CACHE_COUNT_LIMIT=256",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":dawn_cpp_headers",
-            ":dawn_proc",
+            ":dawn_proc"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -5334,7 +5334,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5402,8 +5402,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skia_opts": {
         "name": "skia_92f4bb5474ef3063",
@@ -5481,7 +5481,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -5539,7 +5539,7 @@ LIBRARIES = {
             "SK_DEFAULT_FONT_CACHE_LIMIT=20971520",
             "SK_DEFAULT_FONT_CACHE_COUNT_LIMIT=256",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -5549,11 +5549,11 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
-            ":skia_333372b6c160e280",
+            ":skia_333372b6c160e280"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5595,7 +5595,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5663,14 +5663,14 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skia_opts_hsw": {
         "name": "skia_333372b6c160e280",
         "kind": "source_set",
         "srcs": [
-            "@chromium_skia//:third_party/skia/src/opts/SkOpts_hsw.cpp",
+            "@chromium_skia//:third_party/skia/src/opts/SkOpts_hsw.cpp"
         ],
         "hdrs": [],
         "copts": [
@@ -5745,7 +5745,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -5803,14 +5803,14 @@ LIBRARIES = {
             "SK_DEFAULT_FONT_CACHE_LIMIT=20971520",
             "SK_DEFAULT_FONT_CACHE_COUNT_LIMIT=256",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [],
         "linkopts": [
@@ -5825,7 +5825,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/arch:AVX2",
@@ -5894,18 +5894,18 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia:skia_switches": {
         "name": "skia_901c23b2bba52a07",
         "kind": "static_library",
         "srcs": [
-            "//:skia/ext/switches.cc",
+            "//:skia/ext/switches.cc"
         ],
         "hdrs": [
             "//:skia/ext/switches.h",
-            "//:skia/ext/switches_export.h",
+            "//:skia/ext/switches_export.h"
         ],
         "copts": [
             "/W4",
@@ -5985,7 +5985,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "SKIA_SWITCHES_IMPLEMENTATION",
@@ -6017,7 +6017,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -6025,10 +6025,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6070,7 +6070,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -6146,17 +6146,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base:features": {
         "name": "skia_3e2be659073cb989",
         "kind": "static_library",
         "srcs": [
-            "//:ui/base/ui_base_features.cc",
+            "//:ui/base/ui_base_features.cc"
         ],
         "hdrs": [
-            "//:ui/base/ui_base_features.h",
+            "//:ui/base/ui_base_features.h"
         ],
         "copts": [
             "/W4",
@@ -6236,7 +6236,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_BASE_FEATURES_IMPL",
@@ -6268,7 +6268,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -6276,10 +6276,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6321,7 +6321,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -6397,9 +6397,9 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -7827,7 +7827,7 @@ SHARED_HEADERS = [
     "@chromium_skia//:third_party/skia/src/xml/SkXMLParser.h",
     "@chromium_skia//:third_party/skia/src/xml/SkXMLWriter.h",
     "@chromium_skia//:third_party/skia/src/xps/SkXPSDevice.h",
-    "@chromium_skia//:third_party/skia/third_party/vello/cpp/vello.h",
+    "@chromium_skia//:third_party/skia/third_party/vello/cpp/vello.h"
 ]
 
 ACTIONS = [
@@ -7837,20 +7837,20 @@ ACTIONS = [
         "srcs": {
             "//:gpu/config/build_workaround_header.py": "gpu/config/build_workaround_header.py",
             "//:gpu/config/gpu_workaround_list.txt": "gpu/config/gpu_workaround_list.txt",
-            "@chromium_skia//:third_party/skia/src/gpu/gpu_workaround_list.txt": "third_party/skia/src/gpu/gpu_workaround_list.txt",
+            "@chromium_skia//:third_party/skia/src/gpu/gpu_workaround_list.txt": "third_party/skia/src/gpu/gpu_workaround_list.txt"
         },
         "outs": {
-            "gen/gpu/config/gpu_driver_bug_workaround_autogen.h": "gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
+            "gen/gpu/config/gpu_driver_bug_workaround_autogen.h": "gen/gpu/config/gpu_driver_bug_workaround_autogen.h"
         },
         "script": "gpu/config/build_workaround_header.py",
         "args": [
             "--output-file",
             "gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
             "../../gpu/config/gpu_workaround_list.txt",
-            "../../third_party/skia/src/gpu/gpu_workaround_list.txt",
+            "../../third_party/skia/src/gpu/gpu_workaround_list.txt"
         ],
-        "deps": [],
-    },
+        "deps": []
+    }
 ]
 
 TOOLS = {}
@@ -7870,18 +7870,18 @@ PUBLIC_DEFINES = [
     "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
     "SK_GL",
     "SK_GRAPHITE",
-    "SK_DAWN",
+    "SK_DAWN"
 ]
 
 BRIDGES = [
     {
         "name": "skia_972b7db6d46f9281_0",
         "src": "@chromium_skia//:third_party/skia/src/ports/fontations/src/ffi.rs",
-        "logical_source": "third_party/skia/src/ports/fontations/src/ffi.rs",
+        "logical_source": "third_party/skia/src/ports/fontations/src/ffi.rs"
     },
     {
         "name": "skia_651cac73886ea85f_0",
         "src": "@chromium_skia//:third_party/skia/rust/png/FFI.rs",
-        "logical_source": "third_party/skia/rust/png/FFI.rs",
-    },
+        "logical_source": "third_party/skia/rust/png/FFI.rs"
+    }
 ]

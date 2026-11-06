@@ -314,16 +314,16 @@ SOURCES = {
         "@chromium_quiche//:net/third_party/quiche/src/quiche/oblivious_http/buffers/oblivious_http_response.cc",
         "@chromium_quiche//:net/third_party/quiche/src/quiche/oblivious_http/common/oblivious_http_header_key_config.cc",
         "@chromium_quiche//:net/third_party/quiche/src/quiche/oblivious_http/oblivious_http_client.cc",
-        "@chromium_quiche//:net/third_party/quiche/src/quiche/oblivious_http/oblivious_http_gateway.cc",
+        "@chromium_quiche//:net/third_party/quiche/src/quiche/oblivious_http/oblivious_http_gateway.cc"
     ],
     "uri_template": [
-        "//:net/third_party/uri_template/uri_template.cc",
+        "//:net/third_party/uri_template/uri_template.cc"
     ],
     "quic_proto": [
         ":gen/net/third_party/quiche/src/quiche/quic/core/proto/cached_network_parameters.pb.cc",
         ":gen/net/third_party/quiche/src/quiche/quic/core/proto/crypto_server_config.pb.cc",
-        ":gen/net/third_party/quiche/src/quiche/quic/core/proto/source_address_token.pb.cc",
-    ],
+        ":gen/net/third_party/quiche/src/quiche/quic/core/proto/source_address_token.pb.cc"
+    ]
 }
 
 HEADERS = {
@@ -337,16 +337,16 @@ HEADERS = {
         "//:net/third_party/quiche/overrides/quiche_platform_impl/quiche_reference_counted_impl.h",
         "//:net/third_party/quiche/overrides/quiche_platform_impl/quiche_server_stats_impl.h",
         "//:net/third_party/quiche/overrides/quiche_platform_impl/quiche_stack_trace_impl.h",
-        "//:net/third_party/quiche/overrides/quiche_platform_impl/quiche_url_utils_impl.h",
+        "//:net/third_party/quiche/overrides/quiche_platform_impl/quiche_url_utils_impl.h"
     ],
     "uri_template": [
-        "//:net/third_party/uri_template/uri_template.h",
+        "//:net/third_party/uri_template/uri_template.h"
     ],
     "quic_proto": [
         ":gen/net/third_party/quiche/src/quiche/quic/core/proto/cached_network_parameters.pb.h",
         ":gen/net/third_party/quiche/src/quiche/quic/core/proto/crypto_server_config.pb.h",
-        ":gen/net/third_party/quiche/src/quiche/quic/core/proto/source_address_token.pb.h",
-    ],
+        ":gen/net/third_party/quiche/src/quiche/quic/core/proto/source_address_token.pb.h"
+    ]
 }
 
 COPTS = {
@@ -430,7 +430,7 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
+        "/EHs-c-"
     ],
     "uri_template": [
         "/W4",
@@ -510,7 +510,7 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
+        "/EHs-c-"
     ],
     "quic_proto": [
         "/wd4125",
@@ -590,8 +590,8 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
-    ],
+        "/EHs-c-"
+    ]
 }
 
 DEFINES = {
@@ -627,7 +627,7 @@ DEFINES = {
         "NVALGRIND",
         "DYNAMIC_ANNOTATIONS_ENABLED=0",
         "GOOGLE_PROTOBUF_NO_RTTI",
-        "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+        "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
     ],
     "uri_template": [
         "IS_URI_TEMPLATE_IMPL",
@@ -659,7 +659,7 @@ DEFINES = {
         "WINVER=0x0A00",
         "NDEBUG",
         "NVALGRIND",
-        "DYNAMIC_ANNOTATIONS_ENABLED=0",
+        "DYNAMIC_ANNOTATIONS_ENABLED=0"
     ],
     "quic_proto": [
         "IS_QUICHE_IMPL",
@@ -693,6 +693,6 @@ DEFINES = {
         "NVALGRIND",
         "DYNAMIC_ANNOTATIONS_ENABLED=0",
         "GOOGLE_PROTOBUF_NO_RTTI",
-        "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
-    ],
+        "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
+    ]
 }

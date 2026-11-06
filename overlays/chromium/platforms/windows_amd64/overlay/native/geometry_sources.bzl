@@ -5,14 +5,14 @@ LIBRARIES = {
         "name": "geometry_f1ee2060e9def4ae",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/gfx/geometry/mojom/geometry.mojom.cc",
+            ":gen/ui/gfx/geometry/mojom/geometry.mojom.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/geometry/mojom/geometry.mojom-forward.h",
             ":gen/ui/gfx/geometry/mojom/geometry.mojom-import-headers.h",
             ":gen/ui/gfx/geometry/mojom/geometry.mojom-shared-message-ids.h",
             ":gen/ui/gfx/geometry/mojom/geometry.mojom-test-utils.h",
-            ":gen/ui/gfx/geometry/mojom/geometry.mojom.h",
+            ":gen/ui/gfx/geometry/mojom/geometry.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -92,7 +92,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -124,7 +124,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -132,14 +132,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":geometry_10b10c3e0d3f8fbb",
             ":geometry_c8fced2c712ec0b3",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -183,8 +183,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//ui/gfx/geometry/mojom:mojom_shared": {
         "name": "geometry_c8fced2c712ec0b3",
@@ -195,10 +195,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":geometry_5fac7d9e50da3449",
+            ":geometry_5fac7d9e50da3449"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -214,14 +214,14 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
-        ],
+            "-DEFAULTLIB:ncrypt.lib"
+        ]
     },
     "//ui/gfx/geometry/mojom:mojom_shared_cpp_sources": {
         "name": "geometry_5fac7d9e50da3449",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/gfx/geometry/mojom/geometry.mojom-shared.cc",
+            ":gen/ui/gfx/geometry/mojom/geometry.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/geometry/mojom/geometry.mojom-data-view.h",
@@ -229,7 +229,7 @@ LIBRARIES = {
             ":gen/ui/gfx/geometry/mojom/geometry.mojom-params-data.h",
             ":gen/ui/gfx/geometry/mojom/geometry.mojom-send-validation.h",
             ":gen/ui/gfx/geometry/mojom/geometry.mojom-shared-internal.h",
-            ":gen/ui/gfx/geometry/mojom/geometry.mojom-shared.h",
+            ":gen/ui/gfx/geometry/mojom/geometry.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -309,7 +309,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -341,7 +341,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -349,10 +349,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -396,15 +396,15 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//ui/gfx/geometry/mojom:mojom_traits": {
         "name": "geometry_10b10c3e0d3f8fbb",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:ui/gfx/geometry/mojom/geometry_mojom_traits.h",
+            "//:ui/gfx/geometry/mojom/geometry_mojom_traits.h"
         ],
         "copts": [
             "/W4",
@@ -484,7 +484,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -516,7 +516,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -524,11 +524,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":geometry_08e263e6d1b42686",
-            ":geometry_c8fced2c712ec0b3",
+            ":geometry_c8fced2c712ec0b3"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -572,8 +572,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//ui/gfx/geometry:geometry": {
         "name": "geometry_08e263e6d1b42686",
@@ -609,7 +609,7 @@ LIBRARIES = {
             "//:ui/gfx/geometry/vector2d.cc",
             "//:ui/gfx/geometry/vector2d_conversions.cc",
             "//:ui/gfx/geometry/vector2d_f.cc",
-            "//:ui/gfx/geometry/vector3d_f.cc",
+            "//:ui/gfx/geometry/vector3d_f.cc"
         ],
         "hdrs": [
             "//:ui/gfx/geometry/axis_transform2d.h",
@@ -648,7 +648,7 @@ LIBRARIES = {
             "//:ui/gfx/geometry/vector2d.h",
             "//:ui/gfx/geometry/vector2d_conversions.h",
             "//:ui/gfx/geometry/vector2d_f.h",
-            "//:ui/gfx/geometry/vector3d_f.h",
+            "//:ui/gfx/geometry/vector3d_f.h"
         ],
         "copts": [
             "/W4",
@@ -727,7 +727,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_GEOMETRY_IMPL",
@@ -759,7 +759,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -767,10 +767,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -812,8 +812,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//ui/gfx/geometry:geometry_skia": {
         "name": "geometry_21b6eca5291c98f8",
@@ -828,7 +828,7 @@ LIBRARIES = {
             "//:ui/gfx/geometry/transform.cc",
             "//:ui/gfx/geometry/transform_operation.cc",
             "//:ui/gfx/geometry/transform_operations.cc",
-            "//:ui/gfx/geometry/transform_util.cc",
+            "//:ui/gfx/geometry/transform_util.cc"
         ],
         "hdrs": [
             "//:ui/gfx/geometry/linear_gradient.h",
@@ -840,7 +840,7 @@ LIBRARIES = {
             "//:ui/gfx/geometry/transform.h",
             "//:ui/gfx/geometry/transform_operation.h",
             "//:ui/gfx/geometry/transform_operations.h",
-            "//:ui/gfx/geometry/transform_util.h",
+            "//:ui/gfx/geometry/transform_util.h"
         ],
         "copts": [
             "/W4",
@@ -920,7 +920,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_GEOMETRY_SKIA_IMPL",
@@ -953,7 +953,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "GR_GL_FUNCTION_TYPE=__stdcall",
+            "GR_GL_FUNCTION_TYPE=__stdcall"
         ],
         "includes": [
             "..",
@@ -963,12 +963,12 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":geometry_08e263e6d1b42686",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1011,21 +1011,21 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//ui/gfx/range/mojom:mojom": {
         "name": "geometry_12473f920b4a96e1",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/gfx/range/mojom/range.mojom.cc",
+            ":gen/ui/gfx/range/mojom/range.mojom.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/range/mojom/range.mojom-forward.h",
             ":gen/ui/gfx/range/mojom/range.mojom-import-headers.h",
             ":gen/ui/gfx/range/mojom/range.mojom-shared-message-ids.h",
             ":gen/ui/gfx/range/mojom/range.mojom-test-utils.h",
-            ":gen/ui/gfx/range/mojom/range.mojom.h",
+            ":gen/ui/gfx/range/mojom/range.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -1105,7 +1105,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1137,7 +1137,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -1145,14 +1145,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":geometry_6537954773f574e0",
             ":geometry_de16fe238a835bb8",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1196,8 +1196,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//ui/gfx/range/mojom:mojom_shared": {
         "name": "geometry_de16fe238a835bb8",
@@ -1208,10 +1208,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":geometry_b63a8ea617bf7d81",
+            ":geometry_b63a8ea617bf7d81"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1227,14 +1227,14 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
-        ],
+            "-DEFAULTLIB:ncrypt.lib"
+        ]
     },
     "//ui/gfx/range/mojom:mojom_shared_cpp_sources": {
         "name": "geometry_b63a8ea617bf7d81",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/gfx/range/mojom/range.mojom-shared.cc",
+            ":gen/ui/gfx/range/mojom/range.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/range/mojom/range.mojom-data-view.h",
@@ -1242,7 +1242,7 @@ LIBRARIES = {
             ":gen/ui/gfx/range/mojom/range.mojom-params-data.h",
             ":gen/ui/gfx/range/mojom/range.mojom-send-validation.h",
             ":gen/ui/gfx/range/mojom/range.mojom-shared-internal.h",
-            ":gen/ui/gfx/range/mojom/range.mojom-shared.h",
+            ":gen/ui/gfx/range/mojom/range.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -1322,7 +1322,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1354,7 +1354,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -1362,10 +1362,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1409,15 +1409,15 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//ui/gfx/range/mojom:mojom_traits": {
         "name": "geometry_6537954773f574e0",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:ui/gfx/range/mojom/range_mojom_traits.h",
+            "//:ui/gfx/range/mojom/range_mojom_traits.h"
         ],
         "copts": [
             "/W4",
@@ -1497,7 +1497,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1529,7 +1529,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -1537,11 +1537,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":geometry_c827fbe084752b86",
-            ":geometry_de16fe238a835bb8",
+            ":geometry_de16fe238a835bb8"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1585,20 +1585,20 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//ui/gfx/range:range": {
         "name": "geometry_c827fbe084752b86",
         "kind": "static_library",
         "srcs": [
             "//:ui/gfx/range/range.cc",
-            "//:ui/gfx/range/range_f.cc",
+            "//:ui/gfx/range/range_f.cc"
         ],
         "hdrs": [
             "//:ui/gfx/range/gfx_range_export.h",
             "//:ui/gfx/range/range.h",
-            "//:ui/gfx/range/range_f.h",
+            "//:ui/gfx/range/range_f.h"
         ],
         "copts": [
             "/W4",
@@ -1678,7 +1678,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GFX_RANGE_IMPLEMENTATION",
@@ -1710,7 +1710,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -1718,10 +1718,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1763,9 +1763,9 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
-    },
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -1820,7 +1820,7 @@ SHARED_HEADERS = [
     "//:ui/gfx/range/gfx_range_export.h",
     "//:ui/gfx/range/mojom/range_mojom_traits.h",
     "//:ui/gfx/range/range.h",
-    "//:ui/gfx/range/range_f.h",
+    "//:ui/gfx/range/range_f.h"
 ]
 
 ACTIONS = []

@@ -30,15 +30,15 @@ SOURCES = {
         "crypto/unexportable_key_software_unsecure.cc",
         "crypto/user_verifying_key.cc",
         "crypto/unexportable_key_win.cc",
-        "crypto/user_verifying_key_win.cc",
+        "crypto/user_verifying_key_win.cc"
     ],
     "cbor": [
         "components/cbor/diagnostic_writer.cc",
         "components/cbor/float_conversions.cc",
         "components/cbor/reader.cc",
         "components/cbor/values.cc",
-        "components/cbor/writer.cc",
-    ],
+        "components/cbor/writer.cc"
+    ]
 }
 
 HEADERS = {
@@ -94,7 +94,7 @@ HEADERS = {
         "crypto/unexportable_key.h",
         "crypto/unexportable_key_metrics.h",
         "crypto/unexportable_key_win.h",
-        "crypto/user_verifying_key.h",
+        "crypto/user_verifying_key.h"
     ],
     "cbor": [
         "components/cbor/cbor_export.h",
@@ -103,8 +103,8 @@ HEADERS = {
         "components/cbor/float_conversions.h",
         "components/cbor/reader.h",
         "components/cbor/values.h",
-        "components/cbor/writer.h",
-    ],
+        "components/cbor/writer.h"
+    ]
 }
 
 COPTS = {
@@ -186,7 +186,7 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
+        "/EHs-c-"
     ],
     "cbor": [
         "/W4",
@@ -266,8 +266,8 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
-    ],
+        "/EHs-c-"
+    ]
 }
 
 DEFINES = {
@@ -301,7 +301,7 @@ DEFINES = {
         "WINVER=0x0A00",
         "NDEBUG",
         "NVALGRIND",
-        "DYNAMIC_ANNOTATIONS_ENABLED=0",
+        "DYNAMIC_ANNOTATIONS_ENABLED=0"
     ],
     "cbor": [
         "CBOR_IMPLEMENTATION",
@@ -333,8 +333,8 @@ DEFINES = {
         "WINVER=0x0A00",
         "NDEBUG",
         "NVALGRIND",
-        "DYNAMIC_ANNOTATIONS_ENABLED=0",
-    ],
+        "DYNAMIC_ANNOTATIONS_ENABLED=0"
+    ]
 }
 
 LIBS = {
@@ -352,7 +352,7 @@ LIBS = {
         "userenv.lib",
         "wbemuuid.lib",
         "winmm.lib",
-        "bcrypt.lib",
+        "bcrypt.lib"
     ],
     "cbor": [
         "cfgmgr32.lib",
@@ -366,6 +366,6 @@ LIBS = {
         "userenv.lib",
         "wbemuuid.lib",
         "winmm.lib",
-        "bcrypt.lib",
-    ],
+        "bcrypt.lib"
+    ]
 }

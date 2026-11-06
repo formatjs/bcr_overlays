@@ -20,7 +20,7 @@ LIBRARIES = {
             "@chromium_vulkan_loader//:loader/unknown_function_handling.c",
             "@chromium_vulkan_loader//:loader/wsi.c",
             "@chromium_vulkan_loader//:loader/dirent_on_windows.c",
-            "@chromium_vulkan_loader//:loader/loader_windows.c",
+            "@chromium_vulkan_loader//:loader/loader_windows.c"
         ],
         "hdrs": [
             "@chromium_vulkan_loader//:loader/adapters.h",
@@ -44,7 +44,7 @@ LIBRARIES = {
             "@chromium_vulkan_loader//:loader/unknown_function_handling.h",
             "@chromium_vulkan_loader//:loader/vk_loader_layer.h",
             "@chromium_vulkan_loader//:loader/vk_loader_platform.h",
-            "@chromium_vulkan_loader//:loader/wsi.h",
+            "@chromium_vulkan_loader//:loader/wsi.h"
         ],
         "copts": [
             "-Wno-incompatible-pointer-types",
@@ -126,7 +126,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -156,17 +156,17 @@ LIBRARIES = {
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
             "VK_ENABLE_BETA_EXTENSIONS",
             "LOADER_USE_UNSAFE_FILE_SEARCH=1",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             "@chromium_platform_headers//:graphics",
             "@chromium_vulkan_loader//:headers",
-            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_headers//:vulkan_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:Cfgmgr32.lib",
@@ -211,11 +211,11 @@ LIBRARIES = {
             "/DYNAMICBASE",
             "/INCREMENTAL:NO",
             "/SUBSYSTEM:CONSOLE,10.0",
-            "/guard:cf",
+            "/guard:cf"
         ],
         "win_def_file": "@chromium_vulkan_loader//:loader/vulkan-1.def",
         "resource_srcs": [
-            ":gen/third_party/vulkan-loader/src/loader.rc",
+            ":gen/third_party/vulkan-loader/src/loader.rc"
         ],
         "resource_defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -246,7 +246,7 @@ LIBRARIES = {
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
             "VK_ENABLE_BETA_EXTENSIONS",
             "LOADER_USE_UNSAFE_FILE_SEARCH=1",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "c_copts": [
             "-Wno-incompatible-pointer-types",
@@ -324,9 +324,9 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -354,7 +354,7 @@ SHARED_HEADERS = [
     "@chromium_vulkan_loader//:loader/unknown_function_handling.h",
     "@chromium_vulkan_loader//:loader/vk_loader_layer.h",
     "@chromium_vulkan_loader//:loader/vk_loader_platform.h",
-    "@chromium_vulkan_loader//:loader/wsi.h",
+    "@chromium_vulkan_loader//:loader/wsi.h"
 ]
 
 ACTIONS = [
@@ -363,18 +363,18 @@ ACTIONS = [
         "name": "vulkan_loader_d0ecfffeb4d30b3a_0",
         "srcs": {
             "@chromium_vulkan_loader//:loader/loader.rc": "third_party/vulkan-loader/src/loader/loader.rc",
-            "@chromium_vulkan_loader//:scripts/generate_loader_rc.py": "third_party/vulkan-loader/src/scripts/generate_loader_rc.py",
+            "@chromium_vulkan_loader//:scripts/generate_loader_rc.py": "third_party/vulkan-loader/src/scripts/generate_loader_rc.py"
         },
         "outs": {
-            "gen/third_party/vulkan-loader/src/loader.rc": "gen/third_party/vulkan-loader/src/loader.rc",
+            "gen/third_party/vulkan-loader/src/loader.rc": "gen/third_party/vulkan-loader/src/loader.rc"
         },
         "script": "third_party/vulkan-loader/src/scripts/generate_loader_rc.py",
         "args": [
             "../../third_party/vulkan-loader/src/loader/loader.rc",
-            "gen/third_party/vulkan-loader/src/loader.rc",
+            "gen/third_party/vulkan-loader/src/loader.rc"
         ],
-        "deps": [],
-    },
+        "deps": []
+    }
 ]
 
 TOOLS = {}

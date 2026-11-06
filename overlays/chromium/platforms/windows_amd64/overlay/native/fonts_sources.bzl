@@ -29,13 +29,13 @@ LIBRARIES = {
             "@chromium_freetype//:src/base/ftsystem.c",
             "@chromium_freetype//:src/base/ftcid.c",
             "@chromium_freetype//:src/cid/type1cid.c",
-            "@chromium_freetype//:src/type1/type1.c",
+            "@chromium_freetype//:src/type1/type1.c"
         ],
         "hdrs": [
             "//:third_party/freetype/include/freetype-custom/freetype/config/ftmodule.h",
             "//:third_party/freetype/include/freetype-custom/freetype/config/ftoption.h",
             "//:third_party/freetype/include/freetype-custom/freetype/config/public-macros.h",
-            "@chromium_freetype//:include/ft2build.h",
+            "@chromium_freetype//:include/ft2build.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -109,7 +109,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "FT2_BUILD_LIBRARY",
@@ -145,7 +145,7 @@ LIBRARIES = {
             "FT_CONFIG_OPTIONS_H=\\\"freetype-custom/freetype/config/ftoption.h\\\"",
             "WITHOUT_HARFBUZZ",
             "PDFIUM_REQUIRED_MODULES",
-            "CHROMIUM_RESTRICT_VISIBILITY",
+            "CHROMIUM_RESTRICT_VISIBILITY"
         ],
         "includes": [
             "..",
@@ -153,11 +153,11 @@ LIBRARIES = {
             "../third_party/freetype/include/freetype-custom",
             "../third_party/libpng",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             "//third_party/zlib",
-            ":fonts_0f8d5cdf8c760fbb",
+            ":fonts_0f8d5cdf8c760fbb"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -171,7 +171,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -241,8 +241,8 @@ LIBRARIES = {
             "-Wno-unused-function",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/harfbuzz-ng:harfbuzz-ng": {
         "name": "fonts_758f7e09f0253bfb",
@@ -316,7 +316,7 @@ LIBRARIES = {
             "@chromium_harfbuzz//:src/hb-subset-table-var.cc",
             "@chromium_harfbuzz//:src/hb-subset.cc",
             "@chromium_harfbuzz//:src/hb-ucd.cc",
-            "@chromium_harfbuzz//:src/hb-unicode.cc",
+            "@chromium_harfbuzz//:src/hb-unicode.cc"
         ],
         "hdrs": [
             "@chromium_harfbuzz//:src/OT/Color/CBDT/CBDT.hh",
@@ -511,7 +511,7 @@ LIBRARIES = {
             "@chromium_harfbuzz//:src/hb-vector.hh",
             "@chromium_harfbuzz//:src/hb-version.h",
             "@chromium_harfbuzz//:src/hb.h",
-            "@chromium_harfbuzz//:src/hb.hh",
+            "@chromium_harfbuzz//:src/hb.hh"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -584,7 +584,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "HAVE_OT",
@@ -638,15 +638,15 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            "//third_party/icu:icu",
+            "//third_party/icu:icu"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -660,7 +660,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -729,8 +729,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libpng:libpng": {
         "name": "fonts_0f8d5cdf8c760fbb",
@@ -815,7 +815,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -846,16 +846,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "../third_party/libpng",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":fonts_32e52d0cd4719752",
+            ":fonts_32e52d0cd4719752"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -869,7 +869,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -945,8 +945,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libpng:libpng_sources": {
         "name": "fonts_32e52d0cd4719752",
@@ -968,7 +968,7 @@ LIBRARIES = {
             "//:third_party/libpng/pngwtran.c",
             "//:third_party/libpng/pngwutil.c",
             "//:third_party/libpng/intel/filter_sse2_intrinsics.c",
-            "//:third_party/libpng/intel/intel_init.c",
+            "//:third_party/libpng/intel/intel_init.c"
         ],
         "hdrs": [
             "//:third_party/libpng/png.h",
@@ -977,7 +977,7 @@ LIBRARIES = {
             "//:third_party/libpng/pnginfo.h",
             "//:third_party/libpng/pnglibconf.h",
             "//:third_party/libpng/pngpriv.h",
-            "//:third_party/libpng/pngstruct.h",
+            "//:third_party/libpng/pngstruct.h"
         ],
         "copts": [
             "/wd4146",
@@ -1051,7 +1051,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "PNG_SET_OPTION_SUPPORTED",
@@ -1083,16 +1083,16 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "../third_party/libpng",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            "//third_party/zlib",
+            "//third_party/zlib"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1106,7 +1106,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/wd4146",
@@ -1176,9 +1176,9 @@ LIBRARIES = {
             "-Wno-tautological-constant-out-of-range-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -1772,7 +1772,7 @@ SHARED_HEADERS = [
     "@chromium_harfbuzz//:src/hb-vector.hh",
     "@chromium_harfbuzz//:src/hb-version.h",
     "@chromium_harfbuzz//:src/hb.h",
-    "@chromium_harfbuzz//:src/hb.hh",
+    "@chromium_harfbuzz//:src/hb.hh"
 ]
 
 ACTIONS = []

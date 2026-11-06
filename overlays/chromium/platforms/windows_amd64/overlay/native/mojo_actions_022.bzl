@@ -1,7 +1,8 @@
 """Generated Mojo action shard; run tools/import_mojo_actions.py."""
 
-load(":mojo_parameters.bzl", "arguments", "input_files", "output_files", "source_path")
 load(":python_action.bzl", "chromium_filegroup", "chromium_python_action")
+
+load(":mojo_parameters.bzl", "arguments", "input_files", "output_files", "source_path")
 
 # buildifier: disable=unnamed-macro
 def declare_actions():

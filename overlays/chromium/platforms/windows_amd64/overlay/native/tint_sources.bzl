@@ -5,7 +5,7 @@ LIBRARIES = {
         "name": "tint_aac72a36ed107ff4",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/api/common/vertex_pulling_config.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/api/common/vertex_pulling_config.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/api/common/binding_point.h",
@@ -13,7 +13,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/api/common/override_id.h",
             "@chromium_dawn//:third_party/dawn/src/tint/api/common/resource_binding_config.h",
             "@chromium_dawn//:third_party/dawn/src/tint/api/common/resource_type.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/api/common/vertex_pulling_config.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/api/common/vertex_pulling_config.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -85,7 +85,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -128,13 +128,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -144,7 +144,7 @@ LIBRARIES = {
             ":tint_75f9382110a03b83",
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
-            ":tint_be970c3ff1581d9c",
+            ":tint_be970c3ff1581d9c"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -158,7 +158,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -226,17 +226,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/api:api": {
         "name": "tint_d9e9faeffab5d3bb",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/api/tint.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/api/tint.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/api/tint.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/api/tint.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -308,7 +308,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -351,13 +351,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -391,7 +391,7 @@ LIBRARIES = {
             ":tint_cc144e388139b67b",
             ":tint_eaa0cd1ca3e81031",
             ":tint_ece20a71e9ef22a6",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -406,7 +406,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -474,8 +474,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/core/constant:constant": {
         "name": "tint_42f6010bc1c2fbb4",
@@ -489,7 +489,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/scalar.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/splat.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/string.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/value.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/value.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/clone_context.h",
@@ -501,7 +501,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/scalar.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/splat.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/string.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/value.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/constant/value.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -573,7 +573,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -616,13 +616,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -638,7 +638,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -652,7 +652,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -720,8 +720,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/core/intrinsic:intrinsic": {
         "name": "tint_8605e7ea104d2832",
@@ -729,14 +729,14 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/ctor_conv.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/data.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/table.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/table.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/ctor_conv.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/dialect.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/table.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/table_data.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/type_matchers.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/intrinsic/type_matchers.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -808,7 +808,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -851,13 +851,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -874,7 +874,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -888,7 +888,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -956,8 +956,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/core/ir/analysis:analysis": {
         "name": "tint_507a1d6cc3e071b1",
@@ -965,12 +965,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/analysis/for_loop_analysis.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/analysis/integer_range_analysis.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/analysis/loop_analysis.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/analysis/loop_analysis.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/analysis/for_loop_analysis.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/analysis/integer_range_analysis.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/analysis/loop_analysis.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/analysis/loop_analysis.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -1042,7 +1042,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -1085,13 +1085,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -1110,7 +1110,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1124,7 +1124,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -1192,8 +1192,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/core/ir/transform:transform": {
         "name": "tint_6f24078399374e25",
@@ -1232,7 +1232,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/value_to_let.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/vectorize_scalar_matrix_constructors.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/vertex_pulling.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/zero_init_workgroup_memory.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/zero_init_workgroup_memory.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/add_empty_entry_point.h",
@@ -1269,7 +1269,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/value_to_let.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/vectorize_scalar_matrix_constructors.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/vertex_pulling.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/zero_init_workgroup_memory.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/transform/zero_init_workgroup_memory.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -1341,7 +1341,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -1384,13 +1384,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -1411,7 +1411,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1425,7 +1425,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -1493,17 +1493,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/core/ir/type:type": {
         "name": "tint_67474d5777036086",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/type/array_count.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/type/array_count.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/type/array_count.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/type/array_count.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -1575,7 +1575,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -1618,13 +1618,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -1635,7 +1635,7 @@ LIBRARIES = {
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
             ":tint_b6b87f13d047fa4e",
-            ":tint_eaa0cd1ca3e81031",
+            ":tint_eaa0cd1ca3e81031"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1649,7 +1649,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -1717,8 +1717,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/core/ir:ir": {
         "name": "tint_697de9d640336dc6",
@@ -1781,7 +1781,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/user_call.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/validator.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/value.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/var.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/var.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/access.h",
@@ -1845,7 +1845,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/user_call.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/validator.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/value.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/var.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/ir/var.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -1917,7 +1917,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -1960,13 +1960,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -1985,7 +1985,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1999,7 +1999,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -2067,8 +2067,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/core/type:type": {
         "name": "tint_eaa0cd1ca3e81031",
@@ -2120,7 +2120,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/u8.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/unique_node.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/vector.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/void.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/void.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/abstract_float.h",
@@ -2170,7 +2170,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/u8.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/unique_node.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/vector.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/void.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/type/void.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -2242,7 +2242,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -2285,13 +2285,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -2306,7 +2306,7 @@ LIBRARIES = {
             ":tint_b4ad424565a36c09",
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -2320,7 +2320,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -2388,8 +2388,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/core:core": {
         "name": "tint_1400f7e05deca253",
@@ -2398,7 +2398,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/binary_op.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/enums.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/number.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/unary_op.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/unary_op.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/binary_op.h",
@@ -2408,7 +2408,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/interpolation.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/io_attributes.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/core/number.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/unary_op.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/core/unary_op.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -2480,7 +2480,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -2523,13 +2523,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -2541,7 +2541,7 @@ LIBRARIES = {
             ":tint_aac72a36ed107ff4",
             ":tint_b4ad424565a36c09",
             ":tint_be970c3ff1581d9c",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -2555,7 +2555,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -2623,17 +2623,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/glsl/intrinsic:intrinsic": {
         "name": "tint_5b39f1182843f198",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/intrinsic/data.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/intrinsic/data.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/intrinsic/dialect.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/intrinsic/dialect.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -2705,7 +2705,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -2748,13 +2748,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -2774,7 +2774,7 @@ LIBRARIES = {
             ":tint_be970c3ff1581d9c",
             ":tint_dc9e858a6b72f52a",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -2788,7 +2788,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -2856,8 +2856,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/glsl/ir:ir": {
         "name": "tint_b5b206cd5892a652",
@@ -2865,12 +2865,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/ir/builtin_call.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/ir/combined_texture_sampler_var.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/ir/member_builtin_call.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/ir/member_builtin_call.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/ir/builtin_call.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/ir/combined_texture_sampler_var.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/ir/member_builtin_call.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/ir/member_builtin_call.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -2942,7 +2942,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -2985,13 +2985,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -3012,7 +3012,7 @@ LIBRARIES = {
             ":tint_be970c3ff1581d9c",
             ":tint_dc9e858a6b72f52a",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -3026,7 +3026,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3094,8 +3094,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/glsl/writer/common:common": {
         "name": "tint_7d00cc7dbb5de64f",
@@ -3104,14 +3104,14 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/option_helpers.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/options.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/output.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/printer_support.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/printer_support.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/option_helpers.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/options.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/output.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/printer_support.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/version.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/common/version.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3183,7 +3183,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -3226,13 +3226,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -3247,7 +3247,7 @@ LIBRARIES = {
             ":tint_afdcc57ded214f15",
             ":tint_b4ad424565a36c09",
             ":tint_be970c3ff1581d9c",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -3262,7 +3262,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3330,17 +3330,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/glsl/writer/printer:printer": {
         "name": "tint_e3cc20f66a8d42ae",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/printer/printer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/printer/printer.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/printer/printer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/printer/printer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3412,7 +3412,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -3455,13 +3455,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -3485,7 +3485,7 @@ LIBRARIES = {
             ":tint_be970c3ff1581d9c",
             ":tint_dc9e858a6b72f52a",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -3500,7 +3500,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3568,8 +3568,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/glsl/writer/raise:raise": {
         "name": "tint_3e9769f97486a86b",
@@ -3582,7 +3582,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/raise.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/shader_io.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/texture_builtins_from_uniform.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/texture_polyfill.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/texture_polyfill.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/binary_polyfill.h",
@@ -3592,7 +3592,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/raise.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/shader_io.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/texture_builtins_from_uniform.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/texture_polyfill.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/raise/texture_polyfill.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3664,7 +3664,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -3707,13 +3707,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -3737,7 +3737,7 @@ LIBRARIES = {
             ":tint_be970c3ff1581d9c",
             ":tint_dc9e858a6b72f52a",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -3752,7 +3752,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3820,17 +3820,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/glsl/writer:writer": {
         "name": "tint_53e5057e5df7f3ca",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/writer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/writer.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/writer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/writer/writer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3902,7 +3902,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -3945,13 +3945,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -3974,7 +3974,7 @@ LIBRARIES = {
             ":tint_be970c3ff1581d9c",
             ":tint_e3cc20f66a8d42ae",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -3989,7 +3989,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4057,17 +4057,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/glsl:glsl": {
         "name": "tint_dc9e858a6b72f52a",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/builtin_fn.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/builtin_fn.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/builtin_fn.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/glsl/builtin_fn.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4139,7 +4139,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -4182,13 +4182,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -4199,7 +4199,7 @@ LIBRARIES = {
             ":tint_75f9382110a03b83",
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
-            ":tint_eaa0cd1ca3e81031",
+            ":tint_eaa0cd1ca3e81031"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -4213,7 +4213,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4281,18 +4281,18 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/hlsl/intrinsic:intrinsic": {
         "name": "tint_d7cee7648e994bc1",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/intrinsic/data.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/intrinsic/data.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/intrinsic/dialect.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/intrinsic/type_matchers.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/intrinsic/type_matchers.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4364,7 +4364,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -4407,13 +4407,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -4434,7 +4434,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -4448,7 +4448,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4516,8 +4516,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/hlsl/ir:ir": {
         "name": "tint_c8d1064b4de881a2",
@@ -4525,12 +4525,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/ir/builtin_call.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/ir/member_builtin_call.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/ir/ternary.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/ir/ternary.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/ir/builtin_call.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/ir/member_builtin_call.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/ir/ternary.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/ir/ternary.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4602,7 +4602,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -4645,13 +4645,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -4672,7 +4672,7 @@ LIBRARIES = {
             ":tint_be970c3ff1581d9c",
             ":tint_d7cee7648e994bc1",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -4686,7 +4686,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4754,8 +4754,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/hlsl/type:type": {
         "name": "tint_694c4c700e8c991e",
@@ -4764,13 +4764,13 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/byte_address_buffer.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/int8_t4_packed.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/rasterizer_ordered_texture_2d.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/uint8_t4_packed.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/uint8_t4_packed.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/byte_address_buffer.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/int8_t4_packed.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/rasterizer_ordered_texture_2d.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/uint8_t4_packed.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/type/uint8_t4_packed.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4842,7 +4842,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -4885,13 +4885,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -4906,7 +4906,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -4920,7 +4920,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4988,8 +4988,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/hlsl/writer/common:common": {
         "name": "tint_acee488420e7e02f",
@@ -4997,12 +4997,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/common/option_helpers.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/common/options.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/common/output.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/common/output.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/common/option_helpers.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/common/options.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/common/output.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/common/output.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -5074,7 +5074,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -5117,13 +5117,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -5141,7 +5141,7 @@ LIBRARIES = {
             ":tint_b4ad424565a36c09",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -5155,7 +5155,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5223,17 +5223,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/hlsl/writer/printer:printer": {
         "name": "tint_5edc769593344741",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/printer/printer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/printer/printer.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/printer/printer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/printer/printer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -5305,7 +5305,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -5348,13 +5348,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -5381,7 +5381,7 @@ LIBRARIES = {
             ":tint_c8d1064b4de881a2",
             ":tint_d7cee7648e994bc1",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -5396,7 +5396,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5464,8 +5464,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/hlsl/writer/raise:raise": {
         "name": "tint_f665f7a4ede8afa2",
@@ -5481,7 +5481,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/raise.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/replace_default_only_switch.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/replace_non_indexable_mat_vec_stores.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/shader_io.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/shader_io.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/binary_polyfill.h",
@@ -5494,7 +5494,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/raise.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/replace_default_only_switch.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/replace_non_indexable_mat_vec_stores.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/shader_io.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/raise/shader_io.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -5566,7 +5566,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -5609,13 +5609,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -5640,7 +5640,7 @@ LIBRARIES = {
             ":tint_c8d1064b4de881a2",
             ":tint_d7cee7648e994bc1",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -5654,7 +5654,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5722,17 +5722,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/hlsl/writer:writer": {
         "name": "tint_ece20a71e9ef22a6",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/writer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/writer.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/writer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/writer/writer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -5804,7 +5804,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -5847,13 +5847,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -5875,7 +5875,7 @@ LIBRARIES = {
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
             ":tint_f665f7a4ede8afa2",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -5890,7 +5890,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5958,17 +5958,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/hlsl:hlsl": {
         "name": "tint_3708c084379665c8",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/builtin_fn.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/builtin_fn.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/builtin_fn.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/hlsl/builtin_fn.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -6040,7 +6040,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -6083,13 +6083,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -6100,7 +6100,7 @@ LIBRARIES = {
             ":tint_75f9382110a03b83",
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
-            ":tint_eaa0cd1ca3e81031",
+            ":tint_eaa0cd1ca3e81031"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -6114,7 +6114,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -6182,18 +6182,18 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/msl/intrinsic:intrinsic": {
         "name": "tint_ddc16e11c80ea93c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/intrinsic/data.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/intrinsic/data.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/intrinsic/dialect.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/intrinsic/type_matchers.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/intrinsic/type_matchers.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -6265,7 +6265,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -6308,13 +6308,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -6335,7 +6335,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -6349,7 +6349,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -6417,8 +6417,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/msl/ir:ir": {
         "name": "tint_be972b3ad91c7fb1",
@@ -6427,13 +6427,13 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/builtin_call.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/component.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/member_builtin_call.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/memory_order.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/memory_order.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/builtin_call.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/component.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/member_builtin_call.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/memory_order.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/ir/memory_order.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -6505,7 +6505,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -6548,13 +6548,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -6575,7 +6575,7 @@ LIBRARIES = {
             ":tint_be970c3ff1581d9c",
             ":tint_ddc16e11c80ea93c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -6589,7 +6589,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -6657,8 +6657,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/msl/type:type": {
         "name": "tint_7b3d9420a96a18f2",
@@ -6666,12 +6666,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/type/bias.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/type/gradient.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/type/level.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/type/level.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/type/bias.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/type/gradient.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/type/level.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/type/level.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -6743,7 +6743,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -6786,13 +6786,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -6807,7 +6807,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -6821,7 +6821,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -6889,8 +6889,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/msl/writer/common:common": {
         "name": "tint_79d6792420cfd711",
@@ -6899,13 +6899,13 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/option_helpers.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/options.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/output.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/printer_support.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/printer_support.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/option_helpers.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/options.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/output.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/printer_support.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/common/printer_support.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -6977,7 +6977,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -7020,13 +7020,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -7044,7 +7044,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -7059,7 +7059,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -7127,17 +7127,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/msl/writer/printer:printer": {
         "name": "tint_d9b0485bccf05692",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/printer/printer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/printer/printer.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/printer/printer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/printer/printer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -7209,7 +7209,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -7252,13 +7252,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -7283,7 +7283,7 @@ LIBRARIES = {
             ":tint_be972b3ad91c7fb1",
             ":tint_ddc16e11c80ea93c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -7298,7 +7298,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -7366,8 +7366,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/msl/writer/raise:raise": {
         "name": "tint_71b2fdefe208c0ce",
@@ -7382,7 +7382,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/packed_vec3.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/raise.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/shader_io.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/simd_ballot.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/simd_ballot.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/argument_buffers.h",
@@ -7394,7 +7394,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/packed_vec3.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/raise.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/shader_io.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/simd_ballot.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/raise/simd_ballot.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -7466,7 +7466,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -7509,13 +7509,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -7540,7 +7540,7 @@ LIBRARIES = {
             ":tint_be972b3ad91c7fb1",
             ":tint_ddc16e11c80ea93c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -7555,7 +7555,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -7623,17 +7623,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/msl/writer:writer": {
         "name": "tint_cb8cb8eae46a87e4",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/writer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/writer.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/writer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/writer/writer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -7705,7 +7705,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -7748,13 +7748,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -7776,7 +7776,7 @@ LIBRARIES = {
             ":tint_be970c3ff1581d9c",
             ":tint_d9b0485bccf05692",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -7791,7 +7791,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -7859,18 +7859,18 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/msl:msl": {
         "name": "tint_1da38038108eff49",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/builtin_fn.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/builtin_fn.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/barrier_type.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/builtin_fn.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/msl/builtin_fn.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -7942,7 +7942,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -7985,13 +7985,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -8002,7 +8002,7 @@ LIBRARIES = {
             ":tint_75f9382110a03b83",
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
-            ":tint_eaa0cd1ca3e81031",
+            ":tint_eaa0cd1ca3e81031"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -8016,7 +8016,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -8084,18 +8084,18 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/spirv/intrinsic:intrinsic": {
         "name": "tint_789b5f82447b9d8b",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/intrinsic/data.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/intrinsic/data.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/intrinsic/dialect.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/intrinsic/type_matchers.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/intrinsic/type_matchers.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -8167,7 +8167,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -8210,13 +8210,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -8237,7 +8237,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -8251,7 +8251,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -8319,8 +8319,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/spirv/ir:ir": {
         "name": "tint_48f775320a046edd",
@@ -8328,12 +8328,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/ir/builtin_call.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/ir/copy_logical.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/ir/literal_operand.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/ir/literal_operand.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/ir/builtin_call.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/ir/copy_logical.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/ir/literal_operand.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/ir/literal_operand.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -8405,7 +8405,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -8448,13 +8448,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -8475,7 +8475,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -8489,7 +8489,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -8557,8 +8557,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/spirv/type:type": {
         "name": "tint_08f8b21aca8ea42f",
@@ -8567,13 +8567,13 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/explicit_layout_array.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/image.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/resource_binding.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/sampled_image.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/sampled_image.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/explicit_layout_array.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/image.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/resource_binding.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/sampled_image.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/type/sampled_image.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -8645,7 +8645,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -8688,13 +8688,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -8711,7 +8711,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -8725,7 +8725,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -8793,8 +8793,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/spirv/writer/common:common": {
         "name": "tint_48ef351d3e0a02f1",
@@ -8806,7 +8806,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/module.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/operand.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/option_helper.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/output.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/output.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/binary_writer.h",
@@ -8816,7 +8816,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/operand.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/option_helpers.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/options.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/output.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/common/output.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -8888,7 +8888,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -8931,13 +8931,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -8952,7 +8952,7 @@ LIBRARIES = {
             ":tint_aac72a36ed107ff4",
             ":tint_b4ad424565a36c09",
             ":tint_be970c3ff1581d9c",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -8966,7 +8966,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -9034,17 +9034,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/spirv/writer/printer:printer": {
         "name": "tint_b939984c9e7586ea",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/printer/printer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/printer/printer.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/printer/printer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/printer/printer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -9116,7 +9116,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -9159,13 +9159,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -9191,7 +9191,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -9205,7 +9205,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -9273,8 +9273,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/spirv/writer/raise:raise": {
         "name": "tint_7d7eecfd30da9fcd",
@@ -9291,7 +9291,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/remove_unreachable_in_loop_continuing.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/resource_binding.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/shader_io.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/var_for_dynamic_index.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/var_for_dynamic_index.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/builtin_polyfill.h",
@@ -9305,7 +9305,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/remove_unreachable_in_loop_continuing.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/resource_binding.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/shader_io.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/var_for_dynamic_index.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/raise/var_for_dynamic_index.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -9377,7 +9377,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -9420,13 +9420,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -9452,7 +9452,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -9466,7 +9466,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -9534,17 +9534,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/spirv/writer:writer": {
         "name": "tint_a85494aaa4050274",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/writer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/writer.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/writer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/writer/writer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -9616,7 +9616,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -9659,13 +9659,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -9688,7 +9688,7 @@ LIBRARIES = {
             ":tint_b939984c9e7586ea",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -9702,7 +9702,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -9770,17 +9770,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/spirv:spirv": {
         "name": "tint_06e57d538e618eb2",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/builtin_fn.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/builtin_fn.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/builtin_fn.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/spirv/builtin_fn.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -9852,7 +9852,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -9895,13 +9895,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -9912,7 +9912,7 @@ LIBRARIES = {
             ":tint_75f9382110a03b83",
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
-            ":tint_eaa0cd1ca3e81031",
+            ":tint_eaa0cd1ca3e81031"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -9926,7 +9926,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -9994,8 +9994,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/ast:ast": {
         "name": "tint_3323db1b42ee3b27",
@@ -10073,7 +10073,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/variable.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/variable_decl_statement.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/while_statement.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/workgroup_attribute.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/workgroup_attribute.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/accessor_expression.h",
@@ -10151,7 +10151,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/variable.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/variable_decl_statement.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/while_statement.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/workgroup_attribute.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ast/workgroup_attribute.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -10223,7 +10223,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -10266,13 +10266,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -10289,7 +10289,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -10303,7 +10303,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -10371,8 +10371,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/inspector:inspector": {
         "name": "tint_671ee0262624f3a1",
@@ -10381,14 +10381,14 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/entry_point.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/inspector.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/resource_binding.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/scalar.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/scalar.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/entry_point.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/inspector.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/resource_binding.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/resource_binding_info.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/scalar.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/inspector/scalar.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -10460,7 +10460,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -10503,13 +10503,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -10530,7 +10530,7 @@ LIBRARIES = {
             ":tint_bc5e82eb670e1ccc",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -10544,7 +10544,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -10612,20 +10612,20 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/intrinsic:intrinsic": {
         "name": "tint_bd978f6334b36b70",
         "kind": "source_set",
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/intrinsic/ctor_conv.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/intrinsic/data.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/intrinsic/data.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/intrinsic/ctor_conv.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/intrinsic/dialect.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/intrinsic/type_matchers.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/intrinsic/type_matchers.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -10697,7 +10697,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -10740,13 +10740,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -10765,7 +10765,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -10779,7 +10779,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -10847,19 +10847,19 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/ir:ir": {
         "name": "tint_b93e774cb398a701",
         "kind": "source_set",
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ir/builtin_call.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ir/unary.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ir/unary.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ir/builtin_call.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ir/unary.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/ir/unary.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -10931,7 +10931,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -10974,13 +10974,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -11001,7 +11001,7 @@ LIBRARIES = {
             ":tint_bd978f6334b36b70",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -11015,7 +11015,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -11083,19 +11083,19 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/program:program": {
         "name": "tint_bc5e82eb670e1ccc",
         "kind": "source_set",
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/program/program.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/program/program_builder.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/program/program_builder.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/program/program.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/program/program_builder.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/program/program_builder.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -11167,7 +11167,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -11210,13 +11210,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -11236,7 +11236,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -11250,7 +11250,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -11318,17 +11318,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/reader/lower:lower": {
         "name": "tint_65ec2276388e12b9",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/lower/lower.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/lower/lower.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/lower/lower.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/lower/lower.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -11400,7 +11400,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -11443,13 +11443,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -11471,7 +11471,7 @@ LIBRARIES = {
             ":tint_bd978f6334b36b70",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -11485,7 +11485,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -11553,8 +11553,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/reader/parser:parser": {
         "name": "tint_c8383038bcbb12cd",
@@ -11563,14 +11563,14 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/classify_template_args.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/lexer.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/parser.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/token.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/token.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/classify_template_args.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/detail.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/lexer.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/parser.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/token.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/parser/token.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -11642,7 +11642,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -11685,13 +11685,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -11714,7 +11714,7 @@ LIBRARIES = {
             ":tint_bc5e82eb670e1ccc",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -11729,7 +11729,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -11797,17 +11797,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/reader/program_to_ir:program_to_ir": {
         "name": "tint_dc16c5e2eed77f4e",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/program_to_ir/program_to_ir.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/program_to_ir/program_to_ir.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/program_to_ir/program_to_ir.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/program_to_ir/program_to_ir.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -11879,7 +11879,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -11922,13 +11922,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -11954,7 +11954,7 @@ LIBRARIES = {
             ":tint_bd978f6334b36b70",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -11968,7 +11968,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -12036,18 +12036,18 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/reader:reader": {
         "name": "tint_021730bded9b94fc",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/reader.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/reader.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/options.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/reader.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reader/reader.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -12119,7 +12119,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -12162,13 +12162,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -12194,7 +12194,7 @@ LIBRARIES = {
             ":tint_c8383038bcbb12cd",
             ":tint_dc16c5e2eed77f4e",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -12209,7 +12209,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -12277,8 +12277,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/resolver:resolver": {
         "name": "tint_96d85356f81b5ecc",
@@ -12291,7 +12291,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/sem_helper.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/uniformity.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/unresolved_identifier.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/dependency_graph.h",
@@ -12301,7 +12301,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/sem_helper.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/uniformity.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/unresolved_identifier.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/validator.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/resolver/validator.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -12373,7 +12373,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -12416,13 +12416,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -12445,7 +12445,7 @@ LIBRARIES = {
             ":tint_bd978f6334b36b70",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -12459,7 +12459,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -12527,8 +12527,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/sem:sem": {
         "name": "tint_a03517ad0f96eebe",
@@ -12565,7 +12565,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/value_conversion.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/value_expression.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/variable.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/while_statement.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/while_statement.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/accessor_expression.h",
@@ -12602,7 +12602,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/value_conversion.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/value_expression.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/variable.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/while_statement.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/sem/while_statement.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -12674,7 +12674,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -12717,13 +12717,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -12743,7 +12743,7 @@ LIBRARIES = {
             ":tint_b6b87f13d047fa4e",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -12757,7 +12757,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -12825,17 +12825,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/writer/ast_printer:ast_printer": {
         "name": "tint_9d3204c73353cfd7",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/ast_printer/ast_printer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/ast_printer/ast_printer.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/ast_printer/ast_printer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/ast_printer/ast_printer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -12907,7 +12907,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -12950,13 +12950,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -12980,7 +12980,7 @@ LIBRARIES = {
             ":tint_bc5e82eb670e1ccc",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -12995,7 +12995,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -13063,17 +13063,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/writer/common:common": {
         "name": "tint_75b50cddcc7f0f26",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/common/common.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/common/common.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/common/options.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/common/options.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -13145,7 +13145,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -13188,13 +13188,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -13207,7 +13207,7 @@ LIBRARIES = {
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
             ":tint_be970c3ff1581d9c",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -13221,7 +13221,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -13289,17 +13289,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/writer/ir_to_program:ir_to_program": {
         "name": "tint_9ee65a444b664d3c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/ir_to_program/ir_to_program.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/ir_to_program/ir_to_program.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/ir_to_program/ir_to_program.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/ir_to_program/ir_to_program.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -13371,7 +13371,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -13414,13 +13414,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -13447,7 +13447,7 @@ LIBRARIES = {
             ":tint_bd978f6334b36b70",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -13461,7 +13461,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -13529,8 +13529,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/writer/raise:raise": {
         "name": "tint_6394cd6e3f9d4c29",
@@ -13538,12 +13538,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/raise/ptr_to_ref.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/raise/raise.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/raise/value_to_let.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/raise/value_to_let.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/raise/ptr_to_ref.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/raise/raise.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/raise/value_to_let.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/raise/value_to_let.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -13615,7 +13615,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -13658,13 +13658,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -13687,7 +13687,7 @@ LIBRARIES = {
             ":tint_bd978f6334b36b70",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -13701,7 +13701,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -13769,19 +13769,19 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl/writer:writer": {
         "name": "tint_cc144e388139b67b",
         "kind": "source_set",
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/output.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/writer.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/writer.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/output.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/writer.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/writer/writer.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -13853,7 +13853,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -13896,13 +13896,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -13929,7 +13929,7 @@ LIBRARIES = {
             ":tint_bc5e82eb670e1ccc",
             ":tint_be970c3ff1581d9c",
             ":tint_eaa0cd1ca3e81031",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -13944,7 +13944,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -14012,8 +14012,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/lang/wgsl:wgsl": {
         "name": "tint_67a7c60a544d2570",
@@ -14021,13 +14021,13 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/enums.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/feature_status.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reserved_words.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reserved_words.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/allowed_features.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/enums.h",
             "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/feature_status.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reserved_words.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/lang/wgsl/reserved_words.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -14099,7 +14099,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -14142,13 +14142,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -14161,7 +14161,7 @@ LIBRARIES = {
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
             ":tint_be970c3ff1581d9c",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -14175,7 +14175,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -14243,14 +14243,14 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/containers:containers": {
         "name": "tint_924e530f83fd086e",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/containers/containers.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/containers/containers.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/containers/bitset.h",
@@ -14268,7 +14268,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/utils/containers/transform.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/containers/unique_allocator.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/containers/unique_vector.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/containers/vector.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/containers/vector.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -14340,7 +14340,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -14383,13 +14383,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -14397,7 +14397,7 @@ LIBRARIES = {
             ":tint_2a8c1be3d53eb99f",
             ":tint_487d11a30285dc6d",
             ":tint_75f9382110a03b83",
-            ":tint_b4ad424565a36c09",
+            ":tint_b4ad424565a36c09"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -14411,7 +14411,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -14479,8 +14479,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/diagnostic:diagnostic": {
         "name": "tint_8aae0497761d5672",
@@ -14488,12 +14488,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/diagnostic/diagnostic.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/diagnostic/formatter.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/diagnostic/source.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/diagnostic/source.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/diagnostic/diagnostic.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/diagnostic/formatter.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/diagnostic/source.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/diagnostic/source.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -14565,7 +14565,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -14608,13 +14608,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -14625,7 +14625,7 @@ LIBRARIES = {
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
             ":tint_be970c3ff1581d9c",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -14639,7 +14639,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -14707,19 +14707,19 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/ice:ice": {
         "name": "tint_b4ad424565a36c09",
         "kind": "source_set",
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/ice/debugger.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/ice/ice.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/ice/ice.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/ice/debugger.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/ice/ice.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/ice/ice.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -14791,7 +14791,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -14834,17 +14834,17 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
-            ":tint_2a8c1be3d53eb99f",
+            ":tint_2a8c1be3d53eb99f"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -14858,7 +14858,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -14926,14 +14926,14 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/macros:macros": {
         "name": "tint_2a8c1be3d53eb99f",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/macros/macros.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/macros/macros.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/macros/compiler.h",
@@ -14941,7 +14941,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/utils/macros/defer.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/macros/foreach.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/macros/scoped_assignment.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/macros/static_init.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/macros/static_init.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -15013,7 +15013,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -15056,16 +15056,16 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
-            ":dawn_2dd79afa6687bfd8",
+            ":dawn_2dd79afa6687bfd8"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -15079,7 +15079,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -15147,19 +15147,19 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/math:math": {
         "name": "tint_75f9382110a03b83",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/math/math.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/math/math.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/math/crc32.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/math/hash.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/math/math.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/math/math.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -15231,7 +15231,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -15274,17 +15274,17 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
-            ":tint_2a8c1be3d53eb99f",
+            ":tint_2a8c1be3d53eb99f"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -15298,7 +15298,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -15366,20 +15366,20 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/memory:memory": {
         "name": "tint_03013de3274d8ce3",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/memory/memory.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/memory/memory.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/memory/aligned_storage.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/memory/bitcast.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/memory/block_allocator.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/memory/bump_allocator.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/memory/bump_allocator.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -15451,7 +15451,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -15494,18 +15494,18 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
             ":tint_2a8c1be3d53eb99f",
-            ":tint_75f9382110a03b83",
+            ":tint_75f9382110a03b83"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -15519,7 +15519,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -15587,21 +15587,21 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/rtti:rtti": {
         "name": "tint_487d11a30285dc6d",
         "kind": "source_set",
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/rtti/castable.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/rtti/switch.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/rtti/switch.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/rtti/castable.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/rtti/ignore.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/rtti/switch.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/rtti/traits.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/rtti/traits.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -15673,7 +15673,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -15716,20 +15716,20 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
             ":tint_03013de3274d8ce3",
             ":tint_2a8c1be3d53eb99f",
             ":tint_75f9382110a03b83",
-            ":tint_b4ad424565a36c09",
+            ":tint_b4ad424565a36c09"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -15743,7 +15743,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -15811,19 +15811,19 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/strconv:strconv": {
         "name": "tint_afdcc57ded214f15",
         "kind": "source_set",
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/strconv/float_to_string.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/strconv/parse_num.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/strconv/parse_num.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/strconv/float_to_string.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/strconv/parse_num.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/strconv/parse_num.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -15895,7 +15895,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -15938,13 +15938,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -15953,7 +15953,7 @@ LIBRARIES = {
             ":tint_b4ad424565a36c09",
             ":tint_bc796ad4efa76df3",
             ":tint_be970c3ff1581d9c",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -15968,7 +15968,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -16036,8 +16036,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/symbol:symbol": {
         "name": "tint_b6b87f13d047fa4e",
@@ -16045,12 +16045,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/symbol/generation_id.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/symbol/symbol.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/symbol/symbol_table.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/symbol/symbol_table.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/symbol/generation_id.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/symbol/symbol.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/symbol/symbol_table.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/symbol/symbol_table.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -16122,7 +16122,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -16165,13 +16165,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -16180,7 +16180,7 @@ LIBRARIES = {
             ":tint_487d11a30285dc6d",
             ":tint_75f9382110a03b83",
             ":tint_924e530f83fd086e",
-            ":tint_b4ad424565a36c09",
+            ":tint_b4ad424565a36c09"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -16194,7 +16194,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -16262,8 +16262,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/system:system": {
         "name": "tint_5e2fd8926df92f71",
@@ -16271,12 +16271,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/system/env_windows.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/system/executable_path_windows.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/system/terminal_windows.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/system/terminal_windows.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/system/env.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/system/executable_path.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/system/terminal.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/system/terminal.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -16348,7 +16348,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -16391,13 +16391,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -16406,7 +16406,7 @@ LIBRARIES = {
             ":tint_487d11a30285dc6d",
             ":tint_75f9382110a03b83",
             ":tint_924e530f83fd086e",
-            ":tint_b4ad424565a36c09",
+            ":tint_b4ad424565a36c09"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -16420,7 +16420,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -16488,8 +16488,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/text:text": {
         "name": "tint_f8e19cbc26933e5a",
@@ -16504,7 +16504,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/utils/text/styled_text_printer_ansi.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/text/styled_text_theme.cc",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/text/unicode.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/text/styled_text_printer_windows.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/text/styled_text_printer_windows.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/text/base64.h",
@@ -16515,7 +16515,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/tint/utils/text/styled_text_printer.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/text/styled_text_theme.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/text/text_style.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/text/unicode.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/text/unicode.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -16587,7 +16587,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -16630,13 +16630,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -16646,7 +16646,7 @@ LIBRARIES = {
             ":tint_5e2fd8926df92f71",
             ":tint_75f9382110a03b83",
             ":tint_924e530f83fd086e",
-            ":tint_b4ad424565a36c09",
+            ":tint_b4ad424565a36c09"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -16660,7 +16660,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -16728,17 +16728,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils/text_generator:text_generator": {
         "name": "tint_2f8a4ac87f1f283a",
         "kind": "source_set",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/text_generator/text_generator.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/text_generator/text_generator.cc"
         ],
         "hdrs": [
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/text_generator/text_generator.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/text_generator/text_generator.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -16810,7 +16810,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -16853,13 +16853,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -16871,7 +16871,7 @@ LIBRARIES = {
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
             ":tint_be970c3ff1581d9c",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -16885,7 +16885,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -16953,20 +16953,20 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint/utils:utils": {
         "name": "tint_be970c3ff1581d9c",
         "kind": "source_set",
         "srcs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/reflection.cc",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/result.cc",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/result.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/tint/utils/internal_limits.h",
             "@chromium_dawn//:third_party/dawn/src/tint/utils/reflection.h",
-            "@chromium_dawn//:third_party/dawn/src/tint/utils/result.h",
+            "@chromium_dawn//:third_party/dawn/src/tint/utils/result.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -17038,7 +17038,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -17081,13 +17081,13 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/",
+            "gen/third_party/dawn/"
         ],
         "deps": [
             ":dawn_2dd79afa6687bfd8",
@@ -17097,7 +17097,7 @@ LIBRARIES = {
             ":tint_75f9382110a03b83",
             ":tint_924e530f83fd086e",
             ":tint_b4ad424565a36c09",
-            ":tint_f8e19cbc26933e5a",
+            ":tint_f8e19cbc26933e5a"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -17111,7 +17111,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -17179,8 +17179,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/tint:abseil": {
         "name": "tint_bc796ad4efa76df3",
@@ -17191,16 +17191,16 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "//third_party/abseil-cpp:absl",
+            "//third_party/abseil-cpp:absl"
         ],
         "linkopts": [
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
-        "c_copts": [],
-    },
+        "c_copts": []
+    }
 }
 
 SHARED_HEADERS = [
@@ -17701,7 +17701,7 @@ SHARED_HEADERS = [
     "@chromium_dawn//:third_party/dawn/src/tint/utils/text/unicode.h",
     "@chromium_dawn//:third_party/dawn/src/tint/utils/text_generator/text_generator.h",
     "@chromium_dawn//:third_party/dawn/src/utils/compiler.h",
-    "@chromium_dawn//:third_party/dawn/src/utils/numeric.h",
+    "@chromium_dawn//:third_party/dawn/src/utils/numeric.h"
 ]
 
 ACTIONS = []
@@ -17723,5 +17723,5 @@ PUBLIC_DEFINES = [
     "TINT_BUILD_IS_WIN=1",
     "TINT_BUILD_IS_MAC=0",
     "TINT_BUILD_IS_LINUX=0",
-    "TINT_ENABLE_IR_VALIDATION=0",
+    "TINT_ENABLE_IR_VALIDATION=0"
 ]

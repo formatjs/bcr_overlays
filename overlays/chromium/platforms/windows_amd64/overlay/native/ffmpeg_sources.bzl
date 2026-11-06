@@ -83,7 +83,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -114,15 +114,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ffmpeg_fc1ea150985320a2",
+            ":ffmpeg_fc1ea150985320a2"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -136,7 +136,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "ffmpeg_config": "chromium/config/Chromium/win/x64",
         "asm_copts": [],
@@ -214,8 +214,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ffmpeg:ffmpeg_internal": {
         "name": "ffmpeg_fc1ea150985320a2",
@@ -426,11 +426,11 @@ LIBRARIES = {
             "@chromium_ffmpeg//:libavutil/x86/autorename_libavutil_x86_float_dsp_init.c",
             "@chromium_ffmpeg//:libavutil/x86/fixed_dsp_init.c",
             "@chromium_ffmpeg//:libavutil/x86/imgutils_init.c",
-            "@chromium_ffmpeg//:libavutil/x86/lls_init.c",
+            "@chromium_ffmpeg//:libavutil/x86/lls_init.c"
         ],
         "hdrs": [
             "@chromium_ffmpeg//:chromium/config/Chromium/win/x64/config.h",
-            "@chromium_ffmpeg//:chromium/config/Chromium/win/x64/libavutil/avconfig.h",
+            "@chromium_ffmpeg//:chromium/config/Chromium/win/x64/libavutil/avconfig.h"
         ],
         "copts": [
             "/wd4996",
@@ -538,7 +538,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "HAVE_AV_CONFIG_H",
@@ -575,16 +575,16 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ffmpeg_ff36b2f7b243c84d",
-            ":ffmpeg_opus",
+            ":ffmpeg_opus"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -598,7 +598,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "ffmpeg_config": "chromium/config/Chromium/win/x64",
         "asm_copts": [],
@@ -705,8 +705,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ffmpeg:ffmpeg_nasm": {
         "name": "ffmpeg_ff36b2f7b243c84d",
@@ -722,7 +722,7 @@ LIBRARIES = {
             ":obj/third_party/ffmpeg/ffmpeg_nasm/float_dsp.o",
             ":obj/third_party/ffmpeg/ffmpeg_nasm/imgutils.o",
             ":obj/third_party/ffmpeg/ffmpeg_nasm/lls.o",
-            ":obj/third_party/ffmpeg/ffmpeg_nasm/tx_float.o",
+            ":obj/third_party/ffmpeg/ffmpeg_nasm/tx_float.o"
         ],
         "hdrs": [],
         "copts": [
@@ -802,7 +802,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -833,12 +833,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -853,7 +853,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -930,9 +930,9 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -1237,7 +1237,7 @@ SHARED_HEADERS = [
     "@chromium_ffmpeg//:libavutil/x86/intreadwrite.h",
     "@chromium_ffmpeg//:libavutil/x86/pixelutils.h",
     "@chromium_ffmpeg//:libavutil/x86/timer.h",
-    "@chromium_ffmpeg//:libavutil/x86/tx_float_init.c",
+    "@chromium_ffmpeg//:libavutil/x86/tx_float_init.c"
 ]
 
 ACTIONS = [
@@ -1259,10 +1259,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/dct32.o": "obj/third_party/ffmpeg/ffmpeg_nasm/dct32.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/dct32.o": "obj/third_party/ffmpeg/ffmpeg_nasm/dct32.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1285,11 +1285,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/dct32.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/dct32.o",
-            "../../third_party/ffmpeg/libavcodec/x86/dct32.asm",
+            "../../third_party/ffmpeg/libavcodec/x86/dct32.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1309,10 +1309,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/flacdsp.o": "obj/third_party/ffmpeg/ffmpeg_nasm/flacdsp.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/flacdsp.o": "obj/third_party/ffmpeg/ffmpeg_nasm/flacdsp.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1335,11 +1335,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/flacdsp.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/flacdsp.o",
-            "../../third_party/ffmpeg/libavcodec/x86/flacdsp.asm",
+            "../../third_party/ffmpeg/libavcodec/x86/flacdsp.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1359,10 +1359,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/imdct36.o": "obj/third_party/ffmpeg/ffmpeg_nasm/imdct36.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/imdct36.o": "obj/third_party/ffmpeg/ffmpeg_nasm/imdct36.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1385,11 +1385,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/imdct36.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/imdct36.o",
-            "../../third_party/ffmpeg/libavcodec/x86/imdct36.asm",
+            "../../third_party/ffmpeg/libavcodec/x86/imdct36.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1409,10 +1409,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/vorbisdsp.o": "obj/third_party/ffmpeg/ffmpeg_nasm/vorbisdsp.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/vorbisdsp.o": "obj/third_party/ffmpeg/ffmpeg_nasm/vorbisdsp.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1435,11 +1435,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/vorbisdsp.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/vorbisdsp.o",
-            "../../third_party/ffmpeg/libavcodec/x86/vorbisdsp.asm",
+            "../../third_party/ffmpeg/libavcodec/x86/vorbisdsp.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1459,10 +1459,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/aes.o": "obj/third_party/ffmpeg/ffmpeg_nasm/aes.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/aes.o": "obj/third_party/ffmpeg/ffmpeg_nasm/aes.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1485,11 +1485,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/aes.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/aes.o",
-            "../../third_party/ffmpeg/libavutil/x86/aes.asm",
+            "../../third_party/ffmpeg/libavutil/x86/aes.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1509,10 +1509,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/cpuid.o": "obj/third_party/ffmpeg/ffmpeg_nasm/cpuid.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/cpuid.o": "obj/third_party/ffmpeg/ffmpeg_nasm/cpuid.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1535,11 +1535,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/cpuid.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/cpuid.o",
-            "../../third_party/ffmpeg/libavutil/x86/cpuid.asm",
+            "../../third_party/ffmpeg/libavutil/x86/cpuid.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1559,10 +1559,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/fixed_dsp.o": "obj/third_party/ffmpeg/ffmpeg_nasm/fixed_dsp.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/fixed_dsp.o": "obj/third_party/ffmpeg/ffmpeg_nasm/fixed_dsp.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1585,11 +1585,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/fixed_dsp.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/fixed_dsp.o",
-            "../../third_party/ffmpeg/libavutil/x86/fixed_dsp.asm",
+            "../../third_party/ffmpeg/libavutil/x86/fixed_dsp.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1609,10 +1609,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/float_dsp.o": "obj/third_party/ffmpeg/ffmpeg_nasm/float_dsp.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/float_dsp.o": "obj/third_party/ffmpeg/ffmpeg_nasm/float_dsp.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1635,11 +1635,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/float_dsp.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/float_dsp.o",
-            "../../third_party/ffmpeg/libavutil/x86/float_dsp.asm",
+            "../../third_party/ffmpeg/libavutil/x86/float_dsp.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1659,10 +1659,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/imgutils.o": "obj/third_party/ffmpeg/ffmpeg_nasm/imgutils.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/imgutils.o": "obj/third_party/ffmpeg/ffmpeg_nasm/imgutils.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1685,11 +1685,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/imgutils.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/imgutils.o",
-            "../../third_party/ffmpeg/libavutil/x86/imgutils.asm",
+            "../../third_party/ffmpeg/libavutil/x86/imgutils.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1709,10 +1709,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/lls.o": "obj/third_party/ffmpeg/ffmpeg_nasm/lls.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/lls.o": "obj/third_party/ffmpeg/ffmpeg_nasm/lls.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1735,11 +1735,11 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/lls.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/lls.o",
-            "../../third_party/ffmpeg/libavutil/x86/lls.asm",
+            "../../third_party/ffmpeg/libavutil/x86/lls.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -1759,10 +1759,10 @@ ACTIONS = [
             "@chromium_ffmpeg//:libavutil/x86/lls.asm": "third_party/ffmpeg/libavutil/x86/lls.asm",
             "@chromium_ffmpeg//:libavutil/x86/tx_float.asm": "third_party/ffmpeg/libavutil/x86/tx_float.asm",
             "@chromium_ffmpeg//:libavutil/x86/x86inc.asm": "third_party/ffmpeg/libavutil/x86/x86inc.asm",
-            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm",
+            "@chromium_ffmpeg//:libavutil/x86/x86util.asm": "third_party/ffmpeg/libavutil/x86/x86util.asm"
         },
         "outs": {
-            "obj/third_party/ffmpeg/ffmpeg_nasm/tx_float.o": "obj/third_party/ffmpeg/ffmpeg_nasm/tx_float.o",
+            "obj/third_party/ffmpeg/ffmpeg_nasm/tx_float.o": "obj/third_party/ffmpeg/ffmpeg_nasm/tx_float.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -1785,12 +1785,12 @@ ACTIONS = [
             "obj/third_party/ffmpeg/ffmpeg_nasm/tx_float.o.d",
             "-o",
             "obj/third_party/ffmpeg/ffmpeg_nasm/tx_float.o",
-            "../../third_party/ffmpeg/libavutil/x86/tx_float.asm",
+            "../../third_party/ffmpeg/libavutil/x86/tx_float.asm"
         ],
         "deps": [
-            ":ffmpeg_791bd2f7f99ba5ad_tool",
-        ],
-    },
+            ":ffmpeg_791bd2f7f99ba5ad_tool"
+        ]
+    }
 ]
 
 TOOLS = {
@@ -1798,7 +1798,7 @@ TOOLS = {
         "tool": "@nasm//:nasm",
         "logical_path": "out/bazel-import/clang_x64/nasm",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
-    },
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
+    }
 }

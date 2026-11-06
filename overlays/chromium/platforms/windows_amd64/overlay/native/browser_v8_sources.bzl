@@ -5,10 +5,10 @@ LIBRARIES = {
         "name": "browser_v8_2eba829cce22c12d",
         "kind": "static_library",
         "srcs": [
-            "//third_party/zlib:google/compression_utils_portable.cc",
+            "//third_party/zlib:google/compression_utils_portable.cc"
         ],
         "hdrs": [
-            "//third_party/zlib:google/compression_utils_portable.h",
+            "//third_party/zlib:google/compression_utils_portable.h"
         ],
         "copts": [
             "/W4",
@@ -87,7 +87,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -118,15 +118,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            "//third_party/zlib",
+            "//third_party/zlib"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -140,7 +140,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -217,17 +217,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/zlib/google:compression_utils_portable(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_3e5d91206f200717",
         "kind": "static_library",
         "srcs": [
-            "//third_party/zlib:google/compression_utils_portable.cc",
+            "//third_party/zlib:google/compression_utils_portable.cc"
         ],
         "hdrs": [
-            "//third_party/zlib:google/compression_utils_portable.h",
+            "//third_party/zlib:google/compression_utils_portable.h"
         ],
         "copts": [
             "-Wall",
@@ -303,7 +303,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -324,15 +324,15 @@ LIBRARIES = {
             "USE_OZONE=1",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "clang_x64/gen/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "@chromium//third_party/zlib",
+            "@chromium//third_party/zlib"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -348,7 +348,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,--gc-sections",
             "-Wl,-z,defs",
-            "-Wl,--as-needed",
+            "-Wl,--as-needed"
         ],
         "asm_copts": [
             "-fPIC",
@@ -374,7 +374,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -440,8 +440,8 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8/src/inspector:inspector": {
         "name": "browser_v8_e2e0904ec9468599",
@@ -482,7 +482,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/inspector/v8-serialization-duplicate-tracker.cc",
             "@chromium_v8//:v8/src/inspector/v8-stack-trace-impl.cc",
             "@chromium_v8//:v8/src/inspector/v8-value-utils.cc",
-            "@chromium_v8//:v8/src/inspector/value-mirror.cc",
+            "@chromium_v8//:v8/src/inspector/value-mirror.cc"
         ],
         "hdrs": [
             ":gen/v8/include/inspector/Debugger.h",
@@ -525,7 +525,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/inspector/v8-serialization-duplicate-tracker.h",
             "@chromium_v8//:v8/src/inspector/v8-stack-trace-impl.h",
             "@chromium_v8//:v8/src/inspector/v8-value-utils.h",
-            "@chromium_v8//:v8/src/inspector/value-mirror.h",
+            "@chromium_v8//:v8/src/inspector/value-mirror.h"
         ],
         "copts": [
             "/W4",
@@ -609,7 +609,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -699,7 +699,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -708,7 +708,7 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_2e9febfd85ead362",
@@ -716,7 +716,7 @@ LIBRARIES = {
             ":browser_v8_b9bfc2f43f9d5cee",
             ":browser_v8_e76ec5d396d64024",
             ":browser_v8_eed8bc5993424105",
-            ":browser_v8_f5a20f352980a81e",
+            ":browser_v8_f5a20f352980a81e"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -744,7 +744,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -826,8 +826,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8/src/inspector:inspector(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_9d8f0e334ef96e05",
@@ -868,7 +868,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/inspector/v8-serialization-duplicate-tracker.cc",
             "@chromium_v8//:v8/src/inspector/v8-stack-trace-impl.cc",
             "@chromium_v8//:v8/src/inspector/v8-value-utils.cc",
-            "@chromium_v8//:v8/src/inspector/value-mirror.cc",
+            "@chromium_v8//:v8/src/inspector/value-mirror.cc"
         ],
         "hdrs": [
             ":clang_x64/gen/v8/include/inspector/Debugger.h",
@@ -911,7 +911,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/inspector/v8-serialization-duplicate-tracker.h",
             "@chromium_v8//:v8/src/inspector/v8-stack-trace-impl.h",
             "@chromium_v8//:v8/src/inspector/v8-value-utils.h",
-            "@chromium_v8//:v8/src/inspector/value-mirror.h",
+            "@chromium_v8//:v8/src/inspector/value-mirror.h"
         ],
         "copts": [
             "-Wall",
@@ -992,7 +992,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -1071,7 +1071,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -1080,7 +1080,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_2b1b83efee9850f4",
@@ -1088,7 +1088,7 @@ LIBRARIES = {
             ":browser_v8_98e7627c9ba7c84b",
             ":browser_v8_c182c3a7eeca470d",
             ":browser_v8_c79f3294a185d592",
-            ":browser_v8_e29fd71e3b37bfaa",
+            ":browser_v8_e29fd71e3b37bfaa"
         ],
         "linkopts": [
             "-ldl",
@@ -1106,7 +1106,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -1132,7 +1132,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -1203,17 +1203,17 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8/src/inspector:inspector_string_conversions": {
         "name": "browser_v8_385fb6f12b67d148",
         "kind": "source_set",
         "srcs": [
-            "@chromium_v8//:v8/src/inspector/v8-string-conversions.cc",
+            "@chromium_v8//:v8/src/inspector/v8-string-conversions.cc"
         ],
         "hdrs": [
-            "@chromium_v8//:v8/src/inspector/v8-string-conversions.h",
+            "@chromium_v8//:v8/src/inspector/v8-string-conversions.h"
         ],
         "copts": [
             "/W4",
@@ -1297,7 +1297,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1387,7 +1387,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -1396,10 +1396,10 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
-            ":browser_v8_2e9febfd85ead362",
+            ":browser_v8_2e9febfd85ead362"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -1419,7 +1419,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -1501,17 +1501,17 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8/src/inspector:inspector_string_conversions(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_c79f3294a185d592",
         "kind": "source_set",
         "srcs": [
-            "@chromium_v8//:v8/src/inspector/v8-string-conversions.cc",
+            "@chromium_v8//:v8/src/inspector/v8-string-conversions.cc"
         ],
         "hdrs": [
-            "@chromium_v8//:v8/src/inspector/v8-string-conversions.h",
+            "@chromium_v8//:v8/src/inspector/v8-string-conversions.h"
         ],
         "copts": [
             "-Wall",
@@ -1592,7 +1592,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -1671,7 +1671,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -1680,10 +1680,10 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_v8_98e7627c9ba7c84b",
+            ":browser_v8_98e7627c9ba7c84b"
         ],
         "linkopts": [
             "-ldl",
@@ -1701,7 +1701,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -1727,7 +1727,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -1798,15 +1798,15 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8/src/inspector:inspector_test_headers": {
         "name": "browser_v8_b9bfc2f43f9d5cee",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_v8//:v8/src/inspector/test-interface.h",
+            "@chromium_v8//:v8/src/inspector/test-interface.h"
         ],
         "copts": [
             "/W4",
@@ -1890,7 +1890,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1979,7 +1979,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -1988,10 +1988,10 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
-            ":browser_v8_8ecb9df53097101e",
+            ":browser_v8_8ecb9df53097101e"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -2011,7 +2011,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -2093,15 +2093,15 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8/src/inspector:inspector_test_headers(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_8ff0e94eb17ff425",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_v8//:v8/src/inspector/test-interface.h",
+            "@chromium_v8//:v8/src/inspector/test-interface.h"
         ],
         "copts": [
             "-Wall",
@@ -2182,7 +2182,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -2260,7 +2260,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -2269,10 +2269,10 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_v8_b776cc71cb17acda",
+            ":browser_v8_b776cc71cb17acda"
         ],
         "linkopts": [
             "-ldl",
@@ -2290,7 +2290,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -2316,7 +2316,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -2387,8 +2387,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8/third_party/inspector_protocol:crdtp": {
         "name": "browser_v8_e76ec5d396d64024",
@@ -2401,7 +2401,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/protocol_core.cc",
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/serializable.cc",
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/span.cc",
-            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/status.cc",
+            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/status.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/cbor.h",
@@ -2414,7 +2414,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/protocol_core.h",
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/serializable.h",
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/span.h",
-            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/status.h",
+            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/status.h"
         ],
         "copts": [
             "/W4",
@@ -2498,7 +2498,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2588,7 +2588,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -2597,10 +2597,10 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
-            ":browser_v8_c30f9376596cb179",
+            ":browser_v8_c30f9376596cb179"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -2628,7 +2628,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -2710,8 +2710,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8/third_party/inspector_protocol:crdtp(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_2b1b83efee9850f4",
@@ -2724,7 +2724,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/protocol_core.cc",
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/serializable.cc",
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/span.cc",
-            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/status.cc",
+            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/status.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/cbor.h",
@@ -2737,7 +2737,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/protocol_core.h",
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/serializable.h",
             "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/span.h",
-            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/status.h",
+            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/status.h"
         ],
         "copts": [
             "-Wall",
@@ -2818,7 +2818,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -2897,7 +2897,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -2906,10 +2906,10 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_v8_b98063905e7cbd38",
+            ":browser_v8_b98063905e7cbd38"
         ],
         "linkopts": [
             "-ldl",
@@ -2927,7 +2927,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -2953,7 +2953,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -3024,17 +3024,17 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8/third_party/inspector_protocol:crdtp_platform": {
         "name": "browser_v8_c30f9376596cb179",
         "kind": "source_set",
         "srcs": [
-            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/json_platform_v8.cc",
+            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/json_platform_v8.cc"
         ],
         "hdrs": [
-            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/json_platform.h",
+            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/json_platform.h"
         ],
         "copts": [
             "/W4",
@@ -3118,7 +3118,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3215,7 +3215,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -3224,11 +3224,11 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_2e9febfd85ead362",
-            ":browser_v8_9534c344f73991a6",
+            ":browser_v8_9534c344f73991a6"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -3256,7 +3256,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -3338,17 +3338,17 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8/third_party/inspector_protocol:crdtp_platform(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_b98063905e7cbd38",
         "kind": "source_set",
         "srcs": [
-            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/json_platform_v8.cc",
+            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/json_platform_v8.cc"
         ],
         "hdrs": [
-            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/json_platform.h",
+            "@chromium_v8//:v8/third_party/inspector_protocol/crdtp/json_platform.h"
         ],
         "copts": [
             "-Wall",
@@ -3429,7 +3429,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -3515,7 +3515,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -3524,11 +3524,11 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_6f6c1744bf6dca5a",
-            ":browser_v8_98e7627c9ba7c84b",
+            ":browser_v8_98e7627c9ba7c84b"
         ],
         "linkopts": [
             "-ldl",
@@ -3546,7 +3546,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -3572,7 +3572,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -3643,8 +3643,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:bytecode_builtins_list_generator(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_20285879e07752b7",
@@ -3652,12 +3652,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_v8//:v8/src/builtins/generate-bytecodes-builtins-list.cc",
             "@chromium_v8//:v8/src/interpreter/bytecode-operands.cc",
-            "@chromium_v8//:v8/src/interpreter/bytecodes.cc",
+            "@chromium_v8//:v8/src/interpreter/bytecodes.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/interpreter/bytecode-operands.h",
             "@chromium_v8//:v8/src/interpreter/bytecode-traits.h",
-            "@chromium_v8//:v8/src/interpreter/bytecodes.h",
+            "@chromium_v8//:v8/src/interpreter/bytecodes.h"
         ],
         "copts": [
             "-Wall",
@@ -3738,7 +3738,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -3817,7 +3817,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -3826,11 +3826,11 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_4583ff72c9947395",
-            ":browser_v8_98e7627c9ba7c84b",
+            ":browser_v8_98e7627c9ba7c84b"
         ],
         "linkopts": [
             "-ldl",
@@ -3853,7 +3853,7 @@ LIBRARIES = {
             "-rdynamic",
             "-pie",
             "-Wl,--disable-new-dtags",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -3879,7 +3879,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -3950,8 +3950,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:cppgc_base": {
         "name": "browser_v8_7374d0d141ccfbb7",
@@ -4005,7 +4005,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/heap/cppgc/write-barrier.cc",
             "@chromium_v8//:v8/src/heap/cppgc/caged-heap-local-data.cc",
             "@chromium_v8//:v8/src/heap/cppgc/caged-heap.cc",
-            "@chromium_v8//:v8/src/tracing/trace-categories.cc",
+            "@chromium_v8//:v8/src/tracing/trace-categories.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/heap/cppgc/caged-heap.h",
@@ -4054,7 +4054,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/heap/cppgc/virtual-memory.h",
             "@chromium_v8//:v8/src/heap/cppgc/visitor.h",
             "@chromium_v8//:v8/src/heap/cppgc/write-barrier.h",
-            "@chromium_v8//:v8/src/tracing/trace-categories.h",
+            "@chromium_v8//:v8/src/tracing/trace-categories.h"
         ],
         "copts": [
             "/W4",
@@ -4138,7 +4138,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4228,7 +4228,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -4237,14 +4237,14 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_1eb3fbfbe1960500",
             ":browser_v8_2609c79841ea03d8",
             ":browser_v8_2b0901d1a85770f2",
             ":browser_v8_2e9febfd85ead362",
-            ":browser_v8_eed8bc5993424105",
+            ":browser_v8_eed8bc5993424105"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -4264,7 +4264,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -4346,8 +4346,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:cppgc_base(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_a0206676923ca0b5",
@@ -4401,7 +4401,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/heap/cppgc/write-barrier.cc",
             "@chromium_v8//:v8/src/heap/cppgc/caged-heap-local-data.cc",
             "@chromium_v8//:v8/src/heap/cppgc/caged-heap.cc",
-            "@chromium_v8//:v8/src/tracing/trace-categories.cc",
+            "@chromium_v8//:v8/src/tracing/trace-categories.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/heap/cppgc/caged-heap.h",
@@ -4450,7 +4450,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/heap/cppgc/virtual-memory.h",
             "@chromium_v8//:v8/src/heap/cppgc/visitor.h",
             "@chromium_v8//:v8/src/heap/cppgc/write-barrier.h",
-            "@chromium_v8//:v8/src/tracing/trace-categories.h",
+            "@chromium_v8//:v8/src/tracing/trace-categories.h"
         ],
         "copts": [
             "-Wall",
@@ -4531,7 +4531,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -4610,7 +4610,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -4619,14 +4619,14 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_2506928cc22aa917",
             ":browser_v8_727e0105fdefcd5e",
             ":browser_v8_98e7627c9ba7c84b",
             ":browser_v8_a2a2c2efbe64e38d",
-            ":browser_v8_c182c3a7eeca470d",
+            ":browser_v8_c182c3a7eeca470d"
         ],
         "linkopts": [
             "-ldl",
@@ -4644,7 +4644,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -4670,7 +4670,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -4741,8 +4741,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:cppgc_headers": {
         "name": "browser_v8_2b0901d1a85770f2",
@@ -4790,7 +4790,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/include/cppgc/testing.h",
             "@chromium_v8//:v8/include/cppgc/trace-trait.h",
             "@chromium_v8//:v8/include/cppgc/type-traits.h",
-            "@chromium_v8//:v8/include/cppgc/visitor.h",
+            "@chromium_v8//:v8/include/cppgc/visitor.h"
         ],
         "copts": [
             "/W4",
@@ -4874,7 +4874,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4964,7 +4964,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -4973,12 +4973,12 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_1eb3fbfbe1960500",
             ":browser_v8_2e9febfd85ead362",
-            ":browser_v8_eaf5b75de657f440",
+            ":browser_v8_eaf5b75de657f440"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -4998,7 +4998,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -5080,8 +5080,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:cppgc_headers(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_2506928cc22aa917",
@@ -5129,7 +5129,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/include/cppgc/testing.h",
             "@chromium_v8//:v8/include/cppgc/trace-trait.h",
             "@chromium_v8//:v8/include/cppgc/type-traits.h",
-            "@chromium_v8//:v8/include/cppgc/visitor.h",
+            "@chromium_v8//:v8/include/cppgc/visitor.h"
         ],
         "copts": [
             "-Wall",
@@ -5210,7 +5210,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -5289,7 +5289,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -5298,12 +5298,12 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_0f7e776a20bdf8c7",
             ":browser_v8_727e0105fdefcd5e",
-            ":browser_v8_98e7627c9ba7c84b",
+            ":browser_v8_98e7627c9ba7c84b"
         ],
         "linkopts": [
             "-ldl",
@@ -5321,7 +5321,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -5347,7 +5347,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -5418,17 +5418,17 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:gen-regexp-special-case(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_fa80f2450e698bb1",
         "kind": "executable",
         "srcs": [
-            "@chromium_v8//:v8/src/regexp/gen-regexp-special-case.cc",
+            "@chromium_v8//:v8/src/regexp/gen-regexp-special-case.cc"
         ],
         "hdrs": [
-            "@chromium_v8//:v8/src/regexp/special-case.h",
+            "@chromium_v8//:v8/src/regexp/special-case.h"
         ],
         "copts": [
             "-Wall",
@@ -5509,7 +5509,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -5595,7 +5595,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -5604,12 +5604,12 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_4583ff72c9947395",
             ":browser_v8_98e7627c9ba7c84b",
-            "@chromium//third_party/icu:icu",
+            "@chromium//third_party/icu:icu"
         ],
         "linkopts": [
             "-ldl",
@@ -5632,7 +5632,7 @@ LIBRARIES = {
             "-rdynamic",
             "-pie",
             "-Wl,--disable-new-dtags",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -5658,7 +5658,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -5729,8 +5729,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:libm": {
         "name": "browser_v8_56427043c1400469",
@@ -5738,7 +5738,7 @@ LIBRARIES = {
         "srcs": [
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/branred.c",
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/s_sin.c",
-            "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/sincostab.c",
+            "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/sincostab.c"
         ],
         "hdrs": [
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/branred.h",
@@ -5746,7 +5746,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/endian.h",
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/mydefs.h",
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/trig.h",
-            "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/usncs.h",
+            "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/usncs.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -5822,7 +5822,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -5852,12 +5852,12 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -5873,7 +5873,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -5947,8 +5947,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:libm(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_a03897d088aa1387",
@@ -5956,7 +5956,7 @@ LIBRARIES = {
         "srcs": [
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/branred.c",
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/s_sin.c",
-            "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/sincostab.c",
+            "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/sincostab.c"
         ],
         "hdrs": [
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/branred.h",
@@ -5964,7 +5964,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/endian.h",
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/mydefs.h",
             "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/trig.h",
-            "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/usncs.h",
+            "@chromium_v8//:v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/usncs.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -6033,7 +6033,7 @@ LIBRARIES = {
             "-Wno-nullability-completeness",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "_FILE_OFFSET_BITS=64",
@@ -6051,12 +6051,12 @@ LIBRARIES = {
             "USE_OZONE=1",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "clang_x64/gen/",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [
@@ -6074,7 +6074,7 @@ LIBRARIES = {
             "-Wl,--gc-sections",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -6100,7 +6100,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -6159,8 +6159,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:mksnapshot(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_37795c0163f89e64",
@@ -6177,7 +6177,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/snapshot/embedded/platform-embedded-file-writer-zos.cc",
             "@chromium_v8//:v8/src/snapshot/mksnapshot.cc",
             "@chromium_v8//:v8/src/snapshot/snapshot-empty.cc",
-            "@chromium_v8//:v8/src/snapshot/static-roots-gen.cc",
+            "@chromium_v8//:v8/src/snapshot/static-roots-gen.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/snapshot/embedded/embedded-file-writer.h",
@@ -6187,7 +6187,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/snapshot/embedded/platform-embedded-file-writer-mac.h",
             "@chromium_v8//:v8/src/snapshot/embedded/platform-embedded-file-writer-win.h",
             "@chromium_v8//:v8/src/snapshot/embedded/platform-embedded-file-writer-zos.h",
-            "@chromium_v8//:v8/src/snapshot/static-roots-gen.h",
+            "@chromium_v8//:v8/src/snapshot/static-roots-gen.h"
         ],
         "copts": [
             "-Wall",
@@ -6268,7 +6268,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -6355,7 +6355,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -6364,7 +6364,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_12dd57e17893c7b7",
@@ -6375,7 +6375,7 @@ LIBRARIES = {
             ":browser_v8_98e7627c9ba7c84b",
             ":browser_v8_c182c3a7eeca470d",
             ":browser_v8_dbee7ac5d6266714",
-            ":browser_v8_f5b36747ff40a49b",
+            ":browser_v8_f5b36747ff40a49b"
         ],
         "linkopts": [
             "-ldl",
@@ -6399,7 +6399,7 @@ LIBRARIES = {
             "-pie",
             "-Wl,--disable-new-dtags",
             "-Wl,--gc-sections",
-            "-Wl,--icf=none",
+            "-Wl,--icf=none"
         ],
         "asm_copts": [
             "-fPIC",
@@ -6425,7 +6425,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -6496,14 +6496,14 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:torque(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_de9775b73e66450f",
         "kind": "executable",
         "srcs": [
-            "@chromium_v8//:v8/src/torque/torque.cc",
+            "@chromium_v8//:v8/src/torque/torque.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -6582,7 +6582,7 @@ LIBRARIES = {
             "-gsimple-template-names",
             "-fvisibility-inlines-hidden",
             "-fexceptions",
-            "-frtti",
+            "-frtti"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -6661,7 +6661,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -6670,10 +6670,10 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_v8_3a97b4aa764ae91e",
+            ":browser_v8_3a97b4aa764ae91e"
         ],
         "linkopts": [
             "-ldl",
@@ -6696,7 +6696,7 @@ LIBRARIES = {
             "-rdynamic",
             "-pie",
             "-Wl,--disable-new-dtags",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -6722,7 +6722,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -6793,8 +6793,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:torque_base(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_3a97b4aa764ae91e",
@@ -6823,7 +6823,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/torque/type-oracle.cc",
             "@chromium_v8//:v8/src/torque/type-visitor.cc",
             "@chromium_v8//:v8/src/torque/types.cc",
-            "@chromium_v8//:v8/src/torque/utils.cc",
+            "@chromium_v8//:v8/src/torque/utils.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/numbers/integer-literal-inl.h",
@@ -6852,7 +6852,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/torque/type-oracle.h",
             "@chromium_v8//:v8/src/torque/type-visitor.h",
             "@chromium_v8//:v8/src/torque/types.h",
-            "@chromium_v8//:v8/src/torque/utils.h",
+            "@chromium_v8//:v8/src/torque/utils.h"
         ],
         "copts": [
             "-Wall",
@@ -6930,7 +6930,7 @@ LIBRARIES = {
             "-gsimple-template-names",
             "-fvisibility-inlines-hidden",
             "-fexceptions",
-            "-frtti",
+            "-frtti"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -7009,7 +7009,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -7018,13 +7018,13 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_0412725f709d8669",
             ":browser_v8_0f7e776a20bdf8c7",
             ":browser_v8_4583ff72c9947395",
-            ":browser_v8_98e7627c9ba7c84b",
+            ":browser_v8_98e7627c9ba7c84b"
         ],
         "linkopts": [
             "-ldl",
@@ -7042,7 +7042,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -7068,7 +7068,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -7139,8 +7139,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:torque_generated_definitions": {
         "name": "browser_v8_a5faf85dba9c9f58",
@@ -7394,7 +7394,7 @@ LIBRARIES = {
             ":gen/v8/torque-generated/src/builtins/wasm-strings-tq.cc",
             ":gen/v8/torque-generated/src/builtins/wasm-to-js-tq.cc",
             ":gen/v8/torque-generated/src/debug/debug-wasm-objects-tq.cc",
-            ":gen/v8/torque-generated/src/wasm/wasm-objects-tq.cc",
+            ":gen/v8/torque-generated/src/wasm/wasm-objects-tq.cc"
         ],
         "hdrs": [
             ":gen/v8/builtins-generated/bytecodes-builtins-list.h",
@@ -8398,7 +8398,7 @@ LIBRARIES = {
             ":gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq-csa.h",
             ":gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq-inl.inc",
             ":gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.inc",
-            ":gen/v8/torque-generated/visitor-lists.h",
+            ":gen/v8/torque-generated/visitor-lists.h"
         ],
         "copts": [
             "/W4",
@@ -8482,7 +8482,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8580,7 +8580,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -8589,7 +8589,7 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_2e9febfd85ead362",
@@ -8597,7 +8597,7 @@ LIBRARIES = {
             ":browser_v8_9534c344f73991a6",
             ":browser_v8_c8289b396692e095",
             ":browser_v8_dee8758b6ca2be8d",
-            ":browser_v8_eed8bc5993424105",
+            ":browser_v8_eed8bc5993424105"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -8625,7 +8625,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -8707,8 +8707,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:torque_generated_definitions(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_682eb52a7c528b15",
@@ -8962,7 +8962,7 @@ LIBRARIES = {
             ":clang_x64/gen/v8/torque-generated/src/builtins/wasm-strings-tq.cc",
             ":clang_x64/gen/v8/torque-generated/src/builtins/wasm-to-js-tq.cc",
             ":clang_x64/gen/v8/torque-generated/src/debug/debug-wasm-objects-tq.cc",
-            ":clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq.cc",
+            ":clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq.cc"
         ],
         "hdrs": [
             ":clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h",
@@ -9966,7 +9966,7 @@ LIBRARIES = {
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq-csa.h",
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq-inl.inc",
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.inc",
-            ":clang_x64/gen/v8/torque-generated/visitor-lists.h",
+            ":clang_x64/gen/v8/torque-generated/visitor-lists.h"
         ],
         "copts": [
             "-Wall",
@@ -10047,7 +10047,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -10134,7 +10134,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -10143,7 +10143,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_1a6b6f562dfc5cf2",
@@ -10151,7 +10151,7 @@ LIBRARIES = {
             ":browser_v8_98e7627c9ba7c84b",
             ":browser_v8_c182c3a7eeca470d",
             ":browser_v8_dbee7ac5d6266714",
-            ":browser_v8_f5b36747ff40a49b",
+            ":browser_v8_f5b36747ff40a49b"
         ],
         "linkopts": [
             "-ldl",
@@ -10169,7 +10169,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -10195,7 +10195,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -10266,8 +10266,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:torque_generated_initializers(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_d59c52415eb01a82",
@@ -10520,7 +10520,7 @@ LIBRARIES = {
             ":clang_x64/gen/v8/torque-generated/src/builtins/wasm-strings-tq-csa.cc",
             ":clang_x64/gen/v8/torque-generated/src/builtins/wasm-to-js-tq-csa.cc",
             ":clang_x64/gen/v8/torque-generated/src/debug/debug-wasm-objects-tq-csa.cc",
-            ":clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq-csa.cc",
+            ":clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq-csa.cc"
         ],
         "hdrs": [
             ":clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h",
@@ -11525,7 +11525,7 @@ LIBRARIES = {
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq-inl.inc",
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.cc",
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.inc",
-            ":clang_x64/gen/v8/torque-generated/visitor-lists.h",
+            ":clang_x64/gen/v8/torque-generated/visitor-lists.h"
         ],
         "copts": [
             "-Wall",
@@ -11606,7 +11606,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -11693,7 +11693,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -11702,7 +11702,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_12dd57e17893c7b7",
@@ -11710,7 +11710,7 @@ LIBRARIES = {
             ":browser_v8_674b47893a0f3133",
             ":browser_v8_c182c3a7eeca470d",
             ":browser_v8_dbee7ac5d6266714",
-            ":browser_v8_f5b36747ff40a49b",
+            ":browser_v8_f5b36747ff40a49b"
         ],
         "linkopts": [
             "-ldl",
@@ -11728,7 +11728,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -11754,7 +11754,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -11825,15 +11825,15 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:torque_runtime_support": {
         "name": "browser_v8_e5175c26a5cd9e1c",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_v8//:v8/src/torque/runtime-support.h",
+            "@chromium_v8//:v8/src/torque/runtime-support.h"
         ],
         "copts": [
             "/W4",
@@ -11917,7 +11917,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12006,7 +12006,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -12015,7 +12015,7 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [],
         "linkopts": [
@@ -12031,7 +12031,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -12113,15 +12113,15 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:torque_runtime_support(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_674b47893a0f3133",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_v8//:v8/src/torque/runtime-support.h",
+            "@chromium_v8//:v8/src/torque/runtime-support.h"
         ],
         "copts": [
             "-Wall",
@@ -12202,7 +12202,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -12280,7 +12280,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -12289,7 +12289,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [
@@ -12306,7 +12306,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -12332,7 +12332,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -12403,8 +12403,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8": {
         "name": "browser_v8_0d19a696b1ce735b",
@@ -12415,21 +12415,21 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_1227aa1097352c83",
-            ":browser_v8_4d56831a3638f32d",
+            ":browser_v8_4d56831a3638f32d"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:advapi32.lib",
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_abseil": {
         "name": "browser_v8_812cc6e436f3961a",
@@ -12440,16 +12440,16 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "//third_party/abseil-cpp:absl",
+            "//third_party/abseil-cpp:absl"
         ],
         "linkopts": [
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_abseil(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_1a6b6f562dfc5cf2",
@@ -12460,14 +12460,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "@chromium//third_party/abseil-cpp:absl",
+            "@chromium//third_party/abseil-cpp:absl"
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_base": {
         "name": "browser_v8_1227aa1097352c83",
@@ -12478,21 +12478,21 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_25a5dd0bb5046cea",
-            ":browser_v8_753c6de7f9823655",
+            ":browser_v8_753c6de7f9823655"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:advapi32.lib",
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_base_without_compiler": {
         "name": "browser_v8_25a5dd0bb5046cea",
@@ -13082,7 +13082,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/diagnostics/etw-isolate-operations-win.cc",
             "@chromium_v8//:v8/src/diagnostics/etw-jit-metadata-win.cc",
             "@chromium_v8//:v8/src/diagnostics/etw-jit-win.cc",
-            ":gen/v8/src/regexp/special-case.cc",
+            ":gen/v8/src/regexp/special-case.cc"
         ],
         "hdrs": [
             ":gen/v8/builtins-generated/bytecodes-builtins-list.h",
@@ -14341,7 +14341,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/diagnostics/etw-isolate-load-script-data-win.h",
             "@chromium_v8//:v8/src/diagnostics/etw-isolate-operations-win.h",
             "@chromium_v8//:v8/src/diagnostics/etw-jit-metadata-win.h",
-            "@chromium_v8//:v8/src/diagnostics/etw-jit-win.h",
+            "@chromium_v8//:v8/src/diagnostics/etw-jit-win.h"
         ],
         "copts": [
             "/W4",
@@ -14425,7 +14425,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -14523,7 +14523,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -14532,7 +14532,7 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             "//third_party/icu:icu",
@@ -14555,7 +14555,7 @@ LIBRARIES = {
             "@dragonbox//:dragonbox",
             "@fast_float//:fast_float",
             "@highway//:hwy",
-            "@simdutf//:simdutf",
+            "@simdutf//:simdutf"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -14583,7 +14583,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -14665,8 +14665,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_base_without_compiler(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_12dd57e17893c7b7",
@@ -15249,7 +15249,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/regexp/x64/regexp-macro-assembler-x64.cc",
             "@chromium_v8//:v8/src/trap-handler/handler-inside-posix.cc",
             "@chromium_v8//:v8/src/trap-handler/handler-outside-posix.cc",
-            ":clang_x64/gen/v8/src/regexp/special-case.cc",
+            ":clang_x64/gen/v8/src/regexp/special-case.cc"
         ],
         "hdrs": [
             ":clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h",
@@ -16502,7 +16502,7 @@ LIBRARIES = {
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq-inl.inc",
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.cc",
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.inc",
-            ":clang_x64/gen/v8/torque-generated/visitor-lists.h",
+            ":clang_x64/gen/v8/torque-generated/visitor-lists.h"
         ],
         "copts": [
             "-Wall",
@@ -16583,7 +16583,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -16670,7 +16670,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -16679,7 +16679,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_1a6b6f562dfc5cf2",
@@ -16701,7 +16701,7 @@ LIBRARIES = {
             "@dragonbox//:dragonbox",
             "@fast_float//:fast_float",
             "@highway//:hwy",
-            "@simdutf//:simdutf",
+            "@simdutf//:simdutf"
         ],
         "linkopts": [
             "-ldl",
@@ -16719,7 +16719,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -16745,7 +16745,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -16816,8 +16816,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_bigint": {
         "name": "browser_v8_316069b8e92a44de",
@@ -16835,7 +16835,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/bigint/vector-arithmetic.cc",
             "@chromium_v8//:v8/src/bigint/div-barrett.cc",
             "@chromium_v8//:v8/src/bigint/mul-fft.cc",
-            "@chromium_v8//:v8/src/bigint/mul-toom.cc",
+            "@chromium_v8//:v8/src/bigint/mul-toom.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/bigint/bigint-internal.h",
@@ -16843,7 +16843,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/bigint/digit-arithmetic.h",
             "@chromium_v8//:v8/src/bigint/div-helpers.h",
             "@chromium_v8//:v8/src/bigint/util.h",
-            "@chromium_v8//:v8/src/bigint/vector-arithmetic.h",
+            "@chromium_v8//:v8/src/bigint/vector-arithmetic.h"
         ],
         "copts": [
             "/W4",
@@ -16927,7 +16927,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -17016,7 +17016,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -17025,7 +17025,7 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [],
         "linkopts": [
@@ -17041,7 +17041,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -17123,8 +17123,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_bigint(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_e9459908a43f34e1",
@@ -17142,7 +17142,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/bigint/vector-arithmetic.cc",
             "@chromium_v8//:v8/src/bigint/div-barrett.cc",
             "@chromium_v8//:v8/src/bigint/mul-fft.cc",
-            "@chromium_v8//:v8/src/bigint/mul-toom.cc",
+            "@chromium_v8//:v8/src/bigint/mul-toom.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/bigint/bigint-internal.h",
@@ -17150,7 +17150,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/bigint/digit-arithmetic.h",
             "@chromium_v8//:v8/src/bigint/div-helpers.h",
             "@chromium_v8//:v8/src/bigint/util.h",
-            "@chromium_v8//:v8/src/bigint/vector-arithmetic.h",
+            "@chromium_v8//:v8/src/bigint/vector-arithmetic.h"
         ],
         "copts": [
             "-Wall",
@@ -17231,7 +17231,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -17309,7 +17309,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -17318,7 +17318,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [
@@ -17335,7 +17335,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -17361,7 +17361,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -17432,8 +17432,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_compiler": {
         "name": "browser_v8_753c6de7f9823655",
@@ -17626,7 +17626,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/compiler/linear-scheduler.cc",
             "@chromium_v8//:v8/src/compiler/revectorizer.cc",
             "@chromium_v8//:v8/src/compiler/turboshaft/wasm-revec-phase.cc",
-            "@chromium_v8//:v8/src/compiler/turboshaft/wasm-revec-reducer.cc",
+            "@chromium_v8//:v8/src/compiler/turboshaft/wasm-revec-reducer.cc"
         ],
         "hdrs": [
             ":gen/v8/builtins-generated/bytecodes-builtins-list.h",
@@ -18879,7 +18879,7 @@ LIBRARIES = {
             ":gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq-inl.inc",
             ":gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.cc",
             ":gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.inc",
-            ":gen/v8/torque-generated/visitor-lists.h",
+            ":gen/v8/torque-generated/visitor-lists.h"
         ],
         "copts": [
             "/W4",
@@ -18963,7 +18963,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -19061,7 +19061,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -19070,7 +19070,7 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_25a5dd0bb5046cea",
@@ -19080,7 +19080,7 @@ LIBRARIES = {
             ":browser_v8_c8289b396692e095",
             ":browser_v8_dee8758b6ca2be8d",
             ":browser_v8_eed8bc5993424105",
-            ":browser_v8_f5e1e26f40f2bf3c",
+            ":browser_v8_f5e1e26f40f2bf3c"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -19108,7 +19108,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -19190,8 +19190,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_compiler(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_523d61e8287116e6",
@@ -19384,7 +19384,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/compiler/linear-scheduler.cc",
             "@chromium_v8//:v8/src/compiler/revectorizer.cc",
             "@chromium_v8//:v8/src/compiler/turboshaft/wasm-revec-phase.cc",
-            "@chromium_v8//:v8/src/compiler/turboshaft/wasm-revec-reducer.cc",
+            "@chromium_v8//:v8/src/compiler/turboshaft/wasm-revec-reducer.cc"
         ],
         "hdrs": [
             ":clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h",
@@ -20637,7 +20637,7 @@ LIBRARIES = {
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq-inl.inc",
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.cc",
             ":clang_x64/gen/v8/torque-generated/third_party/v8/builtins/array-sort-tq.inc",
-            ":clang_x64/gen/v8/torque-generated/visitor-lists.h",
+            ":clang_x64/gen/v8/torque-generated/visitor-lists.h"
         ],
         "copts": [
             "-Wall",
@@ -20718,7 +20718,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -20805,7 +20805,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -20814,7 +20814,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_12dd57e17893c7b7",
@@ -20824,7 +20824,7 @@ LIBRARIES = {
             ":browser_v8_98e7627c9ba7c84b",
             ":browser_v8_c182c3a7eeca470d",
             ":browser_v8_dbee7ac5d6266714",
-            ":browser_v8_f5b36747ff40a49b",
+            ":browser_v8_f5b36747ff40a49b"
         ],
         "linkopts": [
             "-ldl",
@@ -20842,7 +20842,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -20868,7 +20868,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -20939,8 +20939,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_compiler_for_mksnapshot(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_412e8f38f182d3dd",
@@ -20951,17 +20951,17 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_v8_523d61e8287116e6",
+            ":browser_v8_523d61e8287116e6"
         ],
         "linkopts": [
             "-ldl",
-            "-lrt",
+            "-lrt"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_config_headers": {
         "name": "browser_v8_eaf5b75de657f440",
@@ -20970,7 +20970,7 @@ LIBRARIES = {
         "hdrs": [
             "@chromium_v8//:v8/include/v8-platform.h",
             "@chromium_v8//:v8/include/v8-source-location.h",
-            "@chromium_v8//:v8/include/v8config.h",
+            "@chromium_v8//:v8/include/v8config.h"
         ],
         "copts": [
             "/W4",
@@ -21054,7 +21054,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -21143,7 +21143,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -21152,7 +21152,7 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [],
         "linkopts": [
@@ -21168,7 +21168,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -21250,8 +21250,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_config_headers(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_0f7e776a20bdf8c7",
@@ -21260,7 +21260,7 @@ LIBRARIES = {
         "hdrs": [
             "@chromium_v8//:v8/include/v8-platform.h",
             "@chromium_v8//:v8/include/v8-source-location.h",
-            "@chromium_v8//:v8/include/v8config.h",
+            "@chromium_v8//:v8/include/v8config.h"
         ],
         "copts": [
             "-Wall",
@@ -21341,7 +21341,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -21419,7 +21419,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -21428,7 +21428,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [
@@ -21445,7 +21445,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -21471,7 +21471,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -21542,8 +21542,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_flags": {
         "name": "browser_v8_e67e681ec8fa0de1",
@@ -21552,7 +21552,7 @@ LIBRARIES = {
         "hdrs": [
             "@chromium_v8//:v8/src/flags/flag-definitions.h",
             "@chromium_v8//:v8/src/flags/flags-impl.h",
-            "@chromium_v8//:v8/src/flags/flags.h",
+            "@chromium_v8//:v8/src/flags/flags.h"
         ],
         "copts": [
             "/W4",
@@ -21636,7 +21636,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -21726,7 +21726,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -21735,11 +21735,11 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_2e9febfd85ead362",
-            ":browser_v8_f5e1e26f40f2bf3c",
+            ":browser_v8_f5e1e26f40f2bf3c"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -21759,7 +21759,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -21841,8 +21841,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_flags(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_0412725f709d8669",
@@ -21851,7 +21851,7 @@ LIBRARIES = {
         "hdrs": [
             "@chromium_v8//:v8/src/flags/flag-definitions.h",
             "@chromium_v8//:v8/src/flags/flags-impl.h",
-            "@chromium_v8//:v8/src/flags/flags.h",
+            "@chromium_v8//:v8/src/flags/flags.h"
         ],
         "copts": [
             "-Wall",
@@ -21932,7 +21932,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -22011,7 +22011,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -22020,11 +22020,11 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_4583ff72c9947395",
-            ":browser_v8_98e7627c9ba7c84b",
+            ":browser_v8_98e7627c9ba7c84b"
         ],
         "linkopts": [
             "-ldl",
@@ -22042,7 +22042,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -22068,7 +22068,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -22139,8 +22139,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_headers": {
         "name": "browser_v8_8ecb9df53097101e",
@@ -22202,7 +22202,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/include/v8-wasm-trap-handler-win.h",
             "@chromium_v8//:v8/include/v8-wasm.h",
             "@chromium_v8//:v8/include/v8-weak-callback-info.h",
-            "@chromium_v8//:v8/include/v8.h",
+            "@chromium_v8//:v8/include/v8.h"
         ],
         "copts": [
             "/W4",
@@ -22286,7 +22286,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -22375,7 +22375,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -22384,13 +22384,13 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_2b0901d1a85770f2",
             ":browser_v8_eaf5b75de657f440",
             ":browser_v8_eed8bc5993424105",
-            ":browser_v8_f5a20f352980a81e",
+            ":browser_v8_f5a20f352980a81e"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -22410,7 +22410,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -22492,8 +22492,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_headers(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_b776cc71cb17acda",
@@ -22555,7 +22555,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/include/v8-wasm-trap-handler-win.h",
             "@chromium_v8//:v8/include/v8-wasm.h",
             "@chromium_v8//:v8/include/v8-weak-callback-info.h",
-            "@chromium_v8//:v8/include/v8.h",
+            "@chromium_v8//:v8/include/v8.h"
         ],
         "copts": [
             "-Wall",
@@ -22636,7 +22636,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -22714,7 +22714,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -22723,13 +22723,13 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_0f7e776a20bdf8c7",
             ":browser_v8_2506928cc22aa917",
             ":browser_v8_c182c3a7eeca470d",
-            ":browser_v8_e29fd71e3b37bfaa",
+            ":browser_v8_e29fd71e3b37bfaa"
         ],
         "linkopts": [
             "-ldl",
@@ -22747,7 +22747,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -22773,7 +22773,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -22844,8 +22844,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_heap_base": {
         "name": "browser_v8_2609c79841ea03d8",
@@ -22857,7 +22857,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/heap/base/stack.cc",
             "@chromium_v8//:v8/src/heap/base/unsafe-json-emitter.cc",
             "@chromium_v8//:v8/src/heap/base/worklist.cc",
-            "@chromium_v8//:v8/src/heap/base/asm/x64/push_registers_masm.asm",
+            "@chromium_v8//:v8/src/heap/base/asm/x64/push_registers_masm.asm"
         ],
         "hdrs": [],
         "copts": [
@@ -22942,7 +22942,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -23032,7 +23032,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -23041,12 +23041,12 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_2e9febfd85ead362",
             ":browser_v8_ae73b5c1ba129ad8",
-            ":browser_v8_eaf5b75de657f440",
+            ":browser_v8_eaf5b75de657f440"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -23066,7 +23066,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -23148,8 +23148,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_heap_base(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_a2a2c2efbe64e38d",
@@ -23161,7 +23161,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/heap/base/stack.cc",
             "@chromium_v8//:v8/src/heap/base/unsafe-json-emitter.cc",
             "@chromium_v8//:v8/src/heap/base/worklist.cc",
-            "@chromium_v8//:v8/src/heap/base/asm/x64/push_registers_asm.cc",
+            "@chromium_v8//:v8/src/heap/base/asm/x64/push_registers_asm.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -23243,7 +23243,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -23322,7 +23322,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -23331,12 +23331,12 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_0f7e776a20bdf8c7",
             ":browser_v8_6e35a88ca5c57186",
-            ":browser_v8_98e7627c9ba7c84b",
+            ":browser_v8_98e7627c9ba7c84b"
         ],
         "linkopts": [
             "-ldl",
@@ -23354,7 +23354,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -23380,7 +23380,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -23451,8 +23451,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_heap_base_headers": {
         "name": "browser_v8_ae73b5c1ba129ad8",
@@ -23467,7 +23467,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/heap/base/memory-tagging.h",
             "@chromium_v8//:v8/src/heap/base/stack.h",
             "@chromium_v8//:v8/src/heap/base/unsafe-json-emitter.h",
-            "@chromium_v8//:v8/src/heap/base/worklist.h",
+            "@chromium_v8//:v8/src/heap/base/worklist.h"
         ],
         "copts": [
             "/W4",
@@ -23551,7 +23551,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -23641,7 +23641,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -23650,10 +23650,10 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
-            ":browser_v8_2e9febfd85ead362",
+            ":browser_v8_2e9febfd85ead362"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -23673,7 +23673,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -23755,8 +23755,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_heap_base_headers(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_6e35a88ca5c57186",
@@ -23771,7 +23771,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/heap/base/memory-tagging.h",
             "@chromium_v8//:v8/src/heap/base/stack.h",
             "@chromium_v8//:v8/src/heap/base/unsafe-json-emitter.h",
-            "@chromium_v8//:v8/src/heap/base/worklist.h",
+            "@chromium_v8//:v8/src/heap/base/worklist.h"
         ],
         "copts": [
             "-Wall",
@@ -23852,7 +23852,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -23931,7 +23931,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -23940,10 +23940,10 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_v8_98e7627c9ba7c84b",
+            ":browser_v8_98e7627c9ba7c84b"
         ],
         "linkopts": [
             "-ldl",
@@ -23961,7 +23961,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -23987,7 +23987,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -24058,14 +24058,14 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_init(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_58f45ec76d4aa4c5",
         "kind": "source_set",
         "srcs": [
-            "@chromium_v8//:v8/src/init/setup-isolate-full.cc",
+            "@chromium_v8//:v8/src/init/setup-isolate-full.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -24147,7 +24147,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -24234,7 +24234,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -24243,7 +24243,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_12dd57e17893c7b7",
@@ -24251,7 +24251,7 @@ LIBRARIES = {
             ":browser_v8_873e2dff611d7158",
             ":browser_v8_c182c3a7eeca470d",
             ":browser_v8_dbee7ac5d6266714",
-            ":browser_v8_f5b36747ff40a49b",
+            ":browser_v8_f5b36747ff40a49b"
         ],
         "linkopts": [
             "-ldl",
@@ -24269,7 +24269,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -24295,7 +24295,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -24366,8 +24366,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_initializers(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_873e2dff611d7158",
@@ -24420,7 +24420,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/interpreter/interpreter-generator.cc",
             "@chromium_v8//:v8/src/interpreter/interpreter-intrinsics-generator.cc",
             "@chromium_v8//:v8/src/builtins/builtins-wasm-gen.cc",
-            "@chromium_v8//:v8/src/builtins/x64/builtins-x64.cc",
+            "@chromium_v8//:v8/src/builtins/x64/builtins-x64.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/builtins/builtins-array-gen.h",
@@ -24462,7 +24462,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/interpreter/interpreter-intrinsics-generator.h",
             "@chromium_v8//:v8/src/numbers/integer-literal-inl.h",
             "@chromium_v8//:v8/src/numbers/integer-literal.h",
-            "@chromium_v8//:v8/third_party/v8/codegen/fp16-inl.h",
+            "@chromium_v8//:v8/third_party/v8/codegen/fp16-inl.h"
         ],
         "copts": [
             "-Wall",
@@ -24543,7 +24543,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -24629,7 +24629,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -24638,13 +24638,13 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_12dd57e17893c7b7",
             ":browser_v8_4583ff72c9947395",
             ":browser_v8_c182c3a7eeca470d",
-            ":browser_v8_d59c52415eb01a82",
+            ":browser_v8_d59c52415eb01a82"
         ],
         "linkopts": [
             "-ldl",
@@ -24662,7 +24662,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -24688,7 +24688,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -24759,8 +24759,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_internal_headers": {
         "name": "browser_v8_9534c344f73991a6",
@@ -27257,7 +27257,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/third_party/siphash/halfsiphash.h",
             "@chromium_v8//:v8/third_party/utf8-decoder/generalized-utf8-decoder.h",
             "@chromium_v8//:v8/third_party/utf8-decoder/utf8-decoder.h",
-            "@chromium_v8//:v8/third_party/valgrind/valgrind.h",
+            "@chromium_v8//:v8/third_party/valgrind/valgrind.h"
         ],
         "copts": [
             "/W4",
@@ -27341,7 +27341,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -27439,7 +27439,7 @@ LIBRARIES = {
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
             "ABSL_ALLOCATOR_NOTHROW=1",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -27448,7 +27448,7 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_2b0901d1a85770f2",
@@ -27462,7 +27462,7 @@ LIBRARIES = {
             ":browser_v8_e67e681ec8fa0de1",
             ":browser_v8_f5e1e26f40f2bf3c",
             "@fp16//:fp16",
-            "@simdutf//:simdutf",
+            "@simdutf//:simdutf"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -27490,7 +27490,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -27572,8 +27572,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_internal_headers(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_6f6c1744bf6dca5a",
@@ -30069,7 +30069,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/third_party/siphash/halfsiphash.h",
             "@chromium_v8//:v8/third_party/utf8-decoder/generalized-utf8-decoder.h",
             "@chromium_v8//:v8/third_party/utf8-decoder/utf8-decoder.h",
-            "@chromium_v8//:v8/third_party/valgrind/valgrind.h",
+            "@chromium_v8//:v8/third_party/valgrind/valgrind.h"
         ],
         "copts": [
             "-Wall",
@@ -30150,7 +30150,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -30237,7 +30237,7 @@ LIBRARIES = {
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
             "ABSL_ALLOCATOR_NOTHROW=1",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -30246,7 +30246,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_0412725f709d8669",
@@ -30260,7 +30260,7 @@ LIBRARIES = {
             ":browser_v8_dbee7ac5d6266714",
             ":browser_v8_f5b36747ff40a49b",
             "@fp16//:fp16",
-            "@simdutf//:simdutf",
+            "@simdutf//:simdutf"
         ],
         "linkopts": [
             "-ldl",
@@ -30278,7 +30278,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -30304,7 +30304,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -30375,8 +30375,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_libbase": {
         "name": "browser_v8_2e9febfd85ead362",
@@ -30419,7 +30419,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/base/virtual-address-space.cc",
             "@chromium_v8//:v8/src/base/vlq-base64.cc",
             "@chromium_v8//:v8/src/base/debug/stack_trace_win.cc",
-            "@chromium_v8//:v8/src/base/platform/platform-win32.cc",
+            "@chromium_v8//:v8/src/base/platform/platform-win32.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/base/abort-mode.h",
@@ -30533,7 +30533,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/base/virtual-address-space.h",
             "@chromium_v8//:v8/src/base/vlq-base64.h",
             "@chromium_v8//:v8/src/base/vlq.h",
-            "@chromium_v8//:v8/src/base/win32-headers.h",
+            "@chromium_v8//:v8/src/base/win32-headers.h"
         ],
         "copts": [
             "/W4",
@@ -30618,7 +30618,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_CRT_RAND_S",
@@ -30708,7 +30708,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -30717,12 +30717,12 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_56427043c1400469",
             ":browser_v8_812cc6e436f3961a",
-            ":browser_v8_eaf5b75de657f440",
+            ":browser_v8_eaf5b75de657f440"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -30742,7 +30742,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -30825,8 +30825,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_libbase(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_98e7627c9ba7c84b",
@@ -30871,7 +30871,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/base/platform/platform-posix.cc",
             "@chromium_v8//:v8/src/base/platform/platform-posix-time.cc",
             "@chromium_v8//:v8/src/base/debug/stack_trace_posix.cc",
-            "@chromium_v8//:v8/src/base/platform/platform-linux.cc",
+            "@chromium_v8//:v8/src/base/platform/platform-linux.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/src/base/abort-mode.h",
@@ -30986,7 +30986,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/base/virtual-address-space-page-allocator.h",
             "@chromium_v8//:v8/src/base/virtual-address-space.h",
             "@chromium_v8//:v8/src/base/vlq-base64.h",
-            "@chromium_v8//:v8/src/base/vlq.h",
+            "@chromium_v8//:v8/src/base/vlq.h"
         ],
         "copts": [
             "-Wall",
@@ -31067,7 +31067,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -31146,7 +31146,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -31155,12 +31155,12 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_0f7e776a20bdf8c7",
             ":browser_v8_1a6b6f562dfc5cf2",
-            ":browser_v8_a03897d088aa1387",
+            ":browser_v8_a03897d088aa1387"
         ],
         "linkopts": [
             "-ldl",
@@ -31178,7 +31178,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -31204,7 +31204,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -31275,8 +31275,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_libplatform": {
         "name": "browser_v8_1eb3fbfbe1960500",
@@ -31291,7 +31291,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/libplatform/task-queue.cc",
             "@chromium_v8//:v8/src/libplatform/tracing/trace-config.cc",
             "@chromium_v8//:v8/src/libplatform/tracing/tracing-controller.cc",
-            "@chromium_v8//:v8/src/libplatform/worker-thread.cc",
+            "@chromium_v8//:v8/src/libplatform/worker-thread.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/include/libplatform/libplatform-export.h",
@@ -31305,7 +31305,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/libplatform/delayed-task-queue.h",
             "@chromium_v8//:v8/src/libplatform/task-queue.h",
             "@chromium_v8//:v8/src/libplatform/tracing/trace-event-listener.h",
-            "@chromium_v8//:v8/src/libplatform/worker-thread.h",
+            "@chromium_v8//:v8/src/libplatform/worker-thread.h"
         ],
         "copts": [
             "/W4",
@@ -31389,7 +31389,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -31479,7 +31479,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -31488,12 +31488,12 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_2e9febfd85ead362",
             ":browser_v8_eaf5b75de657f440",
-            ":browser_v8_eed8bc5993424105",
+            ":browser_v8_eed8bc5993424105"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -31513,7 +31513,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -31595,8 +31595,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_libplatform(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_727e0105fdefcd5e",
@@ -31611,7 +31611,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/libplatform/task-queue.cc",
             "@chromium_v8//:v8/src/libplatform/tracing/trace-config.cc",
             "@chromium_v8//:v8/src/libplatform/tracing/tracing-controller.cc",
-            "@chromium_v8//:v8/src/libplatform/worker-thread.cc",
+            "@chromium_v8//:v8/src/libplatform/worker-thread.cc"
         ],
         "hdrs": [
             "@chromium_v8//:v8/include/libplatform/libplatform-export.h",
@@ -31625,7 +31625,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/libplatform/delayed-task-queue.h",
             "@chromium_v8//:v8/src/libplatform/task-queue.h",
             "@chromium_v8//:v8/src/libplatform/tracing/trace-event-listener.h",
-            "@chromium_v8//:v8/src/libplatform/worker-thread.h",
+            "@chromium_v8//:v8/src/libplatform/worker-thread.h"
         ],
         "copts": [
             "-Wall",
@@ -31706,7 +31706,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -31785,7 +31785,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -31794,12 +31794,12 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_0f7e776a20bdf8c7",
             ":browser_v8_98e7627c9ba7c84b",
-            ":browser_v8_c182c3a7eeca470d",
+            ":browser_v8_c182c3a7eeca470d"
         ],
         "linkopts": [
             "-ldl",
@@ -31817,7 +31817,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -31843,7 +31843,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -31914,8 +31914,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_maybe_icu": {
         "name": "browser_v8_c8289b396692e095",
@@ -31926,14 +31926,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "//third_party/icu:icu",
+            "//third_party/icu:icu"
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_maybe_icu(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_dbee7ac5d6266714",
@@ -31944,14 +31944,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "@chromium//third_party/icu:icu",
+            "@chromium//third_party/icu:icu"
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_maybe_temporal": {
         "name": "browser_v8_dee8758b6ca2be8d",
@@ -31962,16 +31962,16 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "//native/rust:temporal_capi_cpp",
+            "//native/rust:temporal_capi_cpp"
         ],
         "linkopts": [
-            "-DEFAULTLIB:winmm.lib",
+            "-DEFAULTLIB:winmm.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_maybe_temporal(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_f5b36747ff40a49b",
@@ -31982,14 +31982,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "@chromium//native/rust:temporal_capi_cpp",
+            "@chromium//native/rust:temporal_capi_cpp"
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_shared_internal_headers": {
         "name": "browser_v8_f5e1e26f40f2bf3c",
@@ -31998,7 +31998,7 @@ LIBRARIES = {
         "hdrs": [
             "@chromium_v8//:v8/src/common/globals.h",
             "@chromium_v8//:v8/src/wasm/wasm-constants.h",
-            "@chromium_v8//:v8/src/wasm/wasm-limits.h",
+            "@chromium_v8//:v8/src/wasm/wasm-limits.h"
         ],
         "copts": [
             "/W4",
@@ -32082,7 +32082,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -32172,7 +32172,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -32181,12 +32181,12 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_2b0901d1a85770f2",
             ":browser_v8_2e9febfd85ead362",
-            ":browser_v8_8ecb9df53097101e",
+            ":browser_v8_8ecb9df53097101e"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -32206,7 +32206,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -32288,8 +32288,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_shared_internal_headers(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_4583ff72c9947395",
@@ -32298,7 +32298,7 @@ LIBRARIES = {
         "hdrs": [
             "@chromium_v8//:v8/src/common/globals.h",
             "@chromium_v8//:v8/src/wasm/wasm-constants.h",
-            "@chromium_v8//:v8/src/wasm/wasm-limits.h",
+            "@chromium_v8//:v8/src/wasm/wasm-limits.h"
         ],
         "copts": [
             "-Wall",
@@ -32379,7 +32379,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -32458,7 +32458,7 @@ LIBRARIES = {
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
             "DEBUG",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -32467,12 +32467,12 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":browser_v8_2506928cc22aa917",
             ":browser_v8_98e7627c9ba7c84b",
-            ":browser_v8_b776cc71cb17acda",
+            ":browser_v8_b776cc71cb17acda"
         ],
         "linkopts": [
             "-ldl",
@@ -32490,7 +32490,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -32516,7 +32516,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -32587,8 +32587,8 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//v8:v8_snapshot": {
         "name": "browser_v8_4d56831a3638f32d",
@@ -32597,7 +32597,7 @@ LIBRARIES = {
             "@chromium_v8//:v8/src/init/setup-isolate-deserialize.cc",
             ":gen/v8/embedded.cc",
             ":gen/v8/src/builtins/builtins-effects.cc",
-            "@chromium_v8//:v8/src/snapshot/snapshot-external.cc",
+            "@chromium_v8//:v8/src/snapshot/snapshot-external.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -32682,7 +32682,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -32780,7 +32780,7 @@ LIBRARIES = {
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
             "ABSL_ALLOCATOR_NOTHROW=1",
-            "TEMPORAL_CAPI_VERSION_0_1",
+            "TEMPORAL_CAPI_VERSION_0_1"
         ],
         "includes": [
             "..",
@@ -32789,14 +32789,14 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [
             ":browser_v8_1227aa1097352c83",
             ":browser_v8_2e9febfd85ead362",
             ":browser_v8_9534c344f73991a6",
             ":browser_v8_dee8758b6ca2be8d",
-            ":browser_v8_eed8bc5993424105",
+            ":browser_v8_eed8bc5993424105"
         ],
         "linkopts": [
             "-DEFAULTLIB:dbghelp.lib",
@@ -32824,7 +32824,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -32906,8 +32906,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_tracing": {
         "name": "browser_v8_eed8bc5993424105",
@@ -32918,14 +32918,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":perfetto_runtime",
+            ":perfetto_runtime"
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_tracing(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_c182c3a7eeca470d",
@@ -32936,14 +32936,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "@chromium//native:perfetto_runtime",
+            "@chromium//native:perfetto_runtime"
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//v8:v8_version": {
         "name": "browser_v8_f5a20f352980a81e",
@@ -32952,7 +32952,7 @@ LIBRARIES = {
         "hdrs": [
             "@chromium_v8//:v8/include/v8-value-serializer-version.h",
             "@chromium_v8//:v8/include/v8-version-string.h",
-            "@chromium_v8//:v8/include/v8-version.h",
+            "@chromium_v8//:v8/include/v8-version.h"
         ],
         "copts": [
             "/W4",
@@ -33036,7 +33036,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -33125,7 +33125,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -33134,7 +33134,7 @@ LIBRARIES = {
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
             "gen/v8/",
-            "gen/v8/include/",
+            "gen/v8/include/"
         ],
         "deps": [],
         "linkopts": [
@@ -33150,7 +33150,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/STACK:2097152",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -33232,8 +33232,8 @@ LIBRARIES = {
             "/clang:-O3",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//v8:v8_version(//build/toolchain/linux:clang_x64)": {
         "name": "browser_v8_e29fd71e3b37bfaa",
@@ -33242,7 +33242,7 @@ LIBRARIES = {
         "hdrs": [
             "@chromium_v8//:v8/include/v8-value-serializer-version.h",
             "@chromium_v8//:v8/include/v8-version-string.h",
-            "@chromium_v8//:v8/include/v8-version.h",
+            "@chromium_v8//:v8/include/v8-version.h"
         ],
         "copts": [
             "-Wall",
@@ -33323,7 +33323,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -33401,7 +33401,7 @@ LIBRARIES = {
             "CPPGC_ENABLE_LARGER_CAGE",
             "CPPGC_SLIM_WRITE_BARRIER",
             "V8_TARGET_ARCH_X64",
-            "DEBUG",
+            "DEBUG"
         ],
         "includes": [
             "..",
@@ -33410,7 +33410,7 @@ LIBRARIES = {
             "clang_x64/gen/third_party/perfetto/build_config/",
             "clang_x64/gen/v8/",
             "clang_x64/gen/v8/include/",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [
@@ -33427,7 +33427,7 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "-Wl,--gc-sections",
+            "-Wl,--gc-sections"
         ],
         "asm_copts": [
             "-fPIC",
@@ -33453,7 +33453,7 @@ LIBRARIES = {
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
-            "-g0",
+            "-g0"
         ],
         "c_copts": [
             "-Wall",
@@ -33524,9 +33524,9 @@ LIBRARIES = {
             "-fdata-sections",
             "-ffunction-sections",
             "-fno-unique-section-names",
-            "-std=c11",
-        ],
-    },
+            "-std=c11"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -35376,7 +35376,7 @@ SHARED_HEADERS = [
     "@chromium_v8//:v8/third_party/utf8-decoder/utf8-decoder.h",
     "@chromium_v8//:v8/third_party/v8/codegen/fp16-inl.h",
     "@chromium_v8//:v8/third_party/valgrind/valgrind.h",
-    "@chromium_v8//:v8/third_party/vtune/vtuneapi.h",
+    "@chromium_v8//:v8/third_party/vtune/vtuneapi.h"
 ]
 
 ACTIONS = [
@@ -35431,18 +35431,18 @@ ACTIONS = [
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/Exported_h.template": "v8/third_party/inspector_protocol/templates/Exported_h.template",
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/Imported_h.template": "v8/third_party/inspector_protocol/templates/Imported_h.template",
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_cpp.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_cpp.template",
-            "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_h.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_h.template",
+            "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_h.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_h.template"
         },
         "outs": {
-            "gen/v8/src/inspector/js_protocol.stamp": "gen/v8/src/inspector/js_protocol.stamp",
+            "gen/v8/src/inspector/js_protocol.stamp": "gen/v8/src/inspector/js_protocol.stamp"
         },
         "script": "v8/third_party/inspector_protocol/check_protocol_compatibility.py",
         "args": [
             "--stamp",
             "gen/v8/src/inspector/js_protocol.stamp",
-            "../../v8/include/js_protocol.pdl",
+            "../../v8/include/js_protocol.pdl"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -35495,18 +35495,18 @@ ACTIONS = [
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/Exported_h.template": "v8/third_party/inspector_protocol/templates/Exported_h.template",
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/Imported_h.template": "v8/third_party/inspector_protocol/templates/Imported_h.template",
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_cpp.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_cpp.template",
-            "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_h.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_h.template",
+            "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_h.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_h.template"
         },
         "outs": {
-            "clang_x64/gen/v8/src/inspector/js_protocol.stamp": "clang_x64/gen/v8/src/inspector/js_protocol.stamp",
+            "clang_x64/gen/v8/src/inspector/js_protocol.stamp": "clang_x64/gen/v8/src/inspector/js_protocol.stamp"
         },
         "script": "v8/third_party/inspector_protocol/check_protocol_compatibility.py",
         "args": [
             "--stamp",
             "clang_x64/gen/v8/src/inspector/js_protocol.stamp",
-            "../../v8/include/js_protocol.pdl",
+            "../../v8/include/js_protocol.pdl"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -35561,7 +35561,7 @@ ACTIONS = [
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/Exported_h.template": "v8/third_party/inspector_protocol/templates/Exported_h.template",
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/Imported_h.template": "v8/third_party/inspector_protocol/templates/Imported_h.template",
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_cpp.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_cpp.template",
-            "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_h.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_h.template",
+            "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_h.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_h.template"
         },
         "outs": {
             "gen/v8/src/inspector/protocol/Forward.h": "gen/v8/src/inspector/protocol/Forward.h",
@@ -35581,7 +35581,7 @@ ACTIONS = [
             "gen/v8/src/inspector/protocol/Schema.h": "gen/v8/src/inspector/protocol/Schema.h",
             "gen/v8/include/inspector/Debugger.h": "gen/v8/include/inspector/Debugger.h",
             "gen/v8/include/inspector/Runtime.h": "gen/v8/include/inspector/Runtime.h",
-            "gen/v8/include/inspector/Schema.h": "gen/v8/include/inspector/Schema.h",
+            "gen/v8/include/inspector/Schema.h": "gen/v8/include/inspector/Schema.h"
         },
         "script": "v8/third_party/inspector_protocol/code_generator.py",
         "args": [
@@ -35594,9 +35594,9 @@ ACTIONS = [
             "--inspector_protocol_dir",
             "//v8//third_party/inspector_protocol",
             "--config_value",
-            "protocol.path=../../v8/include/js_protocol.pdl",
+            "protocol.path=../../v8/include/js_protocol.pdl"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -35651,7 +35651,7 @@ ACTIONS = [
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/Exported_h.template": "v8/third_party/inspector_protocol/templates/Exported_h.template",
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/Imported_h.template": "v8/third_party/inspector_protocol/templates/Imported_h.template",
             "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_cpp.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_cpp.template",
-            "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_h.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_h.template",
+            "@chromium_v8//:v8/third_party/inspector_protocol/templates/TypeBuilder_h.template": "v8/third_party/inspector_protocol/templates/TypeBuilder_h.template"
         },
         "outs": {
             "clang_x64/gen/v8/src/inspector/protocol/Forward.h": "clang_x64/gen/v8/src/inspector/protocol/Forward.h",
@@ -35671,7 +35671,7 @@ ACTIONS = [
             "clang_x64/gen/v8/src/inspector/protocol/Schema.h": "clang_x64/gen/v8/src/inspector/protocol/Schema.h",
             "clang_x64/gen/v8/include/inspector/Debugger.h": "clang_x64/gen/v8/include/inspector/Debugger.h",
             "clang_x64/gen/v8/include/inspector/Runtime.h": "clang_x64/gen/v8/include/inspector/Runtime.h",
-            "clang_x64/gen/v8/include/inspector/Schema.h": "clang_x64/gen/v8/include/inspector/Schema.h",
+            "clang_x64/gen/v8/include/inspector/Schema.h": "clang_x64/gen/v8/include/inspector/Schema.h"
         },
         "script": "v8/third_party/inspector_protocol/code_generator.py",
         "args": [
@@ -35684,9 +35684,9 @@ ACTIONS = [
             "--inspector_protocol_dir",
             "//v8//third_party/inspector_protocol",
             "--config_value",
-            "protocol.path=../../v8/include/js_protocol.pdl",
+            "protocol.path=../../v8/include/js_protocol.pdl"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -35695,101 +35695,101 @@ ACTIONS = [
             ":gen/v8/embedded.S": "out/bazel-import/gen/v8/embedded.S",
             ":gen/v8/src/builtins/builtins-effects.cc": "out/bazel-import/gen/v8/src/builtins/builtins-effects.cc",
             ":snapshot_blob.bin": "out/bazel-import/snapshot_blob.bin",
-            "@chromium_v8//:v8/tools/snapshot/asm_to_inline_asm.py": "v8/tools/snapshot/asm_to_inline_asm.py",
+            "@chromium_v8//:v8/tools/snapshot/asm_to_inline_asm.py": "v8/tools/snapshot/asm_to_inline_asm.py"
         },
         "outs": {
-            "gen/v8/embedded.cc": "gen/v8/embedded.cc",
+            "gen/v8/embedded.cc": "gen/v8/embedded.cc"
         },
         "script": "v8/tools/snapshot/asm_to_inline_asm.py",
         "args": [
             "gen/v8/embedded.S",
-            "gen/v8/embedded.cc",
+            "gen/v8/embedded.cc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
         "name": "browser_v8_d1fcc16832a5741b_0",
         "srcs": {
-            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py",
+            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py"
         },
         "outs": {
-            "gen/v8/builtins-generated/bytecodes-builtins-list.h": "gen/v8/builtins-generated/bytecodes-builtins-list.h",
+            "gen/v8/builtins-generated/bytecodes-builtins-list.h": "gen/v8/builtins-generated/bytecodes-builtins-list.h"
         },
         "script": "v8/tools/run.py",
         "args": [
             "./clang_x64/bytecode_builtins_list_generator",
-            "gen/v8/builtins-generated/bytecodes-builtins-list.h",
+            "gen/v8/builtins-generated/bytecodes-builtins-list.h"
         ],
         "deps": [
-            ":browser_v8_20285879e07752b7_tool",
-        ],
+            ":browser_v8_20285879e07752b7_tool"
+        ]
     },
     {
         "response_file_contents": [],
         "name": "browser_v8_38cb07e77f6c69a7_0",
         "srcs": {
-            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py",
+            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py"
         },
         "outs": {
-            "clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h": "clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h",
+            "clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h": "clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h"
         },
         "script": "v8/tools/run.py",
         "args": [
             "./clang_x64/bytecode_builtins_list_generator",
-            "clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h",
+            "clang_x64/gen/v8/builtins-generated/bytecodes-builtins-list.h"
         ],
         "deps": [
-            ":browser_v8_20285879e07752b7_tool",
-        ],
+            ":browser_v8_20285879e07752b7_tool"
+        ]
     },
     {
         "response_file_contents": [],
         "name": "browser_v8_b16a03d1915ca0ca_0",
         "srcs": {
-            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py",
+            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py"
         },
         "outs": {
-            "gen/v8/src/regexp/special-case.cc": "gen/v8/src/regexp/special-case.cc",
+            "gen/v8/src/regexp/special-case.cc": "gen/v8/src/regexp/special-case.cc"
         },
         "script": "v8/tools/run.py",
         "args": [
             "./clang_x64/gen-regexp-special-case",
-            "gen/v8/src/regexp/special-case.cc",
+            "gen/v8/src/regexp/special-case.cc"
         ],
         "deps": [
-            ":browser_v8_fa80f2450e698bb1_tool",
-        ],
+            ":browser_v8_fa80f2450e698bb1_tool"
+        ]
     },
     {
         "response_file_contents": [],
         "name": "browser_v8_a2b94279faf69524_0",
         "srcs": {
-            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py",
+            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py"
         },
         "outs": {
-            "clang_x64/gen/v8/src/regexp/special-case.cc": "clang_x64/gen/v8/src/regexp/special-case.cc",
+            "clang_x64/gen/v8/src/regexp/special-case.cc": "clang_x64/gen/v8/src/regexp/special-case.cc"
         },
         "script": "v8/tools/run.py",
         "args": [
             "./clang_x64/gen-regexp-special-case",
-            "clang_x64/gen/v8/src/regexp/special-case.cc",
+            "clang_x64/gen/v8/src/regexp/special-case.cc"
         ],
         "deps": [
-            ":browser_v8_fa80f2450e698bb1_tool",
-        ],
+            ":browser_v8_fa80f2450e698bb1_tool"
+        ]
     },
     {
         "response_file_contents": [],
         "name": "browser_v8_700ed5ab00c9be3c_0",
         "srcs": {
             ":icudtl.dat": "out/bazel-import/icudtl.dat",
-            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py",
+            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py"
         },
         "outs": {
             "gen/v8/src/builtins/builtins-effects.cc": "gen/v8/src/builtins/builtins-effects.cc",
             "gen/v8/embedded.S": "gen/v8/embedded.S",
-            "snapshot_blob.bin": "snapshot_blob.bin",
+            "snapshot_blob.bin": "snapshot_blob.bin"
         },
         "script": "v8/tools/run.py",
         "args": [
@@ -35813,11 +35813,11 @@ ACTIONS = [
             "snapshot_blob.bin",
             "--no-native-code-counters",
             "--concurrent-builtin-generation",
-            "--concurrent-turbofan-max-threads=0",
+            "--concurrent-turbofan-max-threads=0"
         ],
         "deps": [
-            ":browser_v8_37795c0163f89e64_tool",
-        ],
+            ":browser_v8_37795c0163f89e64_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -36069,7 +36069,7 @@ ACTIONS = [
             "@chromium_v8//:v8/src/wasm/wasm-objects.tq": "v8/src/wasm/wasm-objects.tq",
             "@chromium_v8//:v8/test/torque/test-torque.tq": "v8/test/torque/test-torque.tq",
             "@chromium_v8//:v8/third_party/v8/builtins/array-sort.tq": "v8/third_party/v8/builtins/array-sort.tq",
-            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py",
+            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py"
         },
         "outs": {
             "gen/v8/torque-generated/bit-fields.h": "gen/v8/torque-generated/bit-fields.h",
@@ -37321,7 +37321,7 @@ ACTIONS = [
             "gen/v8/torque-generated/src/wasm/wasm-objects-tq-csa.h": "gen/v8/torque-generated/src/wasm/wasm-objects-tq-csa.h",
             "gen/v8/torque-generated/src/wasm/wasm-objects-tq-inl.inc": "gen/v8/torque-generated/src/wasm/wasm-objects-tq-inl.inc",
             "gen/v8/torque-generated/src/wasm/wasm-objects-tq.cc": "gen/v8/torque-generated/src/wasm/wasm-objects-tq.cc",
-            "gen/v8/torque-generated/src/wasm/wasm-objects-tq.inc": "gen/v8/torque-generated/src/wasm/wasm-objects-tq.inc",
+            "gen/v8/torque-generated/src/wasm/wasm-objects-tq.inc": "gen/v8/torque-generated/src/wasm/wasm-objects-tq.inc"
         },
         "script": "v8/tools/run.py",
         "args": [
@@ -37575,11 +37575,11 @@ ACTIONS = [
             "src/builtins/wasm-strings.tq",
             "src/builtins/wasm-to-js.tq",
             "src/debug/debug-wasm-objects.tq",
-            "src/wasm/wasm-objects.tq",
+            "src/wasm/wasm-objects.tq"
         ],
         "deps": [
-            ":browser_v8_de9775b73e66450f_tool",
-        ],
+            ":browser_v8_de9775b73e66450f_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -37831,7 +37831,7 @@ ACTIONS = [
             "@chromium_v8//:v8/src/wasm/wasm-objects.tq": "v8/src/wasm/wasm-objects.tq",
             "@chromium_v8//:v8/test/torque/test-torque.tq": "v8/test/torque/test-torque.tq",
             "@chromium_v8//:v8/third_party/v8/builtins/array-sort.tq": "v8/third_party/v8/builtins/array-sort.tq",
-            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py",
+            "@chromium_v8//:v8/tools/run.py": "v8/tools/run.py"
         },
         "outs": {
             "clang_x64/gen/v8/torque-generated/bit-fields.h": "clang_x64/gen/v8/torque-generated/bit-fields.h",
@@ -39083,7 +39083,7 @@ ACTIONS = [
             "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq-csa.h": "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq-csa.h",
             "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq-inl.inc": "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq-inl.inc",
             "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq.cc": "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq.cc",
-            "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq.inc": "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq.inc",
+            "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq.inc": "clang_x64/gen/v8/torque-generated/src/wasm/wasm-objects-tq.inc"
         },
         "script": "v8/tools/run.py",
         "args": [
@@ -39337,20 +39337,20 @@ ACTIONS = [
             "src/builtins/wasm-strings.tq",
             "src/builtins/wasm-to-js.tq",
             "src/debug/debug-wasm-objects.tq",
-            "src/wasm/wasm-objects.tq",
+            "src/wasm/wasm-objects.tq"
         ],
         "deps": [
-            ":browser_v8_de9775b73e66450f_tool",
-        ],
+            ":browser_v8_de9775b73e66450f_tool"
+        ]
     },
     {
         "response_file_contents": [],
         "name": "browser_v8_31a9892d02dcb3b9_0",
         "srcs": {
-            "@chromium_v8//:v8/tools/testrunner/utils/dump_build_config.py": "v8/tools/testrunner/utils/dump_build_config.py",
+            "@chromium_v8//:v8/tools/testrunner/utils/dump_build_config.py": "v8/tools/testrunner/utils/dump_build_config.py"
         },
         "outs": {
-            "clang_x64/v8_build_config.json": "clang_x64/v8_build_config.json",
+            "clang_x64/v8_build_config.json": "clang_x64/v8_build_config.json"
         },
         "script": "v8/tools/testrunner/utils/dump_build_config.py",
         "args": [
@@ -39412,10 +39412,10 @@ ACTIONS = [
             "verify_predictable=false",
             "wasm_random_fuzzers=true",
             "memory_corruption_api=false",
-            "lower_limits_mode=false",
+            "lower_limits_mode=false"
         ],
-        "deps": [],
-    },
+        "deps": []
+    }
 ]
 
 TOOLS = {
@@ -39423,30 +39423,30 @@ TOOLS = {
         "tool": ":browser_v8_20285879e07752b7",
         "logical_path": "out/bazel-import/clang_x64/bytecode_builtins_list_generator",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
     },
     "browser_v8_fa80f2450e698bb1_tool": {
         "tool": ":browser_v8_fa80f2450e698bb1",
         "logical_path": "out/bazel-import/clang_x64/gen-regexp-special-case",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
     },
     "browser_v8_37795c0163f89e64_tool": {
         "tool": ":browser_v8_37795c0163f89e64",
         "logical_path": "out/bazel-import/clang_x64/mksnapshot",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
     },
     "browser_v8_de9775b73e66450f_tool": {
         "tool": ":browser_v8_de9775b73e66450f",
         "logical_path": "out/bazel-import/clang_x64/torque",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
-    },
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
+    }
 }
 
 PUBLIC_DEFINES = [
@@ -39509,5 +39509,5 @@ PUBLIC_DEFINES = [
     "CPPGC_ENABLE_LARGER_CAGE",
     "CPPGC_SLIM_WRITE_BARRIER",
     "V8_TARGET_ARCH_X64",
-    "DEBUG",
+    "DEBUG"
 ]

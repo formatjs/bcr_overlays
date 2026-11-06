@@ -59,7 +59,7 @@ LIBRARIES = {
             "@chromium_jpeg//:src/jfdctflt.c",
             "@chromium_jpeg//:src/jmemmgr.c",
             "@chromium_jpeg//:src/jmemnobs.c",
-            "@chromium_jpeg//:src/jpeg_nbits.c",
+            "@chromium_jpeg//:src/jpeg_nbits.c"
         ],
         "hdrs": [],
         "copts": [
@@ -140,7 +140,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "NO_GETENV",
@@ -176,18 +176,18 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "MANGLE_JPEG_NAMES",
-            "WITH_SIMD",
+            "WITH_SIMD"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_1e135f176e38b569",
             ":codecs_76fd8a5c479aaa1d",
             ":codecs_9f188a157a679706",
-            ":codecs_f0f6fdd4e16b6c9f",
+            ":codecs_f0f6fdd4e16b6c9f"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -201,7 +201,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -277,8 +277,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libjpeg_turbo:libjpeg12": {
         "name": "codecs_1e135f176e38b569",
@@ -311,7 +311,7 @@ LIBRARIES = {
             "@chromium_jpeg//:src/jidctint.c",
             "@chromium_jpeg//:src/jidctred.c",
             "@chromium_jpeg//:src/jquant1.c",
-            "@chromium_jpeg//:src/jquant2.c",
+            "@chromium_jpeg//:src/jquant2.c"
         ],
         "hdrs": [],
         "copts": [
@@ -392,7 +392,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "NO_GETENV",
@@ -427,15 +427,15 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "MANGLE_JPEG_NAMES",
+            "MANGLE_JPEG_NAMES"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":codecs_9f188a157a679706",
+            ":codecs_9f188a157a679706"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -449,7 +449,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -525,8 +525,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libjpeg_turbo:libjpeg16": {
         "name": "codecs_76fd8a5c479aaa1d",
@@ -546,7 +546,7 @@ LIBRARIES = {
             "@chromium_jpeg//:src/jdmainct.c",
             "@chromium_jpeg//:src/jdpostct.c",
             "@chromium_jpeg//:src/jdsample.c",
-            "@chromium_jpeg//:src/jutils.c",
+            "@chromium_jpeg//:src/jutils.c"
         ],
         "hdrs": [],
         "copts": [
@@ -627,7 +627,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "NO_GETENV",
@@ -662,15 +662,15 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "MANGLE_JPEG_NAMES",
+            "MANGLE_JPEG_NAMES"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":codecs_9f188a157a679706",
+            ":codecs_9f188a157a679706"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -684,7 +684,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -760,8 +760,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libjpeg_turbo:libjpeg_headers": {
         "name": "codecs_9f188a157a679706",
@@ -773,7 +773,7 @@ LIBRARIES = {
             "@chromium_jpeg//:src/jinclude.h",
             "@chromium_jpeg//:src/jmorecfg.h",
             "@chromium_jpeg//:src/jpeglib.h",
-            "@chromium_jpeg//:src/jpeglibmangler.h",
+            "@chromium_jpeg//:src/jpeglibmangler.h"
         ],
         "copts": [
             "/W4",
@@ -853,7 +853,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -884,12 +884,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -904,7 +904,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -980,14 +980,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libjpeg_turbo:simd": {
         "name": "codecs_f0f6fdd4e16b6c9f",
         "kind": "static_library",
         "srcs": [
-            "@chromium_jpeg//:simd/x86_64/jsimd.c",
+            "@chromium_jpeg//:simd/x86_64/jsimd.c"
         ],
         "hdrs": [],
         "copts": [
@@ -1069,7 +1069,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "MANGLE_JPEG_NAMES",
@@ -1102,16 +1102,16 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "WITH_SIMD",
+            "WITH_SIMD"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_0e2d2dda253fd554",
-            ":codecs_9f188a157a679706",
+            ":codecs_9f188a157a679706"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1125,7 +1125,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/wd4245",
@@ -1202,8 +1202,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libjpeg_turbo:simd_asm": {
         "name": "codecs_0e2d2dda253fd554",
@@ -1235,7 +1235,7 @@ LIBRARIES = {
             ":obj/third_party/libjpeg_turbo/simd_asm/jquantf-sse2.o",
             ":obj/third_party/libjpeg_turbo/simd_asm/jquanti-avx2.o",
             ":obj/third_party/libjpeg_turbo/simd_asm/jquanti-sse2.o",
-            ":obj/third_party/libjpeg_turbo/simd_asm/jsimdcpu.o",
+            ":obj/third_party/libjpeg_turbo/simd_asm/jsimdcpu.o"
         ],
         "hdrs": [],
         "copts": [
@@ -1316,7 +1316,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1347,12 +1347,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -1367,7 +1367,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -1443,8 +1443,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp": {
         "name": "codecs_3282a48e46697137",
@@ -1455,7 +1455,7 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":codecs_1ae994170bae06c2",
@@ -1464,10 +1464,10 @@ LIBRARIES = {
             ":codecs_c0a368c4ef6826fc",
             ":codecs_cfbf1fefbaf24f16",
             ":codecs_d65d082f1998ab29",
-            ":codecs_e859246ec5119ee6",
+            ":codecs_e859246ec5119ee6"
         ],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/libwebp:libwebp_dec": {
         "name": "codecs_1ae994170bae06c2",
@@ -1482,7 +1482,7 @@ LIBRARIES = {
             "@chromium_webp//:src/dec/tree_dec.c",
             "@chromium_webp//:src/dec/vp8_dec.c",
             "@chromium_webp//:src/dec/vp8l_dec.c",
-            "@chromium_webp//:src/dec/webp_dec.c",
+            "@chromium_webp//:src/dec/webp_dec.c"
         ],
         "hdrs": [
             "@chromium_webp//:src/dec/alphai_dec.h",
@@ -1490,7 +1490,7 @@ LIBRARIES = {
             "@chromium_webp//:src/dec/vp8_dec.h",
             "@chromium_webp//:src/dec/vp8i_dec.h",
             "@chromium_webp//:src/dec/vp8li_dec.h",
-            "@chromium_webp//:src/dec/webpi_dec.h",
+            "@chromium_webp//:src/dec/webpi_dec.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -1562,7 +1562,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -1598,17 +1598,17 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_3992359b9f96b18a",
             ":codecs_cfbf1fefbaf24f16",
-            ":codecs_e859246ec5119ee6",
+            ":codecs_e859246ec5119ee6"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1622,7 +1622,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -1690,14 +1690,14 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_demux": {
         "name": "codecs_d65d082f1998ab29",
         "kind": "static_library",
         "srcs": [
-            "@chromium_webp//:src/demux/demux.c",
+            "@chromium_webp//:src/demux/demux.c"
         ],
         "hdrs": [],
         "copts": [
@@ -1770,7 +1770,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -1806,16 +1806,16 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_cfbf1fefbaf24f16",
-            ":codecs_e859246ec5119ee6",
+            ":codecs_e859246ec5119ee6"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1829,7 +1829,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -1897,8 +1897,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_dsp": {
         "name": "codecs_c0a368c4ef6826fc",
@@ -1939,7 +1939,7 @@ LIBRARIES = {
             "@chromium_webp//:src/dsp/upsampling_msa.c",
             "@chromium_webp//:src/dsp/yuv.c",
             "@chromium_webp//:src/dsp/yuv_mips32.c",
-            "@chromium_webp//:src/dsp/yuv_mips_dsp_r2.c",
+            "@chromium_webp//:src/dsp/yuv_mips_dsp_r2.c"
         ],
         "hdrs": [],
         "copts": [
@@ -2012,7 +2012,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "WEBP_HAVE_SSE2",
@@ -2051,12 +2051,12 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_1ae994170bae06c2",
@@ -2066,7 +2066,7 @@ LIBRARIES = {
             ":codecs_855fd5c58eed5c57",
             ":codecs_974e15bbf4fc6dc4",
             ":codecs_cfbf1fefbaf24f16",
-            ":codecs_e859246ec5119ee6",
+            ":codecs_e859246ec5119ee6"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -2080,7 +2080,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -2148,15 +2148,15 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_dsp_avx2": {
         "name": "codecs_974e15bbf4fc6dc4",
         "kind": "static_library",
         "srcs": [
             "@chromium_webp//:src/dsp/lossless_avx2.c",
-            "@chromium_webp//:src/dsp/lossless_enc_avx2.c",
+            "@chromium_webp//:src/dsp/lossless_enc_avx2.c"
         ],
         "hdrs": [],
         "copts": [
@@ -2230,7 +2230,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -2266,17 +2266,17 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_3992359b9f96b18a",
             ":codecs_cfbf1fefbaf24f16",
-            ":codecs_e859246ec5119ee6",
+            ":codecs_e859246ec5119ee6"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -2290,7 +2290,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-mavx2",
@@ -2359,15 +2359,15 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_dsp_cpu_c": {
         "name": "codecs_aa6544cd1e18caf8",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_webp//:src/dsp/cpu.c",
+            "@chromium_webp//:src/dsp/cpu.c"
         ],
         "copts": [
             "/W4",
@@ -2447,7 +2447,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2478,12 +2478,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -2498,7 +2498,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -2574,8 +2574,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_dsp_headers": {
         "name": "codecs_3992359b9f96b18a",
@@ -2590,7 +2590,7 @@ LIBRARIES = {
             "@chromium_webp//:src/dsp/msa_macro.h",
             "@chromium_webp//:src/dsp/neon.h",
             "@chromium_webp//:src/dsp/quant.h",
-            "@chromium_webp//:src/dsp/yuv.h",
+            "@chromium_webp//:src/dsp/yuv.h"
         ],
         "copts": [
             "/W4",
@@ -2670,7 +2670,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2701,12 +2701,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -2721,7 +2721,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -2797,8 +2797,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_dsp_sse2": {
         "name": "codecs_855fd5c58eed5c57",
@@ -2814,10 +2814,10 @@ LIBRARIES = {
             "@chromium_webp//:src/dsp/rescaler_sse2.c",
             "@chromium_webp//:src/dsp/ssim_sse2.c",
             "@chromium_webp//:src/dsp/upsampling_sse2.c",
-            "@chromium_webp//:src/dsp/yuv_sse2.c",
+            "@chromium_webp//:src/dsp/yuv_sse2.c"
         ],
         "hdrs": [
-            "@chromium_webp//:src/dsp/common_sse2.h",
+            "@chromium_webp//:src/dsp/common_sse2.h"
         ],
         "copts": [
             "-msse2",
@@ -2890,7 +2890,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -2926,19 +2926,19 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_1ae994170bae06c2",
             ":codecs_3992359b9f96b18a",
             ":codecs_3aa8cf221b00dc60",
             ":codecs_cfbf1fefbaf24f16",
-            ":codecs_e859246ec5119ee6",
+            ":codecs_e859246ec5119ee6"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -2952,7 +2952,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-msse2",
@@ -3021,8 +3021,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_dsp_sse41": {
         "name": "codecs_4ed47c8479afb520",
@@ -3034,10 +3034,10 @@ LIBRARIES = {
             "@chromium_webp//:src/dsp/lossless_enc_sse41.c",
             "@chromium_webp//:src/dsp/lossless_sse41.c",
             "@chromium_webp//:src/dsp/upsampling_sse41.c",
-            "@chromium_webp//:src/dsp/yuv_sse41.c",
+            "@chromium_webp//:src/dsp/yuv_sse41.c"
         ],
         "hdrs": [
-            "@chromium_webp//:src/dsp/common_sse41.h",
+            "@chromium_webp//:src/dsp/common_sse41.h"
         ],
         "copts": [
             "-msse4.1",
@@ -3110,7 +3110,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -3146,16 +3146,16 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_855fd5c58eed5c57",
-            ":codecs_cfbf1fefbaf24f16",
+            ":codecs_cfbf1fefbaf24f16"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -3169,7 +3169,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-msse4.1",
@@ -3238,8 +3238,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_enc": {
         "name": "codecs_3aa8cf221b00dc60",
@@ -3267,14 +3267,14 @@ LIBRARIES = {
             "@chromium_webp//:src/enc/token_enc.c",
             "@chromium_webp//:src/enc/tree_enc.c",
             "@chromium_webp//:src/enc/vp8l_enc.c",
-            "@chromium_webp//:src/enc/webp_enc.c",
+            "@chromium_webp//:src/enc/webp_enc.c"
         ],
         "hdrs": [
             "@chromium_webp//:src/enc/backward_references_enc.h",
             "@chromium_webp//:src/enc/cost_enc.h",
             "@chromium_webp//:src/enc/histogram_enc.h",
             "@chromium_webp//:src/enc/vp8i_enc.h",
-            "@chromium_webp//:src/enc/vp8li_enc.h",
+            "@chromium_webp//:src/enc/vp8li_enc.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3346,7 +3346,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -3382,19 +3382,19 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_1ae994170bae06c2",
             ":codecs_28e6bedb82f8b6ae",
             ":codecs_3992359b9f96b18a",
             ":codecs_cfbf1fefbaf24f16",
-            ":codecs_e859246ec5119ee6",
+            ":codecs_e859246ec5119ee6"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -3408,7 +3408,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3476,8 +3476,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_mux": {
         "name": "codecs_8911382ef8e8e21f",
@@ -3486,11 +3486,11 @@ LIBRARIES = {
             "@chromium_webp//:src/mux/anim_encode.c",
             "@chromium_webp//:src/mux/muxedit.c",
             "@chromium_webp//:src/mux/muxinternal.c",
-            "@chromium_webp//:src/mux/muxread.c",
+            "@chromium_webp//:src/mux/muxread.c"
         ],
         "hdrs": [
             "@chromium_webp//:src/mux/animi.h",
-            "@chromium_webp//:src/mux/muxi.h",
+            "@chromium_webp//:src/mux/muxi.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3562,7 +3562,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -3598,17 +3598,17 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_1ae994170bae06c2",
             ":codecs_cfbf1fefbaf24f16",
-            ":codecs_e859246ec5119ee6",
+            ":codecs_e859246ec5119ee6"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -3622,7 +3622,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3690,8 +3690,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_sharpyuv": {
         "name": "codecs_28e6bedb82f8b6ae",
@@ -3700,13 +3700,13 @@ LIBRARIES = {
             "@chromium_webp//:sharpyuv/sharpyuv.c",
             "@chromium_webp//:sharpyuv/sharpyuv_cpu.c",
             "@chromium_webp//:sharpyuv/sharpyuv_csp.c",
-            "@chromium_webp//:sharpyuv/sharpyuv_gamma.c",
+            "@chromium_webp//:sharpyuv/sharpyuv_gamma.c"
         ],
         "hdrs": [
             "@chromium_webp//:sharpyuv/sharpyuv.h",
             "@chromium_webp//:sharpyuv/sharpyuv_cpu.h",
             "@chromium_webp//:sharpyuv/sharpyuv_csp.h",
-            "@chromium_webp//:sharpyuv/sharpyuv_gamma.h",
+            "@chromium_webp//:sharpyuv/sharpyuv_gamma.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3778,7 +3778,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -3814,18 +3814,18 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_31eeb2798e913bd1",
             ":codecs_3992359b9f96b18a",
             ":codecs_aa6544cd1e18caf8",
-            ":codecs_cfbf1fefbaf24f16",
+            ":codecs_cfbf1fefbaf24f16"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -3839,7 +3839,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3907,19 +3907,19 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_sharpyuv_dsp": {
         "name": "codecs_31eeb2798e913bd1",
         "kind": "static_library",
         "srcs": [
-            "@chromium_webp//:sharpyuv/sharpyuv_dsp.c",
+            "@chromium_webp//:sharpyuv/sharpyuv_dsp.c"
         ],
         "hdrs": [
             "@chromium_webp//:sharpyuv/sharpyuv.h",
             "@chromium_webp//:sharpyuv/sharpyuv_cpu.h",
-            "@chromium_webp//:sharpyuv/sharpyuv_dsp.h",
+            "@chromium_webp//:sharpyuv/sharpyuv_dsp.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3991,7 +3991,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -4027,17 +4027,17 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_3992359b9f96b18a",
             ":codecs_711ddffb7673f621",
-            ":codecs_cfbf1fefbaf24f16",
+            ":codecs_cfbf1fefbaf24f16"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -4051,7 +4051,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4119,15 +4119,15 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_sharpyuv_dsp_headers": {
         "name": "codecs_04fe0d95480de5ac",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_webp//:sharpyuv/sharpyuv_dsp.h",
+            "@chromium_webp//:sharpyuv/sharpyuv_dsp.h"
         ],
         "copts": [
             "/W4",
@@ -4207,7 +4207,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4238,12 +4238,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -4258,7 +4258,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -4334,14 +4334,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_sharpyuv_sse2": {
         "name": "codecs_711ddffb7673f621",
         "kind": "static_library",
         "srcs": [
-            "@chromium_webp//:sharpyuv/sharpyuv_sse2.c",
+            "@chromium_webp//:sharpyuv/sharpyuv_sse2.c"
         ],
         "hdrs": [],
         "copts": [
@@ -4415,7 +4415,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -4451,17 +4451,17 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_04fe0d95480de5ac",
             ":codecs_3992359b9f96b18a",
-            ":codecs_cfbf1fefbaf24f16",
+            ":codecs_cfbf1fefbaf24f16"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -4475,7 +4475,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-msse2",
@@ -4544,8 +4544,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_utils": {
         "name": "codecs_e859246ec5119ee6",
@@ -4563,7 +4563,7 @@ LIBRARIES = {
             "@chromium_webp//:src/utils/random_utils.c",
             "@chromium_webp//:src/utils/rescaler_utils.c",
             "@chromium_webp//:src/utils/thread_utils.c",
-            "@chromium_webp//:src/utils/utils.c",
+            "@chromium_webp//:src/utils/utils.c"
         ],
         "hdrs": [
             "@chromium_webp//:src/utils/bit_reader_inl_utils.h",
@@ -4580,7 +4580,7 @@ LIBRARIES = {
             "@chromium_webp//:src/utils/random_utils.h",
             "@chromium_webp//:src/utils/rescaler_utils.h",
             "@chromium_webp//:src/utils/thread_utils.h",
-            "@chromium_webp//:src/utils/utils.h",
+            "@chromium_webp//:src/utils/utils.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4652,7 +4652,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -4688,16 +4688,16 @@ LIBRARIES = {
             "WEBP_REDUCE_CSP",
             "_CRT_NONSTDC_NO_WARNINGS",
             "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "WEBP_EXTERN=extern",
+            "WEBP_EXTERN=extern"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":codecs_3992359b9f96b18a",
-            ":codecs_cfbf1fefbaf24f16",
+            ":codecs_cfbf1fefbaf24f16"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -4711,7 +4711,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4779,8 +4779,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libwebp:libwebp_webp": {
         "name": "codecs_cfbf1fefbaf24f16",
@@ -4793,7 +4793,7 @@ LIBRARIES = {
             "@chromium_webp//:src/webp/format_constants.h",
             "@chromium_webp//:src/webp/mux.h",
             "@chromium_webp//:src/webp/mux_types.h",
-            "@chromium_webp//:src/webp/types.h",
+            "@chromium_webp//:src/webp/types.h"
         ],
         "copts": [
             "/W4",
@@ -4873,7 +4873,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4904,12 +4904,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -4924,7 +4924,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -5000,14 +5000,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/wuffs:wuffs": {
         "name": "codecs_d52bcc29ff44f240",
         "kind": "static_library",
         "srcs": [
-            "@chromium_wuffs//:release/c/wuffs-v0.3.c",
+            "@chromium_wuffs//:release/c/wuffs-v0.3.c"
         ],
         "hdrs": [],
         "copts": [
@@ -5088,7 +5088,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "WUFFS_IMPLEMENTATION",
@@ -5126,12 +5126,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -5146,7 +5146,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -5222,8 +5222,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party:jpeg": {
         "name": "codecs_e42605d894a813ef",
@@ -5234,14 +5234,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":codecs_37994220adfe021d",
+            ":codecs_37994220adfe021d"
         ],
         "linkopts": [],
-        "c_copts": [],
-    },
+        "c_copts": []
+    }
 }
 
 SHARED_HEADERS = [
@@ -5327,7 +5327,7 @@ SHARED_HEADERS = [
     "@chromium_webp//:src/webp/format_constants.h",
     "@chromium_webp//:src/webp/mux.h",
     "@chromium_webp//:src/webp/mux_types.h",
-    "@chromium_webp//:src/webp/types.h",
+    "@chromium_webp//:src/webp/types.h"
 ]
 
 ACTIONS = [
@@ -5374,10 +5374,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jccolor-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jccolor-avx2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jccolor-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jccolor-avx2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -5397,11 +5397,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jccolor-avx2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jccolor-avx2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jccolor-avx2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jccolor-avx2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -5446,10 +5446,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jccolor-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jccolor-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jccolor-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jccolor-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -5469,11 +5469,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jccolor-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jccolor-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jccolor-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jccolor-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -5518,10 +5518,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jcgray-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcgray-avx2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jcgray-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcgray-avx2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -5541,11 +5541,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jcgray-avx2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jcgray-avx2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jcgray-avx2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jcgray-avx2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -5590,10 +5590,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jcgray-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcgray-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jcgray-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcgray-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -5613,11 +5613,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jcgray-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jcgray-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jcgray-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jcgray-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -5662,10 +5662,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jchuff-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jchuff-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jchuff-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jchuff-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -5685,11 +5685,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jchuff-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jchuff-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jchuff-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jchuff-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -5734,10 +5734,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jcphuff-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcphuff-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jcphuff-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcphuff-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -5757,11 +5757,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jcphuff-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jcphuff-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jcphuff-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jcphuff-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -5806,10 +5806,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jcsample-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcsample-avx2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jcsample-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcsample-avx2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -5829,11 +5829,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jcsample-avx2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jcsample-avx2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jcsample-avx2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jcsample-avx2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -5878,10 +5878,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jcsample-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcsample-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jcsample-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jcsample-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -5901,11 +5901,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jcsample-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jcsample-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jcsample-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jcsample-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -5950,10 +5950,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-avx2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-avx2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -5973,11 +5973,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-avx2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-avx2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jdcolor-avx2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jdcolor-avx2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6022,10 +6022,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6045,11 +6045,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jdcolor-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jdcolor-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jdcolor-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6094,10 +6094,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-avx2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-avx2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6117,11 +6117,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-avx2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-avx2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jdmerge-avx2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jdmerge-avx2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6166,10 +6166,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6189,11 +6189,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jdmerge-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jdmerge-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jdmerge-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6238,10 +6238,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jdsample-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdsample-avx2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jdsample-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdsample-avx2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6261,11 +6261,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jdsample-avx2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jdsample-avx2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jdsample-avx2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jdsample-avx2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6310,10 +6310,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jdsample-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdsample-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jdsample-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jdsample-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6333,11 +6333,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jdsample-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jdsample-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jdsample-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jdsample-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6382,10 +6382,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jfdctflt-sse.o": "obj/third_party/libjpeg_turbo/simd_asm/jfdctflt-sse.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jfdctflt-sse.o": "obj/third_party/libjpeg_turbo/simd_asm/jfdctflt-sse.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6405,11 +6405,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jfdctflt-sse.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jfdctflt-sse.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jfdctflt-sse.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jfdctflt-sse.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6454,10 +6454,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jfdctfst-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jfdctfst-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jfdctfst-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jfdctfst-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6477,11 +6477,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jfdctfst-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jfdctfst-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jfdctfst-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jfdctfst-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6526,10 +6526,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-avx2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-avx2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6549,11 +6549,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-avx2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-avx2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jfdctint-avx2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jfdctint-avx2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6598,10 +6598,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6621,11 +6621,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jfdctint-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jfdctint-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jfdctint-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6670,10 +6670,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jidctflt-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctflt-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jidctflt-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctflt-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6693,11 +6693,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jidctflt-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jidctflt-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jidctflt-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jidctflt-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6742,10 +6742,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jidctfst-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctfst-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jidctfst-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctfst-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6765,11 +6765,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jidctfst-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jidctfst-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jidctfst-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jidctfst-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6814,10 +6814,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jidctint-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctint-avx2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jidctint-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctint-avx2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6837,11 +6837,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jidctint-avx2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jidctint-avx2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jidctint-avx2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jidctint-avx2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6886,10 +6886,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jidctint-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctint-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jidctint-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctint-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6909,11 +6909,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jidctint-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jidctint-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jidctint-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jidctint-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -6958,10 +6958,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jidctred-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctred-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jidctred-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jidctred-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -6981,11 +6981,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jidctred-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jidctred-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jidctred-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jidctred-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -7030,10 +7030,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jquantf-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jquantf-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jquantf-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jquantf-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -7053,11 +7053,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jquantf-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jquantf-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -7102,10 +7102,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jquanti-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jquanti-avx2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jquanti-avx2.o": "obj/third_party/libjpeg_turbo/simd_asm/jquanti-avx2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -7125,11 +7125,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jquanti-avx2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jquanti-avx2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -7174,10 +7174,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jquanti-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jquanti-sse2.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jquanti-sse2.o": "obj/third_party/libjpeg_turbo/simd_asm/jquanti-sse2.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -7197,11 +7197,11 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jquanti-sse2.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jquanti-sse2.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -7246,10 +7246,10 @@ ACTIONS = [
             "@chromium_jpeg//:simd/x86_64/jquantf-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquantf-sse2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-avx2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-avx2.asm",
             "@chromium_jpeg//:simd/x86_64/jquanti-sse2.asm": "third_party/libjpeg_turbo/simd/x86_64/jquanti-sse2.asm",
-            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "@chromium_jpeg//:simd/x86_64/jsimdcpu.asm": "third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         },
         "outs": {
-            "obj/third_party/libjpeg_turbo/simd_asm/jsimdcpu.o": "obj/third_party/libjpeg_turbo/simd_asm/jsimdcpu.o",
+            "obj/third_party/libjpeg_turbo/simd_asm/jsimdcpu.o": "obj/third_party/libjpeg_turbo/simd_asm/jsimdcpu.o"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -7269,12 +7269,12 @@ ACTIONS = [
             "obj/third_party/libjpeg_turbo/simd_asm/jsimdcpu.o.d",
             "-o",
             "obj/third_party/libjpeg_turbo/simd_asm/jsimdcpu.o",
-            "../../third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm",
+            "../../third_party/libjpeg_turbo/simd/x86_64/jsimdcpu.asm"
         ],
         "deps": [
-            ":codecs_791bd2f7f99ba5ad_tool",
-        ],
-    },
+            ":codecs_791bd2f7f99ba5ad_tool"
+        ]
+    }
 ]
 
 TOOLS = {
@@ -7282,7 +7282,7 @@ TOOLS = {
         "tool": "@nasm//:nasm",
         "logical_path": "out/bazel-import/clang_x64/nasm",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
-    },
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
+    }
 }

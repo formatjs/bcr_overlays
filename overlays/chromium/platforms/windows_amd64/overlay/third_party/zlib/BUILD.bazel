@@ -1,0 +1,19 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+package(default_visibility = ["//visibility:public"])
+cc_library(name = "zlib", hdrs = ["zlib.h", "zconf.h"], includes = ["../.."], deps = ["@zlib//:zlib"])
+exports_files(["BUILD.bazel"])
+
+# BEGIN BROWSER_V8 INPUTS
+exports_files([
+    "google/compression_utils_portable.cc",
+    "google/compression_utils_portable.h"
+])
+# END BROWSER_V8 INPUTS
+
+# BEGIN GFX INPUTS
+exports_files([
+    "google/compression_utils.cc",
+    "google/compression_utils.h",
+    "google/compression_utils_portable.h"
+])
+# END GFX INPUTS

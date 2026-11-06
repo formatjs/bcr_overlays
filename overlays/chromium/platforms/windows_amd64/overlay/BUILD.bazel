@@ -1529,7 +1529,7 @@ exports_files([
     "ui/webui/resources/js/tracked_element/tracked_element.mojom",
     "url/mojom/origin.mojom",
     "url/mojom/scheme_host_port.mojom",
-    "url/mojom/url.mojom",
+    "url/mojom/url.mojom"
 ])
 # END GENERATED MOJO INPUTS
 
@@ -4691,7 +4691,7 @@ exports_files([
     "third_party/rust/chromium_crates_io/vendor/zoneinfo64-v0_2/src/rule.rs",
     "third_party/rust/serde_json_lenient/v0_2/wrapper/functions.h",
     "third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs",
-    "third_party/rust/serde_json_lenient/v0_2/wrapper/visitor.rs",
+    "third_party/rust/serde_json_lenient/v0_2/wrapper/visitor.rs"
 ])
 # END GENERATED RUST INPUTS
 
@@ -6270,7 +6270,7 @@ exports_files([
     "base/win/wrapped_window_proc.cc",
     "base/win/wrapped_window_proc.h",
     "base/write_build_date_header.py",
-    "chrome/VERSION",
+    "chrome/VERSION"
 ])
 # END GENERATED BASE INPUTS
 
@@ -7112,7 +7112,7 @@ exports_files([
     "ui/webui/resources/images/throbber_small.svg",
     "ui/webui/resources/images/throbber_small_dark.svg",
     "ui/webui/resources/images/tree_triangle.svg",
-    "ui/webui/resources/test_loader.html",
+    "ui/webui/resources/test_loader.html"
 ])
 # END GENERATED GRIT INPUTS
 
@@ -7882,7 +7882,7 @@ exports_files([
     "ui/webui/resources/tools/minify_js.py",
     "ui/webui/resources/tools/minify_js_test.py",
     "ui/webui/resources/tools/run_webui_resources_tools_tests.py",
-    "ui/webui/resources/tools/webui_eslint_plugin.js",
+    "ui/webui/resources/tools/webui_eslint_plugin.js"
 ])
 # END GENERATED WEBUI INPUTS
 
@@ -8432,7 +8432,7 @@ exports_files([
     "net/base/net_export.h",
     "net/base/sockaddr_storage.cc",
     "net/base/sockaddr_storage.h",
-    "net/base/sockaddr_util_posix.h",
+    "net/base/sockaddr_util_posix.h"
 ])
 # END GENERATED MOJO RUNTIME INPUTS
 
@@ -8496,7 +8496,7 @@ exports_files([
     "url/url_test_utils.h",
     "url/url_util.cc",
     "url/url_util.h",
-    "url/url_util_internal.h",
+    "url/url_util_internal.h"
 ])
 # END GENERATED URL INPUTS
 
@@ -8594,7 +8594,7 @@ exports_files([
     "crypto/unexportable_key_win.h",
     "crypto/user_verifying_key.cc",
     "crypto/user_verifying_key.h",
-    "crypto/user_verifying_key_win.cc",
+    "crypto/user_verifying_key_win.cc"
 ])
 # END GENERATED CRYPTO INPUTS
 
@@ -8613,7 +8613,7 @@ exports_files([
     "net/third_party/quiche/overrides/quiche_platform_impl/quiche_url_utils_impl.cc",
     "net/third_party/quiche/overrides/quiche_platform_impl/quiche_url_utils_impl.h",
     "net/third_party/uri_template/uri_template.cc",
-    "net/third_party/uri_template/uri_template.h",
+    "net/third_party/uri_template/uri_template.h"
 ])
 # END GENERATED QUICHE INPUTS
 
@@ -8621,7 +8621,7 @@ exports_files([
 exports_files([
     "third_party/sqlite/sqlite3_shim.c",
     "third_party/sqlite/sqlite3_shim_fixups.h",
-    "third_party/sqlite/sqlite3.h",
+    "third_party/sqlite/sqlite3.h"
 ])
 # END BUNDLED SQLITE INPUTS
 
@@ -10255,7 +10255,7 @@ exports_files([
     "tools/metrics/ukm/validate_format.py",
     "tools/metrics/ukm/xml_validations.py",
     "tools/metrics/ukm/xml_validations_test.py",
-    "tools/protoc_wrapper/protoc_wrapper.py",
+    "tools/protoc_wrapper/protoc_wrapper.py"
 ])
 # END NETWORK INPUTS
 
@@ -10355,7 +10355,7 @@ exports_files([
     "ui/gfx/range/range.cc",
     "ui/gfx/range/range.h",
     "ui/gfx/range/range_f.cc",
-    "ui/gfx/range/range_f.h",
+    "ui/gfx/range/range_f.h"
 ])
 # END GEOMETRY INPUTS
 
@@ -10393,7 +10393,7 @@ exports_files([
     "third_party/markupsafe/__init__.py",
     "third_party/markupsafe/_compat.py",
     "third_party/markupsafe/_constants.py",
-    "third_party/markupsafe/_native.py",
+    "third_party/markupsafe/_native.py"
 ])
 # END DAWN INPUTS
 
@@ -10425,7 +10425,7 @@ exports_files([
     "third_party/libpng/pngwio.c",
     "third_party/libpng/pngwrite.c",
     "third_party/libpng/pngwtran.c",
-    "third_party/libpng/pngwutil.c",
+    "third_party/libpng/pngwutil.c"
 ])
 # END FONTS INPUTS
 
@@ -10494,7 +10494,7 @@ exports_files([
     "skia/ext/switches_export.h",
     "ui/base/shortcut_mapping_pref_delegate.h",
     "ui/base/ui_base_features.cc",
-    "ui/base/ui_base_features.h",
+    "ui/base/ui_base_features.h"
 ])
 # END SKIA INPUTS
 
@@ -11032,7 +11032,7 @@ exports_files([
     "ui/gfx/swap_result.h",
     "ui/gfx/switches.cc",
     "ui/gfx/switches.h",
-    "ui/gfx/switches_export.h",
+    "ui/gfx/switches_export.h"
 ])
 # END PAINT INPUTS
 
@@ -11301,7 +11301,7 @@ exports_files([
     "ui/gfx/win/text_analysis_source.cc",
     "ui/gfx/win/text_analysis_source.h",
     "ui/gfx/win/window_impl.cc",
-    "ui/gfx/win/window_impl.h",
+    "ui/gfx/win/window_impl.h"
 ])
 # END GFX INPUTS
 
@@ -11335,7 +11335,7 @@ exports_files([
     "third_party/markupsafe/__init__.py",
     "third_party/markupsafe/_compat.py",
     "third_party/markupsafe/_constants.py",
-    "third_party/markupsafe/_native.py",
+    "third_party/markupsafe/_native.py"
 ])
 # END DAWN_NATIVE INPUTS
 
@@ -11426,7 +11426,7 @@ exports_files([
     "ui/gl/gl_enums.h",
     "ui/gl/gl_enums_implementation_autogen.h",
     "ui/gl/gl_export.h",
-    "ui/gl/gpu_preference.h",
+    "ui/gl/gpu_preference.h"
 ])
 # END GPU_PROTOCOL INPUTS
 
@@ -11821,7 +11821,7 @@ exports_files([
     "url/mojom/scheme_host_port_mojom_traits.cc",
     "url/mojom/scheme_host_port_mojom_traits.h",
     "url/mojom/url_gurl_mojom_traits.cc",
-    "url/mojom/url_gurl_mojom_traits.h",
+    "url/mojom/url_gurl_mojom_traits.h"
 ])
 # END BROWSER_SERVICES INPUTS
 
@@ -12745,7 +12745,7 @@ exports_files([
     "ui/lottie/animation_observer.h",
     "ui/ozone/public/ozone_platform.h",
     "ui/platform_window/platform_window.h",
-    "ui/platform_window/platform_window_delegate.h",
+    "ui/platform_window/platform_window_delegate.h"
 ])
 # END LINUX_UI INPUTS
 
@@ -14548,7 +14548,7 @@ exports_files([
     "ui/base/clipboard/clipboard_sequence_number_token.h",
     "url/ipc/url_ipc_export.h",
     "url/ipc/url_param_traits.cc",
-    "url/ipc/url_param_traits.h",
+    "url/ipc/url_param_traits.h"
 ])
 # END GPU_SERVICE INPUTS
 
@@ -14582,13 +14582,13 @@ exports_files([
     "third_party/markupsafe/__init__.py",
     "third_party/markupsafe/_compat.py",
     "third_party/markupsafe/_constants.py",
-    "third_party/markupsafe/_native.py",
+    "third_party/markupsafe/_native.py"
 ])
 # END BROWSER_V8 INPUTS
 
 # BEGIN PTHREADPOOL INPUTS
 exports_files([
-    "third_party/pthreadpool/chromium/jobs.cc",
+    "third_party/pthreadpool/chromium/jobs.cc"
 ])
 # END PTHREADPOOL INPUTS
 
@@ -14601,7 +14601,7 @@ exports_files([
     "third_party/ml_dtypes/src/ml_dtypes/include/mxfloat.h",
     "third_party/tflite/shims/minimal_logging_chromium.cc",
     "third_party/xnnpack/build_identifier.c",
-    "tools/protoc_wrapper/protoc_wrapper.py",
+    "tools/protoc_wrapper/protoc_wrapper.py"
 ])
 # END ML INPUTS
 
@@ -14920,7 +14920,7 @@ exports_files([
     "gpu/raster_export.h",
     "gpu/vulkan/vulkan_info.h",
     "gpu/vulkan/vulkan_ycbcr_info.h",
-    "third_party/khronos/GLES2/gl2.h",
+    "third_party/khronos/GLES2/gl2.h"
 ])
 # END GPU_CLIENT INPUTS
 
@@ -16669,7 +16669,7 @@ exports_files([
     "components/metrics/log_decoder.h",
     "components/metrics/log_store.h",
     "components/metrics/machine_id_provider.h",
-    "components/metrics/machine_id_provider_nonwin.cc",
+    "components/metrics/machine_id_provider_win.cc",
     "components/metrics/metrics_data_validation.cc",
     "components/metrics/metrics_data_validation.h",
     "components/metrics/metrics_features.cc",
@@ -16742,6 +16742,7 @@ exports_files([
     "components/metrics/stability_metrics_helper.h",
     "components/metrics/stability_metrics_provider.cc",
     "components/metrics/stability_metrics_provider.h",
+    "components/metrics/system_session_analyzer/system_session_analyzer_win.cc",
     "components/metrics/system_session_analyzer/system_session_analyzer_win.h",
     "components/metrics/ukm_demographic_metrics_provider.h",
     "components/metrics/unsent_log_store.cc",
@@ -16761,26 +16762,12 @@ exports_files([
     "components/os_crypt/async/common/encryptor.h",
     "components/os_crypt/async/common/encryptor_mojom_traits.cc",
     "components/os_crypt/async/common/encryptor_mojom_traits.h",
-    "components/os_crypt/sync/key_storage_config_linux.cc",
-    "components/os_crypt/sync/key_storage_config_linux.h",
-    "components/os_crypt/sync/key_storage_kwallet.cc",
-    "components/os_crypt/sync/key_storage_kwallet.h",
-    "components/os_crypt/sync/key_storage_libsecret.cc",
-    "components/os_crypt/sync/key_storage_libsecret.h",
-    "components/os_crypt/sync/key_storage_linux.cc",
-    "components/os_crypt/sync/key_storage_linux.h",
-    "components/os_crypt/sync/key_storage_util_linux.cc",
-    "components/os_crypt/sync/key_storage_util_linux.h",
-    "components/os_crypt/sync/kwallet_dbus.cc",
-    "components/os_crypt/sync/kwallet_dbus.h",
-    "components/os_crypt/sync/libsecret_util_linux.cc",
-    "components/os_crypt/sync/libsecret_util_linux.h",
     "components/os_crypt/sync/os_crypt.h",
-    "components/os_crypt/sync/os_crypt_linux.cc",
     "components/os_crypt/sync/os_crypt_metrics.cc",
     "components/os_crypt/sync/os_crypt_metrics.h",
     "components/os_crypt/sync/os_crypt_switches.cc",
     "components/os_crypt/sync/os_crypt_switches.h",
+    "components/os_crypt/sync/os_crypt_win.cc",
     "components/prefs/persistent_pref_store.h",
     "components/prefs/pref_filter.h",
     "components/prefs/pref_registry.h",
@@ -16975,6 +16962,7 @@ exports_files([
     "gpu/ipc/common/gpu_memory_buffer_handle_info.h",
     "gpu/ipc/common/gpu_peak_memory.h",
     "gpu/ipc/common/gpu_peak_memory_mojom_traits.h",
+    "gpu/ipc/common/luid_mojom_traits.h",
     "gpu/ipc/common/mailbox_holder_mojom_traits.h",
     "gpu/ipc/common/mailbox_mojom_traits.h",
     "gpu/ipc/common/memory_stats.h",
@@ -16999,6 +16987,7 @@ exports_files([
     "mojo/public/cpp/base/proto_wrapper_mojom_traits.h",
     "mojo/public/cpp/base/proto_wrapper_passkeys.h",
     "net/base/address_family.h",
+    "net/cert/cert_verify_result.h",
     "net/extras/shared_dictionary/shared_dictionary_info.cc",
     "net/extras/shared_dictionary/shared_dictionary_info.h",
     "net/extras/shared_dictionary/shared_dictionary_usage_info.h",
@@ -17006,6 +16995,7 @@ exports_files([
     "net/http/http_response_info.h",
     "services/metrics/public/cpp/metrics_export.h",
     "services/metrics/public/cpp/metrics_utils.h",
+    "services/metrics/public/cpp/ukm_entry_builder_base.h",
     "services/metrics/public/cpp/ukm_recorder.h",
     "services/metrics/public/cpp/ukm_source.h",
     "services/metrics/public/cpp/ukm_source_id.h",
@@ -17166,8 +17156,6 @@ exports_files([
     "services/network/public/cpp/network_connection_tracker.cc",
     "services/network/public/cpp/network_connection_tracker.h",
     "services/network/public/cpp/network_context_getter.h",
-    "services/network/public/cpp/network_interface_change_listener_mojom_traits.cc",
-    "services/network/public/cpp/network_interface_change_listener_mojom_traits.h",
     "services/network/public/cpp/network_interface_mojom_traits.cc",
     "services/network/public/cpp/network_interface_mojom_traits.h",
     "services/network/public/cpp/network_ipc_param_traits.cc",
@@ -17319,6 +17307,8 @@ exports_files([
     "services/proxy_resolver/public/cpp/mojo_host_mojom_traits.h",
     "services/proxy_resolver/public/cpp/proxy_resolver_mojom_traits.cc",
     "services/proxy_resolver/public/cpp/proxy_resolver_mojom_traits.h",
+    "services/proxy_resolver_win/public/cpp/proxy_resolver_win_mojom_traits.cc",
+    "services/proxy_resolver_win/public/cpp/proxy_resolver_win_mojom_traits.h",
     "services/tracing/public/cpp/perfetto/macros.h",
     "services/viz/public/cpp/compositing/frame_sink_id_mojom_traits.h",
     "services/viz/public/cpp/compositing/local_surface_id_mojom_traits.h",
@@ -17366,19 +17356,6 @@ exports_files([
     "third_party/jinja2/tests.py",
     "third_party/jinja2/utils.py",
     "third_party/jinja2/visitor.py",
-    "third_party/libsecret/libsecret/secret-attributes.h",
-    "third_party/libsecret/libsecret/secret-collection.h",
-    "third_party/libsecret/libsecret/secret-enum-types.h",
-    "third_party/libsecret/libsecret/secret-item.h",
-    "third_party/libsecret/libsecret/secret-password.h",
-    "third_party/libsecret/libsecret/secret-paths.h",
-    "third_party/libsecret/libsecret/secret-prompt.h",
-    "third_party/libsecret/libsecret/secret-schema.h",
-    "third_party/libsecret/libsecret/secret-schemas.h",
-    "third_party/libsecret/libsecret/secret-service.h",
-    "third_party/libsecret/libsecret/secret-types.h",
-    "third_party/libsecret/libsecret/secret-value.h",
-    "third_party/libsecret/libsecret/secret.h",
     "third_party/markupsafe/__init__.py",
     "third_party/markupsafe/_compat.py",
     "third_party/markupsafe/_constants.py",
@@ -17440,7 +17417,6 @@ exports_files([
     "third_party/webrtc_overrides/task_queue_factory.h",
     "third_party/webrtc_overrides/timer_based_tick_provider.cc",
     "third_party/webrtc_overrides/timer_based_tick_provider.h",
-    "tools/generate_stubs/generate_stubs.py",
     "tools/json_comment_eater/json_comment_eater.py",
     "tools/json_to_struct/PRESUBMIT.py",
     "tools/json_to_struct/aggregation.py",
@@ -17680,7 +17656,7 @@ exports_files([
     "ui/gl/gpu_preference.h",
     "ui/gl/trace_util.h",
     "ui/latency/latency_info.h",
-    "url/mojom/origin_mojom_traits.h",
+    "url/mojom/origin_mojom_traits.h"
 ])
 # END COMPOSITOR INPUTS
 

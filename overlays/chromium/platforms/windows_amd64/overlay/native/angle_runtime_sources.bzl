@@ -5,7 +5,7 @@ LIBRARIES = {
         "name": "angle_runtime_52db29498c5789bb",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/common/spirv/angle_spirv_utils.cpp",
+            "@chromium_angle//:third_party/angle/src/common/spirv/angle_spirv_utils.cpp"
         ],
         "hdrs": [],
         "copts": [
@@ -118,7 +118,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -158,11 +158,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_8f20ddc9ab5b6d94",
@@ -173,7 +173,7 @@ LIBRARIES = {
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
             "@spirv_headers//:spirv_cpp_headers",
-            "@spirv_tools//:spirv_tools",
+            "@spirv_tools//:spirv_tools"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -188,7 +188,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -295,17 +295,17 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/common/spirv:angle_spirv_builder": {
         "name": "angle_runtime_edbbc2e9162980bc",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_instruction_builder_autogen.cpp",
+            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_instruction_builder_autogen.cpp"
         ],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_instruction_builder_autogen.h",
+            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_instruction_builder_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -417,7 +417,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -457,11 +457,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_52db29498c5789bb",
@@ -472,7 +472,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -487,7 +487,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -594,15 +594,15 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/common/spirv:angle_spirv_headers": {
         "name": "angle_runtime_e424440eee96b811",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_types.h",
+            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_types.h"
         ],
         "copts": [
             "/W4",
@@ -714,7 +714,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -754,11 +754,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_8f20ddc9ab5b6d94",
@@ -766,7 +766,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -781,7 +781,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -888,17 +888,17 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/common/spirv:angle_spirv_parser": {
         "name": "angle_runtime_94556de1c3408069",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_instruction_parser_autogen.cpp",
+            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_instruction_parser_autogen.cpp"
         ],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_instruction_parser_autogen.h",
+            "@chromium_angle//:third_party/angle/src/common/spirv/spirv_instruction_parser_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -1010,7 +1010,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1050,11 +1050,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_52db29498c5789bb",
@@ -1065,7 +1065,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -1080,7 +1080,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -1187,8 +1187,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/common/vulkan:angle_libvulkan": {
         "name": "angle_runtime_74a09bd7e15dad50",
@@ -1199,26 +1199,26 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             "@chromium_angle//:headers",
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/angle/src/common/vulkan:angle_libvulkan_loader": {
         "name": "angle_runtime_624000bb5a4a7937",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/common/vulkan/libvulkan_loader.cpp",
+            "@chromium_angle//:third_party/angle/src/common/vulkan/libvulkan_loader.cpp"
         ],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/common/vulkan/libvulkan_loader.h",
+            "@chromium_angle//:third_party/angle/src/common/vulkan/libvulkan_loader.h"
         ],
         "copts": [
             "/W4",
@@ -1330,7 +1330,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1371,11 +1371,11 @@ LIBRARIES = {
             "ANGLE_USE_CUSTOM_LIBVULKAN",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_8f20ddc9ab5b6d94",
@@ -1383,7 +1383,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -1398,7 +1398,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -1505,8 +1505,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/common/vulkan:angle_vulkan_entry_points": {
         "name": "angle_runtime_f1ef689b1b83c79e",
@@ -1517,7 +1517,7 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_a471b02f285e5fd4",
@@ -1525,17 +1525,17 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/angle/src/common/vulkan:angle_vulkan_headers": {
         "name": "angle_runtime_a471b02f285e5fd4",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/common/vulkan/vk_headers.h",
+            "@chromium_angle//:third_party/angle/src/common/vulkan/vk_headers.h"
         ],
         "copts": [
             "/W4",
@@ -1648,7 +1648,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1687,11 +1687,11 @@ LIBRARIES = {
             "ANGLE_OUTSIDE_WEBKIT",
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_SHARED_LIBVULKAN=1",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_7ffeedb82a1f8fe3",
@@ -1699,7 +1699,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -1713,7 +1713,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -1821,17 +1821,17 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/common/vulkan:angle_vulkan_icd": {
         "name": "angle_runtime_bd7daecc1d747fcc",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/common/vulkan/vulkan_icd.cpp",
+            "@chromium_angle//:third_party/angle/src/common/vulkan/vulkan_icd.cpp"
         ],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/common/vulkan/vulkan_icd.h",
+            "@chromium_angle//:third_party/angle/src/common/vulkan/vulkan_icd.h"
         ],
         "copts": [
             "/W4",
@@ -1944,7 +1944,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "ANGLE_VK_MOCK_ICD_JSON=\\\"angledata/VkICD_mock_icd.json\\\"",
@@ -1989,11 +1989,11 @@ LIBRARIES = {
             "VK_USE_PLATFORM_WIN32_KHR",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_8f20ddc9ab5b6d94",
@@ -2002,7 +2002,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -2017,7 +2017,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -2125,8 +2125,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/common/vulkan:vulkan": {
         "name": "angle_runtime_72d29cf336c67cc5",
@@ -2244,7 +2244,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2287,11 +2287,11 @@ LIBRARIES = {
             "VK_USE_PLATFORM_WIN32_KHR",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_74a09bd7e15dad50",
@@ -2301,7 +2301,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -2316,7 +2316,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -2424,8 +2424,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/libANGLE/renderer/d3d:angle_d3d11_backend": {
         "name": "angle_runtime_a0c0a822da4511b8",
@@ -2465,7 +2465,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/renderer11_utils.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/texture_format_table.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/texture_format_table_autogen.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/win32/NativeWindow11Win32.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/win32/NativeWindow11Win32.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/Blit11.h",
@@ -2680,7 +2680,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzleui3dps.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/texture_format_table.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/texture_format_table_utils.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/win32/NativeWindow11Win32.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d11/win32/NativeWindow11Win32.h"
         ],
         "copts": [
             "/W4",
@@ -2793,7 +2793,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2848,11 +2848,11 @@ LIBRARIES = {
             "ANGLE_ENABLE_VULKAN",
             "ANGLE_ENABLE_SWIFTSHADER",
             "ANGLE_ENABLE_VULKAN_VALIDATION_LAYERS",
-            "ANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE",
+            "ANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_a74b02c4784ff770",
@@ -2860,7 +2860,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:dxguid.lib",
@@ -2879,7 +2879,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "c_copts": [
             "/W4",
@@ -2987,8 +2987,8 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/libANGLE/renderer/d3d:angle_d3d9_backend": {
         "name": "angle_runtime_053d7b2477d28539",
@@ -3014,7 +3014,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/VertexBuffer9.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/VertexDeclarationCache.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/formatutils9.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/renderer9_utils.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/renderer9_utils.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/Blit9.h",
@@ -3048,7 +3048,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/luminanceunmultps.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/passthroughps.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/standardvs.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/vertexconversion.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/d3d9/vertexconversion.h"
         ],
         "copts": [
             "/W4",
@@ -3161,7 +3161,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3216,11 +3216,11 @@ LIBRARIES = {
             "ANGLE_ENABLE_VULKAN",
             "ANGLE_ENABLE_SWIFTSHADER",
             "ANGLE_ENABLE_VULKAN_VALIDATION_LAYERS",
-            "ANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE",
+            "ANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_a74b02c4784ff770",
@@ -3228,7 +3228,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:d3d9.lib",
@@ -3249,7 +3249,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF",
             "/DELAYLOAD:d3d9.dll",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "c_copts": [
             "/W4",
@@ -3357,8 +3357,8 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/libANGLE/renderer/d3d:angle_d3d_shared": {
         "name": "angle_runtime_a74b02c4784ff770",
@@ -3388,7 +3388,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/TextureD3D.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/VertexBuffer.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/VertexDataManager.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/driver_utils_d3d.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/driver_utils_d3d.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/BufferD3D.h",
@@ -3419,7 +3419,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/VertexBuffer.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/VertexDataManager.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/driver_utils_d3d.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/formatutilsD3D.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d/formatutilsD3D.h"
         ],
         "copts": [
             "/W4",
@@ -3532,7 +3532,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3587,11 +3587,11 @@ LIBRARIES = {
             "ANGLE_ENABLE_VULKAN",
             "ANGLE_ENABLE_SWIFTSHADER",
             "ANGLE_ENABLE_VULKAN_VALIDATION_LAYERS",
-            "ANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE",
+            "ANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_185acd3ac3d1a42d",
@@ -3602,7 +3602,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -3620,7 +3620,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "c_copts": [
             "/W4",
@@ -3728,8 +3728,8 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/libANGLE/renderer/gl:angle_gl_backend": {
         "name": "angle_runtime_4ccc8a49f1704600",
@@ -3773,7 +3773,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/gl/wgl/RendererWGL.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/gl/wgl/WindowSurfaceWGL.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/gl/wgl/wgl_utils.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/gl/null_functions.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/gl/null_functions.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/gl/BlitGL.h",
@@ -3819,7 +3819,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/gl/wgl/WindowSurfaceWGL.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/gl/wgl/functionswgl_typedefs.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/gl/wgl/wgl_utils.h",
-            "@chromium_angle//:third_party/angle/src/third_party/khronos/GL/wglext.h",
+            "@chromium_angle//:third_party/angle/src/third_party/khronos/GL/wglext.h"
         ],
         "copts": [
             "/W4",
@@ -3932,7 +3932,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3986,11 +3986,11 @@ LIBRARIES = {
             "ANGLE_ENABLE_VULKAN",
             "ANGLE_ENABLE_SWIFTSHADER",
             "ANGLE_ENABLE_VULKAN_VALIDATION_LAYERS",
-            "ANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE",
+            "ANGLE_ENABLE_CRC_FOR_PIPELINE_CACHE"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_185acd3ac3d1a42d",
@@ -4001,7 +4001,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -4019,7 +4019,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "c_copts": [
             "/W4",
@@ -4127,8 +4127,8 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/libANGLE/renderer/null:angle_null_backend": {
         "name": "angle_runtime_b28e2987f6a346e5",
@@ -4153,7 +4153,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/SyncNULL.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/TextureNULL.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/TransformFeedbackNULL.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/VertexArrayNULL.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/VertexArrayNULL.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/BufferNULL.h",
@@ -4175,7 +4175,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/SyncNULL.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/TextureNULL.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/TransformFeedbackNULL.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/VertexArrayNULL.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/null/VertexArrayNULL.h"
         ],
         "copts": [
             "/W4",
@@ -4288,7 +4288,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4331,11 +4331,11 @@ LIBRARIES = {
             "ANGLE_PLATFORM_EXPORT=",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_b2f32b464df79a43",
@@ -4343,7 +4343,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -4358,7 +4358,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -4466,17 +4466,17 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/libANGLE/renderer/vulkan:angle_vk_mem_alloc_wrapper": {
         "name": "angle_runtime_f37b1f4ad126b9c9",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/vk_mem_alloc_wrapper.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/vk_mem_alloc_wrapper.cpp"
         ],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/vk_mem_alloc_wrapper.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/vk_mem_alloc_wrapper.h"
         ],
         "copts": [
             "/W4",
@@ -4603,7 +4603,7 @@ LIBRARIES = {
             "-Wno-unused-private-field",
             "-Wno-unused-variable",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4645,11 +4645,11 @@ LIBRARIES = {
             "VK_USE_PLATFORM_WIN32_KHR",
             "VMA_DYNAMIC_VULKAN_FUNCTIONS=0",
             "VMA_STATIC_VULKAN_FUNCTIONS=0",
-            "VMA_USE_STL_CONTAINERS=1",
+            "VMA_USE_STL_CONTAINERS=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_46662039007b3dad",
@@ -4658,7 +4658,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -4672,7 +4672,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -4780,8 +4780,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/libANGLE/renderer/vulkan:angle_vulkan_backend": {
         "name": "angle_runtime_9ab194eee4d45e49",
@@ -4839,7 +4839,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/vk_resource.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/vk_utils.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/win32/DisplayVkWin32.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/win32/WindowSurfaceVkWin32.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/win32/WindowSurfaceVkWin32.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/AllocatorHelperPool.h",
@@ -5036,7 +5036,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/vk_utils.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/vk_wrapper.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/win32/DisplayVkWin32.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/win32/WindowSurfaceVkWin32.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/vulkan/win32/WindowSurfaceVkWin32.h"
         ],
         "copts": [
             "/W4",
@@ -5150,7 +5150,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "ANGLE_ENABLE_VULKAN_VALIDATION_LAYERS_BY_DEFAULT",
@@ -5210,11 +5210,11 @@ LIBRARIES = {
             "ANGLE_ENABLE_GL_DESKTOP_BACKEND",
             "ANGLE_ENABLE_OPENGL_NULL",
             "ANGLE_ENABLE_NULL",
-            "ANGLE_ENABLE_WGPU",
+            "ANGLE_ENABLE_WGPU"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_185acd3ac3d1a42d",
@@ -5236,7 +5236,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -5254,7 +5254,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "c_copts": [
             "/W4",
@@ -5363,8 +5363,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/libANGLE/renderer/wgpu:angle_wgpu_backend": {
         "name": "angle_runtime_532d4675ff3efc49",
@@ -5399,7 +5399,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/wgpu_proc_utils.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/wgpu_utils.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/wgpu_wgsl_util.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/win32/WindowSurfaceWgpuWin32.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/win32/WindowSurfaceWgpuWin32.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/BufferWgpu.h",
@@ -5431,7 +5431,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/wgpu_proc_utils.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/wgpu_utils.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/wgpu_wgsl_util.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/win32/WindowSurfaceWgpuWin32.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/wgpu/win32/WindowSurfaceWgpuWin32.h"
         ],
         "copts": [
             "/W4",
@@ -5544,7 +5544,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "WGPU_SKIP_DECLARATIONS",
@@ -5588,12 +5588,12 @@ LIBRARIES = {
             "ANGLE_PLATFORM_EXPORT=",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/third_party/dawn/include/",
+            "gen/third_party/dawn/include/"
         ],
         "deps": [
             ":angle_runtime_17e13a0bc116ea1d",
@@ -5606,7 +5606,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -5626,7 +5626,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -5734,17 +5734,17 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle/src/third_party/volk:volk": {
         "name": "angle_runtime_7ffeedb82a1f8fe3",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/third_party/volk/volk.c",
+            "@chromium_angle//:third_party/angle/src/third_party/volk/volk.c"
         ],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/third_party/volk/volk.h",
+            "@chromium_angle//:third_party/angle/src/third_party/volk/volk.h"
         ],
         "copts": [
             "/W4",
@@ -5825,7 +5825,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5857,12 +5857,12 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             "@chromium_angle//:headers",
@@ -5870,7 +5870,7 @@ LIBRARIES = {
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
             "@spirv_headers//:spirv_cpp_headers",
-            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_headers//:vulkan_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -5884,7 +5884,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -5961,8 +5961,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_abseil": {
         "name": "angle_runtime_ce535102817457e5",
@@ -5973,7 +5973,7 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -5981,12 +5981,12 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/angle:angle_common": {
         "name": "angle_runtime_8f20ddc9ab5b6d94",
@@ -6017,7 +6017,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/common/utilities.cpp",
             "@chromium_angle//:third_party/angle/src/common/backtrace_utils_noop.cpp",
             "@chromium_angle//:third_party/angle/src/common/system_utils_win.cpp",
-            "@chromium_angle//:third_party/angle/src/common/system_utils_win32.cpp",
+            "@chromium_angle//:third_party/angle/src/common/system_utils_win32.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/common/BinaryStream.h",
@@ -6082,7 +6082,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/common/unsafe_buffers.h",
             "@chromium_angle//:third_party/angle/src/common/utilities.h",
             "@chromium_angle//:third_party/angle/src/common/vector_utils.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/CLBitField.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/CLBitField.h"
         ],
         "copts": [
             "/W4",
@@ -6194,7 +6194,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6234,11 +6234,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_7de787928d94e7d1",
@@ -6248,7 +6248,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -6263,7 +6263,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -6370,14 +6370,14 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_common_shader_state": {
         "name": "angle_runtime_15c3f2a28cf9da9c",
         "kind": "static_library",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/common/CompiledShaderState.cpp",
+            "@chromium_angle//:third_party/angle/src/common/CompiledShaderState.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/common/BinaryStream.h",
@@ -6442,7 +6442,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/common/unsafe_buffers.h",
             "@chromium_angle//:third_party/angle/src/common/utilities.h",
             "@chromium_angle//:third_party/angle/src/common/vector_utils.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/CLBitField.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/CLBitField.h"
         ],
         "copts": [
             "/W4",
@@ -6554,7 +6554,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6594,11 +6594,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_7de787928d94e7d1",
@@ -6608,7 +6608,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -6623,7 +6623,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -6730,8 +6730,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_compression": {
         "name": "angle_runtime_685883c88f4ee1e5",
@@ -6742,7 +6742,7 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":zlib_compression_utils_portable",
@@ -6750,10 +6750,10 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/angle:angle_d3d_format_tables": {
         "name": "angle_runtime_78977270f883d359",
@@ -6761,12 +6761,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/dxgi_format_map_autogen.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/dxgi_support_table_autogen.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d_format.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d_format.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/d3d_format.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/renderer/dxgi_format_map.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/dxgi_support_table.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/renderer/dxgi_support_table.h"
         ],
         "copts": [
             "/W4",
@@ -6879,7 +6879,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6933,11 +6933,11 @@ LIBRARIES = {
             "ANGLE_PLATFORM_EXPORT=",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_b2f32b464df79a43",
@@ -6945,7 +6945,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -6961,7 +6961,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "c_copts": [
             "/W4",
@@ -7069,15 +7069,15 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_frame_capture_mock": {
         "name": "angle_runtime_ec45805ae06f4b21",
         "kind": "source_set",
         "srcs": [
             "@chromium_angle//:third_party/angle/src/libANGLE/capture/FrameCapture_mock.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/capture/serialize_mock.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/capture/serialize_mock.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/common/frame_capture_binary_data.h",
@@ -7085,7 +7085,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/common/frame_capture_utils_autogen.h",
             "@chromium_angle//:third_party/angle/src/common/gl_enum_utils_autogen.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/capture/FrameCapture.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/capture/serialize.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/capture/serialize.h"
         ],
         "copts": [
             "/W4",
@@ -7198,7 +7198,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7242,11 +7242,11 @@ LIBRARIES = {
             "ANGLE_PLATFORM_EXPORT=",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_b2f32b464df79a43",
@@ -7254,7 +7254,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -7269,7 +7269,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -7377,8 +7377,8 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_gpu_info_util": {
         "name": "angle_runtime_185acd3ac3d1a42d",
@@ -7386,12 +7386,12 @@ LIBRARIES = {
         "srcs": [
             "@chromium_angle//:third_party/angle/src/gpu_info_util/SystemInfo.cpp",
             "@chromium_angle//:third_party/angle/src/gpu_info_util/SystemInfo_vulkan.cpp",
-            "@chromium_angle//:third_party/angle/src/gpu_info_util/SystemInfo_win.cpp",
+            "@chromium_angle//:third_party/angle/src/gpu_info_util/SystemInfo_win.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/gpu_info_util/SystemInfo.h",
             "@chromium_angle//:third_party/angle/src/gpu_info_util/SystemInfo_internal.h",
-            "@chromium_angle//:third_party/angle/src/gpu_info_util/SystemInfo_vulkan.h",
+            "@chromium_angle//:third_party/angle/src/gpu_info_util/SystemInfo_vulkan.h"
         ],
         "copts": [
             "/W4",
@@ -7504,7 +7504,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7558,11 +7558,11 @@ LIBRARIES = {
             "ABSL_ALLOCATOR_NOTHROW=1",
             "VK_USE_PLATFORM_WIN32_KHR",
             "ANGLE_USE_CUSTOM_LIBVULKAN",
-            "ANGLE_SHARED_LIBVULKAN=1",
+            "ANGLE_SHARED_LIBVULKAN=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_624000bb5a4a7937",
@@ -7573,7 +7573,7 @@ LIBRARIES = {
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
             "@spirv_headers//:spirv_cpp_headers",
-            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_headers//:vulkan_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:setupapi.lib",
@@ -7591,7 +7591,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "c_copts": [
             "/W4",
@@ -7699,8 +7699,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_image_util": {
         "name": "angle_runtime_41ffd4336371fd9a",
@@ -7713,7 +7713,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/image_util/loadimage_etc.cpp",
             "@chromium_angle//:third_party/angle/src/image_util/loadimage_paletted.cpp",
             "@chromium_angle//:third_party/angle/src/image_util/storeimage_paletted.cpp",
-            "@chromium_angle//:third_party/angle/src/image_util/AstcDecompressorNoOp.cpp",
+            "@chromium_angle//:third_party/angle/src/image_util/AstcDecompressorNoOp.cpp"
         ],
         "hdrs": [],
         "copts": [
@@ -7826,7 +7826,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7866,11 +7866,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_58d0d6ffb7475f6d",
@@ -7878,7 +7878,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -7893,7 +7893,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -8000,8 +8000,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_image_util_headers": {
         "name": "angle_runtime_58d0d6ffb7475f6d",
@@ -8016,7 +8016,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/image_util/imageformats.h",
             "@chromium_angle//:third_party/angle/src/image_util/loadimage.h",
             "@chromium_angle//:third_party/angle/src/image_util/loadimage.inc",
-            "@chromium_angle//:third_party/angle/src/image_util/storeimage.h",
+            "@chromium_angle//:third_party/angle/src/image_util/storeimage.h"
         ],
         "copts": [
             "/W4",
@@ -8128,7 +8128,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8168,11 +8168,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_8f20ddc9ab5b6d94",
@@ -8180,7 +8180,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -8195,7 +8195,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -8302,8 +8302,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_translator_headers": {
         "name": "angle_runtime_39ee1444c6fc04bb",
@@ -8313,7 +8313,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/include/GLSLANG/ShaderLang.h",
             "@chromium_angle//:third_party/angle/include/GLSLANG/ShaderVars.h",
             "@chromium_angle//:third_party/angle/src/compiler/translator/blocklayout.h",
-            "@chromium_angle//:third_party/angle/src/compiler/translator/hlsl/blocklayoutHLSL.h",
+            "@chromium_angle//:third_party/angle/src/compiler/translator/hlsl/blocklayoutHLSL.h"
         ],
         "copts": [
             "/W4",
@@ -8425,7 +8425,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8462,11 +8462,11 @@ LIBRARIES = {
             "ANGLE_ENABLE_PLATFORM_TRACE_EVENTS=1",
             "ANGLE_DEBUG_LAYERS_ENABLED",
             "ANGLE_OUTSIDE_WEBKIT",
-            "ANGLE_WINDOWS_NO_FUTEX=1",
+            "ANGLE_WINDOWS_NO_FUTEX=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_8630f6c75a229ab8",
@@ -8474,7 +8474,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -8488,7 +8488,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -8595,8 +8595,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_version": {
         "name": "angle_runtime_69a0a41b972cebca",
@@ -8605,7 +8605,7 @@ LIBRARIES = {
         "hdrs": [
             ":gen/angle/ANGLEShaderProgramVersion.h",
             ":gen/angle/angle_commit.h",
-            "@chromium_angle//:third_party/angle/src/common/angle_version.h",
+            "@chromium_angle//:third_party/angle/src/common/angle_version.h"
         ],
         "copts": [
             "/W4",
@@ -8717,7 +8717,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8754,19 +8754,19 @@ LIBRARIES = {
             "ANGLE_ENABLE_PLATFORM_TRACE_EVENTS=1",
             "ANGLE_DEBUG_LAYERS_ENABLED",
             "ANGLE_OUTSIDE_WEBKIT",
-            "ANGLE_WINDOWS_NO_FUTEX=1",
+            "ANGLE_WINDOWS_NO_FUTEX=1"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/angle/",
+            "gen/angle/"
         ],
         "deps": [
             "@chromium_angle//:headers",
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -8780,7 +8780,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -8887,17 +8887,17 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:angle_version_info": {
         "name": "angle_runtime_622981a2ebcc06ac",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/common/angle_version_info.cpp",
+            "@chromium_angle//:third_party/angle/src/common/angle_version_info.cpp"
         ],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/common/angle_version_info.h",
+            "@chromium_angle//:third_party/angle/src/common/angle_version_info.h"
         ],
         "copts": [
             "/W4",
@@ -9009,7 +9009,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9046,12 +9046,12 @@ LIBRARIES = {
             "ANGLE_ENABLE_PLATFORM_TRACE_EVENTS=1",
             "ANGLE_DEBUG_LAYERS_ENABLED",
             "ANGLE_OUTSIDE_WEBKIT",
-            "ANGLE_WINDOWS_NO_FUTEX=1",
+            "ANGLE_WINDOWS_NO_FUTEX=1"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/angle/",
+            "gen/angle/"
         ],
         "deps": [
             ":angle_runtime_39ee1444c6fc04bb",
@@ -9060,7 +9060,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -9074,7 +9074,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -9181,8 +9181,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:includes": {
         "name": "angle_runtime_8630f6c75a229ab8",
@@ -9217,7 +9217,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/include/platform/autogen/FeaturesVk_autogen.h",
             "@chromium_angle//:third_party/angle/include/platform/autogen/FeaturesWgpu_autogen.h",
             "@chromium_angle//:third_party/angle/include/platform/autogen/FrontendFeatures_autogen.h",
-            "@chromium_angle//:third_party/angle/include/vulkan/vulkan_fuchsia_ext.h",
+            "@chromium_angle//:third_party/angle/include/vulkan/vulkan_fuchsia_ext.h"
         ],
         "copts": [
             "/W4",
@@ -9329,7 +9329,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9366,18 +9366,18 @@ LIBRARIES = {
             "ANGLE_ENABLE_PLATFORM_TRACE_EVENTS=1",
             "ANGLE_DEBUG_LAYERS_ENABLED",
             "ANGLE_OUTSIDE_WEBKIT",
-            "ANGLE_WINDOWS_NO_FUTEX=1",
+            "ANGLE_WINDOWS_NO_FUTEX=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             "@chromium_angle//:headers",
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -9391,7 +9391,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -9498,8 +9498,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:libANGLE": {
         "name": "angle_runtime_fa2e5745f7cada05",
@@ -9618,7 +9618,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9679,12 +9679,12 @@ LIBRARIES = {
             "ANGLE_ENABLE_OPENGL_NULL",
             "ANGLE_ENABLE_NULL",
             "ANGLE_ENABLE_WGPU",
-            "ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES={\\\"d3dcompiler_47.dll\\\",\\\"d3dcompiler_46.dll\\\",\\\"d3dcompiler_43.dll\\\"}",
+            "ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES={\\\"d3dcompiler_47.dll\\\",\\\"d3dcompiler_46.dll\\\",\\\"d3dcompiler_43.dll\\\"}"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/third_party/dawn/include/",
+            "gen/third_party/dawn/include/"
         ],
         "deps": [
             ":angle_runtime_9ab194eee4d45e49",
@@ -9694,7 +9694,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -9720,7 +9720,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF",
             "/DELAYLOAD:d3d9.dll",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "c_copts": [
             "/W4",
@@ -9829,8 +9829,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:libANGLE_headers": {
         "name": "angle_runtime_b2f32b464df79a43",
@@ -9991,7 +9991,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/validationES32_autogen.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/validationES3_autogen.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/validationESEXT.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/validationESEXT_autogen.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/validationESEXT_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -10104,7 +10104,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -10147,11 +10147,11 @@ LIBRARIES = {
             "ANGLE_PLATFORM_EXPORT=",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_39ee1444c6fc04bb",
@@ -10160,7 +10160,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -10175,7 +10175,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -10283,8 +10283,8 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:libANGLE_no_vulkan": {
         "name": "angle_runtime_ab1339c8fb0b7a19",
@@ -10381,7 +10381,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/validationES3.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/validationES31.cpp",
             "@chromium_angle//:third_party/angle/src/libANGLE/validationES32.cpp",
-            "@chromium_angle//:third_party/angle/src/libANGLE/validationESEXT.cpp",
+            "@chromium_angle//:third_party/angle/src/libANGLE/validationESEXT.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/common/frame_capture_binary_data.h",
@@ -10398,7 +10398,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libANGLE/capture/capture_gles_3_1_autogen.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/capture/capture_gles_3_2_autogen.h",
             "@chromium_angle//:third_party/angle/src/libANGLE/capture/capture_gles_ext_autogen.h",
-            "@chromium_angle//:third_party/angle/src/libANGLE/capture/serialize.h",
+            "@chromium_angle//:third_party/angle/src/libANGLE/capture/serialize.h"
         ],
         "copts": [
             "/W4",
@@ -10511,7 +10511,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "ANGLE_ALWAYS_REPORT_VALIDATION_ERRORS",
@@ -10567,12 +10567,12 @@ LIBRARIES = {
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
             "ABSL_ALLOCATOR_NOTHROW=1",
-            "ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES={\\\"d3dcompiler_47.dll\\\",\\\"d3dcompiler_46.dll\\\",\\\"d3dcompiler_43.dll\\\"}",
+            "ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES={\\\"d3dcompiler_47.dll\\\",\\\"d3dcompiler_46.dll\\\",\\\"d3dcompiler_43.dll\\\"}"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/third_party/dawn/include/",
+            "gen/third_party/dawn/include/"
         ],
         "deps": [
             ":angle_runtime_053d7b2477d28539",
@@ -10593,7 +10593,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:gdi32.lib",
@@ -10619,7 +10619,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF",
             "/DELAYLOAD:d3d9.dll",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "c_copts": [
             "/W4",
@@ -10727,20 +10727,20 @@ LIBRARIES = {
             "/wd4530",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:libEGL": {
         "name": "angle_runtime_9c9c4da78b76aa4f",
         "kind": "shared_library",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/libEGL/libEGL_autogen.cpp",
+            "@chromium_angle//:third_party/angle/src/libEGL/libEGL_autogen.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libEGL/egl_loader_autogen.h",
             "@chromium_angle//:third_party/angle/src/libEGL/resource.h",
             "@chromium_angle//:third_party/angle/src/libGLESv2/entry_points_egl_autogen.h",
-            "@chromium_angle//:third_party/angle/src/libGLESv2/entry_points_egl_ext_autogen.h",
+            "@chromium_angle//:third_party/angle/src/libGLESv2/entry_points_egl_ext_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -10852,7 +10852,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "ANGLE_DISPATCH_LIBRARY=\\\"libGLESv2\\\"",
@@ -10906,12 +10906,12 @@ LIBRARIES = {
             "GL_GLES_PROTOTYPES=1",
             "EGL_EGL_PROTOTYPES=1",
             "GL_GLEXT_PROTOTYPES",
-            "EGL_EGLEXT_PROTOTYPES",
+            "EGL_EGLEXT_PROTOTYPES"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/angle/",
+            "gen/angle/"
         ],
         "deps": [
             ":angle_runtime_2151b5bf41f1233b",
@@ -10922,7 +10922,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:advapi32.lib",
@@ -10967,11 +10967,11 @@ LIBRARIES = {
             "/INCREMENTAL:NO",
             "/SUBSYSTEM:CONSOLE,10.0",
             "/guard:cf",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "win_def_file": "@chromium_angle//:third_party/angle/src/libEGL/libEGL_autogen.def",
         "resource_srcs": [
-            "@chromium_angle//:third_party/angle/src/libEGL/libEGL.rc",
+            "@chromium_angle//:third_party/angle/src/libEGL/libEGL.rc"
         ],
         "resource_defines": [
             "ANGLE_DISPATCH_LIBRARY=\"libGLESv2\"",
@@ -11026,7 +11026,7 @@ LIBRARIES = {
             "GL_GLES_PROTOTYPES=1",
             "EGL_EGL_PROTOTYPES=1",
             "GL_GLEXT_PROTOTYPES",
-            "EGL_EGLEXT_PROTOTYPES",
+            "EGL_EGLEXT_PROTOTYPES"
         ],
         "c_copts": [
             "/W4",
@@ -11133,17 +11133,17 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:libEGL_egl_loader": {
         "name": "angle_runtime_2151b5bf41f1233b",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/libEGL/egl_loader_autogen.cpp",
+            "@chromium_angle//:third_party/angle/src/libEGL/egl_loader_autogen.cpp"
         ],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/libEGL/egl_loader_autogen.h",
+            "@chromium_angle//:third_party/angle/src/libEGL/egl_loader_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -11255,7 +11255,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11297,11 +11297,11 @@ LIBRARIES = {
             "GL_GLES_PROTOTYPES=1",
             "EGL_EGL_PROTOTYPES=1",
             "GL_GLEXT_PROTOTYPES",
-            "EGL_EGLEXT_PROTOTYPES",
+            "EGL_EGLEXT_PROTOTYPES"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_8630f6c75a229ab8",
@@ -11309,7 +11309,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -11323,7 +11323,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -11430,8 +11430,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:libGLESv2": {
         "name": "angle_runtime_0116608f539442bf",
@@ -11449,7 +11449,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libGLESv2/entry_points_gles_3_2_autogen.cpp",
             "@chromium_angle//:third_party/angle/src/libGLESv2/entry_points_gles_ext_autogen.cpp",
             "@chromium_angle//:third_party/angle/src/libGLESv2/global_state.cpp",
-            "@chromium_angle//:third_party/angle/src/libGLESv2/libGLESv2_autogen.cpp",
+            "@chromium_angle//:third_party/angle/src/libGLESv2/libGLESv2_autogen.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/libGLESv2/egl_context_lock_autogen.h",
@@ -11465,7 +11465,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/libGLESv2/entry_points_gles_3_2_autogen.h",
             "@chromium_angle//:third_party/angle/src/libGLESv2/entry_points_gles_ext_autogen.h",
             "@chromium_angle//:third_party/angle/src/libGLESv2/global_state.h",
-            "@chromium_angle//:third_party/angle/src/libGLESv2/resource.h",
+            "@chromium_angle//:third_party/angle/src/libGLESv2/resource.h"
         ],
         "copts": [
             "/W4",
@@ -11579,7 +11579,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "LIBGLESV2_IMPLEMENTATION",
@@ -11647,13 +11647,13 @@ LIBRARIES = {
             "ANGLE_ENABLE_OPENGL_NULL",
             "ANGLE_ENABLE_NULL",
             "ANGLE_ENABLE_WGPU",
-            "ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES={\\\"d3dcompiler_47.dll\\\",\\\"d3dcompiler_46.dll\\\",\\\"d3dcompiler_43.dll\\\"}",
+            "ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES={\\\"d3dcompiler_47.dll\\\",\\\"d3dcompiler_46.dll\\\",\\\"d3dcompiler_43.dll\\\"}"
         ],
         "includes": [
             "..",
             "gen",
             "gen/angle/",
-            "gen/third_party/dawn/include/",
+            "gen/third_party/dawn/include/"
         ],
         "deps": [
             ":angle_runtime_69a0a41b972cebca",
@@ -11663,7 +11663,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:advapi32.lib",
@@ -11715,11 +11715,11 @@ LIBRARIES = {
             "/guard:cf",
             "/OPT:ICF",
             "/DELAYLOAD:d3d9.dll",
-            "/DELAYLOAD:d3d9.dll",
+            "/DELAYLOAD:d3d9.dll"
         ],
         "win_def_file": "@chromium_angle//:third_party/angle/src/libGLESv2/libGLESv2_autogen.def",
         "resource_srcs": [
-            "@chromium_angle//:third_party/angle/src/libGLESv2/libGLESv2.rc",
+            "@chromium_angle//:third_party/angle/src/libGLESv2/libGLESv2.rc"
         ],
         "resource_defines": [
             "LIBGLESV2_IMPLEMENTATION",
@@ -11788,7 +11788,7 @@ LIBRARIES = {
             "ANGLE_ENABLE_OPENGL_NULL",
             "ANGLE_ENABLE_NULL",
             "ANGLE_ENABLE_WGPU",
-            "ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES={ \"d3dcompiler_47.dll\", \"d3dcompiler_46.dll\", \"d3dcompiler_43.dll\" }",
+            "ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES={ \"d3dcompiler_47.dll\", \"d3dcompiler_46.dll\", \"d3dcompiler_43.dll\" }"
         ],
         "c_copts": [
             "/W4",
@@ -11897,8 +11897,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:preprocessor": {
         "name": "angle_runtime_1dfd955cf07da0d3",
@@ -11914,7 +11914,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/compiler/preprocessor/Preprocessor.cpp",
             "@chromium_angle//:third_party/angle/src/compiler/preprocessor/Token.cpp",
             "@chromium_angle//:third_party/angle/src/compiler/preprocessor/preprocessor_lex_autogen.cpp",
-            "@chromium_angle//:third_party/angle/src/compiler/preprocessor/preprocessor_tab_autogen.cpp",
+            "@chromium_angle//:third_party/angle/src/compiler/preprocessor/preprocessor_tab_autogen.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/src/compiler/preprocessor/DiagnosticsBase.h",
@@ -11929,7 +11929,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/compiler/preprocessor/SourceLocation.h",
             "@chromium_angle//:third_party/angle/src/compiler/preprocessor/Token.h",
             "@chromium_angle//:third_party/angle/src/compiler/preprocessor/Tokenizer.h",
-            "@chromium_angle//:third_party/angle/src/compiler/preprocessor/numeric_lex.h",
+            "@chromium_angle//:third_party/angle/src/compiler/preprocessor/numeric_lex.h"
         ],
         "copts": [
             "/W4",
@@ -12042,7 +12042,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12082,11 +12082,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_39ee1444c6fc04bb",
@@ -12095,7 +12095,7 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -12110,7 +12110,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -12218,8 +12218,8 @@ LIBRARIES = {
             "-Wno-unreachable-code-break",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:translator": {
         "name": "angle_runtime_17e13a0bc116ea1d",
@@ -12390,7 +12390,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/compiler/translator/wgsl/TranslatorWGSL.cpp",
             "@chromium_angle//:third_party/angle/src/compiler/translator/wgsl/Utils.cpp",
             "@chromium_angle//:third_party/angle/src/compiler/translator/glsl/OutputGLSLBase.cpp",
-            "@chromium_angle//:third_party/angle/src/compiler/translator/glsl/OutputGLSL.cpp",
+            "@chromium_angle//:third_party/angle/src/compiler/translator/glsl/OutputGLSL.cpp"
         ],
         "hdrs": [
             "@chromium_angle//:third_party/angle/include/EGL/egl.h",
@@ -12583,7 +12583,7 @@ LIBRARIES = {
             "@chromium_angle//:third_party/angle/src/compiler/translator/wgsl/OutputUniformBlocks.h",
             "@chromium_angle//:third_party/angle/src/compiler/translator/wgsl/RewritePipelineVariables.h",
             "@chromium_angle//:third_party/angle/src/compiler/translator/wgsl/TranslatorWGSL.h",
-            "@chromium_angle//:third_party/angle/src/compiler/translator/wgsl/Utils.h",
+            "@chromium_angle//:third_party/angle/src/compiler/translator/wgsl/Utils.h"
         ],
         "copts": [
             "/wd4718",
@@ -12696,7 +12696,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "ANGLE_ENABLE_NULL",
@@ -12742,11 +12742,11 @@ LIBRARIES = {
             "ANGLE_WINDOWS_NO_FUTEX=1",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":angle_runtime_15c3f2a28cf9da9c",
@@ -12764,7 +12764,7 @@ LIBRARIES = {
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
             "@spirv_headers//:spirv_cpp_headers",
-            "@spirv_tools//:spirv_tools",
+            "@spirv_tools//:spirv_tools"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -12779,7 +12779,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/wd4718",
@@ -12887,17 +12887,17 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/angle:xxhash": {
         "name": "angle_runtime_7de787928d94e7d1",
         "kind": "source_set",
         "srcs": [
-            "@chromium_angle//:third_party/angle/src/common/third_party/xxhash/xxhash.c",
+            "@chromium_angle//:third_party/angle/src/common/third_party/xxhash/xxhash.c"
         ],
         "hdrs": [
-            "@chromium_angle//:third_party/angle/src/common/third_party/xxhash/xxhash.h",
+            "@chromium_angle//:third_party/angle/src/common/third_party/xxhash/xxhash.h"
         ],
         "copts": [
             "/W4",
@@ -13009,7 +13009,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -13046,18 +13046,18 @@ LIBRARIES = {
             "ANGLE_ENABLE_PLATFORM_TRACE_EVENTS=1",
             "ANGLE_DEBUG_LAYERS_ENABLED",
             "ANGLE_OUTSIDE_WEBKIT",
-            "ANGLE_WINDOWS_NO_FUTEX=1",
+            "ANGLE_WINDOWS_NO_FUTEX=1"
         ],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             "@chromium_angle//:headers",
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -13071,7 +13071,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -13179,17 +13179,17 @@ LIBRARIES = {
             "-Wno-implicit-fallthrough",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/vulkan_memory_allocator:vulkan_memory_allocator": {
         "name": "angle_runtime_46662039007b3dad",
         "kind": "source_set",
         "srcs": [
-            "@chromium_vma//:vma.cpp",
+            "@chromium_vma//:vma.cpp"
         ],
         "hdrs": [
-            "@chromium_vma//:include/vk_mem_alloc.h",
+            "@chromium_vma//:include/vk_mem_alloc.h"
         ],
         "copts": [
             "/W4",
@@ -13279,7 +13279,7 @@ LIBRARIES = {
             "-Wno-unused-private-field",
             "-Wno-unused-variable",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -13314,15 +13314,15 @@ LIBRARIES = {
             "VMA_DYNAMIC_VULKAN_FUNCTIONS=0",
             "VMA_STATIC_VULKAN_FUNCTIONS=0",
             "VMA_USE_STL_CONTAINERS=1",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_headers//:vulkan_headers"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -13336,7 +13336,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -13413,9 +13413,9 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -14492,7 +14492,7 @@ SHARED_HEADERS = [
     "@chromium_angle//:third_party/angle/src/libGLESv2/resource.h",
     "@chromium_angle//:third_party/angle/src/third_party/khronos/GL/wglext.h",
     "@chromium_angle//:third_party/angle/src/third_party/volk/volk.h",
-    "@chromium_vma//:include/vk_mem_alloc.h",
+    "@chromium_vma//:include/vk_mem_alloc.h"
 ]
 
 ACTIONS = [
@@ -14500,18 +14500,18 @@ ACTIONS = [
         "response_file_contents": [],
         "name": "angle_runtime_01dc361a8edcbfaa_0",
         "srcs": {
-            "@chromium_angle//:third_party/angle/src/commit_id.py": "third_party/angle/src/commit_id.py",
+            "@chromium_angle//:third_party/angle/src/commit_id.py": "third_party/angle/src/commit_id.py"
         },
         "outs": {
-            "gen/angle/angle_commit.h": "gen/angle/angle_commit.h",
+            "gen/angle/angle_commit.h": "gen/angle/angle_commit.h"
         },
         "script": "third_party/angle/src/commit_id.py",
         "args": [
             "gen",
             "gen/angle/angle_commit.h",
-            "gen/angle/angle_commit.h.d",
+            "gen/angle/angle_commit.h.d"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [
@@ -16008,7 +16008,7 @@ ACTIONS = [
             "../../third_party/angle/src/libANGLE/capture/capture_gles_ext_params.cpp",
             "../../third_party/angle/src/libGLESv2/cl_stubs_autogen.h",
             "../../third_party/angle/src/libGLESv2/global_state.h",
-            "../../third_party/angle/src/third_party/ceval/ceval.h",
+            "../../third_party/angle/src/third_party/ceval/ceval.h"
         ],
         "name": "angle_runtime_a07eb318c267ec23_0",
         "srcs": {
@@ -17491,18 +17491,18 @@ ACTIONS = [
             "@chromium_angle//:third_party/angle/src/libGLESv2/global_state.h": "third_party/angle/src/libGLESv2/global_state.h",
             "@chromium_angle//:third_party/angle/src/program_serialize_data_version.py": "third_party/angle/src/program_serialize_data_version.py",
             "@chromium_angle//:third_party/angle/src/third_party/ceval/ceval.h": "third_party/angle/src/third_party/ceval/ceval.h",
-            "@chromium_angle//:third_party/angle/src/third_party/khronos/GL/wglext.h": "third_party/angle/src/third_party/khronos/GL/wglext.h",
+            "@chromium_angle//:third_party/angle/src/third_party/khronos/GL/wglext.h": "third_party/angle/src/third_party/khronos/GL/wglext.h"
         },
         "outs": {
-            "gen/angle/ANGLEShaderProgramVersion.h": "gen/angle/ANGLEShaderProgramVersion.h",
+            "gen/angle/ANGLEShaderProgramVersion.h": "gen/angle/ANGLEShaderProgramVersion.h"
         },
         "script": "third_party/angle/src/program_serialize_data_version.py",
         "args": [
             "gen/angle/ANGLEShaderProgramVersion.h",
-            "{{response_file_name}}",
+            "{{response_file_name}}"
         ],
-        "deps": [],
-    },
+        "deps": []
+    }
 ]
 
 TOOLS = {}
@@ -17510,26 +17510,26 @@ TOOLS = {}
 RUNTIME_DEPS = {
     "//third_party/angle/src/common/vulkan:angle_libvulkan": [
         "//third_party/vulkan-loader/src:libvulkan",
-        "//third_party/vulkan-tools/src:VkICD_mock_icd",
+        "//third_party/vulkan-tools/src:VkICD_mock_icd"
     ],
     "//third_party/angle/src/common/vulkan:angle_vulkan_entry_points": [
-        "//third_party/vulkan-loader/src:libvulkan",
+        "//third_party/vulkan-loader/src:libvulkan"
     ],
     "//third_party/angle/src/common/vulkan:angle_vulkan_icd": [
         "//third_party/swiftshader/src/Vulkan:icd_file",
-        "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan",
+        "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan"
     ],
     "//third_party/angle/src/common/vulkan:vulkan_validation_layers": [
         "//third_party/vulkan-validation-layers/src:vulkan_gen_json_files",
-        "//third_party/vulkan-validation-layers/src:vulkan_validation_layers",
+        "//third_party/vulkan-validation-layers/src:vulkan_validation_layers"
     ],
     "//third_party/angle/src/libANGLE/renderer/vulkan:angle_vulkan_backend": [
-        "//third_party/angle/src/common/vulkan:vulkan_validation_layers",
+        "//third_party/angle/src/common/vulkan:vulkan_validation_layers"
     ],
     "//third_party/angle:libANGLE_no_vulkan": [
-        "//third_party/angle:copy_compiler_dll",
+        "//third_party/angle:copy_compiler_dll"
     ],
     "//third_party/angle:libEGL": [
-        "//third_party/angle:libGLESv2",
-    ],
+        "//third_party/angle:libGLESv2"
+    ]
 }

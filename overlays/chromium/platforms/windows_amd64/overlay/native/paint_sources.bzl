@@ -20,7 +20,7 @@ LIBRARIES = {
             "//:cc/base/spiral_iterator.cc",
             "//:cc/base/switches.cc",
             "//:cc/base/tiling_data.cc",
-            "//:cc/base/unique_notifier.cc",
+            "//:cc/base/unique_notifier.cc"
         ],
         "hdrs": [
             "//:cc/base/base_export.h",
@@ -45,7 +45,7 @@ LIBRARIES = {
             "//:cc/base/switches.h",
             "//:cc/base/synced_property.h",
             "//:cc/base/tiling_data.h",
-            "//:cc/base/unique_notifier.h",
+            "//:cc/base/unique_notifier.h"
         ],
         "copts": [
             "/W4",
@@ -125,7 +125,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "CC_BASE_IMPLEMENTATION=1",
@@ -171,7 +171,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -181,7 +181,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -189,7 +189,7 @@ LIBRARIES = {
             ":geometry_21b6eca5291c98f8",
             ":paint_af977cd74aa5cd2e",
             ":skia",
-            ":skia_3e2be659073cb989",
+            ":skia_3e2be659073cb989"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -232,7 +232,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -306,7 +306,7 @@ LIBRARIES = {
             "/Oy-",
             "/Zc:inline",
             "/Gw",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -382,8 +382,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//cc/debug:debug": {
         "name": "paint_df0d8b6934368272",
@@ -393,7 +393,7 @@ LIBRARIES = {
             "//:cc/debug/layer_tree_debug_state.cc",
             "//:cc/debug/picture_debug_util.cc",
             "//:cc/debug/rendering_stats.cc",
-            "//:cc/debug/rendering_stats_instrumentation.cc",
+            "//:cc/debug/rendering_stats_instrumentation.cc"
         ],
         "hdrs": [
             "//:cc/debug/debug_colors.h",
@@ -402,7 +402,7 @@ LIBRARIES = {
             "//:cc/debug/picture_debug_util.h",
             "//:cc/debug/rendering_stats.h",
             "//:cc/debug/rendering_stats_instrumentation.h",
-            "//:cc/raster/lcd_text_disallowed_reason.h",
+            "//:cc/raster/lcd_text_disallowed_reason.h"
         ],
         "copts": [
             "/W4",
@@ -482,7 +482,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "CC_DEBUG_IMPLEMENTATION=1",
@@ -528,7 +528,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -538,11 +538,11 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -585,7 +585,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -659,7 +659,7 @@ LIBRARIES = {
             "/Oy-",
             "/Zc:inline",
             "/Gw",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -735,8 +735,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//cc/paint:paint": {
         "name": "paint_6c7e7ea8bec39a32",
@@ -793,7 +793,7 @@ LIBRARIES = {
             "//:cc/paint/transfer_cache_entry.cc",
             "//:cc/paint/transfer_cache_serialize_helper.cc",
             "//:cc/paint/skottie_mru_resource_provider.cc",
-            "//:cc/paint/skottie_wrapper_impl.cc",
+            "//:cc/paint/skottie_wrapper_impl.cc"
         ],
         "hdrs": [
             "//:cc/paint/clear_for_opaque_raster.h",
@@ -862,7 +862,7 @@ LIBRARIES = {
             "//:cc/paint/tone_map_util.h",
             "//:cc/paint/transfer_cache_deserialize_helper.h",
             "//:cc/paint/transfer_cache_entry.h",
-            "//:cc/paint/transfer_cache_serialize_helper.h",
+            "//:cc/paint/transfer_cache_serialize_helper.h"
         ],
         "copts": [
             "/W4",
@@ -942,7 +942,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "CC_PAINT_IMPLEMENTATION=1",
@@ -997,7 +997,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -1009,7 +1009,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -1025,7 +1025,7 @@ LIBRARIES = {
             ":paint_df0d8b6934368272",
             ":paint_f4aa738e09e5eb07",
             ":skia",
-            ":skia_5280fdd4ac24420e",
+            ":skia_5280fdd4ac24420e"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1074,7 +1074,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -1148,7 +1148,7 @@ LIBRARIES = {
             "/Oy-",
             "/Zc:inline",
             "/Gw",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -1224,8 +1224,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/crash/core/common:crash_key": {
         "name": "paint_46dc8112c17a1dbd",
@@ -1236,10 +1236,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":paint_abb2956a264a35fa",
+            ":paint_abb2956a264a35fa"
         ],
         "linkopts": [
             "-DEFAULTLIB:rpcrt4.lib",
@@ -1257,10 +1257,10 @@ LIBRARIES = {
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:user32.lib",
             "-DEFAULTLIB:version.lib",
-            "-DEFAULTLIB:winhttp.lib",
+            "-DEFAULTLIB:winhttp.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//components/crash/core/common:crash_key_lib": {
         "name": "paint_abb2956a264a35fa",
@@ -1268,12 +1268,12 @@ LIBRARIES = {
         "srcs": [
             "//:components/crash/core/common/crash_key.cc",
             "//:components/crash/core/common/crash_key_base_support.cc",
-            "//:components/crash/core/common/crash_key_crashpad.cc",
+            "//:components/crash/core/common/crash_key_crashpad.cc"
         ],
         "hdrs": [
             "//:components/crash/core/common/crash_export.h",
             "//:components/crash/core/common/crash_key.h",
-            "//:components/crash/core/common/crash_key_base_support.h",
+            "//:components/crash/core/common/crash_key_base_support.h"
         ],
         "copts": [
             "/W4",
@@ -1353,7 +1353,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1385,7 +1385,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -1395,11 +1395,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":paint_cec346797cd46045",
+            ":paint_cec346797cd46045"
         ],
         "linkopts": [
             "-DEFAULTLIB:rpcrt4.lib",
@@ -1445,7 +1445,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -1519,7 +1519,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -1595,8 +1595,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/common:mailbox": {
         "name": "paint_90310ca26e5e083b",
@@ -1607,10 +1607,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":paint_5f5adb45b1762bbd",
+            ":paint_5f5adb45b1762bbd"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1624,19 +1624,19 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:wbemuuid.lib",
             "-DEFAULTLIB:winmm.lib",
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/command_buffer/common:mailbox_sources": {
         "name": "paint_5f5adb45b1762bbd",
         "kind": "source_set",
         "srcs": [
-            "//:gpu/command_buffer/common/mailbox.cc",
+            "//:gpu/command_buffer/common/mailbox.cc"
         ],
         "hdrs": [
-            "//:gpu/command_buffer/common/mailbox.h",
+            "//:gpu/command_buffer/common/mailbox.h"
         ],
         "copts": [
             "/W4",
@@ -1716,7 +1716,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_GPU_MAILBOX_IMPL",
@@ -1748,7 +1748,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -1756,10 +1756,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1801,7 +1801,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -1875,7 +1875,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -1951,8 +1951,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia/public/mojom:mojom": {
         "name": "paint_20b148d6d75beadf",
@@ -1966,7 +1966,7 @@ LIBRARIES = {
             ":gen/skia/public/mojom/skcolorspace_primaries.mojom.cc",
             ":gen/skia/public/mojom/skpath.mojom.cc",
             ":gen/skia/public/mojom/surface_origin.mojom.cc",
-            ":gen/skia/public/mojom/tile_mode.mojom.cc",
+            ":gen/skia/public/mojom/tile_mode.mojom.cc"
         ],
         "hdrs": [
             ":gen/skia/public/mojom/bitmap.mojom-forward.h",
@@ -2013,7 +2013,7 @@ LIBRARIES = {
             ":gen/skia/public/mojom/tile_mode.mojom-import-headers.h",
             ":gen/skia/public/mojom/tile_mode.mojom-shared-message-ids.h",
             ":gen/skia/public/mojom/tile_mode.mojom-test-utils.h",
-            ":gen/skia/public/mojom/tile_mode.mojom.h",
+            ":gen/skia/public/mojom/tile_mode.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -2093,7 +2093,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2146,7 +2146,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -2156,7 +2156,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -2165,7 +2165,7 @@ LIBRARIES = {
             ":mojo_cpp_bindings",
             ":paint_f882495ee5f8cad9",
             ":paint_ffbfa44b5e051a8d",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2210,7 +2210,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -2284,7 +2284,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -2360,8 +2360,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia/public/mojom:mojom_shared": {
         "name": "paint_f882495ee5f8cad9",
@@ -2372,10 +2372,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":paint_d4c82a57b286ad05",
+            ":paint_d4c82a57b286ad05"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2391,10 +2391,10 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//skia/public/mojom:mojom_shared_cpp_sources": {
         "name": "paint_d4c82a57b286ad05",
@@ -2408,7 +2408,7 @@ LIBRARIES = {
             ":gen/skia/public/mojom/skcolorspace_primaries.mojom-shared.cc",
             ":gen/skia/public/mojom/skpath.mojom-shared.cc",
             ":gen/skia/public/mojom/surface_origin.mojom-shared.cc",
-            ":gen/skia/public/mojom/tile_mode.mojom-shared.cc",
+            ":gen/skia/public/mojom/tile_mode.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/skia/public/mojom/bitmap.mojom-data-view.h",
@@ -2464,7 +2464,7 @@ LIBRARIES = {
             ":gen/skia/public/mojom/tile_mode.mojom-params-data.h",
             ":gen/skia/public/mojom/tile_mode.mojom-send-validation.h",
             ":gen/skia/public/mojom/tile_mode.mojom-shared-internal.h",
-            ":gen/skia/public/mojom/tile_mode.mojom-shared.h",
+            ":gen/skia/public/mojom/tile_mode.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -2544,7 +2544,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2576,7 +2576,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -2584,11 +2584,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":mojo_base_types",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2632,7 +2632,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -2706,7 +2706,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -2782,20 +2782,20 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//skia/public/mojom:shared_typemap_traits": {
         "name": "paint_ffbfa44b5e051a8d",
         "kind": "static_library",
         "srcs": [
             "//:skia/public/mojom/bitmap_skbitmap_mojom_traits.cc",
-            "//:skia/public/mojom/image_info_mojom_traits.cc",
+            "//:skia/public/mojom/image_info_mojom_traits.cc"
         ],
         "hdrs": [
             "//:skia/public/mojom/bitmap_skbitmap_mojom_traits.h",
             "//:skia/public/mojom/image_info_mojom_traits.h",
-            "//:skia/public/mojom/surface_origin_mojom_traits.h",
+            "//:skia/public/mojom/surface_origin_mojom_traits.h"
         ],
         "copts": [
             "/W4",
@@ -2875,7 +2875,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_SKIA_SHARED_TRAITS_IMPL",
@@ -2929,7 +2929,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -2939,14 +2939,14 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":mojo_base_types",
             ":paint_f882495ee5f8cad9",
             ":skia",
-            ":skia_5280fdd4ac24420e",
+            ":skia_5280fdd4ac24420e"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2991,7 +2991,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -3065,7 +3065,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -3141,21 +3141,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/crashpad/crashpad/client:client": {
         "name": "paint_cec346797cd46045",
         "kind": "static_library",
         "srcs": [
             "//:third_party/crashpad/crashpad/client/prune_crash_reports.cc",
-            "//:third_party/crashpad/crashpad/client/crashpad_client_win.cc",
+            "//:third_party/crashpad/crashpad/client/crashpad_client_win.cc"
         ],
         "hdrs": [
             "//:third_party/crashpad/crashpad/client/crashpad_client.h",
             "//:third_party/crashpad/crashpad/client/prune_crash_reports.h",
             "//:third_party/crashpad/crashpad/client/simulate_crash.h",
-            "//:third_party/crashpad/crashpad/client/simulate_crash_win.h",
+            "//:third_party/crashpad/crashpad/client/simulate_crash_win.h"
         ],
         "copts": [
             "/wd4201",
@@ -3236,7 +3236,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3268,7 +3268,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -3278,12 +3278,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":paint_7c086dab271cf086",
             ":paint_f250f84a4b03ede6",
-            ":paint_fe77b5a23e703e22",
+            ":paint_fe77b5a23e703e22"
         ],
         "linkopts": [
             "-DEFAULTLIB:rpcrt4.lib",
@@ -3329,7 +3329,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/wd4201",
@@ -3404,7 +3404,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/wd4201",
@@ -3481,8 +3481,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/crashpad/crashpad/client:common": {
         "name": "paint_fe77b5a23e703e22",
@@ -3493,7 +3493,7 @@ LIBRARIES = {
             "//:third_party/crashpad/crashpad/client/crash_report_database.cc",
             "//:third_party/crashpad/crashpad/client/crashpad_info.cc",
             "//:third_party/crashpad/crashpad/client/settings.cc",
-            "//:third_party/crashpad/crashpad/client/crash_report_database_win.cc",
+            "//:third_party/crashpad/crashpad/client/crash_report_database_win.cc"
         ],
         "hdrs": [
             "//:third_party/crashpad/crashpad/client/annotation.h",
@@ -3504,7 +3504,7 @@ LIBRARIES = {
             "//:third_party/crashpad/crashpad/client/ring_buffer_annotation.h",
             "//:third_party/crashpad/crashpad/client/settings.h",
             "//:third_party/crashpad/crashpad/client/simple_address_range_bag.h",
-            "//:third_party/crashpad/crashpad/client/simple_string_dictionary.h",
+            "//:third_party/crashpad/crashpad/client/simple_string_dictionary.h"
         ],
         "copts": [
             "/W4",
@@ -3584,7 +3584,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3617,7 +3617,7 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "CRASHPAD_FLOCK_ALWAYS_SUPPORTED=true",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -3627,11 +3627,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":paint_7c086dab271cf086",
-            ":paint_f250f84a4b03ede6",
+            ":paint_f250f84a4b03ede6"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3676,7 +3676,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -3750,7 +3750,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -3826,15 +3826,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/crashpad/crashpad/compat:compat": {
         "name": "paint_07c6f7aa0ebbff20",
         "kind": "static_library",
         "srcs": [
             "//:third_party/crashpad/crashpad/compat/win/strings.cc",
-            "//:third_party/crashpad/crashpad/compat/win/time.cc",
+            "//:third_party/crashpad/crashpad/compat/win/time.cc"
         ],
         "hdrs": [
             "//:third_party/crashpad/crashpad/compat/non_mac/mach/mach.h",
@@ -3844,7 +3844,7 @@ LIBRARIES = {
             "//:third_party/crashpad/crashpad/compat/win/time.h",
             "//:third_party/crashpad/crashpad/compat/win/winbase.h",
             "//:third_party/crashpad/crashpad/compat/win/winnt.h",
-            "//:third_party/crashpad/crashpad/compat/win/winternl.h",
+            "//:third_party/crashpad/crashpad/compat/win/winternl.h"
         ],
         "copts": [
             "/W4",
@@ -3924,7 +3924,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3955,7 +3955,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -3965,11 +3965,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":paint_996a2fdafbd40f97",
-            ":paint_bf9f99d5d4bb0626",
+            ":paint_bf9f99d5d4bb0626"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4011,7 +4011,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -4085,7 +4085,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -4161,17 +4161,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/crashpad/crashpad/third_party/getopt:getopt": {
         "name": "paint_bf9f99d5d4bb0626",
         "kind": "static_library",
         "srcs": [
-            "//:third_party/crashpad/crashpad/third_party/getopt/getopt.cc",
+            "//:third_party/crashpad/crashpad/third_party/getopt/getopt.cc"
         ],
         "hdrs": [
-            "//:third_party/crashpad/crashpad/third_party/getopt/getopt.h",
+            "//:third_party/crashpad/crashpad/third_party/getopt/getopt.h"
         ],
         "copts": [
             "/W4",
@@ -4251,7 +4251,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4282,12 +4282,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -4302,7 +4302,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [
             "/W4",
@@ -4376,7 +4376,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -4452,8 +4452,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/crashpad/crashpad/third_party/mini_chromium:base": {
         "name": "paint_f250f84a4b03ede6",
@@ -4464,10 +4464,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4481,10 +4481,10 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:wbemuuid.lib",
             "-DEFAULTLIB:winmm.lib",
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/crashpad/crashpad/third_party/mini_chromium:build": {
         "name": "paint_98e9be1d16e74a16",
@@ -4495,12 +4495,12 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/crashpad/crashpad/third_party/zlib:zlib": {
         "name": "paint_8405030818616c26",
@@ -4511,21 +4511,21 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "//third_party/zlib",
+            "//third_party/zlib"
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/crashpad/crashpad/util:no_cfi_icall": {
         "name": "paint_996a2fdafbd40f97",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:third_party/crashpad/crashpad/util/misc/no_cfi_icall.h",
+            "//:third_party/crashpad/crashpad/util/misc/no_cfi_icall.h"
         ],
         "copts": [
             "/W4",
@@ -4605,7 +4605,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4636,7 +4636,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -4645,11 +4645,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":paint_98e9be1d16e74a16",
-            ":paint_f250f84a4b03ede6",
+            ":paint_f250f84a4b03ede6"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4691,7 +4691,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -4765,7 +4765,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -4841,8 +4841,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/crashpad/crashpad/util:util": {
         "name": "paint_7c086dab271cf086",
@@ -4912,7 +4912,7 @@ LIBRARIES = {
             "//:third_party/crashpad/crashpad/util/win/scoped_set_event.cc",
             "//:third_party/crashpad/crashpad/util/win/session_end_watcher.cc",
             "//:third_party/crashpad/crashpad/util/misc/capture_context_win.asm",
-            "//:third_party/crashpad/crashpad/util/win/safe_terminate_process.asm",
+            "//:third_party/crashpad/crashpad/util/win/safe_terminate_process.asm"
         ],
         "hdrs": [
             "//:third_party/crashpad/crashpad/util/file/delimited_file_reader.h",
@@ -5009,7 +5009,7 @@ LIBRARIES = {
             "//:third_party/crashpad/crashpad/util/win/session_end_watcher.h",
             "//:third_party/crashpad/crashpad/util/win/termination_codes.h",
             "//:third_party/crashpad/crashpad/util/win/traits.h",
-            "//:third_party/crashpad/crashpad/util/win/xp_compat.h",
+            "//:third_party/crashpad/crashpad/util/win/xp_compat.h"
         ],
         "copts": [
             "/wd4201",
@@ -5090,7 +5090,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "ZLIB_CONST",
@@ -5124,7 +5124,7 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "CRASHPAD_FLOCK_ALWAYS_SUPPORTED=true",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -5135,13 +5135,13 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/crashpad/crashpad/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":paint_07c6f7aa0ebbff20",
             ":paint_8405030818616c26",
             ":paint_996a2fdafbd40f97",
-            ":paint_f250f84a4b03ede6",
+            ":paint_f250f84a4b03ede6"
         ],
         "linkopts": [
             "-DEFAULTLIB:user32.lib",
@@ -5186,7 +5186,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/wd4201",
@@ -5261,7 +5261,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/wd4201",
@@ -5338,8 +5338,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/animation:animation": {
         "name": "paint_af977cd74aa5cd2e",
@@ -5353,7 +5353,7 @@ LIBRARIES = {
             "//:ui/gfx/animation/slide_animation.cc",
             "//:ui/gfx/animation/tween.cc",
             "//:ui/gfx/animation/animation_win.cc",
-            "//:ui/gfx/animation/throb_animation.cc",
+            "//:ui/gfx/animation/throb_animation.cc"
         ],
         "hdrs": [
             "//:ui/gfx/animation/animation.h",
@@ -5368,7 +5368,7 @@ LIBRARIES = {
             "//:ui/gfx/animation/multi_animation.h",
             "//:ui/gfx/animation/slide_animation.h",
             "//:ui/gfx/animation/throb_animation.h",
-            "//:ui/gfx/animation/tween.h",
+            "//:ui/gfx/animation/tween.h"
         ],
         "copts": [
             "/W4",
@@ -5448,7 +5448,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "ANIMATION_IMPLEMENTATION",
@@ -5494,7 +5494,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -5504,14 +5504,14 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":geometry_08e263e6d1b42686",
             ":geometry_21b6eca5291c98f8",
             ":paint_852d427b46acc50a",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5554,7 +5554,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -5628,7 +5628,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -5704,22 +5704,22 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:hdr_metadata": {
         "name": "paint_f4aa738e09e5eb07",
         "kind": "source_set",
         "srcs": [
             ":gen/ui/gfx/mojom/hdr_metadata.mojom.cc",
-            "//:ui/gfx/mojom/hdr_metadata_mojom_traits.cc",
+            "//:ui/gfx/mojom/hdr_metadata_mojom_traits.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/mojom/hdr_metadata.mojom-forward.h",
             ":gen/ui/gfx/mojom/hdr_metadata.mojom-import-headers.h",
             ":gen/ui/gfx/mojom/hdr_metadata.mojom-shared-message-ids.h",
             ":gen/ui/gfx/mojom/hdr_metadata.mojom-test-utils.h",
-            ":gen/ui/gfx/mojom/hdr_metadata.mojom.h",
+            ":gen/ui/gfx/mojom/hdr_metadata.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -5799,7 +5799,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5852,7 +5852,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -5862,7 +5862,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -5870,7 +5870,7 @@ LIBRARIES = {
             ":mojo_binding_headers",
             ":mojo_cpp_bindings",
             ":paint_20b148d6d75beadf",
-            ":paint_2142fbf5cd1ea552",
+            ":paint_2142fbf5cd1ea552"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5915,7 +5915,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -5989,7 +5989,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -6065,8 +6065,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/mojom:hdr_metadata_shared": {
         "name": "paint_2142fbf5cd1ea552",
@@ -6077,10 +6077,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":paint_c438c340e1c7a4ab",
+            ":paint_c438c340e1c7a4ab"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6096,16 +6096,16 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//ui/gfx/mojom:hdr_metadata_shared_cpp_sources": {
         "name": "paint_c438c340e1c7a4ab",
         "kind": "source_set",
         "srcs": [
-            ":gen/ui/gfx/mojom/hdr_metadata.mojom-shared.cc",
+            ":gen/ui/gfx/mojom/hdr_metadata.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/ui/gfx/mojom/hdr_metadata.mojom-data-view.h",
@@ -6113,7 +6113,7 @@ LIBRARIES = {
             ":gen/ui/gfx/mojom/hdr_metadata.mojom-params-data.h",
             ":gen/ui/gfx/mojom/hdr_metadata.mojom-send-validation.h",
             ":gen/ui/gfx/mojom/hdr_metadata.mojom-shared-internal.h",
-            ":gen/ui/gfx/mojom/hdr_metadata.mojom-shared.h",
+            ":gen/ui/gfx/mojom/hdr_metadata.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -6193,7 +6193,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6225,7 +6225,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -6233,12 +6233,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":mojo_base_types",
             ":mojo_cpp_bindings",
-            ":paint_f882495ee5f8cad9",
+            ":paint_f882495ee5f8cad9"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6282,7 +6282,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -6356,7 +6356,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -6432,15 +6432,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:buffer_types": {
         "name": "paint_bb87af8d9cf34ed6",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:ui/gfx/buffer_types.h",
+            "//:ui/gfx/buffer_types.h"
         ],
         "copts": [
             "/W4",
@@ -6520,7 +6520,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6551,12 +6551,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -6571,7 +6571,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [
             "/W4",
@@ -6645,7 +6645,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -6721,8 +6721,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:color_space": {
         "name": "paint_72198bff3a66bb77",
@@ -6736,7 +6736,7 @@ LIBRARIES = {
             "//:ui/gfx/hdr_static_metadata.cc",
             "//:ui/gfx/icc_profile.cc",
             "//:ui/gfx/skia_color_space_util.cc",
-            "//:ui/gfx/color_space_win.cc",
+            "//:ui/gfx/color_space_win.cc"
         ],
         "hdrs": [
             "//:ui/gfx/color_space.h",
@@ -6748,7 +6748,7 @@ LIBRARIES = {
             "//:ui/gfx/hdr_metadata_agtm.h",
             "//:ui/gfx/hdr_static_metadata.h",
             "//:ui/gfx/icc_profile.h",
-            "//:ui/gfx/skia_color_space_util.h",
+            "//:ui/gfx/skia_color_space_util.h"
         ],
         "copts": [
             "/W4",
@@ -6828,7 +6828,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "COLOR_SPACE_IMPLEMENTATION",
@@ -6874,7 +6874,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -6884,7 +6884,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -6892,7 +6892,7 @@ LIBRARIES = {
             ":paint_852d427b46acc50a",
             ":paint_bb87af8d9cf34ed6",
             ":skia",
-            ":skia_5280fdd4ac24420e",
+            ":skia_5280fdd4ac24420e"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6935,7 +6935,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -7009,7 +7009,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -7085,20 +7085,20 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:gfx_skia": {
         "name": "paint_8a34cfe2f279433b",
         "kind": "static_library",
         "srcs": [
             "//:ui/gfx/skia_span_util.cc",
-            "//:ui/gfx/skia_util.cc",
+            "//:ui/gfx/skia_util.cc"
         ],
         "hdrs": [
             "//:ui/gfx/gfx_skia_export.h",
             "//:ui/gfx/skia_span_util.h",
-            "//:ui/gfx/skia_util.h",
+            "//:ui/gfx/skia_util.h"
         ],
         "copts": [
             "/W4",
@@ -7178,7 +7178,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GFX_SKIA_IMPLEMENTATION",
@@ -7224,7 +7224,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -7234,11 +7234,11 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7281,7 +7281,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -7355,7 +7355,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -7431,18 +7431,18 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:gfx_switches": {
         "name": "paint_852d427b46acc50a",
         "kind": "static_library",
         "srcs": [
-            "//:ui/gfx/switches.cc",
+            "//:ui/gfx/switches.cc"
         ],
         "hdrs": [
             "//:ui/gfx/switches.h",
-            "//:ui/gfx/switches_export.h",
+            "//:ui/gfx/switches_export.h"
         ],
         "copts": [
             "/W4",
@@ -7522,7 +7522,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GFX_SWITCHES_IMPLEMENTATION",
@@ -7554,7 +7554,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -7562,10 +7562,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7607,7 +7607,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -7681,7 +7681,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -7757,9 +7757,9 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -8118,7 +8118,7 @@ SHARED_HEADERS = [
     "//:ui/gfx/skia_util.h",
     "//:ui/gfx/swap_result.h",
     "//:ui/gfx/switches.h",
-    "//:ui/gfx/switches_export.h",
+    "//:ui/gfx/switches_export.h"
 ]
 
 ACTIONS = []

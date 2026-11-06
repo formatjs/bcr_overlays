@@ -8,14 +8,14 @@ LIBRARIES = {
             "@chromium_pthreadpool//:src/fastpath.c",
             "@chromium_pthreadpool//:src/memory.c",
             "@chromium_pthreadpool//:src/portable-api.c",
-            "//:third_party/pthreadpool/chromium/jobs.cc",
+            "//:third_party/pthreadpool/chromium/jobs.cc"
         ],
         "hdrs": [
             "@chromium_pthreadpool//:include/pthreadpool.h",
             "@chromium_pthreadpool//:src/threadpool-atomics.h",
             "@chromium_pthreadpool//:src/threadpool-common.h",
             "@chromium_pthreadpool//:src/threadpool-object.h",
-            "@chromium_pthreadpool//:src/threadpool-utils.h",
+            "@chromium_pthreadpool//:src/threadpool-utils.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -87,7 +87,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
@@ -121,7 +121,7 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
@@ -129,11 +129,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -175,7 +175,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -243,16 +243,16 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
     "@chromium_pthreadpool//:src/threadpool-atomics.h",
     "@chromium_pthreadpool//:src/threadpool-common.h",
     "@chromium_pthreadpool//:src/threadpool-object.h",
-    "@chromium_pthreadpool//:src/threadpool-utils.h",
+    "@chromium_pthreadpool//:src/threadpool-utils.h"
 ]
 
 ACTIONS = []

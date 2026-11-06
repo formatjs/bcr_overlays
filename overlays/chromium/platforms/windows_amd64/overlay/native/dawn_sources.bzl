@@ -11,7 +11,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp.h",
             ":gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp_print.h",
             ":gen/third_party/dawn/include/webgpu/webgpu_cpp_chained_struct.h",
-            "@chromium_dawn//:third_party/dawn/include/webgpu/webgpu_enum_class_bitmasks.h",
+            "@chromium_dawn//:third_party/dawn/include/webgpu/webgpu_enum_class_bitmasks.h"
         ],
         "copts": [
             "/W4",
@@ -91,7 +91,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -122,16 +122,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/include/",
+            "gen/third_party/dawn/include/"
         ],
         "deps": [
-            ":dawn_9d7389ed01b1ee62",
+            ":dawn_9d7389ed01b1ee62"
         ],
         "linkopts": [
             "/CETCOMPAT",
@@ -145,8 +145,8 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//third_party/dawn/include/dawn:headers": {
         "name": "dawn_9d7389ed01b1ee62",
@@ -155,7 +155,7 @@ LIBRARIES = {
         "hdrs": [
             ":gen/third_party/dawn/include/dawn/dawn_proc_table.h",
             ":gen/third_party/dawn/include/dawn/webgpu.h",
-            ":gen/third_party/dawn/include/dawn/wire/client/webgpu.h",
+            ":gen/third_party/dawn/include/dawn/wire/client/webgpu.h"
         ],
         "copts": [
             "/W4",
@@ -235,7 +235,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -266,13 +266,13 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/include/",
+            "gen/third_party/dawn/include/"
         ],
         "deps": [],
         "linkopts": [
@@ -287,8 +287,8 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//third_party/dawn/src/dawn/common:abseil": {
         "name": "dawn_55938ab8d39f5fed",
@@ -299,14 +299,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "//third_party/abseil-cpp:absl",
+            "//third_party/abseil-cpp:absl"
         ],
         "linkopts": [
-            "-DEFAULTLIB:bcrypt.lib",
-        ],
+            "-DEFAULTLIB:bcrypt.lib"
+        ]
     },
     "//third_party/dawn/src/dawn/common:common": {
         "name": "dawn_1dd6c1eff7402905",
@@ -329,7 +329,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/dawn/common/ThreadLocal.cpp",
             "@chromium_dawn//:third_party/dawn/src/dawn/common/WeakRefSupport.cpp",
             ":gen/third_party/dawn/src/dawn/common/GPUInfo_autogen.cpp",
-            "@chromium_dawn//:third_party/dawn/src/dawn/common/WindowsUtils.cpp",
+            "@chromium_dawn//:third_party/dawn/src/dawn/common/WindowsUtils.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/src/dawn/common/GPUInfo_autogen.h",
@@ -396,7 +396,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/dawn/common/ityp_vector.h",
             "@chromium_dawn//:third_party/dawn/src/dawn/common/vulkan_platform.h",
             "@chromium_dawn//:third_party/dawn/src/dawn/common/windows_with_undefs.h",
-            "@chromium_dawn//:third_party/dawn/src/dawn/common/xlib_with_undefs.h",
+            "@chromium_dawn//:third_party/dawn/src/dawn/common/xlib_with_undefs.h"
         ],
         "copts": [
             "/W4",
@@ -479,7 +479,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -520,7 +520,7 @@ LIBRARIES = {
             "DAWN_ENABLE_BACKEND_OPENGLES",
             "DAWN_ENABLE_BACKEND_VULKAN",
             "DAWN_USE_WINDOWS_UI",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
@@ -528,14 +528,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/dawn/src/",
+            "gen/third_party/dawn/src/"
         ],
         "deps": [
             ":dawn_06cc7db9c0f83700",
             ":dawn_2dd79afa6687bfd8",
             ":dawn_55938ab8d39f5fed",
             ":dawn_c1edac13edbb27af",
-            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_headers//:vulkan_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -551,8 +551,8 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//third_party/dawn/src/dawn/partition_alloc:raw_ptr": {
         "name": "dawn_06cc7db9c0f83700",
@@ -563,14 +563,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "//base/allocator/partition_allocator/src/partition_alloc:raw_ptr",
+            "//base/allocator/partition_allocator/src/partition_alloc:raw_ptr"
         ],
         "linkopts": [
-            "-DEFAULTLIB:winmm.lib",
-        ],
+            "-DEFAULTLIB:winmm.lib"
+        ]
     },
     "//third_party/dawn/src/dawn:proc": {
         "name": "dawn_702fa4b297ee481d",
@@ -581,26 +581,26 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":dawn_c64c69b846f2c27e",
+            ":dawn_c64c69b846f2c27e"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
-            "-DEFAULTLIB:winmm.lib",
-        ],
+            "-DEFAULTLIB:winmm.lib"
+        ]
     },
     "//third_party/dawn/src/dawn:proc_static": {
         "name": "dawn_c64c69b846f2c27e",
         "kind": "static_library",
         "srcs": [
             ":gen/third_party/dawn/src/dawn/dawn_proc.cpp",
-            ":gen/third_party/dawn/src/dawn/dawn_thread_dispatch_proc.cpp",
+            ":gen/third_party/dawn/src/dawn/dawn_thread_dispatch_proc.cpp"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/include/dawn/dawn_proc.h",
-            "@chromium_dawn//:third_party/dawn/include/dawn/dawn_thread_dispatch_proc.h",
+            "@chromium_dawn//:third_party/dawn/include/dawn/dawn_thread_dispatch_proc.h"
         ],
         "copts": [
             "/W4",
@@ -683,7 +683,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -724,7 +724,7 @@ LIBRARIES = {
             "DAWN_ENABLE_BACKEND_OPENGLES",
             "DAWN_ENABLE_BACKEND_VULKAN",
             "DAWN_USE_WINDOWS_UI",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
@@ -732,11 +732,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/dawn/src/",
+            "gen/third_party/dawn/src/"
         ],
         "deps": [
             ":dawn_1dd6c1eff7402905",
-            ":dawn_9d7389ed01b1ee62",
+            ":dawn_9d7389ed01b1ee62"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -752,18 +752,18 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//third_party/dawn/src/utils:utils": {
         "name": "dawn_2dd79afa6687bfd8",
         "kind": "static_library",
         "srcs": [
-            "@chromium_dawn//:third_party/dawn/src/utils/placeholder.cc",
+            "@chromium_dawn//:third_party/dawn/src/utils/placeholder.cc"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/src/utils/compiler.h",
-            "@chromium_dawn//:third_party/dawn/src/utils/numeric.h",
+            "@chromium_dawn//:third_party/dawn/src/utils/numeric.h"
         ],
         "copts": [
             "/W4",
@@ -843,7 +843,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -874,12 +874,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -894,9 +894,9 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
-    },
+            "/OPT:ICF"
+        ]
+    }
 }
 
 SHARED_HEADERS = []
@@ -1016,21 +1016,21 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
             "gen/third_party/dawn/include/dawn/webgpu_cpp.h": "gen/third_party/dawn/include/dawn/webgpu_cpp.h",
             "gen/third_party/dawn/include/dawn/webgpu_cpp_print.h": "gen/third_party/dawn/include/dawn/webgpu_cpp_print.h",
             "gen/third_party/dawn/include/webgpu/webgpu_cpp_chained_struct.h": "gen/third_party/dawn/include/webgpu/webgpu_cpp_chained_struct.h",
             "gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp.h": "gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp.h",
-            "gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp_print.h": "gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp_print.h",
+            "gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp_print.h": "gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp_print.h"
         },
         "script": "third_party/dawn/generator/extract_json.py",
         "args": [
             "gen/third_party/dawn/cpp_headers_gen.json_tarball",
-            "gen/third_party/dawn",
+            "gen/third_party/dawn"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -1149,10 +1149,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/cpp_headers_gen.json_tarball": "gen/third_party/dawn/cpp_headers_gen.json_tarball",
+            "gen/third_party/dawn/cpp_headers_gen.json_tarball": "gen/third_party/dawn/cpp_headers_gen.json_tarball"
         },
         "script": "third_party/dawn/generator/dawn_json_generator.py",
         "args": [
@@ -1173,9 +1173,9 @@ ACTIONS = [
             "--depfile",
             "gen/third_party/dawn/cpp_headers_gen.json_tarball.d",
             "--expected-outputs-file",
-            "gen/third_party/dawn/cpp_headers_gen.expected_outputs",
+            "gen/third_party/dawn/cpp_headers_gen.expected_outputs"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -1291,19 +1291,19 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
             "gen/third_party/dawn/include/dawn/dawn_proc_table.h": "gen/third_party/dawn/include/dawn/dawn_proc_table.h",
             "gen/third_party/dawn/include/dawn/webgpu.h": "gen/third_party/dawn/include/dawn/webgpu.h",
-            "gen/third_party/dawn/include/dawn/wire/client/webgpu.h": "gen/third_party/dawn/include/dawn/wire/client/webgpu.h",
+            "gen/third_party/dawn/include/dawn/wire/client/webgpu.h": "gen/third_party/dawn/include/dawn/wire/client/webgpu.h"
         },
         "script": "third_party/dawn/generator/extract_json.py",
         "args": [
             "gen/third_party/dawn/headers_gen.json_tarball",
-            "gen/third_party/dawn",
+            "gen/third_party/dawn"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -1422,10 +1422,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/headers_gen.json_tarball": "gen/third_party/dawn/headers_gen.json_tarball",
+            "gen/third_party/dawn/headers_gen.json_tarball": "gen/third_party/dawn/headers_gen.json_tarball"
         },
         "script": "third_party/dawn/generator/dawn_json_generator.py",
         "args": [
@@ -1446,9 +1446,9 @@ ACTIONS = [
             "--depfile",
             "gen/third_party/dawn/headers_gen.json_tarball.d",
             "--expected-outputs-file",
-            "gen/third_party/dawn/headers_gen.expected_outputs",
+            "gen/third_party/dawn/headers_gen.expected_outputs"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -1564,18 +1564,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
             "gen/third_party/dawn/src/dawn/common/GPUInfo_autogen.h": "gen/third_party/dawn/src/dawn/common/GPUInfo_autogen.h",
-            "gen/third_party/dawn/src/dawn/common/GPUInfo_autogen.cpp": "gen/third_party/dawn/src/dawn/common/GPUInfo_autogen.cpp",
+            "gen/third_party/dawn/src/dawn/common/GPUInfo_autogen.cpp": "gen/third_party/dawn/src/dawn/common/GPUInfo_autogen.cpp"
         },
         "script": "third_party/dawn/generator/extract_json.py",
         "args": [
             "gen/third_party/dawn/dawn_gpu_info_gen.json_tarball",
-            "gen/third_party/dawn",
+            "gen/third_party/dawn"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -1692,10 +1692,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/dawn_gpu_info_gen.json_tarball": "gen/third_party/dawn/dawn_gpu_info_gen.json_tarball",
+            "gen/third_party/dawn/dawn_gpu_info_gen.json_tarball": "gen/third_party/dawn/dawn_gpu_info_gen.json_tarball"
         },
         "script": "third_party/dawn/generator/dawn_gpu_info_generator.py",
         "args": [
@@ -1710,9 +1710,9 @@ ACTIONS = [
             "--depfile",
             "gen/third_party/dawn/dawn_gpu_info_gen.json_tarball.d",
             "--expected-outputs-file",
-            "gen/third_party/dawn/dawn_gpu_info_gen.expected_outputs",
+            "gen/third_party/dawn/dawn_gpu_info_gen.expected_outputs"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -1828,17 +1828,17 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/src/dawn/common/Version_autogen.h": "gen/third_party/dawn/src/dawn/common/Version_autogen.h",
+            "gen/third_party/dawn/src/dawn/common/Version_autogen.h": "gen/third_party/dawn/src/dawn/common/Version_autogen.h"
         },
         "script": "third_party/dawn/generator/extract_json.py",
         "args": [
             "gen/third_party/dawn/dawn_version_gen.json_tarball",
-            "gen/third_party/dawn",
+            "gen/third_party/dawn"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -1955,10 +1955,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/dawn_version_gen.json_tarball": "gen/third_party/dawn/dawn_version_gen.json_tarball",
+            "gen/third_party/dawn/dawn_version_gen.json_tarball": "gen/third_party/dawn/dawn_version_gen.json_tarball"
         },
         "script": "third_party/dawn/generator/dawn_version_generator.py",
         "args": [
@@ -1975,9 +1975,9 @@ ACTIONS = [
             "--depfile",
             "gen/third_party/dawn/dawn_version_gen.json_tarball.d",
             "--expected-outputs-file",
-            "gen/third_party/dawn/dawn_version_gen.expected_outputs",
+            "gen/third_party/dawn/dawn_version_gen.expected_outputs"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -2093,18 +2093,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
             "gen/third_party/dawn/src/dawn/dawn_proc.cpp": "gen/third_party/dawn/src/dawn/dawn_proc.cpp",
-            "gen/third_party/dawn/src/dawn/dawn_thread_dispatch_proc.cpp": "gen/third_party/dawn/src/dawn/dawn_thread_dispatch_proc.cpp",
+            "gen/third_party/dawn/src/dawn/dawn_thread_dispatch_proc.cpp": "gen/third_party/dawn/src/dawn/dawn_thread_dispatch_proc.cpp"
         },
         "script": "third_party/dawn/generator/extract_json.py",
         "args": [
             "gen/third_party/dawn/proc_gen.json_tarball",
-            "gen/third_party/dawn",
+            "gen/third_party/dawn"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -2223,10 +2223,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/proc_gen.json_tarball": "gen/third_party/dawn/proc_gen.json_tarball",
+            "gen/third_party/dawn/proc_gen.json_tarball": "gen/third_party/dawn/proc_gen.json_tarball"
         },
         "script": "third_party/dawn/generator/dawn_json_generator.py",
         "args": [
@@ -2247,10 +2247,10 @@ ACTIONS = [
             "--depfile",
             "gen/third_party/dawn/proc_gen.json_tarball.d",
             "--expected-outputs-file",
-            "gen/third_party/dawn/proc_gen.expected_outputs",
+            "gen/third_party/dawn/proc_gen.expected_outputs"
         ],
-        "deps": [],
-    },
+        "deps": []
+    }
 ]
 
 TOOLS = {}
@@ -2261,5 +2261,5 @@ METADATA = {
     "gen/third_party/dawn/headers_gen.expected_outputs": "include/dawn/dawn_proc_table.h\ninclude/dawn/webgpu.h\ninclude/dawn/wire/client/webgpu.h\n",
     "gen/third_party/dawn/dawn_gpu_info_gen.expected_outputs": "src/dawn/common/GPUInfo_autogen.h\nsrc/dawn/common/GPUInfo_autogen.cpp\n",
     "gen/third_party/dawn/dawn_version_gen.expected_outputs": "src/dawn/common/Version_autogen.h\n",
-    "gen/third_party/dawn/proc_gen.expected_outputs": "src/dawn/dawn_proc.cpp\nsrc/dawn/dawn_thread_dispatch_proc.cpp\n",
+    "gen/third_party/dawn/proc_gen.expected_outputs": "src/dawn/dawn_proc.cpp\nsrc/dawn/dawn_thread_dispatch_proc.cpp\n"
 }

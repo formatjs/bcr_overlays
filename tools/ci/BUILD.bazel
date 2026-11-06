@@ -357,3 +357,113 @@ windows_arm64_browser(
     name = "base-windows-arm64",
     srcs = [":base_static_crt"],
 )
+
+cc_binary(
+    name = "darwin_v8_probe",
+    srcs = ["@v8//bcr_test:smoke_test.cc"],
+    copts = ["-std=c++20"],
+    local_defines = ["EXPECT_INTL"],
+    target_compatible_with = ["@platforms//os:macos"],
+    deps = [
+        "@chromium_darwin_arm64//native:browser_v8",
+        "@chromium_darwin_arm64//native:browser_v8_platform",
+    ],
+)
+
+darwin_arm64_browser(
+    name = "v8-darwin-arm64",
+    srcs = [
+        ":darwin_v8_probe",
+        "@chromium_darwin_arm64//native:browser_v8_runtime",
+    ],
+)
+
+cc_binary(
+    name = "windows_v8_probe",
+    srcs = ["@v8//bcr_test:smoke_test.cc"],
+    copts = [
+        "/std:c++20",
+        "/EHs-c-",
+    ],
+    local_defines = ["EXPECT_INTL"],
+    target_compatible_with = ["@platforms//os:windows"],
+    deps = select({
+        "@platforms//cpu:x86_64": [
+            "@chromium_windows_amd64//native:browser_v8",
+            "@chromium_windows_amd64//native:browser_v8_platform",
+        ],
+        "@platforms//cpu:aarch64": [
+            "@chromium_windows_arm64//native:browser_v8",
+            "@chromium_windows_arm64//native:browser_v8_platform",
+        ],
+    }),
+)
+
+msvc_static_crt(
+    name = "v8_static_crt",
+    srcs = [":windows_v8_probe"] + select({
+        "@platforms//cpu:x86_64": ["@chromium_windows_amd64//native:browser_v8_runtime"],
+        "@platforms//cpu:aarch64": ["@chromium_windows_arm64//native:browser_v8_runtime"],
+    }),
+)
+
+windows_amd64_browser(
+    name = "v8-windows-amd64",
+    srcs = [":v8_static_crt"],
+)
+
+windows_arm64_browser(
+    name = "v8-windows-arm64",
+    srcs = [":v8_static_crt"],
+)
+
+cc_binary(
+    name = "darwin_graphics_probe",
+    srcs = ["graphics_probe.cc"],
+    copts = ["-std=c++20"],
+    target_compatible_with = ["@platforms//os:macos"],
+    deps = ["@chromium_darwin_arm64//native:skia"],
+)
+
+darwin_arm64_browser(
+    name = "graphics-darwin-arm64",
+    srcs = [":darwin_graphics_probe"],
+)
+
+cc_binary(
+    name = "windows_graphics_probe",
+    srcs = ["graphics_probe.cc"],
+    copts = [
+        "/std:c++20",
+        "/EHs-c-",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+    deps = select({
+        "@platforms//cpu:x86_64": ["@chromium_windows_amd64//native:skia"],
+        "@platforms//cpu:aarch64": ["@chromium_windows_arm64//native:skia"],
+    }),
+)
+
+msvc_static_crt(
+    name = "graphics_static_crt",
+    srcs = [":windows_graphics_probe"],
+)
+
+windows_amd64_browser(
+    name = "graphics-windows-amd64",
+    srcs = [":graphics_static_crt"],
+)
+
+windows_arm64_browser(
+    name = "graphics-windows-arm64",
+    srcs = [":graphics_static_crt"],
+)
+
+cc_test(
+    name = "graphics_portability_test",
+    srcs = ["graphics_probe.cc"],
+    copts = ["-std=c++20"],
+    linkstatic = True,
+    target_compatible_with = ["@platforms//os:linux"],
+    deps = ["@chromium//native:skia"],
+)

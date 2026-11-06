@@ -63,6 +63,13 @@ def _dependencies_impl(ctx):
         type = "zip",
         build_file = Label("//build:windows_debuggers.BUILD.bazel"),
     )
+    http_archive(
+        name = "chromium_mig",
+        urls = ["https://chrome-infra-packages.appspot.com/dl/chromium/third_party/mig/linux-amd64/+/4wxov_ILjFdgBumBqgUgOgIcr4kcMh7i4b4oJi_cLjcC"],
+        sha256 = "e30c68bff20b8c576006e981aa05203a021caf891c321ee2e1be28262fdc2e37",
+        type = "zip",
+        build_file_content = "exports_files([\"migcom\"])\n",
+    )
     chromium_ffmpeg_sources()
     chromium_media_sources(ctx)
     chromium_compositor_sources(ctx)
@@ -142,7 +149,7 @@ def _dependencies_impl(ctx):
     )
     return ctx.extension_metadata(
         reproducible = True,
-        root_module_direct_deps = _OVERLAYS + ["chromium_darwin_arm64", "chromium_windows_amd64", "chromium_windows_arm64", "chromium_windows_debuggers", "chromium_linux_arm64", "chromium_platform_headers_arm64", "chromium_platform_headers_cross", "chromium_platform_runtime_arm64"] + ["chromium_platform_runtime", "chromium_catapult"] + ["chromium_openscreen", "chromium_pdfium", "chromium_readability"] + ["chromium_anonymous_tokens", "chromium_content_analysis_sdk", "chromium_dom_distiller_js", "chromium_ink", "chromium_ink_stroke_modeler", "chromium_libaddressinput", "chromium_xdg_utils"] + ["chromium_search_engines_data", "chromium_cld3", "chromium_emoji_segmenter", "chromium_ots", "chromium_material_color_utilities", "chromium_smhasher", "chromium_libphonenumber", "chromium_crabbyavif", "chromium_cros_system_api", "chromium_devtools_frontend", "chromium_devtools_esbuild", "chromium_xcomposite", "chromium_xtst", "chromium_webrtc", "chromium_libsrtp", "chromium_federated_compute", "chromium_cdm_api", "chromium_libgav1", "chromium_leveldatabase", "chromium_ffmpeg", "chromium_ruy", "chromium_eigen3", "chromium_gemmlowp", "chromium_farmhash", "chromium_neon_2_sse", "chromium_tflite", "chromium_xnnpack", "chromium_pthreadpool", "chromium_libyuv", "chromium_v8", "chromium_wayland_protocols", "chromium_kde_protocols", "chromium_protobuf_javascript", "chromium_vulkan_tools", "chromium_pciutils", "chromium_angle", "chromium_vma", "chromium_swiftshader", "chromium_vulkan_utility", "chromium_vulkan_validation", "chromium_vulkan_loader", "chromium_egl_registry", "chromium_opengl_registry", "chromium_libdrm", "chromium_libsync", "chromium_skia", "chromium_jpeg", "chromium_webp", "chromium_wuffs", "chromium_freetype", "chromium_harfbuzz", "chromium_fontconfig", "chromium_dawn", "chromium_quiche", "chromium_sqlite", "chromium_platform_headers"],
+        root_module_direct_deps = _OVERLAYS + ["chromium_darwin_arm64", "chromium_windows_amd64", "chromium_windows_arm64", "chromium_windows_debuggers", "chromium_mig", "chromium_linux_arm64", "chromium_platform_headers_arm64", "chromium_platform_headers_cross", "chromium_platform_runtime_arm64"] + ["chromium_platform_runtime", "chromium_catapult"] + ["chromium_openscreen", "chromium_pdfium", "chromium_readability"] + ["chromium_anonymous_tokens", "chromium_content_analysis_sdk", "chromium_dom_distiller_js", "chromium_ink", "chromium_ink_stroke_modeler", "chromium_libaddressinput", "chromium_xdg_utils"] + ["chromium_search_engines_data", "chromium_cld3", "chromium_emoji_segmenter", "chromium_ots", "chromium_material_color_utilities", "chromium_smhasher", "chromium_libphonenumber", "chromium_crabbyavif", "chromium_cros_system_api", "chromium_devtools_frontend", "chromium_devtools_esbuild", "chromium_xcomposite", "chromium_xtst", "chromium_webrtc", "chromium_libsrtp", "chromium_federated_compute", "chromium_cdm_api", "chromium_libgav1", "chromium_leveldatabase", "chromium_ffmpeg", "chromium_ruy", "chromium_eigen3", "chromium_gemmlowp", "chromium_farmhash", "chromium_neon_2_sse", "chromium_tflite", "chromium_xnnpack", "chromium_pthreadpool", "chromium_libyuv", "chromium_v8", "chromium_wayland_protocols", "chromium_kde_protocols", "chromium_protobuf_javascript", "chromium_vulkan_tools", "chromium_pciutils", "chromium_angle", "chromium_vma", "chromium_swiftshader", "chromium_vulkan_utility", "chromium_vulkan_validation", "chromium_vulkan_loader", "chromium_egl_registry", "chromium_opengl_registry", "chromium_libdrm", "chromium_libsync", "chromium_skia", "chromium_jpeg", "chromium_webp", "chromium_wuffs", "chromium_freetype", "chromium_harfbuzz", "chromium_fontconfig", "chromium_dawn", "chromium_quiche", "chromium_sqlite", "chromium_platform_headers"],
         root_module_direct_dev_deps = [],
     )
 

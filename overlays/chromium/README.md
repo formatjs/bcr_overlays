@@ -208,20 +208,23 @@ and Windows MSVC amd64/arm64, then runs the native Linux probe. The font-outline
 and PNG runtime test also passes with this compiler. These probes do not establish
 full browser ports; their platform-specific graphs remain unfinished.
 
-Windows MSVC amd64/arm64 also cross-link a Chromium base executable. Darwin
-arm64 cross-links base and crypto, retaining their Objective-C++ sources and ARC
-flags. Native CI runs JSON, temporary-file and thread smoke checks on these
-executables. Full browser ports remain in progress.
+Darwin arm64 and Windows MSVC amd64/arm64 cross-link base, IPC, TCP sockets,
+V8 and Skia rendering probes. V8 bundles its target snapshot and ICU data.
+Rendering smoke draws shapes, encodes PNG with Rust, decodes it and checks every
+pixel. Native runners exercise these artifacts and upload the PNG. These are
+component checks; full browser ports remain in progress.
 
-Regenerate these platform base profiles without changing the Linux overlay:
+Regenerate platform profiles without changing the Linux overlay:
 
 ```sh
 python3 overlays/chromium/tools/import_platform_base.py \
-  --variant darwin_arm64 --source-root /path/to/chromium
+  --variant darwin_arm64 --source-root /path/to/chromium --desktop
 ```
 
-Use `windows_amd64` or `windows_arm64` for the Windows profiles. The Darwin
-profile also captures crypto sources and framework dependencies.
+Use `windows_amd64` or `windows_arm64` for Windows. `--desktop` includes V8,
+geometry, fonts, codecs, Dawn, Skia, paint and gfx. Darwin retains Objective-C++
+ARC flags and generates Crashpad interfaces with pinned Clang and MIG tools.
+Windows uses MSVC, `llvm-ml` for MASM and `llvm-nasm` for NASM.
 
 ARM64 host generators reuse native graphics libraries only when captured sources,
 compiler/linker flags, outputs and dependencies match the Linux AMD64 graph.

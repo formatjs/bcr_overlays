@@ -4,6 +4,15 @@ load("@rules_cc//cc:find_cc_toolchain.bzl", "find_cpp_toolchain")
 load("@rules_cc//cc/common:cc_common.bzl", "cc_common")
 load("@rules_cc//cc/common:cc_info.bzl", "CcInfo")
 
+def _tokenized_defines(ctx, values):
+    result = []
+    for value in values:
+        tokens = ctx.tokenize(ctx.expand_make_variables("defines", value, {}))
+        if len(tokens) != 1:
+            fail("define must expand to one token: %s" % value)
+        result.append(tokens[0])
+    return result
+
 def _objcxx_library_impl(ctx):
     toolchain = find_cpp_toolchain(ctx)
     features = cc_common.configure_features(
@@ -22,8 +31,8 @@ def _objcxx_library_impl(ctx):
         public_hdrs = ctx.files.hdrs,
         compilation_contexts = [dep[CcInfo].compilation_context for dep in ctx.attr.deps],
         user_compile_flags = ctx.attr.copts,
-        defines = ctx.attr.defines,
-        local_defines = ctx.attr.local_defines,
+        defines = _tokenized_defines(ctx, ctx.attr.defines),
+        local_defines = _tokenized_defines(ctx, ctx.attr.local_defines),
     )
     linking_context, linking_outputs = cc_common.create_linking_context_from_compilation_outputs(
         actions = ctx.actions,

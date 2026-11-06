@@ -3,6 +3,7 @@
 load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":browser_v8_sources.bzl", "ACTIONS", "LIBRARIES", "PUBLIC_DEFINES", "SHARED_HEADERS", "TOOLS")
+load(":masm.bzl", "chromium_masm")
 load(":python_action.bzl", "chromium_python_action")
 load(":tool_inputs.bzl", "chromium_tool_inputs")
 
@@ -20,6 +21,12 @@ def native_browser_v8():
     for original, library in LIBRARIES.items():
         c_sources = [p for p in library["srcs"] if p.endswith(".c")]
         asm_sources = [p for p in library["srcs"] if (p.endswith(".s") or p.endswith(".S"))]
+        masm_sources = [p for p in library["srcs"] if p.endswith(".asm")]
+        masm_objects = []
+        for index, source in enumerate(masm_sources):
+            target = library["name"] + "_masm_" + str(index)
+            chromium_masm(name = target, src = source)
+            masm_objects.append(":" + target)
         common = dict(
             hdrs = library["hdrs"],
             includes = library["includes"],
@@ -60,7 +67,7 @@ def native_browser_v8():
         else:
             cc_library(
                 name = library["name"],
-                srcs = [p for p in library["srcs"] if p not in c_sources and p not in asm_sources],
+                srcs = [p for p in library["srcs"] if p not in c_sources and p not in asm_sources and p not in masm_sources] + masm_objects,
                 copts = library["copts"],
                 **common
             )

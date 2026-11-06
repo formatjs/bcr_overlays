@@ -30,12 +30,14 @@ def run(manifest):
             destination = logical_path(root, logical)
             destination.parent.mkdir(parents=True, exist_ok=True)
             if logical in manifest.get('executable_inputs', manifest.get('symlink_inputs', [])):
-                executable = str((execution_root / actual).resolve())
-                # Startup data lookup must use the physical tool directory.
+                executable = str(execution_root / actual)
+                # Preserve the tool directory and multicall executable name.
                 destination.write_text(
                     '#!' + sys.executable + ' -I\nimport os, sys\n'
                     'os.execv(' + repr(executable) + ', [' + repr(executable) + '] + sys.argv[1:])\n')
                 destination.chmod(0o755)
+            elif (execution_root / actual).is_dir():
+                destination.symlink_to((execution_root / actual).resolve(), target_is_directory=True)
             else:
                 shutil.copy2(execution_root / actual, destination)
         build = logical_path(root, manifest['build_dir'])

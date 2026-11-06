@@ -38,6 +38,30 @@ pathlib.Path('gen/second.txt').write_text(arguments[0])
             self.assertEqual((root / 'first.txt').read_text(), 'declared import')
             self.assertEqual((root / 'second.txt').read_text(), 'LABEL="contains spaces"')
 
+    def test_preserves_multicall_tool_name(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'llvm').write_text(
+                '#!' + sys.executable + '\nimport pathlib, sys\n'
+                'pathlib.Path(sys.argv[1]).write_text(pathlib.Path(sys.argv[0]).name)\n')
+            (root / 'llvm').chmod(0o755)
+            (root / 'clang').symlink_to('llvm')
+            (root / 'generator.py').write_text(
+                'import subprocess\n'
+                'subprocess.run(["../../tools/clang", "gen/tool.txt"], check=True)\n')
+            manifest = {
+                'inputs': [['generator.py', 'scripts/generator.py'], ['clang', 'tools/clang']],
+                'executable_inputs': ['tools/clang'],
+                'outputs': [['tool.txt', 'gen/tool.txt']],
+                'build_dir': 'out/import', 'script': 'scripts/generator.py',
+                'args': [], 'response_file_contents': [],
+            }
+            (root / 'manifest.json').write_text(json.dumps(manifest))
+            result = subprocess.run([sys.executable, str(RUNNER), 'manifest.json'],
+                                    cwd=root, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual((root / 'tool.txt').read_text(), 'clang')
+
     def test_rejects_output_path_escape(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

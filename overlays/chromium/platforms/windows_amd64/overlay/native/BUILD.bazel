@@ -2,18 +2,27 @@ load("@ipcz//bazel:ipcz.bzl", "ipcz_library")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":base.bzl", "native_base")
 load(":base_sources.bzl", "COPTS")
+load(":browser_v8.bzl", "native_browser_v8")
 load(":buildflags.bzl", "native_buildflags")
+load(":codecs.bzl", "native_codecs")
 load(":crypto.bzl", "native_crypto")
 load(":cxx_bridge.bzl", "chromium_cxx_bridge", "native_cxx_tools")
+load(":dawn.bzl", "native_dawn")
+load(":fonts.bzl", "native_fonts")
 load(":generated_files.bzl", "captured_generated_files")
+load(":geometry.bzl", "native_geometry")
+load(":gfx.bzl", "native_gfx")
 load(":grit_actions.bzl", "native_grit")
 load(":mojo_actions.bzl", "native_mojo_bindings")
 load(":mojo_runtime.bzl", "native_mojo_runtime")
 load(":network.bzl", "native_network")
+load(":paint.bzl", "native_paint")
 load(":perfetto_proto.bzl", "native_perfetto_proto")
 load(":perfetto_runtime.bzl", "native_perfetto_runtime")
 load(":proto_actions.bzl", "native_variations_proto")
 load(":quiche.bzl", "native_quiche")
+load(":resource_copy.bzl", "chromium_resource_copy")
+load(":skia.bzl", "native_skia")
 load(":sqlite.bzl", "native_sqlite")
 load(":url.bzl", "native_url")
 
@@ -89,3 +98,25 @@ native_quiche()
 native_network()
 
 native_grit(name = "grit_resources")
+
+chromium_resource_copy(
+    name = "v8_icu_data",
+    srcs = {"@chromium_icu//:common/icudtl.dat": "third_party/icu/common/icudtl.dat"},
+    outputs = {"icudtl.dat": "third_party/icu/common/icudtl.dat"},
+)
+
+native_browser_v8()
+
+native_geometry()
+
+native_fonts()
+
+native_codecs()
+
+native_dawn()
+
+native_skia()
+
+native_paint()
+
+native_gfx()

@@ -309,7 +309,8 @@ def main():
     if layer == 'gfx':
         prefixes = ('//ui/gfx', '//ui/base:', '//third_party/libdrm:',
                     '//build/config/linux/libdrm:', '//third_party/libsync:',
-                    '//third_party/zlib/google:')
+                    '//third_party/zlib/google:', '//components/viz/common:shared_image_format',
+                    '//services/viz/public/mojom:singleplanar_format', '//components/crash/core/common:')
         roots = ['//ui/gfx:gfx']
     if layer == 'tint':
         prefixes = ('//third_party/dawn/',)
@@ -368,7 +369,8 @@ def main():
                     '//third_party/blink/public/common:common_export', '//url/ipc:', '//ui/base/clipboard:')
         roots = ['//gpu/command_buffer/service:gles2']
     if layer == 'browser_v8':
-        prefixes = ('//v8:', '//v8/src/inspector:', '//v8/third_party/inspector_protocol:')
+        prefixes = ('//v8:', '//v8/src/inspector:', '//v8/third_party/inspector_protocol:',
+                    '//third_party/zlib/google:')
         roots = ['//v8:v8']
     if layer == 'media':
         prefixes = ('//media:', '//media/', '//components/leveldb_proto', '//components/pref_registry:', '//third_party/ffmpeg:ffmpeg_features', '//components/keyed_service/core:', '//components/services/storage/public/', '//third_party/libgav1:', '//third_party/leveldatabase:', '//third_party/widevine/cdm:', '//ui/events:keyboard_hook')
@@ -434,10 +436,21 @@ def main():
             '//third_party/icu:icuuc_public',
         ]})
     reused.update({
+        '//ipc:message_support': ':mojo_ipc_messages',
         '//mojo/public/cpp/bindings:bindings': ':mojo_cpp_bindings',
         '//mojo/public/cpp/bindings:struct_traits': ':mojo_cpp_bindings',
         '//mojo/public/interfaces/bindings:bindings_headers': ':mojo_binding_headers',
     })
+    if layer == 'gfx':
+        reused['//third_party/angle:includes'] = '@chromium_angle//:headers'
+        v8_catalog = ROOT / 'bcr/overlay/native/browser_v8_sources.bzl'
+        if v8_catalog.is_file():
+            tree = ast.parse(v8_catalog.read_text())
+            records = next(ast.literal_eval(node.value) for node in tree.body
+                           if isinstance(node, ast.Assign) and node.targets[0].id == 'LIBRARIES')
+            portable = '//third_party/zlib/google:compression_utils_portable'
+            if portable in records:
+                reused[portable] = ':' + records[portable]['name']
     if layer == 'geometry':
         # Share the full Chromium Skia provider.
         reused['//skia:skia'] = ':skia'
@@ -485,7 +498,10 @@ def main():
             if layer in ('blink_core', 'blink_modules', 'content', 'browser'):
                 previous_layers += ['blink_platform'] + (['blink_core', 'blink_modules', 'content'] if layer == 'browser' else ['blink_core', 'blink_modules'] if layer == 'content' else ['blink_core'] if layer == 'blink_modules' else [])
         for previous in ['network', 'geometry', 'dawn', 'fonts', 'codecs', 'skia'] + (previous_layers if previous_layers is not None else ['paint', 'gfx', 'tint', 'dawn_native', 'vulkan_loader', 'vulkan_validation', 'swiftshader', 'angle_runtime', 'vulkan_tools', 'gpu_protocol', 'x11', 'linux_buffers', 'browser_services', 'linux_ui', 'ozone', 'gpu_service'] if layer == 'browser_v8' else ['paint', 'gfx', 'tint', 'dawn_native', 'vulkan_loader', 'vulkan_validation', 'swiftshader', 'angle_runtime', 'vulkan_tools', 'gpu_protocol', 'x11', 'linux_buffers', 'browser_services', 'linux_ui', 'ozone'] if layer == 'gpu_service' else ['paint', 'gfx', 'angle_runtime', 'gpu_protocol', 'x11', 'linux_buffers', 'browser_services', 'linux_ui'] if layer == 'ozone' else ['paint', 'gfx', 'angle_runtime', 'gpu_protocol', 'x11', 'linux_buffers', 'browser_services'] if layer == 'linux_ui' else ['paint', 'gfx', 'angle_runtime', 'gpu_protocol', 'x11', 'linux_buffers'] if layer == 'browser_services' else ['paint', 'gfx', 'angle_runtime', 'gpu_protocol', 'x11'] if layer == 'linux_buffers' else ['paint', 'gfx', 'angle_runtime', 'gpu_protocol'] if layer == 'x11' else ['paint', 'gfx', 'angle_runtime'] if layer == 'gpu_protocol' else ['paint', 'gfx', 'tint'] if layer == 'dawn_native' else ['paint', 'gfx'] if layer == 'tint' else ['paint'] if layer == 'gfx' else []):
-            tree = ast.parse((ROOT / ('bcr/overlay/native/' + previous + '_sources.bzl')).read_text())
+            previous_sources = ROOT / ('bcr/overlay/native/' + previous + '_sources.bzl')
+            if not previous_sources.is_file():
+                continue
+            tree = ast.parse(previous_sources.read_text())
             libraries = next(ast.literal_eval(node.value) for node in tree.body
                              if isinstance(node, ast.Assign) and node.targets[0].id == 'LIBRARIES')
             reused.update({label: ':' + library['name'] for label, library in libraries.items()})
@@ -706,11 +722,21 @@ def main():
         'third_party/content_analysis_sdk/src/': '@chromium_content_analysis_sdk//:',
         'third_party/anonymous_tokens/src/': '@chromium_anonymous_tokens//:',
     }
-    mojo_targets = json.loads((ROOT / 'native/mojo_targets.json').read_text())
+    mojo_catalog = ROOT / 'native/mojo_targets.json'
+    mojo_targets = json.loads(mojo_catalog.read_text()) if mojo_catalog.exists() else {}
     def name(label):
         return layer + '_' + hashlib.sha256(label.encode()).hexdigest()[:16]
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     targets = graph['targets']
+    if layer == 'fonts' and '//third_party/fontconfig:fontconfig' not in targets:
+        roots.remove('//third_party/fontconfig:fontconfig')
+    for label in ['//build/config/mac:sdk_inputs', '//build/win:runtime_libs']:
+        if label not in targets:
+            continue
+        target = targets[label]
+        if target['type'] != 'group' or any(target.get(key) for key in ('deps', 'sources', 'outputs', 'data_deps', 'data', 'inputs')):
+            raise ValueError('Toolchain inputs need an explicit provider: ' + label)
+        extra_provided.add(label)
     flag_hashes = set(re.findall(r'name = "flags_([0-9a-f]{16})"',
                                 (ROOT / 'bcr/overlay/native/buildflags.bzl').read_text()))
     for label in targets:
@@ -926,8 +952,8 @@ def main():
         public = target.get('public', [])
         paths = target.get('sources', []) + (public if isinstance(public, list) else [])
         scan_sources.update(p for p in paths if not p.startswith(BUILD) and not p[2:].startswith(QUICHE)
-                            and p.endswith(('.cc', '.c', '.cpp', '.cxx', '.mm', '.h', '.hh', '.hpp', '.hxx', '.inl', '.inc', '.S', '.s')))
-        sources = [file_label(p) for p in target.get('sources', []) if p.endswith(('.cc', '.c', '.cpp', '.cxx', '.S', '.s')) or (layer in ('codecs', 'ffmpeg') and p.endswith('.o'))]
+                            and p.endswith(('.cc', '.c', '.cpp', '.cxx', '.mm', '.h', '.hh', '.hpp', '.hxx', '.inl', '.inc', '.S', '.s', '.asm')))
+        sources = [file_label(p) for p in target.get('sources', []) if p.endswith(('.cc', '.c', '.cpp', '.cxx', '.S', '.s')) or (layer in ('browser_v8', 'paint') and p.endswith('.asm')) or (layer in ('codecs', 'ffmpeg') and p.endswith('.o'))]
         objcxx_sources = [file_label(p) for p in target.get('sources', []) if p.endswith('.mm')]
         # Vulkan's native BCR provider owns these public dependency headers.
         if layer == 'vulkan_validation':
@@ -1035,7 +1061,7 @@ def main():
             else:
                 if '/' in library or library.startswith('-'):
                     raise ValueError('unmapped native link input: ' + library)
-                linkopts.append('-DEFAULTLIB:' + library if msvc else '-l' + library)
+                linkopts.append('-DEFAULTLIB:' + library if msvc or library.lower().endswith('.lib') else '-l' + library)
         # LLVM owns compiler/runtime paths; retain captured linker hardening.
         linker_flags = iter(unpack(target.get('ldflags', [])))
         for option in linker_flags:
@@ -1200,7 +1226,7 @@ def main():
         own = ('third_party/pthreadpool/',)
     if layer == 'browser_v8':
         forwarders = {'third_party/googletest/src/googletest/include/gtest/gtest_prod.h': 'gtest/gtest_prod.h'}
-        own = ('v8/',)
+        own = ('v8/', 'third_party/zlib/google/')
     if layer == 'gpu_service':
         forwarders = {}
         for header in [args.source_root / 'gpu/gpu_export.h'] + sorted(
@@ -1260,7 +1286,7 @@ def main():
         own = ('third_party/dawn/',)
     if layer == 'gfx':
         forwarders = {}
-        own = ('ui/gfx/', 'ui/base/resource/', 'third_party/libdrm/',
+        own = ('ui/gfx/', 'ui/base/resource/', 'components/viz/common/', 'components/crash/core/common/', 'third_party/libdrm/',
                'third_party/libsync/', 'third_party/zlib/google/')
     if layer == 'paint':
         forwarders = {}
@@ -1485,6 +1511,13 @@ def main():
         if target['type'] == 'action_foreach':
             instances = [(source, [BUILD + p for p in outputs])
                          for source, outputs in target['source_outputs'].items()]
+        mig = target['script'] == '//third_party/crashpad/crashpad/util/mach/mig.py'
+        if mig:
+            sources = {Path(path).name: path for path in target['sources']}
+            if len(sources) != len(target['sources']):
+                raise ValueError('ambiguous MIG source names: ' + label)
+            instances = [(sources[Path(source).name].replace('$MACOS_SDK_ROOT/', '//third_party/macos_sdk/'), outputs)
+                         for source, outputs in instances]
         for index, (source, outputs) in enumerate(instances):
             inputs = set(target.get('inputs', []) + target.get('sources', []) + [target['script']])
             if target['script'] == '//ui/webui/resources/tools/bundle_js.py':
@@ -1736,7 +1769,11 @@ def main():
                 tool_name = 'nasm_tool' if layer == 'codecs' else layer + '_nasm_tool'
                 tools[tool_name] = dict(tool='@nasm//:nasm', logical_path=BUILD[2:]+'nasm')
                 deps.append(':' + tool_name)
+            if mig:
+                deps.append(':mac_mig_inputs')
             for path in sorted(inputs):
+                if mig and path.startswith('$MACOS_SDK_ROOT/'):
+                    continue
                 if path == '//third_party/node/linux/node-linux-x64/bin/node':
                     deps.append(':webui_node_inputs')
                     continue
@@ -1755,6 +1792,9 @@ def main():
                     continue
                 files[file_label(path)] = path[2:]
             arguments = [p.replace('$SOURCE_ROOT/out/bazel-import/', '') for p in target.get('args', [])]
+            if mig:
+                arguments = [argument.replace('$LLVM_ROOT', '../../third_party/llvm-build/Release+Asserts')
+                             .replace('$MACOS_SDK_ROOT', '../../third_party/macos_sdk') for argument in arguments]
             if layer in ('blink_core', 'blink_modules', 'content', 'browser') and target['script'].endswith('/run_with_pythonpath.py'):
                 for directory in ['../../third_party/blink/renderer/build/scripts',
                                   '../../third_party', '../../third_party/pyjson5/src', '../../tools']:
@@ -1885,7 +1925,7 @@ def main():
     print(len(libraries), 'native libraries/tools;', len(records), 'generator actions;',
           sum(sum(p.endswith(('.c', '.cc', '.cpp', '.cxx')) for p in v['srcs']) for v in libraries.values()), 'C/C++ units')
     if layer == 'paint':
-        print(sum(sum(p.endswith(('.S', '.s')) for p in v['srcs']) for v in libraries.values()), 'assembler sources')
+        print(sum(sum(p.endswith(('.S', '.s', '.asm')) for p in v['srcs']) for v in libraries.values()), 'assembler sources')
     if layer == 'codecs':
         print(sum(sum(p.endswith('.o') for p in v['srcs']) for v in libraries.values()), 'assembler objects')
 

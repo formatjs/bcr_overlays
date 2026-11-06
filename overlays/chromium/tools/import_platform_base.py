@@ -29,7 +29,13 @@ def main():
     parser.add_argument('--output', type=Path, help='Write metadata to this directory instead of the maintained profile')
     parser.add_argument('--ipc', action='store_true', help='Also import Mojo runtime, bindings and URL traits')
     parser.add_argument('--network', action='store_true', help='Also import the network closure and its support libraries')
+    parser.add_argument('--v8', action='store_true', help='Also import V8, Temporal and its platform prerequisites')
+    parser.add_argument('--graphics', action='store_true', help='Also import geometry, fonts, codecs, Dawn and Skia')
+    parser.add_argument('--desktop', action='store_true', help='Also import paint, Crashpad and gfx')
     args = parser.parse_args()
+    args.graphics = args.graphics or args.desktop
+    args.v8 = args.v8 or args.graphics
+    args.network = args.network or args.v8
     args.ipc = args.ipc or args.network
     source = args.source_root.resolve()
     graph = ROOT / 'native' / (args.variant + '.json.gz')
@@ -39,6 +45,11 @@ def main():
         overlay = stage / 'bcr/overlay'
         shutil.copytree(ROOT / 'tools', stage / 'tools', ignore=shutil.ignore_patterns('__pycache__'))
         shutil.copy2(ROOT / 'MODULE.bazel', stage / 'MODULE.bazel')
+        if args.graphics:
+            for project in ['dawn', 'skia']:
+                sibling = stage.parent / project
+                sibling.mkdir()
+                shutil.copy2(ROOT.parent / project / 'upstream.json', sibling / 'upstream.json')
         (stage / 'native').mkdir()
         for path in (ROOT / 'bcr/overlay').rglob('BUILD.bazel'):
             target = overlay / path.relative_to(ROOT / 'bcr/overlay')
@@ -53,6 +64,11 @@ def main():
             ['import_rust_crates.py', str(graph), '--source-root', str(source),
              '--root', 'rust_logger', '--root', 'serde_json_wrapper', '--root', 'cxxbridge'],
         ]
+        if args.v8:
+            commands[-1].extend(['--root', 'temporal_capi'])
+        if args.graphics:
+            for crate in ['font_types', 'read_fonts', 'skrifa', 'png', 'skia_fontations', 'skia_png']:
+                commands[-1].extend(['--root', crate])
         if args.variant == 'darwin_arm64' or args.network:
             commands.append(['import_crypto.py', str(graph), '--source-root', str(source)])
         if args.ipc:
@@ -68,6 +84,14 @@ def main():
                 ['import_grit_actions.py', str(graph), '--source-root', str(source), '--root', '//net:net_resources_grit'],
                 ['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', 'network'],
             ])
+        if args.graphics:
+            for layer in ['geometry', 'fonts', 'codecs', 'dawn', 'skia']:
+                commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
+        if args.v8:
+            commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', 'browser_v8'])
+        if args.desktop:
+            for layer in ['paint', 'gfx']:
+                commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
         for command in commands:
             subprocess.run([sys.executable, str(stage / 'tools' / command[0]), *command[1:]], check=True)
         files = [
@@ -87,6 +111,20 @@ def main():
             files.extend(['native/grit_actions.bzl', 'native/grit_sources.bzl', 'native/grit_targets.json'])
             files.extend(str(path.relative_to(overlay)) for path in
                          sorted((overlay / 'native/network_forwarders').rglob('*')) if path.is_file())
+        if args.graphics:
+            for layer in ['geometry', 'fonts', 'codecs', 'dawn', 'skia']:
+                files.append('native/' + layer + '_sources.bzl')
+                files.extend(str(path.relative_to(overlay)) for path in
+                             sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())
+        if args.desktop:
+            for layer in ['paint', 'gfx']:
+                files.append('native/' + layer + '_sources.bzl')
+                files.extend(str(path.relative_to(overlay)) for path in
+                             sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())
+        if args.v8:
+            files.append('native/browser_v8_sources.bzl')
+            files.extend(str(path.relative_to(overlay)) for path in
+                         sorted((overlay / 'native/browser_v8_forwarders').rglob('*')) if path.is_file())
         if args.variant.startswith('windows_'):
             build = overlay / 'build/BUILD.bazel'
             build.write_text(build.read_text() + '\nexports_files(["precompile.h"])\n')

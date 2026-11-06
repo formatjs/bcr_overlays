@@ -12,7 +12,7 @@ frameworks, their symlink dependencies, and relocated Cryptex frameworks.
 `//tools/ci:allocator-darwin-arm64` cross-links a heap smoke executable on Linux.
 CI hands it to a native macOS ARM64 runner. `with_cfg` selects the target platform
 and macOS 12 deployment target for compiler, runtime, and linker consistency.
-Base, Mojo IPC, network, V8, Skia, ANGLE, Dawn, GL, GPU service, and media
+Base, Mojo IPC, network, V8, Skia, ANGLE, Dawn, GL, GPU service, media, compositor, and Blink platform
 cross-build with the same toolchain. `//tools/ci:gpu-darwin-arm64` links the GPU
 command-buffer smoke executable with adjacent EGL/GLES libraries for native CI.
 Full browser translation and app bundle packaging remain pending.

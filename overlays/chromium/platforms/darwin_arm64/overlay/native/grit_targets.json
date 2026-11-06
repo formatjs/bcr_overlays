@@ -1,7 +1,14 @@
 {
   "native": {
     "//components/metrics:server_urls_grd_grit": "grit_71671754a75ca40c",
+    "//device/bluetooth/strings:strings_grit": "grit_4234977e64917573",
+    "//device/fido/strings:strings_grit": "grit_b55469d529bedace",
     "//net:net_resources_grit": "grit_706a4afe1f8c58a4",
+    "//third_party/blink/public/strings:strings_grit": "grit_6f8a8133bb581c73",
+    "//third_party/blink/public:devtools_inspector_resources_grit": "grit_85da80c2ad498c6b",
+    "//third_party/blink/public:image_resources_grit": "grit_3bce58c81e8a8385",
+    "//third_party/blink/public:resources_grit": "grit_80a3393124fb4c6c",
+    "//ui/resources:ui_lottie_resources_grd_grit": "grit_1f57b9e78d822e36",
     "//ui/resources:ui_resources_grd_grit": "grit_90cb2b0e70543c2f",
     "//ui/resources:ui_unscaled_resources_grd_grit": "grit_c806c1b0abac4056",
     "//ui/strings:app_locale_settings_grit": "grit_7c8f32661303edfe",

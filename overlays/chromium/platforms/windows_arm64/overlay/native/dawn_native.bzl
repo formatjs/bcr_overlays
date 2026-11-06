@@ -118,9 +118,11 @@ def native_dawn_backend():
                 srcs = sources + headers,
                 copts = library["copts"] + include_options,
                 linkshared = True,
+                features = ["generate_pdb_file"],
                 win_def_file = "@chromium_dxc//:tools/clang/tools/dxcompiler/DXCompiler.def",
                 **common
             )
+            native.filegroup(name = "dxcompiler.dll.pdb", srcs = [":dxcompiler.dll"], output_group = "pdb_file")
             platform_cc_library(
                 name = library["name"],
                 data = [":dxcompiler.dll"],

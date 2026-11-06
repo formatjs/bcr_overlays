@@ -1,0 +1,19 @@
+package(default_visibility = ["//visibility:public"])
+
+filegroup(
+    name = "d3dcompiler_47",
+    srcs = select({
+        "@platforms//cpu:x86_64": ["Redist/D3D/x64/d3dcompiler_47.dll"],
+        "@platforms//cpu:aarch64": ["Redist/D3D/arm64/d3dcompiler_47.dll"],
+    }),
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+filegroup(
+    name = "dxil",
+    srcs = select({
+        "@platforms//cpu:x86_64": ["bin/10.0.26100.0/x64/dxil.dll"],
+        "@platforms//cpu:aarch64": ["bin/10.0.26100.0/arm64/dxil.dll"],
+    }),
+    target_compatible_with = ["@platforms//os:windows"],
+)

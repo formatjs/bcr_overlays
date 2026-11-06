@@ -177,6 +177,15 @@ def reuse_host_targets(targets, reused, provided, providers=None):
         reused[label] = dependency
 
 
+def browser_runtime_roots(graph):
+    """Add runtime libraries and Vulkan manifests; resources use the asset catalog."""
+    runtime_files = {path for path in graph.get('runtime_files', {}).get('//chrome:chrome', [])
+                     if path.endswith(('.dll', '.so', '.dylib', '_icd.json'))
+                     or path.startswith(BUILD + 'angledata/')}
+    return sorted(label for label, target in graph['targets'].items()
+                  if runtime_files.intersection(target.get('outputs', [])))
+
+
 @cache
 def native_library_providers(overlay):
     """Resolve GN identities across native and platform layer boundaries."""
@@ -879,6 +888,7 @@ def main():
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     targets = graph['targets']
     if layer == 'browser':
+        roots += browser_runtime_roots(graph)
         roots += [label for label, target in targets.items()
                   if target.get('script') == '//tools/grit/grit.py']
     interface_provider_sources = {
@@ -1029,6 +1039,10 @@ def main():
         if not path.startswith('//'):
             raise ValueError('not a Chromium input: ' + path)
         relative = path[2:]
+        if relative.startswith('build/win_toolchain/Windows Kits/10/'):
+            filename = Path(relative).name.lower()
+            if filename in ('d3dcompiler_47.dll', 'dxil.dll'):
+                return '@chromium_windows_sdk_runtime//:' + filename.removesuffix('.dll')
         if relative.startswith('third_party/node/node_modules/'):
             return '@chromium_node_modules//:node_modules/' + relative.removeprefix('third_party/node/node_modules/')
         if relative.startswith('third_party/perfetto/protos/'):

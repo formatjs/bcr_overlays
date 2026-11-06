@@ -95513,6 +95513,7 @@ exports_files([
     "third_party/crashpad/crashpad/client/simulate_crash_win.h",
     "third_party/crashpad/crashpad/client/upload_behavior_ios.h",
     "third_party/crashpad/crashpad/compat/win/getopt.h",
+    "third_party/crashpad/crashpad/compat/win/strings.h",
     "third_party/crashpad/crashpad/compat/win/sys/time.h",
     "third_party/crashpad/crashpad/compat/win/sys/types.h",
     "third_party/crashpad/crashpad/compat/win/time.h",

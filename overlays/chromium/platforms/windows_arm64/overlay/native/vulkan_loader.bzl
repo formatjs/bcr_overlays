@@ -39,10 +39,12 @@ def native_vulkan_loader():
         local_defines = library["defines"],
         linkopts = library["linkopts"],
         linkshared = True,
+        features = ["generate_pdb_file"],
         linkstatic = True,
         win_def_file = library["win_def_file"],
         deps = [":vulkan_loader_headers"] + resources,
     )
+    native.filegroup(name = "vulkan-1.dll.pdb", srcs = [":vulkan-1.dll"], output_group = "pdb_file")
     native.filegroup(name = "vulkan_import_library", srcs = [":vulkan-1.dll"], output_group = "interface_library")
     cc_import(name = library["name"], shared_library = ":vulkan-1.dll", interface_library = ":vulkan_import_library")
     native.alias(name = "vulkan_loader", actual = ":" + library["name"])

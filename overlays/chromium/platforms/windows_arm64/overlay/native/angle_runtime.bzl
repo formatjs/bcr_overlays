@@ -87,9 +87,11 @@ def native_angle_runtime():
                 srcs = sources + headers,
                 copts = library["copts"],
                 linkshared = True,
+                features = ["generate_pdb_file"],
                 win_def_file = library.get("win_def_file"),
                 **common
             )
+            native.filegroup(name = filename + ".pdb", srcs = [":" + filename], output_group = "pdb_file")
             native.filegroup(
                 name = filename + "_import_library",
                 srcs = [":" + filename],

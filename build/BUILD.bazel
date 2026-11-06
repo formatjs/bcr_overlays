@@ -1,6 +1,7 @@
 exports_files([
     "libvpx-rtcd-lf.patch",
     "libvpx-rtcd-config-features.patch",
+    "windows_sdk_runtime.BUILD.bazel",
     "libvpx-clang-cl-ssse3.patch",
     "vulkan-hpp-namespace.patch",
     "dav1d-private-headers.patch",

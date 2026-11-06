@@ -198,5 +198,7 @@ def native_browser():
         name = "browser_assets",
         srcs = [":blink_core_assets", ":blink_modules_assets", ":content_assets", ":devtools_inspector_assets"] + [":" + action["name"] for action in ACTIONS if action["script"] != "build/win/reorder-imports.py"] + [":" + copy["name"] for copy in COPIES] + [":" + group["name"] for group in ASSET_GROUPS],
     )
+    for dll in ["dbghelp", "dbgcore"]:
+        native.alias(name = dll + ".dll", actual = "@chromium_windows_debuggers//:" + dll)
     native.alias(name = "browser", actual = ":chrome.exe")
     chromium_runtime_bundle(name = "browser_bundle", srcs = {":" + path: path for path in RUNTIME_FILES})

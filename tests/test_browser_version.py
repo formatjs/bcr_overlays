@@ -1,7 +1,9 @@
 # SPDX-License-Identifier: MIT
 import ctypes
+from contextlib import nullcontext
 from pathlib import Path
 import struct
+import tempfile
 import unittest
 from unittest import mock
 
@@ -47,6 +49,19 @@ class WindowsBrowserVersionTest(unittest.TestCase):
         with mock.patch.object(ctypes, 'WinDLL', return_value=self.version_api(0), create=True):
             with self.assertRaisesRegex(ValueError, 'invalid Windows version resource'):
                 windows_version(Path('chrome.exe'))
+
+    def test_rendering_uses_windows_resource_version_before_launch(self):
+        from tools.ci import check_rendering
+        with tempfile.TemporaryDirectory() as directory, \
+                mock.patch('tools.ci.check_rendering.serve_page',
+                           return_value=nullcontext(('http://127.0.0.1/', set()))), \
+                mock.patch('overlays.chromium.tools.check_browser.sys.platform', 'win32'), \
+                mock.patch('overlays.chromium.tools.check_browser.windows_version',
+                           side_effect=OSError('missing PE version')), \
+                mock.patch('tools.ci.check_rendering.run',
+                           side_effect=AssertionError('unsupported Windows --version launch')):
+            with self.assertRaisesRegex(OSError, 'missing PE version'):
+                check_rendering.check(Path('chrome.exe'), Path(directory) / 'screenshots')
 
 
 if __name__ == '__main__':

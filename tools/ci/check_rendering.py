@@ -14,7 +14,7 @@ import urllib.request
 from PIL import Image, ImageChops, ImageStat
 import websocket
 
-from overlays.chromium.tools.check_browser import run, serve_page
+from overlays.chromium.tools.check_browser import browser_version, run, serve_page
 from tools.ci.chromium import CONFIGURATION
 
 
@@ -151,7 +151,7 @@ def check(browser, output, timeout=60, update_baselines=False, no_sandbox=False)
     with tempfile.TemporaryDirectory(prefix='chromium-rendering.') as temporary, \
             serve_page(FIXTURES) as (base, requested):
         directory = Path(temporary)
-        version = run(browser, ['--version'], environment, directory, timeout).strip()
+        version = browser_version(browser, environment, directory, timeout)
         if version != 'Chromium ' + CONFIGURATION['version']:
             raise ValueError('Unexpected rendering browser version: ' + version)
         report['browser'] = version

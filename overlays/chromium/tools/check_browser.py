@@ -13,6 +13,7 @@ from pathlib import Path
 import re
 import struct
 import subprocess
+import sys
 import tempfile
 import threading
 
@@ -94,6 +95,13 @@ def run(browser, arguments, environment, directory, timeout):
     return result.stdout
 
 
+def browser_version(browser, environment, directory, timeout):
+    # Windows Chromium does not implement --version.
+    if sys.platform == 'win32':
+        return windows_version(browser)
+    return run(browser, ['--version'], environment, directory, timeout).strip()
+
+
 @contextmanager
 def serve_page(directory):
     requested = set()
@@ -131,9 +139,7 @@ def main():
     environment.pop('LD_LIBRARY_PATH', None)
     with tempfile.TemporaryDirectory(prefix='chromium-browser-check.') as temporary:
         directory = Path(temporary)
-        # Windows Chromium does not implement --version.
-        version = (windows_version(browser) if os.name == 'nt' else
-                   run(browser, ['--version'], environment, directory, args.timeout).strip())
+        version = browser_version(browser, environment, directory, args.timeout)
         if not re.fullmatch(r'Chromium ' + re.escape(args.expected_version) + r'(?:\s.*)?', version):
             raise ValueError(f'unexpected browser version: {version!r}')
         (directory / 'page.html').write_text(

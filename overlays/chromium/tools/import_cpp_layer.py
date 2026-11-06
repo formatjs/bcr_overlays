@@ -975,7 +975,10 @@ def main():
                 '@vulkan_utility_libraries//:vulkan_safe_struct',
             ]
         if label.startswith('//third_party/swiftshader/'):
-            libraries[label]['deps'].append('@chromium_swiftshader//:headers')
+            libraries[label]['deps'].extend([
+                '@chromium_swiftshader//:headers',
+                '@spirv_tools//:chromium_headers',
+            ])
         if label.startswith('//third_party/spirv-tools/src:'):
             libraries[label]['deps'].append('@spirv_tools//:chromium_headers')
         if linker_inputs:

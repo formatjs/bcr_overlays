@@ -1170150,6 +1170150,7 @@ LIBRARIES = {
             ":browser_be5a65d202026b61",
             ":browser_ee3ff8cbeec1f3c5",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1170364,6 +1170365,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1170593,6 +1170595,7 @@ LIBRARIES = {
             ":browser_be5a65d202026b61",
             ":browser_ee3ff8cbeec1f3c5",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1170805,6 +1170808,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1171004,6 +1171008,7 @@ LIBRARIES = {
         "deps": [
             ":browser_62e425479bf461f0",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1171210,6 +1171215,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1171488,6 +1171494,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1171711,6 +1171718,7 @@ LIBRARIES = {
             ":browser_59f9cf068b2075c3",
             ":browser_f7adeff71058c677",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1171925,6 +1171933,7 @@ LIBRARIES = {
             ":browser_2e4f1a76c1758615",
             ":browser_f7adeff71058c677",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1172138,6 +1172147,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1172395,6 +1172405,7 @@ LIBRARIES = {
             ":browser_fb8e12b5ec23a45e",
             "@libffi//:libffi",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1172598,6 +1172609,7 @@ LIBRARIES = {
             ":browser_a1e1da01e0be3270",
             "@libffi//:libffi",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-ldl",
@@ -1172852,6 +1172864,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1173083,6 +1173096,7 @@ LIBRARIES = {
             "@libffi//:libffi",
             "@wayland//:wayland_client",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1173307,6 +1173321,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1173600,6 +1173615,7 @@ LIBRARIES = {
             ":browser_037a8968fc505689",
             ":browser_bfcbe084af2a359c",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1173818,6 +1173834,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1174278,6 +1174295,7 @@ LIBRARIES = {
             ":browser_037a8968fc505689",
             ":browser_05064d292a68431e",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1174545,6 +1174563,7 @@ LIBRARIES = {
             ":browser_037a8968fc505689",
             ":browser_05064d292a68431e",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1174758,6 +1174777,7 @@ LIBRARIES = {
         "deps": [
             ":browser_be5a65d202026b61",
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1174977,6 +1174997,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_swiftshader//:headers",
+            "@spirv_tools//:chromium_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",

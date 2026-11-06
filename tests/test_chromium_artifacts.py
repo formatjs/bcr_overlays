@@ -138,6 +138,28 @@ class ArtifactsTest(unittest.TestCase):
         with tarfile.open(fileobj=io.BytesIO(linked), mode='r:gz') as archive:
             self.assertTrue(all(not item.islnk() for item in archive))
 
+    def test_macos_framework_symlinks_survive_handoff(self):
+        target = PLATFORMS['darwin-arm64']
+        executable = self.bundle / target['executable']
+        executable.parent.mkdir(parents=True)
+        header = bytearray(64)
+        header[:4] = b'\xcf\xfa\xed\xfe'
+        struct.pack_into('<I', header, 4, 0x100000C)
+        executable.write_bytes(header)
+        framework = self.bundle / 'Chromium.app/Contents/Frameworks/Chromium Framework.framework'
+        version = framework / 'Versions/142'
+        version.mkdir(parents=True)
+        (version / 'Chromium Framework').write_bytes(b'framework payload')
+        (framework / 'Versions/Current').symlink_to('142')
+        (framework / 'Chromium Framework').symlink_to('Versions/Current/Chromium Framework')
+        archive = package(self.bundle, self.root / 'artifacts', target, REVISION)
+        with tarfile.open(archive, 'r:gz') as contents:
+            self.assertEqual(sum(member.issym() for member in contents), 2)
+        relocated = unpack(archive, self.root / 'relocated', target, REVISION)
+        installed = relocated / framework.relative_to(self.bundle)
+        self.assertEqual(os.readlink(installed / 'Versions/Current'), '142')
+        self.assertEqual((installed / 'Chromium Framework').read_bytes(), b'framework payload')
+
     def test_failed_or_remote_only_build_outputs_are_rejected(self):
         events = self.root / 'events.json'
         label = '//tools/ci:linux-amd64_archive'

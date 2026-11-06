@@ -20,11 +20,12 @@ def _runtime_bundle_impl(ctx):
             if logical in files and files[logical] != source:
                 fail("conflicting runtime path: " + logical)
             files[logical] = source
-    output = ctx.actions.declare_directory(ctx.label.name)
+    output = ctx.actions.declare_directory(ctx.attr.directory or ctx.label.name)
     manifest = ctx.actions.declare_file(ctx.label.name + ".runtime.json")
     ctx.actions.write(manifest, json.encode({
         "inputs": [[files[path].path, path] for path in sorted(files)],
         "output": output.path,
+        "symlinks": ctx.attr.symlinks,
     }))
     ctx.actions.run(
         executable = ctx.attr._python[platform_common.ToolchainInfo].py3_runtime.interpreter,
@@ -40,6 +41,8 @@ chromium_runtime_bundle = rule(
     implementation = _runtime_bundle_impl,
     attrs = {
         "srcs": attr.label_keyed_string_dict(allow_files = True),
+        "directory": attr.string(),
+        "symlinks": attr.string_dict(),
         "deps": attr.label_list(providers = [ChromiumFilesInfo]),
         "_script": attr.label(default = Label("//native:assemble_runtime.py"), allow_single_file = True),
         "_python": attr.label(default = Label("@rules_python//python:current_py_toolchain"), cfg = "exec"),

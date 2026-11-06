@@ -71,6 +71,11 @@ def package(bundle, destination, target, revision):
     }, indent=2) + '\n').encode()
 
     def normalize(member):
+        if member.islnk():
+            source = bundle / PurePosixPath(member.name).relative_to('bundle')
+            member.type = tarfile.REGTYPE
+            member.linkname = ''
+            member.size = source.stat().st_size
         member.uid = member.gid = member.mtime = 0
         member.uname = member.gname = ''
         member.pax_headers = {}
@@ -80,7 +85,7 @@ def package(bundle, destination, target, revision):
     with archive.open('wb') as raw, gzip.GzipFile(
             filename='', mode='wb', fileobj=raw, mtime=0, compresslevel=6) as compressed:
         with tarfile.open(fileobj=compressed, mode='w|', format=tarfile.PAX_FORMAT,
-                          dereference=True) as output:
+                          dereference=False) as output:
             member = normalize(tarfile.TarInfo('artifact.json'))
             member.size = len(manifest)
             output.addfile(member, io.BytesIO(manifest))

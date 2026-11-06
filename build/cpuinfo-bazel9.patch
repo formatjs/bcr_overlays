@@ -9,6 +9,9 @@ diff --git a/BUILD.bazel b/BUILD.bazel
  load("@rules_license//rules:license.bzl", "license")
  
  package(
+@@ -202,1 +203,2 @@
+     textual_hdrs = [
++        "src/arm/windows/windows-arm-init.h",
 diff --git a/MODULE.bazel b/MODULE.bazel
 --- a/MODULE.bazel
 +++ b/MODULE.bazel

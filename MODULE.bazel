@@ -376,3 +376,10 @@ single_version_override(
     patches = ["//build:aom-rate-control.patch", "//build:aom-clang-cl-simd.patch"],
     version = "3.13.3.bcr.1",
 )
+
+single_version_override(
+    module_name = "rules_cc_autoconf",
+    patch_strip = 1,
+    patches = ["//build:autoconf-clang-cl-driver.patch"],
+    version = "0.35.0",
+)

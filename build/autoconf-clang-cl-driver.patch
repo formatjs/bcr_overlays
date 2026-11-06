@@ -1,0 +1,41 @@
+diff --git a/autoconf/private/checker/compilation.cc b/autoconf/private/checker/compilation.cc
+--- a/autoconf/private/checker/compilation.cc
++++ b/autoconf/private/checker/compilation.cc
+@@ -312,4 +312,11 @@
+         if (flag == marker) {
+             result.insert(result.end(), replacement.begin(), replacement.end());
++        } else if (flag == std::string("/clang:") + marker) {
++            const bool linker_option = !result.empty() && result.back() == "/clang:-Xlinker";
++            if (linker_option) result.pop_back();
++            for (const auto& option : replacement) {
++                if (linker_option) result.push_back("/clang:-Xlinker");
++                result.push_back("/clang:" + option);
++            }
+         } else {
+             result.push_back(flag);
+@@ -448,5 +455,7 @@
+         auto link_flags = get_link_only_flags(language, extra_linkopts);
+         cmd.insert(cmd.end(), link_flags.begin(), link_flags.end());
+-        cmd.push_back("/OUT:" + executable.string());
++        const bool driver = config_.compiler_type == "clang-cl" &&
++            (config_.linker == config_.c_compiler || config_.linker == config_.cpp_compiler);
++        cmd.push_back((driver ? "/Fe" : "/OUT:") + executable.string());
+         cmd.push_back(object_file.string());
+         for (const std::string& library : libraries) {
+@@ -495,3 +504,14 @@
+-    bool msvc = is_msvc_like(config_.compiler_type);
++    bool msvc = is_msvc_like(config_.compiler_type);
++
++    if (msvc && config_.compiler_type == "clang-cl" &&
++        (config_.linker == config_.c_compiler || config_.linker == config_.cpp_compiler)) {
++        auto cmd = get_compiler_and_flags(language, extra_copts);
++        const auto object = tmp.object_path(true);
++        cmd.push_back("/c");
++        cmd.push_back("/Fo" + object.string());
++        cmd.push_back(source_file->string());
++        if (run_command("compile", cmd) != 0) return false;
++        return try_link(object, tmp.executable_path(), language, extra_linkopts, {});
++    }
+-
++
+     if (msvc) {

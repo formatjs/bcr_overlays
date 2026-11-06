@@ -1,4 +1,5 @@
 exports_files([
+    "autoconf-clang-cl-driver.patch",
     "simdutf-msvc-cxx20.patch",
     "msvc_atl.bzl",
     "llvm-macos-cryptex-frameworks.patch",

@@ -153,7 +153,9 @@ def reuse_host_targets(targets, reused, provided, providers=None):
         if dependency == ':all_buildflags':
             reused[label] = dependency
             continue
-        host_support = original in REUSED or dependency.startswith(('@', '//native/rust:')) or dependency in (
+        host_support = (original in REUSED
+                        or original.startswith('//base/allocator/partition_allocator/src/partition_alloc:')
+                        or dependency.startswith(('@', '//native/rust:'))) or dependency in (
             ':libvpx_public', ':ffmpeg_opus',
         ) or original in (
             '//build/win:default_exe_manifest',

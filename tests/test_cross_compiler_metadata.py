@@ -130,6 +130,16 @@ class CrossCompilerMetadataTest(unittest.TestCase):
         reuse_host_targets({host: {}}, reused, set(), {})
         self.assertNotIn(host, reused)
 
+    def test_cross_snapshot_reuses_one_native_allocator(self):
+        suffix = '(//build/toolchain/linux:clang_x64_v8_arm64)'
+        prefix = '//base/allocator/partition_allocator/src/partition_alloc:'
+        labels = [prefix + part for part in
+                  ['allocator_base', 'allocator_core', 'allocator_shim', 'raw_ptr']]
+        reused = {label: label for label in labels}
+        reuse_host_targets({label + suffix: {} for label in labels}, reused, set())
+        for label in labels:
+            self.assertEqual(reused[label + suffix], '@chromium' + label)
+
     def test_cross_snapshot_uses_canonical_host_icu(self):
         suffix = '(//build/toolchain/linux:clang_x64_v8_arm64)'
         labels = ['//third_party/icu:' + name for name in

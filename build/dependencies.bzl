@@ -81,9 +81,19 @@ def _dependencies_impl(ctx):
     chromium_vulkan_tools_sources()
     chromium_swiftshader_sources()
     chromium_codec_sources()
+    archives = {}
+    root = ctx.path(Label("//:overlays.json")).dirname
     for name in _OVERLAYS:
-        archive_name = name + "_sources"
-        chromium_overlay_archive(name = archive_name, overlay = name, catalog = Label("//:overlays.json"))
+        base = root.get_child("overlays/" + name + "/bcr")
+        source = json.decode(ctx.read(base.get_child("source.json")))
+
+        # Shared pins need one extraction; patched archives retain their own copy.
+        key = name if base.get_child("patches").exists else json.encode(source)
+        archive_name = archives.get(key)
+        if not archive_name:
+            archive_name = name + "_sources"
+            chromium_overlay_archive(name = archive_name, overlay = name, catalog = Label("//:overlays.json"))
+            archives[key] = archive_name
         chromium_overlay_repository(
             name = name,
             overlay = name,

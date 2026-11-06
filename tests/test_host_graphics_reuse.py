@@ -84,3 +84,12 @@ class HostGraphicsReuseTest(unittest.TestCase):
         library = next(iter(libraries.values()))
         self.assertEqual(library['deps'], ['@chromium//native:ml_tflite_op_shim'])
         self.assertEqual(library['srcs'], [])
+
+    def test_matching_webp_uses_native_configuration(self):
+        label = '//third_party/libwebp:libwebp_avx2'
+        capture, native, libraries, _ = self.capture(label, kind='static_library')
+        self.assertEqual(reuse_host_graphics(capture, native, libraries,
+                                            {label: ':codecs_webp_avx2'}), 1)
+        library = next(iter(libraries.values()))
+        self.assertEqual(library['deps'], ['@chromium//native:codecs_webp_avx2'])
+        self.assertEqual(library['srcs'], [])

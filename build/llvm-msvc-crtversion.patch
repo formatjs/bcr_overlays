@@ -1,0 +1,9 @@
+--- a/runtimes/msvc/BUILD.bazel
++++ b/runtimes/msvc/BUILD.bazel
+@@ -50,5 +50,6 @@
+     "concurrencysal.h",
+     "crtdefs.h",
++    "crtversion.h",
+     "delayimp.h",
+     "eh.h",
+     "ehdata.h",

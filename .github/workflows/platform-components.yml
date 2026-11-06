@@ -37,7 +37,9 @@ jobs:
           //tools/ci:graphics-windows-amd64 //tools/ci:graphics-windows-arm64
           //tools/ci:v8-darwin-arm64
           //tools/ci:v8-windows-amd64 //tools/ci:v8-windows-arm64
-          //tools/ci:dawn-darwin-arm64
+          //tools/ci:dawn-darwin-arm64 //tools/ci:angle-darwin-arm64
+          //tools/ci:dawn-windows-amd64 //tools/ci:dawn-windows-arm64
+          //tools/ci:dxc-windows-amd64 //tools/ci:dxc-windows-arm64
       - name: Collect native smoke artifacts
         run: python3 -m tools.ci.collect_allocator_probes --output "$RUNNER_TEMP/allocator-probes"
       - uses: actions/upload-artifact@v7
@@ -90,6 +92,16 @@ jobs:
         run: |
           & "$env:RUNNER_TEMP/allocator-probes/v8-windows-${{ matrix.arch }}/v8-windows-${{ matrix.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Exercise Dawn validation and buffer mapping
+        shell: pwsh
+        run: |
+          & "$env:RUNNER_TEMP/allocator-probes/dawn-windows-${{ matrix.arch }}.exe"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Compile HLSL with shipped DXC
+        shell: pwsh
+        run: |
+          & "$env:RUNNER_TEMP/allocator-probes/dxc-windows-${{ matrix.arch }}/dxc-windows-${{ matrix.arch }}.exe"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Render and round-trip PNG pixels
         shell: pwsh
         run: |
@@ -135,6 +147,11 @@ jobs:
         run: |
           chmod +x "$RUNNER_TEMP/allocator-probes/dawn-darwin-arm64"
           "$RUNNER_TEMP/allocator-probes/dawn-darwin-arm64"
+      - name: Load ANGLE and exercise EGL/GLES dispatch
+        run: |
+          directory="$RUNNER_TEMP/allocator-probes/angle-darwin-arm64"
+          chmod +x "$directory/angle-darwin-arm64" "$directory/"*.dylib
+          "$directory/angle-darwin-arm64" "$directory/libEGL.dylib" "$directory/libGLESv2.dylib"
       - name: Render and round-trip PNG pixels
         run: |
           chmod +x "$RUNNER_TEMP/allocator-probes/graphics-darwin-arm64"

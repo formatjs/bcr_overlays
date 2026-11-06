@@ -483,3 +483,83 @@ darwin_arm64_browser(
     name = "dawn-darwin-arm64",
     srcs = [":darwin_dawn_probe"],
 )
+
+cc_binary(
+    name = "windows_dawn_probe",
+    srcs = ["//:tests/dawn_native_runtime_test.cc"],
+    copts = [
+        "/std:c++20",
+        "/EHs-c-",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+    deps = select({
+        "@platforms//cpu:x86_64": [
+            "@chromium_windows_amd64//native:dawn_native_library",
+            "@chromium_windows_amd64//native:dawn_proc",
+        ],
+        "@platforms//cpu:aarch64": [
+            "@chromium_windows_arm64//native:dawn_native_library",
+            "@chromium_windows_arm64//native:dawn_proc",
+        ],
+    }),
+)
+
+msvc_static_crt(
+    name = "dawn_static_crt",
+    srcs = [":windows_dawn_probe"],
+)
+
+windows_amd64_browser(
+    name = "dawn-windows-amd64",
+    srcs = [":dawn_static_crt"],
+)
+
+windows_arm64_browser(
+    name = "dawn-windows-arm64",
+    srcs = [":dawn_static_crt"],
+)
+
+cc_binary(
+    name = "windows_dxc_probe",
+    srcs = ["dxc_probe.cc"],
+    copts = [
+        "/std:c++20",
+        "/EHs-c-",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+    deps = ["@chromium_dxc//:headers"],
+)
+
+msvc_static_crt(
+    name = "dxc_static_crt",
+    srcs = [":windows_dxc_probe"] + select({
+        "@platforms//cpu:x86_64": ["@chromium_windows_amd64//native:dxcompiler.dll"],
+        "@platforms//cpu:aarch64": ["@chromium_windows_arm64//native:dxcompiler.dll"],
+    }),
+)
+
+windows_amd64_browser(
+    name = "dxc-windows-amd64",
+    srcs = [":dxc_static_crt"],
+)
+
+windows_arm64_browser(
+    name = "dxc-windows-arm64",
+    srcs = [":dxc_static_crt"],
+)
+
+cc_binary(
+    name = "darwin_angle_probe",
+    srcs = ["angle_probe.cc"],
+    copts = ["-std=c++20"],
+    target_compatible_with = ["@platforms//os:macos"],
+    deps = ["@chromium_angle//:headers"],
+)
+
+darwin_arm64_browser(
+    name = "angle-darwin-arm64",
+    srcs = [
+        ":darwin_angle_probe",
+        "@chromium_darwin_arm64//native:angle_runtime",
+    ],
+)

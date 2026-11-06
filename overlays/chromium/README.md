@@ -229,6 +229,13 @@ Windows uses MSVC, `llvm-ml` for MASM and `llvm-nasm` for NASM.
 Darwin also cross-links Tint, Dawn native (including Metal), and GPU command
 protocol libraries. Its native Dawn probe checks shader validation and buffer
 mapping with the null backend. Regenerate with `--gpu --gn /path/to/gn`.
+Windows MSVC profiles also build Dawn and Chromium's pinned DXC DLL. Native smoke
+compiles HLSL to DXIL without GPU hardware. ATL libraries and DIA SDK come from
+checksummed Microsoft packages using the same approved MSVC license flag.
+
+Darwin ANGLE builds EGL/GLES dylibs with Metal and OpenGL backends, plus its
+static Vulkan loader. The native loader probe checks both dylibs and EGL/GLES
+dispatch. Regenerate with `--angle --gn /path/to/gn`.
 
 ARM64 host generators reuse native graphics libraries only when captured sources,
 compiler/linker flags, outputs and dependencies match the Linux AMD64 graph.

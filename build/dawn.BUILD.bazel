@@ -23,3 +23,11 @@ cc_library(
     name = "khronos_headers",
     deps = ["@chromium_egl_registry//:headers"],
 )
+
+cc_library(
+    name = "dxc_build_headers",
+    hdrs = glob([
+        "third_party/dawn/third_party/gn/dxc/build/*.inc",
+    ]),
+    includes = ["third_party/dawn/third_party/gn/dxc/build"],
+)

@@ -115,6 +115,7 @@ def _dawn_impl(ctx):
         output = prefix,
     )
     root = ctx.path(ctx.attr.catalog).dirname
+    ctx.patch(root.get_child("build/dawn-dxc-version-include.patch"), strip = 1)
     for package in json.decode(ctx.read(root.get_child("build/dawn_packages.json"))):
         ctx.delete(prefix + "/" + package)
     ctx.symlink(root.get_child("build/dawn.BUILD.bazel"), "BUILD.bazel")

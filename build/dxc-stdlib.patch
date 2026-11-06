@@ -1,0 +1,6 @@
+--- a/include/dxc/Support/Global.h
++++ b/include/dxc/Support/Global.h
+@@ -29 +29,2 @@
+-#include <stdarg.h>
++#include <cstdlib>
++#include <stdarg.h>

@@ -86,3 +86,11 @@ exports_files([
     "abseil-overlay.patch",
     "boringssl-overlay.patch",
 ])
+
+exports_files(["dxc.BUILD.bazel"])
+
+exports_files(["dawn-dxc-version-include.patch"])
+
+exports_files(["dxc-stdlib.patch"])
+
+exports_files(["msvc_dia.bzl"])

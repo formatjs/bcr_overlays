@@ -14,7 +14,8 @@ load(":khronos_sources.bzl", "chromium_khronos_sources")
 load(":libyuv_sources.bzl", "chromium_libyuv_sources")
 load(":media_sources.bzl", "chromium_media_sources")
 load(":ml_sources.bzl", "chromium_ml_sources")
-load(":msvc_atl.bzl", "chromium_msvc_atl")
+load(":msvc_atl.bzl", "chromium_msvc_atl", "chromium_msvc_atl_libraries")
+load(":msvc_dia.bzl", "chromium_msvc_dia")
 load(":platform_runtime.bzl", "chromium_platform_headers_dispatch", "chromium_platform_runtime_repository")
 load(":protobuf_javascript_sources.bzl", "chromium_protobuf_javascript_sources")
 load(":pthreadpool_sources.bzl", "chromium_pthreadpool_sources")
@@ -44,6 +45,8 @@ _OVERLAYS = [
 
 def _dependencies_impl(ctx):
     chromium_msvc_atl(name = "chromium_msvc_atl")
+    chromium_msvc_atl_libraries(name = "chromium_msvc_atl_libraries")
+    chromium_msvc_dia(name = "chromium_msvc_dia")
     chromium_platform_runtime_repository(
         name = "chromium_platform_runtime",
         manifest = Label("//overlays/chromium:native/platform_runtime.json"),
@@ -126,6 +129,15 @@ def _dependencies_impl(ctx):
     chromium_angle_repository(name = "chromium_angle", archive = "@angle_sources//__source__:anchor", catalog = Label("//:overlays.json"))
     chromium_skia_repository(name = "chromium_skia", archive = "@skia_sources//__source__:anchor", catalog = Label("//:overlays.json"))
     chromium_dawn_repository(name = "chromium_dawn", catalog = Label("//:overlays.json"))
+    http_archive(
+        name = "chromium_dxc",
+        urls = ["https://github.com/microsoft/DirectXShaderCompiler/archive/2b58d6d865832f7146d6e22e2106e562458bbd0a.tar.gz"],
+        sha256 = "6c6aad0787bc460f62be016660f3a6991c4b6f436a7d39b09132fcb5d1cf2c0c",
+        strip_prefix = "DirectXShaderCompiler-2b58d6d865832f7146d6e22e2106e562458bbd0a",
+        build_file = Label("//build:dxc.BUILD.bazel"),
+        patches = [Label("//build:dxc-stdlib.patch")],
+        patch_args = ["-p1"],
+    )
     chromium_quiche_repository(name = "chromium_quiche", catalog = Label("//:overlays.json"))
     new_git_repository(
         name = "chromium_sqlite",
@@ -149,7 +161,7 @@ def _dependencies_impl(ctx):
     )
     return ctx.extension_metadata(
         reproducible = True,
-        root_module_direct_deps = _OVERLAYS + ["chromium_darwin_arm64", "chromium_windows_amd64", "chromium_windows_arm64", "chromium_windows_debuggers", "chromium_mig", "chromium_linux_arm64", "chromium_platform_headers_arm64", "chromium_platform_headers_cross", "chromium_platform_runtime_arm64"] + ["chromium_platform_runtime", "chromium_catapult"] + ["chromium_openscreen", "chromium_pdfium", "chromium_readability"] + ["chromium_anonymous_tokens", "chromium_content_analysis_sdk", "chromium_dom_distiller_js", "chromium_ink", "chromium_ink_stroke_modeler", "chromium_libaddressinput", "chromium_xdg_utils"] + ["chromium_search_engines_data", "chromium_cld3", "chromium_emoji_segmenter", "chromium_ots", "chromium_material_color_utilities", "chromium_smhasher", "chromium_libphonenumber", "chromium_crabbyavif", "chromium_cros_system_api", "chromium_devtools_frontend", "chromium_devtools_esbuild", "chromium_xcomposite", "chromium_xtst", "chromium_webrtc", "chromium_libsrtp", "chromium_federated_compute", "chromium_cdm_api", "chromium_libgav1", "chromium_leveldatabase", "chromium_ffmpeg", "chromium_ruy", "chromium_eigen3", "chromium_gemmlowp", "chromium_farmhash", "chromium_neon_2_sse", "chromium_tflite", "chromium_xnnpack", "chromium_pthreadpool", "chromium_libyuv", "chromium_v8", "chromium_wayland_protocols", "chromium_kde_protocols", "chromium_protobuf_javascript", "chromium_vulkan_tools", "chromium_pciutils", "chromium_angle", "chromium_vma", "chromium_swiftshader", "chromium_vulkan_utility", "chromium_vulkan_validation", "chromium_vulkan_loader", "chromium_egl_registry", "chromium_opengl_registry", "chromium_libdrm", "chromium_libsync", "chromium_skia", "chromium_jpeg", "chromium_webp", "chromium_wuffs", "chromium_freetype", "chromium_harfbuzz", "chromium_fontconfig", "chromium_dawn", "chromium_quiche", "chromium_sqlite", "chromium_platform_headers"],
+        root_module_direct_deps = _OVERLAYS + ["chromium_darwin_arm64", "chromium_windows_amd64", "chromium_windows_arm64", "chromium_windows_debuggers", "chromium_mig", "chromium_dxc", "chromium_msvc_dia", "chromium_msvc_atl_libraries", "chromium_linux_arm64", "chromium_platform_headers_arm64", "chromium_platform_headers_cross", "chromium_platform_runtime_arm64"] + ["chromium_platform_runtime", "chromium_catapult"] + ["chromium_openscreen", "chromium_pdfium", "chromium_readability"] + ["chromium_anonymous_tokens", "chromium_content_analysis_sdk", "chromium_dom_distiller_js", "chromium_ink", "chromium_ink_stroke_modeler", "chromium_libaddressinput", "chromium_xdg_utils"] + ["chromium_search_engines_data", "chromium_cld3", "chromium_emoji_segmenter", "chromium_ots", "chromium_material_color_utilities", "chromium_smhasher", "chromium_libphonenumber", "chromium_crabbyavif", "chromium_cros_system_api", "chromium_devtools_frontend", "chromium_devtools_esbuild", "chromium_xcomposite", "chromium_xtst", "chromium_webrtc", "chromium_libsrtp", "chromium_federated_compute", "chromium_cdm_api", "chromium_libgav1", "chromium_leveldatabase", "chromium_ffmpeg", "chromium_ruy", "chromium_eigen3", "chromium_gemmlowp", "chromium_farmhash", "chromium_neon_2_sse", "chromium_tflite", "chromium_xnnpack", "chromium_pthreadpool", "chromium_libyuv", "chromium_v8", "chromium_wayland_protocols", "chromium_kde_protocols", "chromium_protobuf_javascript", "chromium_vulkan_tools", "chromium_pciutils", "chromium_angle", "chromium_vma", "chromium_swiftshader", "chromium_vulkan_utility", "chromium_vulkan_validation", "chromium_vulkan_loader", "chromium_egl_registry", "chromium_opengl_registry", "chromium_libdrm", "chromium_libsync", "chromium_skia", "chromium_jpeg", "chromium_webp", "chromium_wuffs", "chromium_freetype", "chromium_harfbuzz", "chromium_fontconfig", "chromium_dawn", "chromium_quiche", "chromium_sqlite", "chromium_platform_headers"],
         root_module_direct_dev_deps = [],
     )
 

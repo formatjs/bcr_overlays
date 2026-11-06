@@ -25,13 +25,45 @@ def collect_v8(files, platform, destination):
         shutil.copy2(source, destination / name)
 
 
+
+def collect_dxc(files, platform, destination):
+    """Keep the shader compiler DLL beside its native execution probe."""
+    operating_system, arch = platform.split('-')
+    libraries = [file for file in files if file.name == 'dxcompiler.dll']
+    executables = [file for file in files if file.suffix == '.exe']
+    if (operating_system != 'windows' or len(files) != 2 or len(libraries) != 1
+            or len(executables) != 1
+            or any(binary_platform(file) != (operating_system, arch) for file in files)):
+        raise ValueError('DXC requires a matching Windows executable and dxcompiler.dll')
+    destination.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(executables[0], destination / ('dxc-' + platform + '.exe'))
+    shutil.copy2(libraries[0], destination / 'dxcompiler.dll')
+
+
+
+def collect_angle(files, platform, destination):
+    """Keep ANGLE's two dylibs beside its loader probe."""
+    operating_system, arch = platform.split('-')
+    runtime_names = {'libEGL.dylib', 'libGLESv2.dylib'}
+    runtime = {file.name: file for file in files if file.name in runtime_names}
+    executables = [file for file in files if file.name not in runtime_names]
+    if (operating_system != 'darwin' or len(files) != 3 or set(runtime) != runtime_names
+            or len(executables) != 1
+            or any(binary_platform(file) != (operating_system, arch) for file in files)):
+        raise ValueError('ANGLE requires a matching Darwin executable and both dylibs')
+    destination.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(executables[0], destination / ('angle-' + platform))
+    for name, source in runtime.items():
+        shutil.copy2(source, destination / name)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--bazel', default='bazel')
     parser.add_argument('--output-user-root')
     args = parser.parse_args()
-    startup = [args.bazel, '--batch']
+    startup = [args.bazel]
     if args.output_user_root:
         startup.append('--output_user_root=' + args.output_user_root)
     execution_root = Path(subprocess.check_output(
@@ -51,11 +83,15 @@ def main():
         ('network-windows-arm64', 'windows-arm64'),
         ('graphics-darwin-arm64', 'darwin-arm64'),
         ('dawn-darwin-arm64', 'darwin-arm64'),
+        ('dawn-windows-amd64', 'windows-amd64'),
+        ('dawn-windows-arm64', 'windows-arm64'),
         ('graphics-windows-amd64', 'windows-amd64'),
         ('graphics-windows-arm64', 'windows-arm64'),
     ]
     v8_platforms = ['darwin-arm64', 'windows-amd64', 'windows-arm64']
-    names = [target for target, _ in targets] + ['v8-' + platform for platform in v8_platforms]
+    dxc_platforms = ['windows-amd64', 'windows-arm64']
+    names = ([target for target, _ in targets] + ['v8-' + platform for platform in v8_platforms]
+             + ['dxc-' + platform for platform in dxc_platforms] + ['angle-darwin-arm64'])
     expression = 'set(' + ' '.join('//tools/ci:' + name for name in names) + ')'
     command = startup + ['cquery', expression,
                         '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',
@@ -81,6 +117,9 @@ def main():
         shutil.copy2(executables[0], args.output / (target + suffix))
     for platform in v8_platforms:
         collect_v8(artifacts['v8-' + platform], platform, args.output / ('v8-' + platform))
+    for platform in dxc_platforms:
+        collect_dxc(artifacts['dxc-' + platform], platform, args.output / ('dxc-' + platform))
+    collect_angle(artifacts['angle-darwin-arm64'], 'darwin-arm64', args.output / 'angle-darwin-arm64')
 
 
 if __name__ == '__main__':

@@ -254,6 +254,7 @@ def reuse_host_graphics(graph, reference, libraries, providers):
     return count
 
 
+
 def host_webui_resource_copy(graph, reference):
     """Reuse identical host WebUI resource declarations from the native build."""
     suffix = '(//build/toolchain/linux:clang_x64_v8_arm64)'
@@ -671,6 +672,7 @@ def main():
         })
     if layer == 'angle_runtime':
         reused.update({
+            '//third_party/vulkan-loader/src:libvulkan': ':vulkan_loader',
             '//third_party/spirv-headers/src:spv_headers': ':spirv_headers',
             '//third_party/spirv-tools/src:spvtools_headers': '@spirv_tools//:spirv_tools',
             '//third_party/spirv-tools/src:spvtools_val': '@spirv_tools//:spirv_tools',
@@ -716,6 +718,7 @@ def main():
             '//third_party/flatbuffers:flatc': '@flatbuffers//:flatc',
         })
     font_repositories = {
+        'third_party/dawn/third_party/dxc/': '@chromium_dxc//:',
         'third_party/spirv-tools/src/': '@spirv_tools//:',
         'third_party/spirv-headers/src/': '@spirv_headers//:',
         'third_party/cros_system_api/': '@chromium_cros_system_api//:',
@@ -1010,6 +1013,7 @@ def main():
                             and p.endswith(('.cc', '.c', '.cpp', '.cxx', '.mm', '.h', '.hh', '.hpp', '.hxx', '.inl', '.inc', '.S', '.s', '.asm')))
         sources = [file_label(p) for p in target.get('sources', []) if p.endswith(('.cc', '.c', '.cpp', '.cxx', '.S', '.s')) or (layer in ('browser_v8', 'paint') and p.endswith('.asm')) or (layer in ('codecs', 'ffmpeg') and p.endswith('.o'))]
         objcxx_sources = [file_label(p) for p in target.get('sources', []) if p.endswith('.mm')]
+        resource_sources = [file_label(p) for p in target.get('sources', []) if p.endswith('.rc')]
         # Vulkan's native BCR provider owns these public dependency headers.
         if layer == 'vulkan_validation':
             paths = [p for p in paths if not p.startswith('//third_party/vulkan-headers/src/include/')]
@@ -1025,7 +1029,7 @@ def main():
         for dep in target.get('deps', []):
             if dep in copies or dep in actions or dep in reused_actions:
                 headers.extend(file_label(p) for p in targets[dep]['outputs']
-                               if p.endswith(('.h', '.inc', '.cc')) and file_label(p) not in sources)
+                               if p.endswith(('.h', '.inc', '.cc', '.def', '.gen')) and file_label(p) not in sources)
         copts, defines = compiler_configuration(graph, dict(target, cflags=target.get("cflags", []), cflags_cc=target.get("cflags_cc", []), defines=target.get("defines", [])))
         msvc = any(flag.startswith(('/W', '/std:')) for flag in copts)
         # Protobuf 33 permits incomplete member-pointer bases in constexpr metadata.
@@ -1163,6 +1167,16 @@ def main():
                 raise ValueError('ambiguous FFmpeg configuration: ' + label)
             if configurations:
                 libraries[label]['ffmpeg_config'] = configurations.pop()
+        dxc_includes = [path.removeprefix('//third_party/dawn/third_party/dxc/').rstrip('/')
+                        for path in unpack(target.get('include_dirs', []))
+                        if path.startswith('//third_party/dawn/third_party/dxc/')]
+        if dxc_includes:
+            libraries[label]['dxc_include_dirs'] = dxc_includes
+        if resource_sources:
+            libraries[label]['resource_srcs'] = resource_sources
+            libraries[label]['resource_defines'] = unpack(target.get('defines', []))
+            if not sources and not objcxx_sources:
+                libraries[label]['defines'] = []
         if objcxx_sources:
             libraries[label]['objcxx_srcs'] = objcxx_sources
             libraries[label]['objcxx_copts'] = compiler_configuration(graph, target, 'cflags_objcc')[0]
@@ -1336,6 +1350,8 @@ def main():
     if layer == 'vulkan_loader':
         forwarders = {}
         own = ('third_party/vulkan-loader/',)
+    if layer == 'gpu_protocol':
+        reused['//third_party/angle:includes'] = '@chromium_angle//:headers'
     if layer in ('tint', 'dawn_native'):
         forwarders = {}
         own = ('third_party/dawn/',)
@@ -1865,9 +1881,25 @@ def main():
                 response = target['response_file_contents']
             else:
                 response = []
+            if target['script'] == '//third_party/dawn/third_party/gn/dxc/build/run_built_binary.py' and arguments and not arguments[0]:
+                arguments = arguments[1:]
             record = dict(response_file_contents=response, name=name(label)+'_'+str(index), srcs=files,
                                 outs={p.removeprefix(BUILD): p.removeprefix(BUILD) for p in outputs},
                                 script=target['script'][2:], args=arguments, deps=sorted(set(deps)))
+            if target['script'].startswith('//third_party/dawn/third_party/dxc/utils/hct/'):
+                for path in json.loads((Path(__file__).parent / 'dxc_generator_files.json').read_text())['hct']:
+                    logical = 'third_party/dawn/third_party/dxc/' + path
+                    record['srcs'][file_label('//' + logical)] = logical
+            if target['script'] == '//third_party/dawn/third_party/gn/dxc/build/run_built_binary.py':
+                for path in json.loads((Path(__file__).parent / 'dxc_generator_files.json').read_text())['tablegen']:
+                    logical = 'third_party/dawn/third_party/dxc/' + path
+                    record['srcs'][file_label('//' + logical)] = logical
+            if target['script'] == '//third_party/dawn/third_party/gn/dxc/build/message_compiler.py':
+                directory = args.source_root / 'third_party/dawn/third_party/gn/dxc/win_build_output'
+                for artifact in sorted(directory.rglob('*')):
+                    if artifact.is_file():
+                        logical = artifact.relative_to(args.source_root).as_posix()
+                        record['srcs'][file_label('//' + logical)] = logical
             if target['script'] == '//ui/webui/resources/tools/bundle_js.py':
                 record['generated_deps'] = generated_asset_deps(label)
             if layer == 'browser' and label.startswith('//third_party/devtools-frontend/src'):

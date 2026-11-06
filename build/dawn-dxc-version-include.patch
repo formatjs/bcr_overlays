@@ -1,0 +1,5 @@
+--- a/third_party/dawn/third_party/gn/dxc/build/version.inc
++++ b/third_party/dawn/third_party/gn/dxc/build/version.inc
+@@ -32 +32 @@
+-#include "..\..\dxc\utils\version\version.inc"
++#include "utils/version/version.inc"

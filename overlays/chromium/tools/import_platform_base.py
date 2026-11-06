@@ -34,7 +34,9 @@ def main():
     parser.add_argument('--desktop', action='store_true', help='Also import paint, Crashpad and gfx')
     parser.add_argument('--gn', type=Path, help='GN executable for capturing GPU runtime edges')
     parser.add_argument('--gpu', action='store_true', help='Also import Tint, Dawn native and GPU command protocol')
+    parser.add_argument('--angle', action='store_true', help='Also import the ANGLE EGL/GLES backends')
     args = parser.parse_args()
+    args.gpu = args.gpu or args.angle
     if args.gpu and not args.gn:
         parser.error('--gpu requires --gn')
     args.desktop = args.desktop or args.gpu
@@ -103,6 +105,14 @@ def main():
                              '--output', str(stage / 'native/dawn_runtime_edges.json')])
             for layer in ['tint', 'dawn_native', 'gpu_protocol']:
                 commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
+        if args.angle:
+            commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source),
+                             '--layer', 'vulkan_loader'])
+            commands.append(['capture_angle_runtime_edges.py', '--source-root', str(source),
+                             '--gn', str(args.gn.resolve()), '--graph', str(graph),
+                             '--output', str(stage / 'native/angle_runtime_edges.json')])
+            commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source),
+                             '--layer', 'angle_runtime'])
         for command in commands:
             subprocess.run([sys.executable, str(stage / 'tools' / command[0]), *command[1:]], check=True)
         files = [
@@ -137,6 +147,10 @@ def main():
                 files.append('native/' + layer + '_sources.bzl')
                 files.extend(str(path.relative_to(overlay)) for path in
                              sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())
+        if args.angle:
+            files.extend(['native/angle_runtime_sources.bzl', 'native/vulkan_loader_sources.bzl'])
+            files.extend(str(path.relative_to(overlay)) for path in
+                         sorted((overlay / 'native/angle_runtime_forwarders').rglob('*')) if path.is_file())
         if args.v8:
             files.append('native/browser_v8_sources.bzl')
             files.extend(str(path.relative_to(overlay)) for path in

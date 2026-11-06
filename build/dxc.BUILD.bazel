@@ -1,0 +1,11 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["**"]))
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["**/*.h", "**/*.inc", "**/*.def", "**/*.inc.cpp", "**/*.inl"]),
+    includes = [".", "include", "tools/clang/include"],
+)

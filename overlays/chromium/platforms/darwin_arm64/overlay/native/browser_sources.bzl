@@ -781437,7 +781437,6 @@ LIBRARIES = {
             "@chromium_swiftshader//:headers",
             "@spirv_tools//:chromium_headers"
         ],
-        "additional_linker_inputs": ["@chromium_swiftshader//:src/Vulkan/vk_swiftshader.exports"],
         "linkopts": [
             "-Wl,-install_name,@rpath/libvk_swiftshader.dylib",
             "-Wl,-exported_symbols_list,$(location @chromium_swiftshader//:src/Vulkan/vk_swiftshader.exports)",
@@ -781460,6 +781459,9 @@ LIBRARIES = {
             "Cocoa",
             "-framework",
             "QuartzCore"
+        ],
+        "additional_linker_inputs": [
+            "@chromium_swiftshader//:src/Vulkan/vk_swiftshader.exports"
         ],
         "outputs": [
             "libvk_swiftshader.dylib",
@@ -1068922,7 +1068924,7 @@ ACTIONS = [
         "name": "browser_4753977fa1070ca0_0",
         "srcs": {
             "//:chrome/tools/build/mac/verify_dynamic_libraries.py": "chrome/tools/build/mac/verify_dynamic_libraries.py",
-            ":Chromium.app/Contents/MacOS/Chromium": "out/bazel-import/Chromium.app/Contents/MacOS/Chromium"
+            ":obj/chrome/chrome_app_executable/Chromium": "out/bazel-import/Chromium.app/Contents/MacOS/Chromium"
         },
         "outs": {
             "obj/chrome/run_verify_libraries_chrome_app.stamp": "obj/chrome/run_verify_libraries_chrome_app.stamp"
@@ -1068945,7 +1068947,7 @@ ACTIONS = [
         "name": "browser_6a5f9ee7063c87f5_0",
         "srcs": {
             "//:chrome/tools/build/mac/verify_dynamic_libraries.py": "chrome/tools/build/mac/verify_dynamic_libraries.py",
-            ":Chromium Helper (Alerts).app/Contents/MacOS/Chromium Helper (Alerts)": "out/bazel-import/Chromium Helper (Alerts).app/Contents/MacOS/Chromium Helper (Alerts)"
+            ":obj/chrome/chrome_helper_app_alerts_executable/Chromium Helper (Alerts)": "out/bazel-import/Chromium Helper (Alerts).app/Contents/MacOS/Chromium Helper (Alerts)"
         },
         "outs": {
             "obj/chrome/run_verify_libraries_chrome_helper_app_alerts.stamp": "obj/chrome/run_verify_libraries_chrome_helper_app_alerts.stamp"
@@ -1068970,7 +1068972,7 @@ ACTIONS = [
         "name": "browser_546e047b375a685a_0",
         "srcs": {
             "//:chrome/tools/build/mac/verify_dynamic_libraries.py": "chrome/tools/build/mac/verify_dynamic_libraries.py",
-            ":Chromium Helper.app/Contents/MacOS/Chromium Helper": "out/bazel-import/Chromium Helper.app/Contents/MacOS/Chromium Helper"
+            ":obj/chrome/chrome_helper_app_default_executable/Chromium Helper": "out/bazel-import/Chromium Helper.app/Contents/MacOS/Chromium Helper"
         },
         "outs": {
             "obj/chrome/run_verify_libraries_chrome_helper_app_default.stamp": "obj/chrome/run_verify_libraries_chrome_helper_app_default.stamp"
@@ -1068995,7 +1068997,7 @@ ACTIONS = [
         "name": "browser_b809fe5c2c949399_0",
         "srcs": {
             "//:chrome/tools/build/mac/verify_dynamic_libraries.py": "chrome/tools/build/mac/verify_dynamic_libraries.py",
-            ":Chromium Helper (GPU).app/Contents/MacOS/Chromium Helper (GPU)": "out/bazel-import/Chromium Helper (GPU).app/Contents/MacOS/Chromium Helper (GPU)"
+            ":obj/chrome/chrome_helper_app_gpu_executable/Chromium Helper (GPU)": "out/bazel-import/Chromium Helper (GPU).app/Contents/MacOS/Chromium Helper (GPU)"
         },
         "outs": {
             "obj/chrome/run_verify_libraries_chrome_helper_app_gpu.stamp": "obj/chrome/run_verify_libraries_chrome_helper_app_gpu.stamp"
@@ -1069020,7 +1069022,7 @@ ACTIONS = [
         "name": "browser_420e39ebd64c0adf_0",
         "srcs": {
             "//:chrome/tools/build/mac/verify_dynamic_libraries.py": "chrome/tools/build/mac/verify_dynamic_libraries.py",
-            ":Chromium Helper (Plugin).app/Contents/MacOS/Chromium Helper (Plugin)": "out/bazel-import/Chromium Helper (Plugin).app/Contents/MacOS/Chromium Helper (Plugin)"
+            ":obj/chrome/chrome_helper_app_plugin_executable/Chromium Helper (Plugin)": "out/bazel-import/Chromium Helper (Plugin).app/Contents/MacOS/Chromium Helper (Plugin)"
         },
         "outs": {
             "obj/chrome/run_verify_libraries_chrome_helper_app_plugin.stamp": "obj/chrome/run_verify_libraries_chrome_helper_app_plugin.stamp"
@@ -1069045,7 +1069047,7 @@ ACTIONS = [
         "name": "browser_bc35ba477bb044f0_0",
         "srcs": {
             "//:chrome/tools/build/mac/verify_dynamic_libraries.py": "chrome/tools/build/mac/verify_dynamic_libraries.py",
-            ":Chromium Helper (Renderer).app/Contents/MacOS/Chromium Helper (Renderer)": "out/bazel-import/Chromium Helper (Renderer).app/Contents/MacOS/Chromium Helper (Renderer)"
+            ":obj/chrome/chrome_helper_app_renderer_executable/Chromium Helper (Renderer)": "out/bazel-import/Chromium Helper (Renderer).app/Contents/MacOS/Chromium Helper (Renderer)"
         },
         "outs": {
             "obj/chrome/run_verify_libraries_chrome_helper_app_renderer.stamp": "obj/chrome/run_verify_libraries_chrome_helper_app_renderer.stamp"

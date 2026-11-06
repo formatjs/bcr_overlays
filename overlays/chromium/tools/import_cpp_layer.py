@@ -981,8 +981,14 @@ def main():
     bundle_outputs = {target['bundle_data']['root_dir_output']: ':' + name(label) + '_bundle'
                       for label, target in selected.items() if target['type'] == 'create_bundle'}
 
+    bundle_members = {output: source for target in selected.values()
+                      if target['type'] == 'create_bundle'
+                      for output, source in zip(target['outputs'][:-1], target['bundle_data']['source_files'])}
+
     @cache
     def file_label(path):
+        if path in bundle_members and bundle_members[path] != path:
+            return file_label(bundle_members[path])
         if path in bundle_outputs:
             return bundle_outputs[path]
         if path.startswith(BUILD):

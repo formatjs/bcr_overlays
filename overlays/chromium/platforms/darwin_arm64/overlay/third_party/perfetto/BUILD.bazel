@@ -5,11 +5,3 @@ alias(
 )
 
 exports_files(["BUILD.bazel"])
-
-
-
-# BEGIN BROWSER INPUTS
-exports_files([
-    "protos/perfetto/config/perfetto_config.proto"
-])
-# END BROWSER INPUTS

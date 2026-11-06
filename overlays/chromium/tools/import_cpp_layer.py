@@ -438,7 +438,7 @@ def main():
                     '//third_party/zlib/google:')
         roots = ['//v8:v8']
     if layer == 'media':
-        prefixes = ('//media:', '//media/', '//components/leveldb_proto', '//components/pref_registry:', '//third_party/ffmpeg:ffmpeg_features', '//components/keyed_service/core:', '//components/services/storage/public/', '//third_party/libgav1:', '//third_party/leveldatabase:', '//third_party/widevine/cdm:', '//ui/events:keyboard_hook')
+        prefixes = ('//media:', '//media/', '//gpu/ipc/service:', '//components/leveldb_proto', '//components/pref_registry:', '//third_party/ffmpeg:ffmpeg_features', '//components/keyed_service/core:', '//components/services/storage/public/', '//third_party/libgav1:', '//third_party/leveldatabase:', '//third_party/widevine/cdm:', '//ui/events:keyboard_hook')
         roots = ['//media:media', '//media/filters:symphonia_glue_cxx_generated']
     if layer == 'blink_rust':
         prefixes = ('//third_party/blink/',)
@@ -1321,7 +1321,7 @@ def main():
            'components/performance_manager/scenario_api/', 'third_party/apple_apsl/')
     if layer == 'media':
         forwarders = {'third_party/snappy/src/snappy.h': 'snappy.h'}
-        own = ('media/', 'third_party/ffmpeg/', 'third_party/khronos/', 'components/pref_registry/', 'components/leveldb_proto/', 'components/keyed_service/core/', 'components/services/storage/public/', 'third_party/leveldatabase/', 'third_party/libgav1/', 'third_party/widevine/cdm/', 'ui/events/')
+        own = ('media/', 'gpu/ipc/service/', 'third_party/ffmpeg/', 'third_party/khronos/', 'components/pref_registry/', 'components/leveldb_proto/', 'components/keyed_service/core/', 'components/services/storage/public/', 'third_party/leveldatabase/', 'third_party/libgav1/', 'third_party/widevine/cdm/', 'ui/events/')
     if layer == 'blink_rust':
         forwarders = {}
         own = ('third_party/blink/common/rust_crash/', 'third_party/blink/renderer/platform/fonts/opentype/')

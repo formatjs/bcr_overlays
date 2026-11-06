@@ -10,6 +10,10 @@ files, and threads. `with_cfg` selects static MSVC CRT globally. Captured Rust
 flags retain `-Ctarget-feature=+crt-static`; host tools use Linux support code.
 The SDK and ATL payloads match the AMD64 profile.
 
+GPU command services and the media closure cross-build on Linux with the MSVC
+ABI and static CRT. The media build includes FFmpeg, native codecs, storage,
+and Media Foundation decoders. Full browser translation remains pending.
+
 Regenerate metadata without touching the Linux overlay:
 
 ```sh

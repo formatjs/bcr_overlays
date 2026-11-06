@@ -1180015,6 +1180015,7 @@ LIBRARIES = {
         ],
         "deps": [
             "@chromium_vulkan_loader//:headers",
+            "@chromium_platform_headers_cross//:graphics",
             "@vulkan_headers//:vulkan_headers",
         ],
         "linkopts": [

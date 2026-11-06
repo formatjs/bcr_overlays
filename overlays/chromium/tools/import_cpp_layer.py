@@ -1019,7 +1019,10 @@ def main():
                 '@spirv_headers//:spirv_cpp_headers',
             ])
         if label.startswith('//third_party/vulkan-loader/src:'):
-            libraries[label]['deps'].append('@chromium_vulkan_loader//:headers')
+            libraries[label]['deps'].extend([
+                '@chromium_vulkan_loader//:headers',
+                '@chromium_platform_headers//:graphics',
+            ])
         if linker_inputs:
             libraries[label]['additional_linker_inputs'] = linker_inputs
         if layer == 'browser' and target['type'] in ('executable', 'shared_library'):

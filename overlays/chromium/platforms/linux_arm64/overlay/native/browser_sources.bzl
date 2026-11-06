@@ -1689193,6 +1689193,19 @@ TOOLS = {
 
 COPIES = [
     {
+        "name": "browser_host_webui_resource_declarations",
+        "srcs": {
+            "@chromium//native:gen/ui/webui/resources/grit/webui_resources.h": "gen/ui/webui/resources/grit/webui_resources.h",
+            "@chromium//native:gen/ui/webui/resources/grit/webui_resources_map.cc": "gen/ui/webui/resources/grit/webui_resources_map.cc",
+            "@chromium//native:gen/ui/webui/resources/grit/webui_resources_map.h": "gen/ui/webui/resources/grit/webui_resources_map.h"
+        },
+        "outputs": {
+            "clang_x64_v8_arm64/gen/ui/webui/resources/grit/webui_resources.h": "gen/ui/webui/resources/grit/webui_resources.h",
+            "clang_x64_v8_arm64/gen/ui/webui/resources/grit/webui_resources_map.cc": "gen/ui/webui/resources/grit/webui_resources_map.cc",
+            "clang_x64_v8_arm64/gen/ui/webui/resources/grit/webui_resources_map.h": "gen/ui/webui/resources/grit/webui_resources_map.h"
+        }
+    },
+    {
         "name": "browser_5e0fe99a5984307d",
         "srcs": {
             "//:components/resources/sample_credits.html": "components/resources/sample_credits.html",

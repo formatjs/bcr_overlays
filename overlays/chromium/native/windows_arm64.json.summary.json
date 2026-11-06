@@ -4,26 +4,35 @@
         "chromium_revision": "4b8153ab58d3c3f4c9f7e4baad9616ecf80db5fa",
         "gn_version": "2285 (81b24e01531e)",
         "args_gn": "is_debug = false\nis_component_build = false\ntarget_os = \"win\"\ntarget_cpu = \"arm64\"\nclang_base_path = \"$LLVM_ROOT\"\nclang_use_chrome_plugins = false\nvisual_studio_path = \"$SOURCE_ROOT/build/win_toolchain\"\nvisual_studio_version = \"2022\"\nwindows_sdk_path = \"$SOURCE_ROOT/build/win_toolchain/Windows Kits/10\"\nwindows_sdk_version = \"10.0.26100.0\"\nwdk_path = \"$SOURCE_ROOT/build/win_toolchain/Windows Kits/10\"\n",
-        "deps_sha256": "2bcbc993c76bf81b692d391cd150a849797372b8418df5df8d9a29ac6b058a99"
+        "deps_sha256": "2bcbc993c76bf81b692d391cd150a849797372b8418df5df8d9a29ac6b058a99",
+        "extraction_inputs": {
+            "maintainer_patches": [
+                {
+                    "path": "platforms/windows_arm64/capture/v8_snapshot_cross.patch",
+                    "sha256": "ce83b10b144e00719ca115d0bc55d352acd87819dd15a478bf05b8927372de9d"
+                }
+            ],
+            "snapshot_toolchain": "//build/toolchain/linux:clang_x64_v8_arm64"
+        }
     },
-    "graph_sha256": "849dea24f222de9cdcb80108c2e8fdee858c8b27a92711cbd0868297cbda570b",
-    "compressed_sha256": "76f6aa3db50acae211238e40076264b32eae9fa28404a5fc95858da2cd9e305d",
+    "graph_sha256": "984e8bd10c6f9b96c72f66e818f8f8e63d434c1e39512048d19186bd2f3e7839",
+    "compressed_sha256": "5d5c86a6fdd47ec13ddec3a8e9f802dff01e10dce1b33ce9c4561c9ddfc333bd",
     "target_types": {
-        "action": 7844,
+        "action": 7930,
         "action_foreach": 42,
-        "copy": 119,
+        "copy": 122,
         "executable": 47,
-        "generated_file": 380,
-        "group": 2223,
-        "rust_library": 208,
+        "generated_file": 381,
+        "group": 2357,
+        "rust_library": 237,
         "rust_proc_macro": 11,
         "shared_library": 11,
-        "source_set": 4163,
-        "static_library": 2153
+        "source_set": 4455,
+        "static_library": 2222
     },
     "runtime_file_count": {
         "//chrome:chrome": 4783
     },
-    "generated_file_count": 3466,
-    "pool_entries": 6433
+    "generated_file_count": 3468,
+    "pool_entries": 6482
 }

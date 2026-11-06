@@ -1,0 +1,9 @@
+{
+  "maintainer_patches": [
+    {
+      "path": "platforms/windows_arm64/capture/v8_snapshot_cross.patch",
+      "sha256": "ce83b10b144e00719ca115d0bc55d352acd87819dd15a478bf05b8927372de9d"
+    }
+  ],
+  "snapshot_toolchain": "//build/toolchain/linux:clang_x64_v8_arm64"
+}

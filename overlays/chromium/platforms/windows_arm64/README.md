@@ -24,3 +24,7 @@ buildifier -r overlays/chromium/platforms/windows_arm64/overlay
 
 Platform rule adapters remain maintained separately from generated metadata.
 Full browser translation and packaging remain pending.
+
+Linux captures apply [the V8 snapshot patch](capture/v8_snapshot_cross.patch)
+so the host generator uses the ARM64 simulator. Capture rejects builtin generators
+that target another architecture. Patch hashes live in [capture provenance](capture/inputs.json).

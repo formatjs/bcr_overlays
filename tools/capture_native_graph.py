@@ -34,6 +34,23 @@ def target_closure(project, roots):
     return {**project, 'targets': selected}
 
 
+def validate_snapshot_architecture(targets):
+    snapshot = targets.get('//v8:run_mksnapshot_default')
+    if not snapshot:
+        return
+    architectures = [arg.partition('=')[2] for arg in snapshot.get('args', [])
+                     if arg.startswith('--target_arch=')]
+    generators = [dep for dep in snapshot.get('deps', [])
+                  if dep.partition('(')[0] == '//v8:mksnapshot']
+    if len(architectures) != 1 or len(generators) != 1:
+        raise ValueError('snapshot generator architecture is ambiguous')
+    architecture = architectures[0]
+    expected = 'V8_TARGET_ARCH_' + ('IA32' if architecture == 'x86' else architecture.upper())
+    if expected not in targets[generators[0]].get('defines', []):
+        raise ValueError(f'snapshot architecture mismatch: {architecture} requires '
+                         f'{expected} in {generators[0]}')
+
+
 def capture(project, runtime, source_root, replacements, runtime_inputs=None):
     """Reject incomplete graphs; preserve target semantics and generated contents."""
     def portable(value):
@@ -62,6 +79,7 @@ def capture(project, runtime, source_root, replacements, runtime_inputs=None):
                 raise ValueError(f'duplicate output {output}: {producers[output]}, {label}')
             producers[output] = label
 
+    validate_snapshot_architecture(targets)
     build_dir = project['build_settings']['build_dir'].rstrip('/')
     runtime_inputs = runtime_inputs or {}
     runtime_paths = {posixpath.normpath(build_dir + '/' + path)

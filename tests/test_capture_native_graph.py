@@ -55,6 +55,30 @@ class CaptureNativeGraphTest(unittest.TestCase):
         self.assertEqual(result['generated_files'][self.output], '{"enabled":true}\n')
         self.assertEqual(result['runtime_files']['//:browser'], ['//out/import/chrome'])
 
+    def test_snapshot_generator_targets_browser_architecture(self):
+        generator = '//v8:mksnapshot(//toolchain:host)'
+        for architecture in ['x64', 'arm64']:
+            with self.subTest(architecture=architecture):
+                self.project['targets'][generator] = {
+                    'type': 'executable', 'defines': ['V8_TARGET_ARCH_' + architecture.upper()],
+                }
+                self.project['targets']['//v8:run_mksnapshot_default'] = {
+                    'type': 'action', 'deps': [generator],
+                    'args': ['--target_arch=' + architecture],
+                }
+                self.assertIn(generator, self.run_capture()['targets'])
+
+    def test_rejects_x64_builtins_in_arm64_browser(self):
+        generator = '//v8:mksnapshot(//toolchain:host)'
+        self.project['targets'][generator] = {
+            'type': 'executable', 'defines': ['V8_TARGET_ARCH_X64'],
+        }
+        self.project['targets']['//v8:run_mksnapshot_default'] = {
+            'type': 'action', 'deps': [generator], 'args': ['--target_arch=arm64'],
+        }
+        with self.assertRaisesRegex(ValueError, 'snapshot architecture mismatch'):
+            self.run_capture()
+
     def test_rejects_missing_dependency_or_output_producer(self):
         self.project['targets']['//:browser']['deps'].append('//:absent')
         with self.assertRaisesRegex(ValueError, 'missing dependency'):

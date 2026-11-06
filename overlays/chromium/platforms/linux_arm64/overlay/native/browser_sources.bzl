@@ -934390,7 +934390,12 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_0111a8f6d7597f2d",
-            "@vulkan_headers//:vulkan_headers",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers",
+            "@vulkan_headers//:vulkan_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -934680,6 +934685,11 @@ LIBRARIES = {
             ":browser_6a3595ec834ffa87",
             ":browser_c80595094aa01c82",
             ":browser_f1d4281d0561f931",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -934969,6 +934979,11 @@ LIBRARIES = {
             ":browser_b036f9e6d59f808d",
             ":browser_c80595094aa01c82",
             ":browser_f1d4281d0561f931",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -935253,6 +935268,11 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_0111a8f6d7597f2d",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -935542,6 +935562,11 @@ LIBRARIES = {
             ":browser_b036f9e6d59f808d",
             ":browser_c80595094aa01c82",
             ":browser_f1d4281d0561f931",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -935692,6 +935717,11 @@ LIBRARIES = {
         "deps": [
             ":browser_4ccf6daa326d546c",
             ":browser_efe7a6cc670ed98f",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [],
         "asm_copts": [],
@@ -935848,6 +935878,11 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_0111a8f6d7597f2d",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -935998,6 +936033,11 @@ LIBRARIES = {
         "deps": [
             ":browser_94edea6ccc000611",
             ":browser_efe7a6cc670ed98f",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [],
         "asm_copts": [],
@@ -936153,6 +936193,11 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_18c7d0c97b4718f5",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -936449,6 +936494,11 @@ LIBRARIES = {
             ":browser_0111a8f6d7597f2d",
             ":browser_94edea6ccc000611",
             ":browser_ff5fbe89324b2756",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -936740,6 +936790,11 @@ LIBRARIES = {
             ":browser_010811f3e7763dc2",
             ":browser_7d167de185f85f5c",
             ":browser_96345b7ce3ecbfad",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -936890,6 +936945,11 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_871d4e5bd17da4ae",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [],
         "asm_copts": [],
@@ -937172,12 +937232,17 @@ LIBRARIES = {
             ":browser_76d0a0a6eed83ebd",
             ":browser_a3b43831a3cdff6d",
             ":browser_f54f1be87b8a5e9f",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
             "@chromium_pciutils//:pci",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
             "@libffi//:libffi",
             "@libx11//:libx11",
             "@libxcb//:libxcb",
             "@libxext//:libxext",
             "@libxi//:libxi",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -937506,6 +937571,11 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_f54f1be87b8a5e9f",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -937812,6 +937882,11 @@ LIBRARIES = {
         "deps": [
             ":browser_06108b287ebc0c6d",
             ":browser_94edea6ccc000611",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -938403,12 +938478,17 @@ LIBRARIES = {
             ":browser_e1e2a47b81ac30d7",
             ":browser_f1d4281d0561f931",
             ":browser_f54f1be87b8a5e9f",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
             "@chromium_pciutils//:pci",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
             "@libffi//:libffi",
             "@libx11//:libx11",
             "@libxcb//:libxcb",
             "@libxext//:libxext",
             "@libxi//:libxi",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -938764,6 +938844,11 @@ LIBRARIES = {
             ":browser_f54f1be87b8a5e9f",
             ":browser_f7a7c4a64d57faee",
             ":browser_fd35c5147a7d310b",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-ldl",
@@ -939016,7 +939101,12 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
             "@libxcb//:libxcb",
+            "@spirv_headers//:spirv_cpp_headers"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -939245,7 +939335,12 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            "@vulkan_headers//:vulkan_headers",
+            "@chromium_angle//:headers",
+            "@chromium_pciutils//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@chromium_vma//:headers",
+            "@spirv_headers//:spirv_cpp_headers",
+            "@vulkan_headers//:vulkan_headers"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",

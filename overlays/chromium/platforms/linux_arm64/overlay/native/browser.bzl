@@ -90,6 +90,8 @@ def native_browser():
         )
         qt = original in qt_libraries
         include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
+        if original.startswith("//third_party/angle/"):
+            include_options.append("-I" + Label("@chromium_angle//:headers").workspace_root + "/third_party/angle/include")
         cpp_options = library["copts"] + include_options
         if qt:
             common["deps"] = library["deps"]

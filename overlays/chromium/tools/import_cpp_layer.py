@@ -1023,6 +1023,14 @@ def main():
                 '@chromium_vulkan_loader//:headers',
                 '@chromium_platform_headers//:graphics',
             ])
+        if label.startswith('//third_party/angle/'):
+            libraries[label]['deps'].extend([
+                '@chromium_angle//:headers',
+                '@chromium_vma//:headers',
+                '@chromium_platform_headers//:graphics',
+                '@chromium_pciutils//:headers',
+                '@spirv_headers//:spirv_cpp_headers',
+            ])
         libraries[label]['deps'] = sorted(set(libraries[label]['deps']))
         if linker_inputs:
             libraries[label]['additional_linker_inputs'] = linker_inputs

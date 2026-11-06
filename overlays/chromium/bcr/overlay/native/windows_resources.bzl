@@ -17,7 +17,6 @@ def _resource_impl(ctx):
     contexts = [dependency[CcInfo].compilation_context for dependency in ctx.attr.deps]
     preprocessed = ctx.actions.declare_file(ctx.label.name + ".rc.i")
     resource = ctx.actions.declare_file(ctx.label.name + ".res")
-    output = ctx.actions.declare_file(ctx.label.name + ".obj")
     root = paths.join(ctx.label.workspace_root, ctx.label.package)
     variables = cc_common.create_compile_variables(
         cc_toolchain = toolchain,
@@ -45,7 +44,7 @@ def _resource_impl(ctx):
         anchor = ctx.actions.declare_file(ctx.label.name + "_inputs/out/bazel-import/.anchor")
         ctx.actions.write(anchor, "")
         assets.append(anchor)
-        include_options = ["/I", anchor.dirname]
+        include_options = ["/I", anchor.dirname, "/I", paths.join(anchor.dirname, "gen")]
         if ctx.attr.include_root:
             include_options += ["/I", paths.join(anchor.dirname, "../..", ctx.attr.include_root)]
         for target, logical in ctx.attr.assets.items():
@@ -65,15 +64,15 @@ def _resource_impl(ctx):
         outputs = [resource],
         mnemonic = "ChromiumWindowsResource",
     )
-    machine = "aarch64" if ctx.target_platform_has_constraint(ctx.attr._arm64[platform_common.ConstraintValueInfo]) else "x86_64"
-    ctx.actions.run(
-        executable = ctx.executable._coff_converter,
-        arguments = ["--input-format=res", "--output-format=coff", "--target=" + machine, "--input=" + resource.path, "--output=" + output.path],
-        inputs = [resource],
-        outputs = [output],
-        mnemonic = "ChromiumResourceCoff",
+    linker = cc_common.create_linker_input(
+        owner = ctx.label,
+        user_link_flags = depset([resource.path]),
+        additional_inputs = depset([resource]),
     )
-    return [DefaultInfo(files = depset([output]))]
+    return [
+        DefaultInfo(files = depset([resource])),
+        CcInfo(linking_context = cc_common.create_linking_context(linker_inputs = depset([linker]))),
+    ]
 
 chromium_windows_resource = rule(
     implementation = _resource_impl,
@@ -85,8 +84,6 @@ chromium_windows_resource = rule(
         "includes": attr.string_list(),
         "include_root": attr.string(),
         "deps": attr.label_list(providers = [CcInfo]),
-        "_arm64": attr.label(default = Label("@platforms//cpu:aarch64")),
-        "_coff_converter": attr.label(default = Label("@llvm//tools:llvm-windres"), executable = True, cfg = "exec", allow_single_file = True),
         "_resource_compiler": attr.label(default = Label("@llvm//tools:llvm-rc"), executable = True, cfg = "exec", allow_single_file = True),
     },
     toolchains = ["@bazel_tools//tools/cpp:toolchain_type"],

@@ -6,6 +6,7 @@ load(":content_sources.bzl", "ACTIONS", "COPIES", "LIBRARIES", "METADATA", "SHAR
 load(":generated_files.bzl", "CAPTURED_FILES")
 load(":host_support.bzl", cc_library = "platform_cc_library")
 load(":objcxx.bzl", "chromium_objc_libraries")
+load(":public_dependency.bzl", "chromium_header_dependency")
 load(":python_action.bzl", "ChromiumFilesInfo", "ChromiumGeneratedFilesInfo", "chromium_python_action")
 load(":resource_copy.bzl", "chromium_resource_copy")
 load(":tool_inputs.bzl", "chromium_tool_inputs")
@@ -50,11 +51,12 @@ def native_content():
     for copy in COPIES:
         chromium_resource_copy(**copy)
     cc_library(
-        name = "content_headers",
+        name = "content_headers_with_links",
         hdrs = SHARED_HEADERS + [":all_buildflags"] + native.glob(["content_forwarders/**/*.h"], allow_empty = True),
         includes = ["..", "gen", "content_forwarders"],
         deps = [":blink_modules_headers", ":libxslt", "@chromium_openscreen//:chromium_headers", "@chromium_pdfium//:chromium_headers"],
     )
+    chromium_header_dependency(name = "content_headers", dependency = ":content_headers_with_links")
     for original, library in LIBRARIES.items():
         library = dict(library)
         include_options = ["-I" + Label(":all_buildflags").workspace_root + "/" + path for path in library.get("private_includes", [])]

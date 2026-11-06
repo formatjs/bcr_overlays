@@ -49,6 +49,7 @@ def native_linux_ui():
                 deps = common["deps"],
             )
             resources.append(":" + target)
+        common["deps"] = common["deps"] + resources
         if library.get("objcxx_srcs"):
             cc_library(
                 name = library["name"] + "_headers",
@@ -76,7 +77,7 @@ def native_linux_ui():
             common["deps"] = common["deps"] + [":" + library["name"] + "_c"]
         cc_library(
             name = library["name"],
-            srcs = [source for source in library["srcs"] if source not in c_sources] + resources,
+            srcs = [source for source in library["srcs"] if source not in c_sources],
             copts = library["copts"],
             **common
         )

@@ -15784,6 +15784,7 @@ LIBRARIES = {
             ":gen/third_party/blink/renderer/bindings/core/v8/v8_union_usvstring_usvstringsequencesequence_usvstringusvstringrecord.cc"
         ],
         "hdrs": [
+            "//:third_party/blink/renderer/core/precompile_core.h",
             ":gen/third_party/blink/renderer/bindings/core/v8/v8_abort_controller.h",
             ":gen/third_party/blink/renderer/bindings/core/v8/v8_abort_signal.h",
             ":gen/third_party/blink/renderer/bindings/core/v8/v8_abstract_range.h",
@@ -16889,7 +16890,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -17189,7 +17190,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -17510,7 +17511,8 @@ LIBRARIES = {
             "//:third_party/blink/renderer/core/animation/underlying_value_owner.h",
             "//:third_party/blink/renderer/core/animation/view_timeline.h",
             "//:third_party/blink/renderer/core/animation/worklet_animation_base.h",
-            "//:third_party/blink/renderer/core/animation/worklet_animation_controller.h"
+            "//:third_party/blink/renderer/core/animation/worklet_animation_controller.h",
+            "//:third_party/blink/renderer/core/precompile_core.h"
         ],
         "copts": [
             "/W4",
@@ -17585,7 +17587,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -17884,7 +17886,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -17973,7 +17975,8 @@ LIBRARIES = {
             "//:third_party/blink/renderer/core/exported/web_plugin_container_impl.h",
             "//:third_party/blink/renderer/core/exported/web_settings_impl.h",
             "//:third_party/blink/renderer/core/exported/web_shared_worker_impl.h",
-            "//:third_party/blink/renderer/core/exported/web_view_impl.h"
+            "//:third_party/blink/renderer/core/exported/web_view_impl.h",
+            "//:third_party/blink/renderer/core/precompile_core.h"
         ],
         "copts": [
             "/W4",
@@ -18048,7 +18051,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -18350,7 +18353,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -19012,7 +19015,9 @@ LIBRARIES = {
         "srcs": [
             ":gen/third_party/blink/renderer/core/core_probes_impl.cc"
         ],
-        "hdrs": [],
+        "hdrs": [
+            "//:third_party/blink/renderer/core/precompile_core.h"
+        ],
         "copts": [
             "/W4",
             "-Wimplicit-fallthrough",
@@ -19086,7 +19091,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -19384,7 +19389,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -19771,6 +19776,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/core/probe/core_probes.cc"
         ],
         "hdrs": [
+            "//:third_party/blink/renderer/core/precompile_core.h",
             "//:third_party/blink/renderer/core/probe/async_task_context.h",
             "//:third_party/blink/renderer/core/probe/core_probes.h"
         ],
@@ -19847,7 +19853,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -20149,7 +20155,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -20171,7 +20177,9 @@ LIBRARIES = {
             ":gen/third_party/blink/renderer/core/sanitizer/builtins_baseline.cc",
             ":gen/third_party/blink/renderer/core/sanitizer/builtins_default.cc"
         ],
-        "hdrs": [],
+        "hdrs": [
+            "//:third_party/blink/renderer/core/precompile_core.h"
+        ],
         "copts": [
             "/W4",
             "-Wimplicit-fallthrough",
@@ -20245,7 +20253,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -20542,7 +20550,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -20568,6 +20576,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/core/url_pattern/url_pattern_utils.cc"
         ],
         "hdrs": [
+            "//:third_party/blink/renderer/core/precompile_core.h",
             "//:third_party/blink/renderer/core/url_pattern/url_pattern.h",
             "//:third_party/blink/renderer/core/url_pattern/url_pattern_canon.h",
             "//:third_party/blink/renderer/core/url_pattern/url_pattern_component.h",
@@ -20648,7 +20657,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -20949,7 +20958,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -20972,6 +20981,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/core/xml/xpath_parser.cc"
         ],
         "hdrs": [
+            "//:third_party/blink/renderer/core/precompile_core.h",
             "//:third_party/blink/renderer/core/xml/xpath_grammar_generated.h"
         ],
         "copts": [
@@ -21047,7 +21057,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -21344,7 +21354,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -26087,6 +26097,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/core/permissions_policy/permissions_policy_devtools_support.h",
             "//:third_party/blink/renderer/core/permissions_policy/permissions_policy_parser.h",
             "//:third_party/blink/renderer/core/permissions_policy/policy_helper.h",
+            "//:third_party/blink/renderer/core/precompile_core.h",
             "//:third_party/blink/renderer/core/preferences/navigator_preferences.h",
             "//:third_party/blink/renderer/core/preferences/preference_manager.h",
             "//:third_party/blink/renderer/core/preferences/preference_object.h",
@@ -26751,7 +26762,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -27104,7 +27115,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -27381,6 +27392,7 @@ LIBRARIES = {
             ":gen/third_party/blink/renderer/core/xmlns_names.cc"
         ],
         "hdrs": [
+            "//:third_party/blink/renderer/core/precompile_core.h",
             ":gen/third_party/blink/renderer/core/css/css_property_names.h",
             ":gen/third_party/blink/renderer/core/css/css_value_id_mappings_generated.h",
             ":gen/third_party/blink/renderer/core/css/media_feature_names.h",
@@ -27499,7 +27511,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -27811,7 +27823,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "-Wconversion",
             "-Wno-float-conversion",
             "-Wno-sign-conversion",
@@ -27941,6 +27953,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/core/html/parser/text_resource_decoder_builder.h",
             "//:third_party/blink/renderer/core/layout/layout_object_inl.h",
             "//:third_party/blink/renderer/core/layout/text_autosizer.h",
+            "//:third_party/blink/renderer/core/precompile_core.h",
             ":gen/third_party/blink/public/resources/grit/blink_image_resources.h"
         ],
         "copts": [
@@ -28016,7 +28029,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "/O2",
             "/Oy-",
             "/Zc:inline",
@@ -28328,7 +28341,7 @@ LIBRARIES = {
             "-gomit-unreferenced-methods",
             "/clang:-Xclang",
             "/clang:-fuse-ctor-homing",
-            "/FI../../third_party/blink/renderer/core/precompile_core.h",
+            "/FIthird_party/blink/renderer/core/precompile_core.h",
             "/O2",
             "/Oy-",
             "/Zc:inline",
@@ -31580,6 +31593,9 @@ SHARED_HEADERS = [
     "//:third_party/blink/renderer/bindings/core/v8/window_proxy_manager.h",
     "//:third_party/blink/renderer/bindings/core/v8/worker_or_worklet_script_controller.h",
     "//:third_party/blink/renderer/bindings/core/v8/world_safe_v8_reference.h",
+    "//:third_party/blink/renderer/build/linux/prefix.h",
+    "//:third_party/blink/renderer/build/mac/prefix.h",
+    "//:third_party/blink/renderer/build/win/precompile.h",
     "//:third_party/blink/renderer/core/accessibility/ax_context.h",
     "//:third_party/blink/renderer/core/accessibility/ax_object_cache.h",
     "//:third_party/blink/renderer/core/accessibility/ax_object_cache_base.h",
@@ -33948,6 +33964,7 @@ SHARED_HEADERS = [
     "//:third_party/blink/renderer/core/permissions_policy/permissions_policy_devtools_support.h",
     "//:third_party/blink/renderer/core/permissions_policy/permissions_policy_parser.h",
     "//:third_party/blink/renderer/core/permissions_policy/policy_helper.h",
+    "//:third_party/blink/renderer/core/precompile_core.h",
     "//:third_party/blink/renderer/core/preferences/navigator_preferences.h",
     "//:third_party/blink/renderer/core/preferences/preference_manager.h",
     "//:third_party/blink/renderer/core/preferences/preference_object.h",
@@ -35339,6 +35356,7 @@ SHARED_HEADERS = [
     "//:third_party/crashpad/crashpad/client/annotation.h",
     "//:third_party/crashpad/crashpad/compat/win/sys/time.h",
     "//:third_party/crashpad/crashpad/compat/win/sys/types.h",
+    "//:third_party/crashpad/crashpad/compat/win/time.h",
     "//:third_party/crashpad/crashpad/util/misc/clock.h",
     "//:third_party/crashpad/crashpad/util/synchronization/scoped_spin_guard.h",
     "//:third_party/inspector_protocol/crdtp/cbor.h",

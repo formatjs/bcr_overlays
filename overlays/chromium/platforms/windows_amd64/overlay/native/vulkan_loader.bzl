@@ -33,7 +33,7 @@ def native_vulkan_loader():
         resources.append(":" + name)
     cc_binary(
         name = "vulkan-1.dll",
-        srcs = library["srcs"] + library["hdrs"] + resources,
+        srcs = library["srcs"] + library["hdrs"],
         includes = library["includes"],
         copts = library["c_copts"],
         local_defines = library["defines"],
@@ -41,7 +41,7 @@ def native_vulkan_loader():
         linkshared = True,
         linkstatic = True,
         win_def_file = library["win_def_file"],
-        deps = [":vulkan_loader_headers"],
+        deps = [":vulkan_loader_headers"] + resources,
     )
     native.filegroup(name = "vulkan_import_library", srcs = [":vulkan-1.dll"], output_group = "interface_library")
     cc_import(name = library["name"], shared_library = ":vulkan-1.dll", interface_library = ":vulkan_import_library")

@@ -9,6 +9,7 @@ load(":browser_sources.bzl", "ACTIONS", "ASSET_GROUPS", "BRIDGES", "COPIES", "LI
 load(":cxx_bridge.bzl", "chromium_cxx_bridge")
 load(":grit_resource_inputs.bzl", "RESOURCE_INPUTS")
 load(":host_support.bzl", cc_library = "platform_cc_library")
+load(":public_dependency.bzl", "chromium_header_dependency")
 load(":python_action.bzl", "ChromiumFilesInfo", "chromium_filegroup", "chromium_python_action")
 load(":resource_copy.bzl", "chromium_resource_copy")
 load(":runtime_bundle.bzl", "chromium_runtime_bundle")
@@ -79,7 +80,7 @@ def native_browser():
             srcs = {":" + path: "out/bazel-import/" + path for path in copy["outputs"]},
         )
     cc_library(
-        name = "browser_headers",
+        name = "browser_headers_with_links",
         hdrs = SHARED_HEADERS + [":all_buildflags"] + native.glob(["browser_forwarders/**/*.h"], allow_empty = True),
         includes = ["..", "gen", "browser_forwarders"],
         deps = [":content_headers", "@fast_float//:fast_float"] + ["@chromium_" + project + "//:chromium_headers" for project in [
@@ -101,9 +102,10 @@ def native_browser():
         hdrs = native.glob(["browser_forwarders/**/*.h"], allow_empty = True),
         includes = ["browser_forwarders"],
     )
+    chromium_header_dependency(name = "browser_headers", dependency = ":browser_headers_with_links")
     for original, library in LIBRARIES.items():
         library = dict(library)
-        include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
+        include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])] + [("/clang:-iquote" if original.startswith("//third_party/crashpad/crashpad/") else "-I") + Label(":all_buildflags").workspace_root + "/" + path for path in library.get("private_includes", [])]
         for field in ["copts", "c_copts", "asm_copts", "objc_copts", "objcxx_copts"]:
             if field in library:
                 library[field] = library[field] + include_options
@@ -138,6 +140,7 @@ def native_browser():
                 deps = common["deps"],
             )
             resources.append(":" + target)
+        common["deps"] = common["deps"] + resources
         c_sources = [path for path in library["srcs"] if path.endswith(".c")]
         asm_sources = [path for path in library["srcs"] if path.endswith((".s", ".S"))]
         for suffix, sources, options in [
@@ -155,7 +158,7 @@ def native_browser():
                     **common
                 )
                 common["deps"] = common["deps"] + [":" + library["name"] + suffix]
-        sources = [path for path in library["srcs"] if path not in c_sources and path not in asm_sources] + resources
+        sources = [path for path in library["srcs"] if path not in c_sources and path not in asm_sources]
         if library["kind"] in ["executable", "shared_library"]:
             if host:
                 common["linkopts"] = common["linkopts"] + ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"]
@@ -176,7 +179,7 @@ def native_browser():
                 native.filegroup(name = primary + ".pdb", srcs = [":" + primary], output_group = "pdb_file")
             if shared:
                 native.filegroup(name = primary + ".lib", srcs = [":" + primary], output_group = "interface_library")
-                cc_import(name = library["name"], shared_library = ":" + primary, interface_library = ":" + primary + ".lib")
+                cc_import(name = library["name"], shared_library = ":" + primary, interface_library = ":" + primary + ".lib", hdrs = library["hdrs"], includes = library["includes"])
             else:
                 native.alias(name = library["name"], actual = ":" + primary)
         else:

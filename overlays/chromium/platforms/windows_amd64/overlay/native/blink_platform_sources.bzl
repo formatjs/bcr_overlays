@@ -293,7 +293,8 @@ LIBRARIES = {
             "//:cc/animation/scroll_offset_animations.h",
             "//:cc/animation/scroll_offset_animations_impl.h",
             "//:cc/animation/scroll_timeline.h",
-            "//:cc/animation/worklet_animation.h"
+            "//:cc/animation/worklet_animation.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -612,7 +613,8 @@ LIBRARIES = {
             "//:cc/ipc/cc_param_traits.cc"
         ],
         "hdrs": [
-            "//:cc/ipc/cc_param_traits_macros.h"
+            "//:cc/ipc/cc_param_traits_macros.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -930,7 +932,8 @@ LIBRARIES = {
         ],
         "hdrs": [
             "//:cc/mojo_embedder/async_layer_tree_frame_sink.h",
-            "//:cc/mojo_embedder/viz_layer_context.h"
+            "//:cc/mojo_embedder/viz_layer_context.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -39673,7 +39676,8 @@ LIBRARIES = {
             "//:components/viz/host/layered_window_updater_impl.h",
             "//:components/viz/host/persistent_cache_sandboxed_file_factory.h",
             "//:components/viz/host/renderer_settings_creation.h",
-            "//:components/viz/host/viz_host_export.h"
+            "//:components/viz/host/viz_host_export.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -154441,7 +154445,8 @@ LIBRARIES = {
             "//:third_party/blink/renderer/platform/blob/blob_data.h",
             "//:third_party/blink/renderer/platform/blob/blob_url.h",
             "//:third_party/blink/renderer/platform/blob/blob_url_null_origin_map.h",
-            "//:third_party/blink/renderer/platform/blob/serialized_blob_mojom_traits.h"
+            "//:third_party/blink/renderer/platform/blob/serialized_blob_mojom_traits.h",
+            "//:third_party/blink/renderer/platform/precompile_platform.h"
         ],
         "copts": [
             "/W4",
@@ -154533,7 +154538,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -154835,7 +154840,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -154890,7 +154895,8 @@ LIBRARIES = {
             "//:third_party/blink/renderer/platform/heap/trace_traits.h",
             "//:third_party/blink/renderer/platform/heap/visitor.h",
             "//:third_party/blink/renderer/platform/heap/weak_cell.h",
-            "//:third_party/blink/renderer/platform/heap/write_barrier.h"
+            "//:third_party/blink/renderer/platform/heap/write_barrier.h",
+            "//:third_party/blink/renderer/platform/precompile_platform.h"
         ],
         "copts": [
             "/W4",
@@ -154977,7 +154983,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "/O2",
             "/Oy-",
             "/Zc:inline",
@@ -155280,7 +155286,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "/O2",
             "/Oy-",
             "/Zc:inline",
@@ -156077,7 +156083,8 @@ LIBRARIES = {
             "//:third_party/blink/renderer/platform/instrumentation/tracing/traced_value.h",
             "//:third_party/blink/renderer/platform/instrumentation/tracing/web_memory_allocator_dump.h",
             "//:third_party/blink/renderer/platform/instrumentation/tracing/web_process_memory_dump.h",
-            "//:third_party/blink/renderer/platform/instrumentation/use_counter.h"
+            "//:third_party/blink/renderer/platform/instrumentation/use_counter.h",
+            "//:third_party/blink/renderer/platform/precompile_platform.h"
         ],
         "copts": [
             "/W4",
@@ -156169,7 +156176,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "/wd4344",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
@@ -156472,7 +156479,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "/wd4344",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
@@ -156652,6 +156659,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/platform/loader/mixed_content_autoupgrade_status.h",
             "//:third_party/blink/renderer/platform/loader/static_data_navigation_body_loader.h",
             "//:third_party/blink/renderer/platform/loader/subresource_integrity.h",
+            "//:third_party/blink/renderer/platform/precompile_platform.h",
             ":gen/third_party/blink/renderer/platform/loader/fetch/delivery_type_names.h",
             ":gen/third_party/blink/renderer/platform/loader/fetch/fetch_initiator_type_names.h"
         ],
@@ -156745,7 +156753,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -157059,7 +157067,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -157077,7 +157085,8 @@ LIBRARIES = {
         ],
         "hdrs": [
             "//:third_party/blink/renderer/platform/media/watch_time_component.h",
-            "//:third_party/blink/renderer/platform/media/watch_time_reporter.h"
+            "//:third_party/blink/renderer/platform/media/watch_time_reporter.h",
+            "//:third_party/blink/renderer/platform/precompile_platform.h"
         ],
         "copts": [
             "/W4",
@@ -157169,7 +157178,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -157475,7 +157484,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -157549,6 +157558,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/platform/network/parsed_content_type.h",
             "//:third_party/blink/renderer/platform/network/server_timing_header.h",
             "//:third_party/blink/renderer/platform/network/wrapped_data_pipe_getter.h",
+            "//:third_party/blink/renderer/platform/precompile_platform.h",
             ":gen/third_party/blink/renderer/platform/network/http_names.h"
         ],
         "copts": [
@@ -157641,7 +157651,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -157945,7 +157955,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -158029,6 +158039,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/platform/scheduler/worker/worker_thread_scheduler.cc"
         ],
         "hdrs": [
+            "//:third_party/blink/renderer/platform/precompile_platform.h",
             "//:third_party/blink/renderer/platform/scheduler/common/auto_advancing_virtual_time_domain.h",
             "//:third_party/blink/renderer/platform/scheduler/common/back_forward_cache_disabling_feature_tracker.h",
             "//:third_party/blink/renderer/platform/scheduler/common/blink_scheduler_single_thread_task_runner.h",
@@ -158206,7 +158217,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -158517,7 +158528,7 @@ LIBRARIES = {
             "-Wno-sign-conversion",
             "-Wno-implicit-float-conversion",
             "-Wno-implicit-int-conversion",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "-Wno-constant-conversion",
             "-Wno-shorten-64-to-32",
             "/wd4344",
@@ -158579,6 +158590,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/platform/wtf/wtf.cc"
         ],
         "hdrs": [
+            "//:third_party/blink/renderer/build/win/precompile.h",
             "//:third_party/blink/renderer/platform/wtf/allocator/allocator.h",
             "//:third_party/blink/renderer/platform/wtf/allocator/partition_allocator.h",
             "//:third_party/blink/renderer/platform/wtf/allocator/partitions.h",
@@ -161624,6 +161636,7 @@ LIBRARIES = {
             "//:third_party/blink/renderer/platform/peerconnection/webrtc_encoding_info_handler.h",
             "//:third_party/blink/renderer/platform/peerconnection/webrtc_util.h",
             "//:third_party/blink/renderer/platform/peerconnection/webrtc_video_track_source.h",
+            "//:third_party/blink/renderer/platform/precompile_platform.h",
             "//:third_party/blink/renderer/platform/privacy_budget/identifiability_digest_helpers.h",
             "//:third_party/blink/renderer/platform/region_capture_crop_id.h",
             "//:third_party/blink/renderer/platform/resolution_units.h",
@@ -161805,7 +161818,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "/wd4305",
             "/wd4324",
             "/wd4714",
@@ -162192,7 +162205,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/FI../../third_party/blink/renderer/platform/precompile_platform.h",
+            "/FIthird_party/blink/renderer/platform/precompile_platform.h",
             "/wd4305",
             "/wd4324",
             "/wd4714",
@@ -201691,6 +201704,9 @@ SHARED_HEADERS = [
     "//:third_party/blink/renderer/bindings/core/v8/v8_compile_hints_consumer.h",
     "//:third_party/blink/renderer/bindings/core/v8/v8_compile_hints_producer.h",
     "//:third_party/blink/renderer/bindings/core/v8/world_safe_v8_reference.h",
+    "//:third_party/blink/renderer/build/linux/prefix.h",
+    "//:third_party/blink/renderer/build/mac/prefix.h",
+    "//:third_party/blink/renderer/build/win/precompile.h",
     "//:third_party/blink/renderer/core/core_export.h",
     "//:third_party/blink/renderer/core/css/vision_deficiency.h",
     "//:third_party/blink/renderer/core/dom/create_element_flags.h",
@@ -202564,6 +202580,7 @@ SHARED_HEADERS = [
     "//:third_party/blink/renderer/platform/peerconnection/webrtc_util.h",
     "//:third_party/blink/renderer/platform/peerconnection/webrtc_video_track_source.h",
     "//:third_party/blink/renderer/platform/platform_export.h",
+    "//:third_party/blink/renderer/platform/precompile_platform.h",
     "//:third_party/blink/renderer/platform/privacy_budget/identifiability_digest_helpers.h",
     "//:third_party/blink/renderer/platform/region_capture_crop_id.h",
     "//:third_party/blink/renderer/platform/resolution_units.h",

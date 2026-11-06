@@ -4017,7 +4017,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -4068,7 +4067,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -16208,6 +16206,7 @@ LIBRARIES = {
             ":gen/chrome/browser/apps/platform_apps/api/generated_api_registration.cc"
         ],
         "hdrs": [
+            "//build:precompile.h",
             ":gen/chrome/browser/apps/platform_apps/api/generated_api_registration.h"
         ],
         "copts": [
@@ -35480,6 +35479,7 @@ LIBRARIES = {
             ":gen/chrome/browser/controlled_frame/api/generated_api_registration.cc"
         ],
         "hdrs": [
+            "//build:precompile.h",
             ":gen/chrome/browser/controlled_frame/api/generated_api_registration.h"
         ],
         "copts": [
@@ -35893,7 +35893,8 @@ LIBRARIES = {
             "//:chrome/browser/controlled_frame/api/controlled_frame_internal_api.h",
             "//:chrome/browser/controlled_frame/controlled_frame_extensions_browser_api_provider.h",
             "//:chrome/browser/controlled_frame/controlled_frame_menu_icon_loader.h",
-            "//:chrome/browser/controlled_frame/controlled_frame_user_agent_util.h"
+            "//:chrome/browser/controlled_frame/controlled_frame_user_agent_util.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -37736,6 +37737,7 @@ LIBRARIES = {
             "//:chrome/browser/devtools/serialize_host_descriptions.h",
             "//:chrome/browser/devtools/url_constants.h",
             "//:chrome/browser/devtools/visual_logging.h",
+            "//build:precompile.h",
             ":gen/chrome/browser/devtools/protocol/autofill.h",
             ":gen/chrome/browser/devtools/protocol/browser.h",
             ":gen/chrome/browser/devtools/protocol/cast.h",
@@ -65642,6 +65644,7 @@ LIBRARIES = {
             ":gen/chrome/browser/extensions/api/generated_api_registration.cc"
         ],
         "hdrs": [
+            "//build:precompile.h",
             ":gen/chrome/browser/extensions/api/generated_api_registration.h"
         ],
         "copts": [
@@ -68174,7 +68177,8 @@ LIBRARIES = {
             "//:chrome/browser/extensions/webstore_standalone_installer.h",
             "//:chrome/browser/extensions/window_controller.h",
             "//:chrome/browser/extensions/window_controller_list.h",
-            "//:chrome/browser/extensions/window_controller_list_observer.h"
+            "//:chrome/browser/extensions/window_controller_list_observer.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -93239,7 +93243,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -93290,7 +93293,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -319533,6 +319535,7 @@ LIBRARIES = {
             "//:chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.h",
             "//:chrome/browser/ui/webui/webui_load_timer.h",
             "//:chrome/browser/ui/webui/webui_util_desktop.h",
+            "//build:precompile.h",
             ":gen/chrome/browser/ui/webui_name_variants.h",
             ":gen/device/bluetooth/strings/grit/bluetooth_strings.h"
         ],
@@ -342201,6 +342204,7 @@ LIBRARIES = {
             "//:chrome/browser/win/ui_automation_util.h",
             "//:chrome/browser/win/uninstallation_via_os_settings.h",
             "//:chrome/browser/win/util_win_service.h",
+            "//build:precompile.h",
             ":gen/chrome/browser/metrics/expired_histograms_array.h",
             ":gen/chrome/grit/chrome_unscaled_resources.h"
         ],
@@ -355915,6 +355919,7 @@ LIBRARIES = {
             ":gen/chrome/common/controlled_frame/api/generated_schemas.cc"
         ],
         "hdrs": [
+            "//build:precompile.h",
             ":gen/chrome/common/controlled_frame/api/generated_schemas.h"
         ],
         "copts": [
@@ -356167,6 +356172,7 @@ LIBRARIES = {
             ":gen/chrome/common/controlled_frame/api/controlled_frame_internal.cc"
         ],
         "hdrs": [
+            "//build:precompile.h",
             ":gen/chrome/common/controlled_frame/api/controlled_frame_internal.h"
         ],
         "copts": [
@@ -357302,6 +357308,7 @@ LIBRARIES = {
             ":gen/chrome/common/extensions/api/generated_schemas.cc"
         ],
         "hdrs": [
+            "//build:precompile.h",
             ":gen/chrome/common/extensions/api/generated_schemas.h"
         ],
         "copts": [
@@ -357611,6 +357618,7 @@ LIBRARIES = {
             ":gen/chrome/common/extensions/api/manifest_types.cc"
         ],
         "hdrs": [
+            "//build:precompile.h",
             ":gen/chrome/common/extensions/api/accessibility_features.h",
             ":gen/chrome/common/extensions/api/activity_log_private.h",
             ":gen/chrome/common/extensions/api/autofill_private.h",
@@ -364942,7 +364950,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -364993,7 +365000,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -367240,6 +367246,7 @@ LIBRARIES = {
             "//:chrome/common/search/ntp_logging_events.h",
             "//:chrome/common/secure_origin_allowlist.h",
             "//:chrome/common/webui_util.h",
+            "//build:precompile.h",
             ":gen/chrome/common/win/eventlog_messages.h"
         ],
         "copts": [
@@ -372050,7 +372057,9 @@ LIBRARIES = {
             "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "resource_assets": {
-            "//:chrome/elevation_service/elevation_service.rc": {}
+            "//:chrome/elevation_service/elevation_service.rc": {
+                ":gen/chrome/elevation_service/elevation_service_idl.tlb": "out/bazel-import/gen/chrome/elevation_service/elevation_service_idl.tlb"
+            }
         },
         "resource_include_roots": {
             "//:chrome/elevation_service/elevation_service.rc": "chrome/elevation_service"
@@ -376285,6 +376294,7 @@ LIBRARIES = {
             "//:chrome/installer/util/shell_util.h",
             "//:chrome/installer/util/system_tracing_util.h",
             "//:chrome/installer/util/taskbar_util.h",
+            "//build:precompile.h",
             ":gen/chrome/installer/util/installer_util_strings.h"
         ],
         "copts": [
@@ -378291,7 +378301,8 @@ LIBRARIES = {
         ],
         "hdrs": [
             "//:chrome/renderer/controlled_frame/controlled_frame_extensions_renderer_api_provider.h",
-            "//:chrome/renderer/controlled_frame/web_url_pattern_natives.h"
+            "//:chrome/renderer/controlled_frame/web_url_pattern_natives.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -391352,7 +391363,8 @@ LIBRARIES = {
             "//:chrome/utility/importer/nss_decryptor.h",
             "//:chrome/utility/importer/nss_decryptor_win.h",
             "//:chrome/utility/importer/profile_import_impl.h",
-            "//:chrome/utility/services.h"
+            "//:chrome/utility/services.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -392066,7 +392078,9 @@ LIBRARIES = {
             "ENABLE_IPC_FUZZER"
         ],
         "resource_assets": {
-            "//:chrome/windows_services/elevated_tracing_service/elevated_tracing_service.rc": {}
+            "//:chrome/windows_services/elevated_tracing_service/elevated_tracing_service.rc": {
+                ":gen/chrome/windows_services/elevated_tracing_service/tracing_service_idl.tlb": "out/bazel-import/gen/chrome/windows_services/elevated_tracing_service/tracing_service_idl.tlb"
+            }
         },
         "resource_include_roots": {
             "//:chrome/windows_services/elevated_tracing_service/elevated_tracing_service.rc": "chrome/windows_services/elevated_tracing_service"
@@ -405643,6 +405657,7 @@ LIBRARIES = {
             "//:components/autofill/core/browser/webdata/valuables/valuable_sync_bridge.h",
             "//:components/autofill/core/browser/webdata/valuables/valuables_sync_util.h",
             "//:components/autofill/core/browser/webdata/valuables/valuables_table.h",
+            "//build:precompile.h",
             ":gen/components/autofill/core/browser/data_model/autofill_ai/entity_type_names.h",
             ":gen/components/autofill/core/browser/form_parsing/regex_patterns_inl.h",
             ":gen/components/autofill/core/browser/geo/country_native_names_inl.h",
@@ -406508,7 +406523,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -406559,7 +406573,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -406756,7 +406769,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -406807,7 +406819,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -588055,7 +588066,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -588106,7 +588116,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -666183,7 +666192,8 @@ LIBRARIES = {
             "//:components/sync_device_info/device_info_util.h",
             "//:components/sync_device_info/local_device_info_provider.h",
             "//:components/sync_device_info/local_device_info_provider_impl.h",
-            "//:components/sync_device_info/local_device_info_util.h"
+            "//:components/sync_device_info/local_device_info_util.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -679953,7 +679963,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -680004,7 +680013,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -734994,6 +735002,7 @@ LIBRARIES = {
             "//:extensions/browser/warning_service_factory.h",
             "//:extensions/browser/warning_set.h",
             "//:extensions/browser/zipfile_installer.h",
+            "//build:precompile.h",
             ":gen/components/grit/components_resources.h"
         ],
         "copts": [
@@ -739163,7 +739172,8 @@ LIBRARIES = {
             "//:extensions/common/value_counter.h",
             "//:extensions/common/verifier_formats.h",
             "//:extensions/common/view_type_util.h",
-            "//:extensions/common/web_file_handler_constants.h"
+            "//:extensions/common/web_file_handler_constants.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -742790,6 +742800,7 @@ LIBRARIES = {
             "//:extensions/renderer/worker_script_context_set.h",
             "//:extensions/renderer/worker_thread_dispatcher.h",
             "//:extensions/renderer/worker_thread_util.h",
+            "//build:precompile.h",
             ":gen/ui/strings/grit/auto_image_annotation_strings.h"
         ],
         "copts": [
@@ -767374,7 +767385,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -767425,7 +767435,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -767596,7 +767605,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -767647,7 +767655,6 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
-            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -768272,6 +768279,9 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [],
         "c_copts": [
             "/W4",
@@ -768532,6 +768542,9 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -768797,6 +768810,9 @@ LIBRARIES = {
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [],
         "c_copts": [
             "/wd4201",
@@ -769052,6 +769068,9 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -769358,6 +769377,9 @@ LIBRARIES = {
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [],
         "c_copts": [
             "/wd4201",
@@ -769613,6 +769635,9 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -769940,6 +769965,9 @@ LIBRARIES = {
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [],
         "c_copts": [
             "/wd4201",
@@ -770187,6 +770215,9 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -770451,6 +770482,9 @@ LIBRARIES = {
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [],
         "c_copts": [
             "/W4",
@@ -770666,6 +770700,9 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF"
+        ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -793701,6 +793738,7 @@ LIBRARIES = {
             "//:ui/message_center/views/padded_button.h",
             "//:ui/message_center/views/proportional_image_view.h",
             "//:ui/message_center/views/relative_time_formatter.h",
+            "//build:precompile.h",
             ":gen/ui/message_center/vector_icons.h"
         ],
         "copts": [
@@ -796425,6 +796463,7 @@ LIBRARIES = {
             "//:ui/views/windows_stationarity_monitor.h",
             "//:ui/views/windows_stationarity_monitor_aura.h",
             "//:ui/views/word_lookup_client.h",
+            "//build:precompile.h",
             ":gen/ui/views/bubble_histograms_variant.h",
             ":gen/ui/views/vector_icons.h"
         ],

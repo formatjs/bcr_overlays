@@ -35,3 +35,11 @@ chromium_link_dependency = rule(
     implementation = _link_dependency_impl,
     attrs = {"dependency": attr.label(providers = [CcInfo])},
 )
+
+def _header_dependency_impl(ctx):
+    return [CcInfo(compilation_context = ctx.attr.dependency[CcInfo].compilation_context)]
+
+chromium_header_dependency = rule(
+    implementation = _header_dependency_impl,
+    attrs = {"dependency": attr.label(providers = [CcInfo])},
+)

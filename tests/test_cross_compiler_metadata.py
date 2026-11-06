@@ -59,10 +59,19 @@ class CrossCompilerMetadataTest(unittest.TestCase):
         options, _ = compiler_configuration({}, {
             'cflags': ['-isysroot', '/captured/sdk', '-Xclang', '-debug-info-kind=limited'],
             'cflags_cc': ['-std=c++20'],
-            'cflags_objcc': ['-fobjc-arc', '-fno-objc-arc-exceptions'], 'defines': [],
+            'cflags_objcc': ['-fobjc-arc', '-fno-objc-arc-exceptions',
+                             '-fcomplete-member-pointers'], 'defines': [],
         }, 'cflags_objcc')
         self.assertEqual(options, ['-Xclang', '-debug-info-kind=limited',
                                    '-fobjc-arc', '-fno-objc-arc-exceptions'])
+
+    def test_msvc_forced_header_uses_source_include_root(self):
+        options, _ = compiler_configuration({}, {
+            'cflags': ['/W4', '/FI../../third_party/blink/renderer/core/precompile_core.h'],
+            'cflags_cc': ['/std:c++20'], 'defines': [],
+        })
+        self.assertIn('/FIthird_party/blink/renderer/core/precompile_core.h', options)
+        self.assertNotIn('/FI../../third_party/blink/renderer/core/precompile_core.h', options)
 
     def test_unknown_frontend_feature_fails_closed(self):
         with self.assertRaisesRegex(ValueError, 'unmapped Clang target feature'):

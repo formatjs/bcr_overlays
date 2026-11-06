@@ -33,8 +33,10 @@ def main():
     include_dirs = target.get('include_dirs', [])
     if isinstance(include_dirs, dict):
         include_dirs = graph['pool'][include_dirs['pool']]
-    includes = ['..'] + ['../' + path.removeprefix('//').rstrip('/')
-                         for path in include_dirs if path.startswith('//third_party/libxslt/')]
+    private = [path.removeprefix('//').rstrip('/') for path in include_dirs
+               if path.startswith('//third_party/libxslt/')
+               and path.rstrip('/') != '//third_party/libxslt/src']
+    includes = ['..', '../third_party/libxslt/src']
     if len(sources) + len(headers) != len(files):
         raise ValueError('unmapped libxslt source type')
     overlay = ROOT / 'bcr/overlay'
@@ -55,7 +57,7 @@ def main():
         '        srcs = ' + json.dumps(['//:' + path for path in sources]) + ',',
         '        hdrs = ' + json.dumps(['//:' + path for path in headers]) + ',',
         '        includes = ' + json.dumps(includes) + ',',
-        '        copts = ' + json.dumps(copts) + ',',
+        '        copts = [' + ', '.join('"-I" + Label(":libxml").workspace_root + "/' + path + '"' for path in private) + '] + ' + json.dumps(copts) + ',',
         '        local_defines = ' + json.dumps(defines) + ',',
         '        linkstatic = True,',
         '        deps = [":libxml"],',

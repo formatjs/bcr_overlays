@@ -52,6 +52,7 @@ def native_angle_runtime():
                 deps = common["deps"],
             )
             resources.append(":" + target)
+        common["deps"] = common["deps"] + resources
         if library.get("objcxx_srcs"):
             cc_library(
                 name = library["name"] + "_headers",
@@ -77,7 +78,7 @@ def native_angle_runtime():
                 **common
             )
             common["deps"] = common["deps"] + [":" + library["name"] + "_c"]
-        sources = [source for source in library["srcs"] if source not in c_sources] + resources
+        sources = [source for source in library["srcs"] if source not in c_sources]
         if library["kind"] == "shared_library":
             filename = original.split(":")[-1] + ".dll"
             headers = common.pop("hdrs")

@@ -181,6 +181,7 @@ exports_files([
     "build_config.h",
     "buildflag.h",
     "gn_run_binary.py",
+    "precompile.h",
     "toolchain/win/midl.py"
 ])
 # END BLINK_PLATFORM INPUTS
@@ -204,6 +205,7 @@ exports_files([
     "build_config.h",
     "buildflag.h",
     "gn_run_binary.py",
+    "precompile.h",
     "util/LASTCHANGE.dummy",
     "util/android_chrome_version.py",
     "util/chromium_git_revision.h.in",
@@ -218,6 +220,7 @@ exports_files([
     "buildflag.h",
     "gn_helpers.py",
     "gn_run_binary.py",
+    "precompile.h",
     "toolchain/win/midl.py",
     "util/LASTCHANGE.dummy",
     "util/PRESUBMIT.py",

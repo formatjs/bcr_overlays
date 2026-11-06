@@ -7,7 +7,7 @@ load(":blink_platform_sources.bzl", "ACTIONS", "LIBRARIES", "METADATA", "SHARED_
 load(":generated_files.bzl", "CAPTURED_FILES")
 load(":host_support.bzl", cc_library = "platform_cc_library")
 load(":objcxx.bzl", "chromium_objc_libraries")
-load(":public_dependency.bzl", "chromium_public_dependency")
+load(":public_dependency.bzl", "chromium_header_dependency", "chromium_public_dependency")
 load(":python_action.bzl", "chromium_python_action")
 load(":tool_inputs.bzl", "chromium_tool_inputs")
 
@@ -26,7 +26,7 @@ def native_blink_platform():
     for action in ACTIONS:
         chromium_python_action(**action)
     cc_library(
-        name = "blink_platform_headers",
+        name = "blink_platform_headers_with_links",
         hdrs = SHARED_HEADERS + [":all_buildflags"] + [":" + path for path in METADATA] + native.glob(["blink_platform_forwarders/**/*.h"], allow_empty = True),
         includes = ["..", "gen", "blink_platform_forwarders"],
         deps = ["@chromium_" + project + "//:chromium_headers" for project in [
@@ -46,6 +46,7 @@ def native_blink_platform():
             ":ml_headers",
         ],
     )
+    chromium_header_dependency(name = "blink_platform_headers", dependency = ":blink_platform_headers_with_links")
     for original, library in LIBRARIES.items():
         declare_library = _cc_library if "(//build/toolchain/linux:" in original else cc_library
         deps = [":blink_libvpx_rc" if p == "@libvpx//:vpx_rc" else p for p in library["deps"]]

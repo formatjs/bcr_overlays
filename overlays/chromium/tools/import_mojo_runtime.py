@@ -38,6 +38,10 @@ def compiler_configuration(graph, target, language_flags="cflags_cc"):
     msvc = any(flag.startswith(('/W', '/std:')) for flag in original)
     iterator = iter(original)
     for flag in iterator:
+        if language_flags == 'cflags_objcc' and flag == '-fcomplete-member-pointers':
+            continue
+        if flag.startswith('/FI../../'):
+            flag = '/FI' + flag.removeprefix('/FI../../')
         if flag == '-mllvm':
             argument = next(iterator)
             flags.extend(['/clang:-mllvm', '/clang:' + argument] if msvc else [flag, argument])

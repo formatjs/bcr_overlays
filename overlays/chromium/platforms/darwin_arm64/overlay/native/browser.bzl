@@ -9,6 +9,7 @@ load(":browser_sources.bzl", "ACTIONS", "ASSET_GROUPS", "BRIDGES", "BUNDLES", "C
 load(":cxx_bridge.bzl", "chromium_cxx_bridge")
 load(":host_support.bzl", cc_library = "platform_cc_library")
 load(":objcxx.bzl", "chromium_objc_libraries")
+load(":public_dependency.bzl", "chromium_header_dependency")
 load(":python_action.bzl", "ChromiumFilesInfo", "chromium_filegroup", "chromium_python_action")
 load(":resource_copy.bzl", "chromium_resource_copy")
 load(":runtime_bundle.bzl", "chromium_runtime_bundle")
@@ -83,6 +84,9 @@ def native_browser():
             action = dict(action)
             action["args"] = [argument.replace("$LLVM_ROOT", "../../third_party/llvm-build/Release+Asserts") for argument in action["args"]]
             action["deps"] = action["deps"] + [":browser_verification_tools"]
+            # LLVM uses the pinned macOS SDK libc++ runtime.
+            if action["script"].endswith("/verify_dynamic_libraries.py"):
+                action["args"] = action["args"] + ["--allow", "/usr/lib/libc++.1.dylib"]
             if action["script"].endswith("/verify_order.py"):
                 framework = [bundle for bundle in BUNDLES if bundle["root"].endswith(".framework")][0]
                 action["srcs"] = dict(action["srcs"])
@@ -104,7 +108,7 @@ def native_browser():
             srcs = {":" + path: "out/bazel-import/" + path for path in copy["outputs"]},
         )
     cc_library(
-        name = "browser_headers",
+        name = "browser_headers_with_links",
         hdrs = SHARED_HEADERS + [":all_buildflags"] + native.glob(["browser_forwarders/**/*.h"], allow_empty = True),
         includes = ["..", "gen", "browser_forwarders"],
         deps = [":content_headers", "@fast_float//:fast_float"] + ["@chromium_" + project + "//:chromium_headers" for project in [
@@ -125,6 +129,7 @@ def native_browser():
         hdrs = native.glob(["browser_forwarders/**/*.h"], allow_empty = True),
         includes = ["browser_forwarders"],
     )
+    chromium_header_dependency(name = "browser_headers", dependency = ":browser_headers_with_links")
     for original, library in LIBRARIES.items():
         library = dict(library)
         include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
@@ -168,6 +173,8 @@ def native_browser():
         if library["kind"] in ["executable", "shared_library"]:
             if host:
                 common["linkopts"] = common["linkopts"] + ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"]
+            if "//:chrome/app/chrome_exe_main_mac.cc" in sources:
+                common["linkopts"] = common["linkopts"] + ["-Wl,-dead_strip_dylibs"]
             primary = library["outputs"][0]
             shared = library["kind"] == "shared_library"
             binary = primary + ".dylib" if shared and not primary.endswith(".dylib") else primary

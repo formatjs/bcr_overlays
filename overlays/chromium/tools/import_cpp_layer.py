@@ -1156,6 +1156,12 @@ def main():
         if layer == 'vulkan_validation':
             paths = [p for p in paths if not p.startswith('//third_party/vulkan-headers/src/include/')]
         headers = [file_label(p) for p in paths if p.endswith(('.h', '.hh', '.hpp', '.hxx', '.inl', '.inc'))]
+        for field in ('cflags', 'cflags_cc', 'cflags_c'):
+            for flag in unpack(target.get(field, [])):
+                if flag.startswith('/FI'):
+                    header = '//' + flag[3:].removeprefix('../../')
+                    headers.append(file_label(header))
+                    scan_sources.add(header)
         # GN may export a C fragment for inclusion without compiling it.
         headers.extend(file_label(p) for p in (public if isinstance(public, list) else [])
                        if p.endswith(('.c', '.cc', '.cpp', '.cxx')) and p not in target.get('sources', []))
@@ -1347,9 +1353,16 @@ def main():
             generated_assets = {path for dependency in target.get('deps', [])
                                 for path in targets[dependency].get('outputs', [])
                                 if path.endswith(('.bin', '.ico', '.bmp', '.cur', '.manifest', '.png'))}
+            for resource in target.get('sources', []):
+                if resource.endswith('.rc') and not resource.startswith(BUILD):
+                    text = (args.source_root / resource[2:]).read_text(errors='replace')
+                    for asset in re.findall(r'"([^"\r\n]+\.tlb)"', text, re.I):
+                        candidate = BUILD + 'gen/' + asset.replace('\\', '/')
+                        if candidate in generated_paths:
+                            generated_assets.add(candidate)
             libraries[label]['resource_assets'] = {file_label(path):
                 {file_label(asset): asset[2:] for asset in sorted({asset for asset in generated_assets
-                    if posixpath.dirname(asset) == posixpath.dirname(path)} | (
+                    if asset.endswith('.tlb') or posixpath.dirname(asset) == posixpath.dirname(path)} | (
                     set() if path.startswith(BUILD) else resource_asset_inputs(args.source_root, path)))}
                 for path in target.get('sources', []) if path.endswith('.rc')}
             libraries[label]['resource_include_roots'] = {file_label(path): str(Path(path[2:]).parent)
@@ -1362,6 +1375,8 @@ def main():
         if objcxx_sources:
             libraries[label]['objcxx_srcs'] = objcxx_sources
             libraries[label]['objcxx_copts'] = compiler_configuration(graph, target, 'cflags_objcc')[0]
+        if label.startswith('//third_party/crashpad/crashpad/'):
+            libraries[label]['private_includes'] = ['third_party/crashpad/crashpad']
         if label.partition('(')[0] == '//third_party/libusb:libusb':
             libraries[label]['private_includes'] = [path[2:].rstrip('/')
                 for path in unpack(target.get('include_dirs', []))

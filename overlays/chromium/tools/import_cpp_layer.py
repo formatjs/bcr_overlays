@@ -1143,7 +1143,7 @@ def main():
         paths = target.get('sources', []) + (public if isinstance(public, list) else [])
         scan_sources.update(p for p in paths if not p.startswith(BUILD) and not p[2:].startswith(QUICHE)
                             and p.endswith(('.cc', '.c', '.cpp', '.cxx', '.mm', '.m', '.h', '.hh', '.hpp', '.hxx', '.inl', '.inc', '.S', '.s', '.asm')))
-        sources = [file_label(p) for p in target.get('sources', []) if p.endswith(('.cc', '.c', '.cpp', '.cxx', '.S', '.s')) or (layer in ('browser_v8', 'paint') and p.endswith('.asm')) or (layer in ('codecs', 'ffmpeg') and p.endswith('.o'))]
+        sources = [file_label(p) for p in target.get('sources', []) if p.endswith(('.cc', '.c', '.cpp', '.cxx', '.S', '.s')) or (layer in ('browser_v8', 'paint') and p.endswith('.asm')) or (layer in ('codecs', 'ffmpeg') and p.endswith('.o')) or (layer == 'paint' and p.endswith('.obj') and not p.startswith(BUILD))]
         shared_interface = any(path.endswith(interface_provider_suffixes) for path in target.get('sources', []))
         if layer in ('blink_platform', 'blink_core', 'blink_modules', 'content', 'browser') and shared_interface:
             owned = {file_label(path) for path in target.get('sources', [])
@@ -1275,6 +1275,18 @@ def main():
             if msvc:
                 # Bazel owns debug outputs; LLVM supplies its matching C++ runtime.
                 if option.upper().startswith(('/NATVIS:', '/PDB', '/DEBUG', '/DEFAULTLIB:LIBCPMT.LIB')) or option == '/WX':
+                    continue
+                if option.lower().startswith('/manifestinput:'):
+                    flag, path = option.split(':', 1)
+                    if path.startswith('../../'):
+                        logical = '//' + path.removeprefix('../../')
+                    elif path.startswith('gen/'):
+                        logical = BUILD + path
+                    else:
+                        raise ValueError('unmapped Windows manifest input: ' + path)
+                    dependency = file_label(logical)
+                    linker_inputs.append(dependency)
+                    linkopts.append(flag + ':$(location ' + dependency + ')')
                     continue
                 if option.endswith('.lib'):
                     option = '-DEFAULTLIB:' + option

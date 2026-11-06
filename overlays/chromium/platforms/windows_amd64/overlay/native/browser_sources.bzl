@@ -4081,6 +4081,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -4131,6 +4132,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -95081,6 +95083,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -95131,6 +95134,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -356303,9 +356307,12 @@ LIBRARIES = {
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
             "/manifest:embed",
             "/manifestuac:no",
-            "/manifestinput:../../build/win/as_invoker.manifest"
+            "/manifestinput:$(location //build:win/as_invoker.manifest)"
         ],
         "win_def_file": "//:chrome/chrome_elf/chrome_elf.def",
+        "additional_linker_inputs": [
+            "//build:win/as_invoker.manifest"
+        ],
         "outputs": [
             "chrome_elf.dll",
             "chrome_elf.dll.lib",
@@ -359187,10 +359194,16 @@ LIBRARIES = {
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
             "/manifest:embed",
             "/manifestuac:no",
-            "/manifestinput:../../build/win/as_invoker.manifest",
-            "/manifestinput:../../build/win/common_controls.manifest",
-            "/manifestinput:../../build/win/compatibility.manifest",
-            "/manifestinput:gen/chrome/app/version_assembly/version_assembly.manifest"
+            "/manifestinput:$(location //build:win/as_invoker.manifest)",
+            "/manifestinput:$(location //build:win/common_controls.manifest)",
+            "/manifestinput:$(location //build:win/compatibility.manifest)",
+            "/manifestinput:$(location :gen/chrome/app/version_assembly/version_assembly.manifest)"
+        ],
+        "additional_linker_inputs": [
+            "//build:win/as_invoker.manifest",
+            "//build:win/common_controls.manifest",
+            "//build:win/compatibility.manifest",
+            ":gen/chrome/app/version_assembly/version_assembly.manifest"
         ],
         "outputs": [
             "chrome_proxy.exe",
@@ -371883,6 +371896,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -371933,6 +371947,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -379049,9 +379064,9 @@ LIBRARIES = {
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
             "/manifest:embed",
             "/manifestuac:no",
-            "/manifestinput:../../build/win/as_invoker.manifest",
-            "/manifestinput:../../build/win/common_controls.manifest",
-            "/manifestinput:../../build/win/compatibility.manifest"
+            "/manifestinput:$(location //build:win/as_invoker.manifest)",
+            "/manifestinput:$(location //build:win/common_controls.manifest)",
+            "/manifestinput:$(location //build:win/compatibility.manifest)"
         ],
         "resource_srcs": [
             "//:chrome/elevation_service/elevation_service.rc"
@@ -379096,6 +379111,11 @@ LIBRARIES = {
         "resource_include_roots": {
             "//:chrome/elevation_service/elevation_service.rc": "chrome/elevation_service"
         },
+        "additional_linker_inputs": [
+            "//build:win/as_invoker.manifest",
+            "//build:win/common_controls.manifest",
+            "//build:win/compatibility.manifest"
+        ],
         "outputs": [
             "elevation_service.exe",
             "elevation_service.exe.pdb"
@@ -384649,9 +384669,9 @@ LIBRARIES = {
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
             "/manifest:embed",
             "/manifestuac:no",
-            "/manifestinput:../../build/win/as_invoker.manifest",
-            "/manifestinput:../../build/win/common_controls.manifest",
-            "/manifestinput:../../build/win/compatibility.manifest"
+            "/manifestinput:$(location //build:win/as_invoker.manifest)",
+            "/manifestinput:$(location //build:win/common_controls.manifest)",
+            "/manifestinput:$(location //build:win/compatibility.manifest)"
         ],
         "resource_srcs": [
             "//:chrome/notification_helper/notification_helper.rc"
@@ -384694,6 +384714,11 @@ LIBRARIES = {
         "resource_include_roots": {
             "//:chrome/notification_helper/notification_helper.rc": "chrome/notification_helper"
         },
+        "additional_linker_inputs": [
+            "//build:win/as_invoker.manifest",
+            "//build:win/common_controls.manifest",
+            "//build:win/compatibility.manifest"
+        ],
         "outputs": [
             "notification_helper.exe",
             "notification_helper.exe.pdb"
@@ -399383,9 +399408,9 @@ LIBRARIES = {
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
             "/manifest:embed",
             "/manifestuac:no",
-            "/manifestinput:../../build/win/as_invoker.manifest",
-            "/manifestinput:../../build/win/common_controls.manifest",
-            "/manifestinput:../../build/win/compatibility.manifest"
+            "/manifestinput:$(location //build:win/as_invoker.manifest)",
+            "/manifestinput:$(location //build:win/common_controls.manifest)",
+            "/manifestinput:$(location //build:win/compatibility.manifest)"
         ],
         "resource_srcs": [
             "//:chrome/windows_services/elevated_tracing_service/elevated_tracing_service.rc"
@@ -399431,6 +399456,11 @@ LIBRARIES = {
         "resource_include_roots": {
             "//:chrome/windows_services/elevated_tracing_service/elevated_tracing_service.rc": "chrome/windows_services/elevated_tracing_service"
         },
+        "additional_linker_inputs": [
+            "//build:win/as_invoker.manifest",
+            "//build:win/common_controls.manifest",
+            "//build:win/compatibility.manifest"
+        ],
         "outputs": [
             "elevated_tracing_service.exe",
             "elevated_tracing_service.exe.pdb"
@@ -403228,11 +403258,15 @@ LIBRARIES = {
             "/DELAYLOAD:setupapi.dll",
             "/manifest:embed",
             "/manifestuac:no",
-            "/manifestinput:../../build/win/as_invoker.manifest",
-            "/manifestinput:../../build/win/common_controls.manifest"
+            "/manifestinput:$(location //build:win/as_invoker.manifest)",
+            "/manifestinput:$(location //build:win/common_controls.manifest)"
         ],
         "include_roots": [
             "@re2//:re2"
+        ],
+        "additional_linker_inputs": [
+            "//build:win/as_invoker.manifest",
+            "//build:win/common_controls.manifest"
         ],
         "outputs": [
             "chrome.dll",
@@ -404166,10 +404200,10 @@ LIBRARIES = {
             "/DELAYLOAD:ndfapi.dll",
             "/manifest:embed",
             "/manifestuac:no",
-            "/manifestinput:../../build/win/as_invoker.manifest",
-            "/manifestinput:../../build/win/common_controls.manifest",
-            "/manifestinput:../../build/win/compatibility.manifest",
-            "/manifestinput:gen/chrome/app/version_assembly/version_assembly.manifest"
+            "/manifestinput:$(location //build:win/as_invoker.manifest)",
+            "/manifestinput:$(location //build:win/common_controls.manifest)",
+            "/manifestinput:$(location //build:win/compatibility.manifest)",
+            "/manifestinput:$(location :gen/chrome/app/version_assembly/version_assembly.manifest)"
         ],
         "resource_srcs": [
             "//:chrome/app/chrome_exe.rc"
@@ -404253,6 +404287,12 @@ LIBRARIES = {
         "resource_include_roots": {
             "//:chrome/app/chrome_exe.rc": "chrome/app"
         },
+        "additional_linker_inputs": [
+            "//build:win/as_invoker.manifest",
+            "//build:win/common_controls.manifest",
+            "//build:win/compatibility.manifest",
+            ":gen/chrome/app/version_assembly/version_assembly.manifest"
+        ],
         "outputs": [
             "initialexe/chrome.exe",
             "initialexe/chrome.exe.pdb"
@@ -414092,6 +414132,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -414142,6 +414183,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -414338,6 +414380,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -414388,6 +414431,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -598737,6 +598781,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -598787,6 +598832,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -692160,6 +692206,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -692210,6 +692257,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -780928,6 +780976,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -780978,6 +781027,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",
@@ -781148,6 +781198,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-std=c11",
             "-msse3",
             "-Wa,-fdebug-compilation-dir,.",
@@ -781198,6 +781249,7 @@ LIBRARIES = {
             "-split-threshold-for-reg-with-hint=0",
             "-ffp-contract=off",
             "-Wa,--crel,--allow-experimental-crel",
+            "-fcomplete-member-pointers",
             "-msse3",
             "-Wno-builtin-macro-redefined",
             "-D__DATE__=",

@@ -37,6 +37,15 @@ def _resource_impl(ctx):
         outputs = [preprocessed],
         mnemonic = "ChromiumResourcePreprocess",
     )
+    normalized = ctx.actions.declare_file(ctx.label.name + ".normalized.rc")
+    python = ctx.attr._python[platform_common.ToolchainInfo].py3_runtime
+    ctx.actions.run(
+        executable = python.interpreter,
+        arguments = ["-I", "-B", ctx.file._normalizer.path, preprocessed.path, normalized.path],
+        inputs = depset([preprocessed, ctx.file._normalizer], transitive = [python.files]),
+        outputs = [normalized],
+        mnemonic = "ChromiumResourcePaths",
+    )
     assets = []
     asset_sources = []
     include_options = []
@@ -59,8 +68,8 @@ def _resource_impl(ctx):
             asset_sources.append(files[0])
     ctx.actions.run(
         executable = ctx.executable._resource_compiler,
-        arguments = ["/no-preprocess", "/X", "/C", "65001"] + include_options + ["/FO", resource.path, preprocessed.path],
-        inputs = [preprocessed] + assets + asset_sources,
+        arguments = ["/no-preprocess", "/X", "/C", "65001"] + include_options + ["/FO", resource.path, normalized.path],
+        inputs = [normalized] + assets + asset_sources,
         outputs = [resource],
         mnemonic = "ChromiumWindowsResource",
     )
@@ -84,6 +93,8 @@ chromium_windows_resource = rule(
         "includes": attr.string_list(),
         "include_root": attr.string(),
         "deps": attr.label_list(providers = [CcInfo]),
+        "_python": attr.label(default = Label("@rules_python//python:current_py_toolchain"), cfg = "exec"),
+        "_normalizer": attr.label(default = Label("@chromium//native:windows_resource_paths.py"), allow_single_file = True),
         "_resource_compiler": attr.label(default = Label("@llvm//tools:llvm-rc"), executable = True, cfg = "exec", allow_single_file = True),
     },
     toolchains = ["@bazel_tools//tools/cpp:toolchain_type"],

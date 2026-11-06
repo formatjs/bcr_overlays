@@ -189,6 +189,7 @@ http_archive(
         "native/public_dependency.bzl": "//bcr/overlay/native:public_dependency.bzl",
         "native/python_action.bzl": "//bcr/overlay/native:python_action.bzl",
         "native/python_action.py": "//bcr/overlay/native:python_action.py",
+        "native/windows_resource_paths.py": "//bcr/overlay/native:windows_resource_paths.py",
         "native/qt_sdk_headers.bzl": "//bcr/overlay/native:qt_sdk_headers.bzl",
         "native/quiche.bzl": "//bcr/overlay/native:quiche.bzl",
         "native/quiche_repository.BUILD.bazel": "//bcr/overlay/native:quiche_repository.BUILD.bazel",

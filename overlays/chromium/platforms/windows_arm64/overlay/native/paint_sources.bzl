@@ -45,7 +45,8 @@ LIBRARIES = {
             "//:cc/base/switches.h",
             "//:cc/base/synced_property.h",
             "//:cc/base/tiling_data.h",
-            "//:cc/base/unique_notifier.h"
+            "//:cc/base/unique_notifier.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -396,7 +397,8 @@ LIBRARIES = {
             "//:cc/debug/picture_debug_util.h",
             "//:cc/debug/rendering_stats.h",
             "//:cc/debug/rendering_stats_instrumentation.h",
-            "//:cc/raster/lcd_text_disallowed_reason.h"
+            "//:cc/raster/lcd_text_disallowed_reason.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -850,7 +852,8 @@ LIBRARIES = {
             "//:cc/paint/tone_map_util.h",
             "//:cc/paint/transfer_cache_deserialize_helper.h",
             "//:cc/paint/transfer_cache_entry.h",
-            "//:cc/paint/transfer_cache_serialize_helper.h"
+            "//:cc/paint/transfer_cache_serialize_helper.h",
+            "//build:precompile.h"
         ],
         "copts": [
             "/W4",
@@ -3281,6 +3284,9 @@ LIBRARIES = {
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [
             "/wd4201",
             "/W4",
@@ -3622,6 +3628,9 @@ LIBRARIES = {
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [
             "/W4",
             "-Wimplicit-fallthrough",
@@ -3951,6 +3960,9 @@ LIBRARIES = {
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [
             "/W4",
             "-Wimplicit-fallthrough",
@@ -4236,6 +4248,9 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [
             "/W4",
             "-Wimplicit-fallthrough",
@@ -4411,6 +4426,9 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib"
         ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [],
         "c_copts": []
     },
@@ -4427,6 +4445,9 @@ LIBRARIES = {
         ],
         "deps": [],
         "linkopts": [],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [],
         "c_copts": []
     },
@@ -4445,6 +4466,9 @@ LIBRARIES = {
             "//third_party/zlib"
         ],
         "linkopts": [],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
+        ],
         "asm_copts": [],
         "c_copts": []
     },
@@ -4618,6 +4642,9 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
         ],
         "asm_copts": [
             "/W4",
@@ -4832,7 +4859,8 @@ LIBRARIES = {
             "//:third_party/crashpad/crashpad/util/win/scoped_local_alloc.cc",
             "//:third_party/crashpad/crashpad/util/win/scoped_process_suspend.cc",
             "//:third_party/crashpad/crashpad/util/win/scoped_set_event.cc",
-            "//:third_party/crashpad/crashpad/util/win/session_end_watcher.cc"
+            "//:third_party/crashpad/crashpad/util/win/session_end_watcher.cc",
+            "//:third_party/crashpad/crashpad/util/misc/capture_context_win_arm64.obj"
         ],
         "hdrs": [
             "//:third_party/crashpad/crashpad/util/file/delimited_file_reader.h",
@@ -5105,6 +5133,9 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ],
+        "private_includes": [
+            "third_party/crashpad/crashpad"
         ],
         "asm_copts": [
             "/wd4201",

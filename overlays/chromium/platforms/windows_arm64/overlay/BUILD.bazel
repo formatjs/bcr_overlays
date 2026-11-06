@@ -13877,6 +13877,7 @@ exports_files([
     "third_party/crashpad/crashpad/util/misc/address_types.h",
     "third_party/crashpad/crashpad/util/misc/arraysize.h",
     "third_party/crashpad/crashpad/util/misc/capture_context.h",
+    "third_party/crashpad/crashpad/util/misc/capture_context_win_arm64.obj",
     "third_party/crashpad/crashpad/util/misc/clock.h",
     "third_party/crashpad/crashpad/util/misc/clock_win.cc",
     "third_party/crashpad/crashpad/util/misc/elf_note_types.h",

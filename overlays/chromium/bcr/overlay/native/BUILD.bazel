@@ -62,6 +62,7 @@ load(":xslt.bzl", "native_xslt")
 package(default_visibility = ["//visibility:public"])
 
 exports_files([
+    "windows_resource_paths.py",
     "python_action.py",
     "stage_tool.py",
 ])

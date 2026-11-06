@@ -7,7 +7,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'overlays/chromium/
 from import_cpp_layer import resource_asset_inputs, declare_message_compiler_assets
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'overlays/chromium/bcr/overlay/native'))
+from windows_resource_paths import normalize
+
+
 class WindowsResourceInputsTest(unittest.TestCase):
+    def test_windows_resource_paths_preserve_display_string_escapes(self):
+        text = r'1 ICON "theme\chromium\win\chromium.ico"' + '\n' + r'2 "Open\nSave.ico"'
+        expected = '1 ICON "theme/chromium/win/chromium.ico"' + '\n' + r'2 "Open\nSave.ico"'
+        self.assertEqual(normalize(text), expected)
+
     def test_nested_resources_keep_windows_relative_paths(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory)

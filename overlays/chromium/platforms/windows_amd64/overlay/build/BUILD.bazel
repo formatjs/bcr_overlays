@@ -267,6 +267,9 @@ exports_files([
     "util/tast_control.py",
     "util/version.py",
     "util/version_test.py",
+    "win/as_invoker.manifest",
+    "win/common_controls.manifest",
+    "win/compatibility.manifest",
     "win/message_compiler.py",
     "win/reorder-imports.py"
 ])

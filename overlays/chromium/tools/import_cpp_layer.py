@@ -172,7 +172,7 @@ def reuse_host_targets(targets, reused, provided):
 def native_graphics_providers(overlay):
     """Read providers from the native overlay, not the cross-import staging tree."""
     providers = {}
-    for component in ('gpu_protocol', 'compositor', 'network', 'fonts', 'codecs', 'pthreadpool', 'ml', 'ffmpeg', 'skia', 'angle_runtime', 'swiftshader', 'vulkan_loader',
+    for component in ('geometry', 'dawn', 'dawn_native', 'linux_ui', 'gpu_service', 'gpu_protocol', 'compositor', 'network', 'fonts', 'codecs', 'pthreadpool', 'ml', 'ffmpeg', 'skia', 'angle_runtime', 'swiftshader', 'vulkan_loader',
                       'vulkan_validation', 'vulkan_tools'):
         tree = ast.parse((overlay / 'native' / (component + '_sources.bzl')).read_text())
         records = next(ast.literal_eval(node.value) for node in tree.body
@@ -211,6 +211,12 @@ def reuse_host_graphics(graph, reference, libraries, providers):
                 '//third_party/eigen3:', '//third_party/gemmlowp:', '//third_party/farmhash:',
                 '//third_party/neon_2_sse:',
                 '//third_party/pthreadpool:',
+                '//base/version_info:', '//components/miracle_parameter/',
+                '//components/network_time/', '//components/performance_manager/scenario_api:',
+                '//components/unexportable_keys:', '//sql:', '//third_party/dawn/',
+                '//third_party/libyuv:', '//third_party/pffft:', '//ui/base/glib:',
+                '//ui/base:features', '//ui/gfx/geometry:',
+                '//services/viz/public/mojom:singleplanar_format',
                 '//third_party/libwebp:', '//third_party/libjpeg_turbo:', '//third_party/wuffs:',
                 '//third_party/ffmpeg:', '//skia:', '//net:', '//third_party/webrtc/', '//components/viz/common:shared_image_format')
     fields = ('type', 'sources', 'defines', 'cflags', 'cflags_cc', 'cflags_c',

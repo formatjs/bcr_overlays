@@ -127,3 +127,15 @@ class HostGraphicsReuseTest(unittest.TestCase):
         library = next(iter(libraries.values()))
         self.assertEqual(library['deps'], ['@chromium//native:pthreadpool_native'])
         self.assertEqual(library['srcs'], [])
+
+    def test_snapshot_support_libraries_use_matching_native_providers(self):
+        for label in ['//third_party/dawn/src/dawn/common:common',
+                      '//third_party/libyuv:libyuv_internal',
+                      '//ui/gfx/geometry:geometry', '//sql:sql']:
+            with self.subTest(label=label):
+                capture, native, libraries, _ = self.capture(label, kind='source_set')
+                self.assertEqual(reuse_host_graphics(capture, native, libraries,
+                                                    {label: ':native_support'}), 1)
+                library = next(iter(libraries.values()))
+                self.assertEqual(library['deps'], ['@chromium//native:native_support'])
+                self.assertEqual(library['srcs'], [])

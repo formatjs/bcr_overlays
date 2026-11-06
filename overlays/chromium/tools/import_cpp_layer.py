@@ -220,6 +220,36 @@ def resource_asset_inputs(source_root, resource):
     return assets
 
 
+def declare_message_compiler_assets(targets, source_root):
+    """Declare binary message tables omitted from GN's message compiler outputs."""
+    source_root = source_root.absolute()
+    for target in targets.values():
+        if target.get('script') != '//build/win/message_compiler.py':
+            continue
+        instances = target.get('source_outputs', {'': [path.removeprefix(BUILD)
+                    for path in target.get('outputs', [])]})
+        for source, outputs in instances.items():
+            arguments = foreach_arguments(target['args'], source, outputs)
+            headers = arguments[arguments.index('-h') + 1]
+            resources = arguments[arguments.index('-r') + 1]
+            directory = 'third_party/win_build_output/' + re.sub(r'^(?:[^/]+/)?gen/', 'mc/', headers)
+            checked = source_root / directory
+            additions = set()
+            for output in list(outputs):
+                if not output.endswith('.rc'):
+                    continue
+                resource = '//' + directory + '/' + Path(output).name
+                for asset in resource_asset_inputs(source_root, resource):
+                    if asset.lower().endswith('.bin'):
+                        relative = (source_root / asset[2:]).relative_to(checked)
+                        additions.add(posixpath.join(resources, relative.as_posix()))
+            for output in sorted(additions):
+                if output not in outputs:
+                    outputs.append(output)
+                if BUILD + output not in target['outputs']:
+                    target['outputs'].append(BUILD + output)
+
+
 def protocol_inputs(source_root, protocols):
     """Follow PDL includes in the checkout's logical namespace."""
     root = Path(os.path.abspath(source_root))
@@ -978,6 +1008,7 @@ def main():
     unpack = lambda value: graph['pool'][value['pool']] if isinstance(value, dict) else value
     exports = {}
     overlay = ROOT / "bcr/overlay"
+    declare_message_compiler_assets(selected, args.source_root)
     generated_paths = {path for target in targets.values() for path in target.get('outputs', [])}
 
     bundle_outputs = {target['bundle_data']['root_dir_output']: ':' + name(label) + '_bundle'

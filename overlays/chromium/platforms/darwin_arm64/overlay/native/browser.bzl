@@ -166,6 +166,8 @@ def native_browser():
                 common["deps"] = common["deps"] + [":" + library["name"] + suffix]
         sources = [path for path in library["srcs"] if path not in c_sources and path not in asm_sources]
         if library["kind"] in ["executable", "shared_library"]:
+            if host:
+                common["linkopts"] = common["linkopts"] + ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"]
             primary = library["outputs"][0]
             shared = library["kind"] == "shared_library"
             binary = primary + ".dylib" if shared and not primary.endswith(".dylib") else primary

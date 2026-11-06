@@ -372659,7 +372659,9 @@ LIBRARIES = {
             "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "resource_assets": {
-            ":gen/chrome/common/win/eventlog_messages.rc": {}
+            ":gen/chrome/common/win/eventlog_messages.rc": {
+                ":gen/chrome/common/win/MSG00409.bin": "out/bazel-import/gen/chrome/common/win/MSG00409.bin"
+            }
         },
         "resource_include_roots": {
             ":gen/chrome/common/win/eventlog_messages.rc": "out/bazel-import/gen/chrome/common/win"
@@ -1040361,7 +1040363,8 @@ ACTIONS = [
         },
         "outs": {
             "gen/chrome/common/win/eventlog_messages.h": "gen/chrome/common/win/eventlog_messages.h",
-            "gen/chrome/common/win/eventlog_messages.rc": "gen/chrome/common/win/eventlog_messages.rc"
+            "gen/chrome/common/win/eventlog_messages.rc": "gen/chrome/common/win/eventlog_messages.rc",
+            "gen/chrome/common/win/MSG00409.bin": "gen/chrome/common/win/MSG00409.bin"
         },
         "script": "build/win/message_compiler.py",
         "args": [

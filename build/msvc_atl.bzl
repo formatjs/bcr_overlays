@@ -8,6 +8,17 @@ def _atl_impl(ctx):
         sha256 = "64e638a9e62e056a14b16cf66c2d7710291a6d408953065e2a8caf45ab995e42",
         type = "zip",
     )
+    header = "Contents/VC/Tools/MSVC/14.50.35717/atlmfc/include/cstringt.h"
+    text = ctx.read(header)
+    include = "#include <yvals_core.h>"
+    if text.count(include) != 1:
+        fail("ATL CString STL compatibility patch no longer matches")
+    ctx.file(header, text.replace(include, "#ifdef _LIBCPP_VERSION\n#include <version>\n#else\n" + include + "\n#endif"), executable = False)
+    header = "Contents/VC/Tools/MSVC/14.50.35717/atlmfc/include/atlsecurity.h"
+    text = ctx.read(header)
+    if text.count("throw;") != 3:
+        fail("ATL security exception patch no longer matches")
+    ctx.file(header, text.replace("throw;", "_ATLRETHROW;"), executable = False)
     ctx.file("BUILD.bazel", "\n".join([
         'load("@rules_cc//cc:cc_library.bzl", "cc_library")',
         "cc_library(",

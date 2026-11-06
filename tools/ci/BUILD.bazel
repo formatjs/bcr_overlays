@@ -93,6 +93,30 @@ msvc_static_crt(
     srcs = [":windows_allocator_probe"],
 )
 
+cc_binary(
+    name = "windows_base_probe",
+    srcs = ["base_probe.cc"],
+    copts = [
+        "/std:c++20",
+        "/EHs-c-",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+    deps = select({
+        "@platforms//cpu:x86_64": ["@chromium_windows_amd64//native:base"],
+        "@platforms//cpu:aarch64": ["@chromium_windows_arm64//native:base"],
+    }),
+)
+
+msvc_static_crt(
+    name = "base_static_crt",
+    srcs = [":windows_base_probe"],
+)
+
+windows_amd64_browser(
+    name = "base-windows-amd64",
+    srcs = [":base_static_crt"],
+)
+
 exports_files([
     "chromium.py",
     "platforms.json",
@@ -188,4 +212,9 @@ windows_amd64_browser(
 windows_arm64_browser(
     name = "expat-windows-arm64",
     srcs = [":expat_toolchain_probe"],
+)
+
+windows_arm64_browser(
+    name = "base-windows-arm64",
+    srcs = [":base_static_crt"],
 )

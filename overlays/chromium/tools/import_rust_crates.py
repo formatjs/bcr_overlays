@@ -78,8 +78,11 @@ def main():
     parser.add_argument('graph', type=Path)
     parser.add_argument('--source-root', type=Path, required=True)
     parser.add_argument('--browser', action='store_true', help='Include browser QR and ZIP bridges')
+    parser.add_argument('--root', action='append', choices=sorted(ROOTS | BROWSER_ROOTS),
+                        help='Import only this named root and its complete Rust dependency closure')
     args = parser.parse_args()
-    roots = ROOTS | (BROWSER_ROOTS if args.browser else {})
+    roots = ({name: (ROOTS | BROWSER_ROOTS)[name] for name in args.root} if args.root
+             else ROOTS | (BROWSER_ROOTS if args.browser else {}))
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     targets = graph['targets']
     selected, scripts = {}, {}
@@ -174,7 +177,7 @@ def main():
                 if not flags[index + 1].startswith('cr_rustc_revision='):
                     retained.extend(flags[index:index + 2])
                 index += 1
-            elif flag.startswith(('--cfg=', '-Zallow-features=', '-D', '-A', '-F', '-Cpanic=', '-Copt-level=', '-Cdebug-assertions')):
+            elif flag.startswith(('--cfg=', '-Zallow-features=', '-D', '-A', '-F', '-Cpanic=', '-Copt-level=', '-Cdebug-assertions', '-Ctarget-feature=')):
                 retained.append(flag)
             index += 1
         if not edition:
@@ -273,19 +276,20 @@ def main():
         ]
     for alias, label in roots.items():
         lines += [f'    native.alias(name = "{alias}", actual = "{resolve(label)}")']
-    temporal_directory = 'third_party/rust/chromium_crates_io/vendor/temporal_capi-v0_1/bindings/cpp'
-    temporal_headers = sorted(path for path in sources if path.startswith(temporal_directory + '/') and path.endswith(('.h', '.hpp')))
-    if not temporal_headers:
-        raise ValueError('missing Temporal C++ bindings')
-    lines += [
-        '    cc_library(',
-        '        name = "temporal_capi_headers",',
-        '        hdrs = ' + json.dumps([file_label(path) for path in temporal_headers]) + ',',
-        '        includes = ["../../' + temporal_directory + '"],',
-        '        defines = ["TEMPORAL_CAPI_VERSION_0_1"],',
-        '    )',
-        '    cc_library(name = "temporal_capi_cpp", deps = [":temporal_capi_headers", ":temporal_capi"])',
-    ]
+    if 'temporal_capi' in roots:
+        temporal_directory = 'third_party/rust/chromium_crates_io/vendor/temporal_capi-v0_1/bindings/cpp'
+        temporal_headers = sorted(path for path in sources if path.startswith(temporal_directory + '/') and path.endswith(('.h', '.hpp')))
+        if not temporal_headers:
+            raise ValueError('missing Temporal C++ bindings')
+        lines += [
+            '    cc_library(',
+            '        name = "temporal_capi_headers",',
+            '        hdrs = ' + json.dumps([file_label(path) for path in temporal_headers]) + ',',
+            '        includes = ["../../' + temporal_directory + '"],',
+            '        defines = ["TEMPORAL_CAPI_VERSION_0_1"],',
+            '    )',
+            '    cc_library(name = "temporal_capi_cpp", deps = [":temporal_capi_headers", ":temporal_capi"])',
+        ]
     lines += ['    native.filegroup(name = name, srcs = ' + json.dumps([':' + alias for alias in roots]) + ')']
     (ROOT / 'bcr/overlay/native/rust/crates.bzl').write_text('\n'.join(lines) + '\n')
     for relative, owned in [('bcr/overlay/BUILD.bazel', [p for p in sources if not p.startswith(('build/', CXX + '/', 'third_party/fontconfig/src/', 'third_party/skia/', 'third_party/crabbyavif/src/'))]),
@@ -309,7 +313,7 @@ def main():
         + 'package(default_visibility = ["//visibility:public"])\n'
         + 'exports_files(' + json.dumps(cxx_files + ['BUILD.bazel'], indent=4) + ')\n'
         + 'cc_library(name = "core", hdrs = ["include/cxx.h"], include_prefix = "rust", strip_include_prefix = "include")\n'
-        + 'cc_library(name = "core-lib", srcs = ["src/cxx.cc"], hdrs = ["include/cxx.h"], defines = ["CXX_RS_EXPORT="], copts = ["-std=c++20", "-fno-exceptions", "-fno-rtti"], linkstatic = True, deps = [":core", "//:cxx_wrapper_headers"])\n')
+        + 'cc_library(name = "core-lib", srcs = ["src/cxx.cc"], hdrs = ["include/cxx.h"], defines = ["CXX_RS_EXPORT="], copts = select({"@platforms//os:windows": ["/std:c++20", "/EHs-c-", "/GR-"], "//conditions:default": ["-std=c++20", "-fno-exceptions", "-fno-rtti"]}), linkstatic = True, deps = [":core", "//:cxx_wrapper_headers"])\n')
     print(f'Imported {len(selected)} Rust targets, {len(scripts)} build scripts, {len(sources)} source inputs')
 
 

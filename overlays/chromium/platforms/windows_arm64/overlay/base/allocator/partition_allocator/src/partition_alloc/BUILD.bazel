@@ -1,4 +1,4 @@
-load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("//native:host_support.bzl", cc_library = "platform_cc_library")
 load(":sources.bzl", "COPTS", "DEFINES", "HEADERS", "SOURCES")
 
 package(default_visibility = ["//visibility:public"])

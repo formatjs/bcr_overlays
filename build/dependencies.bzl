@@ -14,6 +14,7 @@ load(":khronos_sources.bzl", "chromium_khronos_sources")
 load(":libyuv_sources.bzl", "chromium_libyuv_sources")
 load(":media_sources.bzl", "chromium_media_sources")
 load(":ml_sources.bzl", "chromium_ml_sources")
+load(":msvc_atl.bzl", "chromium_msvc_atl")
 load(":platform_runtime.bzl", "chromium_platform_headers_dispatch", "chromium_platform_runtime_repository")
 load(":protobuf_javascript_sources.bzl", "chromium_protobuf_javascript_sources")
 load(":pthreadpool_sources.bzl", "chromium_pthreadpool_sources")
@@ -42,6 +43,7 @@ _OVERLAYS = [
 ]
 
 def _dependencies_impl(ctx):
+    chromium_msvc_atl(name = "chromium_msvc_atl")
     chromium_platform_runtime_repository(
         name = "chromium_platform_runtime",
         manifest = Label("//overlays/chromium:native/platform_runtime.json"),

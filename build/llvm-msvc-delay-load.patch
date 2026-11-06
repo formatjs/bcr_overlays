@@ -1,0 +1,18 @@
+--- a/runtimes/msvc/BUILD.bazel
++++ b/runtimes/msvc/BUILD.bazel
+@@ -7,6 +7,7 @@
+ # These archives do not select a CRT mode. Their directives may request other
+ # support archives or SDK libraries, so expose the complete native closure.
+ _MSVC_COMMON_SUPPORT_LIBRARIES = [
++    "delayimp.lib",
+     "exe_initialize_mta.lib",
+     "iso_stdio_wide_specifiers.lib",
+     "legacy_stdio_definitions.lib",
+@@ -47,6 +48,7 @@
+     "CodeAnalysis/sourceannotations.h",
+     "concurrencysal.h",
+     "crtdefs.h",
++    "delayimp.h",
+     "eh.h",
+     "ehdata.h",
+     "ehdata_forceinclude.h",

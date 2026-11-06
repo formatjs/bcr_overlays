@@ -1,5 +1,7 @@
 exports_files([
+    "msvc_atl.bzl",
     "llvm-macos-cryptex-frameworks.patch",
+    "llvm-msvc-delay-load.patch",
     "spirv-tools-generator-input.patch",
     "spirv-headers-generator-inputs.patch",
     "windows_debuggers.BUILD.bazel",

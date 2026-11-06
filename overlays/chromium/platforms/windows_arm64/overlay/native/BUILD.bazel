@@ -1,5 +1,12 @@
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load(":base.bzl", "native_base")
+load(":base_sources.bzl", "COPTS")
 load(":buildflags.bzl", "native_buildflags")
+load(":cxx_bridge.bzl", "chromium_cxx_bridge", "native_cxx_tools")
+load(":generated_files.bzl", "captured_generated_files")
+load(":perfetto_proto.bzl", "native_perfetto_proto")
+load(":perfetto_runtime.bzl", "native_perfetto_runtime")
+load(":proto_actions.bzl", "native_variations_proto")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -11,4 +18,44 @@ cc_library(
     name = "partition_alloc_buildflags",
     hdrs = [":flags_4a0fe733a7b9f6e6"],
     includes = ["gen/base/allocator/partition_allocator/src"],
+)
+
+captured_generated_files(name = "gn_configuration")
+
+native_variations_proto(name = "variations_proto")
+
+native_perfetto_proto(name = "perfetto_proto")
+
+native_perfetto_runtime(name = "perfetto_runtime")
+
+native_cxx_tools(name = "cxx_tools")
+
+native_base(name = "base")
+
+cc_library(
+    name = "rust_allocator_buildflags",
+    hdrs = [":gen/build/rust/allocator/buildflags.h"],
+    includes = ["gen"],
+)
+
+chromium_cxx_bridge(
+    name = "serde_json_wrapper_generated",
+    src = "//:third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs",
+    logical_source = "third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs",
+)
+
+cc_library(
+    name = "serde_json_wrapper_cpp",
+    srcs = [":gen/third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs.cc"],
+    hdrs = [
+        ":gen/third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs.h",
+        "//build:precompile.h",
+    ],
+    copts = COPTS["base"],
+    includes = ["gen"],
+    linkstatic = True,
+    deps = [
+        ":base_headers",
+        "//:serde_json_wrapper_headers",
+    ],
 )

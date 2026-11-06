@@ -1273,6 +1273,9 @@ def main():
         linker_flags = iter(unpack(target.get('ldflags', [])))
         for option in linker_flags:
             if msvc:
+                if option.upper().startswith('/PDBPAGESIZE:'):
+                    linkopts.append(option)
+                    continue
                 # Bazel owns debug outputs; LLVM supplies its matching C++ runtime.
                 if option.upper().startswith(('/NATVIS:', '/PDB', '/DEBUG', '/DEFAULTLIB:LIBCPMT.LIB')) or option == '/WX':
                     continue

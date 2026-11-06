@@ -1,0 +1,8 @@
+--- a/config/vpx_config.bzl
++++ b/config/vpx_config.bzl
+@@ -371,4 +371,5 @@
+         name = name,
+         out = out,
+         content = lines,
++        newline = "unix",
+     )

@@ -329,6 +329,7 @@ single_version_override(
         "//build:libvpx-highbitdepth.patch",
         "//build:libvpx-chromium-headers.patch",
         "//build:libvpx-rate-control.patch",
+        "//build:libvpx-rtcd-lf.patch",
     ],
     version = "1.16.0.bcr.beta.3",
 )

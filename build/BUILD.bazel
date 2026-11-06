@@ -1,4 +1,5 @@
 exports_files([
+    "libvpx-rtcd-lf.patch",
     "vulkan-hpp-namespace.patch",
     "dav1d-private-headers.patch",
     "opus-private-headers.patch",

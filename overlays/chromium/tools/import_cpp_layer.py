@@ -1065,7 +1065,7 @@ def main():
         for field, option in [('frameworks', '-framework'), ('weak_frameworks', '-weak_framework')]:
             for framework in unpack(target.get(field, [])):
                 linkopts.extend([option, framework.removesuffix('.framework')])
-        if layer == 'compositor' and label == '//third_party/libsecret:libsecret':
+        if label.split('(', 1)[0] == '//third_party/libsecret:libsecret':
             includes.append('../third_party/libsecret')
             dependencies.append('@glib//gio')
         if layer == 'compositor' and label == '//third_party/webrtc/modules/desktop_capture:desktop_capture':

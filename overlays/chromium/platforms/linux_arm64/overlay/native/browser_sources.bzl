@@ -1103041,7 +1103041,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@glib//gio",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",

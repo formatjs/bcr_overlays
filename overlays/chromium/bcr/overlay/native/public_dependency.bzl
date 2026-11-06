@@ -62,7 +62,8 @@ def _snapshot_dependencies_impl(ctx):
     return [
         CcInfo(
             compilation_context = merged.compilation_context,
-            linking_context = cc_common.create_linking_context(linker_inputs = depset(inputs)),
+            # Preserve archive extraction order when rebuilding linker inputs.
+            linking_context = cc_common.create_linking_context(linker_inputs = depset(inputs, order = "topological")),
         ),
         DefaultInfo(runfiles = ctx.runfiles().merge_all([
             dep[DefaultInfo].default_runfiles

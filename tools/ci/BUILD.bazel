@@ -563,3 +563,32 @@ darwin_arm64_browser(
         "@chromium_darwin_arm64//native:angle_runtime",
     ],
 )
+
+cc_binary(
+    name = "windows_angle_probe",
+    srcs = ["angle_probe.cc"],
+    copts = [
+        "/std:c++20",
+        "/EHs-c-",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+    deps = ["@chromium_angle//:headers"],
+)
+
+msvc_static_crt(
+    name = "angle_static_crt",
+    srcs = [":windows_angle_probe"] + select({
+        "@platforms//cpu:x86_64": ["@chromium_windows_amd64//native:angle_runtime"],
+        "@platforms//cpu:aarch64": ["@chromium_windows_arm64//native:angle_runtime"],
+    }),
+)
+
+windows_amd64_browser(
+    name = "angle-windows-amd64",
+    srcs = [":angle_static_crt"],
+)
+
+windows_arm64_browser(
+    name = "angle-windows-arm64",
+    srcs = [":angle_static_crt"],
+)

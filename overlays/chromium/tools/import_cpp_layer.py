@@ -335,6 +335,7 @@ def main():
     parser.add_argument('--source-root', type=Path, required=True)
     parser.add_argument('--native-overlay', type=Path, default=ROOT / 'bcr/overlay',
                         help='Linux AMD64 overlay supplying shared host graphics providers')
+    parser.add_argument('--root', action='append', default=[], help='Additional captured GN roots for this layer')
     parser.add_argument('--assets-only', action='store_true', help='Import browser resource prerequisites before browser assembly')
     parser.add_argument('--layer', choices=['network', 'geometry', 'dawn', 'fonts', 'codecs', 'skia', 'paint', 'gfx', 'tint', 'dawn_native', 'vulkan_loader', 'vulkan_validation', 'swiftshader', 'angle_runtime', 'vulkan_tools', 'gpu_protocol', 'x11', 'linux_buffers', 'browser_services', 'linux_ui', 'ozone', 'gpu_service', 'browser_v8', 'pthreadpool', 'ml', 'ffmpeg', 'gpu_client', 'media', 'compositor', 'blink_platform', 'blink_core', 'blink_modules', 'content', 'browser', 'blink_rust'], default='network')
     args = parser.parse_args()
@@ -406,7 +407,7 @@ def main():
                     '//third_party/protobuf-javascript:', '//sandbox/policy/mojom:', '//url/mojom:')
         roots = ['//services/metrics/public/cpp:metrics_cpp', '//services/tracing/public/cpp:cpp']
     if layer == 'linux_ui':
-        prefixes = ('//ui/', '//components/device_event_log:', '//ipc:')
+        prefixes = ('//ui/', '//components/device_event_log:', '//components/headless/screen_info:', '//ipc:')
         roots = ['//ui/gl:gl']
     if layer == 'ozone':
         prefixes = ('//ui/', '//components/dbus', '//components/headless/',
@@ -418,7 +419,7 @@ def main():
     if layer == 'gpu_service':
         prefixes = ('//gpu/', '//components/viz/common', '//components/persistent_cache:',
                     '//components/crash/core/common:', '//ipc:', '//third_party/dawn/',
-                    '//third_party/libyuv:', '//services/viz/public/mojom:',
+                    '//third_party/libyuv:', '//components/metal_util:', '//components/gwp_asan/client:', '//components/gwp_asan/common:', '//services/viz/public/mojom:',
                     '//services/webnn/public/mojom:', '//third_party/blink/public/common/tokens:',
                     '//third_party/blink/public/common:common_export', '//url/ipc:', '//ui/base/clipboard:')
         roots = ['//gpu/command_buffer/service:gles2']
@@ -453,6 +454,7 @@ def main():
     if layer == 'pthreadpool':
         prefixes = ('//third_party/pthreadpool:',)
         roots = ['//third_party/pthreadpool:pthreadpool']
+    roots.extend(args.root)
     if args.assets_only and layer != 'browser':
         parser.error('--assets-only requires --layer browser')
     browser_asset_roots = []
@@ -585,6 +587,12 @@ def main():
             '//build:android_buildflags': ':all_buildflags',
             '//build:blink_buildflags': ':all_buildflags',
             '//third_party/modp_b64:modp_b64': '//third_party/modp_b64',
+        })
+    if layer == 'linux_ui':
+        reused.update({
+            '//mojo/public/cpp/base:base': ':mojo_base_types',
+            '//mojo/public/interfaces/bindings:bindings': ':mojo_cpp_bindings',
+            '//mojo/public/interfaces/bindings:bindings_shared': ':mojo_binding_headers',
         })
     if layer == 'ozone':
         reused.update({
@@ -786,6 +794,8 @@ def main():
         return layer + '_' + hashlib.sha256(label.encode()).hexdigest()[:16]
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     targets = graph['targets']
+    if layer == 'media' and '//media/filters:symphonia_glue_cxx_generated' not in targets:
+        roots.remove('//media/filters:symphonia_glue_cxx_generated')
     if layer == 'fonts' and '//third_party/fontconfig:fontconfig' not in targets:
         roots.remove('//third_party/fontconfig:fontconfig')
     for label in ['//build/config/mac:sdk_inputs', '//build/win:runtime_libs']:
@@ -1047,6 +1057,10 @@ def main():
             defines = [p.replace(chr(92)+chr(34), chr(34)).replace(chr(34), chr(92)+chr(34)) for p in defines]
             includes += ['../' + p[2:].rstrip('/') for p in unpack(target.get('include_dirs', []))
                          if p.startswith(('//third_party/freetype/include/', '//third_party/fontconfig/include/', '//third_party/libpng/', '//third_party/libxml/'))]
+        # ANGLE's initializer uses optional whitespace that clang-cl response files split.
+        defines = [value.replace(' ', '')
+                   if value.startswith('ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES=') else value
+                   for value in defines]
         if layer in ('paint', 'gfx'):
             includes += ['../' + p[2:].rstrip('/') for p in unpack(target.get('include_dirs', []))
                          if p.startswith(('//third_party/crashpad/', '//third_party/libdrm/', '//third_party/libsync/'))]
@@ -1172,6 +1186,11 @@ def main():
                         if path.startswith('//third_party/dawn/third_party/dxc/')]
         if dxc_includes:
             libraries[label]['dxc_include_dirs'] = dxc_includes
+        definitions = [path for path in target.get('sources', []) if path.endswith('.def')]
+        if msvc and definitions and target['type'] in ('executable', 'shared_library'):
+            if len(definitions) != 1:
+                raise ValueError('multiple Windows export definitions: ' + label)
+            libraries[label]['win_def_file'] = file_label(definitions[0])
         if resource_sources:
             libraries[label]['resource_srcs'] = resource_sources
             libraries[label]['resource_defines'] = unpack(target.get('defines', []))
@@ -1304,7 +1323,7 @@ def main():
             logical = '//' + header.relative_to(args.source_root).as_posix()
             shared_headers.add(file_label(logical))
             scan_sources.add(logical)
-        own = ('gpu/', 'components/viz/common/', 'components/persistent_cache/', 'components/crash/core/common/', 'ipc/', 'third_party/dawn/', 'third_party/libyuv/', 'services/viz/public/mojom/', 'services/viz/public/cpp/', 'services/webnn/public/mojom/', 'third_party/blink/public/common/', 'url/ipc/', 'ui/base/clipboard/')
+        own = ('gpu/', 'components/metal_util/', 'components/gwp_asan/', 'components/viz/common/', 'components/persistent_cache/', 'components/crash/core/common/', 'ipc/', 'third_party/dawn/', 'third_party/libyuv/', 'services/viz/public/mojom/', 'services/viz/public/cpp/', 'services/webnn/public/mojom/', 'third_party/blink/public/common/', 'url/ipc/', 'ui/base/clipboard/')
     if layer == 'ozone':
         forwarders = {'third_party/re2/src/re2/re2.h': 're2/re2.h'}
         for header in sorted(header for directory in ['ui/gl/mojom', 'services/service_manager/public/cpp'] for header in (args.source_root / directory).glob('*_mojom_traits.h')):
@@ -1313,8 +1332,8 @@ def main():
             scan_sources.add(logical)
         own = ('ui/', 'gpu/config/', 'components/dbus/', 'components/headless/', 'components/url_formatter/', 'components/exo/wayland/protocol/', 'dbus/', 'device/udev_linux/', 'services/tracing/public/', 'services/service_manager/public/', 'gpu/vulkan/', 'ipc/', 'third_party/khronos/')
     if layer == 'linux_ui':
-        forwarders = {}
-        own = ('ui/', 'components/device_event_log/', 'ipc/', 'third_party/khronos/')
+        forwarders = {'third_party/re2/src/re2/re2.h': 're2/re2.h'}
+        own = ('ui/', 'components/device_event_log/', 'components/headless/screen_info/', 'ipc/', 'third_party/khronos/')
     if layer == 'browser_services':
         forwarders = {'third_party/snappy/src/snappy.h': 'snappy/snappy.h'}
         own = ('services/metrics/public/', 'services/tracing/public/', 'components/prefs/', 'components/variations/', 'components/system_cpu/', 'components/tracing/', 'components/version_info/', 'sandbox/policy/mojom/', 'url/mojom/', 'third_party/metrics_proto/', 'third_party/protobuf-javascript/src/')

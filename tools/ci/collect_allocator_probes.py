@@ -42,17 +42,19 @@ def collect_dxc(files, platform, destination):
 
 
 def collect_angle(files, platform, destination):
-    """Keep ANGLE's two dylibs beside its loader probe."""
+    """Keep ANGLE's two shared libraries beside its loader probe."""
     operating_system, arch = platform.split('-')
-    runtime_names = {'libEGL.dylib', 'libGLESv2.dylib'}
+    suffix = 'dll' if operating_system == 'windows' else 'dylib'
+    runtime_names = {'libEGL.' + suffix, 'libGLESv2.' + suffix}
     runtime = {file.name: file for file in files if file.name in runtime_names}
     executables = [file for file in files if file.name not in runtime_names]
-    if (operating_system != 'darwin' or len(files) != 3 or set(runtime) != runtime_names
+    if (operating_system not in ('darwin', 'windows') or len(files) != 3 or set(runtime) != runtime_names
             or len(executables) != 1
             or any(binary_platform(file) != (operating_system, arch) for file in files)):
-        raise ValueError('ANGLE requires a matching Darwin executable and both dylibs')
+        raise ValueError('ANGLE requires a matching executable and both dylibs or DLLs')
     destination.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(executables[0], destination / ('angle-' + platform))
+    executable_name = 'angle-' + platform + ('.exe' if operating_system == 'windows' else '')
+    shutil.copy2(executables[0], destination / executable_name)
     for name, source in runtime.items():
         shutil.copy2(source, destination / name)
 
@@ -90,8 +92,9 @@ def main():
     ]
     v8_platforms = ['darwin-arm64', 'windows-amd64', 'windows-arm64']
     dxc_platforms = ['windows-amd64', 'windows-arm64']
+    angle_platforms = ['darwin-arm64', 'windows-amd64', 'windows-arm64']
     names = ([target for target, _ in targets] + ['v8-' + platform for platform in v8_platforms]
-             + ['dxc-' + platform for platform in dxc_platforms] + ['angle-darwin-arm64'])
+             + ['dxc-' + platform for platform in dxc_platforms] + ['angle-' + platform for platform in angle_platforms])
     expression = 'set(' + ' '.join('//tools/ci:' + name for name in names) + ')'
     command = startup + ['cquery', expression,
                         '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',
@@ -119,7 +122,8 @@ def main():
         collect_v8(artifacts['v8-' + platform], platform, args.output / ('v8-' + platform))
     for platform in dxc_platforms:
         collect_dxc(artifacts['dxc-' + platform], platform, args.output / ('dxc-' + platform))
-    collect_angle(artifacts['angle-darwin-arm64'], 'darwin-arm64', args.output / 'angle-darwin-arm64')
+    for platform in angle_platforms:
+        collect_angle(artifacts['angle-' + platform], platform, args.output / ('angle-' + platform))
 
 
 if __name__ == '__main__':

@@ -1,5 +1,6 @@
 load("@ipcz//bazel:ipcz.bzl", "ipcz_library")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load(":angle_runtime.bzl", "native_angle_runtime")
 load(":base.bzl", "native_base")
 load(":base_sources.bzl", "COPTS")
 load(":browser_v8.bzl", "native_browser_v8")
@@ -28,6 +29,7 @@ load(":skia.bzl", "native_skia")
 load(":sqlite.bzl", "native_sqlite")
 load(":tint.bzl", "native_tint")
 load(":url.bzl", "native_url")
+load(":vulkan_loader.bzl", "native_vulkan_loader")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -129,3 +131,7 @@ native_tint()
 native_dawn_backend()
 
 native_gpu_protocol()
+
+native_vulkan_loader()
+
+native_angle_runtime()

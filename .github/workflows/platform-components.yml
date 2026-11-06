@@ -38,6 +38,7 @@ jobs:
           //tools/ci:v8-darwin-arm64
           //tools/ci:v8-windows-amd64 //tools/ci:v8-windows-arm64
           //tools/ci:dawn-darwin-arm64 //tools/ci:angle-darwin-arm64
+          //tools/ci:angle-windows-amd64 //tools/ci:angle-windows-arm64
           //tools/ci:dawn-windows-amd64 //tools/ci:dawn-windows-arm64
           //tools/ci:dxc-windows-amd64 //tools/ci:dxc-windows-arm64
       - name: Collect native smoke artifacts
@@ -96,6 +97,12 @@ jobs:
         shell: pwsh
         run: |
           & "$env:RUNNER_TEMP/allocator-probes/dawn-windows-${{ matrix.arch }}.exe"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Load ANGLE EGL and GLES DLLs
+        shell: pwsh
+        run: |
+          $bundle = "$env:RUNNER_TEMP/allocator-probes/angle-windows-${{ matrix.arch }}"
+          & "$bundle/angle-windows-${{ matrix.arch }}.exe" "$bundle/libEGL.dll" "$bundle/libGLESv2.dll"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Compile HLSL with shipped DXC
         shell: pwsh

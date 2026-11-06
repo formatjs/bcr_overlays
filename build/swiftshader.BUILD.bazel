@@ -23,8 +23,8 @@ cc_library(
         "third_party/llvm-subzero/**",
         "third_party/marl/**",
         "third_party/astc-encoder/**",
-    ], allow_empty = True) if p.endswith((".h", ".hpp", ".inc", ".inl", ".def"))] + select({
-        "@platforms//cpu:aarch64": [p for p in glob(["third_party/llvm-10.0/**"]) if p.endswith((".h", ".hpp", ".inc", ".inl", ".def"))],
+    ], allow_empty = True) if p.endswith((".h", ".hpp", ".inc", ".inl", ".def", ".gen"))] + select({
+        "@platforms//cpu:aarch64": [p for p in glob(["third_party/llvm-10.0/**"]) if p.endswith((".h", ".hpp", ".inc", ".inl", ".def", ".gen"))],
         "//conditions:default": [],
     }),
     include_prefix = "third_party/swiftshader",

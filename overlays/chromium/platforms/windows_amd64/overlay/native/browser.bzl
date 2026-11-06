@@ -120,6 +120,7 @@ def native_browser():
         standalone = any([original.startswith(prefix) for prefix in [
             "//third_party/spirv-headers/",
             "//third_party/spirv-tools/",
+            "//third_party/swiftshader/",
             "//third_party/vulkan-validation-layers/",
             "//third_party/vulkan-utility-libraries/",
         ]])

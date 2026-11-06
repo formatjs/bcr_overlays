@@ -8,51 +8,67 @@ permissions:
 jobs:
   toolchains:
     runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [darwin-arm64, windows-amd64, windows-arm64]
     steps:
       - uses: actions/checkout@v7
-      - uses: bazel-contrib/setup-bazel@0.15.0
-      - name: Cross-compile Rust, XML parser and allocators
+      - uses: bazel-contrib/setup-bazel@0.19.1
+        with:
+          bazelisk-cache: true
+          repository-cache: true
+          cache-version: components-${{ matrix.platform }}
+      - name: Cross-compile platform components
         env:
+          PLATFORM: ${{ matrix.platform }}
           BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA: '1'
           BAZEL_WINDOWS_SDK_EULA: '1'
-        run: >-
-          bazel build --jobs=4
-          --repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA
-          --repo_env=BAZEL_WINDOWS_SDK_EULA
-          //tools/ci:rust-linux-amd64 //tools/ci:rust-linux-arm64
-          //tools/ci:rust-darwin-arm64 //tools/ci:rust-windows-amd64
-          //tools/ci:rust-windows-arm64
-          //tools/ci:expat-linux-amd64 //tools/ci:expat-linux-arm64
-          //tools/ci:expat-darwin-arm64 //tools/ci:expat-windows-amd64
-          //tools/ci:expat-windows-arm64
-          //tools/ci:allocator-windows-amd64 //tools/ci:allocator-windows-arm64
-          //tools/ci:allocator-darwin-arm64
-          //tools/ci:base-windows-amd64 //tools/ci:base-windows-arm64
-          //tools/ci:base-darwin-arm64
-          //tools/ci:ipc-darwin-arm64
-          //tools/ci:ipc-windows-amd64 //tools/ci:ipc-windows-arm64
-          //tools/ci:network-darwin-arm64
-          //tools/ci:network-windows-amd64 //tools/ci:network-windows-arm64
-          //tools/ci:graphics-darwin-arm64
-          //tools/ci:graphics-windows-amd64 //tools/ci:graphics-windows-arm64
-          //tools/ci:v8-darwin-arm64
-          //tools/ci:v8-windows-amd64 //tools/ci:v8-windows-arm64
-          //tools/ci:dawn-darwin-arm64 //tools/ci:angle-darwin-arm64
-          //tools/ci:angle-windows-amd64 //tools/ci:angle-windows-arm64
-          //tools/ci:dawn-windows-amd64 //tools/ci:dawn-windows-arm64
-          //tools/ci:dxc-windows-amd64 //tools/ci:dxc-windows-arm64
+          BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_RO_PUBLIC_KEY }}
+        run: |
+          targets=()
+          for probe in rust expat allocator base ipc network graphics v8 dawn angle; do
+            targets+=("//tools/ci:$probe-$PLATFORM")
+          done
+          if [[ "$PLATFORM" == windows-* ]]; then
+            targets+=("//tools/ci:dxc-$PLATFORM")
+          fi
+          cache=()
+          if [[ -n "$BUILDBUDDY_API_KEY" ]]; then
+            cache+=(--remote_cache=grpcs://formatjs.buildbuddy.io
+              "--remote_header=x-buildbuddy-api-key=$BUILDBUDDY_API_KEY"
+              --remote_upload_local_results=false --remote_download_outputs=toplevel)
+          fi
+          bazel build --jobs=4 "${cache[@]}" \
+            --repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA \
+            --repo_env=BAZEL_WINDOWS_SDK_EULA "${targets[@]}"
       - name: Collect native smoke artifacts
-        run: python3 -m tools.ci.collect_allocator_probes --output "$RUNNER_TEMP/allocator-probes"
+        run: python3 -m tools.ci.collect_allocator_probes --platform "${{ matrix.platform }}" --output "$RUNNER_TEMP/allocator-probes"
       - uses: actions/upload-artifact@v7
         with:
-          name: allocators-${{ github.sha }}
+          name: allocators-${{ github.sha }}-${{ matrix.platform }}
           path: ${{ runner.temp }}/allocator-probes/*
           if-no-files-found: error
+  linux-toolchains:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: bazel-contrib/setup-bazel@0.19.1
+        with:
+          bazelisk-cache: true
+          repository-cache: true
+          cache-version: components-linux
+      - name: Cross-compile Linux Rust and XML parsers
+        run: >-
+          bazel build --jobs=4
+          //tools/ci:rust-linux-amd64 //tools/ci:rust-linux-arm64
+          //tools/ci:expat-linux-amd64 //tools/ci:expat-linux-arm64
       - name: Run native XML parser probe
         run: bazel run --jobs=4 //tools/ci:expat_toolchain_probe
       - name: Run native Rust probe
         run: bazel run --jobs=4 //tools/ci:rust_toolchain_probe
   windows-allocator:
+    if: ${{ !cancelled() }}
     needs: toolchains
     strategy:
       fail-fast: false
@@ -66,7 +82,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v8
         with:
-          name: allocators-${{ github.sha }}
+          name: allocators-${{ github.sha }}-windows-${{ matrix.arch }}
           path: ${{ runner.temp }}/allocator-probes
       - name: Exercise cross-compiled allocator
         shell: pwsh
@@ -123,12 +139,13 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
   darwin-allocator:
+    if: ${{ !cancelled() }}
     needs: toolchains
     runs-on: macos-15
     steps:
       - uses: actions/download-artifact@v8
         with:
-          name: allocators-${{ github.sha }}
+          name: allocators-${{ github.sha }}-darwin-arm64
           path: ${{ runner.temp }}/allocator-probes
       - name: Exercise cross-compiled allocator
         run: |

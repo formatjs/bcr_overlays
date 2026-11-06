@@ -64,6 +64,7 @@ def main():
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--bazel', default='bazel')
     parser.add_argument('--output-user-root')
+    parser.add_argument('--platform', action='append', choices=['darwin-arm64', 'windows-amd64', 'windows-arm64'])
     args = parser.parse_args()
     startup = [args.bazel]
     if args.output_user_root:
@@ -93,6 +94,11 @@ def main():
     v8_platforms = ['darwin-arm64', 'windows-amd64', 'windows-arm64']
     dxc_platforms = ['windows-amd64', 'windows-arm64']
     angle_platforms = ['darwin-arm64', 'windows-amd64', 'windows-arm64']
+    requested = set(args.platform or v8_platforms)
+    targets = [(target, platform) for target, platform in targets if platform in requested]
+    v8_platforms = [platform for platform in v8_platforms if platform in requested]
+    dxc_platforms = [platform for platform in dxc_platforms if platform in requested]
+    angle_platforms = [platform for platform in angle_platforms if platform in requested]
     names = ([target for target, _ in targets] + ['v8-' + platform for platform in v8_platforms]
              + ['dxc-' + platform for platform in dxc_platforms] + ['angle-' + platform for platform in angle_platforms])
     expression = 'set(' + ' '.join('//tools/ci:' + name for name in names) + ')'

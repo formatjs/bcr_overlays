@@ -8,7 +8,7 @@ extern const char *generator_relative_expected_payload(void);
 int main(int argc, char **argv) {
   char executable[4096];
   ssize_t length = readlink("/proc/self/exe", executable, sizeof(executable) - 1);
-  if (argc != 3 || length < 0) return 1;
+  if (argc != 4 || length < 0) return 1;
   executable[length] = '\0';
   char *name = strrchr(executable, '/');
   if (!name || (size_t)(name - executable) + sizeof("/payload.txt") > sizeof(executable)) return 2;
@@ -33,6 +33,15 @@ int main(int argc, char **argv) {
   if (!target || !fgets(snapshot, sizeof(snapshot), target)) return 11;
   fclose(target);
   if (strcmp(snapshot, "target snapshot\n") != 0) return 12;
+  strcpy(name, "/icudtl.dat");
+  FILE *host_icu = fopen(executable, "r");
+  if (!host_icu || !fgets(snapshot, sizeof(snapshot), host_icu)) return 13;
+  fclose(host_icu);
+  if (strcmp(snapshot, "host ICU data\n") != 0) return 14;
+  FILE *target_icu = fopen(argv[3], "r");
+  if (!target_icu || !fgets(snapshot, sizeof(snapshot), target_icu)) return 15;
+  fclose(target_icu);
+  if (strcmp(snapshot, "target ICU data\n") != 0) return 16;
   FILE *output = fopen(argv[1], "w");
   if (!output) return 5;
   fputs(payload, output);

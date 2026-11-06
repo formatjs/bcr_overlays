@@ -10,8 +10,16 @@ def _stage_runtime(ctx, executable):
         path = file.short_path
         runfile = path[3:] if path.startswith("../") else ctx.workspace_name + "/" + path
         sources[executable.basename + ".runfiles/" + runfile] = file
-        if ctx.attr.stage_runtime and file.path.startswith(executable.dirname + "/"):
-            sources[file.path[len(executable.dirname) + 1:]] = file
+        if ctx.attr.stage_runtime:
+            relative = None
+            if file.basename in ["icudtl.dat", "snapshot_blob.bin", "v8_context_snapshot.bin"]:
+                relative = file.basename
+            elif file.path.startswith(executable.dirname + "/"):
+                relative = file.path[len(executable.dirname) + 1:]
+            if relative and relative not in ctx.attr.runtime_data.values():
+                if relative in sources and sources[relative] != file:
+                    fail("conflicting host runtime data: %s" % relative)
+                sources[relative] = file
     for target, relative in ctx.attr.runtime_data.items():
         if relative.startswith("/") or ".." in relative.split("/") or not relative:
             fail("invalid runtime data path: %s" % relative)

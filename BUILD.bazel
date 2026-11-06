@@ -919,7 +919,8 @@ cc_binary(
     data = [
         "tests/generator_payload.txt",
         ":fixtures/lib/libgenerator_relative_runtime.so",
-        ":fixtures/snapshot_blob.bin",
+        ":runtime_data/icudtl.dat",
+        ":runtime_data/snapshot_blob.bin",
     ],
     linkopts = ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"],
     deps = [
@@ -942,23 +943,60 @@ chromium_python_action(
     srcs = {
         "@chromium//build:gn_run_binary.py": "build/gn_run_binary.py",
         ":tests/generator_target_snapshot.txt": "out/bazel-import/snapshot_blob.bin",
+        ":tests/generator_target_icu.txt": "out/bazel-import/icudtl.dat",
     },
     outs = {"generator_runtime_result.txt": "generator_runtime_result.txt"},
     args = [
         "clang_x64/probe",
         "generator_runtime_result.txt",
         "snapshot_blob.bin",
+        "icudtl.dat",
     ],
     script = "build/gn_run_binary.py",
     deps = [":generator_runtime_inputs"],
+)
+
+chromium_tool_inputs(
+    name = "generator_runtime_explicit_inputs",
+    logical_path = "out/bazel-import/clang_x64/probe",
+    runtime_data = {
+        ":tests/generator_payload.txt": "payload.txt",
+        ":tests/generator_host_icu.txt": "icudtl.dat",
+    },
+    stage_runtime = True,
+    tool = ":fixtures/generator_runtime_probe",
+)
+
+chromium_python_action(
+    name = "generator_runtime_explicit_output",
+    srcs = {
+        "@chromium//build:gn_run_binary.py": "build/gn_run_binary.py",
+        ":tests/generator_target_snapshot.txt": "out/bazel-import/snapshot_blob.bin",
+        ":tests/generator_target_icu.txt": "out/bazel-import/icudtl.dat",
+    },
+    outs = {"generator_runtime_explicit_result.txt": "generator_runtime_explicit_result.txt"},
+    args = [
+        "clang_x64/probe",
+        "generator_runtime_explicit_result.txt",
+        "snapshot_blob.bin",
+        "icudtl.dat",
+    ],
+    script = "build/gn_run_binary.py",
+    deps = [":generator_runtime_explicit_inputs"],
 )
 
 py_test(
     name = "generator_runtime_test",
     size = "small",
     srcs = ["tests/generator_runtime_test.py"],
-    args = ["$(rlocationpath :generator_runtime_output)"],
-    data = [":generator_runtime_output"],
+    args = [
+        "$(rlocationpath :generator_runtime_output)",
+        "$(rlocationpath :generator_runtime_explicit_output)",
+    ],
+    data = [
+        ":generator_runtime_explicit_output",
+        ":generator_runtime_output",
+    ],
     deps = ["@rules_python//python/runfiles"],
 )
 
@@ -996,5 +1034,11 @@ chromium_resource_copy(
 chromium_resource_copy(
     name = "generator_host_snapshot",
     srcs = {":tests/generator_host_snapshot.txt": "host/snapshot_blob.bin"},
-    outputs = {"fixtures/snapshot_blob.bin": "host/snapshot_blob.bin"},
+    outputs = {"runtime_data/snapshot_blob.bin": "host/snapshot_blob.bin"},
+)
+
+chromium_resource_copy(
+    name = "generator_host_icu",
+    srcs = {":tests/generator_host_icu.txt": "host/icudtl.dat"},
+    outputs = {"runtime_data/icudtl.dat": "host/icudtl.dat"},
 )

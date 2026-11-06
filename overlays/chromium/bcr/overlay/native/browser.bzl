@@ -113,9 +113,28 @@ def native_browser():
             binary_data = [":browser_platform_runtime"] if qt else [":icudtl.dat", ":browser_v8_runtime", ":browser_host_platform_runtime"]
             if original == "//tools/code_cache_generator:code_cache_generator" and "v8_context_snapshot.bin" in RUNTIME_FILES:
                 binary_data.append(":v8_context_snapshot.bin")
+            c_sources = [path for path in library["srcs"] if path.endswith(".c")]
+            asm_sources = [path for path in library["srcs"] if path.endswith((".s", ".S"))]
+            for suffix, sources, options in [
+                ("_c", c_sources, library.get("c_copts", [])),
+                ("_asm", asm_sources, library.get("asm_copts", [])),
+            ]:
+                if sources:
+                    cc_library(
+                        name = library["name"] + suffix,
+                        srcs = sources,
+                        hdrs = library["hdrs"],
+                        includes = library["includes"],
+                        copts = options + include_options,
+                        local_defines = library["defines"],
+                        deps = common["deps"],
+                        linkstatic = True,
+                        alwayslink = True,
+                    )
+                    common["deps"] = common["deps"] + [":" + library["name"] + suffix]
             cc_binary(
                 name = primary,
-                srcs = library["srcs"] + library["hdrs"],
+                srcs = [path for path in library["srcs"] if path not in c_sources and path not in asm_sources] + library["hdrs"],
                 includes = library["includes"],
                 copts = cpp_options,
                 linkshared = shared,

@@ -151,6 +151,18 @@ class ArtifactsTest(unittest.TestCase):
         destination = unpack(archive, self.root / 'hosted-output', self.target, REVISION)
         self.assertEqual((destination / 'resources.pak').read_bytes(), b'locale data')
 
+    def test_hosted_macos_build_requests_sandboxed_link_and_bounded_downloads(self):
+        environment = {'BUILDBUDDY_CI_RUNNER_ABSPATH': '/runner/ci_runner'}
+        with mock.patch.dict(os.environ, environment, clear=True), \
+                mock.patch('tools.ci.chromium.subprocess.run',
+                           side_effect=RuntimeError('captured build command')) as process:
+            with self.assertRaisesRegex(RuntimeError, 'captured build command'):
+                build(PLATFORMS['darwin-arm64'], self.root / 'hosted-artifacts', REVISION, hosted=True)
+        command = process.call_args.args[0]
+        self.assertIn('--strategy=CppLink=sandboxed', command)
+        self.assertIn('--remote_max_connections=8', command)
+        self.assertEqual(command[-1], '//tools/ci:darwin-arm64_archive')
+
     def test_archive_bytes_ignore_input_mtime_and_non_executable_permissions(self):
         first = package(self.bundle, self.root / 'first', self.target, REVISION).read_bytes()
         for path in self.bundle.rglob('*'):

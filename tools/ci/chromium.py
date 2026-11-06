@@ -141,6 +141,9 @@ def build(target, destination, revision, hosted=False):
         if not os.environ.get('BUILDBUDDY_CI_RUNNER_ABSPATH'):
             raise ValueError('Hosted mode requires a BuildBuddy workflow runner')
         flags.extend(['--config=buildbuddy', '--keep_going'])
+        if target['os'] == 'darwin':
+            # Bound input downloads for the large framework link.
+            flags.extend(['--strategy=CppLink=sandboxed', '--remote_max_connections=8'])
     if target['os'] == 'windows':
         flags.extend([
             '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',

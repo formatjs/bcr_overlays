@@ -115,7 +115,15 @@ def native_browser():
         deps = library["deps"]
         if original.startswith("//third_party/swiftshader/"):
             deps = deps + [":spirv_headers", "@spirv_headers//:spirv_cpp_headers"]
-        if library["srcs"] or library["hdrs"] or library.get("resource_srcs"):
+
+        # Standalone libraries must not inherit Chromium defines or SDK headers.
+        standalone = any([original.startswith(prefix) for prefix in [
+            "//third_party/spirv-headers/",
+            "//third_party/spirv-tools/",
+            "//third_party/vulkan-validation-layers/",
+            "//third_party/vulkan-utility-libraries/",
+        ]])
+        if not standalone and (library["srcs"] or library["hdrs"] or library.get("resource_srcs")):
             deps = (["@chromium//native:base_headers", ":browser_tool_headers"] if host else [":browser_headers"]) + deps
         common = dict(
             local_defines = library["defines"],

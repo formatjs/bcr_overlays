@@ -887,6 +887,7 @@ def main():
         return layer + '_' + hashlib.sha256(label.encode()).hexdigest()[:16]
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     targets = graph['targets']
+    pinned_vulkan = layer == 'browser' and graph['build_settings']['default_toolchain'].startswith('//build/toolchain/win:')
     if layer == 'browser':
         roots += browser_runtime_roots(graph)
         roots += [label for label, target in targets.items()
@@ -1421,7 +1422,7 @@ def main():
                 if path.startswith('//third_party/libusb/')]
         if layer == 'browser' and '//third_party/re2/src/' in unpack(target.get('include_dirs', [])):
             libraries[label]['include_roots'] = ['@re2//:re2']
-        if label.partition('(')[0] == '//third_party/vulkan-utility-libraries/src:vulkan_layer_settings':
+        if label.partition('(')[0] == '//third_party/vulkan-utility-libraries/src:vulkan_layer_settings' and not pinned_vulkan:
             for field in ('srcs', 'hdrs', 'copts', 'defines', 'includes', 'linkopts'):
                 libraries[label][field] = []
             libraries[label]['kind'] = 'group'
@@ -1429,12 +1430,14 @@ def main():
                 '@vulkan_utility_libraries//:vulkan_layer_settings',
                 '@vulkan_utility_libraries//:vulkan_safe_struct',
             ]
+        if pinned_vulkan and label.startswith('//third_party/vulkan-utility-libraries/src:'):
+            libraries[label]['deps'].append('@chromium_vulkan_utility//:headers')
         if label.startswith('//third_party/swiftshader/'):
             libraries[label]['deps'].extend([
                 '@chromium_swiftshader//:headers',
                 '@spirv_tools//:chromium_headers',
             ])
-        swiftshader_spirv = {
+        spirv_providers = {
             '//third_party/swiftshader/third_party/SPIRV-Headers:spv_headers': [
                 '@spirv_headers//:spirv_c_headers',
                 '@spirv_headers//:spirv_cpp_headers',
@@ -1445,11 +1448,24 @@ def main():
             '//third_party/swiftshader/third_party/SPIRV-Tools:spvtools_val': ['@spirv_tools//:spirv_tools'],
             '//third_party/swiftshader/third_party/SPIRV-Tools:spvtools_opt': ['@spirv_tools//:spirv_tools_opt'],
         }
-        if label.partition('(')[0] in swiftshader_spirv:
+        if pinned_vulkan:
+            spirv_providers.update({
+                '//third_party/spirv-headers/src:spv_headers': [
+                    '@spirv_headers//:spirv_c_headers',
+                    '@spirv_headers//:spirv_cpp_headers',
+                    '@spirv_headers//:spirv_cpp11_headers',
+                ],
+                '//third_party/spirv-tools/src:spvtools_headers': ['@spirv_tools//:chromium_headers'],
+                '//third_party/spirv-tools/src:spvtools': ['@spirv_tools//:spirv_tools'],
+                '//third_party/spirv-tools/src:spvtools_val': ['@spirv_tools//:spirv_tools'],
+                '//third_party/spirv-tools/src:spvtools_opt': ['@spirv_tools//:spirv_tools_opt'],
+                '//third_party/spirv-tools/src:spvtools_link': ['@spirv_tools//:spirv_tools_link'],
+            })
+        if label.partition('(')[0] in spirv_providers:
             for field in ('srcs', 'hdrs', 'copts', 'defines', 'includes', 'linkopts'):
                 libraries[label][field] = []
             libraries[label]['kind'] = 'group'
-            libraries[label]['deps'] = swiftshader_spirv[label.partition('(')[0]]
+            libraries[label]['deps'] = spirv_providers[label.partition('(')[0]]
         if label.startswith('//third_party/spirv-tools/src:'):
             libraries[label]['deps'].append('@spirv_tools//:chromium_headers')
         if label.partition('(')[0] == '//third_party/vulkan-tools/src:VkICD_mock_icd':
@@ -1459,7 +1475,7 @@ def main():
                 '@chromium_vulkan_validation//:headers',
                 '@chromium_platform_headers//:graphics',
                 '@vulkan_headers//:vulkan_headers',
-                '@vulkan_utility_libraries//:vulkan_utility_headers',
+                '@chromium_vulkan_utility//:headers' if pinned_vulkan else '@vulkan_utility_libraries//:vulkan_utility_headers',
                 '@spirv_headers//:spirv_cpp_headers',
             ])
         if label.startswith('//third_party/vulkan-loader/src:'):

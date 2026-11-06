@@ -43,3 +43,35 @@ chromium_header_dependency = rule(
     implementation = _header_dependency_impl,
     attrs = {"dependency": attr.label(providers = [CcInfo])},
 )
+
+def _snapshot_dependencies_impl(ctx):
+    merged = cc_common.merge_cc_infos(cc_infos = [dep[CcInfo] for dep in ctx.attr.deps])
+    inputs = []
+    for linker_input in merged.linking_context.linker_inputs.to_list():
+        # Snapshot executables own ICF policy; inherited flags can override it.
+        flags = linker_input.user_link_flags
+        if type(flags) == "depset":
+            flags = flags.to_list()
+        flags = [flag for flag in flags if not flag.startswith("-Wl,--icf=") and flag.upper() not in ["/OPT:ICF", "/OPT:NOICF"] and flag != "-Wl,-no_deduplicate"]
+        inputs.append(cc_common.create_linker_input(
+            owner = linker_input.owner,
+            libraries = depset(linker_input.libraries),
+            user_link_flags = depset(flags),
+            additional_inputs = depset(linker_input.additional_inputs),
+        ))
+    return [
+        CcInfo(
+            compilation_context = merged.compilation_context,
+            linking_context = cc_common.create_linking_context(linker_inputs = depset(inputs)),
+        ),
+        DefaultInfo(runfiles = ctx.runfiles().merge_all([
+            dep[DefaultInfo].default_runfiles
+            for dep in ctx.attr.deps
+            if dep[DefaultInfo].default_runfiles
+        ])),
+    ]
+
+chromium_snapshot_dependencies = rule(
+    implementation = _snapshot_dependencies_impl,
+    attrs = {"deps": attr.label_list(providers = [CcInfo])},
+)

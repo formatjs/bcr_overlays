@@ -6,6 +6,7 @@ load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_python//python:defs.bzl", "py_binary")
 load(":browser_sources.bzl", "ACTIONS", "ASSET_GROUPS", "BRIDGES", "COPIES", "LIBRARIES", "RUNTIME_FILES", "SHARED_HEADERS", "TOOLS")
 load(":cxx_bridge.bzl", "chromium_cxx_bridge")
+load(":public_dependency.bzl", "chromium_snapshot_dependencies")
 load(":python_action.bzl", "chromium_filegroup", "chromium_python_action")
 load(":qt_sdk_headers.bzl", "chromium_qt_sdk_headers")
 load(":resource_copy.bzl", "chromium_resource_copy")
@@ -137,6 +138,12 @@ def native_browser():
         if library.get("additional_linker_inputs"):
             common["additional_linker_inputs"] = library["additional_linker_inputs"]
         if library["kind"] in ["executable", "shared_library"]:
+            if original.split("(")[0] == "//tools/v8_context_snapshot:v8_context_snapshot_generator":
+                chromium_snapshot_dependencies(
+                    name = library["name"] + "_snapshot_dependencies",
+                    deps = common["deps"],
+                )
+                common["deps"] = [":" + library["name"] + "_snapshot_dependencies"]
             common["linkopts"] = common["linkopts"] + ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"]
             outputs = library["outputs"]
             shared = library["kind"] == "shared_library"

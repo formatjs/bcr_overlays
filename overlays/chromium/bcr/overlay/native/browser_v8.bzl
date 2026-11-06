@@ -4,6 +4,7 @@ load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":browser_v8_sources.bzl", "ACTIONS", "LIBRARIES", "PUBLIC_DEFINES", "SHARED_HEADERS", "TOOLS")
 load(":masm.bzl", "chromium_masm")
+load(":public_dependency.bzl", "chromium_snapshot_dependencies")
 load(":python_action.bzl", "chromium_python_action")
 load(":tool_inputs.bzl", "chromium_tool_inputs")
 
@@ -54,6 +55,12 @@ def native_browser_v8():
             )
             common["deps"] = common["deps"] + [":" + library["name"] + "_asm"]
         if library["kind"] == "executable":
+            if original.split("(")[0] == "//v8:mksnapshot":
+                chromium_snapshot_dependencies(
+                    name = library["name"] + "_snapshot_dependencies",
+                    deps = common["deps"],
+                )
+                common["deps"] = [":" + library["name"] + "_snapshot_dependencies"]
             cc_binary(
                 name = library["name"],
                 srcs = library["srcs"] + library["hdrs"],

@@ -9,7 +9,7 @@ load(":browser_sources.bzl", "ACTIONS", "ASSET_GROUPS", "BRIDGES", "BUNDLES", "C
 load(":cxx_bridge.bzl", "chromium_cxx_bridge")
 load(":host_support.bzl", cc_library = "platform_cc_library")
 load(":objcxx.bzl", "chromium_objc_libraries")
-load(":public_dependency.bzl", "chromium_header_dependency")
+load(":public_dependency.bzl", "chromium_header_dependency", "chromium_snapshot_dependencies")
 load(":python_action.bzl", "ChromiumFilesInfo", "chromium_filegroup", "chromium_python_action")
 load(":resource_copy.bzl", "chromium_resource_copy")
 load(":runtime_bundle.bzl", "chromium_runtime_bundle")
@@ -84,6 +84,7 @@ def native_browser():
             action = dict(action)
             action["args"] = [argument.replace("$LLVM_ROOT", "../../third_party/llvm-build/Release+Asserts") for argument in action["args"]]
             action["deps"] = action["deps"] + [":browser_verification_tools"]
+
             # LLVM uses the pinned macOS SDK libc++ runtime.
             if action["script"].endswith("/verify_dynamic_libraries.py"):
                 action["args"] = action["args"] + ["--allow", "/usr/lib/libc++.1.dylib"]
@@ -171,6 +172,12 @@ def native_browser():
                 common["deps"] = common["deps"] + [":" + library["name"] + suffix]
         sources = [path for path in library["srcs"] if path not in c_sources and path not in asm_sources]
         if library["kind"] in ["executable", "shared_library"]:
+            if original.split("(")[0] == "//tools/v8_context_snapshot:v8_context_snapshot_generator":
+                chromium_snapshot_dependencies(
+                    name = library["name"] + "_snapshot_dependencies",
+                    deps = common["deps"],
+                )
+                common["deps"] = [":" + library["name"] + "_snapshot_dependencies"]
             if host:
                 common["linkopts"] = common["linkopts"] + ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"]
             if "//:chrome/app/chrome_exe_main_mac.cc" in sources:

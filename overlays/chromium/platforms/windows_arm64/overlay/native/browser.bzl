@@ -9,7 +9,7 @@ load(":browser_sources.bzl", "ACTIONS", "ASSET_GROUPS", "BRIDGES", "COPIES", "LI
 load(":cxx_bridge.bzl", "chromium_cxx_bridge")
 load(":grit_resource_inputs.bzl", "RESOURCE_INPUTS")
 load(":host_support.bzl", cc_library = "platform_cc_library")
-load(":public_dependency.bzl", "chromium_header_dependency")
+load(":public_dependency.bzl", "chromium_header_dependency", "chromium_snapshot_dependencies")
 load(":python_action.bzl", "ChromiumFilesInfo", "chromium_filegroup", "chromium_python_action")
 load(":resource_copy.bzl", "chromium_resource_copy")
 load(":runtime_bundle.bzl", "chromium_runtime_bundle")
@@ -161,6 +161,12 @@ def native_browser():
                 common["deps"] = common["deps"] + [":" + library["name"] + suffix]
         sources = [path for path in library["srcs"] if path not in c_sources and path not in asm_sources]
         if library["kind"] in ["executable", "shared_library"]:
+            if original.split("(")[0] == "//tools/v8_context_snapshot:v8_context_snapshot_generator":
+                chromium_snapshot_dependencies(
+                    name = library["name"] + "_snapshot_dependencies",
+                    deps = common["deps"],
+                )
+                common["deps"] = [":" + library["name"] + "_snapshot_dependencies"]
             if not host:
                 common["deps"] = common["deps"] + ["@chromium_msvc_atl_libraries//:atls"]
             if host:

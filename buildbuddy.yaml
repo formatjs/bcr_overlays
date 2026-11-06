@@ -1,6 +1,8 @@
 actions:
   - name: Chromium linux-amd64
     container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
     timeout: 6h
     resource_requests:
       cpu: 8
@@ -20,6 +22,8 @@ actions:
 
   - name: Chromium linux-arm64
     container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
     timeout: 6h
     resource_requests:
       cpu: 8
@@ -39,6 +43,8 @@ actions:
 
   - name: Chromium darwin-arm64
     container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
     timeout: 6h
     resource_requests:
       cpu: 8
@@ -58,6 +64,8 @@ actions:
 
   - name: Chromium windows-amd64
     container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
     timeout: 6h
     resource_requests:
       cpu: 8
@@ -77,6 +85,8 @@ actions:
 
   - name: Chromium windows-arm64
     container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
     timeout: 6h
     resource_requests:
       cpu: 8

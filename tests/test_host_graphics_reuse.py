@@ -75,3 +75,12 @@ class HostGraphicsReuseTest(unittest.TestCase):
         library = next(iter(libraries.values()))
         self.assertEqual(library['deps'], ['@chromium//native:fonts_fontconfig'])
         self.assertEqual(library['srcs'], [])
+
+    def test_matching_tensorflow_shim_uses_native_configuration(self):
+        label = '//third_party/tflite:tflite_op_shim'
+        capture, native, libraries, _ = self.capture(label, kind='source_set')
+        self.assertEqual(reuse_host_graphics(capture, native, libraries,
+                                            {label: ':ml_tflite_op_shim'}), 1)
+        library = next(iter(libraries.values()))
+        self.assertEqual(library['deps'], ['@chromium//native:ml_tflite_op_shim'])
+        self.assertEqual(library['srcs'], [])

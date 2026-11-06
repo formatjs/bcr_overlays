@@ -1010,6 +1010,16 @@ def main():
             libraries[label]['deps'].append('@spirv_tools//:chromium_headers')
         if label.partition('(')[0] == '//third_party/vulkan-tools/src:VkICD_mock_icd':
             libraries[label]['deps'].append('@chromium_vulkan_tools//:headers')
+        if label.startswith('//third_party/vulkan-validation-layers/src:'):
+            libraries[label]['deps'].extend([
+                '@chromium_vulkan_validation//:headers',
+                '@chromium_platform_headers//:graphics',
+                '@vulkan_headers//:vulkan_headers',
+                '@vulkan_utility_libraries//:vulkan_utility_headers',
+                '@spirv_headers//:spirv_cpp_headers',
+            ])
+        if label.startswith('//third_party/vulkan-loader/src:'):
+            libraries[label]['deps'].append('@chromium_vulkan_loader//:headers')
         if linker_inputs:
             libraries[label]['additional_linker_inputs'] = linker_inputs
         if layer == 'browser' and target['type'] in ('executable', 'shared_library'):

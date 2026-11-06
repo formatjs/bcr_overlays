@@ -1180014,6 +1180014,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            "@chromium_vulkan_loader//:headers",
             "@vulkan_headers//:vulkan_headers",
         ],
         "linkopts": [
@@ -1180925,6 +1180926,11 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            "@chromium_vulkan_validation//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_utility_libraries//:vulkan_utility_headers",
+            "@spirv_headers//:spirv_cpp_headers",
             ":browser_4d75f54d8eaa4e22",
             ":browser_d706b5256710d9e0",
             ":browser_e15b463e59b4637f",
@@ -1181158,6 +1181164,11 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            "@chromium_vulkan_validation//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_utility_libraries//:vulkan_utility_headers",
+            "@spirv_headers//:spirv_cpp_headers",
             ":browser_1959dd6b4dccf611",
             ":browser_1f66f62e3b57f227",
             ":browser_24a05384e9596e77",
@@ -1181378,6 +1181389,11 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            "@chromium_vulkan_validation//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_utility_libraries//:vulkan_utility_headers",
+            "@spirv_headers//:spirv_cpp_headers",
             ":browser_d706b5256710d9e0",
             "@vulkan_headers//:vulkan_headers",
         ],
@@ -1181494,6 +1181510,11 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            "@chromium_vulkan_validation//:headers",
+            "@chromium_platform_headers_cross//:graphics",
+            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_utility_libraries//:vulkan_utility_headers",
+            "@spirv_headers//:spirv_cpp_headers",
             ":browser_5045a07146b72795",
         ],
         "linkopts": [],

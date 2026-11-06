@@ -138,12 +138,6 @@ def native_browser():
         if library.get("additional_linker_inputs"):
             common["additional_linker_inputs"] = library["additional_linker_inputs"]
         if library["kind"] in ["executable", "shared_library"]:
-            if original.split("(")[0] == "//tools/v8_context_snapshot:v8_context_snapshot_generator":
-                chromium_snapshot_dependencies(
-                    name = library["name"] + "_snapshot_dependencies",
-                    deps = common["deps"],
-                )
-                common["deps"] = [":" + library["name"] + "_snapshot_dependencies"]
             common["linkopts"] = common["linkopts"] + ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"]
             outputs = library["outputs"]
             shared = library["kind"] == "shared_library"
@@ -175,6 +169,12 @@ def native_browser():
                         alwayslink = True,
                     )
                     common["deps"] = common["deps"] + [":" + library["name"] + suffix]
+            if original.split("(")[0] == "//tools/v8_context_snapshot:v8_context_snapshot_generator":
+                chromium_snapshot_dependencies(
+                    name = library["name"] + "_snapshot_dependencies",
+                    deps = common["deps"],
+                )
+                common["deps"] = [":" + library["name"] + "_snapshot_dependencies"]
             cc_binary(
                 name = primary,
                 srcs = [path for path in library["srcs"] if path not in c_sources and path not in asm_sources] + library["hdrs"],

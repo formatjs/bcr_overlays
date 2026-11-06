@@ -447,7 +447,10 @@ cc_test(
 cc_test(
     name = "dawn_native_runtime_test",
     size = "small",
-    srcs = ["tests/dawn_native_runtime_test.cc"],
+    srcs = [
+        "tests/dawn_native_runtime_test.cc",
+        "tests/gpu_client_runtime_test.cc",
+    ],
     copts = [
         "-std=c++20",
         "-O2",
@@ -1095,6 +1098,9 @@ chromium_python_action(
 )
 
 exports_files(
-    ["tests/dawn_native_runtime_test.cc"],
+    [
+        "tests/dawn_native_runtime_test.cc",
+        "tests/gpu_client_runtime_test.cc",
+    ],
     visibility = ["//tools/ci:__pkg__"],
 )

@@ -34,14 +34,32 @@ def _resource_impl(ctx):
         executable = cc_common.get_tool_for_action(feature_configuration = features, action_name = ACTION_NAMES.c_compile),
         arguments = cc_common.get_memory_inefficient_command_line(feature_configuration = features, action_name = ACTION_NAMES.c_compile, variables = variables),
         env = cc_common.get_environment_variables(feature_configuration = features, action_name = ACTION_NAMES.c_compile, variables = variables),
-        inputs = depset([ctx.file.src], transitive = [toolchain.all_files] + [context.headers for context in contexts]),
+        inputs = depset([ctx.file.src] + ctx.files.hdrs, transitive = [toolchain.all_files] + [context.headers for context in contexts]),
         outputs = [preprocessed],
         mnemonic = "ChromiumResourcePreprocess",
     )
+    assets = []
+    asset_sources = []
+    include_options = []
+    if ctx.attr.assets:
+        anchor = ctx.actions.declare_file(ctx.label.name + "_inputs/out/bazel-import/.anchor")
+        ctx.actions.write(anchor, "")
+        assets.append(anchor)
+        include_options = ["/I", anchor.dirname]
+        for target, logical in ctx.attr.assets.items():
+            if paths.is_absolute(logical) or ".." in logical.split("/"):
+                fail("invalid resource input path: " + logical)
+            files = target[DefaultInfo].files.to_list()
+            if len(files) != 1:
+                fail("resource input must resolve to one file: " + str(target.label))
+            staged = ctx.actions.declare_file(ctx.label.name + "_inputs/" + logical)
+            ctx.actions.symlink(output = staged, target_file = files[0])
+            assets.append(staged)
+            asset_sources.append(files[0])
     ctx.actions.run(
         executable = ctx.executable._resource_compiler,
-        arguments = ["/no-preprocess", "/X", "/FO", resource.path, preprocessed.path],
-        inputs = [preprocessed],
+        arguments = ["/no-preprocess", "/X", "/C", "65001"] + include_options + ["/FO", resource.path, preprocessed.path],
+        inputs = [preprocessed] + assets + asset_sources,
         outputs = [resource],
         mnemonic = "ChromiumWindowsResource",
     )
@@ -59,6 +77,8 @@ chromium_windows_resource = rule(
     implementation = _resource_impl,
     attrs = {
         "src": attr.label(mandatory = True, allow_single_file = [".rc"]),
+        "hdrs": attr.label_list(allow_files = True),
+        "assets": attr.label_keyed_string_dict(allow_files = True),
         "defines": attr.string_list(),
         "includes": attr.string_list(),
         "deps": attr.label_list(providers = [CcInfo]),

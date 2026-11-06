@@ -2,6 +2,8 @@
 """Regenerate platform base and support metadata in an isolated overlay."""
 
 import argparse
+import gzip
+import json
 from pathlib import Path
 import shutil
 import subprocess
@@ -35,7 +37,21 @@ def main():
     parser.add_argument('--gn', type=Path, help='GN executable for capturing GPU runtime edges')
     parser.add_argument('--gpu', action='store_true', help='Also import Tint, Dawn native and GPU command protocol')
     parser.add_argument('--angle', action='store_true', help='Also import the ANGLE EGL/GLES backends')
+    parser.add_argument('--gl', action='store_true', help='Also import browser tracing/metrics and OpenGL integration')
+    parser.add_argument('--gpu-service', action='store_true', help='Also import the GPU command service closure')
+    parser.add_argument('--media', action='store_true', help='Also import GPU clients and media decoding')
+    parser.add_argument('--bootstrap-webui', action='store_true', help='Import WebUI producers before discovering generated GRIT inputs')
+    parser.add_argument('--generated-root', type=Path, help='Built platform native output directory for GRIT input discovery')
+    parser.add_argument('--compositor', action='store_true', help='Also import the compositor closure')
+    parser.add_argument('--blink-platform', action='store_true', help='Also import Blink platform and its Rust bridges')
+    parser.add_argument('--gpu-client', action='store_true', help='Also import GPU command producers and Viz types')
     args = parser.parse_args()
+    args.compositor = args.compositor or args.blink_platform
+    args.media = args.media or args.compositor
+    args.gpu_client = args.gpu_client or args.media
+    args.gpu_service = args.gpu_service or args.gpu_client
+    args.gl = args.gl or args.gpu_service or args.bootstrap_webui
+    args.angle = args.angle or args.gl
     args.gpu = args.gpu or args.angle
     if args.gpu and not args.gn:
         parser.error('--gpu requires --gn')
@@ -76,6 +92,12 @@ def main():
         if args.graphics:
             for crate in ['font_types', 'read_fonts', 'skrifa', 'png', 'skia_fontations', 'skia_png']:
                 commands[-1].extend(['--root', crate])
+        if args.media and '//media/filters:symphonia_glue' in json.loads(gzip.decompress(graph.read_bytes()))['targets']:
+            commands[-1].extend(['--root', 'symphonia_glue'])
+        if args.blink_platform:
+            for crate in ['font_format_check', 'blink_rust_crash', 'crabbyavif',
+                          'crabbyavif_libyuv_sys', 'crabbyavif_dav1d_sys']:
+                commands[-1].extend(['--root', crate])
         if args.variant == 'darwin_arm64' or args.network:
             commands.append(['import_crypto.py', str(graph), '--source-root', str(source)])
         if args.ipc:
@@ -113,6 +135,47 @@ def main():
                              '--output', str(stage / 'native/angle_runtime_edges.json')])
             commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source),
                              '--layer', 'angle_runtime'])
+        if args.gl:
+            commands.append(['capture_runtime_edges.py', '--source-root', str(source),
+                             '--gn', str(args.gn.resolve()), '--graph', str(graph),
+                             '--target', '//ui/gl:gl', '--output', str(stage / 'native/gl_runtime_edges.json')])
+            for layer in ['browser_services', 'linux_ui']:
+                commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
+            for root in ['//ui/base:base', '//ui/events:events', '//ui/gfx/ipc:ipc',
+                         '//ui/gl/init:init', '//ui/gl/mojom:mojom', '//ui/gfx/ipc/buffer_types:buffer_types',
+                         '//ui/gfx/ipc/color:color', '//ui/gfx/ipc/skia:skia']:
+                commands[-1].extend(['--root', root])
+        if args.gpu_service:
+            commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', 'gpu_service'])
+        if args.media:
+            for layer in ['pthreadpool', 'ml', 'ffmpeg']:
+                commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
+        if args.gpu_client:
+            commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', 'gpu_client'])
+        if args.media:
+            commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', 'media'])
+        if args.compositor:
+            commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', 'compositor'])
+        if args.blink_platform:
+            for layer in ['blink_rust', 'blink_platform']:
+                commands.append(['import_cpp_layer.py', str(graph), '--source-root', str(source), '--layer', layer])
+        if args.gl:
+            commands.append(['import_webui_actions.py', str(graph), '--source-root', str(source),
+                             '--root', '//ui/webui/resources:build_grd'])
+            grit = ['import_grit_actions.py', str(graph), '--source-root', str(source)]
+            for root in ['//net:net_resources_grit', '//ui/resources:ui_resources_grd_grit',
+                         '//ui/resources:ui_unscaled_resources_grd_grit',
+                         '//ui/strings:ui_strings_grit', '//ui/strings:app_locale_settings_grit',
+                         '//ui/strings:ax_strings_grit', '//ui/strings:auto_image_annotation_strings_grit',
+                         '//ui/webui/resources:resources_grit']:
+                if args.bootstrap_webui and root == '//ui/webui/resources:resources_grit':
+                    continue
+                grit.extend(['--root', root])
+            if args.generated_root:
+                grit.extend(['--generated-root', str(args.generated_root.resolve())])
+            if args.compositor:
+                grit.extend(['--root', '//components/metrics:server_urls_grd_grit'])
+            commands.append(grit)
         for command in commands:
             subprocess.run([sys.executable, str(stage / 'tools' / command[0]), *command[1:]], check=True)
         files = [
@@ -129,7 +192,7 @@ def main():
                          sorted((overlay / 'native').glob('mojo_*.bzl')))
         if args.network:
             files.extend(['native/' + name + '_sources.bzl' for name in ['sqlite', 'quiche', 'network']])
-            files.extend(['native/grit_actions.bzl', 'native/grit_sources.bzl', 'native/grit_targets.json'])
+            files.extend(['native/grit_actions.bzl', 'native/grit_sources.bzl', 'native/grit_targets.json', 'native/grit_resource_inputs.bzl'])
             files.extend(str(path.relative_to(overlay)) for path in
                          sorted((overlay / 'native/network_forwarders').rglob('*')) if path.is_file())
         if args.graphics:
@@ -151,6 +214,34 @@ def main():
             files.extend(['native/angle_runtime_sources.bzl', 'native/vulkan_loader_sources.bzl'])
             files.extend(str(path.relative_to(overlay)) for path in
                          sorted((overlay / 'native/angle_runtime_forwarders').rglob('*')) if path.is_file())
+        if args.gl:
+            files.extend(['native/webui_actions.bzl', 'native/webui_targets.json'])
+            for layer in ['browser_services', 'linux_ui']:
+                files.append('native/' + layer + '_sources.bzl')
+                files.extend(str(path.relative_to(overlay)) for path in
+                             sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())
+        if args.gpu_service:
+            files.append('native/gpu_service_sources.bzl')
+            files.extend(str(path.relative_to(overlay)) for path in
+                         sorted((overlay / 'native/gpu_service_forwarders').rglob('*')) if path.is_file())
+        if args.media:
+            for layer in ['pthreadpool', 'ml', 'ffmpeg', 'gpu_client', 'media']:
+                files.append('native/' + layer + '_sources.bzl')
+                files.extend(str(path.relative_to(overlay)) for path in
+                             sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())
+        if args.gpu_client and not args.media:
+            files.append('native/gpu_client_sources.bzl')
+            files.extend(str(path.relative_to(overlay)) for path in
+                         sorted((overlay / 'native/gpu_client_forwarders').rglob('*')) if path.is_file())
+        if args.compositor:
+            files.append('native/compositor_sources.bzl')
+            files.extend(str(path.relative_to(overlay)) for path in
+                         sorted((overlay / 'native/compositor_forwarders').rglob('*')) if path.is_file())
+        if args.blink_platform:
+            for layer in ['blink_rust', 'blink_platform']:
+                files.append('native/' + layer + '_sources.bzl')
+                files.extend(str(path.relative_to(overlay)) for path in
+                             sorted((overlay / ('native/' + layer + '_forwarders')).rglob('*')) if path.is_file())
         if args.v8:
             files.append('native/browser_v8_sources.bzl')
             files.extend(str(path.relative_to(overlay)) for path in

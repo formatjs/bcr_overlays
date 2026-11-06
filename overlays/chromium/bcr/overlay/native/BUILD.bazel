@@ -552,3 +552,8 @@ exports_files([
 ])
 
 native_xslt()
+
+exports_files([
+    "grit_resources.py",
+    "grit_resource_inputs.bzl",
+])

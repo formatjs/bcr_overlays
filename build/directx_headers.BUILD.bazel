@@ -1,0 +1,19 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "headers",
+    hdrs = glob(["include/**/*.h"]),
+    includes = ["include"],
+    include_prefix = "third_party/microsoft_dxheaders/src",
+)
+
+cc_library(
+    name = "dxguids",
+    srcs = ["src/dxguids.cpp"],
+    alwayslink = True,
+    linkstatic = True,
+    target_compatible_with = ["@platforms//os:windows"],
+    deps = [":headers"],
+)

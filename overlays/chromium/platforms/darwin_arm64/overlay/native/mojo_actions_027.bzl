@@ -1,8 +1,7 @@
 """Generated Mojo action shard; run tools/import_mojo_actions.py."""
 
-load(":python_action.bzl", "chromium_filegroup", "chromium_python_action")
-
 load(":mojo_parameters.bzl", "arguments", "input_files", "output_files", "source_path")
+load(":python_action.bzl", "chromium_filegroup", "chromium_python_action")
 
 # buildifier: disable=unnamed-macro
 def declare_actions():
@@ -1272,10 +1271,11 @@ def declare_actions():
         args = arguments([8, 2706, 1749, 6630]),
         response_file_contents = arguments([]),
         deps = [":inputs_mojo_94828aabbcb99be6"],
+        exec_compatible_with = ["@platforms//os:linux", "@platforms//cpu:x86_64"],
     )
     chromium_python_action(
         name = "mojo_82a17b248ed5496b",
-        srcs = input_files([34771]),
+        srcs = input_files([]),
         outs = output_files([1777]),
         script = source_path(34770),
         args = arguments([8, 2706, 1749, 3369]),

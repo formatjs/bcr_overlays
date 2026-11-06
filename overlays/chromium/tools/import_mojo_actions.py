@@ -25,7 +25,10 @@ def action_name(label):
 
 
 def input_paths(target):
-    return set(target.get('inputs', []) + target.get('sources', []) + [target['script']])
+    paths = set(target.get('inputs', []) + target.get('sources', []) + [target['script']])
+    if '//third_party/node/node.py' in paths:
+        paths.add(NODE)
+    return paths
 
 
 def replace_block(path, start, end, block):
@@ -96,7 +99,7 @@ def main():
         target = targets[label]
         all_paths.update(target.get('inputs', []) + target.get('sources', []) + target.get('outputs', []))
         if target['type'] == 'action':
-            all_paths.add(target['script'])
+            all_paths.update(input_paths(target))
             all_arguments.update(target.get('args', []) + target.get('response_file_contents', []))
     paths = sorted(all_paths)
     arguments = sorted(all_arguments)

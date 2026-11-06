@@ -407,7 +407,7 @@ def main():
                     '//third_party/protobuf-javascript:', '//sandbox/policy/mojom:', '//url/mojom:')
         roots = ['//services/metrics/public/cpp:metrics_cpp', '//services/tracing/public/cpp:cpp']
     if layer == 'linux_ui':
-        prefixes = ('//ui/', '//components/device_event_log:', '//components/headless/screen_info:', '//ipc:')
+        prefixes = ('//ui/', '//components/device_event_log:', '//components/headless/screen_info:', '//components/stylus_handwriting/win:', '//ipc:')
         roots = ['//ui/gl:gl']
     if layer == 'ozone':
         prefixes = ('//ui/', '//components/dbus', '//components/headless/',
@@ -614,6 +614,7 @@ def main():
             '//skia:buildflags', '//ui/base:ozone_buildflags', '//ui/gl:buildflags']})
         reused.update({
             '//third_party:jpeg_includes': ':codec_headers',
+            '//third_party/microsoft_dxheaders:dxguids': '@chromium_directx_headers//:dxguids',
             '//mojo/public/cpp/base:base': ':mojo_base_types',
             '//mojo/public/interfaces/bindings:bindings': ':mojo_cpp_bindings',
             '//mojo/public/interfaces/bindings:bindings_shared': ':mojo_binding_headers',
@@ -794,6 +795,11 @@ def main():
         return layer + '_' + hashlib.sha256(label.encode()).hexdigest()[:16]
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     targets = graph['targets']
+    interface_provider_sources = {
+        BUILD + 'gen/services/service_manager/public/mojom/interface_provider.mojom.cc',
+        BUILD + 'gen/services/service_manager/public/mojom/interface_provider.mojom-shared.cc',
+    }
+    interface_provider_suffixes = tuple(path.removeprefix(BUILD) for path in interface_provider_sources)
     if layer == 'media' and '//media/filters:symphonia_glue_cxx_generated' not in targets:
         roots.remove('//media/filters:symphonia_glue_cxx_generated')
     if layer == 'fonts' and '//third_party/fontconfig:fontconfig' not in targets:
@@ -857,6 +863,13 @@ def main():
             '//third_party/icu:icui18n': '//third_party/icu:icu',
             '//third_party/zstd:compress': '@zstd//:zstd',
         })
+    if layer in ('blink_platform', 'blink_core', 'blink_modules', 'content', 'browser'):
+        for label, target in targets.items():
+            if label.partition('(')[0] == '//services/service_manager/public/mojom:mojom':
+                additional = [path for path in target.get('sources', [])
+                              if path.endswith('.cc') and not path.endswith(interface_provider_suffixes)]
+                if additional:
+                    reused.pop(label, None)
     reuse_host_targets(targets, reused, extra_provided)
     existing_actions = {label for label in targets if hashlib.sha256(label.encode()).hexdigest()[:16] in existing_action_hashes}
     reused_asset_roots = {}
@@ -1020,9 +1033,15 @@ def main():
         public = target.get('public', [])
         paths = target.get('sources', []) + (public if isinstance(public, list) else [])
         scan_sources.update(p for p in paths if not p.startswith(BUILD) and not p[2:].startswith(QUICHE)
-                            and p.endswith(('.cc', '.c', '.cpp', '.cxx', '.mm', '.h', '.hh', '.hpp', '.hxx', '.inl', '.inc', '.S', '.s', '.asm')))
+                            and p.endswith(('.cc', '.c', '.cpp', '.cxx', '.mm', '.m', '.h', '.hh', '.hpp', '.hxx', '.inl', '.inc', '.S', '.s', '.asm')))
         sources = [file_label(p) for p in target.get('sources', []) if p.endswith(('.cc', '.c', '.cpp', '.cxx', '.S', '.s')) or (layer in ('browser_v8', 'paint') and p.endswith('.asm')) or (layer in ('codecs', 'ffmpeg') and p.endswith('.o'))]
+        shared_interface = any(path.endswith(interface_provider_suffixes) for path in target.get('sources', []))
+        if layer in ('blink_platform', 'blink_core', 'blink_modules', 'content', 'browser') and shared_interface:
+            owned = {file_label(path) for path in target.get('sources', [])
+                     if path.endswith(interface_provider_suffixes)}
+            sources = [source for source in sources if source not in owned]
         objcxx_sources = [file_label(p) for p in target.get('sources', []) if p.endswith('.mm')]
+        objc_sources = [file_label(p) for p in target.get('sources', []) if p.endswith('.m')]
         resource_sources = [file_label(p) for p in target.get('sources', []) if p.endswith('.rc')]
         # Vulkan's native BCR provider owns these public dependency headers.
         if layer == 'vulkan_validation':
@@ -1161,14 +1180,17 @@ def main():
                     ('-fuse-ld=', '--target=', '--sysroot=')):
                 continue
             linkopts.append(option)
-        for field, option in [('frameworks', '-framework'), ('weak_frameworks', '-weak_framework')]:
-            for framework in unpack(target.get(field, [])):
-                linkopts.extend([option, framework.removesuffix('.framework')])
+        if target.get('toolchain', '').startswith('//build/toolchain/mac:'):
+            for field, option in [('frameworks', '-framework'), ('weak_frameworks', '-weak_framework')]:
+                for framework in unpack(target.get(field, [])):
+                    linkopts.extend([option, framework.removesuffix('.framework')])
         if label.split('(', 1)[0] == '//third_party/libsecret:libsecret':
             includes.append('../third_party/libsecret')
             dependencies.append('@glib//gio')
         if layer == 'compositor' and label == '//third_party/webrtc/modules/desktop_capture:desktop_capture':
             dependencies.append('@chromium_libdrm//:webrtc_headers')
+        if layer in ('blink_platform', 'blink_core', 'blink_modules', 'content', 'browser') and shared_interface:
+            dependencies.append(':mojo_interface_provider')
         libraries[label] = dict(name=name(label), kind=target['type'], srcs=sources,
                                 hdrs=sorted(set(headers)), copts=copts, defines=defines,
                                 includes=sorted(set(includes)), deps=sorted(set(dependencies)),
@@ -1194,8 +1216,11 @@ def main():
         if resource_sources:
             libraries[label]['resource_srcs'] = resource_sources
             libraries[label]['resource_defines'] = unpack(target.get('defines', []))
-            if not sources and not objcxx_sources:
+            if not sources and not objcxx_sources and not objc_sources:
                 libraries[label]['defines'] = []
+        if objc_sources:
+            libraries[label]['objc_srcs'] = objc_sources
+            libraries[label]['objc_copts'] = compiler_configuration(graph, target, 'cflags_objc')[0]
         if objcxx_sources:
             libraries[label]['objcxx_srcs'] = objcxx_sources
             libraries[label]['objcxx_copts'] = compiler_configuration(graph, target, 'cflags_objcc')[0]
@@ -1333,7 +1358,11 @@ def main():
         own = ('ui/', 'gpu/config/', 'components/dbus/', 'components/headless/', 'components/url_formatter/', 'components/exo/wayland/protocol/', 'dbus/', 'device/udev_linux/', 'services/tracing/public/', 'services/service_manager/public/', 'gpu/vulkan/', 'ipc/', 'third_party/khronos/')
     if layer == 'linux_ui':
         forwarders = {'third_party/re2/src/re2/re2.h': 're2/re2.h'}
-        own = ('ui/', 'components/device_event_log/', 'components/headless/screen_info/', 'ipc/', 'third_party/khronos/')
+        for header in sorted((args.source_root / 'ui/gl/mojom').glob('*_mojom_traits.h')):
+            logical = '//' + header.relative_to(args.source_root).as_posix()
+            shared_headers.add(file_label(logical))
+            scan_sources.add(logical)
+        own = ('ui/', 'components/device_event_log/', 'components/headless/screen_info/', 'components/stylus_handwriting/win/', 'ipc/', 'third_party/khronos/')
     if layer == 'browser_services':
         forwarders = {'third_party/snappy/src/snappy.h': 'snappy/snappy.h'}
         own = ('services/metrics/public/', 'services/tracing/public/', 'components/prefs/', 'components/variations/', 'components/system_cpu/', 'components/tracing/', 'components/version_info/', 'sandbox/policy/mojom/', 'url/mojom/', 'third_party/metrics_proto/', 'third_party/protobuf-javascript/src/')

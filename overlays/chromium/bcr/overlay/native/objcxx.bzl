@@ -1,5 +1,6 @@
-"""Compile Objective-C++ with the registered hermetic C++ toolchain."""
+"""Compile Objective-C and Objective-C++ with the registered hermetic C++ toolchain."""
 
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_cc//cc:find_cc_toolchain.bzl", "find_cpp_toolchain")
 load("@rules_cc//cc/common:cc_common.bzl", "cc_common")
 load("@rules_cc//cc/common:cc_info.bzl", "CcInfo")
@@ -26,7 +27,7 @@ def _objcxx_library_impl(ctx):
         feature_configuration = features,
         cc_toolchain = toolchain,
         name = ctx.label.name,
-        language = "objc++",
+        language = ctx.attr.language,
         srcs = ctx.files.srcs,
         public_hdrs = ctx.files.hdrs,
         compilation_contexts = [dep[CcInfo].compilation_context for dep in ctx.attr.deps],
@@ -54,6 +55,7 @@ def _objcxx_library_impl(ctx):
 objcxx_library = rule(
     implementation = _objcxx_library_impl,
     attrs = {
+        "language": attr.string(default = "objc++", values = ["objc", "objc++"]),
         "alwayslink": attr.bool(),
         "srcs": attr.label_list(allow_files = [".mm", ".m"]),
         "hdrs": attr.label_list(allow_files = True),
@@ -66,3 +68,29 @@ objcxx_library = rule(
     fragments = ["cpp"],
     toolchains = ["@bazel_tools//tools/cpp:toolchain_type"],
 )
+
+def chromium_objc_libraries(library, deps):
+    result = []
+    for prefix, language, headers_suffix in [("objcxx", "objc++", "_headers"), ("objc", "objc", "_objc_headers")]:
+        if not library.get(prefix + "_srcs"):
+            continue
+        headers = library["name"] + headers_suffix
+        cc_library(
+            name = headers,
+            hdrs = library["hdrs"],
+            includes = library["includes"],
+            deps = deps,
+        )
+        name = library["name"] + "_" + prefix
+        objcxx_library(
+            name = name,
+            language = language,
+            srcs = library[prefix + "_srcs"],
+            copts = library[prefix + "_copts"],
+            local_defines = library["defines"],
+            deps = [":" + headers],
+            alwayslink = True,
+            target_compatible_with = ["@platforms//os:macos"],
+        )
+        result.append(":" + name)
+    return result

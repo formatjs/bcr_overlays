@@ -63,6 +63,8 @@ http_archive(
         "build/BUILD.bazel": "//bcr/overlay/build:BUILD.bazel",
         "build/buildflag_header.bzl": "//bcr/overlay/build:buildflag_header.bzl",
         "build/rust/allocator/BUILD.bazel": "//bcr/overlay/build/rust/allocator:BUILD.bazel",
+        "native/grit_resources.py": "//bcr/overlay/native:grit_resources.py",
+        "native/grit_resource_inputs.bzl": "//bcr/overlay/native:grit_resource_inputs.bzl",
         "native/BUILD.bazel": "//bcr/overlay/native:BUILD.bazel",
         "native/angle_runtime.bzl": "//bcr/overlay/native:angle_runtime.bzl",
         "native/angle_runtime_sources.bzl": "//bcr/overlay/native:angle_runtime_sources.bzl",

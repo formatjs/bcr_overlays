@@ -592,3 +592,71 @@ windows_arm64_browser(
     name = "angle-windows-arm64",
     srcs = [":angle_static_crt"],
 )
+
+cc_binary(
+    name = "darwin_gpu_probe",
+    srcs = ["//:tests/gpu_client_runtime_test.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+    linkopts = ["-Wl,-rpath,@loader_path"],
+    linkstatic = True,
+    target_compatible_with = ["@platforms//os:macos"],
+    deps = [
+        "@chromium_darwin_arm64//native:gles2_cmd_helper",
+        "@chromium_darwin_arm64//native:gpu_client_headers",
+        "@chromium_darwin_arm64//native:gpu_service",
+    ],
+)
+
+darwin_arm64_browser(
+    name = "gpu-darwin-arm64",
+    srcs = [
+        ":darwin_gpu_probe",
+        "@chromium_darwin_arm64//native:angle_runtime",
+    ],
+)
+
+cc_binary(
+    name = "windows_gpu_probe",
+    srcs = ["//:tests/gpu_client_runtime_test.cc"],
+    copts = [
+        "/std:c++20",
+        "/GR-",
+        "/EHs-c-",
+    ],
+    linkstatic = True,
+    target_compatible_with = ["@platforms//os:windows"],
+    deps = select({
+        "@platforms//cpu:x86_64": [
+            "@chromium_windows_amd64//native:gles2_cmd_helper",
+            "@chromium_windows_amd64//native:gpu_client_headers",
+            "@chromium_windows_amd64//native:gpu_service",
+        ],
+        "@platforms//cpu:aarch64": [
+            "@chromium_windows_arm64//native:gles2_cmd_helper",
+            "@chromium_windows_arm64//native:gpu_client_headers",
+            "@chromium_windows_arm64//native:gpu_service",
+        ],
+    }),
+)
+
+msvc_static_crt(
+    name = "gpu_static_crt",
+    srcs = [":windows_gpu_probe"] + select({
+        "@platforms//cpu:x86_64": ["@chromium_windows_amd64//native:angle_runtime"],
+        "@platforms//cpu:aarch64": ["@chromium_windows_arm64//native:angle_runtime"],
+    }),
+)
+
+windows_amd64_browser(
+    name = "gpu-windows-amd64",
+    srcs = [":gpu_static_crt"],
+)
+
+windows_arm64_browser(
+    name = "gpu-windows-arm64",
+    srcs = [":gpu_static_crt"],
+)

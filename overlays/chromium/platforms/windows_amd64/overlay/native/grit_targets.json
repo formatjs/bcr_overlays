@@ -1,6 +1,13 @@
 {
   "native": {
-    "//net:net_resources_grit": "grit_706a4afe1f8c58a4"
+    "//net:net_resources_grit": "grit_706a4afe1f8c58a4",
+    "//ui/resources:ui_resources_grd_grit": "grit_90cb2b0e70543c2f",
+    "//ui/resources:ui_unscaled_resources_grd_grit": "grit_c806c1b0abac4056",
+    "//ui/strings:app_locale_settings_grit": "grit_7c8f32661303edfe",
+    "//ui/strings:auto_image_annotation_strings_grit": "grit_5242e1979cfaeb71",
+    "//ui/strings:ax_strings_grit": "grit_e01bb76104c954fd",
+    "//ui/strings:ui_strings_grit": "grit_ui_strings",
+    "//ui/webui/resources:resources_grit": "grit_54a77a83f1a47c5f"
   },
   "pending": {}
 }

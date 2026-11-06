@@ -1,0 +1,2 @@
+#pragma once
+#include "crc32c/crc32c.h"

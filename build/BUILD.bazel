@@ -94,3 +94,5 @@ exports_files(["dawn-dxc-version-include.patch"])
 exports_files(["dxc-stdlib.patch"])
 
 exports_files(["msvc_dia.bzl"])
+
+exports_files(["directx_headers.BUILD.bazel"])

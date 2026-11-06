@@ -151,6 +151,7 @@ def main():
                                 for path in target.get('inputs', [])
                                 if path.startswith('//out/bazel-import/') and Path(path).name == 'brotli'
                                 and path != '//out/bazel-import/brotli'})) + ')']
+    resource_inputs = {}
     all_outputs = [':gen/tools/gritsettings/default_resource_ids']
     for target_label, target in ids_targets.items():
         if '(' not in target_label:
@@ -236,10 +237,19 @@ def main():
                 selected[target_label] = name
                 outputs = {path.removeprefix('//out/bazel-import/'): path.removeprefix('//out/bazel-import/')
                            for path in target['outputs']}
+                script = 'tools/grit/grit.py'
+                resource_outputs = [path for path in outputs if path.endswith('.rc')]
+                if resource_outputs:
+                    for output in resource_outputs:
+                        resource_inputs[output] = dict(files)
+                    script = 'tools/grit/grit_resources.py'
+                    files['//native:grit_resources.py'] = script
+                    arguments = [argument for output in resource_outputs
+                                 for argument in ['--resource-output', output]] + ['--'] + arguments
                 all_outputs.extend(':' + path for path in outputs)
                 lines += ['    chromium_python_action(', f'        name = "{name}",',
                           '        srcs = ' + json.dumps(files) + ',',
-                          '        script = "tools/grit/grit.py",',
+                          '        script = ' + json.dumps(script) + ',',
                           '        args = ' + json.dumps(arguments) + ',',
                           '        outs = ' + json.dumps(outputs) + ',',
                           '        deps = ' + json.dumps(sorted(set(deps))) + ',', '    )']
@@ -252,6 +262,9 @@ def main():
     (overlay / 'native/grit_actions.bzl').write_text('\n'.join(lines) + '\n')
     (overlay / 'native/grit_sources.bzl').write_text('"""Original GRIT Python runtime inputs."""\nROOT_PYS = ' + json.dumps(python_sources, indent=4) + '\n')
     (overlay / 'native/grit_targets.json').write_text(json.dumps({'native': selected, 'pending': pending}, indent=2) + '\n')
+    (overlay / 'native/grit_resource_inputs.bzl').write_text(
+        '"""Declared files used by Windows GRIT resource scripts."""\n\nRESOURCE_INPUTS = ' +
+        json.dumps(resource_inputs, indent=4, sort_keys=True) + '\n')
     path = overlay / 'BUILD.bazel'
     text = path.read_text()
     begin, end = '# BEGIN GENERATED GRIT INPUTS', '# END GENERATED GRIT INPUTS'
@@ -266,7 +279,7 @@ def main():
     module = ROOT / 'MODULE.bazel'
     text = module.read_text()
     marker = '        "native/BUILD.bazel":'
-    for filename in ['grit_actions.bzl', 'grit_sources.bzl', 'grit_targets.json']:
+    for filename in ['grit_actions.bzl', 'grit_sources.bzl', 'grit_targets.json', 'grit_resource_inputs.bzl', 'grit_resources.py']:
         mapping = f'        "native/{filename}": "//bcr/overlay/native:{filename}",\n'
         if mapping not in text:
             index = text.index(marker)

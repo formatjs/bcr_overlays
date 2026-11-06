@@ -5,6 +5,7 @@ import argparse
 import gzip
 import hashlib
 import json
+import os
 from pathlib import Path
 
 from import_base import replace_block, sort_archive_files
@@ -29,6 +30,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('graph', type=Path)
     parser.add_argument('--source-root', required=True, type=Path)
+    parser.add_argument('--root', action='append', help='Import only this WebUI root and its dependency closure')
     args = parser.parse_args()
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
     targets = graph['targets']
@@ -134,7 +136,7 @@ def main():
                     for mapping in arguments[arguments.index('--external_paths') + 1:]:
                         if mapping.startswith('--'):
                             break
-                        directory = (source / 'out/bazel-import' / mapping.split('|', 1)[1]).resolve()
+                        directory = Path(os.path.abspath(source / 'out/bazel-import' / mapping.split('|', 1)[1]))
                         if directory.is_relative_to(source / 'out/bazel-import'):
                             continue
                         if not directory.is_relative_to(source) or not directory.is_dir():
@@ -162,7 +164,7 @@ def main():
         running.remove(label)
         return True
 
-    roots = [label for label, target in targets.items() if target.get('script') in (
+    roots = args.root or [label for label, target in targets.items() if target.get('script') in (
         '//ui/webui/resources/tools/generate_grd.py', '//tools/typescript/ts_library.py', PERMISSION_GENERATOR)]
     for label in sorted(roots):
         visit(label)

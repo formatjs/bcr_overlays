@@ -12,7 +12,16 @@ frameworks, their symlink dependencies, and relocated Cryptex frameworks.
 `//tools/ci:allocator-darwin-arm64` cross-links a heap smoke executable on Linux.
 CI hands it to a native macOS ARM64 runner. `with_cfg` selects the target platform
 and macOS 12 deployment target for compiler, runtime, and linker consistency.
+Base, Mojo IPC, network, V8, Skia, ANGLE, Dawn, GL, GPU service, and media
+cross-build with the same toolchain. `//tools/ci:gpu-darwin-arm64` links the GPU
+command-buffer smoke executable with adjacent EGL/GLES libraries for native CI.
 Full browser translation and app bundle packaging remain pending.
+
+WebUI generation needs two passes when refreshing GPU/media metadata. First run
+`import_platform_base.py --bootstrap-webui`, build the captured WebUI `build_grd`
+target, then rerun with `--generated-root` pointing at the platform's native
+Bazel output directory. The built GRD files discover inputs; Bazel regenerates
+the resources from declared sources.
 
 To recapture, apply `capture/mac_sdk_cross.patch` to the pinned Chromium checkout,
 materialize the source revisions in `capture/inputs.json`, and configure

@@ -32930,6 +32930,7 @@ _PATHS = [
     "//third_party/markupsafe/_native.py",
     "//third_party/node/check_version.js",
     "//third_party/node/check_version.py",
+    "//third_party/node/linux/node-linux-x64/bin/node",
     "//third_party/node/node.py",
     "//third_party/node/node_modules.py",
     "//third_party/node/node_modules.tar.gz.sha1",
@@ -33036,7 +33037,7 @@ _PATHS = [
     "//ui/webui/resources/js/tracked_element/tracked_element.mojom",
     "//url/mojom/origin.mojom",
     "//url/mojom/scheme_host_port.mojom",
-    "//url/mojom/url.mojom"
+    "//url/mojom/url.mojom",
 ]
 
 _ARGUMENTS = [
@@ -39772,7 +39773,7 @@ _ARGUMENTS = [
     "webui_module_path=chrome://resources/mojo/ui/latency/mojom",
     "webui_module_path=chrome://resources/mojo/ui/webui/resources/js/tracked_element",
     "webui_module_path=chrome://resources/mojo/url/mojom",
-    "win_permissions_validation"
+    "win_permissions_validation",
 ]
 
 def source_path(index):

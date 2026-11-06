@@ -27,7 +27,7 @@ jobs:
           BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_RO_PUBLIC_KEY }}
         run: |
           targets=()
-          for probe in rust expat allocator base ipc network graphics v8 dawn angle; do
+          for probe in rust expat allocator base ipc network graphics v8 dawn angle gpu; do
             targets+=("//tools/ci:$probe-$PLATFORM")
           done
           if [[ "$PLATFORM" == windows-* ]]; then
@@ -120,6 +120,12 @@ jobs:
           $bundle = "$env:RUNNER_TEMP/allocator-probes/angle-windows-${{ matrix.arch }}"
           & "$bundle/angle-windows-${{ matrix.arch }}.exe" "$bundle/libEGL.dll" "$bundle/libGLESv2.dll"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Exercise GPU command buffer
+        shell: pwsh
+        run: |
+          $bundle = "$env:RUNNER_TEMP/allocator-probes/gpu-windows-${{ matrix.arch }}"
+          & "$bundle/gpu-windows-${{ matrix.arch }}.exe"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Compile HLSL with shipped DXC
         shell: pwsh
         run: |
@@ -176,6 +182,11 @@ jobs:
           directory="$RUNNER_TEMP/allocator-probes/angle-darwin-arm64"
           chmod +x "$directory/angle-darwin-arm64" "$directory/"*.dylib
           "$directory/angle-darwin-arm64" "$directory/libEGL.dylib" "$directory/libGLESv2.dylib"
+      - name: Exercise GPU command buffer
+        run: |
+          directory="$RUNNER_TEMP/allocator-probes/gpu-darwin-arm64"
+          chmod +x "$directory/gpu-darwin-arm64" "$directory/"*.dylib
+          "$directory/gpu-darwin-arm64"
       - name: Render and round-trip PNG pixels
         run: |
           chmod +x "$RUNNER_TEMP/allocator-probes/graphics-darwin-arm64"

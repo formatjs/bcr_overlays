@@ -1,8 +1,7 @@
 """Shared declared source inputs for native Mojo actions."""
 
-load(":python_action.bzl", "chromium_filegroup")
-
 load(":mojo_parameters.bzl", "input_files")
+load(":python_action.bzl", "chromium_filegroup")
 
 # buildifier: disable=unnamed-macro
 def declare_common_inputs():
@@ -21,7 +20,7 @@ def declare_common_inputs():
     )
     chromium_filegroup(
         name = "inputs_mojo_b933dce347a82ef6",
-        srcs = input_files([661, 34772, 34773, 34774]),
+        srcs = input_files([661, 34771, 34772, 34773, 34774]),
     )
     chromium_filegroup(
         name = "inputs_mojo_30eb467f2d848509",
@@ -45,5 +44,5 @@ def declare_common_inputs():
     )
     chromium_filegroup(
         name = "inputs_mojo_94828aabbcb99be6",
-        srcs = input_files([34769, 34770, 34772, 34773, 34774, 34775]),
+        srcs = input_files([34769, 34770, 34771, 34772, 34773, 34774, 34775]),
     )

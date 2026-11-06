@@ -93,3 +93,11 @@ class HostGraphicsReuseTest(unittest.TestCase):
         library = next(iter(libraries.values()))
         self.assertEqual(library['deps'], ['@chromium//native:codecs_webp_avx2'])
         self.assertEqual(library['srcs'], [])
+
+    def test_cpu_flags_prevent_ffmpeg_reuse(self):
+        label = '//third_party/ffmpeg:ffmpeg_internal'
+        capture, native, libraries, providers = self.capture(label, kind='static_library')
+        next(iter(capture['targets'].values()))['cflags'] = ['-march=armv8.5-a']
+        original = copy.deepcopy(libraries)
+        self.assertEqual(reuse_host_graphics(capture, native, libraries, providers), 0)
+        self.assertEqual(libraries, original)

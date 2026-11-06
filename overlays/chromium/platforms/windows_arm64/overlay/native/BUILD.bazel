@@ -3,13 +3,18 @@ load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":base.bzl", "native_base")
 load(":base_sources.bzl", "COPTS")
 load(":buildflags.bzl", "native_buildflags")
+load(":crypto.bzl", "native_crypto")
 load(":cxx_bridge.bzl", "chromium_cxx_bridge", "native_cxx_tools")
 load(":generated_files.bzl", "captured_generated_files")
+load(":grit_actions.bzl", "native_grit")
 load(":mojo_actions.bzl", "native_mojo_bindings")
 load(":mojo_runtime.bzl", "native_mojo_runtime")
+load(":network.bzl", "native_network")
 load(":perfetto_proto.bzl", "native_perfetto_proto")
 load(":perfetto_runtime.bzl", "native_perfetto_runtime")
 load(":proto_actions.bzl", "native_variations_proto")
+load(":quiche.bzl", "native_quiche")
+load(":sqlite.bzl", "native_sqlite")
 load(":url.bzl", "native_url")
 
 package(default_visibility = ["//visibility:public"])
@@ -74,3 +79,13 @@ native_mojo_bindings(name = "mojo_bindings")
 native_mojo_runtime()
 
 native_url()
+
+native_crypto()
+
+native_sqlite()
+
+native_quiche()
+
+native_network()
+
+native_grit(name = "grit_resources")

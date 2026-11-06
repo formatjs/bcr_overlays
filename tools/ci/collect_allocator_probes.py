@@ -32,6 +32,9 @@ def main():
         ('ipc-darwin-arm64', 'darwin-arm64'),
         ('ipc-windows-amd64', 'windows-amd64'),
         ('ipc-windows-arm64', 'windows-arm64'),
+        ('network-darwin-arm64', 'darwin-arm64'),
+        ('network-windows-amd64', 'windows-amd64'),
+        ('network-windows-arm64', 'windows-arm64'),
     ]:
         operating_system, arch = platform.split('-')
         label = '//tools/ci:' + target

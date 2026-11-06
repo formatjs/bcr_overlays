@@ -172,7 +172,7 @@ def reuse_host_targets(targets, reused, provided):
 def native_graphics_providers(overlay):
     """Read providers from the native overlay, not the cross-import staging tree."""
     providers = {}
-    for component in ('fonts', 'codecs', 'ml', 'angle_runtime', 'swiftshader', 'vulkan_loader',
+    for component in ('fonts', 'codecs', 'ml', 'ffmpeg', 'skia', 'angle_runtime', 'swiftshader', 'vulkan_loader',
                       'vulkan_validation', 'vulkan_tools'):
         tree = ast.parse((overlay / 'native' / (component + '_sources.bzl')).read_text())
         records = next(ast.literal_eval(node.value) for node in tree.body
@@ -207,7 +207,8 @@ def reuse_host_graphics(graph, reference, libraries, providers):
                 '//third_party/vulkan-tools/', '//third_party/fontconfig:',
                 '//third_party/freetype:', '//third_party/harfbuzz-ng:',
                 '//third_party/libpng:', '//third_party/libxml:', '//third_party/tflite:',
-                '//third_party/libwebp:', '//third_party/libjpeg_turbo:', '//third_party/wuffs:')
+                '//third_party/libwebp:', '//third_party/libjpeg_turbo:', '//third_party/wuffs:',
+                '//third_party/ffmpeg:', '//skia:')
     fields = ('type', 'sources', 'defines', 'cflags', 'cflags_cc', 'cflags_c',
               'asmflags', 'include_dirs', 'libs', 'ldflags', 'outputs', 'deps')
 
@@ -635,7 +636,7 @@ def main():
             '//media:media_buildflags': ':all_buildflags',
             '//mojo/public/cpp/base:base': ':mojo_base_types',
         })
-    if layer == 'ffmpeg':
+    if layer in ('ffmpeg', 'browser'):
         reused['//third_party/opus:opus'] = ':ffmpeg_opus'
     if layer == 'ml':
         reused.update({
@@ -945,6 +946,7 @@ def main():
                 headers.extend(file_label(p) for p in targets[dep]['outputs']
                                if p.endswith(('.h', '.inc', '.cc')) and file_label(p) not in sources)
         copts, defines = compiler_configuration(graph, dict(target, cflags=target.get("cflags", []), cflags_cc=target.get("cflags_cc", []), defines=target.get("defines", [])))
+        msvc = any(flag.startswith(('/W', '/std:')) for flag in copts)
         # Protobuf 33 permits incomplete member-pointer bases in constexpr metadata.
         if layer in ('network', 'browser_services', 'linux_ui', 'ozone', 'gpu_service', 'browser_v8', 'ml', 'ffmpeg', 'gpu_client', 'media', 'compositor', 'blink_platform', 'blink_core', 'blink_modules', 'content', 'browser'):
             copts = [p for p in copts if p != '-fcomplete-member-pointers']
@@ -1033,10 +1035,18 @@ def main():
             else:
                 if '/' in library or library.startswith('-'):
                     raise ValueError('unmapped native link input: ' + library)
-                linkopts.append('-l' + library)
+                linkopts.append('-DEFAULTLIB:' + library if msvc else '-l' + library)
         # LLVM owns compiler/runtime paths; retain captured linker hardening.
         linker_flags = iter(unpack(target.get('ldflags', [])))
         for option in linker_flags:
+            if msvc:
+                # Bazel owns debug outputs; LLVM supplies its matching C++ runtime.
+                if option.upper().startswith(('/NATVIS:', '/PDB', '/DEBUG', '/DEFAULTLIB:LIBCPMT.LIB')) or option == '/WX':
+                    continue
+                if option.endswith('.lib'):
+                    option = '-DEFAULTLIB:' + option
+                linkopts.append(option)
+                continue
             if option in ('-isysroot', '--sysroot'):
                 next(linker_flags)
                 continue
@@ -1064,6 +1074,14 @@ def main():
                                 hdrs=sorted(set(headers)), copts=copts, defines=defines,
                                 includes=sorted(set(includes)), deps=sorted(set(dependencies)),
                                 linkopts=linkopts)
+        if label.startswith('//third_party/ffmpeg:'):
+            configurations = {path.removeprefix('//third_party/ffmpeg/').rstrip('/')
+                              for path in unpack(target.get('include_dirs', []))
+                              if path.startswith('//third_party/ffmpeg/chromium/config/')}
+            if len(configurations) > 1:
+                raise ValueError('ambiguous FFmpeg configuration: ' + label)
+            if configurations:
+                libraries[label]['ffmpeg_config'] = configurations.pop()
         if objcxx_sources:
             libraries[label]['objcxx_srcs'] = objcxx_sources
             libraries[label]['objcxx_copts'] = compiler_configuration(graph, target, 'cflags_objcc')[0]
@@ -1151,7 +1169,7 @@ def main():
     own = ('net/', 'sql/', 'ui/base/glib/', 'base/version_info/',
            'components/miracle_parameter/', 'components/network_time/',
            'components/unexportable_keys/', 'components/sqlite_proto/',
-           'components/performance_manager/scenario_api/')
+           'components/performance_manager/scenario_api/', 'third_party/apple_apsl/')
     if layer == 'media':
         forwarders = {'third_party/snappy/src/snappy.h': 'snappy.h'}
         own = ('media/', 'third_party/ffmpeg/', 'third_party/khronos/', 'components/pref_registry/', 'components/leveldb_proto/', 'components/keyed_service/core/', 'components/services/storage/public/', 'third_party/leveldatabase/', 'third_party/libgav1/', 'third_party/widevine/cdm/', 'ui/events/')
@@ -1654,9 +1672,20 @@ def main():
             if set(target.get('deps', [])) & {'//third_party/protobuf:py_proto',
                                              '//third_party/protobuf:py_proto_runtime'}:
                 deps.append(':protobuf_python_runtime')
-            if any(dep.partition('(')[0] == '//third_party/protobuf:protoc'
-                   for dep in target.get('deps', [])):
-                deps.append(':protoc_tool')
+            for dependency in target.get('deps', []):
+                if dependency.partition('(')[0] != '//third_party/protobuf:protoc':
+                    continue
+                protoc_outputs = targets[dependency].get('outputs', [])
+                executables = [path for path in protoc_outputs if Path(path).name in ('protoc', 'protoc.exe')]
+                if len(executables) != 1:
+                    raise ValueError('expected one captured protoc executable: ' + dependency)
+                output = executables[0]
+                if output == BUILD + 'protoc':
+                    deps.append(':protoc_tool')
+                else:
+                    tool_name = name(dependency) + '_tool'
+                    tools[tool_name] = dict(tool=':protobuf_compiler', logical_path=output[2:])
+                    deps.append(':' + tool_name)
             plugin = '//third_party/dom_distiller_js/protoc_plugins/json_values_converter.py'
             if target['script'] == '//tools/protoc_wrapper/protoc_wrapper.py' and plugin in inputs:
                 tools['browser_dom_distiller_plugin'] = dict(

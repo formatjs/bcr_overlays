@@ -78,6 +78,12 @@ def native_browser():
         hdrs = native.glob(["browser_forwarders/**/*.h"], allow_empty = True),
         includes = ["browser_forwarders"],
     )
+    if any([label.startswith("//third_party/ffmpeg:") for label in LIBRARIES]):
+        cc_library(
+            name = "browser_ffmpeg_headers",
+            hdrs = [":all_buildflags"],
+            deps = ["@chromium_ffmpeg//:chromium_headers"],
+        )
     qt_libraries = ["//ui/qt:qt_interface", "//ui/qt:qt5_shim", "//ui/qt:qt6_shim"]
     if any([label in LIBRARIES for label in qt_libraries]):
         chromium_qt_sdk_headers(name = "browser_qt_sdk_headers", sdk = "@chromium_platform_headers_cross//:qt_stdlib")
@@ -101,11 +107,12 @@ def native_browser():
             continue
         angle = original.startswith("//third_party/angle/") or original.startswith("//third_party/angle:")
         v8 = original.startswith("//v8:") or original.startswith("//v8/")
+        ffmpeg = original.startswith("//third_party/ffmpeg:")
         common = dict(
             local_defines = library["defines"],
             linkopts = library["linkopts"],
             linkstatic = True,
-            deps = ([":browser_tool_headers"] if angle or v8 else ([":browser_headers"] if library["srcs"] or library["hdrs"] else [])) + library["deps"],
+            deps = ([":browser_tool_headers"] if angle or v8 or ffmpeg else ([":browser_headers"] if library["srcs"] or library["hdrs"] else [])) + library["deps"],
         )
         qt = original in qt_libraries
         include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
@@ -114,6 +121,10 @@ def native_browser():
         if v8:
             include_options.insert(0, "-I" + Label("@chromium_v8//:headers").workspace_root + "/v8")
             common["deps"] = common["deps"] + ["@chromium_v8//:headers"]
+        if ffmpeg:
+            common["deps"] = common["deps"] + [":browser_ffmpeg_headers"]
+        if library.get("ffmpeg_config"):
+            include_options.insert(0, "-iquote" + Label("@chromium_ffmpeg//:headers").workspace_root + "/" + library["ffmpeg_config"])
         cpp_options = library["copts"] + include_options
         if qt:
             common["deps"] = library["deps"]

@@ -29,10 +29,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('graph', type=Path)
     parser.add_argument('--source-root', type=Path, required=True)
+    parser.add_argument('--root', action='append', help='Import only these captured GRIT targets')
     parser.add_argument('--generated-root', type=Path,
                         help='Native output directory after browser, WebUI and inspector asset builds; input discovery only')
     args = parser.parse_args()
     graph = json.loads(gzip.decompress(args.graph.read_bytes()))
+    requested = set(args.root or [])
+    missing = [label for label in requested
+               if graph['targets'].get(label, {}).get('script') != '//tools/grit/grit.py']
+    if missing:
+        parser.error('unknown GRIT targets: ' + ', '.join(sorted(missing)))
     source = args.source_root.resolve()
     overlay = ROOT / 'bcr/overlay'
     build = source / 'out/bazel-import'
@@ -41,7 +47,8 @@ def main():
     from grit import util, exception
     proto_actions = json.loads((overlay / 'native/perfetto_proto_targets.json').read_text())
     mojo_actions = json.loads((ROOT / 'native/mojo_targets.json').read_text())
-    webui_actions = json.loads((overlay / 'native/webui_targets.json').read_text())['native']
+    webui_catalog = overlay / 'native/webui_targets.json'
+    webui_actions = json.loads(webui_catalog.read_text())['native'] if webui_catalog.exists() else {}
     for filename in ['devtools_inspector_targets.json', 'browser_targets.json']:
         catalog = overlay / 'native' / filename
         if catalog.exists():
@@ -97,7 +104,7 @@ def main():
                 continue
             path = source / relative
             for node in ET.parse(path).iter('part'):
-                child = (path.parent / os.path.expandvars(node.attrib['file'])).resolve()
+                child = Path(os.path.abspath(path.parent / os.path.expandvars(node.attrib['file'])))
                 if not child.is_file():
                     if child.is_relative_to(build):
                         raise UnmappedInput('generated fragment: //' + str(child.relative_to(source)))
@@ -165,6 +172,8 @@ def main():
             for target_label, target in sorted(graph['targets'].items()):
                 if target.get('script') != '//tools/grit/grit.py':
                     continue
+                if args.root and target_label not in args.root:
+                    continue
                 name = TARGETS.get(target_label, 'grit_' + hashlib.sha256(target_label.encode()).hexdigest()[:16])
                 arguments = target['args']
                 if target_label in ids_names:
@@ -178,7 +187,7 @@ def main():
                     elif argument == '-E':
                         key, value = arguments[index + 1].split('=', 1)
                         os.environ[key] = value
-                grd = (build / arguments[arguments.index('-i') + 1]).resolve()
+                grd = Path(os.path.abspath(build / arguments[arguments.index('-i') + 1]))
                 raw = set(target.get('inputs', []))
                 ids_dependencies = [ids_names[dep] for dep in target.get('deps', []) if dep in ids_names]
                 deps = [':' + name for name in ids_dependencies] or [':grit_resource_ids']
@@ -192,10 +201,11 @@ def main():
                     for path in raw:
                         if path.startswith('//out/') and producers.get(path) not in ids_names and Path(path).name != 'brotli':
                             generated_input(path)
-                    discovered = grit_info.Inputs(str(grd), defines, str(ids), target_platform='linux')
+                    platform = arguments[arguments.index('-t') + 1] if '-t' in arguments else 'linux'
+                    discovered = grit_info.Inputs(str(grd), defines, str(ids), target_platform=platform)
                     files = {label(path): path for path in python_sources}
                     for path in discovered:
-                        absolute = (build / path).resolve()
+                        absolute = Path(os.path.abspath(build / path))
                         if absolute != ids:
                             raw.add('//' + str(absolute.relative_to(source)))
                     fragments = part_closure(path[2:] for path in raw if not path.startswith('//out/'))
@@ -235,6 +245,9 @@ def main():
                           '        deps = ' + json.dumps(sorted(set(deps))) + ',', '    )']
         finally:
             os.chdir(previous)
+    unresolved = requested - selected.keys()
+    if unresolved:
+        raise ValueError('unresolved GRIT inputs: ' + repr({label: pending.get(label) for label in sorted(unresolved)}))
     lines += ['    native.filegroup(name = name, srcs = ' + json.dumps([':' + name for name in selected.values()]) + ')']
     (overlay / 'native/grit_actions.bzl').write_text('\n'.join(lines) + '\n')
     (overlay / 'native/grit_sources.bzl').write_text('"""Original GRIT Python runtime inputs."""\nROOT_PYS = ' + json.dumps(python_sources, indent=4) + '\n')

@@ -30,15 +30,15 @@ SOURCES = {
         "crypto/unexportable_key_software_unsecure.cc",
         "crypto/user_verifying_key.cc",
         "crypto/apple/keychain.cc",
-        "crypto/apple/security_framework_lock.cc"
+        "crypto/apple/security_framework_lock.cc",
     ],
     "cbor": [
         "components/cbor/diagnostic_writer.cc",
         "components/cbor/float_conversions.cc",
         "components/cbor/reader.cc",
         "components/cbor/values.cc",
-        "components/cbor/writer.cc"
-    ]
+        "components/cbor/writer.cc",
+    ],
 }
 
 HEADERS = {
@@ -94,7 +94,7 @@ HEADERS = {
         "crypto/unexportable_key.h",
         "crypto/unexportable_key_metrics.h",
         "crypto/unexportable_key_win.h",
-        "crypto/user_verifying_key.h"
+        "crypto/user_verifying_key.h",
     ],
     "cbor": [
         "components/cbor/cbor_export.h",
@@ -103,8 +103,8 @@ HEADERS = {
         "components/cbor/float_conversions.h",
         "components/cbor/reader.h",
         "components/cbor/values.h",
-        "components/cbor/writer.h"
-    ]
+        "components/cbor/writer.h",
+    ],
 }
 
 COPTS = {
@@ -180,7 +180,7 @@ COPTS = {
         "-fvisibility-inlines-hidden",
         "-Wno-modules-ambiguous-internal-linkage",
         "-Wno-modules-import-nested-redundant",
-        "-Wno-module-import-in-extern-c"
+        "-Wno-module-import-in-extern-c",
     ],
     "cbor": [
         "-Wall",
@@ -254,8 +254,8 @@ COPTS = {
         "-fvisibility-inlines-hidden",
         "-Wno-modules-ambiguous-internal-linkage",
         "-Wno-modules-import-nested-redundant",
-        "-Wno-module-import-in-extern-c"
-    ]
+        "-Wno-module-import-in-extern-c",
+    ],
 }
 
 DEFINES = {
@@ -273,7 +273,7 @@ DEFINES = {
         "DCHECK_ALWAYS_ON=1",
         "NDEBUG",
         "NVALGRIND",
-        "DYNAMIC_ANNOTATIONS_ENABLED=0"
+        "DYNAMIC_ANNOTATIONS_ENABLED=0",
     ],
     "cbor": [
         "CBOR_IMPLEMENTATION",
@@ -289,8 +289,21 @@ DEFINES = {
         "DCHECK_ALWAYS_ON=1",
         "NDEBUG",
         "NVALGRIND",
-        "DYNAMIC_ANNOTATIONS_ENABLED=0"
-    ]
+        "DYNAMIC_ANNOTATIONS_ENABLED=0",
+    ],
+}
+
+LIBS = {
+    "crypto": [
+        "bsm",
+        "pmenergy",
+        "pmsample",
+    ],
+    "cbor": [
+        "bsm",
+        "pmenergy",
+        "pmsample",
+    ],
 }
 
 OBJCXX_SOURCES = {
@@ -300,9 +313,9 @@ OBJCXX_SOURCES = {
         "crypto/apple/keychain_v2.mm",
         "crypto/apple/scoped_lacontext.mm",
         "crypto/apple/unexportable_key_mac.mm",
-        "crypto/user_verifying_key_mac.mm"
+        "crypto/user_verifying_key_mac.mm",
     ],
-    "cbor": []
+    "cbor": [],
 }
 
 OBJCXX_COPTS = {
@@ -377,7 +390,7 @@ OBJCXX_COPTS = {
         "-fobjc-arc",
         "-fno-objc-arc-exceptions",
         "-Wobjc-property-assign-on-object-type",
-        "-fvisibility-inlines-hidden"
+        "-fvisibility-inlines-hidden",
     ],
     "cbor": [
         "-Wall",
@@ -450,8 +463,8 @@ OBJCXX_COPTS = {
         "-fobjc-arc",
         "-fno-objc-arc-exceptions",
         "-Wobjc-property-assign-on-object-type",
-        "-fvisibility-inlines-hidden"
-    ]
+        "-fvisibility-inlines-hidden",
+    ],
 }
 
 FRAMEWORKS = {
@@ -466,7 +479,7 @@ FRAMEWORKS = {
         "ApplicationServices",
         "AppKit",
         "IOKit",
-        "OpenDirectory"
+        "OpenDirectory",
     ],
     "cbor": [
         "CoreFoundation",
@@ -477,6 +490,6 @@ FRAMEWORKS = {
         "ApplicationServices",
         "AppKit",
         "IOKit",
-        "OpenDirectory"
-    ]
+        "OpenDirectory",
+    ],
 }

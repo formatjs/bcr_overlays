@@ -45,8 +45,8 @@ BuildBuddy and native GitHub Actions. Linux ARM64 has a complete captured graph;
 full compilation and native browser smoke remain in progress. All five GN graphs
 are captured, including explicit Windows SDK debugger runtime inputs.
 
-macOS ARM64 and Windows MSVC amd64/ARM64 base and Mojo executables cross-link.
+macOS ARM64 and Windows MSVC amd64/ARM64 base, Mojo and network executables cross-link.
 `native.yml` hands those executables to native runners for allocator, JSON/files/
-threads, message-pipe and shared-memory smoke checks. Full macOS and Windows
+threads, message-pipe, shared-memory and TCP loopback smoke checks. Full macOS and Windows
 browser translation remains unfinished; component probes do not replace browser
 artifact and rendering smoke.

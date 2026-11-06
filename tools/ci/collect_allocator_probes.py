@@ -28,6 +28,7 @@ def main():
         ('allocator-darwin-arm64', 'darwin-arm64'),
         ('base-windows-amd64', 'windows-amd64'),
         ('base-windows-arm64', 'windows-arm64'),
+        ('base-darwin-arm64', 'darwin-arm64'),
     ]:
         operating_system, arch = platform.split('-')
         label = '//tools/ci:' + target

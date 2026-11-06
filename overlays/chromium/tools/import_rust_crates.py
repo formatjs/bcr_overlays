@@ -185,6 +185,8 @@ def main():
         environment = dict(value.split('=', 1) for value in target.get('rustenv', []))
         environment.pop('OUT_DIR', None)
         environment.pop('CARGO_MANIFEST_DIR', None)
+        # The registered toolchain supplies its declared SDK, not GN's capture path.
+        environment.pop('SDKROOT', None)
         root = target['crate_root'][2:]
         if root.startswith('third_party/rust/chromium_crates_io/vendor/'):
             vendor = '/'.join(root.split('/')[:5])

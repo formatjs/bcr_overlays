@@ -78,6 +78,25 @@ darwin_arm64_browser(
     srcs = [":darwin_allocator_probe"],
 )
 
+cc_binary(
+    name = "darwin_base_probe",
+    srcs = ["base_probe.cc"],
+    copts = [
+        "-std=c++20",
+        "-fno-exceptions",
+    ],
+    target_compatible_with = ["@platforms//os:macos"],
+    deps = [
+        "@chromium_darwin_arm64//native:base",
+        "@chromium_darwin_arm64//native:crypto",
+    ],
+)
+
+darwin_arm64_browser(
+    name = "base-darwin-arm64",
+    srcs = [":darwin_base_probe"],
+)
+
 windows_amd64_browser(
     name = "allocator-windows-amd64",
     srcs = [":allocator_static_crt"],

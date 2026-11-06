@@ -207,6 +207,21 @@ and Windows MSVC amd64/arm64, then runs the native Linux probe. The font-outline
 and PNG runtime test also passes with this compiler. These probes do not establish
 full browser ports; their platform-specific graphs remain unfinished.
 
+Windows MSVC amd64/arm64 also cross-link a Chromium base executable. Darwin
+arm64 cross-links base and crypto, retaining their Objective-C++ sources and ARC
+flags. Native CI runs JSON, temporary-file and thread smoke checks on these
+executables. Full browser ports remain in progress.
+
+Regenerate these platform base profiles without changing the Linux overlay:
+
+```sh
+python3 overlays/chromium/tools/import_platform_base.py \
+  --variant darwin_arm64 --source-root /path/to/chromium
+```
+
+Use `windows_amd64` or `windows_arm64` for the Windows profiles. The Darwin
+profile also captures crypto sources and framework dependencies.
+
 Regenerate the imported crate graph from the pinned checkout:
 
 ```sh

@@ -7,7 +7,7 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "headers",
     hdrs = HEADERS,
-    defines = DEFINES,
+    defines = [value for value in DEFINES if value != "HAVE_DLADDR"],
     includes = [".."],
     target_compatible_with = [
         "@platforms//os:macos",
@@ -29,7 +29,10 @@ cc_library(
         "Security",
         "-mmacos-version-min=12.0",
     ],
-    local_defines = ["IS_PARTITION_ALLOC_BASE_IMPL"],
+    local_defines = [
+        "IS_PARTITION_ALLOC_BASE_IMPL",
+        "HAVE_DLADDR",
+    ],
     deps = [
         ":allocator_base_objcxx",
         ":headers",
@@ -82,7 +85,10 @@ objcxx_library(
     name = "allocator_base_objcxx",
     srcs = OBJCXX_SOURCES["allocator_base"],
     copts = OBJCXX_COPTS["allocator_base"],
-    local_defines = ["IS_PARTITION_ALLOC_BASE_IMPL"],
+    local_defines = [
+        "IS_PARTITION_ALLOC_BASE_IMPL",
+        "HAVE_DLADDR",
+    ],
     deps = [":headers"],
 )
 

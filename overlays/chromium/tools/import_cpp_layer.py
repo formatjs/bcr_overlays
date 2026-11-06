@@ -833,8 +833,9 @@ def main():
         public = target.get('public', [])
         paths = target.get('sources', []) + (public if isinstance(public, list) else [])
         scan_sources.update(p for p in paths if not p.startswith(BUILD) and not p[2:].startswith(QUICHE)
-                            and p.endswith(('.cc', '.c', '.cpp', '.cxx', '.h', '.hh', '.hpp', '.hxx', '.inl', '.inc', '.S', '.s')))
+                            and p.endswith(('.cc', '.c', '.cpp', '.cxx', '.mm', '.h', '.hh', '.hpp', '.hxx', '.inl', '.inc', '.S', '.s')))
         sources = [file_label(p) for p in target.get('sources', []) if p.endswith(('.cc', '.c', '.cpp', '.cxx', '.S', '.s')) or (layer in ('codecs', 'ffmpeg') and p.endswith('.o'))]
+        objcxx_sources = [file_label(p) for p in target.get('sources', []) if p.endswith('.mm')]
         # Vulkan's native BCR provider owns these public dependency headers.
         if layer == 'vulkan_validation':
             paths = [p for p in paths if not p.startswith('//third_party/vulkan-headers/src/include/')]
@@ -942,7 +943,11 @@ def main():
                     raise ValueError('unmapped native link input: ' + library)
                 linkopts.append('-l' + library)
         # LLVM owns compiler/runtime paths; retain captured linker hardening.
-        for option in unpack(target.get('ldflags', [])):
+        linker_flags = iter(unpack(target.get('ldflags', [])))
+        for option in linker_flags:
+            if option in ('-isysroot', '--sysroot'):
+                next(linker_flags)
+                continue
             if layer == 'browser' and option.startswith('-Wl,--version-script='):
                 path = option.partition('=')[2]
                 if not path.startswith('../../'):
@@ -955,6 +960,9 @@ def main():
                     ('-fuse-ld=', '--target=', '--sysroot=')):
                 continue
             linkopts.append(option)
+        for field, option in [('frameworks', '-framework'), ('weak_frameworks', '-weak_framework')]:
+            for framework in unpack(target.get(field, [])):
+                linkopts.extend([option, framework.removesuffix('.framework')])
         if layer == 'compositor' and label == '//third_party/libsecret:libsecret':
             includes.append('../third_party/libsecret')
             dependencies.append('@glib//gio')
@@ -964,6 +972,9 @@ def main():
                                 hdrs=sorted(set(headers)), copts=copts, defines=defines,
                                 includes=sorted(set(includes)), deps=sorted(set(dependencies)),
                                 linkopts=linkopts)
+        if objcxx_sources:
+            libraries[label]['objcxx_srcs'] = objcxx_sources
+            libraries[label]['objcxx_copts'] = compiler_configuration(graph, target, 'cflags_objcc')[0]
         if layer == 'browser' and '//third_party/re2/src/' in unpack(target.get('include_dirs', [])):
             libraries[label]['include_roots'] = ['@re2//:re2']
         if label.partition('(')[0] == '//third_party/vulkan-utility-libraries/src:vulkan_layer_settings':

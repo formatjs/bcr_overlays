@@ -47,3 +47,8 @@ def native_blink_core():
         name = "blink_core",
         actual = ":" + LIBRARIES["//third_party/blink/renderer/core:core"]["name"],
     )
+
+    native.filegroup(
+        name = "blink_core_assets",
+        srcs = [":" + action["name"] for action in ACTIONS],
+    )

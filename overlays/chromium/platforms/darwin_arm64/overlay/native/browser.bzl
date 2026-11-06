@@ -214,7 +214,7 @@ def native_browser():
         )
     native.filegroup(
         name = "browser_assets",
-        srcs = [":" + record["name"] for record in ACTIONS if record["script"] not in ["build/config/mac/package_framework.py", "chrome/tools/build/mac/verify_order.py", "chrome/tools/build/mac/verify_dynamic_libraries.py"]] + [":" + record["name"] for record in COPIES] + [":" + group["name"] for group in ASSET_GROUPS],
+        srcs = [":blink_core_assets", ":blink_modules_assets", ":content_assets", ":devtools_inspector_assets"] + [":" + record["name"] for record in ACTIONS if record["script"] not in ["build/config/mac/package_framework.py", "chrome/tools/build/mac/verify_order.py", "chrome/tools/build/mac/verify_dynamic_libraries.py"]] + [":" + record["name"] for record in COPIES] + [":" + group["name"] for group in ASSET_GROUPS],
     )
     if "//chrome:chrome_app_executable" in LIBRARIES:
         native.alias(name = "browser", actual = ":" + LIBRARIES["//chrome:chrome_app_executable"]["name"])

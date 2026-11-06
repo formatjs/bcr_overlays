@@ -1117,6 +1117,8 @@ def main():
             ])
         if layer == 'browser' and label.startswith(('//net:', '//net/')):
             libraries[label]['deps'].append(':network_headers')
+        if layer == 'browser' and label.startswith('//third_party/ipcz/'):
+            libraries[label]['deps'].append('@ipcz//:internal_headers')
         libraries[label]['deps'] = sorted(set(libraries[label]['deps']))
         if linker_inputs:
             libraries[label]['additional_linker_inputs'] = linker_inputs

@@ -830778,7 +830778,7 @@ LIBRARIES = {
         ],
         "deps": [
             ":network_headers",
-            "@chromium//native:protobuf_lite_runtime"
+            "@chromium//native:protobuf_lite_runtime",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -830901,7 +830901,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            ":network_headers"
+            ":network_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
@@ -831071,7 +831071,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss"
+            "@nss//:nss",
         ],
         "linkopts": [
             "-lresolv",
@@ -831415,7 +831415,7 @@ LIBRARIES = {
             "@glib//gmodule",
             "@glib//gobject",
             "@nss//:nss",
-            "@re2//:re2"
+            "@re2//:re2",
         ],
         "linkopts": [
             "-lresolv",
@@ -831675,7 +831675,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss"
+            "@nss//:nss",
         ],
         "linkopts": [
             "-lresolv",
@@ -831928,7 +831928,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss"
+            "@nss//:nss",
         ],
         "linkopts": [
             "-lresolv",
@@ -832179,7 +832179,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss"
+            "@nss//:nss",
         ],
         "linkopts": [
             "-lresolv",
@@ -832430,7 +832430,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss"
+            "@nss//:nss",
         ],
         "linkopts": [
             "-lresolv",
@@ -832682,7 +832682,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss"
+            "@nss//:nss",
         ],
         "linkopts": [
             "-lresolv",
@@ -832949,7 +832949,7 @@ LIBRARIES = {
             ":url",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject"
+            "@glib//gobject",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -833215,7 +833215,7 @@ LIBRARIES = {
             ":protobuf_lite_runtime",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject"
+            "@glib//gobject",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -833344,7 +833344,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            ":network_headers"
+            ":network_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
@@ -833468,7 +833468,7 @@ LIBRARIES = {
         "deps": [
             ":browser_6913033e58a5cb53",
             ":network_headers",
-            "@chromium//native:protobuf_lite_runtime"
+            "@chromium//native:protobuf_lite_runtime",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -833591,7 +833591,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            ":network_headers"
+            ":network_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
@@ -833716,7 +833716,7 @@ LIBRARIES = {
             "@chromium//native:base",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject"
+            "@glib//gobject",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -833946,7 +833946,7 @@ LIBRARIES = {
             "@chromium//native:base",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject"
+            "@glib//gobject",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -834173,7 +834173,7 @@ LIBRARIES = {
         ],
         "deps": [
             ":network_headers",
-            "@chromium//native:protobuf_lite_runtime"
+            "@chromium//native:protobuf_lite_runtime",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -834296,7 +834296,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            ":network_headers"
+            ":network_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
@@ -834418,7 +834418,7 @@ LIBRARIES = {
         ],
         "deps": [
             ":network_headers",
-            "@chromium//native:protobuf_lite_runtime"
+            "@chromium//native:protobuf_lite_runtime",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -834541,7 +834541,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            ":network_headers"
+            ":network_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
@@ -835934,7 +835934,7 @@ LIBRARIES = {
             "@glib//gmodule",
             "@glib//gobject",
             "@nss//:nss",
-            "@simdutf//:simdutf"
+            "@simdutf//:simdutf",
         ],
         "linkopts": [
             "-lresolv",
@@ -836201,7 +836201,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@zstd//:zstd"
+            "@zstd//:zstd",
         ],
         "linkopts": [
             "-lresolv",
@@ -836423,7 +836423,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            ":network_headers"
+            ":network_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -836654,7 +836654,7 @@ LIBRARIES = {
             "@chromium//native:base",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject"
+            "@glib//gobject",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -836883,7 +836883,7 @@ LIBRARIES = {
         "deps": [
             ":browser_6913033e58a5cb53",
             ":network_headers",
-            "@chromium//native:protobuf_lite_runtime"
+            "@chromium//native:protobuf_lite_runtime",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -837006,7 +837006,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            ":network_headers"
+            ":network_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
@@ -837146,7 +837146,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss"
+            "@nss//:nss",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -837367,7 +837367,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            ":network_headers"
+            ":network_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -837599,7 +837599,7 @@ LIBRARIES = {
             "@chromium//native:base",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject"
+            "@glib//gobject",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -837843,7 +837843,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss"
+            "@nss//:nss",
         ],
         "linkopts": [
             "-lresolv",
@@ -934282,9 +934282,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_db95a48048caeba6"
+            "@chromium//native:angle_runtime_db95a48048caeba6",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/common/spirv:angle_spirv_base(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_b036f9e6d59f808d",
@@ -934295,9 +934295,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_52db29498c5789bb"
+            "@chromium//native:angle_runtime_52db29498c5789bb",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/common/spirv:angle_spirv_builder(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_e1e2a47b81ac30d7",
@@ -934308,9 +934308,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_edbbc2e9162980bc"
+            "@chromium//native:angle_runtime_edbbc2e9162980bc",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/common/spirv:angle_spirv_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_c80595094aa01c82",
@@ -934321,9 +934321,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_e424440eee96b811"
+            "@chromium//native:angle_runtime_e424440eee96b811",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/common/spirv:angle_spirv_parser(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_80ea175724f84e48",
@@ -934334,9 +934334,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_94556de1c3408069"
+            "@chromium//native:angle_runtime_94556de1c3408069",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/common/vulkan:angle_libvulkan(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_010811f3e7763dc2",
@@ -934347,7 +934347,7 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen"
+            "gen",
         ],
         "deps": [
             ":browser_4ccf6daa326d546c",
@@ -934356,11 +934356,11 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers_cross//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers"
+            "@spirv_headers//:spirv_cpp_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": []
+        "c_copts": [],
     },
     "//third_party/angle/src/common/vulkan:angle_libvulkan_loader(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_7f0752249cd188bb",
@@ -934371,9 +934371,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_624000bb5a4a7937"
+            "@chromium//native:angle_runtime_624000bb5a4a7937",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/common/vulkan:angle_vulkan_entry_points(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_96345b7ce3ecbfad",
@@ -934384,7 +934384,7 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen"
+            "gen",
         ],
         "deps": [
             ":browser_94edea6ccc000611",
@@ -934393,11 +934393,11 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers_cross//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers"
+            "@spirv_headers//:spirv_cpp_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": []
+        "c_copts": [],
     },
     "//third_party/angle/src/common/vulkan:angle_vulkan_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_94edea6ccc000611",
@@ -934408,9 +934408,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_a471b02f285e5fd4"
+            "@chromium//native:angle_runtime_a471b02f285e5fd4",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/common/vulkan:angle_vulkan_icd(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_7d167de185f85f5c",
@@ -934421,9 +934421,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_bd7daecc1d747fcc"
+            "@chromium//native:angle_runtime_bd7daecc1d747fcc",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/common/vulkan:vulkan(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_ad5f17fd06dcd237",
@@ -934434,9 +934434,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_72d29cf336c67cc5"
+            "@chromium//native:angle_runtime_72d29cf336c67cc5",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/common/vulkan:vulkan_validation_layers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_ae65f049bea2b5da",
@@ -934447,7 +934447,7 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen"
+            "gen",
         ],
         "deps": [
             ":browser_871d4e5bd17da4ae",
@@ -934455,11 +934455,11 @@ LIBRARIES = {
             "@chromium_pciutils//:headers",
             "@chromium_platform_headers_cross//:graphics",
             "@chromium_vma//:headers",
-            "@spirv_headers//:spirv_cpp_headers"
+            "@spirv_headers//:spirv_cpp_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": []
+        "c_copts": [],
     },
     "//third_party/angle/src/libANGLE/renderer/gl:angle_gl_backend(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_2cb7b52e53f4799c",
@@ -934470,9 +934470,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_4ccc8a49f1704600"
+            "@chromium//native:angle_runtime_4ccc8a49f1704600",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/libANGLE/renderer/null:angle_null_backend(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_e4ea9de2f1899f7a",
@@ -934483,9 +934483,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_b28e2987f6a346e5"
+            "@chromium//native:angle_runtime_b28e2987f6a346e5",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/libANGLE/renderer/vulkan:angle_vk_mem_alloc_wrapper(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_c2822897ecefc59e",
@@ -934496,9 +934496,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_f37b1f4ad126b9c9"
+            "@chromium//native:angle_runtime_f37b1f4ad126b9c9",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/libANGLE/renderer/vulkan:angle_vulkan_backend(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_8b27950eaa2912a4",
@@ -934509,9 +934509,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_9ab194eee4d45e49"
+            "@chromium//native:angle_runtime_9ab194eee4d45e49",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/libANGLE/renderer/wgpu:angle_wgpu_backend(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_17a2300a3cc5f4e4",
@@ -934522,9 +934522,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_532d4675ff3efc49"
+            "@chromium//native:angle_runtime_532d4675ff3efc49",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/third_party/libXNVCtrl:libXNVCtrl(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_fdbd4a18a90633d6",
@@ -934535,9 +934535,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_22f90daf684cb7a8"
+            "@chromium//native:angle_runtime_22f90daf684cb7a8",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle/src/third_party/volk:volk(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_18c7d0c97b4718f5",
@@ -934548,9 +934548,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_7ffeedb82a1f8fe3"
+            "@chromium//native:angle_runtime_7ffeedb82a1f8fe3",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_abseil(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_9eb95cde2557f94a",
@@ -934561,14 +934561,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen"
+            "gen",
         ],
         "deps": [
-            "@chromium//third_party/abseil-cpp:absl"
+            "@chromium//third_party/abseil-cpp:absl",
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": []
+        "c_copts": [],
     },
     "//third_party/angle:angle_common(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_0111a8f6d7597f2d",
@@ -934579,9 +934579,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_8f20ddc9ab5b6d94"
+            "@chromium//native:angle_runtime_8f20ddc9ab5b6d94",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_common_shader_state(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_dad1cb3bbcc46402",
@@ -934592,9 +934592,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_15c3f2a28cf9da9c"
+            "@chromium//native:angle_runtime_15c3f2a28cf9da9c",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_compression(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_0101e3922313a27f",
@@ -934605,14 +934605,14 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen"
+            "gen",
         ],
         "deps": [
-            "@chromium//native:gfx_2eba829cce22c12d"
+            "@chromium//native:gfx_2eba829cce22c12d",
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": []
+        "c_copts": [],
     },
     "//third_party/angle:angle_frame_capture_mock(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_4021115491b7b645",
@@ -934623,9 +934623,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_ec45805ae06f4b21"
+            "@chromium//native:angle_runtime_ec45805ae06f4b21",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_gpu_info_util(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_55608d8886ccd770",
@@ -934636,9 +934636,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_185acd3ac3d1a42d"
+            "@chromium//native:angle_runtime_185acd3ac3d1a42d",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_image_util(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_76d0a0a6eed83ebd",
@@ -934649,9 +934649,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_41ffd4336371fd9a"
+            "@chromium//native:angle_runtime_41ffd4336371fd9a",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_image_util_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_1ad81c620476a346",
@@ -934662,9 +934662,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_58d0d6ffb7475f6d"
+            "@chromium//native:angle_runtime_58d0d6ffb7475f6d",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_translator_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_01caa89fb31e17d0",
@@ -934675,9 +934675,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_39ee1444c6fc04bb"
+            "@chromium//native:angle_runtime_39ee1444c6fc04bb",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_version(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_e63fa05bd5e367a5",
@@ -934688,9 +934688,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_69a0a41b972cebca"
+            "@chromium//native:angle_runtime_69a0a41b972cebca",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_version_info(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_ef2f8cd017ca2746",
@@ -934701,9 +934701,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_622981a2ebcc06ac"
+            "@chromium//native:angle_runtime_622981a2ebcc06ac",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:angle_wayland(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_97c5b0ec5863b9ac",
@@ -934714,16 +934714,16 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen"
+            "gen",
         ],
         "deps": [
             "@libffi//:libffi",
             "@wayland//:wayland_client",
-            "@wayland//:wayland_egl"
+            "@wayland//:wayland_egl",
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": []
+        "c_copts": [],
     },
     "//third_party/angle:includes(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_7a4bf83b5f5a9cc8",
@@ -934734,9 +934734,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_8630f6c75a229ab8"
+            "@chromium//native:angle_runtime_8630f6c75a229ab8",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:libANGLE(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_9fe4b0e0cd2340f2",
@@ -934747,9 +934747,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_fa2e5745f7cada05"
+            "@chromium//native:angle_runtime_fa2e5745f7cada05",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:libANGLE_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_f54f1be87b8a5e9f",
@@ -934760,9 +934760,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_b2f32b464df79a43"
+            "@chromium//native:angle_runtime_b2f32b464df79a43",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:libANGLE_no_vulkan(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_3d8560a270d20453",
@@ -934773,9 +934773,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_ab1339c8fb0b7a19"
+            "@chromium//native:angle_runtime_ab1339c8fb0b7a19",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:libEGL(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_f5e4a03f9fe55d0e",
@@ -934789,9 +934789,9 @@ LIBRARIES = {
         "linkopts": [],
         "outputs": [
             "clang_x64_v8_arm64/libEGL.so",
-            "clang_x64_v8_arm64/libEGL.so.TOC"
+            "clang_x64_v8_arm64/libEGL.so.TOC",
         ],
-        "shared_library": "@chromium//native:libEGL.so"
+        "shared_library": "@chromium//native:libEGL.so",
     },
     "//third_party/angle:libEGL_egl_loader(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_0fad7dd03c064e1d",
@@ -934802,9 +934802,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_2151b5bf41f1233b"
+            "@chromium//native:angle_runtime_2151b5bf41f1233b",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:libGLESv2(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_3e78706b0b4e4e59",
@@ -934818,9 +934818,9 @@ LIBRARIES = {
         "linkopts": [],
         "outputs": [
             "clang_x64_v8_arm64/libGLESv2.so",
-            "clang_x64_v8_arm64/libGLESv2.so.TOC"
+            "clang_x64_v8_arm64/libGLESv2.so.TOC",
         ],
-        "shared_library": "@chromium//native:libGLESv2.so"
+        "shared_library": "@chromium//native:libGLESv2.so",
     },
     "//third_party/angle:preprocessor(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_89629c75690c737f",
@@ -934831,9 +934831,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_1dfd955cf07da0d3"
+            "@chromium//native:angle_runtime_1dfd955cf07da0d3",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:translator(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_f7a7c4a64d57faee",
@@ -934844,9 +934844,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_17e13a0bc116ea1d"
+            "@chromium//native:angle_runtime_17e13a0bc116ea1d",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/angle:xxhash(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_aecb86a58f96279d",
@@ -934857,9 +934857,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:angle_runtime_7de787928d94e7d1"
+            "@chromium//native:angle_runtime_7de787928d94e7d1",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/anonymous_tokens:anonymous_tokens_cc_proto": {
         "name": "browser_0933adbb09bfbc8f",
@@ -1107486,6 +1107486,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
+            "@ipcz//:internal_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1107722,6 +1107723,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
+            "@ipcz//:internal_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1107941,7 +1107943,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            "@ipcz//:internal_headers",
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1108171,6 +1108175,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
+            "@ipcz//:internal_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1108411,6 +1108416,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
+            "@ipcz//:internal_headers",
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1159071,9 +1159077,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_643a8842c0988591"
+            "@chromium//native:swiftshader_643a8842c0988591",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/Device:Device_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_8b7cb754b911bb9c",
@@ -1159084,9 +1159090,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_6034061ee23a56c3"
+            "@chromium//native:swiftshader_6034061ee23a56c3",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/Pipeline:Pipeline(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_dcdbdc57616efc75",
@@ -1159097,9 +1159103,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_4250f3312755b10f"
+            "@chromium//native:swiftshader_4250f3312755b10f",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/Pipeline:Pipeline_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_1f7a90603ad901bf",
@@ -1159110,9 +1159116,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_335ef7c146c3e808"
+            "@chromium//native:swiftshader_335ef7c146c3e808",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/Reactor:swiftshader_reactor(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_008d90d16b4bee87",
@@ -1159123,9 +1159129,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_8bb23257c1ffd1fc"
+            "@chromium//native:swiftshader_8bb23257c1ffd1fc",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/Reactor:swiftshader_reactor_base(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_02537067e820c495",
@@ -1159136,9 +1159142,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_061351a10004335b"
+            "@chromium//native:swiftshader_061351a10004335b",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/Reactor:swiftshader_subzero(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_59f9cf068b2075c3",
@@ -1159149,9 +1159155,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_f3ce2d1725fd7434"
+            "@chromium//native:swiftshader_f3ce2d1725fd7434",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/Reactor:swiftshader_subzero_reactor(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_62e425479bf461f0",
@@ -1159162,9 +1159168,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_65df57660dfe9b43"
+            "@chromium//native:swiftshader_65df57660dfe9b43",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/System:System(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_404b40c784229bd9",
@@ -1159175,9 +1159181,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_0641768beb730007"
+            "@chromium//native:swiftshader_0641768beb730007",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/System:System_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_2e4f1a76c1758615",
@@ -1159188,9 +1159194,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_c7e0400c46e76d77"
+            "@chromium//native:swiftshader_c7e0400c46e76d77",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/Vulkan:_swiftshader_libvulkan(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_a1e1da01e0be3270",
@@ -1159201,9 +1159207,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_974b17cc35bc39e8"
+            "@chromium//native:swiftshader_974b17cc35bc39e8",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_ff5fbe89324b2756",
@@ -1159216,13 +1159222,13 @@ LIBRARIES = {
         "deps": [],
         "linkopts": [],
         "additional_linker_inputs": [
-            "@chromium_swiftshader//:src/Vulkan/vk_swiftshader.lds"
+            "@chromium_swiftshader//:src/Vulkan/vk_swiftshader.lds",
         ],
         "outputs": [
             "clang_x64_v8_arm64/libvk_swiftshader.so",
-            "clang_x64_v8_arm64/libvk_swiftshader.so.TOC"
+            "clang_x64_v8_arm64/libvk_swiftshader.so.TOC",
         ],
-        "shared_library": "@chromium//native:libvk_swiftshader.so"
+        "shared_library": "@chromium//native:libvk_swiftshader.so",
     },
     "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_ee3ff8cbeec1f3c5",
@@ -1159233,9 +1159239,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_a81863ad2131f93c"
+            "@chromium//native:swiftshader_a81863ad2131f93c",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/src/WSI:WSI(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_fb8e12b5ec23a45e",
@@ -1159246,9 +1159252,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_3f76a81291a1466a"
+            "@chromium//native:swiftshader_3f76a81291a1466a",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/third_party/SPIRV-Headers:spv_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_bfcbe084af2a359c",
@@ -1159261,9 +1159267,9 @@ LIBRARIES = {
         "deps": [
             "@spirv_headers//:spirv_c_headers",
             "@spirv_headers//:spirv_cpp_headers",
-            "@spirv_headers//:spirv_cpp11_headers"
+            "@spirv_headers//:spirv_cpp11_headers",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/third_party/SPIRV-Tools:spvtools(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_05064d292a68431e",
@@ -1159274,9 +1159280,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@spirv_tools//:spirv_tools"
+            "@spirv_tools//:spirv_tools",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/third_party/SPIRV-Tools:spvtools_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_037a8968fc505689",
@@ -1159287,9 +1159293,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@spirv_tools//:chromium_headers"
+            "@spirv_tools//:chromium_headers",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/third_party/SPIRV-Tools:spvtools_opt(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_b018ccb086e08ac4",
@@ -1159300,9 +1159306,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@spirv_tools//:spirv_tools_opt"
+            "@spirv_tools//:spirv_tools_opt",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/third_party/SPIRV-Tools:spvtools_val(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_df35d54f8d904f7d",
@@ -1159313,9 +1159319,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@spirv_tools//:spirv_tools"
+            "@spirv_tools//:spirv_tools",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/third_party/marl:Marl(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_f7adeff71058c677",
@@ -1159326,9 +1159332,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_2dbd269840f6d9cf"
+            "@chromium//native:swiftshader_2dbd269840f6d9cf",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/swiftshader/third_party/marl:Marl_headers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_be5a65d202026b61",
@@ -1159339,9 +1159345,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:swiftshader_1cc8bb6934ba9ece"
+            "@chromium//native:swiftshader_1cc8bb6934ba9ece",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/tensorflow-text:tensorflow-text(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_9d42b9b72abb3908",
@@ -1165521,9 +1165527,9 @@ LIBRARIES = {
         "linkopts": [],
         "outputs": [
             "clang_x64_v8_arm64/libvulkan.so.1",
-            "clang_x64_v8_arm64/libvulkan.so.1.TOC"
+            "clang_x64_v8_arm64/libvulkan.so.1.TOC",
         ],
-        "shared_library": "@chromium//native:libvulkan.so.1"
+        "shared_library": "@chromium//native:libvulkan.so.1",
     },
     "//third_party/vulkan-tools/src:VkICD_mock_icd(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_4ccf6daa326d546c",
@@ -1165537,9 +1165543,9 @@ LIBRARIES = {
         "linkopts": [],
         "outputs": [
             "clang_x64_v8_arm64/libVkICD_mock_icd.so",
-            "clang_x64_v8_arm64/libVkICD_mock_icd.so.TOC"
+            "clang_x64_v8_arm64/libVkICD_mock_icd.so.TOC",
         ],
-        "shared_library": "@chromium//native:libVkICD_mock_icd.so"
+        "shared_library": "@chromium//native:libVkICD_mock_icd.so",
     },
     "//third_party/vulkan-utility-libraries/src:vulkan_layer_settings(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_d706b5256710d9e0",
@@ -1165635,9 +1165641,9 @@ LIBRARIES = {
         "linkopts": [],
         "outputs": [
             "clang_x64_v8_arm64/libVkLayer_khronos_validation.so",
-            "clang_x64_v8_arm64/libVkLayer_khronos_validation.so.TOC"
+            "clang_x64_v8_arm64/libVkLayer_khronos_validation.so.TOC",
         ],
-        "shared_library": "@chromium//native:libVkLayer_khronos_validation.so"
+        "shared_library": "@chromium//native:libVkLayer_khronos_validation.so",
     },
     "//third_party/vulkan-validation-layers/src:vulkan_core_validation_glslang(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_e15b463e59b4637f",
@@ -1165648,9 +1165654,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:vulkan_validation_0961eb1d51406677"
+            "@chromium//native:vulkan_validation_0961eb1d51406677",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/vulkan-validation-layers/src:vulkan_layer_utils(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_4d75f54d8eaa4e22",
@@ -1165661,9 +1165667,9 @@ LIBRARIES = {
         "defines": [],
         "includes": [],
         "deps": [
-            "@chromium//native:vulkan_validation_c72a84037d0917c9"
+            "@chromium//native:vulkan_validation_c72a84037d0917c9",
         ],
-        "linkopts": []
+        "linkopts": [],
     },
     "//third_party/vulkan-validation-layers/src:vulkan_validation_layers(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_871d4e5bd17da4ae",
@@ -1165674,7 +1165680,7 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen"
+            "gen",
         ],
         "deps": [
             ":browser_5045a07146b72795",
@@ -1165682,11 +1165688,11 @@ LIBRARIES = {
             "@chromium_vulkan_validation//:headers",
             "@spirv_headers//:spirv_cpp_headers",
             "@vulkan_headers//:vulkan_headers",
-            "@vulkan_utility_libraries//:vulkan_utility_headers"
+            "@vulkan_utility_libraries//:vulkan_utility_headers",
         ],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": []
+        "c_copts": [],
     },
     "//third_party/vulkan_memory_allocator:vulkan_memory_allocator(//build/toolchain/linux:clang_x64_v8_arm64)": {
         "name": "browser_06108b287ebc0c6d",
@@ -1888175,12 +1888181,12 @@ TOOLS = {
         "tool": ":blink_platform_d7b47b215f767a02",
         "logical_path": "out/bazel-import/clang_x64/character_data_generator",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31"
+            "@llvm//constraints/libc:gnu.2.31",
         ],
         "stage_runtime": True,
         "runtime_data": {
-            "@chromium_icu//:common/icudtl.dat": "icudtl.dat"
-        }
+            "@chromium_icu//:common/icudtl.dat": "icudtl.dat",
+        },
     },
     "browser_dom_distiller_plugin": {
         "tool": ":browser_dom_distiller_cli",

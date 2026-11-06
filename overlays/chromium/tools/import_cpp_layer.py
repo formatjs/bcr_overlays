@@ -1023,6 +1023,7 @@ def main():
                 '@chromium_vulkan_loader//:headers',
                 '@chromium_platform_headers//:graphics',
             ])
+        libraries[label]['deps'] = sorted(set(libraries[label]['deps']))
         if linker_inputs:
             libraries[label]['additional_linker_inputs'] = linker_inputs
         if layer == 'browser' and target['type'] in ('executable', 'shared_library'):

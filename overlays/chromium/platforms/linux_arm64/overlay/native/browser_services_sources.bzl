@@ -5094,6 +5094,7 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64/gen/",
             "gen",
         ],
         "deps": [

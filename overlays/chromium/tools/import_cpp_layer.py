@@ -860,7 +860,7 @@ def main():
             defines = [p for p in defines if not p.startswith('SK_')]
         includes = ['..', 'gen']
         includes += [p.removeprefix(BUILD) for p in unpack(target.get('include_dirs', []))
-                     if p.startswith(BUILD + 'gen/')]
+                     if p.startswith(BUILD)]
         if layer == 'skia':
             defines = [p.replace('../../skia/config/SkUserConfig.h', 'skia/config/SkUserConfig.h') for p in defines]
         if layer in ('fonts', 'codecs', 'skia', 'paint', 'gfx', 'tint', 'dawn_native', 'vulkan_loader', 'vulkan_validation', 'swiftshader', 'angle_runtime', 'vulkan_tools', 'gpu_protocol', 'x11', 'linux_buffers', 'browser_services', 'linux_ui', 'ozone', 'gpu_service', 'browser_v8', 'ml', 'ffmpeg', 'gpu_client', 'media', 'compositor', 'blink_platform', 'blink_core', 'blink_modules', 'content', 'browser'):
@@ -966,6 +966,8 @@ def main():
                                 linkopts=linkopts)
         if layer == 'browser' and '//third_party/re2/src/' in unpack(target.get('include_dirs', [])):
             libraries[label]['include_roots'] = ['@re2//:re2']
+        if label.startswith('//third_party/spirv-tools/src:'):
+            libraries[label]['deps'].append('@spirv_tools//:chromium_headers')
         if linker_inputs:
             libraries[label]['additional_linker_inputs'] = linker_inputs
         if layer == 'browser' and target['type'] in ('executable', 'shared_library'):

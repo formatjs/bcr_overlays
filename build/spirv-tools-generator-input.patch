@@ -1,12 +1,23 @@
 diff --git a/BUILD.bazel b/BUILD.bazel
 --- a/BUILD.bazel
 +++ b/BUILD.bazel
-@@ -27,6 +27,8 @@
+@@ -27,6 +27,19 @@
      "CHANGES",
      "LICENSE",
  ])
 +
 +exports_files(glob(["utils/**/*.py", "source/**", "include/**"]))
++
++cc_library(
++    name = "chromium_headers",
++    hdrs = glob(["source/**/*.h", "include/**/*.h"]),
++    includes = [".", "include"],
++    visibility = ["//visibility:public"],
++    deps = [
++        "@spirv_headers//:spirv_c_headers",
++        "@spirv_headers//:spirv_cpp11_headers",
++    ],
++)
  
  py_binary(
      # The script that generates compressed grammar tables for

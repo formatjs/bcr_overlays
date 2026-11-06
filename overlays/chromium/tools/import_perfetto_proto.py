@@ -35,13 +35,22 @@ def main():
         lines += ['    chromium_tool_inputs(', f'        name = "perfetto_{tool}_tool",',
                   f'        tool = "@perfetto//:{tool}",',
                   '        logical_path = ' + json.dumps(tool_paths[tool][2:]) + ',', '    )']
+    protoc_paths = sorted({path for target in targets.values() for path in target['inputs']
+                           if path.startswith(BUILD_DIR) and Path(path).name == 'protoc'})
+    if not protoc_paths:
+        raise ValueError('missing execution-platform protoc input')
+    lines += ['    chromium_tool_inputs(', '        name = "perfetto_protoc_tool",',
+              '        tool = ":protobuf_compiler",',
+              '        logical_path = ' + json.dumps(protoc_paths[0][2:]) + ',',
+              '        additional_logical_paths = ' + json.dumps([path[2:] for path in protoc_paths[1:]]) + ',',
+              '    )']
     names = {}
     generated = set()
     for label, target in sorted(targets.items()):
         name = 'perfetto_proto_' + hashlib.sha256(label.encode()).hexdigest()[:16]
         names[label] = name
         files = {}
-        deps = [':protoc_tool']
+        deps = [':perfetto_protoc_tool']
         for path in sorted(set(target['inputs'] + [target['script']])):
             logical = path[2:]
             if path.startswith(BUILD_DIR) and Path(path).name == 'protoc':

@@ -635,6 +635,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -1241,6 +1246,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -1836,6 +1846,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -2471,6 +2486,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -3087,6 +3107,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -3387,6 +3412,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -4186,6 +4216,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -4871,6 +4906,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -5175,6 +5215,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -5626,6 +5671,7 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
             "gen",
         ],
         "deps": [],
@@ -5931,6 +5977,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -6235,6 +6286,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -6581,6 +6637,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -9704,6 +9765,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -11261,6 +11327,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -11857,6 +11928,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [],
@@ -16242,6 +16318,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -16890,6 +16971,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [],
@@ -20376,6 +20462,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -20999,6 +21090,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [],
@@ -21597,6 +21693,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -22306,6 +22407,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -22920,6 +23026,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -23535,6 +23646,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -23836,6 +23952,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -24229,6 +24350,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -29835,6 +29961,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -30751,6 +30882,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -31396,6 +31532,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -32073,6 +32214,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [
@@ -33025,6 +33171,11 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64_v8_arm64/gen/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/",
+            "clang_x64_v8_arm64/gen/third_party/perfetto/build_config/",
+            "clang_x64_v8_arm64/gen/v8/",
+            "clang_x64_v8_arm64/gen/v8/include/",
             "gen",
         ],
         "deps": [],

@@ -2585,6 +2585,10 @@ LIBRARIES = {
         ],
         "includes": [
             "..",
+            "clang_x64/gen/",
+            "clang_x64/gen/base/allocator/partition_allocator/src/",
+            "clang_x64/gen/third_party/perfetto/",
+            "clang_x64/gen/third_party/perfetto/build_config/",
             "gen",
         ],
         "deps": [

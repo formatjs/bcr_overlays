@@ -1140621,7 +1140621,7 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": ["@spirv_tools//:chromium_headers"],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -1140637,7 +1140637,6 @@ LIBRARIES = {
             "-Wl,--gc-sections",
             "-Wl,-z,defs",
             "-Wl,--as-needed",
-            "@spirv_tools//:chromium_headers",
         ],
         "asm_copts": [
             "-fPIC",
@@ -1689199,15 +1689198,15 @@ COPIES = [
             "@chromium//native:gen/ui/webui/resources/grit/webui_resources_map.cc": "gen/ui/webui/resources/grit/webui_resources_map.cc",
             "@chromium//native:gen/ui/webui/resources/grit/webui_resources_map.h": "gen/ui/webui/resources/grit/webui_resources_map.h",
             "@chromium//native:gen/third_party/blink/public/resources/grit/inspector_overlay_resources_map.h": "gen/third_party/blink/public/resources/grit/inspector_overlay_resources_map.h",
-            "@chromium//native:gen/third_party/blink/public/strings/grit/permission_element_generated_strings.h": "gen/third_party/blink/public/strings/grit/permission_element_generated_strings.h"
+            "@chromium//native:gen/third_party/blink/public/strings/grit/permission_element_generated_strings.h": "gen/third_party/blink/public/strings/grit/permission_element_generated_strings.h",
         },
         "outputs": {
             "clang_x64_v8_arm64/gen/ui/webui/resources/grit/webui_resources.h": "gen/ui/webui/resources/grit/webui_resources.h",
             "clang_x64_v8_arm64/gen/ui/webui/resources/grit/webui_resources_map.cc": "gen/ui/webui/resources/grit/webui_resources_map.cc",
             "clang_x64_v8_arm64/gen/ui/webui/resources/grit/webui_resources_map.h": "gen/ui/webui/resources/grit/webui_resources_map.h",
             "clang_x64_v8_arm64/gen/third_party/blink/public/resources/grit/inspector_overlay_resources_map.h": "gen/third_party/blink/public/resources/grit/inspector_overlay_resources_map.h",
-            "clang_x64_v8_arm64/gen/third_party/blink/public/strings/grit/permission_element_generated_strings.h": "gen/third_party/blink/public/strings/grit/permission_element_generated_strings.h"
-        }
+            "clang_x64_v8_arm64/gen/third_party/blink/public/strings/grit/permission_element_generated_strings.h": "gen/third_party/blink/public/strings/grit/permission_element_generated_strings.h",
+        },
     },
     {
         "name": "browser_5e0fe99a5984307d",

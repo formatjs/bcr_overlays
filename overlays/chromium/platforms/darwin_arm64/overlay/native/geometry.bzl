@@ -2,6 +2,7 @@
 
 load(":geometry_sources.bzl", "LIBRARIES", "SHARED_HEADERS")
 load(":host_support.bzl", cc_library = "platform_cc_library")
+load(":objcxx.bzl", "chromium_objc_libraries")
 
 def native_geometry():
     cc_library(
@@ -10,6 +11,8 @@ def native_geometry():
         includes = ["..", "gen", "geometry_forwarders"],
     )
     for original, library in LIBRARIES.items():
+        deps = [":geometry_headers"] + library["deps"]
+        objc_deps = chromium_objc_libraries(library, deps)
         cc_library(
             name = library["name"],
             srcs = library["srcs"],
@@ -19,7 +22,7 @@ def native_geometry():
             local_defines = library["defines"],
             linkopts = library["linkopts"],
             linkstatic = True,
-            deps = [":geometry_headers"] + library["deps"],
+            deps = deps + objc_deps,
         )
     for name, original in {
         "gfx_geometry_skia": "//ui/gfx/geometry:geometry_skia",

@@ -4,6 +4,7 @@ load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load(":dawn_sources.bzl", "ACTIONS", "LIBRARIES", "METADATA", "SHARED_HEADERS")
 load(":generated_files.bzl", "CAPTURED_FILES")
 load(":host_support.bzl", cc_library = "platform_cc_library")
+load(":objcxx.bzl", "chromium_objc_libraries")
 load(":python_action.bzl", "chromium_python_action")
 
 def native_dawn():
@@ -24,6 +25,8 @@ def native_dawn():
         deps = ["@chromium_dawn//:source_headers"],
     )
     for original, library in LIBRARIES.items():
+        deps = [":dawn_headers"] + library["deps"]
+        objc_deps = chromium_objc_libraries(library, deps)
         cc_library(
             name = library["name"],
             srcs = library["srcs"],
@@ -33,7 +36,7 @@ def native_dawn():
             local_defines = library["defines"],
             linkopts = library["linkopts"],
             linkstatic = True,
-            deps = [":dawn_headers"] + library["deps"],
+            deps = deps + objc_deps,
         )
     for name, original in {
         "dawn_cpp_headers": "//third_party/dawn/include/dawn:cpp_headers",

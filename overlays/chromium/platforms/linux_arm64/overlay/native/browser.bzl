@@ -100,17 +100,18 @@ def native_browser():
                 runtime_binaries.append(":" + primary)
             continue
         angle = original.startswith("//third_party/angle/") or original.startswith("//third_party/angle:")
+        v8 = original.startswith("//v8:") or original.startswith("//v8/")
         common = dict(
             local_defines = library["defines"],
             linkopts = library["linkopts"],
             linkstatic = True,
-            deps = ([":browser_tool_headers"] if angle else ([":browser_headers"] if library["srcs"] or library["hdrs"] else [])) + library["deps"],
+            deps = ([":browser_tool_headers"] if angle or v8 else ([":browser_headers"] if library["srcs"] or library["hdrs"] else [])) + library["deps"],
         )
         qt = original in qt_libraries
         include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
         if angle:
             include_options.append("-I" + Label("@chromium_angle//:headers").workspace_root + "/third_party/angle/include")
-        if original.startswith("//v8:") or original.startswith("//v8/"):
+        if v8:
             include_options.insert(0, "-I" + Label("@chromium_v8//:headers").workspace_root + "/v8")
             common["deps"] = common["deps"] + ["@chromium_v8//:headers"]
         cpp_options = library["copts"] + include_options

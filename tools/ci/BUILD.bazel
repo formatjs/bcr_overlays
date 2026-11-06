@@ -152,6 +152,35 @@ windows_amd64_browser(
     srcs = [":base_static_crt"],
 )
 
+cc_binary(
+    name = "windows_ipc_probe",
+    srcs = ["ipc_probe.cc"],
+    copts = [
+        "/std:c++20",
+        "/EHs-c-",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+    deps = select({
+        "@platforms//cpu:x86_64": ["@chromium_windows_amd64//native:mojo_cpp_system"],
+        "@platforms//cpu:aarch64": ["@chromium_windows_arm64//native:mojo_cpp_system"],
+    }),
+)
+
+msvc_static_crt(
+    name = "ipc_static_crt",
+    srcs = [":windows_ipc_probe"],
+)
+
+windows_amd64_browser(
+    name = "ipc-windows-amd64",
+    srcs = [":ipc_static_crt"],
+)
+
+windows_arm64_browser(
+    name = "ipc-windows-arm64",
+    srcs = [":ipc_static_crt"],
+)
+
 exports_files([
     "chromium.py",
     "platforms.json",

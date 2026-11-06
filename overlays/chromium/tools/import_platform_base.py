@@ -17,7 +17,7 @@ def main():
     parser.add_argument('--variant', required=True, choices=['windows_amd64', 'windows_arm64', 'darwin_arm64'])
     parser.add_argument('--source-root', required=True, type=Path)
     parser.add_argument('--output', type=Path, help='Write metadata to this directory instead of the maintained profile')
-    parser.add_argument('--ipc', action='store_true', help='Also import Mojo bindings and runtime metadata')
+    parser.add_argument('--ipc', action='store_true', help='Also import Mojo runtime, bindings and URL traits')
     args = parser.parse_args()
     source = args.source_root.resolve()
     graph = ROOT / 'native' / (args.variant + '.json.gz')
@@ -47,6 +47,7 @@ def main():
             commands.extend([
                 ['import_mojo_runtime.py', str(graph), '--source-root', str(source)],
                 ['import_mojo_actions.py', str(graph), str(source)],
+                ['import_url.py', str(graph), '--source-root', str(source)],
             ])
         for command in commands:
             subprocess.run([sys.executable, str(stage / 'tools' / command[0]), *command[1:]], check=True)
@@ -59,6 +60,7 @@ def main():
         if args.variant == 'darwin_arm64':
             files.append('native/crypto_sources.bzl')
         if args.ipc:
+            files.append('native/url_sources.bzl')
             files.extend(str(path.relative_to(overlay)) for path in
                          sorted((overlay / 'native').glob('mojo_*.bzl')))
         for name in files:

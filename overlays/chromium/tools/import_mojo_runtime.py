@@ -108,8 +108,6 @@ def main():
                      for path in (args.source_root / directory).rglob('*')
                      if path.is_file() and path.suffix in ('.h', '.inc'))
     headers += ['net/base/net_export.h', 'net/base/sockaddr_storage.h', 'net/base/sockaddr_util_posix.h']
-    if 'WIN32' in defines['core']:
-        headers.append('build/precompile.h')
     schemas = ['gen/mojo/public/interfaces/bindings/' + name for name in
                ['interface_control_messages', 'native_struct', 'pipe_control_messages']]
     schemas.append('gen/services/service_manager/public/mojom/interface_provider')

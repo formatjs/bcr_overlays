@@ -1532,7 +1532,7 @@ exports_files([
     "ui/webui/resources/js/tracked_element/tracked_element.mojom",
     "url/mojom/origin.mojom",
     "url/mojom/scheme_host_port.mojom",
-    "url/mojom/url.mojom"
+    "url/mojom/url.mojom",
 ])
 # END GENERATED MOJO INPUTS
 
@@ -2687,7 +2687,7 @@ exports_files([
     "third_party/rust/chromium_crates_io/vendor/unicode-width-v0_2/tests/tests.rs",
     "third_party/rust/serde_json_lenient/v0_2/wrapper/functions.h",
     "third_party/rust/serde_json_lenient/v0_2/wrapper/lib.rs",
-    "third_party/rust/serde_json_lenient/v0_2/wrapper/visitor.rs"
+    "third_party/rust/serde_json_lenient/v0_2/wrapper/visitor.rs",
 ])
 # END GENERATED RUST INPUTS
 
@@ -4259,7 +4259,7 @@ exports_files([
     "base/win/wmi.h",
     "base/win/wrapped_window_proc.h",
     "base/write_build_date_header.py",
-    "chrome/VERSION"
+    "chrome/VERSION",
 ])
 # END GENERATED BASE INPUTS
 
@@ -7545,7 +7545,7 @@ exports_files([
     "ui/webui/resources/roboto/roboto-bold.woff2",
     "ui/webui/resources/roboto/roboto-medium.woff2",
     "ui/webui/resources/roboto/roboto-regular.woff2",
-    "ui/webui/resources/test_loader.html"
+    "ui/webui/resources/test_loader.html",
 ])
 # END GENERATED GRIT INPUTS
 
@@ -11734,7 +11734,7 @@ exports_files([
     "net/base/sockaddr_storage.cc",
     "net/base/sockaddr_storage.h",
     "net/base/sockaddr_util_posix.cc",
-    "net/base/sockaddr_util_posix.h"
+    "net/base/sockaddr_util_posix.h",
 ])
 # END GENERATED MOJO RUNTIME INPUTS
 
@@ -11902,7 +11902,7 @@ exports_files([
     "crypto/unexportable_key_win.h",
     "crypto/user_verifying_key.cc",
     "crypto/user_verifying_key.h",
-    "crypto/user_verifying_key_mac.mm"
+    "crypto/user_verifying_key_mac.mm",
 ])
 # END GENERATED CRYPTO INPUTS
 
@@ -20974,7 +20974,7 @@ exports_files([
 exports_files([
     "third_party/blink/common/rust_crash/rust_crash.h",
     "third_party/blink/common/rust_crash/src/lib.rs",
-    "third_party/blink/renderer/platform/fonts/opentype/format_check.rs"
+    "third_party/blink/renderer/platform/fonts/opentype/format_check.rs",
 ])
 # END BLINK_RUST INPUTS
 
@@ -31260,7 +31260,7 @@ exports_files([
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
     "url/url_features.h",
-    "url/url_util.h"
+    "url/url_util.h",
 ])
 # END BLINK_PLATFORM INPUTS
 
@@ -39779,7 +39779,7 @@ exports_files([
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
     "url/url_features.h",
-    "url/url_util.h"
+    "url/url_util.h",
 ])
 # END BLINK_CORE INPUTS
 
@@ -46923,7 +46923,7 @@ exports_files([
     "url/url_canon_ip.h",
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
-    "url/url_util.h"
+    "url/url_util.h",
 ])
 # END BLINK_MODULES INPUTS
 
@@ -62352,7 +62352,7 @@ exports_files([
     "url/url_canon_ip.h",
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
-    "url/url_util.h"
+    "url/url_util.h",
 ])
 # END CONTENT INPUTS
 
@@ -95328,7 +95328,7 @@ exports_files([
     "url/url_canon_stdstring.h",
     "url/url_constants.h",
     "url/url_features.h",
-    "url/url_util.h"
+    "url/url_util.h",
 ])
 # END BROWSER INPUTS
 
@@ -95379,6 +95379,6 @@ exports_files([
     "third_party/libxslt/src/libxslt/xsltlocale.h",
     "third_party/libxslt/src/libxslt/xsltutils.c",
     "third_party/libxslt/src/libxslt/xsltutils.h",
-    "third_party/libxslt/win32/config.h"
+    "third_party/libxslt/win32/config.h",
 ])
 # END NATIVE XSLT INPUTS

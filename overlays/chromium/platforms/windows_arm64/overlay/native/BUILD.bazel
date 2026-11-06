@@ -1,12 +1,16 @@
+load("@ipcz//bazel:ipcz.bzl", "ipcz_library")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":base.bzl", "native_base")
 load(":base_sources.bzl", "COPTS")
 load(":buildflags.bzl", "native_buildflags")
 load(":cxx_bridge.bzl", "chromium_cxx_bridge", "native_cxx_tools")
 load(":generated_files.bzl", "captured_generated_files")
+load(":mojo_actions.bzl", "native_mojo_bindings")
+load(":mojo_runtime.bzl", "native_mojo_runtime")
 load(":perfetto_proto.bzl", "native_perfetto_proto")
 load(":perfetto_runtime.bzl", "native_perfetto_runtime")
 load(":proto_actions.bzl", "native_variations_proto")
+load(":url.bzl", "native_url")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -59,3 +63,14 @@ cc_library(
         "//:serde_json_wrapper_headers",
     ],
 )
+
+ipcz_library(
+    name = "ipcz",
+    chromium_base = ":base",
+)
+
+native_mojo_bindings(name = "mojo_bindings")
+
+native_mojo_runtime()
+
+native_url()

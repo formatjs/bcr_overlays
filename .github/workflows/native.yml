@@ -42,6 +42,7 @@ jobs:
           //tools/ci:base-windows-amd64 //tools/ci:base-windows-arm64
           //tools/ci:base-darwin-arm64
           //tools/ci:ipc-darwin-arm64
+          //tools/ci:ipc-windows-amd64 //tools/ci:ipc-windows-arm64
       - name: Collect allocator smoke executables
         run: python3 -m tools.ci.collect_allocator_probes --output "$RUNNER_TEMP/allocator-probes"
       - uses: actions/upload-artifact@v7
@@ -78,6 +79,11 @@ jobs:
         shell: pwsh
         run: |
           & "$env:RUNNER_TEMP/allocator-probes/base-windows-${{ matrix.arch }}.exe"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Exercise cross-compiled Chromium IPC
+        shell: pwsh
+        run: |
+          & "$env:RUNNER_TEMP/allocator-probes/ipc-windows-${{ matrix.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
   darwin-allocator:
     needs: toolchains

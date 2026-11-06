@@ -146,9 +146,10 @@ Proposed module API, available through a staged registry only:
 bazel_dep(name = "chromium", version = "142.0.7444.59")
 ```
 
-Nothing published to BCR. Standalone staging includes a browser-bundle presubmit;
-hosted jobs have not run. Full browser compilation and runtime checks remain
-pending. Maintainers recorded in [bcr/metadata.json](bcr/metadata.json).
+Nothing published to BCR. Linux AMD64 browser builds and native rendering smoke
+pass in the combined workspace. Other full browser ports remain in progress.
+The standalone BCR browser-bundle presubmit has not run. Maintainers recorded
+in [bcr/metadata.json](bcr/metadata.json).
 See [migration plan](native-browser.md).
 Missing dependency overlays and existing BCR alternatives are recorded in the
 [dependency audit](../../docs/dependency-overlays.md).
@@ -221,6 +222,11 @@ python3 overlays/chromium/tools/import_platform_base.py \
 
 Use `windows_amd64` or `windows_arm64` for the Windows profiles. The Darwin
 profile also captures crypto sources and framework dependencies.
+
+ARM64 host generators reuse native graphics libraries only when captured sources,
+compiler/linker flags, outputs and dependencies match the Linux AMD64 graph.
+Shared libraries keep their original GN runtime paths. V8 and Blink retain their
+target-specific layouts.
 
 Regenerate the imported crate graph from the pinned checkout:
 

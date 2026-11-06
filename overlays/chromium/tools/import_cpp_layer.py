@@ -163,6 +163,57 @@ def reuse_host_targets(targets, reused, provided):
         reused[label] = dependency
 
 
+def reuse_host_graphics(graph, reference, libraries, providers):
+    """Share native graphics only when both captured configurations match."""
+    suffix = '(//build/toolchain/linux:clang_x64_v8_arm64)'
+    prefixes = ('//third_party/angle/', '//third_party/angle:', '//third_party/swiftshader/',
+                '//third_party/vulkan-loader/', '//third_party/vulkan-validation-layers/',
+                '//third_party/vulkan-tools/')
+    fields = ('type', 'sources', 'defines', 'cflags', 'cflags_cc', 'cflags_c',
+              'asmflags', 'include_dirs', 'libs', 'ldflags', 'outputs', 'deps')
+
+    def signature(capture, target):
+        def normalize(value):
+            if isinstance(value, dict) and 'pool' in value:
+                return normalize(capture['pool'][value['pool']])
+            if isinstance(value, list):
+                return [normalize(item) for item in value]
+            if isinstance(value, str):
+                return (value.replace(suffix, '')
+                        .replace('//out/bazel-import/clang_x64_v8_arm64/', BUILD)
+                        .replace('clang_x64_v8_arm64/gen/', 'gen/'))
+            return value
+        return [normalize(target.get(field, [])) for field in fields]
+
+    count = 0
+    for label, library in libraries.items():
+        if not label.startswith(prefixes) or not label.endswith(suffix):
+            continue
+        original = label.removesuffix(suffix)
+        target = graph['targets'][label]
+        native = reference['targets'].get(original)
+        provider = providers.get(original)
+        if (not native or not provider
+                or target['type'] not in ('source_set', 'static_library', 'shared_library')
+                or signature(graph, target) != signature(reference, native)):
+            continue
+        for field in ('srcs', 'hdrs', 'copts', 'defines', 'includes', 'linkopts'):
+            library[field] = []
+        library.pop('c_copts', None)
+        library.pop('asm_copts', None)
+        if target['type'] == 'shared_library':
+            primary = next(path for path in library['outputs']
+                           if path.endswith('.so') or ('.so.' in path and not path.endswith('.TOC')))
+            library['kind'] = 'shared_library_import'
+            library['shared_library'] = '@chromium//native:' + Path(primary).name
+            library['deps'] = []
+        else:
+            library['kind'] = 'group'
+            library['deps'] = ['@chromium//native' + provider if provider.startswith(':') else provider]
+        count += 1
+    return count
+
+
 def deduplicate_source_sets(libraries):
     """Keep repeated archive sources in their source-set dependency."""
     by_name = {':' + value['name']: value for value in libraries.values()}
@@ -1023,7 +1074,7 @@ def main():
                 '@chromium_vulkan_loader//:headers',
                 '@chromium_platform_headers//:graphics',
             ])
-        if label.startswith('//third_party/angle/'):
+        if label.startswith(('//third_party/angle/', '//third_party/angle:')):
             libraries[label]['deps'].extend([
                 '@chromium_angle//:headers',
                 '@chromium_vma//:headers',
@@ -1042,6 +1093,12 @@ def main():
             libraries[label]['asm_copts'] = compiler_configuration(graph, dict(target, cflags=target.get('cflags', []), cflags_cc=target.get('cflags_asm', []), defines=target.get('defines', [])))[0]
         if layer in ('fonts', 'codecs', 'skia', 'paint', 'gfx', 'tint', 'dawn_native', 'vulkan_loader', 'vulkan_validation', 'swiftshader', 'angle_runtime', 'vulkan_tools', 'gpu_protocol', 'x11', 'linux_buffers', 'browser_services', 'linux_ui', 'ozone', 'gpu_service', 'browser_v8', 'pthreadpool', 'ml', 'ffmpeg', 'gpu_client', 'media', 'compositor', 'blink_platform', 'blink_core', 'blink_modules', 'content', 'browser'):
             libraries[label]['c_copts'] = compiler_configuration(graph, dict(target, cflags=target.get('cflags', []), cflags_cc=target.get('cflags_c', []), defines=target.get('defines', [])))[0]
+
+    if layer == 'browser' and any(label.endswith('(//build/toolchain/linux:clang_x64_v8_arm64)')
+                                  for label in libraries):
+        reference = json.loads(gzip.decompress((ROOT / 'native/linux_x64.json.gz').read_bytes()))
+        print('Reused', reuse_host_graphics(graph, reference, libraries, reused),
+              'matching native graphics libraries')
 
     # Capture included project headers omitted from GN source lists as well.
     forwarders = {

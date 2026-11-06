@@ -1,6 +1,7 @@
 """Native Chromium executable, host generators and browser assets."""
 
 load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+load("@rules_cc//cc:cc_import.bzl", "cc_import")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_python//python:defs.bzl", "py_binary")
 load(":browser_sources.bzl", "ACTIONS", "ASSET_GROUPS", "BRIDGES", "COPIES", "LIBRARIES", "RUNTIME_FILES", "SHARED_HEADERS", "TOOLS")
@@ -82,15 +83,32 @@ def native_browser():
         chromium_qt_sdk_headers(name = "browser_qt_sdk_headers", sdk = "@chromium_platform_headers//:qt_stdlib")
     runtime_binaries = []
     for original, library in LIBRARIES.items():
+        if library["kind"] == "shared_library_import":
+            primary = [path for path in library["outputs"] if path.endswith(".so") or (".so." in path and not path.endswith(".TOC"))][0]
+            chromium_resource_copy(
+                name = library["name"] + "_copy",
+                srcs = {library["shared_library"]: primary},
+                outputs = {primary: primary},
+            )
+            cc_import(name = library["name"] + "_import", shared_library = ":" + primary)
+            cc_library(
+                name = library["name"],
+                deps = [":" + library["name"] + "_import"],
+                data = [library["shared_library"]],
+            )
+            if primary in RUNTIME_FILES:
+                runtime_binaries.append(":" + primary)
+            continue
+        angle = original.startswith("//third_party/angle/") or original.startswith("//third_party/angle:")
         common = dict(
             local_defines = library["defines"],
             linkopts = library["linkopts"],
             linkstatic = True,
-            deps = ([":browser_headers"] if library["srcs"] or library["hdrs"] else []) + library["deps"],
+            deps = ([":browser_tool_headers"] if angle else ([":browser_headers"] if library["srcs"] or library["hdrs"] else [])) + library["deps"],
         )
         qt = original in qt_libraries
         include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
-        if original.startswith("//third_party/angle/"):
+        if angle:
             include_options.append("-I" + Label("@chromium_angle//:headers").workspace_root + "/third_party/angle/include")
         cpp_options = library["copts"] + include_options
         if qt:

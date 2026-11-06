@@ -830777,7 +830777,8 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            "@chromium//native:protobuf_lite_runtime",
+            ":network_headers",
+            "@chromium//native:protobuf_lite_runtime"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -830899,7 +830900,9 @@ LIBRARIES = {
             "..",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            ":network_headers"
+        ],
         "linkopts": [],
         "asm_copts": [],
         "c_copts": [],
@@ -831063,11 +831066,12 @@ LIBRARIES = {
         "deps": [
             ":browser_4850afef8a27a1c4",
             ":browser_a228dd57d5028033",
+            ":network_headers",
             "@glib//gio",
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss",
+            "@nss//:nss"
         ],
         "linkopts": [
             "-lresolv",
@@ -831405,12 +831409,13 @@ LIBRARIES = {
             ":browser_a228dd57d5028033",
             ":browser_c8c97ce0457ce56e",
             ":browser_f3cafdb069e00bd1",
+            ":network_headers",
             "@glib//gio",
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
             "@nss//:nss",
-            "@re2//:re2",
+            "@re2//:re2"
         ],
         "linkopts": [
             "-lresolv",
@@ -831665,11 +831670,12 @@ LIBRARIES = {
             ":browser_5f7a40cfa0b0cef2",
             ":browser_651c2f4244e9eb3f",
             ":browser_a228dd57d5028033",
+            ":network_headers",
             "@glib//gio",
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss",
+            "@nss//:nss"
         ],
         "linkopts": [
             "-lresolv",
@@ -831917,11 +831923,12 @@ LIBRARIES = {
             ":browser_4850afef8a27a1c4",
             ":browser_5f7a40cfa0b0cef2",
             ":browser_a228dd57d5028033",
+            ":network_headers",
             "@glib//gio",
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss",
+            "@nss//:nss"
         ],
         "linkopts": [
             "-lresolv",
@@ -832167,11 +832174,12 @@ LIBRARIES = {
             ":browser_5f7a40cfa0b0cef2",
             ":browser_651c2f4244e9eb3f",
             ":browser_a228dd57d5028033",
+            ":network_headers",
             "@glib//gio",
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss",
+            "@nss//:nss"
         ],
         "linkopts": [
             "-lresolv",
@@ -832417,11 +832425,12 @@ LIBRARIES = {
             ":browser_651c2f4244e9eb3f",
             ":browser_a228dd57d5028033",
             ":browser_c8c97ce0457ce56e",
+            ":network_headers",
             "@glib//gio",
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss",
+            "@nss//:nss"
         ],
         "linkopts": [
             "-lresolv",
@@ -832668,11 +832677,12 @@ LIBRARIES = {
             ":browser_4850afef8a27a1c4",
             ":browser_5cef6dacaaf87bfc",
             ":browser_a228dd57d5028033",
+            ":network_headers",
             "@glib//gio",
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss",
+            "@nss//:nss"
         ],
         "linkopts": [
             "-lresolv",
@@ -832934,11 +832944,12 @@ LIBRARIES = {
             ":browser_a5df7ae5aa7ecdbf",
             ":browser_c4dc89c844046229",
             ":browser_d43c80cd6e6551c7",
+            ":network_headers",
             ":quiche",
             ":url",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject",
+            "@glib//gobject"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -833200,10 +833211,11 @@ LIBRARIES = {
         "deps": [
             ":base",
             ":browser_0933adbb09bfbc8f",
+            ":network_headers",
             ":protobuf_lite_runtime",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject",
+            "@glib//gobject"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -833331,7 +833343,9 @@ LIBRARIES = {
             "..",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            ":network_headers"
+        ],
         "linkopts": [],
         "asm_copts": [],
         "c_copts": [],
@@ -833453,7 +833467,8 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_6913033e58a5cb53",
-            "@chromium//native:protobuf_lite_runtime",
+            ":network_headers",
+            "@chromium//native:protobuf_lite_runtime"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -833575,7 +833590,9 @@ LIBRARIES = {
             "..",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            ":network_headers"
+        ],
         "linkopts": [],
         "asm_copts": [],
         "c_copts": [],
@@ -833695,10 +833712,11 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            ":network_headers",
             "@chromium//native:base",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject",
+            "@glib//gobject"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -833924,10 +833942,11 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            ":network_headers",
             "@chromium//native:base",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject",
+            "@glib//gobject"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -834153,7 +834172,8 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            "@chromium//native:protobuf_lite_runtime",
+            ":network_headers",
+            "@chromium//native:protobuf_lite_runtime"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -834275,7 +834295,9 @@ LIBRARIES = {
             "..",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            ":network_headers"
+        ],
         "linkopts": [],
         "asm_copts": [],
         "c_copts": [],
@@ -834395,7 +834417,8 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
-            "@chromium//native:protobuf_lite_runtime",
+            ":network_headers",
+            "@chromium//native:protobuf_lite_runtime"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -834517,7 +834540,9 @@ LIBRARIES = {
             "..",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            ":network_headers"
+        ],
         "linkopts": [],
         "asm_copts": [],
         "c_copts": [],
@@ -835900,6 +835925,7 @@ LIBRARIES = {
             ":browser_c8c97ce0457ce56e",
             ":browser_f3cafdb069e00bd1",
             ":browser_f4c1fb96c3bac2a6",
+            ":network_headers",
             "@chromium//native:base",
             "@chromium//native:mojo_cpp_bindings",
             "@chromium//native:quiche",
@@ -835908,7 +835934,7 @@ LIBRARIES = {
             "@glib//gmodule",
             "@glib//gobject",
             "@nss//:nss",
-            "@simdutf//:simdutf",
+            "@simdutf//:simdutf"
         ],
         "linkopts": [
             "-lresolv",
@@ -836164,6 +836190,7 @@ LIBRARIES = {
             ":browser_6913033e58a5cb53",
             ":browser_6a102ad642c0182c",
             ":browser_a268946bf7151cb6",
+            ":network_headers",
             "@brotli//:brotlidec",
             "@chromium//native:base",
             "@chromium//native:base_i18n",
@@ -836174,7 +836201,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@zstd//:zstd",
+            "@zstd//:zstd"
         ],
         "linkopts": [
             "-lresolv",
@@ -836395,7 +836422,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            ":network_headers"
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -836621,10 +836650,11 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_6913033e58a5cb53",
+            ":network_headers",
             "@chromium//native:base",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject",
+            "@glib//gobject"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -836852,7 +836882,8 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_6913033e58a5cb53",
-            "@chromium//native:protobuf_lite_runtime",
+            ":network_headers",
+            "@chromium//native:protobuf_lite_runtime"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -836974,7 +837005,9 @@ LIBRARIES = {
             "..",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            ":network_headers"
+        ],
         "linkopts": [],
         "asm_copts": [],
         "c_copts": [],
@@ -837103,6 +837136,7 @@ LIBRARIES = {
             ":browser_19c4a8f7160e0ff7",
             ":browser_b52a48a15ab56f18",
             ":browser_e7cf1710bb3776ae",
+            ":network_headers",
             "@chromium//native:base",
             "@chromium//native:crypto",
             "@chromium//native:quiche",
@@ -837112,7 +837146,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss",
+            "@nss//:nss"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -837332,7 +837366,9 @@ LIBRARIES = {
             "clang_x64_v8_arm64/gen/",
             "gen",
         ],
-        "deps": [],
+        "deps": [
+            ":network_headers"
+        ],
         "linkopts": [
             "-Wl,--fatal-warnings",
             "-Wl,--build-id=fast",
@@ -837559,10 +837595,11 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            ":network_headers",
             "@chromium//native:base",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject",
+            "@glib//gobject"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -837800,12 +837837,13 @@ LIBRARIES = {
         ],
         "deps": [
             ":browser_c100b58d05504465",
+            ":network_headers",
             "@chromium//native:base",
             "@glib//gio",
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss",
+            "@nss//:nss"
         ],
         "linkopts": [
             "-lresolv",

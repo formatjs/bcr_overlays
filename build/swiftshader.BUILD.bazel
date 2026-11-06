@@ -4,6 +4,16 @@ package(default_visibility = ["//visibility:public"])
 
 exports_files(glob(["**"], exclude = ["BUILD.bazel"]))
 
+config_setting(name = "arm64", constraint_values = ["@platforms//cpu:aarch64"])
+
+config_setting(name = "macos_arm64", constraint_values = ["@platforms//os:macos", "@platforms//cpu:aarch64"])
+
+config_setting(name = "windows_arm64", constraint_values = ["@platforms//os:windows", "@platforms//cpu:aarch64"])
+
+config_setting(name = "macos_x86_64", constraint_values = ["@platforms//os:macos", "@platforms//cpu:x86_64"])
+
+config_setting(name = "windows_x86_64", constraint_values = ["@platforms//os:windows", "@platforms//cpu:x86_64"])
+
 cc_library(
     name = "headers",
     hdrs = [p for p in glob([
@@ -18,14 +28,46 @@ cc_library(
         "//conditions:default": [],
     }),
     include_prefix = "third_party/swiftshader",
-    includes = [
-        ".",
-        "src",
-        "include",
-        "third_party/marl/include",
-        "third_party/astc-encoder/Source",
-    ] + select({
-        "@platforms//cpu:aarch64": [
+    includes = [".", "src", "include", "third_party/marl/include", "third_party/astc-encoder/Source"] + select({
+        ":macos_arm64": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/llvm/lib/Target/AArch64",
+            "third_party/llvm-10.0/llvm/lib/Target/ARM",
+            "third_party/llvm-10.0/llvm/lib/Target/Mips",
+            "third_party/llvm-10.0/llvm/lib/Target/PowerPC",
+            "third_party/llvm-10.0/llvm/lib/Target/RISCV",
+            "third_party/llvm-10.0/llvm/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/common/lib/IR",
+            "third_party/llvm-10.0/configs/common/lib/Target/AArch64",
+            "third_party/llvm-10.0/configs/common/lib/Target/ARM",
+            "third_party/llvm-10.0/configs/common/lib/Target/Mips",
+            "third_party/llvm-10.0/configs/common/lib/Target/PowerPC",
+            "third_party/llvm-10.0/configs/common/lib/Target/RISCV",
+            "third_party/llvm-10.0/configs/common/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
+            "third_party/llvm-10.0/configs/darwin/include",
+        ],
+        ":windows_arm64": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/llvm/lib/Target/AArch64",
+            "third_party/llvm-10.0/llvm/lib/Target/ARM",
+            "third_party/llvm-10.0/llvm/lib/Target/Mips",
+            "third_party/llvm-10.0/llvm/lib/Target/PowerPC",
+            "third_party/llvm-10.0/llvm/lib/Target/RISCV",
+            "third_party/llvm-10.0/llvm/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/common/lib/IR",
+            "third_party/llvm-10.0/configs/common/lib/Target/AArch64",
+            "third_party/llvm-10.0/configs/common/lib/Target/ARM",
+            "third_party/llvm-10.0/configs/common/lib/Target/Mips",
+            "third_party/llvm-10.0/configs/common/lib/Target/PowerPC",
+            "third_party/llvm-10.0/configs/common/lib/Target/RISCV",
+            "third_party/llvm-10.0/configs/common/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
+            "third_party/llvm-10.0/configs/windows/include",
+        ],
+        ":arm64": [
             "third_party/llvm-10.0/llvm/include",
             "third_party/llvm-10.0/llvm/lib/Target/AArch64",
             "third_party/llvm-10.0/llvm/lib/Target/ARM",
@@ -43,6 +85,18 @@ cc_library(
             "third_party/llvm-10.0/configs/common/lib/Target/X86",
             "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
             "third_party/llvm-10.0/configs/linux/include",
+        ],
+        ":macos_x86_64": [
+            "third_party/subzero",
+            "third_party/subzero/pnacl-llvm/include",
+            "third_party/llvm-subzero/build/MacOS/include",
+            "third_party/llvm-subzero/include",
+        ],
+        ":windows_x86_64": [
+            "third_party/subzero",
+            "third_party/subzero/pnacl-llvm/include",
+            "third_party/llvm-subzero/build/Windows/include",
+            "third_party/llvm-subzero/include",
         ],
         "//conditions:default": [
             "third_party/subzero",

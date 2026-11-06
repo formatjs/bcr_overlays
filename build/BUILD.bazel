@@ -1,4 +1,6 @@
 exports_files([
+    "vulkan-hpp-namespace.patch",
+    "dav1d-private-headers.patch",
     "opus-private-headers.patch",
     "autoconf-clang-cl-driver.patch",
     "simdutf-msvc-cxx20.patch",

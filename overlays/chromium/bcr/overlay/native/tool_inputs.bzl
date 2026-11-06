@@ -20,6 +20,19 @@ def _stage_runtime(ctx, executable):
                 if relative in sources and sources[relative] != file:
                     fail("conflicting host runtime data: %s" % relative)
                 sources[relative] = file
+    for dependency in ctx.attr.runtime_deps:
+        for file, logical in dependency[ChromiumFilesInfo].mappings.to_list():
+            prefix = "out/bazel-import/"
+            if not logical.startswith(prefix):
+                fail("host runtime needs a build-relative path: %s" % logical)
+            relative = logical[len(prefix):]
+            if relative.startswith("/") or ".." in relative.split("/") or not relative:
+                fail("invalid host runtime path: %s" % relative)
+            if relative in ctx.attr.runtime_data.values():
+                continue
+            if relative in sources and sources[relative] != file:
+                fail("conflicting host runtime data: %s" % relative)
+            sources[relative] = file
     for target, relative in ctx.attr.runtime_data.items():
         if relative.startswith("/") or ".." in relative.split("/") or not relative:
             fail("invalid runtime data path: %s" % relative)
@@ -46,7 +59,7 @@ def _tool_inputs_impl(ctx):
     runner = ctx.attr.tool[DefaultInfo].files_to_run
     executable = runner.executable
     files = [executable]
-    if ctx.attr.stage_runtime or ctx.attr.runtime_data:
+    if ctx.attr.stage_runtime or ctx.attr.runtime_data or ctx.attr.runtime_deps:
         # Keep host runtime data beside its executable, outside target GN inputs.
         executable, files = _stage_runtime(ctx, executable)
     logical_paths = [ctx.attr.logical_path] + ctx.attr.additional_logical_paths
@@ -66,6 +79,7 @@ chromium_tool_inputs = rule(
         "additional_logical_paths": attr.string_list(),
         "runtime_data": attr.label_keyed_string_dict(allow_files = True, cfg = "exec"),
         "stage_runtime": attr.bool(default = False),
+        "runtime_deps": attr.label_list(providers = [ChromiumFilesInfo], cfg = "exec"),
         "_stage_script": attr.label(default = Label("//native:stage_tool.py"), allow_single_file = True),
         "_python": attr.label(default = Label("@rules_python//python:current_py_toolchain"), cfg = "exec"),
     },

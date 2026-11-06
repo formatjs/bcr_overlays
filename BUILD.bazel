@@ -1,4 +1,4 @@
-load("@chromium//native:python_action.bzl", "chromium_python_action")
+load("@chromium//native:python_action.bzl", "chromium_filegroup", "chromium_python_action")
 load("@chromium//native:resource_copy.bzl", "chromium_resource_copy")
 load("@chromium//native:tool_inputs.bzl", "chromium_tool_inputs")
 load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
@@ -992,8 +992,10 @@ py_test(
     args = [
         "$(rlocationpath :generator_runtime_output)",
         "$(rlocationpath :generator_runtime_explicit_output)",
+        "$(rlocationpath :generator_nested_runtime_output)",
     ],
     data = [
+        ":generator_nested_runtime_output",
         ":generator_runtime_explicit_output",
         ":generator_runtime_output",
     ],
@@ -1041,4 +1043,53 @@ chromium_resource_copy(
     name = "generator_host_icu",
     srcs = {":tests/generator_host_icu.txt": "host/icudtl.dat"},
     outputs = {"runtime_data/icudtl.dat": "host/icudtl.dat"},
+)
+
+cc_binary(
+    name = "fixtures/clang_x64/generator_nested_runtime_probe",
+    srcs = ["tests/generator_runtime_probe.c"],
+    data = [
+        ":runtime_data/icudtl.dat",
+        ":runtime_data/snapshot_blob.bin",
+    ],
+    linkopts = ["-Wl,--disable-new-dtags,-rpath,$$ORIGIN/lib"],
+    deps = [
+        ":generator_relative_runtime_library",
+        ":generator_runtime_library",
+    ],
+)
+
+chromium_filegroup(
+    name = "generator_nested_host_runtime",
+    srcs = {
+        ":libgenerator_runtime.so": "out/bazel-import/lib/libgenerator_runtime.so",
+        ":fixtures/lib/libgenerator_relative_runtime.so": "out/bazel-import/lib/libgenerator_relative_runtime.so",
+    },
+)
+
+chromium_tool_inputs(
+    name = "generator_nested_runtime_inputs",
+    logical_path = "out/bazel-import/clang_x64/nested_probe",
+    runtime_data = {":tests/generator_payload.txt": "payload.txt"},
+    stage_runtime = True,
+    tool = ":fixtures/clang_x64/generator_nested_runtime_probe",
+    runtime_deps = [":generator_nested_host_runtime"],
+)
+
+chromium_python_action(
+    name = "generator_nested_runtime_output",
+    srcs = {
+        "@chromium//build:gn_run_binary.py": "build/gn_run_binary.py",
+        ":tests/generator_target_snapshot.txt": "out/bazel-import/snapshot_blob.bin",
+        ":tests/generator_target_icu.txt": "out/bazel-import/icudtl.dat",
+    },
+    outs = {"generator_nested_runtime_result.txt": "generator_nested_runtime_result.txt"},
+    args = [
+        "clang_x64/nested_probe",
+        "generator_nested_runtime_result.txt",
+        "snapshot_blob.bin",
+        "icudtl.dat",
+    ],
+    script = "build/gn_run_binary.py",
+    deps = [":generator_nested_runtime_inputs"],
 )

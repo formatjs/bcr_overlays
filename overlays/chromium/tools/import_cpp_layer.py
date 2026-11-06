@@ -1375,6 +1375,11 @@ def main():
                         if path.startswith('//third_party/dawn/third_party/dxc/')]
         if dxc_includes:
             libraries[label]['dxc_include_dirs'] = dxc_includes
+        if label.startswith('//third_party/swiftshader/'):
+            libraries[label]['swiftshader_include_dirs'] = [
+                path.removeprefix('//third_party/swiftshader/').rstrip('/')
+                for path in unpack(target.get('include_dirs', []))
+                if path.startswith('//third_party/swiftshader/')]
         definitions = [path for path in target.get('sources', []) if path.endswith('.def')]
         if msvc and definitions and target['type'] in ('executable', 'shared_library'):
             if len(definitions) != 1:

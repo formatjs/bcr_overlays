@@ -808300,6 +808300,14 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "src",
+            "include",
+            "third_party/SPIRV-Headers/include",
+            "third_party/astc-encoder/Source",
+            "third_party/SPIRV-Tools/include",
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -808517,6 +808525,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -808748,6 +808757,13 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "src",
+            "include",
+            "third_party/SPIRV-Headers/include",
+            "third_party/SPIRV-Tools/include",
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -808963,6 +808979,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -809165,6 +809182,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -809374,6 +809392,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -809670,6 +809689,12 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "third_party/subzero",
+            "third_party/subzero/pnacl-llvm/include",
+            "third_party/llvm-subzero/include",
+            "third_party/llvm-subzero/build/Windows/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -809920,6 +809945,13 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "third_party/subzero",
+            "third_party/subzero/pnacl-llvm/include",
+            "third_party/llvm-subzero/include",
+            "third_party/llvm-subzero/build/Windows/include",
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -810145,6 +810177,10 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "src",
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -810360,6 +810396,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -810618,6 +810655,13 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "src",
+            "include",
+            "third_party/SPIRV-Tools/include",
+            "third_party/SPIRV-Headers/include",
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -810823,6 +810867,10 @@ LIBRARIES = {
             "/INCREMENTAL:NO",
             "/SUBSYSTEM:CONSOLE,10.0",
             "/guard:cf"
+        ],
+        "swiftshader_include_dirs": [
+            "third_party/SPIRV-Tools/include",
+            "third_party/marl/include"
         ],
         "win_def_file": "@chromium_swiftshader//:src/Vulkan/vk_swiftshader.def",
         "resource_srcs": [
@@ -811114,6 +811162,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -811337,6 +811386,13 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "src",
+            "include",
+            "third_party/SPIRV-Headers/include",
+            "third_party/SPIRV-Tools/include",
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -811546,6 +811602,9 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF"
+        ],
+        "swiftshader_include_dirs": [
+            "third_party/marl/include"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -811767,6 +811826,9 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF"
+        ],
+        "swiftshader_include_dirs": [
+            "third_party/marl/include"
         ],
         "asm_copts": [],
         "c_copts": [

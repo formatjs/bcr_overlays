@@ -794439,6 +794439,14 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "src",
+            "include",
+            "third_party/SPIRV-Headers/include",
+            "third_party/astc-encoder/Source",
+            "third_party/SPIRV-Tools/include",
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -794652,6 +794660,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -794879,6 +794888,13 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "src",
+            "include",
+            "third_party/SPIRV-Headers/include",
+            "third_party/SPIRV-Tools/include",
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -795090,6 +795106,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -795299,6 +795316,11 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/windows/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -795503,6 +795525,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -795708,6 +795731,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -795916,6 +795940,10 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF"
+        ],
+        "swiftshader_include_dirs": [
+            "src",
+            "third_party/marl/include"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -796128,6 +796156,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -796382,6 +796411,13 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "src",
+            "include",
+            "third_party/SPIRV-Tools/include",
+            "third_party/SPIRV-Headers/include",
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -796582,6 +796618,10 @@ LIBRARIES = {
             "/INCREMENTAL:NO",
             "/SUBSYSTEM:CONSOLE,10.0",
             "/guard:cf"
+        ],
+        "swiftshader_include_dirs": [
+            "third_party/SPIRV-Tools/include",
+            "third_party/marl/include"
         ],
         "win_def_file": "@chromium_swiftshader//:src/Vulkan/vk_swiftshader.def",
         "resource_srcs": [
@@ -796870,6 +796910,7 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -797088,6 +797129,13 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF"
+        ],
+        "swiftshader_include_dirs": [
+            "src",
+            "include",
+            "third_party/SPIRV-Headers/include",
+            "third_party/SPIRV-Tools/include",
+            "third_party/marl/include"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -797332,6 +797380,25 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF"
+        ],
+        "swiftshader_include_dirs": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/llvm/lib/Target/AArch64",
+            "third_party/llvm-10.0/llvm/lib/Target/ARM",
+            "third_party/llvm-10.0/llvm/lib/Target/Mips",
+            "third_party/llvm-10.0/llvm/lib/Target/PowerPC",
+            "third_party/llvm-10.0/llvm/lib/Target/RISCV",
+            "third_party/llvm-10.0/llvm/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/common/lib/IR",
+            "third_party/llvm-10.0/configs/common/lib/Target/AArch64",
+            "third_party/llvm-10.0/configs/common/lib/Target/ARM",
+            "third_party/llvm-10.0/configs/common/lib/Target/Mips",
+            "third_party/llvm-10.0/configs/common/lib/Target/PowerPC",
+            "third_party/llvm-10.0/configs/common/lib/Target/RISCV",
+            "third_party/llvm-10.0/configs/common/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
+            "third_party/llvm-10.0/configs/windows/include"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -797667,6 +797734,25 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/llvm/lib/Target/AArch64",
+            "third_party/llvm-10.0/llvm/lib/Target/ARM",
+            "third_party/llvm-10.0/llvm/lib/Target/Mips",
+            "third_party/llvm-10.0/llvm/lib/Target/PowerPC",
+            "third_party/llvm-10.0/llvm/lib/Target/RISCV",
+            "third_party/llvm-10.0/llvm/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/common/lib/IR",
+            "third_party/llvm-10.0/configs/common/lib/Target/AArch64",
+            "third_party/llvm-10.0/configs/common/lib/Target/ARM",
+            "third_party/llvm-10.0/configs/common/lib/Target/Mips",
+            "third_party/llvm-10.0/configs/common/lib/Target/PowerPC",
+            "third_party/llvm-10.0/configs/common/lib/Target/RISCV",
+            "third_party/llvm-10.0/configs/common/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
+            "third_party/llvm-10.0/configs/windows/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -797983,6 +798069,25 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF"
+        ],
+        "swiftshader_include_dirs": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/llvm/lib/Target/AArch64",
+            "third_party/llvm-10.0/llvm/lib/Target/ARM",
+            "third_party/llvm-10.0/llvm/lib/Target/Mips",
+            "third_party/llvm-10.0/llvm/lib/Target/PowerPC",
+            "third_party/llvm-10.0/llvm/lib/Target/RISCV",
+            "third_party/llvm-10.0/llvm/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/common/lib/IR",
+            "third_party/llvm-10.0/configs/common/lib/Target/AArch64",
+            "third_party/llvm-10.0/configs/common/lib/Target/ARM",
+            "third_party/llvm-10.0/configs/common/lib/Target/Mips",
+            "third_party/llvm-10.0/configs/common/lib/Target/PowerPC",
+            "third_party/llvm-10.0/configs/common/lib/Target/RISCV",
+            "third_party/llvm-10.0/configs/common/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
+            "third_party/llvm-10.0/configs/windows/include"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -798889,6 +798994,25 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/llvm/lib/Target/AArch64",
+            "third_party/llvm-10.0/llvm/lib/Target/ARM",
+            "third_party/llvm-10.0/llvm/lib/Target/Mips",
+            "third_party/llvm-10.0/llvm/lib/Target/PowerPC",
+            "third_party/llvm-10.0/llvm/lib/Target/RISCV",
+            "third_party/llvm-10.0/llvm/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/common/lib/IR",
+            "third_party/llvm-10.0/configs/common/lib/Target/AArch64",
+            "third_party/llvm-10.0/configs/common/lib/Target/ARM",
+            "third_party/llvm-10.0/configs/common/lib/Target/Mips",
+            "third_party/llvm-10.0/configs/common/lib/Target/PowerPC",
+            "third_party/llvm-10.0/configs/common/lib/Target/RISCV",
+            "third_party/llvm-10.0/configs/common/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
+            "third_party/llvm-10.0/configs/windows/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -799260,6 +799384,25 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/llvm/lib/Target/AArch64",
+            "third_party/llvm-10.0/llvm/lib/Target/ARM",
+            "third_party/llvm-10.0/llvm/lib/Target/Mips",
+            "third_party/llvm-10.0/llvm/lib/Target/PowerPC",
+            "third_party/llvm-10.0/llvm/lib/Target/RISCV",
+            "third_party/llvm-10.0/llvm/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/common/lib/IR",
+            "third_party/llvm-10.0/configs/common/lib/Target/AArch64",
+            "third_party/llvm-10.0/configs/common/lib/Target/ARM",
+            "third_party/llvm-10.0/configs/common/lib/Target/Mips",
+            "third_party/llvm-10.0/configs/common/lib/Target/PowerPC",
+            "third_party/llvm-10.0/configs/common/lib/Target/RISCV",
+            "third_party/llvm-10.0/configs/common/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
+            "third_party/llvm-10.0/configs/windows/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -799583,6 +799726,25 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF"
+        ],
+        "swiftshader_include_dirs": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/llvm/lib/Target/AArch64",
+            "third_party/llvm-10.0/llvm/lib/Target/ARM",
+            "third_party/llvm-10.0/llvm/lib/Target/Mips",
+            "third_party/llvm-10.0/llvm/lib/Target/PowerPC",
+            "third_party/llvm-10.0/llvm/lib/Target/RISCV",
+            "third_party/llvm-10.0/llvm/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/common/lib/IR",
+            "third_party/llvm-10.0/configs/common/lib/Target/AArch64",
+            "third_party/llvm-10.0/configs/common/lib/Target/ARM",
+            "third_party/llvm-10.0/configs/common/lib/Target/Mips",
+            "third_party/llvm-10.0/configs/common/lib/Target/PowerPC",
+            "third_party/llvm-10.0/configs/common/lib/Target/RISCV",
+            "third_party/llvm-10.0/configs/common/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
+            "third_party/llvm-10.0/configs/windows/include"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -799922,6 +800084,25 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "third_party/llvm-10.0/llvm/include",
+            "third_party/llvm-10.0/llvm/lib/Target/AArch64",
+            "third_party/llvm-10.0/llvm/lib/Target/ARM",
+            "third_party/llvm-10.0/llvm/lib/Target/Mips",
+            "third_party/llvm-10.0/llvm/lib/Target/PowerPC",
+            "third_party/llvm-10.0/llvm/lib/Target/RISCV",
+            "third_party/llvm-10.0/llvm/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/include",
+            "third_party/llvm-10.0/configs/common/lib/IR",
+            "third_party/llvm-10.0/configs/common/lib/Target/AArch64",
+            "third_party/llvm-10.0/configs/common/lib/Target/ARM",
+            "third_party/llvm-10.0/configs/common/lib/Target/Mips",
+            "third_party/llvm-10.0/configs/common/lib/Target/PowerPC",
+            "third_party/llvm-10.0/configs/common/lib/Target/RISCV",
+            "third_party/llvm-10.0/configs/common/lib/Target/X86",
+            "third_party/llvm-10.0/configs/common/lib/Transforms/InstCombine",
+            "third_party/llvm-10.0/configs/windows/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -800163,6 +800344,9 @@ LIBRARIES = {
             "/PROFILE",
             "/OPT:ICF"
         ],
+        "swiftshader_include_dirs": [
+            "third_party/marl/include"
+        ],
         "asm_copts": [],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -800379,6 +800563,9 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF"
+        ],
+        "swiftshader_include_dirs": [
+            "third_party/marl/include"
         ],
         "asm_copts": [],
         "c_copts": [

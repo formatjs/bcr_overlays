@@ -105,11 +105,12 @@ def native_browser():
     chromium_header_dependency(name = "browser_headers", dependency = ":browser_headers_with_links")
     for original, library in LIBRARIES.items():
         library = dict(library)
+        host = "(//build/toolchain/linux:" in original
         include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])] + [("/clang:-iquote" if original.startswith("//third_party/crashpad/crashpad/") else "-I") + Label(":all_buildflags").workspace_root + "/" + path for path in library.get("private_includes", [])]
+        include_options = [("-iquote" if host else "/clang:-iquote") + Label("@chromium_swiftshader//:headers").workspace_root + "/" + path for path in library.get("swiftshader_include_dirs", [])] + include_options
         for field in ["copts", "c_copts", "asm_copts", "objc_copts", "objcxx_copts"]:
             if field in library:
                 library[field] = library[field] + include_options
-        host = "(//build/toolchain/linux:" in original
         declare_library = _cc_library if host else cc_library
         deps = library["deps"]
         if original.startswith("//third_party/swiftshader/"):

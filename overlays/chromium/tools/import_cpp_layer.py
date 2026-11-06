@@ -1115,6 +1115,8 @@ def main():
                 '@chromium_pciutils//:headers',
                 '@spirv_headers//:spirv_cpp_headers',
             ])
+        if layer == 'browser' and label.startswith(('//net:', '//net/')):
+            libraries[label]['deps'].append(':network_headers')
         libraries[label]['deps'] = sorted(set(libraries[label]['deps']))
         if linker_inputs:
             libraries[label]['additional_linker_inputs'] = linker_inputs

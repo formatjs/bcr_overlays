@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'overlays/chromium/tools'))
-from import_cpp_layer import header_resolver, reuse_host_targets, foreach_arguments
+from import_cpp_layer import REUSED, header_resolver, reuse_host_targets, foreach_arguments
 from import_base import starlark_literal
 from import_mojo_runtime import compiler_configuration
 sys.path.pop(0)
@@ -103,6 +103,15 @@ class CrossCompilerMetadataTest(unittest.TestCase):
         self.assertNotIn(v8 + snapshot, reused)
         self.assertNotIn(blink + snapshot, reused)
         self.assertEqual(reused[v8], ':v8_target')
+
+    def test_cross_snapshot_uses_canonical_host_icu(self):
+        suffix = '(//build/toolchain/linux:clang_x64_v8_arm64)'
+        labels = ['//third_party/icu:' + name for name in
+                  ['icudata', 'icui18n', 'icuuc', 'icuuc_private', 'icuuc_public']]
+        reused = dict(REUSED)
+        reuse_host_targets({label + suffix: {} for label in labels}, reused, set())
+        for label in labels:
+            self.assertEqual(reused[label + suffix], '@chromium//third_party/icu:icu')
 
 
 if __name__ == '__main__':

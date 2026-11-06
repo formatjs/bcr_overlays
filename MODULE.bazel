@@ -333,6 +333,7 @@ single_version_override(
         "//build:libvpx-chromium-headers.patch",
         "//build:libvpx-rate-control.patch",
         "//build:libvpx-rtcd-lf.patch",
+        "//build:libvpx-rtcd-config-features.patch",
         "//build:libvpx-clang-cl-ssse3.patch",
     ],
     version = "1.16.0.bcr.beta.3",

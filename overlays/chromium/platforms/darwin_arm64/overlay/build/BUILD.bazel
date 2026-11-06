@@ -24,7 +24,7 @@ exports_files(["write_buildflag_header.py"])
 exports_files([
     "action_helpers.py",
     "gn_helpers.py",
-    "zip_helpers.py",
+    "zip_helpers.py"
 ])
 # END GENERATED MOJO INPUTS
 

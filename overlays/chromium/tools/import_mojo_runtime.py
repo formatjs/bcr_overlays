@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Import original Linux Mojo core, bindings and system source configurations."""
+"""Import captured Mojo core, bindings and system source configurations."""
 import argparse
 import gzip
 import json
@@ -95,7 +95,10 @@ def main():
         sources[name] = [path.removeprefix('//out/bazel-import/').removeprefix('//')
                          for path in target['sources'] if path.endswith('.cc')]
         options[name], defines[name] = compiler_configuration(graph, target)
-    sources['unix_address'] = ['net/base/sockaddr_storage.cc', 'net/base/sockaddr_util_posix.cc']
+    net_sources = set(graph['targets'][TARGETS['unix_address']]['sources'])
+    sources['unix_address'] = [path for path in
+                               ['net/base/sockaddr_storage.cc', 'net/base/sockaddr_util_posix.cc']
+                               if '//' + path in net_sources]
     sources['interface_provider'] = [
         'gen/services/service_manager/public/mojom/interface_provider.mojom.cc',
         'gen/services/service_manager/public/mojom/interface_provider.mojom-shared.cc',
@@ -105,6 +108,8 @@ def main():
                      for path in (args.source_root / directory).rglob('*')
                      if path.is_file() and path.suffix in ('.h', '.inc'))
     headers += ['net/base/net_export.h', 'net/base/sockaddr_storage.h', 'net/base/sockaddr_util_posix.h']
+    if 'WIN32' in defines['core']:
+        headers.append('build/precompile.h')
     schemas = ['gen/mojo/public/interfaces/bindings/' + name for name in
                ['interface_control_messages', 'native_struct', 'pipe_control_messages']]
     schemas.append('gen/services/service_manager/public/mojom/interface_provider')

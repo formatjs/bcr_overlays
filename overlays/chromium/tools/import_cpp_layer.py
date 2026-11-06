@@ -1336,6 +1336,10 @@ def main():
             dependencies.append('@chromium_libdrm//:webrtc_headers')
         if layer in ('blink_platform', 'blink_core', 'blink_modules', 'content', 'browser') and shared_interface:
             dependencies.append(':mojo_interface_provider')
+        if label == '//third_party/wtl:wtl':
+            includes.append('../third_party/wtl/include')
+            headers.extend(file_label('//' + path.relative_to(args.source_root).as_posix())
+                           for path in sorted((args.source_root / 'third_party/wtl/include').glob('*.h')))
         kind = 'group' if target['type'] in ('bundle_data', 'create_bundle') else target['type']
         libraries[label] = dict(name=name(label), kind=kind, srcs=sources,
                                 hdrs=sorted(set(headers)), copts=copts, defines=defines,

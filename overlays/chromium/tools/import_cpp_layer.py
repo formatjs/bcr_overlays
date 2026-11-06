@@ -997,6 +997,8 @@ def main():
             libraries[label]['deps'] = swiftshader_spirv[label.partition('(')[0]]
         if label.startswith('//third_party/spirv-tools/src:'):
             libraries[label]['deps'].append('@spirv_tools//:chromium_headers')
+        if label.partition('(')[0] == '//third_party/vulkan-tools/src:VkICD_mock_icd':
+            libraries[label]['deps'].append('@chromium_vulkan_tools//:headers')
         if linker_inputs:
             libraries[label]['additional_linker_inputs'] = linker_inputs
         if layer == 'browser' and target['type'] in ('executable', 'shared_library'):

@@ -1180234,6 +1180234,7 @@ LIBRARIES = {
             "gen",
         ],
         "deps": [
+            "@chromium_vulkan_tools//:headers",
             "@vulkan_headers//:vulkan_headers",
         ],
         "linkopts": [

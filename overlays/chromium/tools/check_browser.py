@@ -3,6 +3,7 @@
 """Check the assembled browser version and headless renderer."""
 
 import argparse
+import ctypes
 from contextlib import contextmanager
 from functools import partial
 from html.parser import HTMLParser
@@ -10,6 +11,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import os
 from pathlib import Path
 import re
+import struct
 import subprocess
 import tempfile
 import threading
@@ -32,6 +34,45 @@ class PageResult(HTMLParser):
     def handle_data(self, data):
         if self.collect:
             self.value += data
+
+
+def windows_version(browser):
+    version = ctypes.WinDLL('version.dll', use_last_error=True)
+    integer = ctypes.c_uint32
+    version.GetFileVersionInfoSizeW.argtypes = [ctypes.c_wchar_p, ctypes.POINTER(integer)]
+    version.GetFileVersionInfoSizeW.restype = integer
+    version.GetFileVersionInfoW.argtypes = [ctypes.c_wchar_p, integer, integer, ctypes.c_void_p]
+    version.GetFileVersionInfoW.restype = ctypes.c_int
+    version.VerQueryValueW.argtypes = [ctypes.c_void_p, ctypes.c_wchar_p,
+                                     ctypes.POINTER(ctypes.c_void_p), ctypes.POINTER(integer)]
+    version.VerQueryValueW.restype = ctypes.c_int
+    size = version.GetFileVersionInfoSizeW(str(browser), ctypes.byref(integer()))
+    if not size:
+        raise ctypes.WinError()
+    data = ctypes.create_string_buffer(size)
+    if not version.GetFileVersionInfoW(str(browser), 0, size, data):
+        raise ctypes.WinError()
+
+    def query(key):
+        pointer, length = ctypes.c_void_p(), integer()
+        if not version.VerQueryValueW(data, key, ctypes.byref(pointer), ctypes.byref(length)):
+            raise ctypes.WinError()
+        return pointer, length.value
+
+    pointer, length = query('\\')
+    if length < 52:
+        raise ValueError('incomplete Windows version resource')
+    fields = struct.unpack('<13I', ctypes.string_at(pointer, 52))
+    if fields[0] != 0xFEEF04BD:
+        raise ValueError('invalid Windows version resource')
+    major, minor, build, patch = fields[4] >> 16, fields[4] & 0xffff, fields[5] >> 16, fields[5] & 0xffff
+    pointer, length = query('\\VarFileInfo\\Translation')
+    if length < 4:
+        raise ValueError('missing Windows version translation')
+    language, codepage = struct.unpack('<HH', ctypes.string_at(pointer, 4))
+    pointer, length = query(f'\\StringFileInfo\\{language:04x}{codepage:04x}\\ProductName')
+    product = ctypes.string_at(pointer, length * 2).decode('utf-16-le').rstrip('\0')
+    return f'{product} {major}.{minor}.{build}.{patch}'
 
 
 def run(browser, arguments, environment, directory, timeout):
@@ -90,7 +131,9 @@ def main():
     environment.pop('LD_LIBRARY_PATH', None)
     with tempfile.TemporaryDirectory(prefix='chromium-browser-check.') as temporary:
         directory = Path(temporary)
-        version = run(browser, ['--version'], environment, directory, args.timeout).strip()
+        # Windows Chromium does not implement --version.
+        version = (windows_version(browser) if os.name == 'nt' else
+                   run(browser, ['--version'], environment, directory, args.timeout).strip())
         if not re.fullmatch(r'Chromium ' + re.escape(args.expected_version) + r'(?:\s.*)?', version):
             raise ValueError(f'unexpected browser version: {version!r}')
         (directory / 'page.html').write_text(

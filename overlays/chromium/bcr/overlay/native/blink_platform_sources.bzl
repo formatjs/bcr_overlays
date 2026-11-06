@@ -199279,6 +199279,10 @@ TOOLS = {
     "blink_platform_25359e084331a810_tool": {
         "tool": ":blink_platform_25359e084331a810",
         "logical_path": "out/bazel-import/character_data_generator",
+        "stage_runtime": True,
+        "runtime_data": {
+            "@chromium_icu//:common/icudtl.dat": "icudtl.dat"
+        }
     },
     "blink_platform_gperf_tool": {
         "tool": "@gperf//:gperf",

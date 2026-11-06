@@ -1888137,8 +1888137,12 @@ TOOLS = {
         "tool": ":blink_platform_d7b47b215f767a02",
         "logical_path": "out/bazel-import/clang_x64/character_data_generator",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
+            "@llvm//constraints/libc:gnu.2.31"
         ],
+        "stage_runtime": True,
+        "runtime_data": {
+            "@chromium_icu//:common/icudtl.dat": "icudtl.dat"
+        }
     },
     "browser_dom_distiller_plugin": {
         "tool": ":browser_dom_distiller_cli",

@@ -1445,6 +1445,9 @@ def main():
                 tool['runtime_data'][':snapshot_blob.bin'] = 'snapshot_blob.bin'
         if path.rsplit('/', 1)[-1] == 'top_domain_generator':
             tool['runtime_data'] = {'@chromium_icu//:common/icudtl.dat': 'icudtl.dat'}
+        if label.partition('(')[0] == '//third_party/blink/renderer/platform:character_data_generator':
+            tool['stage_runtime'] = True
+            tool['runtime_data'] = {'@chromium_icu//:common/icudtl.dat': 'icudtl.dat'}
         return tool
 
     for label, target in sorted(actions.items()):

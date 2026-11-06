@@ -172,7 +172,7 @@ def reuse_host_targets(targets, reused, provided):
 def native_graphics_providers(overlay):
     """Read providers from the native overlay, not the cross-import staging tree."""
     providers = {}
-    for component in ('gpu_protocol', 'compositor', 'network', 'fonts', 'codecs', 'ml', 'ffmpeg', 'skia', 'angle_runtime', 'swiftshader', 'vulkan_loader',
+    for component in ('gpu_protocol', 'compositor', 'network', 'fonts', 'codecs', 'pthreadpool', 'ml', 'ffmpeg', 'skia', 'angle_runtime', 'swiftshader', 'vulkan_loader',
                       'vulkan_validation', 'vulkan_tools'):
         tree = ast.parse((overlay / 'native' / (component + '_sources.bzl')).read_text())
         records = next(ast.literal_eval(node.value) for node in tree.body
@@ -210,6 +210,7 @@ def reuse_host_graphics(graph, reference, libraries, providers):
                 '//third_party/fft2d:', '//third_party/xnnpack:', '//third_party/ruy:',
                 '//third_party/eigen3:', '//third_party/gemmlowp:', '//third_party/farmhash:',
                 '//third_party/neon_2_sse:',
+                '//third_party/pthreadpool:',
                 '//third_party/libwebp:', '//third_party/libjpeg_turbo:', '//third_party/wuffs:',
                 '//third_party/ffmpeg:', '//skia:', '//net:', '//third_party/webrtc/', '//components/viz/common:shared_image_format')
     fields = ('type', 'sources', 'defines', 'cflags', 'cflags_cc', 'cflags_c',

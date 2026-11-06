@@ -118,3 +118,12 @@ class HostGraphicsReuseTest(unittest.TestCase):
         original = copy.deepcopy(libraries)
         self.assertEqual(reuse_host_graphics(capture, native, libraries, providers), 0)
         self.assertEqual(libraries, original)
+
+    def test_matching_pthreadpool_has_one_native_implementation(self):
+        label = '//third_party/pthreadpool:pthreadpool'
+        capture, native, libraries, _ = self.capture(label, kind='source_set')
+        self.assertEqual(reuse_host_graphics(capture, native, libraries,
+                                            {label: ':pthreadpool_native'}), 1)
+        library = next(iter(libraries.values()))
+        self.assertEqual(library['deps'], ['@chromium//native:pthreadpool_native'])
+        self.assertEqual(library['srcs'], [])

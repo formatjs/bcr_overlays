@@ -19,6 +19,8 @@ build:buildbuddy --bes_results_url=https://formatjs.buildbuddy.io/invocation/
 build:buildbuddy --remote_cache=grpcs://formatjs.buildbuddy.io
 build:buildbuddy --remote_executor=grpcs://formatjs.buildbuddy.io
 build:buildbuddy --remote_download_outputs=toplevel
+# Rebuild evicted intermediates in place.
+build:buildbuddy --rewind_lost_inputs
 build:buildbuddy --jobs=64
 build:buildbuddy --ui_event_filters=-info
 build:buildbuddy --extra_execution_platforms=//platforms:buildbuddy_linux_amd64

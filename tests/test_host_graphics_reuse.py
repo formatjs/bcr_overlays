@@ -66,3 +66,12 @@ class HostGraphicsReuseTest(unittest.TestCase):
         self.assertEqual(library['kind'], 'group')
         self.assertEqual(library['deps'], ['@chromium//native:native_egl'])
         self.assertEqual(library['srcs'], [])
+
+    def test_matching_fontconfig_uses_native_configuration(self):
+        label = '//third_party/fontconfig:fontconfig'
+        capture, native, libraries, _ = self.capture(label, kind='static_library')
+        self.assertEqual(reuse_host_graphics(capture, native, libraries,
+                                            {label: ':fonts_fontconfig'}), 1)
+        library = next(iter(libraries.values()))
+        self.assertEqual(library['deps'], ['@chromium//native:fonts_fontconfig'])
+        self.assertEqual(library['srcs'], [])

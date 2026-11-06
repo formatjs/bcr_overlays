@@ -410,9 +410,9 @@ bazel test //:variations_proto_test
 
 ## Rust prerequisites
 
-Pinned Chromium Rust compiler, original global allocator, native C++ bindgen,
-CXX compiler/runtime, prelude/import macro and logging crate now build through
-BCR Rust rules. Native build scripts preserve captured features and lint policy.
+Rust uses `rules_rs` toolchains; bindgen uses hermetic LLVM. The original global
+allocator, CXX runtime, prelude/import macro and logging crate build through BCR
+Rust rules. Native build scripts preserve captured features and lint policy.
 Allocator and generated CXX runtime tests pass in staged consumers and development
 harness. Linux base runtime tests also exercise original Rust logger and JSON
 integration. Additional browser crate integration remains pending. See

@@ -40,11 +40,13 @@ GitHub downloads reuse the existing organization secret
 or GitHub write token is needed. Pull requests build without merging the base
 branch so artifact provenance matches the reported commit.
 
-Current validation: C++ standard-library probes compile and link for all five
-platforms through these `with_cfg` bindings. Full Chromium packaging and relocated
-headless smoke pass on Linux amd64. The other four Chromium ports remain in
-progress; their CI jobs cannot produce browser artifacts yet. Linux ARM64 has a
-complete captured dependency graph. Windows amd64 and ARM64 GN graphs generate,
-but capture still rejects undeclared debugger DLL runtime inputs. Darwin browser
-metadata and all four native platform ports remain unfinished. The hosted
-BuildBuddy build and native GitHub Actions handoff still need a live run.
+Full Chromium packaging and relocated rendering smoke pass on Linux amd64 through
+BuildBuddy and native GitHub Actions. Linux ARM64 has a complete captured graph;
+full compilation and native browser smoke remain in progress. All five GN graphs
+are captured, including explicit Windows SDK debugger runtime inputs.
+
+macOS ARM64 and Windows MSVC amd64/ARM64 base and Mojo executables cross-link.
+`native.yml` hands those executables to native runners for allocator, JSON/files/
+threads, message-pipe and shared-memory smoke checks. Full macOS and Windows
+browser translation remains unfinished; component probes do not replace browser
+artifact and rendering smoke.

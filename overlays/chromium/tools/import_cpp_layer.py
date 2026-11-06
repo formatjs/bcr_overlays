@@ -172,7 +172,7 @@ def reuse_host_targets(targets, reused, provided):
 def native_graphics_providers(overlay):
     """Read providers from the native overlay, not the cross-import staging tree."""
     providers = {}
-    for component in ('angle_runtime', 'swiftshader', 'vulkan_loader',
+    for component in ('fonts', 'angle_runtime', 'swiftshader', 'vulkan_loader',
                       'vulkan_validation', 'vulkan_tools'):
         tree = ast.parse((overlay / 'native' / (component + '_sources.bzl')).read_text())
         records = next(ast.literal_eval(node.value) for node in tree.body
@@ -200,11 +200,13 @@ def protocol_inputs(source_root, protocols):
 
 
 def reuse_host_graphics(graph, reference, libraries, providers):
-    """Share native graphics only when both captured configurations match."""
+    """Share native graphics and fonts when captured configurations match."""
     suffix = '(//build/toolchain/linux:clang_x64_v8_arm64)'
     prefixes = ('//third_party/angle/', '//third_party/angle:', '//third_party/swiftshader/',
                 '//third_party/vulkan-loader/', '//third_party/vulkan-validation-layers/',
-                '//third_party/vulkan-tools/')
+                '//third_party/vulkan-tools/', '//third_party/fontconfig:',
+                '//third_party/freetype:', '//third_party/harfbuzz-ng:',
+                '//third_party/libpng:', '//third_party/libxml:')
     fields = ('type', 'sources', 'defines', 'cflags', 'cflags_cc', 'cflags_c',
               'asmflags', 'include_dirs', 'libs', 'ldflags', 'outputs', 'deps')
 

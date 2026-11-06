@@ -966,6 +966,14 @@ def main():
                                 linkopts=linkopts)
         if layer == 'browser' and '//third_party/re2/src/' in unpack(target.get('include_dirs', [])):
             libraries[label]['include_roots'] = ['@re2//:re2']
+        if label.partition('(')[0] == '//third_party/vulkan-utility-libraries/src:vulkan_layer_settings':
+            for field in ('srcs', 'hdrs', 'copts', 'defines', 'includes', 'linkopts'):
+                libraries[label][field] = []
+            libraries[label]['kind'] = 'group'
+            libraries[label]['deps'] = [
+                '@vulkan_utility_libraries//:vulkan_layer_settings',
+                '@vulkan_utility_libraries//:vulkan_safe_struct',
+            ]
         if label.startswith('//third_party/spirv-tools/src:'):
             libraries[label]['deps'].append('@spirv_tools//:chromium_headers')
         if linker_inputs:

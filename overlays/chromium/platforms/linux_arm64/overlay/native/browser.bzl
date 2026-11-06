@@ -32,6 +32,7 @@ def native_browser():
         tool = dict(tool)
         if tool["tool"] in native_tools:
             tool["stage_runtime"] = True
+            tool["runtime_deps"] = [":browser_host_platform_runtime"]
         chromium_tool_inputs(name = name, **tool)
     for bridge in BRIDGES:
         chromium_cxx_bridge(**bridge)

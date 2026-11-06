@@ -33,6 +33,7 @@ single_version_override(
     patch_strip = 1,
     patches = [
         "//build:llvm-macos-cryptex-frameworks.patch",
+        "//build:llvm-aarch64-sme-runtime.patch",
         "//build:llvm-msvc-delay-load.patch",
         "//build:llvm-msvc-crtversion.patch",
     ],

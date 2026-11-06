@@ -10,6 +10,7 @@ exports_files([
     "simdutf-msvc-cxx20.patch",
     "msvc_atl.bzl",
     "llvm-macos-cryptex-frameworks.patch",
+    "llvm-aarch64-sme-runtime.patch",
     "llvm-msvc-delay-load.patch",
     "llvm-msvc-crtversion.patch",
     "spirv-tools-generator-input.patch",

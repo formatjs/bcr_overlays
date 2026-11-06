@@ -1,0 +1,20 @@
+--- a/3rd_party/llvm-project/x.x/compiler-rt/compiler-rt.BUILD.bazel
++++ b/3rd_party/llvm-project/x.x/compiler-rt/compiler-rt.BUILD.bazel
+@@ -340,7 +340,16 @@
+     srcs = [
+         "lib/builtins/aarch64/fp_mode.c",
+         "lib/builtins/cpu_model/aarch64.c",
+-    ],
++    ] + select({
++        ":linux_aarch64": [
++            "lib/builtins/aarch64/sme-abi.S",
++            "lib/builtins/aarch64/sme-abi-assert.c",
++            "lib/builtins/aarch64/sme-libc-opt-memcpy-memmove.S",
++            "lib/builtins/aarch64/sme-libc-opt-memcpy-memmove-sve.S",
++            "lib/builtins/aarch64/sme-libc-opt-memset-memchr.S",
++        ],
++        "//conditions:default": [],
++    }),
+ )
+ 
+ filter_builtin_sources(

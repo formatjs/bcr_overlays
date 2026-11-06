@@ -89,5 +89,5 @@ ROOT_PYS = [
     "tools/grit/preprocess_if_expr_test.py",
     "tools/grit/setup.py",
     "tools/grit/stamp_grit_sources.py",
-    "tools/grit/xtb_util.py",
+    "tools/grit/xtb_util.py"
 ]

@@ -1,5 +1,6 @@
 {
   "native": {
+    "//components/metrics:server_urls_grd_grit": "grit_71671754a75ca40c",
     "//net:net_resources_grit": "grit_706a4afe1f8c58a4",
     "//ui/resources:ui_resources_grd_grit": "grit_90cb2b0e70543c2f",
     "//ui/resources:ui_unscaled_resources_grd_grit": "grit_c806c1b0abac4056",

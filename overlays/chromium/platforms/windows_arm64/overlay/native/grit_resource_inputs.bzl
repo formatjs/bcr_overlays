@@ -115,6 +115,6 @@ RESOURCE_INPUTS = {
         "//:ui/resources/cursors/zoom_in.cur": "ui/resources/cursors/zoom_in.cur",
         "//:ui/resources/cursors/zoom_out.cur": "ui/resources/cursors/zoom_out.cur",
         "//:ui/resources/ui_unscaled_resources.grd": "ui/resources/ui_unscaled_resources.grd",
-        ":obj/ui/resources/ui_unscaled_resources_grd_expected_outputs.txt": "out/bazel-import/obj/ui/resources/ui_unscaled_resources_grd_expected_outputs.txt",
-    },
+        ":obj/ui/resources/ui_unscaled_resources_grd_expected_outputs.txt": "out/bazel-import/obj/ui/resources/ui_unscaled_resources_grd_expected_outputs.txt"
+    }
 }

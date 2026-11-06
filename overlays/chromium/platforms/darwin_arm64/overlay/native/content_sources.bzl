@@ -134269,6 +134269,7 @@ LIBRARIES = {
         "c_copts": []
     },
     "//third_party/libusb:libusb": {
+        "private_includes": ["third_party/libusb/src/libusb/os", "third_party/libusb/src", "third_party/libusb/src/libusb"],
         "name": "content_373d987e82c89387",
         "kind": "static_library",
         "srcs": [

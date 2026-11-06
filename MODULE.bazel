@@ -43,6 +43,7 @@ osx.libraries(names = [
     "libbsm",
     "libpmenergy",
     "libpmsample",
+    "libsandbox",
 ])
 osx.frameworks(names = [
     "AVFAudio",

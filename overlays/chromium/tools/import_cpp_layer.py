@@ -1331,6 +1331,10 @@ def main():
         if objcxx_sources:
             libraries[label]['objcxx_srcs'] = objcxx_sources
             libraries[label]['objcxx_copts'] = compiler_configuration(graph, target, 'cflags_objcc')[0]
+        if label.partition('(')[0] == '//third_party/libusb:libusb':
+            libraries[label]['private_includes'] = [path[2:].rstrip('/')
+                for path in unpack(target.get('include_dirs', []))
+                if path.startswith('//third_party/libusb/')]
         if layer == 'browser' and '//third_party/re2/src/' in unpack(target.get('include_dirs', [])):
             libraries[label]['include_roots'] = ['@re2//:re2']
         if label.partition('(')[0] == '//third_party/vulkan-utility-libraries/src:vulkan_layer_settings':

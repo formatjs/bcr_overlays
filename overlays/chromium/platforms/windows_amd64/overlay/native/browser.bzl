@@ -102,6 +102,11 @@ def native_browser():
         includes = ["browser_forwarders"],
     )
     for original, library in LIBRARIES.items():
+        library = dict(library)
+        include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
+        for field in ["copts", "c_copts", "asm_copts", "objc_copts", "objcxx_copts"]:
+            if field in library:
+                library[field] = library[field] + include_options
         host = "(//build/toolchain/linux:" in original
         declare_library = _cc_library if host else cc_library
         deps = library["deps"]

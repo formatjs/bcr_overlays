@@ -55,6 +55,11 @@ def native_content():
         deps = [":blink_modules_headers", ":libxslt", "@chromium_openscreen//:chromium_headers", "@chromium_pdfium//:chromium_headers"],
     )
     for original, library in LIBRARIES.items():
+        library = dict(library)
+        include_options = ["-I" + Label(":all_buildflags").workspace_root + "/" + path for path in library.get("private_includes", [])]
+        for field in ["copts", "c_copts", "asm_copts", "objc_copts", "objcxx_copts"]:
+            if field in library:
+                library[field] = library[field] + include_options
         c_sources = [p for p in library["srcs"] if p.endswith(".c")]
         common = dict(
             hdrs = library["hdrs"],

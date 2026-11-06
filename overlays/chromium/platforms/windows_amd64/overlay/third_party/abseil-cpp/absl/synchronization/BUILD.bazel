@@ -1,0 +1,68 @@
+exports_files(
+    [
+        "barrier.h",
+        "blocking_counter.h",
+        "internal/create_thread_identity.h",
+        "internal/futex.h",
+        "internal/futex_waiter.h",
+        "internal/graphcycles.h",
+        "internal/kernel_timeout.h",
+        "internal/per_thread_sem.h",
+        "internal/pthread_waiter.h",
+        "internal/sem_waiter.h",
+        "internal/stdcpp_waiter.h",
+        "internal/thread_pool.h",
+        "internal/waiter.h",
+        "internal/waiter_base.h",
+        "internal/win32_waiter.h",
+        "mutex.h",
+        "notification.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "internal/create_thread_identity.h",
+    "internal/kernel_timeout.h",
+    "internal/per_thread_sem.h",
+    "mutex.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "internal/create_thread_identity.h",
+    "internal/kernel_timeout.h",
+    "internal/per_thread_sem.h",
+    "mutex.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "internal/create_thread_identity.h",
+    "internal/kernel_timeout.h",
+    "internal/per_thread_sem.h",
+    "mutex.h"
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "internal/create_thread_identity.h",
+    "internal/kernel_timeout.h",
+    "internal/per_thread_sem.h",
+    "mutex.h"
+])
+# END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "internal/create_thread_identity.h",
+    "internal/kernel_timeout.h",
+    "internal/per_thread_sem.h",
+    "mutex.h"
+])
+# END BROWSER INPUTS

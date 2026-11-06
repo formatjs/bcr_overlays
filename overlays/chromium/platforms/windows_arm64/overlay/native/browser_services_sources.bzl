@@ -25,7 +25,7 @@ LIBRARIES = {
             "//:components/prefs/segregated_pref_store.cc",
             "//:components/prefs/value_map_pref_store.cc",
             "//:components/prefs/wrap_with_prefix_pref_store.cc",
-            "//:components/prefs/writeable_pref_store.cc",
+            "//:components/prefs/writeable_pref_store.cc"
         ],
         "hdrs": [
             "//:components/prefs/command_line_pref_store.h",
@@ -54,7 +54,7 @@ LIBRARIES = {
             "//:components/prefs/transparent_unordered_string_map.h",
             "//:components/prefs/value_map_pref_store.h",
             "//:components/prefs/wrap_with_prefix_pref_store.h",
-            "//:components/prefs/writeable_pref_store.h",
+            "//:components/prefs/writeable_pref_store.h"
         ],
         "copts": [
             "/W4",
@@ -131,7 +131,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "COMPONENTS_PREFS_IMPLEMENTATION",
@@ -164,7 +164,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -172,10 +172,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -216,7 +216,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -290,20 +290,20 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/system_cpu:system_cpu": {
         "name": "browser_services_b5c07e768d800174",
         "kind": "source_set",
         "srcs": [
             "//:components/system_cpu/cpu_probe.cc",
-            "//:components/system_cpu/cpu_probe_win.cc",
+            "//:components/system_cpu/cpu_probe_win.cc"
         ],
         "hdrs": [
             "//:components/system_cpu/cpu_probe.h",
             "//:components/system_cpu/cpu_probe_win.h",
-            "//:components/system_cpu/cpu_sample.h",
+            "//:components/system_cpu/cpu_sample.h"
         ],
         "copts": [
             "/W4",
@@ -380,7 +380,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -412,7 +412,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -420,10 +420,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:pdh.lib",
@@ -464,7 +464,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -538,8 +538,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/tracing:tracing_config": {
         "name": "browser_services_f9e773dc8c9c292e",
@@ -548,14 +548,14 @@ LIBRARIES = {
             "//:components/tracing/common/background_tracing_state_manager.cc",
             "//:components/tracing/common/pref_names.cc",
             "//:components/tracing/common/tracing_scenarios_config.cc",
-            "//:components/tracing/common/tracing_switches.cc",
+            "//:components/tracing/common/tracing_switches.cc"
         ],
         "hdrs": [
             "//:components/tracing/common/background_tracing_state_manager.h",
             "//:components/tracing/common/pref_names.h",
             "//:components/tracing/common/tracing_scenarios_config.h",
             "//:components/tracing/common/tracing_switches.h",
-            "//:components/tracing/tracing_export.h",
+            "//:components/tracing/tracing_export.h"
         ],
         "copts": [
             "/W4",
@@ -632,7 +632,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "TRACING_IMPLEMENTATION",
@@ -665,7 +665,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -673,13 +673,13 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":browser_services_7546b56f743ecee0",
             ":perfetto_runtime",
-            "@snappy//:snappy",
+            "@snappy//:snappy"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -720,7 +720,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -794,8 +794,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/tracing:tracing_etw": {
         "name": "browser_services_9d05bff597efdb22",
@@ -806,7 +806,7 @@ LIBRARIES = {
             "//:components/tracing/common/etw_export_win.cc",
             "//:components/tracing/common/etw_system_data_source_win.cc",
             "//:components/tracing/common/inclusion_policy_win.cc",
-            "//:components/tracing/common/system_log_event_utils_win.cc",
+            "//:components/tracing/common/system_log_event_utils_win.cc"
         ],
         "hdrs": [
             "//:components/tracing/common/active_processes_win.h",
@@ -815,7 +815,7 @@ LIBRARIES = {
             "//:components/tracing/common/etw_system_data_source_win.h",
             "//:components/tracing/common/inclusion_policy_win.h",
             "//:components/tracing/common/system_log_event_utils_win.h",
-            "//:components/tracing/tracing_export.h",
+            "//:components/tracing/tracing_export.h"
         ],
         "copts": [
             "/W4",
@@ -892,7 +892,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "TRACING_IMPLEMENTATION",
@@ -925,7 +925,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -933,11 +933,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":perfetto_runtime",
+            ":perfetto_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -978,7 +978,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -1052,17 +1052,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/variations/proto:client_variations_proto": {
         "name": "browser_services_d81a3c0af6e09a06",
         "kind": "static_library",
         "srcs": [
-            ":gen/components/variations/proto/client_variations.pb.cc",
+            ":gen/components/variations/proto/client_variations.pb.cc"
         ],
         "hdrs": [
-            ":gen/components/variations/proto/client_variations.pb.h",
+            ":gen/components/variations/proto/client_variations.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -1140,7 +1140,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1174,15 +1174,15 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -1196,7 +1196,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/wd4125",
@@ -1271,8 +1271,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/variations/proto:client_variations_proto_input_group": {
         "name": "browser_services_41452139a811629c",
@@ -1283,11 +1283,11 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//components/variations:variations": {
         "name": "browser_services_698d69ad47c2116a",
@@ -1323,7 +1323,7 @@ LIBRARIES = {
             "//:components/variations/variations_seed_simulator.cc",
             "//:components/variations/variations_seed_store.cc",
             "//:components/variations/variations_switches.cc",
-            "//:components/variations/variations_url_constants.cc",
+            "//:components/variations/variations_url_constants.cc"
         ],
         "hdrs": [
             "//:components/variations/active_field_trials.h",
@@ -1359,7 +1359,7 @@ LIBRARIES = {
             "//:components/variations/variations_seed_simulator.h",
             "//:components/variations/variations_seed_store.h",
             "//:components/variations/variations_switches.h",
-            "//:components/variations/variations_url_constants.h",
+            "//:components/variations/variations_url_constants.h"
         ],
         "copts": [
             "/W4",
@@ -1436,7 +1436,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_VARIATIONS_IMPL",
@@ -1473,7 +1473,7 @@ LIBRARIES = {
             "ENABLE_IPC_FUZZER",
             "GOOGLE_PROTOBUF_NO_RTTI",
             "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -1481,7 +1481,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -1494,7 +1494,7 @@ LIBRARIES = {
             ":gfx_e78602ac3420622f",
             ":paint_46dc8112c17a1dbd",
             ":protobuf_lite_runtime",
-            ":variations_proto",
+            ":variations_proto"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1541,7 +1541,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -1615,17 +1615,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/variations:variations_features": {
         "name": "browser_services_3290061001b913e2",
         "kind": "static_library",
         "srcs": [
-            "//:components/variations/variations_features.cc",
+            "//:components/variations/variations_features.cc"
         ],
         "hdrs": [
-            "//:components/variations/variations_features.h",
+            "//:components/variations/variations_features.h"
         ],
         "copts": [
             "/W4",
@@ -1702,7 +1702,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_VARIATIONS_FEATURES_IMPL",
@@ -1735,7 +1735,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -1743,10 +1743,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1787,7 +1787,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -1861,21 +1861,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/variations:variations_mojom": {
         "name": "browser_services_c5de42ec2e28467d",
         "kind": "source_set",
         "srcs": [
-            ":gen/components/variations/variations.mojom.cc",
+            ":gen/components/variations/variations.mojom.cc"
         ],
         "hdrs": [
             ":gen/components/variations/variations.mojom-forward.h",
             ":gen/components/variations/variations.mojom-import-headers.h",
             ":gen/components/variations/variations.mojom-shared-message-ids.h",
             ":gen/components/variations/variations.mojom-test-utils.h",
-            ":gen/components/variations/variations.mojom.h",
+            ":gen/components/variations/variations.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -1952,7 +1952,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1985,7 +1985,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -1993,13 +1993,13 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":browser_services_08e86ba593de21eb",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2042,7 +2042,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -2116,8 +2116,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/variations:variations_mojom_shared": {
         "name": "browser_services_08e86ba593de21eb",
@@ -2128,10 +2128,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_services_3f0805f1896d5976",
+            ":browser_services_3f0805f1896d5976"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2147,15 +2147,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//components/variations:variations_mojom_shared_cpp_sources": {
         "name": "browser_services_3f0805f1896d5976",
         "kind": "source_set",
         "srcs": [
-            ":gen/components/variations/variations.mojom-shared.cc",
+            ":gen/components/variations/variations.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/components/variations/variations.mojom-data-view.h",
@@ -2163,7 +2163,7 @@ LIBRARIES = {
             ":gen/components/variations/variations.mojom-params-data.h",
             ":gen/components/variations/variations.mojom-send-validation.h",
             ":gen/components/variations/variations.mojom-shared-internal.h",
-            ":gen/components/variations/variations.mojom-shared.h",
+            ":gen/components/variations/variations.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -2240,7 +2240,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2273,7 +2273,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -2281,10 +2281,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2327,7 +2327,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -2401,15 +2401,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/version_info:channel": {
         "name": "browser_services_da00b5cecd4e758a",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:components/version_info/channel.h",
+            "//:components/version_info/channel.h"
         ],
         "copts": [
             "/W4",
@@ -2486,7 +2486,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2518,7 +2518,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -2526,10 +2526,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2570,7 +2570,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -2644,8 +2644,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/version_info:generate_version_info": {
         "name": "browser_services_c6fb3a1d8610d204",
@@ -2656,13 +2656,13 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":network_062374b14d6c1611",
+            ":network_062374b14d6c1611"
         ],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//components/version_info:version_info": {
         "name": "browser_services_3d5c5a1a7e1086e0",
@@ -2670,7 +2670,7 @@ LIBRARIES = {
         "srcs": [],
         "hdrs": [
             "//:components/version_info/version_info.h",
-            "//:components/version_info/version_info_values.h",
+            "//:components/version_info/version_info_values.h"
         ],
         "copts": [
             "/W4",
@@ -2747,7 +2747,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2779,7 +2779,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -2787,14 +2787,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":browser_services_582a26feab48f42d",
             ":browser_services_c6fb3a1d8610d204",
             ":browser_services_da00b5cecd4e758a",
-            ":network_f69d39c4c7e97bd6",
+            ":network_f69d39c4c7e97bd6"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2835,7 +2835,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -2909,17 +2909,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/version_info:version_info_with_user_agent": {
         "name": "browser_services_582a26feab48f42d",
         "kind": "source_set",
         "srcs": [
-            "//:components/version_info/version_info_with_user_agent.cc",
+            "//:components/version_info/version_info_with_user_agent.cc"
         ],
         "hdrs": [
-            "//:components/version_info/version_info_with_user_agent.h",
+            "//:components/version_info/version_info_with_user_agent.h"
         ],
         "copts": [
             "/W4",
@@ -2996,7 +2996,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3028,7 +3028,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -3036,12 +3036,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":browser_services_c6fb3a1d8610d204",
-            ":network_f69d39c4c7e97bd6",
+            ":network_f69d39c4c7e97bd6"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3082,7 +3082,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -3156,15 +3156,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//sandbox/policy/mojom:mojom": {
         "name": "browser_services_41e8fc90e0f692a5",
         "kind": "source_set",
         "srcs": [
             ":gen/sandbox/policy/mojom/context.mojom.cc",
-            ":gen/sandbox/policy/mojom/sandbox.mojom.cc",
+            ":gen/sandbox/policy/mojom/sandbox.mojom.cc"
         ],
         "hdrs": [
             ":gen/sandbox/policy/mojom/context.mojom-forward.h",
@@ -3176,7 +3176,7 @@ LIBRARIES = {
             ":gen/sandbox/policy/mojom/sandbox.mojom-import-headers.h",
             ":gen/sandbox/policy/mojom/sandbox.mojom-shared-message-ids.h",
             ":gen/sandbox/policy/mojom/sandbox.mojom-test-utils.h",
-            ":gen/sandbox/policy/mojom/sandbox.mojom.h",
+            ":gen/sandbox/policy/mojom/sandbox.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -3253,7 +3253,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3286,7 +3286,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -3294,13 +3294,13 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":browser_services_9da297bc8c511226",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3343,7 +3343,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -3417,8 +3417,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//sandbox/policy/mojom:mojom_shared": {
         "name": "browser_services_9da297bc8c511226",
@@ -3429,10 +3429,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_services_3775b9a662fd4c19",
+            ":browser_services_3775b9a662fd4c19"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3448,16 +3448,16 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//sandbox/policy/mojom:mojom_shared_cpp_sources": {
         "name": "browser_services_3775b9a662fd4c19",
         "kind": "source_set",
         "srcs": [
             ":gen/sandbox/policy/mojom/context.mojom-shared.cc",
-            ":gen/sandbox/policy/mojom/sandbox.mojom-shared.cc",
+            ":gen/sandbox/policy/mojom/sandbox.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/sandbox/policy/mojom/context.mojom-data-view.h",
@@ -3471,7 +3471,7 @@ LIBRARIES = {
             ":gen/sandbox/policy/mojom/sandbox.mojom-params-data.h",
             ":gen/sandbox/policy/mojom/sandbox.mojom-send-validation.h",
             ":gen/sandbox/policy/mojom/sandbox.mojom-shared-internal.h",
-            ":gen/sandbox/policy/mojom/sandbox.mojom-shared.h",
+            ":gen/sandbox/policy/mojom/sandbox.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -3548,7 +3548,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3581,7 +3581,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -3589,10 +3589,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3635,7 +3635,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -3709,8 +3709,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/metrics/public/cpp:metrics_cpp": {
         "name": "browser_services_e512055887872644",
@@ -3725,7 +3725,7 @@ LIBRARIES = {
             "//:services/metrics/public/cpp/ukm_recorder_client_interface_registry.cc",
             "//:services/metrics/public/cpp/ukm_recorder_impl_utils.cc",
             "//:services/metrics/public/cpp/ukm_source.cc",
-            "//:services/metrics/public/cpp/ukm_source_id.cc",
+            "//:services/metrics/public/cpp/ukm_source_id.cc"
         ],
         "hdrs": [
             "//:services/metrics/public/cpp/delegating_ukm_recorder.h",
@@ -3738,7 +3738,7 @@ LIBRARIES = {
             "//:services/metrics/public/cpp/ukm_recorder_client_interface_registry.h",
             "//:services/metrics/public/cpp/ukm_recorder_impl_utils.h",
             "//:services/metrics/public/cpp/ukm_source.h",
-            "//:services/metrics/public/cpp/ukm_source_id.h",
+            "//:services/metrics/public/cpp/ukm_source_id.h"
         ],
         "copts": [
             "/W4",
@@ -3815,7 +3815,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "METRICS_IMPLEMENTATION",
@@ -3858,7 +3858,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -3868,7 +3868,7 @@ LIBRARIES = {
             "gen/net/third_party/quiche/src/",
             "gen/third_party/metrics_proto/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -3876,7 +3876,7 @@ LIBRARIES = {
             ":browser_services_f733ee27c804601d",
             ":mojo_cpp_bindings",
             ":network_211be4e8e759f7c4",
-            ":url",
+            ":url"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3925,7 +3925,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -3999,21 +3999,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/metrics/public/mojom:mojom": {
         "name": "browser_services_f733ee27c804601d",
         "kind": "source_set",
         "srcs": [
-            ":gen/services/metrics/public/mojom/ukm_interface.mojom.cc",
+            ":gen/services/metrics/public/mojom/ukm_interface.mojom.cc"
         ],
         "hdrs": [
             ":gen/services/metrics/public/mojom/ukm_interface.mojom-forward.h",
             ":gen/services/metrics/public/mojom/ukm_interface.mojom-import-headers.h",
             ":gen/services/metrics/public/mojom/ukm_interface.mojom-shared-message-ids.h",
             ":gen/services/metrics/public/mojom/ukm_interface.mojom-test-utils.h",
-            ":gen/services/metrics/public/mojom/ukm_interface.mojom.h",
+            ":gen/services/metrics/public/mojom/ukm_interface.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -4090,7 +4090,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4130,7 +4130,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -4138,14 +4138,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":browser_services_56cfbe03369e3a55",
             ":browser_services_a04871904ba7bccb",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4188,7 +4188,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -4262,8 +4262,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/metrics/public/mojom:mojom_shared": {
         "name": "browser_services_a04871904ba7bccb",
@@ -4274,10 +4274,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_services_906446a13e82607f",
+            ":browser_services_906446a13e82607f"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4293,15 +4293,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//services/metrics/public/mojom:mojom_shared_cpp_sources": {
         "name": "browser_services_906446a13e82607f",
         "kind": "source_set",
         "srcs": [
-            ":gen/services/metrics/public/mojom/ukm_interface.mojom-shared.cc",
+            ":gen/services/metrics/public/mojom/ukm_interface.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/services/metrics/public/mojom/ukm_interface.mojom-data-view.h",
@@ -4309,7 +4309,7 @@ LIBRARIES = {
             ":gen/services/metrics/public/mojom/ukm_interface.mojom-params-data.h",
             ":gen/services/metrics/public/mojom/ukm_interface.mojom-send-validation.h",
             ":gen/services/metrics/public/mojom/ukm_interface.mojom-shared-internal.h",
-            ":gen/services/metrics/public/mojom/ukm_interface.mojom-shared.h",
+            ":gen/services/metrics/public/mojom/ukm_interface.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -4386,7 +4386,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4419,7 +4419,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -4427,11 +4427,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":browser_services_23beecfd37f7a18a",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4474,7 +4474,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -4548,8 +4548,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/tracing/public/cpp:cpp": {
         "name": "browser_services_a1c38d95c2c0bcd0",
@@ -4574,7 +4574,7 @@ LIBRARIES = {
             "//:services/tracing/public/cpp/trace_startup.cc",
             "//:services/tracing/public/cpp/trace_startup_config.cc",
             "//:services/tracing/public/cpp/traced_process_impl.cc",
-            "//:services/tracing/public/cpp/tracing_features.cc",
+            "//:services/tracing/public/cpp/tracing_features.cc"
         ],
         "hdrs": [
             "//:services/tracing/public/cpp/perfetto/custom_event_recorder.h",
@@ -4599,7 +4599,7 @@ LIBRARIES = {
             "//:services/tracing/public/cpp/trace_startup.h",
             "//:services/tracing/public/cpp/trace_startup_config.h",
             "//:services/tracing/public/cpp/traced_process_impl.h",
-            "//:services/tracing/public/cpp/tracing_features.h",
+            "//:services/tracing/public/cpp/tracing_features.h"
         ],
         "copts": [
             "/W4",
@@ -4676,7 +4676,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_TRACING_CPP_IMPL",
@@ -4719,7 +4719,7 @@ LIBRARIES = {
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
@@ -4727,7 +4727,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -4738,7 +4738,7 @@ LIBRARIES = {
             ":browser_services_f9e773dc8c9c292e",
             ":mojo_cpp_bindings",
             ":perfetto_proto_cpp",
-            "@snappy//:snappy",
+            "@snappy//:snappy"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4785,7 +4785,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -4859,8 +4859,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/tracing/public/mojom:mojom": {
         "name": "browser_services_f9a6f0330f0bd13e",
@@ -4878,7 +4878,7 @@ LIBRARIES = {
             "//:services/tracing/public/mojom/data_source_config_mojom_traits.cc",
             "//:services/tracing/public/mojom/data_source_descriptor_mojom_traits.cc",
             "//:services/tracing/public/mojom/interceptor_config_mojom_traits.cc",
-            "//:services/tracing/public/mojom/trace_config_mojom_traits.cc",
+            "//:services/tracing/public/mojom/trace_config_mojom_traits.cc"
         ],
         "hdrs": [
             ":gen/services/tracing/public/mojom/background_tracing_agent.mojom-forward.h",
@@ -4910,7 +4910,7 @@ LIBRARIES = {
             ":gen/services/tracing/public/mojom/tracing_service.mojom-import-headers.h",
             ":gen/services/tracing/public/mojom/tracing_service.mojom-shared-message-ids.h",
             ":gen/services/tracing/public/mojom/tracing_service.mojom-test-utils.h",
-            ":gen/services/tracing/public/mojom/tracing_service.mojom.h",
+            ":gen/services/tracing/public/mojom/tracing_service.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -4987,7 +4987,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_TRACING_MOJOM_IMPL",
@@ -5028,7 +5028,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -5036,7 +5036,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -5045,7 +5045,7 @@ LIBRARIES = {
             ":mojo_base_types",
             ":mojo_binding_headers",
             ":mojo_cpp_bindings",
-            ":perfetto_runtime",
+            ":perfetto_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5088,7 +5088,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -5162,8 +5162,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/tracing/public/mojom:mojom_shared": {
         "name": "browser_services_b282082d0b839e4c",
@@ -5245,7 +5245,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5278,7 +5278,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -5286,10 +5286,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":browser_services_04b59e57c884462e",
+            ":browser_services_04b59e57c884462e"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5332,7 +5332,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -5406,8 +5406,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/tracing/public/mojom:mojom_shared_cpp_sources": {
         "name": "browser_services_04b59e57c884462e",
@@ -5418,7 +5418,7 @@ LIBRARIES = {
             ":gen/services/tracing/public/mojom/traced_process.mojom-shared.cc",
             ":gen/services/tracing/public/mojom/tracing_service.mojom-shared.cc",
             ":gen/services/tracing/public/mojom/constants.mojom-shared.cc",
-            ":gen/services/tracing/public/mojom/perfetto_service.mojom-shared.cc",
+            ":gen/services/tracing/public/mojom/perfetto_service.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/services/tracing/public/mojom/background_tracing_agent.mojom-data-view.h",
@@ -5456,7 +5456,7 @@ LIBRARIES = {
             ":gen/services/tracing/public/mojom/tracing_service.mojom-params-data.h",
             ":gen/services/tracing/public/mojom/tracing_service.mojom-send-validation.h",
             ":gen/services/tracing/public/mojom/tracing_service.mojom-shared-internal.h",
-            ":gen/services/tracing/public/mojom/tracing_service.mojom-shared.h",
+            ":gen/services/tracing/public/mojom/tracing_service.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -5533,7 +5533,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_TRACING_MOJOM_SHARED_IMPL",
@@ -5567,7 +5567,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -5575,12 +5575,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":browser_services_9da297bc8c511226",
             ":mojo_base_types",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5623,7 +5623,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -5697,8 +5697,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/metrics_proto:metrics_proto": {
         "name": "browser_services_29e9c19725504e19",
@@ -5734,7 +5734,7 @@ LIBRARIES = {
             ":gen/third_party/metrics_proto/ukm/source.pb.cc",
             ":gen/third_party/metrics_proto/ukm/web_features.pb.cc",
             ":gen/third_party/metrics_proto/user_action_event.pb.cc",
-            ":gen/third_party/metrics_proto/user_demographics.pb.cc",
+            ":gen/third_party/metrics_proto/user_demographics.pb.cc"
         ],
         "hdrs": [
             ":gen/third_party/metrics_proto/call_stack_profile.pb.h",
@@ -5767,7 +5767,7 @@ LIBRARIES = {
             ":gen/third_party/metrics_proto/ukm/source.pb.h",
             ":gen/third_party/metrics_proto/ukm/web_features.pb.h",
             ":gen/third_party/metrics_proto/user_action_event.pb.h",
-            ":gen/third_party/metrics_proto/user_demographics.pb.h",
+            ":gen/third_party/metrics_proto/user_demographics.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -5845,7 +5845,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5879,16 +5879,16 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/metrics_proto/",
+            "gen/third_party/metrics_proto/"
         ],
         "deps": [
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -5902,7 +5902,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/wd4125",
@@ -5977,8 +5977,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/metrics_proto:metrics_proto_input_group": {
         "name": "browser_services_a7fa31abb79d8b28",
@@ -5989,11 +5989,11 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/protobuf-javascript:protoc-gen-js(//build/toolchain/linux:clang_x64)": {
         "name": "browser_services_1a1d8e782ba4e4d2",
@@ -6001,11 +6001,11 @@ LIBRARIES = {
         "srcs": [
             "@chromium_protobuf_javascript//:generator/js_generator.cc",
             "@chromium_protobuf_javascript//:generator/protoc-gen-js.cc",
-            "@chromium_protobuf_javascript//:generator/well_known_types_embed.cc",
+            "@chromium_protobuf_javascript//:generator/well_known_types_embed.cc"
         ],
         "hdrs": [
             "@chromium_protobuf_javascript//:generator/js_generator.h",
-            "@chromium_protobuf_javascript//:generator/well_known_types_embed.h",
+            "@chromium_protobuf_javascript//:generator/well_known_types_embed.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -6070,7 +6070,7 @@ LIBRARIES = {
             "-Wno-nullability-completeness",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "_FILE_OFFSET_BITS=64",
@@ -6091,15 +6091,15 @@ LIBRARIES = {
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
             "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
-            "HAVE_PTHREAD",
+            "HAVE_PTHREAD"
         ],
         "includes": [
             "..",
             "clang_x64/gen/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "@protobuf//:protoc_lib",
+            "@protobuf//:protoc_lib"
         ],
         "linkopts": [
             "-ldl",
@@ -6121,7 +6121,7 @@ LIBRARIES = {
             "-Wl,--as-needed",
             "-rdynamic",
             "-pie",
-            "-Wl,--disable-new-dtags",
+            "-Wl,--disable-new-dtags"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -6176,8 +6176,8 @@ LIBRARIES = {
             "-Wno-uninitialized-const-pointer",
             "-Wexit-time-destructors",
             "-Wno-exit-time-destructors",
-            "-std=c11",
-        ],
+            "-std=c11"
+        ]
     },
     "//url/mojom:mojom_traits": {
         "name": "browser_services_c18d836aa8e384b7",
@@ -6185,12 +6185,12 @@ LIBRARIES = {
         "srcs": [
             "//:url/mojom/origin_mojom_traits.cc",
             "//:url/mojom/scheme_host_port_mojom_traits.cc",
-            "//:url/mojom/url_gurl_mojom_traits.cc",
+            "//:url/mojom/url_gurl_mojom_traits.cc"
         ],
         "hdrs": [
             "//:url/mojom/origin_mojom_traits.h",
             "//:url/mojom/scheme_host_port_mojom_traits.h",
-            "//:url/mojom/url_gurl_mojom_traits.h",
+            "//:url/mojom/url_gurl_mojom_traits.h"
         ],
         "copts": [
             "/W4",
@@ -6267,7 +6267,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_URL_MOJOM_TRAITS_IMPL",
@@ -6308,7 +6308,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -6316,7 +6316,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -6324,7 +6324,7 @@ LIBRARIES = {
             ":browser_services_5100b0a00ba3d4f4",
             ":browser_services_cf4d3181e11b2b20",
             ":mojo_base_types",
-            ":url",
+            ":url"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6367,7 +6367,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -6441,21 +6441,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//url/mojom:url_mojom_gurl": {
         "name": "browser_services_56cfbe03369e3a55",
         "kind": "source_set",
         "srcs": [
-            ":gen/url/mojom/url.mojom.cc",
+            ":gen/url/mojom/url.mojom.cc"
         ],
         "hdrs": [
             ":gen/url/mojom/url.mojom-forward.h",
             ":gen/url/mojom/url.mojom-import-headers.h",
             ":gen/url/mojom/url.mojom-shared-message-ids.h",
             ":gen/url/mojom/url.mojom-test-utils.h",
-            ":gen/url/mojom/url.mojom.h",
+            ":gen/url/mojom/url.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -6532,7 +6532,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6572,7 +6572,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -6580,7 +6580,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -6588,7 +6588,7 @@ LIBRARIES = {
             ":browser_services_c18d836aa8e384b7",
             ":mojo_binding_headers",
             ":mojo_cpp_bindings",
-            ":url",
+            ":url"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6631,7 +6631,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -6705,8 +6705,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//url/mojom:url_mojom_gurl_shared": {
         "name": "browser_services_23beecfd37f7a18a",
@@ -6717,10 +6717,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_services_03f4141be0399644",
+            ":browser_services_03f4141be0399644"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6736,15 +6736,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//url/mojom:url_mojom_gurl_shared_cpp_sources": {
         "name": "browser_services_03f4141be0399644",
         "kind": "source_set",
         "srcs": [
-            ":gen/url/mojom/url.mojom-shared.cc",
+            ":gen/url/mojom/url.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/url/mojom/url.mojom-data-view.h",
@@ -6752,7 +6752,7 @@ LIBRARIES = {
             ":gen/url/mojom/url.mojom-params-data.h",
             ":gen/url/mojom/url.mojom-send-validation.h",
             ":gen/url/mojom/url.mojom-shared-internal.h",
-            ":gen/url/mojom/url.mojom-shared.h",
+            ":gen/url/mojom/url.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -6829,7 +6829,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6862,7 +6862,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -6870,10 +6870,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6916,7 +6916,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -6990,8 +6990,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//url/mojom:url_mojom_origin_shared": {
         "name": "browser_services_cf4d3181e11b2b20",
@@ -7002,10 +7002,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_services_ec9fa54bc04224c3",
+            ":browser_services_ec9fa54bc04224c3"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7021,15 +7021,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//url/mojom:url_mojom_origin_shared_cpp_sources": {
         "name": "browser_services_ec9fa54bc04224c3",
         "kind": "source_set",
         "srcs": [
-            ":gen/url/mojom/origin.mojom-shared.cc",
+            ":gen/url/mojom/origin.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/url/mojom/origin.mojom-data-view.h",
@@ -7037,7 +7037,7 @@ LIBRARIES = {
             ":gen/url/mojom/origin.mojom-params-data.h",
             ":gen/url/mojom/origin.mojom-send-validation.h",
             ":gen/url/mojom/origin.mojom-shared-internal.h",
-            ":gen/url/mojom/origin.mojom-shared.h",
+            ":gen/url/mojom/origin.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -7114,7 +7114,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7147,7 +7147,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -7155,12 +7155,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":browser_services_23beecfd37f7a18a",
             ":mojo_base_types",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7203,7 +7203,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -7277,21 +7277,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//url/mojom:url_mojom_scheme_host_port": {
         "name": "browser_services_5100b0a00ba3d4f4",
         "kind": "source_set",
         "srcs": [
-            ":gen/url/mojom/scheme_host_port.mojom.cc",
+            ":gen/url/mojom/scheme_host_port.mojom.cc"
         ],
         "hdrs": [
             ":gen/url/mojom/scheme_host_port.mojom-forward.h",
             ":gen/url/mojom/scheme_host_port.mojom-import-headers.h",
             ":gen/url/mojom/scheme_host_port.mojom-shared-message-ids.h",
             ":gen/url/mojom/scheme_host_port.mojom-test-utils.h",
-            ":gen/url/mojom/scheme_host_port.mojom.h",
+            ":gen/url/mojom/scheme_host_port.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -7368,7 +7368,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7401,7 +7401,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -7409,14 +7409,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":browser_services_d46837f15fd7ddbb",
             ":mojo_binding_headers",
             ":mojo_cpp_bindings",
-            ":url",
+            ":url"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7459,7 +7459,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -7533,8 +7533,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//url/mojom:url_mojom_scheme_host_port_shared": {
         "name": "browser_services_d46837f15fd7ddbb",
@@ -7545,10 +7545,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":browser_services_c3bc83debafb162a",
+            ":browser_services_c3bc83debafb162a"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7564,15 +7564,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//url/mojom:url_mojom_scheme_host_port_shared_cpp_sources": {
         "name": "browser_services_c3bc83debafb162a",
         "kind": "source_set",
         "srcs": [
-            ":gen/url/mojom/scheme_host_port.mojom-shared.cc",
+            ":gen/url/mojom/scheme_host_port.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/url/mojom/scheme_host_port.mojom-data-view.h",
@@ -7580,7 +7580,7 @@ LIBRARIES = {
             ":gen/url/mojom/scheme_host_port.mojom-params-data.h",
             ":gen/url/mojom/scheme_host_port.mojom-send-validation.h",
             ":gen/url/mojom/scheme_host_port.mojom-shared-internal.h",
-            ":gen/url/mojom/scheme_host_port.mojom-shared.h",
+            ":gen/url/mojom/scheme_host_port.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -7657,7 +7657,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7690,7 +7690,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -7698,10 +7698,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7744,7 +7744,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -7818,9 +7818,9 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -7954,7 +7954,7 @@ SHARED_HEADERS = [
     "//:services/tracing/public/mojom/trace_config_mojom_traits.h",
     "//:url/mojom/origin_mojom_traits.h",
     "//:url/mojom/scheme_host_port_mojom_traits.h",
-    "//:url/mojom/url_gurl_mojom_traits.h",
+    "//:url/mojom/url_gurl_mojom_traits.h"
 ]
 
 ACTIONS = [
@@ -7964,13 +7964,13 @@ ACTIONS = [
         "srcs": {
             "//:components/variations/proto/client_variations.proto": "components/variations/proto/client_variations.proto",
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/components/variations/proto/client_variations.pb.h": "gen/components/variations/proto/client_variations.pb.h",
             "gen/components/variations/proto/client_variations.pb.cc": "gen/components/variations/proto/client_variations.pb.cc",
             "pyproto/components/variations/proto/client_variations_pb2.py": "pyproto/components/variations/proto/client_variations_pb2.py",
-            "jsproto/components/variations/proto/client_variations.js": "jsproto/components/variations/proto/client_variations.js",
+            "jsproto/components/variations/proto/client_variations.js": "jsproto/components/variations/proto/client_variations.js"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -7988,13 +7988,13 @@ ACTIONS = [
             "jsproto/components/variations/proto",
             "--protoc-gen-js",
             "./clang_x64/protoc-gen-js",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":browser_services_1a1d8e782ba4e4d2_tool",
             ":browser_services_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -8032,7 +8032,7 @@ ACTIONS = [
             "//:third_party/metrics_proto/user_action_event.proto": "third_party/metrics_proto/user_action_event.proto",
             "//:third_party/metrics_proto/user_demographics.proto": "third_party/metrics_proto/user_demographics.proto",
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/third_party/metrics_proto/call_stack_profile.pb.h": "gen/third_party/metrics_proto/call_stack_profile.pb.h",
@@ -8127,7 +8127,7 @@ ACTIONS = [
             "pyproto/third_party/metrics_proto/ukm/source_pb2.py": "pyproto/third_party/metrics_proto/ukm/source_pb2.py",
             "pyproto/third_party/metrics_proto/ukm/web_features_pb2.py": "pyproto/third_party/metrics_proto/ukm/web_features_pb2.py",
             "pyproto/third_party/metrics_proto/user_action_event_pb2.py": "pyproto/third_party/metrics_proto/user_action_event_pb2.py",
-            "pyproto/third_party/metrics_proto/user_demographics_pb2.py": "pyproto/third_party/metrics_proto/user_demographics_pb2.py",
+            "pyproto/third_party/metrics_proto/user_demographics_pb2.py": "pyproto/third_party/metrics_proto/user_demographics_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -8171,13 +8171,13 @@ ACTIONS = [
             "gen/third_party/metrics_proto",
             "--py-out-dir",
             "pyproto/third_party/metrics_proto",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":browser_services_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
-    },
+            ":protoc_tool"
+        ]
+    }
 ]
 
 TOOLS = {
@@ -8185,11 +8185,11 @@ TOOLS = {
         "tool": ":browser_services_1a1d8e782ba4e4d2",
         "logical_path": "out/bazel-import/clang_x64/protoc-gen-js",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
     },
     "browser_services_319da6ea5cc4a541_tool": {
         "tool": ":protobuf_compiler",
-        "logical_path": "out/bazel-import/clang_x64/protoc",
-    },
+        "logical_path": "out/bazel-import/clang_x64/protoc"
+    }
 }

@@ -10,11 +10,11 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":gfx_58f688c3b5e170fe",
-            ":paint_46dc8112c17a1dbd",
+            ":paint_46dc8112c17a1dbd"
         ],
         "linkopts": [
             "-DEFAULTLIB:rpcrt4.lib",
@@ -32,19 +32,19 @@ LIBRARIES = {
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:user32.lib",
             "-DEFAULTLIB:version.lib",
-            "-DEFAULTLIB:winhttp.lib",
+            "-DEFAULTLIB:winhttp.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//components/crash/core/common:crash_key_utils": {
         "name": "gfx_58f688c3b5e170fe",
         "kind": "static_library",
         "srcs": [
-            "//:components/crash/core/common/crash_keys.cc",
+            "//:components/crash/core/common/crash_keys.cc"
         ],
         "hdrs": [
-            "//:components/crash/core/common/crash_keys.h",
+            "//:components/crash/core/common/crash_keys.h"
         ],
         "copts": [
             "/W4",
@@ -122,7 +122,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -155,7 +155,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -165,11 +165,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":paint_46dc8112c17a1dbd",
+            ":paint_46dc8112c17a1dbd"
         ],
         "linkopts": [
             "-DEFAULTLIB:rpcrt4.lib",
@@ -214,7 +214,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -286,7 +286,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -360,17 +360,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/zlib/google:compression_utils": {
         "name": "gfx_e78602ac3420622f",
         "kind": "static_library",
         "srcs": [
-            "//third_party/zlib:google/compression_utils.cc",
+            "//third_party/zlib:google/compression_utils.cc"
         ],
         "hdrs": [
-            "//third_party/zlib:google/compression_utils.h",
+            "//third_party/zlib:google/compression_utils.h"
         ],
         "copts": [
             "/W4",
@@ -448,7 +448,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -480,7 +480,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -488,12 +488,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             "//third_party/zlib",
             ":base",
-            ":browser_v8_2eba829cce22c12d",
+            ":browser_v8_2eba829cce22c12d"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -534,7 +534,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -606,7 +606,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -680,8 +680,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/base:ui_data_pack": {
         "name": "gfx_3752e049e8eae7fd",
@@ -689,13 +689,13 @@ LIBRARIES = {
         "srcs": [
             "//:ui/base/resource/data_pack.cc",
             "//:ui/base/resource/resource_scale_factor.cc",
-            "//:ui/base/resource/scoped_file_writer.cc",
+            "//:ui/base/resource/scoped_file_writer.cc"
         ],
         "hdrs": [
             "//:ui/base/resource/data_pack.h",
             "//:ui/base/resource/resource_handle.h",
             "//:ui/base/resource/resource_scale_factor.h",
-            "//:ui/base/resource/scoped_file_writer.h",
+            "//:ui/base/resource/scoped_file_writer.h"
         ],
         "copts": [
             "/W4",
@@ -773,7 +773,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UI_DATA_PACK_IMPL",
@@ -808,7 +808,7 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
@@ -817,13 +817,13 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
             ":base",
             ":gfx_e78602ac3420622f",
-            ":network_211be4e8e759f7c4",
+            ":network_211be4e8e759f7c4"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -872,7 +872,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -944,7 +944,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -1018,8 +1018,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx/codec:codec": {
         "name": "gfx_507cd9447fffed34",
@@ -1028,14 +1028,14 @@ LIBRARIES = {
             "//:ui/gfx/codec/jpeg_codec.cc",
             "//:ui/gfx/codec/png_codec.cc",
             "//:ui/gfx/codec/vector_wstream.cc",
-            "//:ui/gfx/codec/webp_codec.cc",
+            "//:ui/gfx/codec/webp_codec.cc"
         ],
         "hdrs": [
             "//:ui/gfx/codec/codec_export.h",
             "//:ui/gfx/codec/jpeg_codec.h",
             "//:ui/gfx/codec/png_codec.h",
             "//:ui/gfx/codec/vector_wstream.h",
-            "//:ui/gfx/codec/webp_codec.h",
+            "//:ui/gfx/codec/webp_codec.h"
         ],
         "copts": [
             "/wd4324",
@@ -1114,7 +1114,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "CODEC_IMPLEMENTATION",
@@ -1161,7 +1161,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -1171,13 +1171,13 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":geometry_08e263e6d1b42686",
             ":paint_8a34cfe2f279433b",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1219,7 +1219,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/wd4324",
@@ -1292,7 +1292,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/wd4324",
@@ -1367,18 +1367,18 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:color_utils": {
         "name": "gfx_850ae577775bbc35",
         "kind": "static_library",
         "srcs": [
-            "//:ui/gfx/color_utils.cc",
+            "//:ui/gfx/color_utils.cc"
         ],
         "hdrs": [
             "//:ui/gfx/color_palette.h",
-            "//:ui/gfx/color_utils.h",
+            "//:ui/gfx/color_utils.h"
         ],
         "copts": [
             "/W4",
@@ -1456,7 +1456,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_GFX_COLOR_UTILS_IMPL",
@@ -1503,7 +1503,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -1513,12 +1513,12 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":geometry_08e263e6d1b42686",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1560,7 +1560,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -1632,7 +1632,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -1706,8 +1706,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:gfx": {
         "name": "gfx_4d8d22d2d647e8f3",
@@ -1790,7 +1790,7 @@ LIBRARIES = {
             "//:ui/gfx/render_text_harfbuzz.cc",
             "//:ui/gfx/text_utils_skia.cc",
             "//:ui/gfx/nine_image_painter.cc",
-            "//:ui/gfx/native_ui_util_aura.cc",
+            "//:ui/gfx/native_ui_util_aura.cc"
         ],
         "hdrs": [
             "//:ui/gfx/bidi_line_iterator.h",
@@ -1875,7 +1875,7 @@ LIBRARIES = {
             "//:ui/gfx/win/singleton_hwnd.h",
             "//:ui/gfx/win/singleton_hwnd_hot_key_observer.h",
             "//:ui/gfx/win/text_analysis_source.h",
-            "//:ui/gfx/win/window_impl.h",
+            "//:ui/gfx/win/window_impl.h"
         ],
         "copts": [
             "/W4",
@@ -1954,7 +1954,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2010,7 +2010,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -2022,7 +2022,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//third_party/icu:icu",
@@ -2050,7 +2050,7 @@ LIBRARIES = {
             ":paint_af977cd74aa5cd2e",
             ":skia",
             ":skia_3e2be659073cb989",
-            ":skia_5280fdd4ac24420e",
+            ":skia_5280fdd4ac24420e"
         ],
         "linkopts": [
             "-DEFAULTLIB:setupapi.lib",
@@ -2105,7 +2105,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -2178,7 +2178,7 @@ LIBRARIES = {
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
             "/FIbuild/precompile.h",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -2253,8 +2253,8 @@ LIBRARIES = {
             "/FIbuild/precompile.h",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:memory_buffer_sources": {
         "name": "gfx_719ec582e98df6e1",
@@ -2266,7 +2266,7 @@ LIBRARIES = {
             "//:ui/gfx/gpu_fence.cc",
             "//:ui/gfx/gpu_fence_handle.cc",
             "//:ui/gfx/ca_layer_params.cc",
-            "//:ui/gfx/gpu_memory_buffer_handle.cc",
+            "//:ui/gfx/gpu_memory_buffer_handle.cc"
         ],
         "hdrs": [
             "//:ui/gfx/buffer_format_util.h",
@@ -2282,7 +2282,7 @@ LIBRARIES = {
             "//:ui/gfx/overlay_priority_hint.h",
             "//:ui/gfx/overlay_transform.h",
             "//:ui/gfx/overlay_type.h",
-            "//:ui/gfx/surface_origin.h",
+            "//:ui/gfx/surface_origin.h"
         ],
         "copts": [
             "/W4",
@@ -2360,7 +2360,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2393,7 +2393,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "IS_GFX_IMPL",
+            "IS_GFX_IMPL"
         ],
         "includes": [
             "..",
@@ -2401,7 +2401,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -2409,7 +2409,7 @@ LIBRARIES = {
             ":gfx_22d333b1908eb24e",
             ":mojo_ipc_messages",
             ":paint_852d427b46acc50a",
-            ":paint_bb87af8d9cf34ed6",
+            ":paint_bb87af8d9cf34ed6"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2452,7 +2452,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -2524,7 +2524,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -2598,15 +2598,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:native_widget_types_sources": {
         "name": "gfx_22d333b1908eb24e",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:ui/gfx/native_ui_types.h",
+            "//:ui/gfx/native_ui_types.h"
         ],
         "copts": [
             "/W4",
@@ -2684,7 +2684,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2717,7 +2717,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "IS_GFX_IMPL",
+            "IS_GFX_IMPL"
         ],
         "includes": [
             "..",
@@ -2725,10 +2725,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2769,7 +2769,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -2841,7 +2841,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -2915,15 +2915,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:resize_image_dimensions": {
         "name": "gfx_18c570766f7e47f5",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:ui/gfx/image/resize_image_dimensions.h",
+            "//:ui/gfx/image/resize_image_dimensions.h"
         ],
         "copts": [
             "/W4",
@@ -3001,7 +3001,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3033,12 +3033,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -3052,7 +3052,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [
             "/W4",
@@ -3124,7 +3124,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -3198,17 +3198,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//ui/gfx:selection_bound_sources": {
         "name": "gfx_3e0e39fc6b76a43d",
         "kind": "source_set",
         "srcs": [
-            "//:ui/gfx/selection_bound.cc",
+            "//:ui/gfx/selection_bound.cc"
         ],
         "hdrs": [
-            "//:ui/gfx/selection_bound.h",
+            "//:ui/gfx/selection_bound.h"
         ],
         "copts": [
             "/W4",
@@ -3286,7 +3286,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3319,7 +3319,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "IS_GFX_IMPL",
+            "IS_GFX_IMPL"
         ],
         "includes": [
             "..",
@@ -3327,11 +3327,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":geometry_08e263e6d1b42686",
+            ":geometry_08e263e6d1b42686"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3372,7 +3372,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
             "/W4",
@@ -3444,7 +3444,7 @@ LIBRARIES = {
             "-Wheader-hygiene",
             "-Wstring-conversion",
             "-Wtautological-overlap-compare",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "c_copts": [
             "/W4",
@@ -3518,9 +3518,9 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -3694,7 +3694,7 @@ SHARED_HEADERS = [
     "//:ui/gfx/win/text_analysis_source.h",
     "//:ui/gfx/win/window_impl.h",
     "//third_party/zlib:google/compression_utils.h",
-    "//third_party/zlib:google/compression_utils_portable.h",
+    "//third_party/zlib:google/compression_utils_portable.h"
 ]
 
 ACTIONS = []

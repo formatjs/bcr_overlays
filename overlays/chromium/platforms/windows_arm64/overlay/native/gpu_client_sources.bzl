@@ -7,12 +7,12 @@ LIBRARIES = {
         "srcs": [
             "//:components/viz/client/client_resource_provider.cc",
             "//:components/viz/client/frame_eviction_manager.cc",
-            "//:components/viz/client/frame_evictor.cc",
+            "//:components/viz/client/frame_evictor.cc"
         ],
         "hdrs": [
             "//:components/viz/client/client_resource_provider.h",
             "//:components/viz/client/frame_eviction_manager.h",
-            "//:components/viz/client/frame_evictor.h",
+            "//:components/viz/client/frame_evictor.h"
         ],
         "copts": [
             "/W4",
@@ -89,7 +89,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "VIZ_CLIENT_IMPLEMENTATION",
@@ -141,7 +141,7 @@ LIBRARIES = {
             "CHROMIUM",
             "LIBYUV_DISABLE_SME",
             "LIBYUV_DISABLE_LSX",
-            "LIBYUV_DISABLE_LASX",
+            "LIBYUV_DISABLE_LASX"
         ],
         "includes": [
             "..",
@@ -151,7 +151,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -160,7 +160,7 @@ LIBRARIES = {
             ":gpu_protocol_d1aa68b845592849",
             ":mojo_cpp_system",
             ":paint_6ae26694879d9137",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -220,7 +220,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -295,8 +295,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//components/viz/common:common": {
         "name": "gpu_client_0a7813fd3cf4c1ad",
@@ -373,7 +373,7 @@ LIBRARIES = {
             "//:components/viz/common/viz_utils.cc",
             "//:components/viz/common/display/use_layered_window.cc",
             "//:components/viz/common/overlay_state/win/overlay_state_aggregator.cc",
-            "//:components/viz/common/overlay_state/win/overlay_state_service.cc",
+            "//:components/viz/common/overlay_state/win/overlay_state_service.cc"
         ],
         "hdrs": [
             "//:components/viz/common/color_space_utils.h",
@@ -463,7 +463,7 @@ LIBRARIES = {
             "//:components/viz/common/vertical_scroll_direction.h",
             "//:components/viz/common/view_transition_element_resource_id.h",
             "//:components/viz/common/viz_common_export.h",
-            "//:components/viz/common/viz_utils.h",
+            "//:components/viz/common/viz_utils.h"
         ],
         "copts": [
             "/W4",
@@ -540,7 +540,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "VIZ_COMMON_IMPLEMENTATION",
@@ -602,7 +602,7 @@ LIBRARIES = {
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
             "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
@@ -613,7 +613,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -642,7 +642,7 @@ LIBRARIES = {
             ":paint_6ae26694879d9137",
             ":paint_6c7e7ea8bec39a32",
             ":paint_72198bff3a66bb77",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -702,7 +702,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -777,8 +777,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/client:gles2_cmd_helper": {
         "name": "gpu_client_3d4633e4ac5ad5fd",
@@ -789,10 +789,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_client_9d3a49f627d20c2f",
+            ":gpu_client_9d3a49f627d20c2f"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -824,20 +824,20 @@ LIBRARIES = {
             "-DEFAULTLIB:dxguid.lib",
             "-DEFAULTLIB:dxgi.lib",
             "-DEFAULTLIB:wtsapi32.lib",
-            "-DEFAULTLIB:delayimp.lib",
+            "-DEFAULTLIB:delayimp.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/command_buffer/client:gles2_cmd_helper_sources": {
         "name": "gpu_client_9d3a49f627d20c2f",
         "kind": "source_set",
         "srcs": [
-            "//:gpu/command_buffer/client/gles2_cmd_helper.cc",
+            "//:gpu/command_buffer/client/gles2_cmd_helper.cc"
         ],
         "hdrs": [
             "//:gpu/command_buffer/client/gles2_cmd_helper.h",
-            "//:gpu/command_buffer/client/gles2_cmd_helper_autogen.h",
+            "//:gpu/command_buffer/client/gles2_cmd_helper_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -914,7 +914,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -966,7 +966,7 @@ LIBRARIES = {
             "CHROMIUM",
             "LIBYUV_DISABLE_SME",
             "LIBYUV_DISABLE_LSX",
-            "LIBYUV_DISABLE_LASX",
+            "LIBYUV_DISABLE_LASX"
         ],
         "includes": [
             "..",
@@ -976,13 +976,13 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":gpu_protocol_2626761fe082308a",
             ":gpu_protocol_3d4a2838ebefddd6",
-            ":gpu_service_fdaed19491ff9b4d",
+            ":gpu_service_fdaed19491ff9b4d"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1042,7 +1042,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -1117,8 +1117,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/client:gles2_implementation": {
         "name": "gpu_client_e85710c0a5a89227",
@@ -1136,7 +1136,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/client/query_tracker.cc",
             "//:gpu/command_buffer/client/readback_buffer_shadow_tracker.cc",
             "//:gpu/command_buffer/client/share_group.cc",
-            "//:gpu/command_buffer/client/vertex_array_object_manager.cc",
+            "//:gpu/command_buffer/client/vertex_array_object_manager.cc"
         ],
         "hdrs": [
             "//:gpu/command_buffer/client/buffer_tracker.h",
@@ -1158,7 +1158,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/client/query_tracker.h",
             "//:gpu/command_buffer/client/readback_buffer_shadow_tracker.h",
             "//:gpu/command_buffer/client/share_group.h",
-            "//:gpu/command_buffer/client/vertex_array_object_manager.h",
+            "//:gpu/command_buffer/client/vertex_array_object_manager.h"
         ],
         "copts": [
             "/W4",
@@ -1235,7 +1235,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GLES2_IMPL_IMPLEMENTATION",
@@ -1294,7 +1294,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -1304,7 +1304,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -1317,7 +1317,7 @@ LIBRARIES = {
             ":gpu_protocol_e058e994a56dcd69",
             ":gpu_service_fdaed19491ff9b4d",
             ":linux_ui_ed4d3d1817da2248",
-            ":paint_72198bff3a66bb77",
+            ":paint_72198bff3a66bb77"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1377,7 +1377,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -1452,8 +1452,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/client:raster": {
         "name": "gpu_client_4c0c3a782ee4eb06",
@@ -1464,10 +1464,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_client_f4a7366739a67c93",
+            ":gpu_client_f4a7366739a67c93"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1499,10 +1499,10 @@ LIBRARIES = {
             "-DEFAULTLIB:urlmon.lib",
             "-DEFAULTLIB:wtsapi32.lib",
             "-DEFAULTLIB:d3d11.lib",
-            "-DEFAULTLIB:delayimp.lib",
+            "-DEFAULTLIB:delayimp.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/command_buffer/client:raster_interface": {
         "name": "gpu_client_d8c0db0a4c9f9120",
@@ -1510,7 +1510,7 @@ LIBRARIES = {
         "srcs": [],
         "hdrs": [
             "//:gpu/command_buffer/client/raster_interface.h",
-            "//:gpu/command_buffer/client/raster_interface_autogen.h",
+            "//:gpu/command_buffer/client/raster_interface_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -1587,7 +1587,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1634,7 +1634,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -1644,7 +1644,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -1653,7 +1653,7 @@ LIBRARIES = {
             ":gpu_protocol_ca02c0e997a80bcb",
             ":gpu_protocol_e058e994a56dcd69",
             ":paint_bb87af8d9cf34ed6",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1711,7 +1711,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -1786,8 +1786,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/client:raster_sources": {
         "name": "gpu_client_f4a7366739a67c93",
@@ -1796,7 +1796,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/client/client_font_manager.cc",
             "//:gpu/command_buffer/client/raster_cmd_helper.cc",
             "//:gpu/command_buffer/client/raster_implementation.cc",
-            "//:gpu/command_buffer/client/raster_implementation_gles.cc",
+            "//:gpu/command_buffer/client/raster_implementation_gles.cc"
         ],
         "hdrs": [
             "//:gpu/command_buffer/client/client_font_manager.h",
@@ -1805,7 +1805,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/client/raster_implementation.h",
             "//:gpu/command_buffer/client/raster_implementation_autogen.h",
             "//:gpu/command_buffer/client/raster_implementation_gles.h",
-            "//:gpu/command_buffer/client/raster_implementation_impl_autogen.h",
+            "//:gpu/command_buffer/client/raster_implementation_impl_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -1882,7 +1882,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1941,7 +1941,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -1951,7 +1951,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -1969,7 +1969,7 @@ LIBRARIES = {
             ":network_0b8264d7eb7b2ad9",
             ":paint_6c7e7ea8bec39a32",
             ":paint_72198bff3a66bb77",
-            ":skia_3e2be659073cb989",
+            ":skia_3e2be659073cb989"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2029,7 +2029,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -2104,8 +2104,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/common:raster": {
         "name": "gpu_client_9e556615d9e933fd",
@@ -2116,10 +2116,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_service_17f8add9507987ae",
+            ":gpu_service_17f8add9507987ae"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2149,10 +2149,10 @@ LIBRARIES = {
             "-DEFAULTLIB:iphlpapi.lib",
             "-DEFAULTLIB:secur32.lib",
             "-DEFAULTLIB:urlmon.lib",
-            "-DEFAULTLIB:wtsapi32.lib",
+            "-DEFAULTLIB:wtsapi32.lib"
         ],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/ipc/client:client": {
         "name": "gpu_client_32c2e7169ca44991",
@@ -2162,7 +2162,7 @@ LIBRARIES = {
             "//:gpu/ipc/client/command_buffer_proxy_impl.cc",
             "//:gpu/ipc/client/gpu_channel_host.cc",
             "//:gpu/ipc/client/image_decode_accelerator_proxy.cc",
-            "//:gpu/ipc/client/shared_image_interface_proxy.cc",
+            "//:gpu/ipc/client/shared_image_interface_proxy.cc"
         ],
         "hdrs": [
             "//:gpu/ipc/client/client_shared_image_interface.h",
@@ -2171,7 +2171,7 @@ LIBRARIES = {
             "//:gpu/ipc/client/gpu_channel_observer.h",
             "//:gpu/ipc/client/gpu_ipc_client_export.h",
             "//:gpu/ipc/client/image_decode_accelerator_proxy.h",
-            "//:gpu/ipc/client/shared_image_interface_proxy.h",
+            "//:gpu/ipc/client/shared_image_interface_proxy.h"
         ],
         "copts": [
             "/W4",
@@ -2248,7 +2248,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2308,7 +2308,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -2318,7 +2318,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -2333,7 +2333,7 @@ LIBRARIES = {
             ":mojo_cpp_bindings",
             ":mojo_cpp_system",
             ":paint_6c7e7ea8bec39a32",
-            ":paint_72198bff3a66bb77",
+            ":paint_72198bff3a66bb77"
         ],
         "linkopts": [
             "-DEFAULTLIB:d3d11.lib",
@@ -2393,7 +2393,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -2468,9 +2468,9 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -2689,7 +2689,7 @@ SHARED_HEADERS = [
     "//:gpu/raster_export.h",
     "//:gpu/vulkan/vulkan_info.h",
     "//:gpu/vulkan/vulkan_ycbcr_info.h",
-    "//:third_party/khronos/GLES2/gl2.h",
+    "//:third_party/khronos/GLES2/gl2.h"
 ]
 
 ACTIONS = []

@@ -17809,6 +17809,12 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
+        "resource_assets": {
+            "@chromium_dxc//:resources/windows_version_resource.rc": {}
+        },
+        "resource_include_roots": {
+            "@chromium_dxc//:resources/windows_version_resource.rc": "third_party/dawn/third_party/dxc/resources"
+        },
         "c_copts": [
             "/W4",
             "-Wimplicit-fallthrough",

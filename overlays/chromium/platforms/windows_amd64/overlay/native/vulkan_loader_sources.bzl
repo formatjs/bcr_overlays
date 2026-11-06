@@ -248,6 +248,12 @@ LIBRARIES = {
             "LOADER_USE_UNSAFE_FILE_SEARCH=1",
             "VK_USE_PLATFORM_WIN32_KHR"
         ],
+        "resource_assets": {
+            ":gen/third_party/vulkan-loader/src/loader.rc": {}
+        },
+        "resource_include_roots": {
+            ":gen/third_party/vulkan-loader/src/loader.rc": "out/bazel-import/gen/third_party/vulkan-loader/src"
+        },
         "c_copts": [
             "-Wno-incompatible-pointer-types",
             "-fno-delete-null-pointer-checks",

@@ -1,0 +1,44 @@
+exports_files(
+    [
+        "algorithm.h",
+        "container.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "algorithm.h",
+    "container.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "algorithm.h",
+    "container.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "algorithm.h",
+    "container.h"
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "algorithm.h",
+    "container.h"
+])
+# END CONTENT INPUTS
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "algorithm.h",
+    "container.h"
+])
+# END BROWSER INPUTS

@@ -1,0 +1,15 @@
+alias(
+    name = "libperfetto",
+    actual = "//native:perfetto_runtime",
+    visibility = ["//visibility:public"],
+)
+
+exports_files(["BUILD.bazel"])
+
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "protos/perfetto/config/perfetto_config.proto"
+])
+# END BROWSER INPUTS

@@ -1,0 +1,8 @@
+{
+  "//third_party/blink/renderer/modules:make_modules_generated_media_capabilities_names": "blink_modules_13060285f2ef5fd0_0",
+  "//third_party/blink/renderer/modules:make_modules_generated_indexed_db_names": "blink_modules_71bdacca5be2c53e_0",
+  "//third_party/blink/renderer/modules:make_modules_generated_event_target_names": "blink_modules_f8fe11c23dbe43ca_0",
+  "//third_party/blink/renderer/modules:make_modules_generated_event_names": "blink_modules_ef93f2e215ab8233_0",
+  "//third_party/blink/renderer/modules:modules_event_interfaces": "blink_modules_97bd0d83ddea5da2_0",
+  "//third_party/blink/renderer/modules:make_modules_generated_event_factory": "blink_modules_d5a63d045baccdae_0"
+}

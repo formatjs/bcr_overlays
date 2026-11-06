@@ -1,0 +1,64 @@
+exports_files(
+    [
+        "any_invocable.h",
+        "bind_front.h",
+        "function_ref.h",
+        "internal/any_invocable.h",
+        "internal/front_binder.h",
+        "internal/function_ref.h",
+        "overload.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "any_invocable.h",
+    "function_ref.h",
+    "internal/any_invocable.h",
+    "internal/function_ref.h",
+    "overload.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "any_invocable.h",
+    "function_ref.h",
+    "internal/any_invocable.h",
+    "internal/function_ref.h",
+    "overload.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "any_invocable.h",
+    "function_ref.h",
+    "internal/any_invocable.h",
+    "internal/function_ref.h",
+    "overload.h"
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "any_invocable.h",
+    "function_ref.h",
+    "internal/any_invocable.h",
+    "internal/function_ref.h",
+    "overload.h"
+])
+# END CONTENT INPUTS
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "any_invocable.h",
+    "function_ref.h",
+    "internal/any_invocable.h",
+    "internal/function_ref.h",
+    "overload.h"
+])
+# END BROWSER INPUTS

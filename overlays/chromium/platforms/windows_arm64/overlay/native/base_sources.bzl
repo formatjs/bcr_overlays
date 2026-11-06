@@ -3,10 +3,10 @@
 SOURCES = {
     "base_static": [
         "base/base_switches.cc",
-        "base/win/static_constants.cc",
+        "base/win/static_constants.cc"
     ],
     "cityhash_v103": [
-        "base/third_party/cityhash_v103/src/city_v103.cc",
+        "base/third_party/cityhash_v103/src/city_v103.cc"
     ],
     "base": [
         "base/allocator/allocator_check.cc",
@@ -467,7 +467,7 @@ SOURCES = {
         "base/tracing/tracing_tls.cc",
         "base/trace_event/etw_interceptor_win.cc",
         "base/trace_event/trace_logging_minimal_win.cc",
-        "base/trace_event/address_space_dump_provider.cc",
+        "base/trace_event/address_space_dump_provider.cc"
     ],
     "base_i18n": [
         "base/i18n/base_i18n_switches.cc",
@@ -489,11 +489,11 @@ SOURCES = {
         "base/i18n/time_formatting.cc",
         "base/i18n/timezone.cc",
         "base/i18n/transliterator.cc",
-        "base/i18n/utf8_validator_tables.cc",
+        "base/i18n/utf8_validator_tables.cc"
     ],
     "pe_image": [
-        "base/win/pe_image.cc",
-    ],
+        "base/win/pe_image.cc"
+    ]
 }
 
 HEADERS = [
@@ -1561,7 +1561,7 @@ HEADERS = [
     "base/win/winrt_storage_util.h",
     "base/win/wintrust_shim.h",
     "base/win/wmi.h",
-    "base/win/wrapped_window_proc.h",
+    "base/win/wrapped_window_proc.h"
 ]
 
 COPTS = {
@@ -1640,7 +1640,7 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
+        "/EHs-c-"
     ],
     "cityhash_v103": [
         "/W4",
@@ -1718,7 +1718,7 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
+        "/EHs-c-"
     ],
     "base": [
         "/W4",
@@ -1802,7 +1802,7 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
+        "/EHs-c-"
     ],
     "base_i18n": [
         "/W4",
@@ -1879,7 +1879,7 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
+        "/EHs-c-"
     ],
     "pe_image": [
         "/W4",
@@ -1957,8 +1957,8 @@ COPTS = {
         "/std:c++20",
         "-Wno-trigraphs",
         "/GR-",
-        "/EHs-c-",
-    ],
+        "/EHs-c-"
+    ]
 }
 
 DEFINES = {
@@ -1992,7 +1992,7 @@ DEFINES = {
         "WINVER=0x0A00",
         "NDEBUG",
         "NVALGRIND",
-        "DYNAMIC_ANNOTATIONS_ENABLED=0",
+        "DYNAMIC_ANNOTATIONS_ENABLED=0"
     ],
     "cityhash_v103": [
         "_HAS_NODISCARD",
@@ -2024,7 +2024,7 @@ DEFINES = {
         "WINVER=0x0A00",
         "NDEBUG",
         "NVALGRIND",
-        "DYNAMIC_ANNOTATIONS_ENABLED=0",
+        "DYNAMIC_ANNOTATIONS_ENABLED=0"
     ],
     "base": [
         "BASE_IMPLEMENTATION",
@@ -2058,7 +2058,7 @@ DEFINES = {
         "WINVER=0x0A00",
         "NDEBUG",
         "NVALGRIND",
-        "DYNAMIC_ANNOTATIONS_ENABLED=0",
+        "DYNAMIC_ANNOTATIONS_ENABLED=0"
     ],
     "base_i18n": [
         "BASE_I18N_IMPLEMENTATION",
@@ -2098,7 +2098,7 @@ DEFINES = {
         "U_ENABLE_TRACING=1",
         "U_ENABLE_RESOURCE_TRACING=0",
         "U_STATIC_IMPLEMENTATION",
-        "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+        "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
     ],
     "pe_image": [
         "_HAS_NODISCARD",
@@ -2130,6 +2130,6 @@ DEFINES = {
         "WINVER=0x0A00",
         "NDEBUG",
         "NVALGRIND",
-        "DYNAMIC_ANNOTATIONS_ENABLED=0",
-    ],
+        "DYNAMIC_ANNOTATIONS_ENABLED=0"
+    ]
 }

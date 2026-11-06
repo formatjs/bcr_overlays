@@ -1,0 +1,48 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "base_task_api.h",
+    "category.h",
+    "error_reporter.cc",
+    "error_reporter.h",
+    "external_file_handler.cc",
+    "external_file_handler.h",
+    "task_api_factory.cc",
+    "task_api_factory.h",
+    "task_utils.cc",
+    "task_utils.h",
+    "tflite_engine.cc",
+    "tflite_engine.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "category.h"
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "base_task_api.h",
+    "category.h",
+    "error_reporter.h",
+    "external_file_handler.h",
+    "task_utils.h",
+    "tflite_engine.h"
+])
+# END CONTENT INPUTS
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "base_task_api.h",
+    "category.h",
+    "error_reporter.h",
+    "external_file_handler.h",
+    "task_api_factory.h",
+    "task_utils.h",
+    "tflite_engine.h"
+])
+# END BROWSER INPUTS

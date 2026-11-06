@@ -81,7 +81,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -113,15 +113,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ffmpeg_fc1ea150985320a2",
+            ":ffmpeg_fc1ea150985320a2"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -134,7 +134,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "ffmpeg_config": "chromium/config/Chromium/win/arm64",
         "asm_copts": [],
@@ -210,8 +210,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ffmpeg:ffmpeg_internal": {
         "name": "ffmpeg_fc1ea150985320a2",
@@ -421,11 +421,11 @@ LIBRARIES = {
             "@chromium_ffmpeg//:libavcodec/aarch64/mpegaudiodsp_neon.S",
             "@chromium_ffmpeg//:libavutil/aarch64/autorename_libavutil_aarch64_float_dsp_neon.S",
             "@chromium_ffmpeg//:libavutil/aarch64/cpu_sve.S",
-            "@chromium_ffmpeg//:libavutil/aarch64/tx_float_neon.S",
+            "@chromium_ffmpeg//:libavutil/aarch64/tx_float_neon.S"
         ],
         "hdrs": [
             "@chromium_ffmpeg//:chromium/config/Chromium/win/arm64/config.h",
-            "@chromium_ffmpeg//:chromium/config/Chromium/win/arm64/libavutil/avconfig.h",
+            "@chromium_ffmpeg//:chromium/config/Chromium/win/arm64/libavutil/avconfig.h"
         ],
         "copts": [
             "/wd4996",
@@ -531,7 +531,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "HAVE_AV_CONFIG_H",
@@ -569,15 +569,15 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ffmpeg_opus",
+            ":ffmpeg_opus"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -590,7 +590,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "ffmpeg_config": "chromium/config/Chromium/win/arm64",
         "asm_copts": [],
@@ -695,9 +695,9 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -1000,7 +1000,7 @@ SHARED_HEADERS = [
     "@chromium_ffmpeg//:libavutil/x86/intmath.h",
     "@chromium_ffmpeg//:libavutil/x86/intreadwrite.h",
     "@chromium_ffmpeg//:libavutil/x86/pixelutils.h",
-    "@chromium_ffmpeg//:libavutil/x86/timer.h",
+    "@chromium_ffmpeg//:libavutil/x86/timer.h"
 ]
 
 ACTIONS = []

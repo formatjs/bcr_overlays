@@ -11028,6 +11028,15 @@ LIBRARIES = {
             "GL_GLEXT_PROTOTYPES",
             "EGL_EGLEXT_PROTOTYPES"
         ],
+        "resource_assets": {
+            "@chromium_angle//:third_party/angle/src/libEGL/libEGL.rc": {
+                "@chromium_angle//:third_party/angle/src/common/angle_version.h": "third_party/angle/src/common/angle_version.h",
+                "@chromium_angle//:third_party/angle/src/libEGL/resource.h": "third_party/angle/src/libEGL/resource.h"
+            }
+        },
+        "resource_include_roots": {
+            "@chromium_angle//:third_party/angle/src/libEGL/libEGL.rc": "third_party/angle/src/libEGL"
+        },
         "c_copts": [
             "/W4",
             "-Wimplicit-fallthrough",
@@ -11790,6 +11799,15 @@ LIBRARIES = {
             "ANGLE_ENABLE_WGPU",
             "ANGLE_PRELOADED_D3DCOMPILER_MODULE_NAMES={ \"d3dcompiler_47.dll\", \"d3dcompiler_46.dll\", \"d3dcompiler_43.dll\" }"
         ],
+        "resource_assets": {
+            "@chromium_angle//:third_party/angle/src/libGLESv2/libGLESv2.rc": {
+                "@chromium_angle//:third_party/angle/src/common/angle_version.h": "third_party/angle/src/common/angle_version.h",
+                "@chromium_angle//:third_party/angle/src/libGLESv2/resource.h": "third_party/angle/src/libGLESv2/resource.h"
+            }
+        },
+        "resource_include_roots": {
+            "@chromium_angle//:third_party/angle/src/libGLESv2/libGLESv2.rc": "third_party/angle/src/libGLESv2"
+        },
         "c_copts": [
             "/W4",
             "-Wimplicit-fallthrough",

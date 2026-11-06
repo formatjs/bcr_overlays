@@ -90,3 +90,7 @@ def native_blink_platform():
         name = "blink_platform",
         actual = ":" + LIBRARIES["//third_party/blink/renderer/platform:platform"]["name"],
     )
+    native.alias(
+        name = "libxml",
+        actual = ":" + LIBRARIES["//third_party/libxml:libxml"]["name"],
+    )

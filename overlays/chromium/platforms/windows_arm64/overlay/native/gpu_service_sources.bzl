@@ -15,7 +15,7 @@ LIBRARIES = {
             "//:components/persistent_cache/sqlite/sqlite_backend_impl.cc",
             "//:components/persistent_cache/sqlite/vfs/sandboxed_file.cc",
             "//:components/persistent_cache/sqlite/vfs/sqlite_database_vfs_file_set.cc",
-            "//:components/persistent_cache/sqlite/vfs/sqlite_sandboxed_vfs.cc",
+            "//:components/persistent_cache/sqlite/vfs/sqlite_sandboxed_vfs.cc"
         ],
         "hdrs": [
             "//:components/persistent_cache/backend.h",
@@ -29,7 +29,7 @@ LIBRARIES = {
             "//:components/persistent_cache/sqlite/sqlite_entry_impl.h",
             "//:components/persistent_cache/sqlite/vfs/sandboxed_file.h",
             "//:components/persistent_cache/sqlite/vfs/sqlite_database_vfs_file_set.h",
-            "//:components/persistent_cache/sqlite/vfs/sqlite_sandboxed_vfs.h",
+            "//:components/persistent_cache/sqlite/vfs/sqlite_sandboxed_vfs.h"
         ],
         "copts": [
             "/W4",
@@ -106,7 +106,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_PERSISTENT_CACHE_IMPL",
@@ -181,7 +181,7 @@ LIBRARIES = {
             "SQLITE_ENABLE_BATCH_ATOMIC_WRITE",
             "SQLITE_TEMP_STORE=3",
             "SQLITE_ENABLE_LOCKING_STYLE=0",
-            "SQLITE_ENABLE_API_ARMOR",
+            "SQLITE_ENABLE_API_ARMOR"
         ],
         "includes": [
             "..",
@@ -189,12 +189,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":chromium_sqlite",
-            ":network_a866aa0adf8cd857",
+            ":network_a866aa0adf8cd857"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -235,7 +235,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -309,20 +309,20 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/client/internal:internal": {
         "name": "gpu_service_844feb113cc3be3d",
         "kind": "static_library",
         "srcs": [
             "//:gpu/command_buffer/client/internal/mappable_buffer_shared_memory.cc",
-            "//:gpu/command_buffer/client/internal/mappable_buffer_dxgi.cc",
+            "//:gpu/command_buffer/client/internal/mappable_buffer_dxgi.cc"
         ],
         "hdrs": [
             "//:gpu/command_buffer/client/internal/mappable_buffer.h",
             "//:gpu/command_buffer/client/internal/mappable_buffer_dxgi.h",
-            "//:gpu/command_buffer/client/internal/mappable_buffer_shared_memory.h",
+            "//:gpu/command_buffer/client/internal/mappable_buffer_shared_memory.h"
         ],
         "copts": [
             "/W4",
@@ -399,7 +399,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -455,7 +455,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -465,12 +465,12 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":gpu_protocol_2626761fe082308a",
             ":gpu_service_7c552116cbb30722",
-            ":linux_ui_6aed93e9638c7edf",
+            ":linux_ui_6aed93e9638c7edf"
         ],
         "linkopts": [
             "-DEFAULTLIB:d3d11.lib",
@@ -529,7 +529,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -603,8 +603,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/client:client": {
         "name": "gpu_service_fdaed19491ff9b4d",
@@ -686,7 +686,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -737,7 +737,7 @@ LIBRARIES = {
             "CHROMIUM",
             "LIBYUV_DISABLE_SME",
             "LIBYUV_DISABLE_LSX",
-            "LIBYUV_DISABLE_LASX",
+            "LIBYUV_DISABLE_LASX"
         ],
         "includes": [
             "..",
@@ -747,10 +747,10 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
-            ":gpu_service_a8dd4cccc681281f",
+            ":gpu_service_a8dd4cccc681281f"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -810,7 +810,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -884,8 +884,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/client:client_sources": {
         "name": "gpu_service_a8dd4cccc681281f",
@@ -902,7 +902,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/client/ring_buffer.cc",
             "//:gpu/command_buffer/client/shared_image_interface.cc",
             "//:gpu/command_buffer/client/shared_image_pool.cc",
-            "//:gpu/command_buffer/client/transfer_buffer.cc",
+            "//:gpu/command_buffer/client/transfer_buffer.cc"
         ],
         "hdrs": [
             "//:gpu/command_buffer/client/client_discardable_manager.h",
@@ -924,7 +924,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/include/dawn/webgpu_cpp_print.h",
             ":gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp.h",
             ":gen/third_party/dawn/include/dawn/wire/client/webgpu_cpp_print.h",
-            ":gen/third_party/dawn/include/webgpu/webgpu_cpp_chained_struct.h",
+            ":gen/third_party/dawn/include/webgpu/webgpu_cpp_chained_struct.h"
         ],
         "copts": [
             "/W4",
@@ -1001,7 +1001,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1061,7 +1061,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -1071,7 +1071,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -1086,7 +1086,7 @@ LIBRARIES = {
             ":gpu_service_803060720ed6e765",
             ":gpu_service_844feb113cc3be3d",
             ":gpu_service_e55cbfdcd7a448ce",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1146,7 +1146,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -1220,15 +1220,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/client:export": {
         "name": "gpu_service_7c552116cbb30722",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:gpu/command_buffer/client/gpu_command_buffer_client_export.h",
+            "//:gpu/command_buffer/client/gpu_command_buffer_client_export.h"
         ],
         "copts": [
             "/W4",
@@ -1305,7 +1305,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1337,12 +1337,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -1356,7 +1356,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -1430,8 +1430,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/client:webgpu_interface": {
         "name": "gpu_service_e55cbfdcd7a448ce",
@@ -1439,7 +1439,7 @@ LIBRARIES = {
         "srcs": [],
         "hdrs": [
             "//:gpu/command_buffer/client/webgpu_interface.h",
-            "//:gpu/command_buffer/client/webgpu_interface_autogen.h",
+            "//:gpu/command_buffer/client/webgpu_interface_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -1516,7 +1516,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1570,7 +1570,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -1580,13 +1580,13 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":gpu_protocol_ca02c0e997a80bcb",
             ":gpu_service_0a8a9e12bcad4812",
-            ":gpu_service_813e1aa67ec87493",
+            ":gpu_service_813e1aa67ec87493"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1641,7 +1641,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -1715,15 +1715,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/common:raster_sources": {
         "name": "gpu_service_17f8add9507987ae",
         "kind": "source_set",
         "srcs": [
             "//:gpu/command_buffer/common/raster_cmd_format.cc",
-            "//:gpu/command_buffer/common/skia_utils.cc",
+            "//:gpu/command_buffer/common/skia_utils.cc"
         ],
         "hdrs": [
             "//:gpu/command_buffer/common/raster_cmd_enums.h",
@@ -1731,7 +1731,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/common/raster_cmd_format_autogen.h",
             "//:gpu/command_buffer/common/raster_cmd_ids.h",
             "//:gpu/command_buffer/common/raster_cmd_ids_autogen.h",
-            "//:gpu/command_buffer/common/skia_utils.h",
+            "//:gpu/command_buffer/common/skia_utils.h"
         ],
         "copts": [
             "/W4",
@@ -1808,7 +1808,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1864,7 +1864,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -1874,7 +1874,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -1882,7 +1882,7 @@ LIBRARIES = {
             ":gpu_protocol_2626761fe082308a",
             ":gpu_protocol_e058e994a56dcd69",
             ":linux_ui_6aed93e9638c7edf",
-            ":skia",
+            ":skia"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1940,7 +1940,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -2014,8 +2014,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/common:webgpu": {
         "name": "gpu_service_0a8a9e12bcad4812",
@@ -2026,10 +2026,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_service_a6df003c0d4796d4",
+            ":gpu_service_a6df003c0d4796d4"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2046,15 +2046,15 @@ LIBRARIES = {
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
             "-DEFAULTLIB:ncrypt.lib",
-            "-DEFAULTLIB:fontsub.lib",
+            "-DEFAULTLIB:fontsub.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/command_buffer/common:webgpu_sources": {
         "name": "gpu_service_a6df003c0d4796d4",
         "kind": "source_set",
         "srcs": [
-            "//:gpu/command_buffer/common/webgpu_cmd_format.cc",
+            "//:gpu/command_buffer/common/webgpu_cmd_format.cc"
         ],
         "hdrs": [
             "//:gpu/command_buffer/common/dawn_memory_transfer_handle.h",
@@ -2062,7 +2062,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/common/webgpu_cmd_format.h",
             "//:gpu/command_buffer/common/webgpu_cmd_format_autogen.h",
             "//:gpu/command_buffer/common/webgpu_cmd_ids.h",
-            "//:gpu/command_buffer/common/webgpu_cmd_ids_autogen.h",
+            "//:gpu/command_buffer/common/webgpu_cmd_ids_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -2139,7 +2139,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2187,7 +2187,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -2197,14 +2197,14 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
             ":gpu_protocol_04e0d0af17ec913a",
             ":gpu_protocol_2626761fe082308a",
             ":gpu_service_803060720ed6e765",
-            ":gpu_service_8f63ea183c0904a8",
+            ":gpu_service_8f63ea183c0904a8"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2248,7 +2248,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -2322,17 +2322,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/service:disk_cache_proto": {
         "name": "gpu_service_c11952c062886ea7",
         "kind": "static_library",
         "srcs": [
-            ":gen/gpu/command_buffer/service/disk_cache_proto.pb.cc",
+            ":gen/gpu/command_buffer/service/disk_cache_proto.pb.cc"
         ],
         "hdrs": [
-            ":gen/gpu/command_buffer/service/disk_cache_proto.pb.h",
+            ":gen/gpu/command_buffer/service/disk_cache_proto.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -2410,7 +2410,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2444,15 +2444,15 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -2466,7 +2466,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/wd4125",
@@ -2541,8 +2541,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/service:disk_cache_proto_input_group": {
         "name": "gpu_service_abf88d7b080c4287",
@@ -2553,11 +2553,11 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/command_buffer/service:gles2": {
         "name": "gpu_service_05cfb618cb4ff396",
@@ -2568,10 +2568,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_service_87a2dd15d3f7fc4d",
+            ":gpu_service_87a2dd15d3f7fc4d"
         ],
         "linkopts": [
             "-DEFAULTLIB:d3d11.lib",
@@ -2604,9 +2604,9 @@ LIBRARIES = {
             "-DEFAULTLIB:secur32.lib",
             "-DEFAULTLIB:urlmon.lib",
             "-DEFAULTLIB:wtsapi32.lib",
-            "-DEFAULTLIB:delayimp.lib",
+            "-DEFAULTLIB:delayimp.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/command_buffer/service:gles2_sources": {
         "name": "gpu_service_87a2dd15d3f7fc4d",
@@ -2737,7 +2737,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/service/shared_image/dcomp_surface_image_representation.cc",
             "//:gpu/command_buffer/service/shared_image/dxgi_swap_chain_image_backing.cc",
             "//:gpu/command_buffer/service/shared_image/dxgi_swap_chain_image_representation.cc",
-            "//:gpu/command_buffer/service/shared_image/gpu_memory_buffer_factory_dxgi.cc",
+            "//:gpu/command_buffer/service/shared_image/gpu_memory_buffer_factory_dxgi.cc"
         ],
         "hdrs": [
             "//:gpu/command_buffer/service/buffer_manager.h",
@@ -2879,7 +2879,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/service/webgpu_cmd_validation_autogen.h",
             "//:gpu/command_buffer/service/webgpu_cmd_validation_implementation_autogen.h",
             "//:gpu/command_buffer/service/webgpu_decoder.h",
-            "//:gpu/command_buffer/service/webgpu_decoder_impl.h",
+            "//:gpu/command_buffer/service/webgpu_decoder_impl.h"
         ],
         "copts": [
             "/W4",
@@ -2958,7 +2958,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3025,7 +3025,7 @@ LIBRARIES = {
             "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
             "ANGLE_DELEGATE_WORKERS=1",
             "ANGLE_USE_ABSEIL",
-            "ABSL_ALLOCATOR_NOTHROW=1",
+            "ABSL_ALLOCATOR_NOTHROW=1"
         ],
         "includes": [
             "..",
@@ -3036,7 +3036,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             "//third_party/zlib",
@@ -3077,7 +3077,7 @@ LIBRARIES = {
             ":protobuf_lite_runtime",
             ":skia",
             ":skia_3e2be659073cb989",
-            "@re2//:re2",
+            "@re2//:re2"
         ],
         "linkopts": [
             "-DEFAULTLIB:d3d11.lib",
@@ -3139,7 +3139,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -3214,8 +3214,8 @@ LIBRARIES = {
             "/FIbuild/precompile.h",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/service:service": {
         "name": "gpu_service_2fa35cb5feea2f91",
@@ -3297,7 +3297,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3348,7 +3348,7 @@ LIBRARIES = {
             "CHROMIUM",
             "LIBYUV_DISABLE_SME",
             "LIBYUV_DISABLE_LSX",
-            "LIBYUV_DISABLE_LASX",
+            "LIBYUV_DISABLE_LASX"
         ],
         "includes": [
             "..",
@@ -3358,10 +3358,10 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
-            ":gpu_service_45bb364c8d914e17",
+            ":gpu_service_45bb364c8d914e17"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3421,7 +3421,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -3495,8 +3495,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/command_buffer/service:service_sources": {
         "name": "gpu_service_45bb364c8d914e17",
@@ -3514,7 +3514,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/service/sync_point_manager.cc",
             "//:gpu/command_buffer/service/task_graph.cc",
             "//:gpu/command_buffer/service/texture_base.cc",
-            "//:gpu/command_buffer/service/transfer_buffer_manager.cc",
+            "//:gpu/command_buffer/service/transfer_buffer_manager.cc"
         ],
         "hdrs": [
             "//:gpu/command_buffer/service/async_api_interface.h",
@@ -3533,7 +3533,7 @@ LIBRARIES = {
             "//:gpu/command_buffer/service/sync_point_manager.h",
             "//:gpu/command_buffer/service/task_graph.h",
             "//:gpu/command_buffer/service/texture_base.h",
-            "//:gpu/command_buffer/service/transfer_buffer_manager.h",
+            "//:gpu/command_buffer/service/transfer_buffer_manager.h"
         ],
         "copts": [
             "/W4",
@@ -3611,7 +3611,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3671,7 +3671,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -3681,7 +3681,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -3693,7 +3693,7 @@ LIBRARIES = {
             ":gpu_service_fdaed19491ff9b4d",
             ":linux_ui_6aed93e9638c7edf",
             ":linux_ui_ed4d3d1817da2248",
-            ":url",
+            ":url"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3753,7 +3753,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -3828,8 +3828,8 @@ LIBRARIES = {
             "/FIbuild/precompile.h",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/config:config": {
         "name": "gpu_service_c59444c6fdc58fd5",
@@ -3855,7 +3855,7 @@ LIBRARIES = {
             "//:gpu/config/webgpu_blocklist.cc",
             ":gen/gpu/config/gpu_driver_bug_list_autogen.cc",
             ":gen/gpu/config/software_rendering_list_autogen.cc",
-            "//:gpu/config/gpu_info_collector_win.cc",
+            "//:gpu/config/gpu_info_collector_win.cc"
         ],
         "hdrs": [
             "//:gpu/config/device_perf_info.h",
@@ -3886,7 +3886,7 @@ LIBRARIES = {
             ":gen/gpu/config/gpu_driver_bug_list_exceptions_autogen.h",
             ":gen/gpu/config/software_rendering_list_arrays_and_structs_autogen.h",
             ":gen/gpu/config/software_rendering_list_autogen.h",
-            ":gen/gpu/config/software_rendering_list_exceptions_autogen.h",
+            ":gen/gpu/config/software_rendering_list_exceptions_autogen.h"
         ],
         "copts": [
             "/W4",
@@ -3964,7 +3964,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "GPU_CONFIG_IMPLEMENTATION",
@@ -4021,7 +4021,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
@@ -4031,7 +4031,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -4051,7 +4051,7 @@ LIBRARIES = {
             ":paint_46dc8112c17a1dbd",
             "@chromium_directx_headers//:dxguids",
             "@re2//:re2",
-            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_headers//:vulkan_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:dxgi.lib",
@@ -4110,7 +4110,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -4185,17 +4185,17 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/config:webgpu_blocklist_impl": {
         "name": "gpu_service_b19faf44d8730f4c",
         "kind": "source_set",
         "srcs": [
-            "//:gpu/config/webgpu_blocklist_impl.cc",
+            "//:gpu/config/webgpu_blocklist_impl.cc"
         ],
         "hdrs": [
-            "//:gpu/config/webgpu_blocklist_impl.h",
+            "//:gpu/config/webgpu_blocklist_impl.h"
         ],
         "copts": [
             "/W4",
@@ -4272,7 +4272,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4304,7 +4304,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -4313,11 +4313,11 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":dawn_c1edac13edbb27af",
+            ":dawn_c1edac13edbb27af"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4358,7 +4358,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -4432,18 +4432,18 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:command_buffer_traits_sources": {
         "name": "gpu_service_2ed9ef602e729c2a",
         "kind": "source_set",
         "srcs": [
-            "//:gpu/ipc/common/gpu_command_buffer_traits.cc",
+            "//:gpu/ipc/common/gpu_command_buffer_traits.cc"
         ],
         "hdrs": [
             "//:gpu/ipc/common/gpu_command_buffer_traits.h",
-            "//:gpu/ipc/common/gpu_command_buffer_traits_multi.h",
+            "//:gpu/ipc/common/gpu_command_buffer_traits_multi.h"
         ],
         "copts": [
             "/W4",
@@ -4520,7 +4520,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4575,7 +4575,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -4585,7 +4585,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -4595,7 +4595,7 @@ LIBRARIES = {
             ":linux_ui_89e3b42584186f89",
             ":linux_ui_c9620d03c8b4301c",
             ":linux_ui_cee6806d3ced4587",
-            ":linux_ui_f22f4902c4399a41",
+            ":linux_ui_f22f4902c4399a41"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4650,7 +4650,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -4724,8 +4724,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:common": {
         "name": "gpu_service_179a952f7b7c7ede",
@@ -4736,10 +4736,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_service_f0433455bafc4063",
+            ":gpu_service_f0433455bafc4063"
         ],
         "linkopts": [
             "-DEFAULTLIB:d3d11.lib",
@@ -4771,16 +4771,16 @@ LIBRARIES = {
             "-DEFAULTLIB:urlmon.lib",
             "-DEFAULTLIB:dxgi.lib",
             "-DEFAULTLIB:wtsapi32.lib",
-            "-DEFAULTLIB:delayimp.lib",
+            "-DEFAULTLIB:delayimp.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/ipc/common:export": {
         "name": "gpu_service_394678dacb398c3d",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:gpu/ipc/common/gpu_ipc_common_export.h",
+            "//:gpu/ipc/common/gpu_ipc_common_export.h"
         ],
         "copts": [
             "/W4",
@@ -4857,7 +4857,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4889,12 +4889,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -4908,7 +4908,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -4982,22 +4982,22 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:gpu_channel_mojom": {
         "name": "gpu_service_c6d6151850037433",
         "kind": "source_set",
         "srcs": [
             ":gen/gpu/ipc/common/gpu_channel.mojom.cc",
-            "//:gpu/ipc/common/command_buffer_mojom_traits.cc",
+            "//:gpu/ipc/common/command_buffer_mojom_traits.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/gpu_channel.mojom-forward.h",
             ":gen/gpu/ipc/common/gpu_channel.mojom-import-headers.h",
             ":gen/gpu/ipc/common/gpu_channel.mojom-shared-message-ids.h",
             ":gen/gpu/ipc/common/gpu_channel.mojom-test-utils.h",
-            ":gen/gpu/ipc/common/gpu_channel.mojom.h",
+            ":gen/gpu/ipc/common/gpu_channel.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -5074,7 +5074,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5130,7 +5130,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -5140,7 +5140,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -5158,7 +5158,7 @@ LIBRARIES = {
             ":mojo_base_types",
             ":mojo_binding_headers",
             ":mojo_cpp_bindings",
-            ":paint_20b148d6d75beadf",
+            ":paint_20b148d6d75beadf"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5217,7 +5217,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -5291,8 +5291,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:gpu_channel_mojom_shared": {
         "name": "gpu_service_aa4cf7c4fde96a4c",
@@ -5374,7 +5374,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5407,7 +5407,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -5415,10 +5415,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":gpu_service_82f7bde438520d2b",
+            ":gpu_service_82f7bde438520d2b"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5461,7 +5461,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -5535,14 +5535,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:gpu_channel_mojom_shared_cpp_sources": {
         "name": "gpu_service_82f7bde438520d2b",
         "kind": "source_set",
         "srcs": [
-            ":gen/gpu/ipc/common/gpu_channel.mojom-shared.cc",
+            ":gen/gpu/ipc/common/gpu_channel.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/gpu_channel.mojom-data-view.h",
@@ -5550,7 +5550,7 @@ LIBRARIES = {
             ":gen/gpu/ipc/common/gpu_channel.mojom-params-data.h",
             ":gen/gpu/ipc/common/gpu_channel.mojom-send-validation.h",
             ":gen/gpu/ipc/common/gpu_channel.mojom-shared-internal.h",
-            ":gen/gpu/ipc/common/gpu_channel.mojom-shared.h",
+            ":gen/gpu/ipc/common/gpu_channel.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -5627,7 +5627,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_MOJOM_SHARED_GPU_EXPORT_IMPL",
@@ -5661,7 +5661,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -5669,7 +5669,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":browser_services_23beecfd37f7a18a",
@@ -5682,7 +5682,7 @@ LIBRARIES = {
             ":linux_ui_9fd2d31dd75f7d3c",
             ":mojo_base_types",
             ":mojo_cpp_bindings",
-            ":paint_f882495ee5f8cad9",
+            ":paint_f882495ee5f8cad9"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5725,7 +5725,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -5799,15 +5799,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:gpu_peak_memory": {
         "name": "gpu_service_389b4dc7117b551e",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:gpu/ipc/common/gpu_peak_memory.h",
+            "//:gpu/ipc/common/gpu_peak_memory.h"
         ],
         "copts": [
             "/W4",
@@ -5884,7 +5884,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5916,12 +5916,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -5935,7 +5935,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -6009,21 +6009,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:gpu_preferences_interface": {
         "name": "gpu_service_4724b15d485ec3a4",
         "kind": "source_set",
         "srcs": [
-            ":gen/gpu/ipc/common/gpu_preferences.mojom.cc",
+            ":gen/gpu/ipc/common/gpu_preferences.mojom.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/gpu_preferences.mojom-forward.h",
             ":gen/gpu/ipc/common/gpu_preferences.mojom-import-headers.h",
             ":gen/gpu/ipc/common/gpu_preferences.mojom-shared-message-ids.h",
             ":gen/gpu/ipc/common/gpu_preferences.mojom-test-utils.h",
-            ":gen/gpu/ipc/common/gpu_preferences.mojom.h",
+            ":gen/gpu/ipc/common/gpu_preferences.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -6100,7 +6100,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6155,7 +6155,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -6165,7 +6165,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -6173,7 +6173,7 @@ LIBRARIES = {
             ":linux_ui_459b0bcff26aeefc",
             ":mojo_base_types",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6228,7 +6228,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -6302,8 +6302,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:gpu_preferences_interface_shared": {
         "name": "gpu_service_c5ba916d0f22b327",
@@ -6314,10 +6314,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_service_a7ca1cb87e78c044",
+            ":gpu_service_a7ca1cb87e78c044"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6333,15 +6333,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/ipc/common:gpu_preferences_interface_shared_cpp_sources": {
         "name": "gpu_service_a7ca1cb87e78c044",
         "kind": "source_set",
         "srcs": [
-            ":gen/gpu/ipc/common/gpu_preferences.mojom-shared.cc",
+            ":gen/gpu/ipc/common/gpu_preferences.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/gpu_preferences.mojom-data-view.h",
@@ -6349,7 +6349,7 @@ LIBRARIES = {
             ":gen/gpu/ipc/common/gpu_preferences.mojom-params-data.h",
             ":gen/gpu/ipc/common/gpu_preferences.mojom-send-validation.h",
             ":gen/gpu/ipc/common/gpu_preferences.mojom-shared-internal.h",
-            ":gen/gpu/ipc/common/gpu_preferences.mojom-shared.h",
+            ":gen/gpu/ipc/common/gpu_preferences.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -6426,7 +6426,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6459,7 +6459,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -6467,12 +6467,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":linux_ui_9fd2d31dd75f7d3c",
             ":mojo_base_types",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6515,7 +6515,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -6589,8 +6589,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:interfaces__has_cpp_proxy": {
         "name": "gpu_service_841491633301e3c9",
@@ -6601,11 +6601,11 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/ipc/common:interfaces_cpp_sources": {
         "name": "gpu_service_86270799b7c4430c",
@@ -6634,7 +6634,7 @@ LIBRARIES = {
             "//:gpu/ipc/common/shared_image_capabilities_mojom_traits.cc",
             "//:gpu/ipc/common/shared_image_pool_id_mojom_traits.cc",
             "//:gpu/ipc/common/gpu_disk_cache_type_mojom_traits.cc",
-            "//:gpu/ipc/common/luid_mojom_traits.cc",
+            "//:gpu/ipc/common/luid_mojom_traits.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/capabilities.mojom-forward.h",
@@ -6721,7 +6721,7 @@ LIBRARIES = {
             ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom-import-headers.h",
             ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom-shared-message-ids.h",
             ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom-test-utils.h",
-            ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom.h",
+            ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -6798,7 +6798,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6854,7 +6854,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -6864,7 +6864,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -6884,7 +6884,7 @@ LIBRARIES = {
             ":mojo_base_types",
             ":mojo_binding_headers",
             ":mojo_cpp_bindings",
-            ":paint_20b148d6d75beadf",
+            ":paint_20b148d6d75beadf"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6943,7 +6943,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -7017,8 +7017,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:interfaces_shared": {
         "name": "gpu_service_f237a5db6474077f",
@@ -7100,7 +7100,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7133,7 +7133,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -7141,10 +7141,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":gpu_service_08c123539ca8d09a",
+            ":gpu_service_08c123539ca8d09a"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7187,7 +7187,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -7261,8 +7261,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:interfaces_shared_cpp_sources": {
         "name": "gpu_service_08c123539ca8d09a",
@@ -7284,7 +7284,7 @@ LIBRARIES = {
             ":gen/gpu/ipc/common/shared_image_pool_id.mojom-shared.cc",
             ":gen/gpu/ipc/common/sync_token.mojom-shared.cc",
             ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom-shared.cc",
-            ":gen/gpu/ipc/common/luid.mojom-shared.cc",
+            ":gen/gpu/ipc/common/luid.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/capabilities.mojom-data-view.h",
@@ -7388,7 +7388,7 @@ LIBRARIES = {
             ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom-params-data.h",
             ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom-send-validation.h",
             ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom-shared-internal.h",
-            ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom-shared.h",
+            ":gen/gpu/ipc/common/vulkan_ycbcr_info.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -7465,7 +7465,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_MOJOM_SHARED_GPU_EXPORT_IMPL",
@@ -7499,7 +7499,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -7507,7 +7507,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":geometry_c8fced2c712ec0b3",
@@ -7519,7 +7519,7 @@ LIBRARIES = {
             ":linux_ui_9fd2d31dd75f7d3c",
             ":mojo_base_types",
             ":mojo_cpp_bindings",
-            ":paint_f882495ee5f8cad9",
+            ":paint_f882495ee5f8cad9"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7562,7 +7562,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -7636,8 +7636,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:ipc_common_sources": {
         "name": "gpu_service_f0433455bafc4063",
@@ -7646,7 +7646,7 @@ LIBRARIES = {
             "//:gpu/ipc/common/gpu_disk_cache_type.cc",
             "//:gpu/ipc/common/gpu_memory_buffer_support.cc",
             "//:gpu/ipc/common/gpu_param_traits.cc",
-            "//:gpu/ipc/common/dxgi_helpers.cc",
+            "//:gpu/ipc/common/dxgi_helpers.cc"
         ],
         "hdrs": [
             "//:gpu/ipc/common/command_buffer_id.h",
@@ -7659,7 +7659,7 @@ LIBRARIES = {
             "//:gpu/ipc/common/gpu_param_traits.h",
             "//:gpu/ipc/common/gpu_param_traits_macros.h",
             "//:gpu/ipc/common/gpu_watchdog_timeout.h",
-            "//:gpu/ipc/common/result_codes.h",
+            "//:gpu/ipc/common/result_codes.h"
         ],
         "copts": [
             "/W4",
@@ -7736,7 +7736,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7796,7 +7796,7 @@ LIBRARIES = {
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
             "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
-            "CRASHPAD_ZLIB_SOURCE_EXTERNAL",
+            "CRASHPAD_ZLIB_SOURCE_EXTERNAL"
         ],
         "includes": [
             "..",
@@ -7806,7 +7806,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -7832,7 +7832,7 @@ LIBRARIES = {
             ":linux_ui_ed4d3d1817da2248",
             ":linux_ui_f22f4902c4399a41",
             ":linux_ui_f808491510315941",
-            ":paint_72198bff3a66bb77",
+            ":paint_72198bff3a66bb77"
         ],
         "linkopts": [
             "-DEFAULTLIB:d3d11.lib",
@@ -7892,7 +7892,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -7966,17 +7966,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:memory_stats_sources": {
         "name": "gpu_service_16147e956a99b1ce",
         "kind": "source_set",
         "srcs": [
-            "//:gpu/ipc/common/memory_stats.cc",
+            "//:gpu/ipc/common/memory_stats.cc"
         ],
         "hdrs": [
-            "//:gpu/ipc/common/memory_stats.h",
+            "//:gpu/ipc/common/memory_stats.h"
         ],
         "copts": [
             "/W4",
@@ -8053,7 +8053,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8086,7 +8086,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "GPU_IMPLEMENTATION",
+            "GPU_IMPLEMENTATION"
         ],
         "includes": [
             "..",
@@ -8094,11 +8094,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":gpu_service_394678dacb398c3d",
+            ":gpu_service_394678dacb398c3d"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -8139,7 +8139,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -8213,14 +8213,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:mojom_traits": {
         "name": "gpu_service_a0954be8c57a4271",
         "kind": "source_set",
         "srcs": [
-            "//:gpu/ipc/common/mailbox_mojom_traits.cc",
+            "//:gpu/ipc/common/mailbox_mojom_traits.cc"
         ],
         "hdrs": [
             "//:gpu/ipc/common/context_result_mojom_traits.h",
@@ -8229,7 +8229,7 @@ LIBRARIES = {
             "//:gpu/ipc/common/mailbox_mojom_traits.h",
             "//:gpu/ipc/common/memory_stats_mojom_traits.h",
             "//:gpu/ipc/common/surface_handle_mojom_traits.h",
-            "//:gpu/ipc/common/sync_token_mojom_traits.h",
+            "//:gpu/ipc/common/sync_token_mojom_traits.h"
         ],
         "copts": [
             "/W4",
@@ -8306,7 +8306,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8354,7 +8354,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -8364,7 +8364,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":gpu_protocol_2626761fe082308a",
@@ -8372,7 +8372,7 @@ LIBRARIES = {
             ":gpu_service_1cca834d0af282be",
             ":gpu_service_389b4dc7117b551e",
             ":gpu_service_f237a5db6474077f",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -8416,7 +8416,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -8490,21 +8490,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:shared_image_pool_client_interface": {
         "name": "gpu_service_0fc043dc629a0f04",
         "kind": "source_set",
         "srcs": [
-            ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom.cc",
+            ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-forward.h",
             ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-import-headers.h",
             ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-shared-message-ids.h",
             ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-test-utils.h",
-            ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom.h",
+            ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -8581,7 +8581,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8622,7 +8622,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -8630,14 +8630,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":gpu_service_9bcaecfe8c250b5d",
             ":mojo_base_types",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -8680,7 +8680,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -8754,8 +8754,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:shared_image_pool_client_interface_shared": {
         "name": "gpu_service_9bcaecfe8c250b5d",
@@ -8837,7 +8837,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8870,7 +8870,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -8878,10 +8878,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":gpu_service_e6b2d67a06de32bf",
+            ":gpu_service_e6b2d67a06de32bf"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -8924,7 +8924,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -8998,14 +8998,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:shared_image_pool_client_interface_shared_cpp_sources": {
         "name": "gpu_service_e6b2d67a06de32bf",
         "kind": "source_set",
         "srcs": [
-            ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-shared.cc",
+            ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-data-view.h",
@@ -9013,7 +9013,7 @@ LIBRARIES = {
             ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-params-data.h",
             ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-send-validation.h",
             ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-shared-internal.h",
-            ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-shared.h",
+            ":gen/gpu/ipc/common/shared_image_pool_client_interface.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -9090,7 +9090,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_MOJOM_SHARED_GPU_EXPORT_IMPL",
@@ -9124,7 +9124,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -9132,11 +9132,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":mojo_base_types",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -9179,7 +9179,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -9253,21 +9253,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:surface_handle": {
         "name": "gpu_service_424d5738f29adcc9",
         "kind": "source_set",
         "srcs": [
-            ":gen/gpu/ipc/common/surface_handle.mojom.cc",
+            ":gen/gpu/ipc/common/surface_handle.mojom.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/surface_handle.mojom-forward.h",
             ":gen/gpu/ipc/common/surface_handle.mojom-import-headers.h",
             ":gen/gpu/ipc/common/surface_handle.mojom-shared-message-ids.h",
             ":gen/gpu/ipc/common/surface_handle.mojom-test-utils.h",
-            ":gen/gpu/ipc/common/surface_handle.mojom.h",
+            ":gen/gpu/ipc/common/surface_handle.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -9344,7 +9344,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9377,7 +9377,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -9385,14 +9385,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":gpu_service_eec0f2ec75703f0e",
             ":linux_ui_602674b5a9fb5feb",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -9435,7 +9435,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -9509,8 +9509,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:surface_handle_shared": {
         "name": "gpu_service_eec0f2ec75703f0e",
@@ -9521,10 +9521,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_service_29e1a7181fa0fda6",
+            ":gpu_service_29e1a7181fa0fda6"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -9540,15 +9540,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//gpu/ipc/common:surface_handle_shared_cpp_sources": {
         "name": "gpu_service_29e1a7181fa0fda6",
         "kind": "source_set",
         "srcs": [
-            ":gen/gpu/ipc/common/surface_handle.mojom-shared.cc",
+            ":gen/gpu/ipc/common/surface_handle.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/gpu/ipc/common/surface_handle.mojom-data-view.h",
@@ -9556,7 +9556,7 @@ LIBRARIES = {
             ":gen/gpu/ipc/common/surface_handle.mojom-params-data.h",
             ":gen/gpu/ipc/common/surface_handle.mojom-send-validation.h",
             ":gen/gpu/ipc/common/surface_handle.mojom-shared-internal.h",
-            ":gen/gpu/ipc/common/surface_handle.mojom-shared.h",
+            ":gen/gpu/ipc/common/surface_handle.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -9633,7 +9633,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9666,7 +9666,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -9674,10 +9674,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -9720,7 +9720,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -9794,15 +9794,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/ipc/common:surface_handle_type": {
         "name": "gpu_service_1cca834d0af282be",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:gpu/ipc/common/surface_handle.h",
+            "//:gpu/ipc/common/surface_handle.h"
         ],
         "copts": [
             "/W4",
@@ -9879,7 +9879,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9911,7 +9911,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -9919,10 +9919,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":linux_ui_602674b5a9fb5feb",
+            ":linux_ui_602674b5a9fb5feb"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -9963,7 +9963,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -10037,8 +10037,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//gpu/webgpu:common": {
         "name": "gpu_service_9c18116b2d312bf5",
@@ -10046,7 +10046,7 @@ LIBRARIES = {
         "srcs": [],
         "hdrs": [
             "//:gpu/webgpu/callback.h",
-            ":gen/gpu/webgpu/dawn_commit_hash.h",
+            ":gen/gpu/webgpu/dawn_commit_hash.h"
         ],
         "copts": [
             "/W4",
@@ -10123,7 +10123,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -10155,7 +10155,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -10163,10 +10163,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -10207,7 +10207,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -10281,22 +10281,22 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/viz/public/mojom:shared_image_format": {
         "name": "gpu_service_c8599db32940e74b",
         "kind": "source_set",
         "srcs": [
             ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom.cc",
-            "//:services/viz/public/cpp/compositing/shared_image_format_mojom_traits.cc",
+            "//:services/viz/public/cpp/compositing/shared_image_format_mojom_traits.cc"
         ],
         "hdrs": [
             ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-forward.h",
             ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-import-headers.h",
             ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-shared-message-ids.h",
             ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-test-utils.h",
-            ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom.h",
+            ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -10373,7 +10373,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -10420,7 +10420,7 @@ LIBRARIES = {
             "SK_GPU_WORKAROUNDS_HEADER=\\\"gpu/config/gpu_driver_bug_workaround_autogen.h\\\"",
             "SK_GL",
             "SK_GRAPHITE",
-            "SK_DAWN",
+            "SK_DAWN"
         ],
         "includes": [
             "..",
@@ -10430,7 +10430,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -10438,7 +10438,7 @@ LIBRARIES = {
             ":gpu_protocol_e058e994a56dcd69",
             ":gpu_service_7833c7cc69087f80",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -10482,7 +10482,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -10556,8 +10556,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/viz/public/mojom:shared_image_format_shared": {
         "name": "gpu_service_7833c7cc69087f80",
@@ -10568,10 +10568,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_service_59671a38052ba89d",
+            ":gpu_service_59671a38052ba89d"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -10587,15 +10587,15 @@ LIBRARIES = {
             "-DEFAULTLIB:winmm.lib",
             "-DEFAULTLIB:bcrypt.lib",
             "-DEFAULTLIB:crypt32.lib",
-            "-DEFAULTLIB:ncrypt.lib",
+            "-DEFAULTLIB:ncrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//services/viz/public/mojom:shared_image_format_shared_cpp_sources": {
         "name": "gpu_service_59671a38052ba89d",
         "kind": "source_set",
         "srcs": [
-            ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-shared.cc",
+            ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-data-view.h",
@@ -10603,7 +10603,7 @@ LIBRARIES = {
             ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-params-data.h",
             ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-send-validation.h",
             ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-shared-internal.h",
-            ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-shared.h",
+            ":gen/services/viz/public/mojom/compositing/shared_image_format.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -10680,7 +10680,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -10713,7 +10713,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -10721,11 +10721,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":gpu_protocol_360d60cd2fb1b970",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -10768,7 +10768,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -10842,21 +10842,21 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/webnn/public/mojom:features": {
         "name": "gpu_service_ed52e42632423ee6",
         "kind": "static_library",
         "srcs": [
-            ":gen/services/webnn/public/mojom/features.mojom.cc",
+            ":gen/services/webnn/public/mojom/features.mojom.cc"
         ],
         "hdrs": [
             ":gen/services/webnn/public/mojom/features.mojom-forward.h",
             ":gen/services/webnn/public/mojom/features.mojom-import-headers.h",
             ":gen/services/webnn/public/mojom/features.mojom-shared-message-ids.h",
             ":gen/services/webnn/public/mojom/features.mojom-test-utils.h",
-            ":gen/services/webnn/public/mojom/features.mojom.h",
+            ":gen/services/webnn/public/mojom/features.mojom.h"
         ],
         "copts": [
             "/W4",
@@ -10933,7 +10933,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_WEBNN_MOJOM_FEATURES_IMPL",
@@ -10967,7 +10967,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -10975,13 +10975,13 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":gpu_service_fefdac7ce1c5dd11",
             ":mojo_binding_headers",
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -11024,7 +11024,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -11098,8 +11098,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/webnn/public/mojom:features_shared": {
         "name": "gpu_service_fefdac7ce1c5dd11",
@@ -11181,7 +11181,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11214,7 +11214,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -11222,10 +11222,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":gpu_service_9ea459d893ca02d6",
+            ":gpu_service_9ea459d893ca02d6"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -11268,7 +11268,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -11342,14 +11342,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//services/webnn/public/mojom:features_shared_cpp_sources": {
         "name": "gpu_service_9ea459d893ca02d6",
         "kind": "source_set",
         "srcs": [
-            ":gen/services/webnn/public/mojom/features.mojom-shared.cc",
+            ":gen/services/webnn/public/mojom/features.mojom-shared.cc"
         ],
         "hdrs": [
             ":gen/services/webnn/public/mojom/features.mojom-data-view.h",
@@ -11357,7 +11357,7 @@ LIBRARIES = {
             ":gen/services/webnn/public/mojom/features.mojom-params-data.h",
             ":gen/services/webnn/public/mojom/features.mojom-send-validation.h",
             ":gen/services/webnn/public/mojom/features.mojom-shared-internal.h",
-            ":gen/services/webnn/public/mojom/features.mojom-shared.h",
+            ":gen/services/webnn/public/mojom/features.mojom-shared.h"
         ],
         "copts": [
             "/W4",
@@ -11434,7 +11434,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_WEBNN_MOJOM_FEATURES_SHARED_IMPL",
@@ -11468,7 +11468,7 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "ENABLE_IPC_FUZZER",
+            "ENABLE_IPC_FUZZER"
         ],
         "includes": [
             "..",
@@ -11476,10 +11476,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":mojo_cpp_bindings",
+            ":mojo_cpp_bindings"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -11522,7 +11522,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -11596,8 +11596,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/blink/public/common/tokens:tokens_headers": {
         "name": "gpu_service_813e1aa67ec87493",
@@ -11606,7 +11606,7 @@ LIBRARIES = {
         "hdrs": [
             "//:third_party/blink/public/common/tokens/multi_token.h",
             "//:third_party/blink/public/common/tokens/multi_token_internal.h",
-            "//:third_party/blink/public/common/tokens/tokens.h",
+            "//:third_party/blink/public/common/tokens/tokens.h"
         ],
         "copts": [
             "/W4",
@@ -11683,7 +11683,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11738,7 +11738,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -11748,7 +11748,7 @@ LIBRARIES = {
             "gen/third_party/dawn/include/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/skia/",
+            "gen/third_party/skia/"
         ],
         "deps": [
             ":base",
@@ -11756,7 +11756,7 @@ LIBRARIES = {
             ":linux_ui_a405ea09de23c84e",
             ":mojo_base_types",
             ":mojo_cpp_bindings",
-            ":mojo_cpp_system",
+            ":mojo_cpp_system"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -11811,7 +11811,7 @@ LIBRARIES = {
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
             "-DEFAULTLIB:legacy_stdio_definitions.lib",
-            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll",
+            "/DELAYLOAD:api-ms-win-core-handle-l1-1-0.dll"
         ],
         "c_copts": [
             "/W4",
@@ -11885,15 +11885,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/blink/public/common:common_export": {
         "name": "gpu_service_37f06862dbd34b79",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:third_party/blink/public/common/common_export.h",
+            "//:third_party/blink/public/common/common_export.h"
         ],
         "copts": [
             "/W4",
@@ -11970,7 +11970,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12002,12 +12002,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -12021,7 +12021,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -12095,8 +12095,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/dawn/wire:abseil": {
         "name": "gpu_service_6ad32ab0c6578d91",
@@ -12107,15 +12107,15 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "//third_party/abseil-cpp:absl",
+            "//third_party/abseil-cpp:absl"
         ],
         "linkopts": [
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/dawn/src/dawn/wire:headers": {
         "name": "gpu_service_8f63ea183c0904a8",
@@ -12125,7 +12125,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/include/dawn/wire/Wire.h",
             "@chromium_dawn//:third_party/dawn/include/dawn/wire/WireClient.h",
             "@chromium_dawn//:third_party/dawn/include/dawn/wire/WireServer.h",
-            "@chromium_dawn//:third_party/dawn/include/dawn/wire/dawn_wire_export.h",
+            "@chromium_dawn//:third_party/dawn/include/dawn/wire/dawn_wire_export.h"
         ],
         "copts": [
             "/W4",
@@ -12202,7 +12202,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12234,16 +12234,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/include/",
+            "gen/third_party/dawn/include/"
         ],
         "deps": [
-            ":dawn_9d7389ed01b1ee62",
+            ":dawn_9d7389ed01b1ee62"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -12256,7 +12256,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -12330,8 +12330,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/dawn/wire:static": {
         "name": "gpu_service_75fa5ec7e1030c8a",
@@ -12378,7 +12378,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/dawn/wire/server/ServerProgrammableEncoder.cpp",
             "@chromium_dawn//:third_party/dawn/src/dawn/wire/server/ServerQueue.cpp",
             "@chromium_dawn//:third_party/dawn/src/dawn/wire/server/ServerShaderModule.cpp",
-            "@chromium_dawn//:third_party/dawn/src/dawn/wire/server/ServerSurface.cpp",
+            "@chromium_dawn//:third_party/dawn/src/dawn/wire/server/ServerSurface.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/src/dawn/wire/ObjectType_autogen.h",
@@ -12416,7 +12416,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/dawn/wire/client/Surface.h",
             "@chromium_dawn//:third_party/dawn/src/dawn/wire/client/Texture.h",
             "@chromium_dawn//:third_party/dawn/src/dawn/wire/server/ObjectStorage.h",
-            "@chromium_dawn//:third_party/dawn/src/dawn/wire/server/Server.h",
+            "@chromium_dawn//:third_party/dawn/src/dawn/wire/server/Server.h"
         ],
         "copts": [
             "/W4",
@@ -12496,7 +12496,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12551,7 +12551,7 @@ LIBRARIES = {
             "TINT_BUILD_IS_WIN=1",
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
-            "TINT_ENABLE_IR_VALIDATION=0",
+            "TINT_ENABLE_IR_VALIDATION=0"
         ],
         "includes": [
             "..",
@@ -12559,14 +12559,14 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/dawn/src/",
+            "gen/third_party/dawn/src/"
         ],
         "deps": [
             ":dawn_06cc7db9c0f83700",
             ":dawn_1dd6c1eff7402905",
             ":gpu_service_6ad32ab0c6578d91",
             ":gpu_service_8f63ea183c0904a8",
-            ":tint_67a7c60a544d2570",
+            ":tint_67a7c60a544d2570"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -12581,7 +12581,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -12657,8 +12657,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/dawn/wire:wire": {
         "name": "gpu_service_803060720ed6e765",
@@ -12669,16 +12669,16 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":gpu_service_75fa5ec7e1030c8a",
+            ":gpu_service_75fa5ec7e1030c8a"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
-            "-DEFAULTLIB:winmm.lib",
+            "-DEFAULTLIB:winmm.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/dawn/src/dawn:cpp": {
         "name": "gpu_service_90d07a7bacabc126",
@@ -12760,7 +12760,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12792,16 +12792,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/include/",
+            "gen/third_party/dawn/include/"
         ],
         "deps": [
-            ":dawn_c1edac13edbb27af",
+            ":dawn_c1edac13edbb27af"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -12814,7 +12814,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -12888,8 +12888,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libyuv:libyuv": {
         "name": "gpu_service_c8955ce20d217363",
@@ -12900,16 +12900,16 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":codecs_e42605d894a813ef",
             ":gpu_service_01c3aff6a058027b",
             ":gpu_service_21c59be8ebd56ee0",
-            ":gpu_service_69217e2649dd999c",
+            ":gpu_service_69217e2649dd999c"
         ],
         "linkopts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/libyuv:libyuv_internal": {
         "name": "gpu_service_21c59be8ebd56ee0",
@@ -12950,7 +12950,7 @@ LIBRARIES = {
             "@chromium_libyuv//:source/scale_rvv.cc",
             "@chromium_libyuv//:source/scale_uv.cc",
             "@chromium_libyuv//:source/scale_win.cc",
-            "@chromium_libyuv//:source/video_common.cc",
+            "@chromium_libyuv//:source/video_common.cc"
         ],
         "hdrs": [
             "@chromium_libyuv//:include/libyuv.h",
@@ -12976,7 +12976,7 @@ LIBRARIES = {
             "@chromium_libyuv//:include/libyuv/scale_row.h",
             "@chromium_libyuv//:include/libyuv/scale_uv.h",
             "@chromium_libyuv//:include/libyuv/version.h",
-            "@chromium_libyuv//:include/libyuv/video_common.h",
+            "@chromium_libyuv//:include/libyuv/video_common.h"
         ],
         "copts": [
             "/W4",
@@ -13052,7 +13052,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "HAVE_JPEG",
@@ -13090,15 +13090,15 @@ LIBRARIES = {
             "LIBYUV_DISABLE_SME",
             "LIBYUV_DISABLE_LSX",
             "LIBYUV_DISABLE_LASX",
-            "MANGLE_JPEG_NAMES",
+            "MANGLE_JPEG_NAMES"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":codec_headers",
+            ":codec_headers"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -13111,7 +13111,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -13184,8 +13184,8 @@ LIBRARIES = {
             "/Gw",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libyuv:libyuv_neon": {
         "name": "gpu_service_69217e2649dd999c",
@@ -13198,7 +13198,7 @@ LIBRARIES = {
             "@chromium_libyuv//:source/row_neon.cc",
             "@chromium_libyuv//:source/row_neon64.cc",
             "@chromium_libyuv//:source/scale_neon.cc",
-            "@chromium_libyuv//:source/scale_neon64.cc",
+            "@chromium_libyuv//:source/scale_neon64.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -13277,7 +13277,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -13313,15 +13313,15 @@ LIBRARIES = {
             "CHROMIUM",
             "LIBYUV_DISABLE_SME",
             "LIBYUV_DISABLE_LSX",
-            "LIBYUV_DISABLE_LASX",
+            "LIBYUV_DISABLE_LASX"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":gpu_service_21c59be8ebd56ee0",
+            ":gpu_service_21c59be8ebd56ee0"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -13334,7 +13334,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-march=armv8-a+dotprod+i8mm",
@@ -13409,14 +13409,14 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/libyuv:libyuv_sve": {
         "name": "gpu_service_01c3aff6a058027b",
         "kind": "static_library",
         "srcs": [
-            "@chromium_libyuv//:source/row_sve.cc",
+            "@chromium_libyuv//:source/row_sve.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -13495,7 +13495,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -13531,15 +13531,15 @@ LIBRARIES = {
             "CHROMIUM",
             "LIBYUV_DISABLE_SME",
             "LIBYUV_DISABLE_LSX",
-            "LIBYUV_DISABLE_LASX",
+            "LIBYUV_DISABLE_LASX"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":gpu_service_21c59be8ebd56ee0",
+            ":gpu_service_21c59be8ebd56ee0"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -13552,7 +13552,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "-march=armv9-a+i8mm+sve2",
@@ -13627,18 +13627,18 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//url/ipc:url_ipc": {
         "name": "gpu_service_def41ba3686a82e6",
         "kind": "static_library",
         "srcs": [
-            "//:url/ipc/url_param_traits.cc",
+            "//:url/ipc/url_param_traits.cc"
         ],
         "hdrs": [
             "//:url/ipc/url_ipc_export.h",
-            "//:url/ipc/url_param_traits.h",
+            "//:url/ipc/url_param_traits.h"
         ],
         "copts": [
             "/W4",
@@ -13715,7 +13715,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "URL_IPC_IMPLEMENTATION",
@@ -13756,7 +13756,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -13764,12 +13764,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":linux_ui_cee6806d3ced4587",
-            ":url",
+            ":url"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -13816,7 +13816,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "c_copts": [
             "/W4",
@@ -13890,9 +13890,9 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -14472,7 +14472,7 @@ SHARED_HEADERS = [
     "@chromium_libyuv//:include/libyuv/scale_row.h",
     "@chromium_libyuv//:include/libyuv/scale_uv.h",
     "@chromium_libyuv//:include/libyuv/version.h",
-    "@chromium_libyuv//:include/libyuv/video_common.h",
+    "@chromium_libyuv//:include/libyuv/video_common.h"
 ]
 
 ACTIONS = [
@@ -14592,12 +14592,12 @@ ACTIONS = [
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
             "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/gpu/command_buffer/service/disk_cache_proto.pb.h": "gen/gpu/command_buffer/service/disk_cache_proto.pb.h",
             "gen/gpu/command_buffer/service/disk_cache_proto.pb.cc": "gen/gpu/command_buffer/service/disk_cache_proto.pb.cc",
-            "pyproto/gpu/command_buffer/service/disk_cache_proto_pb2.py": "pyproto/gpu/command_buffer/service/disk_cache_proto_pb2.py",
+            "pyproto/gpu/command_buffer/service/disk_cache_proto_pb2.py": "pyproto/gpu/command_buffer/service/disk_cache_proto_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -14611,12 +14611,12 @@ ACTIONS = [
             "gen/gpu/command_buffer/service",
             "--py-out-dir",
             "pyproto/gpu/command_buffer/service",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":gpu_service_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -14737,7 +14737,7 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
             "gen/gpu/config/gpu_driver_bug_list_arrays_and_structs_autogen.h": "gen/gpu/config/gpu_driver_bug_list_arrays_and_structs_autogen.h",
@@ -14747,7 +14747,7 @@ ACTIONS = [
             "gen/gpu/config/software_rendering_list_arrays_and_structs_autogen.h": "gen/gpu/config/software_rendering_list_arrays_and_structs_autogen.h",
             "gen/gpu/config/software_rendering_list_autogen.cc": "gen/gpu/config/software_rendering_list_autogen.cc",
             "gen/gpu/config/software_rendering_list_autogen.h": "gen/gpu/config/software_rendering_list_autogen.h",
-            "gen/gpu/config/software_rendering_list_exceptions_autogen.h": "gen/gpu/config/software_rendering_list_exceptions_autogen.h",
+            "gen/gpu/config/software_rendering_list_exceptions_autogen.h": "gen/gpu/config/software_rendering_list_exceptions_autogen.h"
         },
         "script": "gpu/config/process_json.py",
         "args": [
@@ -14755,9 +14755,9 @@ ACTIONS = [
             "gen/gpu/config",
             "--skip-testing-data",
             "--os-filter",
-            "win",
+            "win"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -14873,7 +14873,7 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
             "gen/third_party/dawn/src/dawn/wire/ObjectType_autogen.h": "gen/third_party/dawn/src/dawn/wire/ObjectType_autogen.h",
@@ -14888,14 +14888,14 @@ ACTIONS = [
             "gen/third_party/dawn/src/dawn/wire/server/ServerDoers_autogen.cpp": "gen/third_party/dawn/src/dawn/wire/server/ServerDoers_autogen.cpp",
             "gen/third_party/dawn/src/dawn/wire/server/ServerHandlers_autogen.cpp": "gen/third_party/dawn/src/dawn/wire/server/ServerHandlers_autogen.cpp",
             "gen/third_party/dawn/src/dawn/wire/server/ServerPrototypes_autogen.inc": "gen/third_party/dawn/src/dawn/wire/server/ServerPrototypes_autogen.inc",
-            "gen/third_party/dawn/src/dawn/wire/server/WGPUTraits_autogen.h": "gen/third_party/dawn/src/dawn/wire/server/WGPUTraits_autogen.h",
+            "gen/third_party/dawn/src/dawn/wire/server/WGPUTraits_autogen.h": "gen/third_party/dawn/src/dawn/wire/server/WGPUTraits_autogen.h"
         },
         "script": "third_party/dawn/generator/extract_json.py",
         "args": [
             "gen/third_party/dawn/gen.json_tarball",
-            "gen/third_party/dawn",
+            "gen/third_party/dawn"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -15014,10 +15014,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/gen.json_tarball": "gen/third_party/dawn/gen.json_tarball",
+            "gen/third_party/dawn/gen.json_tarball": "gen/third_party/dawn/gen.json_tarball"
         },
         "script": "third_party/dawn/generator/dawn_json_generator.py",
         "args": [
@@ -15038,20 +15038,20 @@ ACTIONS = [
             "--depfile",
             "gen/third_party/dawn/gen.json_tarball.d",
             "--expected-outputs-file",
-            "gen/third_party/dawn/gen.expected_outputs",
+            "gen/third_party/dawn/gen.expected_outputs"
         ],
-        "deps": [],
-    },
+        "deps": []
+    }
 ]
 
 TOOLS = {
     "gpu_service_319da6ea5cc4a541_tool": {
         "tool": ":protobuf_compiler",
-        "logical_path": "out/bazel-import/clang_x64/protoc",
-    },
+        "logical_path": "out/bazel-import/clang_x64/protoc"
+    }
 }
 
 METADATA = {
     "gen/gpu/webgpu/dawn_commit_hash.h": "/* Generated by lastchange.py, do not edit.*/\n\n#ifndef GPU_WEBGPU_DAWN_COMMIT_HASH_H_\n#define GPU_WEBGPU_DAWN_COMMIT_HASH_H_\n\n#define DAWN_COMMIT_HASH \"cee9cb0d67e749bf42f5e90cb3b8a6f525dbb920\"\n\n#endif  // GPU_WEBGPU_DAWN_COMMIT_HASH_H_\n",
-    "gen/third_party/dawn/gen.expected_outputs": "src/dawn/wire/ObjectType_autogen.h\nsrc/dawn/wire/WireCmd_autogen.h\nsrc/dawn/wire/WireCmd_autogen.cpp\nsrc/dawn/wire/client/ApiObjects_autogen.h\nsrc/dawn/wire/client/ApiProcs_autogen.cpp\nsrc/dawn/wire/client/ClientBase_autogen.h\nsrc/dawn/wire/client/ClientHandlers_autogen.cpp\nsrc/dawn/wire/client/ClientPrototypes_autogen.inc\nsrc/dawn/wire/server/ServerBase_autogen.h\nsrc/dawn/wire/server/ServerDoers_autogen.cpp\nsrc/dawn/wire/server/ServerHandlers_autogen.cpp\nsrc/dawn/wire/server/ServerPrototypes_autogen.inc\nsrc/dawn/wire/server/WGPUTraits_autogen.h\n",
+    "gen/third_party/dawn/gen.expected_outputs": "src/dawn/wire/ObjectType_autogen.h\nsrc/dawn/wire/WireCmd_autogen.h\nsrc/dawn/wire/WireCmd_autogen.cpp\nsrc/dawn/wire/client/ApiObjects_autogen.h\nsrc/dawn/wire/client/ApiProcs_autogen.cpp\nsrc/dawn/wire/client/ClientBase_autogen.h\nsrc/dawn/wire/client/ClientHandlers_autogen.cpp\nsrc/dawn/wire/client/ClientPrototypes_autogen.inc\nsrc/dawn/wire/server/ServerBase_autogen.h\nsrc/dawn/wire/server/ServerDoers_autogen.cpp\nsrc/dawn/wire/server/ServerHandlers_autogen.cpp\nsrc/dawn/wire/server/ServerPrototypes_autogen.inc\nsrc/dawn/wire/server/WGPUTraits_autogen.h\n"
 }

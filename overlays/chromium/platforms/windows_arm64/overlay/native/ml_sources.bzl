@@ -5,10 +5,10 @@ LIBRARIES = {
         "name": "ml_d5316b12be605100",
         "kind": "source_set",
         "srcs": [
-            "@chromium_farmhash//:src/farmhash.cc",
+            "@chromium_farmhash//:src/farmhash.cc"
         ],
         "hdrs": [
-            "@chromium_farmhash//:src/farmhash.h",
+            "@chromium_farmhash//:src/farmhash.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -78,7 +78,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -109,12 +109,12 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -128,7 +128,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -196,15 +196,15 @@ LIBRARIES = {
             "-Wno-unused-function",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/fft2d:fft2d": {
         "name": "ml_df0deb8eaa77a7e8",
         "kind": "source_set",
         "srcs": [
             "//:third_party/fft2d/src/fftsg.c",
-            "//:third_party/fft2d/src/fftsg2d.c",
+            "//:third_party/fft2d/src/fftsg2d.c"
         ],
         "hdrs": [],
         "copts": [
@@ -274,7 +274,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -305,12 +305,12 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -324,7 +324,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -391,8 +391,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/gemmlowp:gemmlowp": {
         "name": "ml_4f521ea4011aea6e",
@@ -403,7 +403,7 @@ LIBRARIES = {
             "@chromium_gemmlowp//:public/bit_depth.h",
             "@chromium_gemmlowp//:public/gemmlowp.h",
             "@chromium_gemmlowp//:public/map.h",
-            "@chromium_gemmlowp//:public/output_stages.h",
+            "@chromium_gemmlowp//:public/output_stages.h"
         ],
         "copts": [
             "/W4",
@@ -481,7 +481,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -513,12 +513,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -532,7 +532,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -607,15 +607,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/neon_2_sse:neon_2_sse": {
         "name": "ml_8ec08ce536803ffc",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_neon_2_sse//:NEON_2_SSE.h",
+            "@chromium_neon_2_sse//:NEON_2_SSE.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -684,7 +684,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -715,12 +715,12 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -734,7 +734,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -801,8 +801,8 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy": {
         "name": "ml_ec61bd6ed224cb8a",
@@ -813,7 +813,7 @@ LIBRARIES = {
             "@chromium_ruy//:ruy/matrix.h",
             "@chromium_ruy//:ruy/mul_params.h",
             "@chromium_ruy//:ruy/path.h",
-            "@chromium_ruy//:ruy/ruy.h",
+            "@chromium_ruy//:ruy/ruy.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -883,7 +883,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -914,12 +914,12 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_1ac0d0024a52e94a",
@@ -935,7 +935,7 @@ LIBRARIES = {
             ":ml_c06489580e2ff0ab",
             ":ml_c5cbaa658b9dede4",
             ":ml_e1d5d4755f2c220c",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -948,7 +948,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -1016,17 +1016,17 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_allocator": {
         "name": "ml_4995904312463774",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/allocator.cc",
+            "@chromium_ruy//:ruy/allocator.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/allocator.h",
+            "@chromium_ruy//:ruy/allocator.h"
         ],
         "copts": [
             "/W4",
@@ -1104,7 +1104,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1136,17 +1136,17 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_74f7647e58b474fd",
             ":ml_8c9365b1f0c5f0fa",
-            ":ml_aa6b8231bbfdcbc4",
+            ":ml_aa6b8231bbfdcbc4"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -1159,7 +1159,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -1235,17 +1235,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_apply_multiplier": {
         "name": "ml_2288f1672a78b877",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/apply_multiplier.cc",
+            "@chromium_ruy//:ruy/apply_multiplier.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/apply_multiplier.h",
+            "@chromium_ruy//:ruy/apply_multiplier.h"
         ],
         "copts": [
             "/W4",
@@ -1323,7 +1323,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1355,16 +1355,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_2a9bc8e6a6f08c6b",
-            ":ml_9263e1a3b8848334",
+            ":ml_9263e1a3b8848334"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -1377,7 +1377,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -1453,15 +1453,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_asm_helpers": {
         "name": "ml_5f7679fce9598e85",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/asm_helpers.h",
+            "@chromium_ruy//:ruy/asm_helpers.h"
         ],
         "copts": [
             "/W4",
@@ -1539,7 +1539,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1571,15 +1571,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ml_74f7647e58b474fd",
+            ":ml_74f7647e58b474fd"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -1592,7 +1592,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -1668,17 +1668,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_block_map": {
         "name": "ml_edbef7e4f28dbef0",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/block_map.cc",
+            "@chromium_ruy//:ruy/block_map.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/block_map.h",
+            "@chromium_ruy//:ruy/block_map.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -1748,7 +1748,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -1779,12 +1779,12 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_1fcb04b35df1e4a7",
@@ -1793,7 +1793,7 @@ LIBRARIES = {
             ":ml_8abda7f9743cbf54",
             ":ml_9263e1a3b8848334",
             ":ml_aa6b8231bbfdcbc4",
-            ":ml_c5cbaa658b9dede4",
+            ":ml_c5cbaa658b9dede4"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -1806,7 +1806,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -1874,17 +1874,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_blocking_counter": {
         "name": "ml_6b826c85548a8384",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/blocking_counter.cc",
+            "@chromium_ruy//:ruy/blocking_counter.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/blocking_counter.h",
+            "@chromium_ruy//:ruy/blocking_counter.h"
         ],
         "copts": [
             "/W4",
@@ -1962,7 +1962,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1994,17 +1994,17 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_019cfcf090eaf123",
             ":ml_9263e1a3b8848334",
-            ":ml_bdcc063be4c3825a",
+            ":ml_bdcc063be4c3825a"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -2017,7 +2017,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -2093,15 +2093,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_check_macros": {
         "name": "ml_9263e1a3b8848334",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/check_macros.h",
+            "@chromium_ruy//:ruy/check_macros.h"
         ],
         "copts": [
             "/W4",
@@ -2179,7 +2179,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2211,12 +2211,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -2230,7 +2230,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -2306,17 +2306,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_context": {
         "name": "ml_2b29b12eb7f8354c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/context.cc",
+            "@chromium_ruy//:ruy/context.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/context.h",
+            "@chromium_ruy//:ruy/context.h"
         ],
         "copts": [
             "/W4",
@@ -2394,7 +2394,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2426,12 +2426,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_296489d53bf0b8a8",
@@ -2442,7 +2442,7 @@ LIBRARIES = {
             ":ml_adbf8e0cdb6a245c",
             ":ml_cd502f983046ee5f",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -2455,7 +2455,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -2531,17 +2531,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_context_get_ctx": {
         "name": "ml_e1d5d4755f2c220c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/context_get_ctx.cc",
+            "@chromium_ruy//:ruy/context_get_ctx.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/context_get_ctx.h",
+            "@chromium_ruy//:ruy/context_get_ctx.h"
         ],
         "copts": [
             "/W4",
@@ -2619,7 +2619,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2651,16 +2651,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_296489d53bf0b8a8",
-            ":ml_2b29b12eb7f8354c",
+            ":ml_2b29b12eb7f8354c"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -2673,7 +2673,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -2749,15 +2749,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_cpu_cache_params": {
         "name": "ml_6f102acf900f1250",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/cpu_cache_params.h",
+            "@chromium_ruy//:ruy/cpu_cache_params.h"
         ],
         "copts": [
             "/W4",
@@ -2835,7 +2835,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2867,12 +2867,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -2886,7 +2886,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -2962,17 +2962,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_cpuinfo": {
         "name": "ml_929ff3a995067169",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/cpuinfo.cc",
+            "@chromium_ruy//:ruy/cpuinfo.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/cpuinfo.h",
+            "@chromium_ruy//:ruy/cpuinfo.h"
         ],
         "copts": [
             "/W4",
@@ -3050,7 +3050,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3083,18 +3083,18 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "RUY_HAVE_CPUINFO",
+            "RUY_HAVE_CPUINFO"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_6df9db3596ac9b04",
             ":ml_6f102acf900f1250",
             ":ml_9263e1a3b8848334",
-            "@cpuinfo//:cpuinfo",
+            "@cpuinfo//:cpuinfo"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -3107,7 +3107,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -3183,15 +3183,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_create_trmul_params": {
         "name": "ml_408d43f6158b3668",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/create_trmul_params.h",
+            "@chromium_ruy//:ruy/create_trmul_params.h"
         ],
         "copts": [
             "/W4",
@@ -3269,7 +3269,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3301,12 +3301,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_11b204cd07a08cec",
@@ -3321,7 +3321,7 @@ LIBRARIES = {
             ":ml_9263e1a3b8848334",
             ":ml_adbf8e0cdb6a245c",
             ":ml_c8de04f58ba103ff",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -3334,7 +3334,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -3410,18 +3410,18 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_ctx": {
         "name": "ml_296489d53bf0b8a8",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/ctx.cc",
+            "@chromium_ruy//:ruy/ctx.cc"
         ],
         "hdrs": [
             "@chromium_ruy//:ruy/ctx.h",
-            "@chromium_ruy//:ruy/ctx_impl.h",
+            "@chromium_ruy//:ruy/ctx_impl.h"
         ],
         "copts": [
             "/W4",
@@ -3499,7 +3499,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3531,12 +3531,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_4995904312463774",
@@ -3549,7 +3549,7 @@ LIBRARIES = {
             ":ml_adbf8e0cdb6a245c",
             ":ml_cd502f983046ee5f",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -3562,7 +3562,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -3638,17 +3638,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_denormal": {
         "name": "ml_b60a3dc4457157bc",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/denormal.cc",
+            "@chromium_ruy//:ruy/denormal.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/denormal.h",
+            "@chromium_ruy//:ruy/denormal.h"
         ],
         "copts": [
             "/W4",
@@ -3726,7 +3726,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3758,12 +3758,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -3777,7 +3777,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -3853,17 +3853,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_frontend": {
         "name": "ml_1ac0d0024a52e94a",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/frontend.cc",
+            "@chromium_ruy//:ruy/frontend.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/frontend.h",
+            "@chromium_ruy//:ruy/frontend.h"
         ],
         "copts": [
             "/W4",
@@ -3941,7 +3941,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3973,12 +3973,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_11b204cd07a08cec",
@@ -3991,7 +3991,7 @@ LIBRARIES = {
             ":ml_8a362cfff6496075",
             ":ml_8abda7f9743cbf54",
             ":ml_c5cbaa658b9dede4",
-            ":ml_e897c4575ef87566",
+            ":ml_e897c4575ef87566"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -4004,7 +4004,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -4080,15 +4080,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_have_built_path_for": {
         "name": "ml_a1e913e1dbdc6a61",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/have_built_path_for.h",
+            "@chromium_ruy//:ruy/have_built_path_for.h"
         ],
         "copts": [
             "/W4",
@@ -4165,7 +4165,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4197,18 +4197,18 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_5431d008caf78662",
             ":ml_61439c432f4af873",
             ":ml_6df9db3596ac9b04",
-            ":ml_cd57d79749b0ae48",
+            ":ml_cd57d79749b0ae48"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -4221,7 +4221,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -4296,17 +4296,17 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_have_built_path_for_avx": {
         "name": "ml_61439c432f4af873",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/have_built_path_for_avx.cc",
+            "@chromium_ruy//:ruy/have_built_path_for_avx.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/have_built_path_for.h",
+            "@chromium_ruy//:ruy/have_built_path_for.h"
         ],
         "copts": [
             "/W4",
@@ -4384,7 +4384,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4416,16 +4416,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_6df9db3596ac9b04",
-            ":ml_74f7647e58b474fd",
+            ":ml_74f7647e58b474fd"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -4438,7 +4438,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -4514,17 +4514,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_have_built_path_for_avx2_fma": {
         "name": "ml_cd57d79749b0ae48",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/have_built_path_for_avx2_fma.cc",
+            "@chromium_ruy//:ruy/have_built_path_for_avx2_fma.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/have_built_path_for.h",
+            "@chromium_ruy//:ruy/have_built_path_for.h"
         ],
         "copts": [
             "/W4",
@@ -4602,7 +4602,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4634,16 +4634,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_6df9db3596ac9b04",
-            ":ml_74f7647e58b474fd",
+            ":ml_74f7647e58b474fd"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -4656,7 +4656,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -4732,17 +4732,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_have_built_path_for_avx512": {
         "name": "ml_5431d008caf78662",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/have_built_path_for_avx512.cc",
+            "@chromium_ruy//:ruy/have_built_path_for_avx512.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/have_built_path_for.h",
+            "@chromium_ruy//:ruy/have_built_path_for.h"
         ],
         "copts": [
             "/W4",
@@ -4820,7 +4820,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4852,16 +4852,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_6df9db3596ac9b04",
-            ":ml_74f7647e58b474fd",
+            ":ml_74f7647e58b474fd"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -4874,7 +4874,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -4950,17 +4950,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_instrumentation": {
         "name": "ml_c06489580e2ff0ab",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/profiler/instrumentation.cc",
+            "@chromium_ruy//:ruy/profiler/instrumentation.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/profiler/instrumentation.h",
+            "@chromium_ruy//:ruy/profiler/instrumentation.h"
         ],
         "copts": [
             "/W4",
@@ -5039,7 +5039,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "RUY_PROFILER",
@@ -5072,12 +5072,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -5091,7 +5091,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -5168,15 +5168,15 @@ LIBRARIES = {
             "-Wno-exit-time-destructors",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_kernel": {
         "name": "ml_5e02280e3e81425c",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/kernel.h",
+            "@chromium_ruy//:ruy/kernel.h"
         ],
         "copts": [
             "/W4",
@@ -5254,7 +5254,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5286,12 +5286,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_0e7b91a12e1ee6eb",
@@ -5311,7 +5311,7 @@ LIBRARIES = {
             ":ml_aa6b8231bbfdcbc4",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -5324,7 +5324,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -5400,18 +5400,18 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_kernel_arm": {
         "name": "ml_0e7b91a12e1ee6eb",
         "kind": "source_set",
         "srcs": [
             "@chromium_ruy//:ruy/kernel_arm32.cc",
-            "@chromium_ruy//:ruy/kernel_arm64.cc",
+            "@chromium_ruy//:ruy/kernel_arm64.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/kernel_arm.h",
+            "@chromium_ruy//:ruy/kernel_arm.h"
         ],
         "copts": [
             "/W4",
@@ -5489,7 +5489,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5521,12 +5521,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_1fcb04b35df1e4a7",
@@ -5540,7 +5540,7 @@ LIBRARIES = {
             ":ml_aa6b8231bbfdcbc4",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -5553,7 +5553,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -5629,17 +5629,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_kernel_avx": {
         "name": "ml_9af888a847361a45",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/kernel_avx.cc",
+            "@chromium_ruy//:ruy/kernel_avx.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/kernel_x86.h",
+            "@chromium_ruy//:ruy/kernel_x86.h"
         ],
         "copts": [
             "/W4",
@@ -5717,7 +5717,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5749,12 +5749,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_2a9bc8e6a6f08c6b",
@@ -5765,7 +5765,7 @@ LIBRARIES = {
             ":ml_a4ba685203ee762d",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -5778,7 +5778,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -5854,17 +5854,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_kernel_avx2_fma": {
         "name": "ml_9bf22e87625a8abb",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/kernel_avx2_fma.cc",
+            "@chromium_ruy//:ruy/kernel_avx2_fma.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/kernel_x86.h",
+            "@chromium_ruy//:ruy/kernel_x86.h"
         ],
         "copts": [
             "/W4",
@@ -5942,7 +5942,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5974,12 +5974,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_2a9bc8e6a6f08c6b",
@@ -5990,7 +5990,7 @@ LIBRARIES = {
             ":ml_a4ba685203ee762d",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -6003,7 +6003,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -6079,17 +6079,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_kernel_avx512": {
         "name": "ml_42f7793067c6d2d4",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/kernel_avx512.cc",
+            "@chromium_ruy//:ruy/kernel_avx512.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/kernel_x86.h",
+            "@chromium_ruy//:ruy/kernel_x86.h"
         ],
         "copts": [
             "/W4",
@@ -6167,7 +6167,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6199,12 +6199,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_2a9bc8e6a6f08c6b",
@@ -6216,7 +6216,7 @@ LIBRARIES = {
             ":ml_c06489580e2ff0ab",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -6229,7 +6229,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -6305,15 +6305,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_kernel_common": {
         "name": "ml_a4ba685203ee762d",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/kernel_common.h",
+            "@chromium_ruy//:ruy/kernel_common.h"
         ],
         "copts": [
             "/W4",
@@ -6391,7 +6391,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6423,12 +6423,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_1fcb04b35df1e4a7",
@@ -6443,7 +6443,7 @@ LIBRARIES = {
             ":ml_c06489580e2ff0ab",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -6456,7 +6456,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -6532,15 +6532,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_mat": {
         "name": "ml_8a362cfff6496075",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/mat.h",
+            "@chromium_ruy//:ruy/mat.h"
         ],
         "copts": [
             "/W4",
@@ -6618,7 +6618,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6650,17 +6650,17 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_7cd8ec9a1388295c",
             ":ml_9263e1a3b8848334",
-            ":ml_aa6b8231bbfdcbc4",
+            ":ml_aa6b8231bbfdcbc4"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -6673,7 +6673,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -6749,15 +6749,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_matrix": {
         "name": "ml_7cd8ec9a1388295c",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/matrix.h",
+            "@chromium_ruy//:ruy/matrix.h"
         ],
         "copts": [
             "/W4",
@@ -6835,7 +6835,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6867,15 +6867,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ml_9263e1a3b8848334",
+            ":ml_9263e1a3b8848334"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -6888,7 +6888,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -6964,15 +6964,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_mul_params": {
         "name": "ml_2a9bc8e6a6f08c6b",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/mul_params.h",
+            "@chromium_ruy//:ruy/mul_params.h"
         ],
         "copts": [
             "/W4",
@@ -7050,7 +7050,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7082,16 +7082,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_9263e1a3b8848334",
-            ":ml_aa6b8231bbfdcbc4",
+            ":ml_aa6b8231bbfdcbc4"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -7104,7 +7104,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -7180,15 +7180,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_opt_set": {
         "name": "ml_74f7647e58b474fd",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/opt_set.h",
+            "@chromium_ruy//:ruy/opt_set.h"
         ],
         "copts": [
             "/W4",
@@ -7266,7 +7266,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7298,12 +7298,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -7317,7 +7317,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -7393,15 +7393,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_pack": {
         "name": "ml_c8de04f58ba103ff",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/pack.h",
+            "@chromium_ruy//:ruy/pack.h"
         ],
         "copts": [
             "/W4",
@@ -7479,7 +7479,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7511,12 +7511,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_109a10909c655dc4",
@@ -7532,7 +7532,7 @@ LIBRARIES = {
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
             ":ml_ec04164e89caeefa",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -7545,7 +7545,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -7621,17 +7621,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_pack_arm": {
         "name": "ml_ec04164e89caeefa",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/pack_arm.cc",
+            "@chromium_ruy//:ruy/pack_arm.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/pack_arm.h",
+            "@chromium_ruy//:ruy/pack_arm.h"
         ],
         "copts": [
             "/W4",
@@ -7709,7 +7709,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7741,12 +7741,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_4f6fac66da8caa5b",
@@ -7757,7 +7757,7 @@ LIBRARIES = {
             ":ml_9263e1a3b8848334",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -7770,7 +7770,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -7846,17 +7846,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_pack_avx": {
         "name": "ml_109a10909c655dc4",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/pack_avx.cc",
+            "@chromium_ruy//:ruy/pack_avx.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/pack_x86.h",
+            "@chromium_ruy//:ruy/pack_x86.h"
         ],
         "copts": [
             "/W4",
@@ -7934,7 +7934,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -7966,12 +7966,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_4f6fac66da8caa5b",
@@ -7981,7 +7981,7 @@ LIBRARIES = {
             ":ml_9263e1a3b8848334",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -7994,7 +7994,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -8070,17 +8070,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_pack_avx2_fma": {
         "name": "ml_4f93b699afefbeb3",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/pack_avx2_fma.cc",
+            "@chromium_ruy//:ruy/pack_avx2_fma.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/pack_x86.h",
+            "@chromium_ruy//:ruy/pack_x86.h"
         ],
         "copts": [
             "/W4",
@@ -8158,7 +8158,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8190,12 +8190,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_4f6fac66da8caa5b",
@@ -8205,7 +8205,7 @@ LIBRARIES = {
             ":ml_9263e1a3b8848334",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -8218,7 +8218,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -8294,17 +8294,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_pack_avx512": {
         "name": "ml_80f6bb3e9df029e1",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/pack_avx512.cc",
+            "@chromium_ruy//:ruy/pack_avx512.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/pack_x86.h",
+            "@chromium_ruy//:ruy/pack_x86.h"
         ],
         "copts": [
             "/W4",
@@ -8382,7 +8382,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8414,12 +8414,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_4f6fac66da8caa5b",
@@ -8429,7 +8429,7 @@ LIBRARIES = {
             ":ml_9263e1a3b8848334",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -8442,7 +8442,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -8518,15 +8518,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_pack_common": {
         "name": "ml_4f6fac66da8caa5b",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/pack_common.h",
+            "@chromium_ruy//:ruy/pack_common.h"
         ],
         "copts": [
             "/W4",
@@ -8604,7 +8604,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8636,12 +8636,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_6df9db3596ac9b04",
@@ -8651,7 +8651,7 @@ LIBRARIES = {
             ":ml_9263e1a3b8848334",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -8664,7 +8664,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -8740,15 +8740,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_path": {
         "name": "ml_ef4fe76f5bfb1aa6",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/path.h",
+            "@chromium_ruy//:ruy/path.h"
         ],
         "copts": [
             "/W4",
@@ -8826,7 +8826,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -8858,16 +8858,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_6df9db3596ac9b04",
-            ":ml_aa6b8231bbfdcbc4",
+            ":ml_aa6b8231bbfdcbc4"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -8880,7 +8880,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -8956,15 +8956,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_performance_advisory": {
         "name": "ml_adbf8e0cdb6a245c",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/performance_advisory.h",
+            "@chromium_ruy//:ruy/performance_advisory.h"
         ],
         "copts": [
             "/W4",
@@ -9042,7 +9042,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9074,12 +9074,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -9093,7 +9093,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -9169,15 +9169,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_platform": {
         "name": "ml_6df9db3596ac9b04",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/platform.h",
+            "@chromium_ruy//:ruy/platform.h"
         ],
         "copts": [
             "/W4",
@@ -9255,7 +9255,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9287,12 +9287,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -9306,7 +9306,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -9382,17 +9382,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_prepacked_cache": {
         "name": "ml_cd502f983046ee5f",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/prepacked_cache.cc",
+            "@chromium_ruy//:ruy/prepacked_cache.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/prepacked_cache.h",
+            "@chromium_ruy//:ruy/prepacked_cache.h"
         ],
         "copts": [
             "/W4",
@@ -9470,7 +9470,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9502,17 +9502,17 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_8a362cfff6496075",
             ":ml_8c9365b1f0c5f0fa",
-            ":ml_c5cbaa658b9dede4",
+            ":ml_c5cbaa658b9dede4"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -9525,7 +9525,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -9601,17 +9601,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_prepare_packed_matrices": {
         "name": "ml_4263d70c7f1cc77c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/prepare_packed_matrices.cc",
+            "@chromium_ruy//:ruy/prepare_packed_matrices.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/prepare_packed_matrices.h",
+            "@chromium_ruy//:ruy/prepare_packed_matrices.h"
         ],
         "copts": [
             "/W4",
@@ -9689,7 +9689,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9721,12 +9721,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_11b204cd07a08cec",
@@ -9735,7 +9735,7 @@ LIBRARIES = {
             ":ml_4995904312463774",
             ":ml_7cd8ec9a1388295c",
             ":ml_8abda7f9743cbf54",
-            ":ml_cd502f983046ee5f",
+            ":ml_cd502f983046ee5f"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -9748,7 +9748,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -9824,19 +9824,19 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_profiler_instrumentation": {
         "name": "ml_c5cbaa658b9dede4",
         "kind": "source_set",
         "srcs": [
             "@chromium_ruy//:ruy/profiler/profiler.cc",
-            "@chromium_ruy//:ruy/profiler/treeview.cc",
+            "@chromium_ruy//:ruy/profiler/treeview.cc"
         ],
         "hdrs": [
             "@chromium_ruy//:ruy/profiler/profiler.h",
-            "@chromium_ruy//:ruy/profiler/treeview.h",
+            "@chromium_ruy//:ruy/profiler/treeview.h"
         ],
         "copts": [
             "/W4",
@@ -9914,7 +9914,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -9946,15 +9946,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ml_c06489580e2ff0ab",
+            ":ml_c06489580e2ff0ab"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -9967,7 +9967,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -10043,15 +10043,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_side_pair": {
         "name": "ml_1fcb04b35df1e4a7",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/side_pair.h",
+            "@chromium_ruy//:ruy/side_pair.h"
         ],
         "copts": [
             "/W4",
@@ -10129,7 +10129,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -10161,15 +10161,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ml_9263e1a3b8848334",
+            ":ml_9263e1a3b8848334"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -10182,7 +10182,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -10258,15 +10258,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_size_util": {
         "name": "ml_aa6b8231bbfdcbc4",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/size_util.h",
+            "@chromium_ruy//:ruy/size_util.h"
         ],
         "copts": [
             "/W4",
@@ -10344,7 +10344,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -10376,15 +10376,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ml_9263e1a3b8848334",
+            ":ml_9263e1a3b8848334"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -10397,7 +10397,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -10473,17 +10473,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_system_aligned_alloc": {
         "name": "ml_8c9365b1f0c5f0fa",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/system_aligned_alloc.cc",
+            "@chromium_ruy//:ruy/system_aligned_alloc.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/system_aligned_alloc.h",
+            "@chromium_ruy//:ruy/system_aligned_alloc.h"
         ],
         "copts": [
             "/W4",
@@ -10561,7 +10561,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -10593,12 +10593,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -10612,7 +10612,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -10688,17 +10688,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_thread_pool": {
         "name": "ml_9f6f8b53a5f2bcab",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/thread_pool.cc",
+            "@chromium_ruy//:ruy/thread_pool.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/thread_pool.h",
+            "@chromium_ruy//:ruy/thread_pool.h"
         ],
         "copts": [
             "/W4",
@@ -10776,7 +10776,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -10808,12 +10808,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_019cfcf090eaf123",
@@ -10821,7 +10821,7 @@ LIBRARIES = {
             ":ml_8abda7f9743cbf54",
             ":ml_9263e1a3b8848334",
             ":ml_b60a3dc4457157bc",
-            ":ml_bdcc063be4c3825a",
+            ":ml_bdcc063be4c3825a"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -10834,7 +10834,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -10910,15 +10910,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_time": {
         "name": "ml_019cfcf090eaf123",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/time.h",
+            "@chromium_ruy//:ruy/time.h"
         ],
         "copts": [
             "/W4",
@@ -10996,7 +10996,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11028,12 +11028,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -11047,7 +11047,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -11123,15 +11123,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_trace": {
         "name": "ml_8abda7f9743cbf54",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/trace.h",
+            "@chromium_ruy//:ruy/trace.h"
         ],
         "copts": [
             "/W4",
@@ -11209,7 +11209,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11241,19 +11241,19 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_1fcb04b35df1e4a7",
             ":ml_6df9db3596ac9b04",
             ":ml_7cd8ec9a1388295c",
             ":ml_8a362cfff6496075",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -11266,7 +11266,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -11342,17 +11342,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_trmul": {
         "name": "ml_334a1d87175654e0",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/trmul.cc",
+            "@chromium_ruy//:ruy/trmul.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/trmul.h",
+            "@chromium_ruy//:ruy/trmul.h"
         ],
         "copts": [
             "/W4",
@@ -11430,7 +11430,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11462,12 +11462,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_11b204cd07a08cec",
@@ -11487,7 +11487,7 @@ LIBRARIES = {
             ":ml_b60a3dc4457157bc",
             ":ml_c5cbaa658b9dede4",
             ":ml_d132e0bd3e8723b7",
-            ":ml_edbef7e4f28dbef0",
+            ":ml_edbef7e4f28dbef0"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -11500,7 +11500,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -11576,15 +11576,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_trmul_params": {
         "name": "ml_11b204cd07a08cec",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/trmul_params.h",
+            "@chromium_ruy//:ruy/trmul_params.h"
         ],
         "copts": [
             "/W4",
@@ -11662,7 +11662,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11694,12 +11694,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_1fcb04b35df1e4a7",
@@ -11707,7 +11707,7 @@ LIBRARIES = {
             ":ml_8a362cfff6496075",
             ":ml_c06489580e2ff0ab",
             ":ml_d132e0bd3e8723b7",
-            ":ml_ef4fe76f5bfb1aa6",
+            ":ml_ef4fe76f5bfb1aa6"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -11720,7 +11720,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -11796,17 +11796,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_tune": {
         "name": "ml_d132e0bd3e8723b7",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/tune.cc",
+            "@chromium_ruy//:ruy/tune.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/tune.h",
+            "@chromium_ruy//:ruy/tune.h"
         ],
         "copts": [
             "/W4",
@@ -11884,7 +11884,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -11916,19 +11916,19 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_019cfcf090eaf123",
             ":ml_6df9db3596ac9b04",
             ":ml_6f102acf900f1250",
             ":ml_74f7647e58b474fd",
-            ":ml_929ff3a995067169",
+            ":ml_929ff3a995067169"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -11941,7 +11941,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -12017,15 +12017,15 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_validate": {
         "name": "ml_e897c4575ef87566",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_ruy//:ruy/validate.h",
+            "@chromium_ruy//:ruy/validate.h"
         ],
         "copts": [
             "/W4",
@@ -12103,7 +12103,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12135,18 +12135,18 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":ml_1fcb04b35df1e4a7",
             ":ml_2a9bc8e6a6f08c6b",
             ":ml_8a362cfff6496075",
-            ":ml_9263e1a3b8848334",
+            ":ml_9263e1a3b8848334"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -12159,7 +12159,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -12235,17 +12235,17 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/ruy:ruy_wait": {
         "name": "ml_bdcc063be4c3825a",
         "kind": "source_set",
         "srcs": [
-            "@chromium_ruy//:ruy/wait.cc",
+            "@chromium_ruy//:ruy/wait.cc"
         ],
         "hdrs": [
-            "@chromium_ruy//:ruy/wait.h",
+            "@chromium_ruy//:ruy/wait.h"
         ],
         "copts": [
             "/W4",
@@ -12323,7 +12323,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12355,15 +12355,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ml_019cfcf090eaf123",
+            ":ml_019cfcf090eaf123"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -12376,7 +12376,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -12452,8 +12452,8 @@ LIBRARIES = {
             "-Wno-inline-asm",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:fft2d_deps": {
         "name": "ml_5c3ee9839e2f3856",
@@ -12461,7 +12461,7 @@ LIBRARIES = {
         "srcs": [],
         "hdrs": [
             "@chromium_tflite//:third_party/fft2d/fft.h",
-            "@chromium_tflite//:third_party/fft2d/fft2d.h",
+            "@chromium_tflite//:third_party/fft2d/fft2d.h"
         ],
         "copts": [
             "/W4",
@@ -12538,7 +12538,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12570,15 +12570,15 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ml_df0deb8eaa77a7e8",
+            ":ml_df0deb8eaa77a7e8"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -12591,7 +12591,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -12666,8 +12666,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:mutable_schema": {
         "name": "ml_f87e8bd7f056f4b6",
@@ -12751,7 +12751,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -12784,15 +12784,15 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "FLATBUFFERS_LOCALE_INDEPENDENT=0",
+            "FLATBUFFERS_LOCALE_INDEPENDENT=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":ml_9d8123b7a805c337",
+            ":ml_9d8123b7a805c337"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -12805,7 +12805,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -12882,15 +12882,15 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:mutable_schema_tflite_path": {
         "name": "ml_9d8123b7a805c337",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h",
+            ":gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h"
         ],
         "copts": [
             "/W4",
@@ -12969,7 +12969,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -13002,15 +13002,15 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "FLATBUFFERS_LOCALE_INDEPENDENT=0",
+            "FLATBUFFERS_LOCALE_INDEPENDENT=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            "@flatbuffers//:runtime_cc",
+            "@flatbuffers//:runtime_cc"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -13023,7 +13023,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -13100,8 +13100,8 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite": {
         "name": "ml_6c4cc4fdfec438af",
@@ -13175,7 +13175,7 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/delegates/xnnpack/weight_cache.cc",
             "@chromium_tflite//:tensorflow/lite/delegates/xnnpack/windows_util.cc",
             "@chromium_tflite//:tensorflow/lite/delegates/xnnpack/xnnpack_delegate.cc",
-            "@chromium_tflite//:tensorflow/compiler/mlir/lite/mmap_allocation_disabled.cc",
+            "@chromium_tflite//:tensorflow/compiler/mlir/lite/mmap_allocation_disabled.cc"
         ],
         "hdrs": [
             "@chromium_tflite//:tensorflow/compiler/mlir/lite/allocation.h",
@@ -13234,7 +13234,7 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/tools/versioning/gpu_compatibility.h",
             "@chromium_tflite//:tensorflow/lite/tools/versioning/op_signature.h",
             "@chromium_tflite//:tensorflow/lite/version.h",
-            "@chromium_tflite//:third_party/xla/xla/tsl/util/stats_calculator.h",
+            "@chromium_tflite//:third_party/xla/xla/tsl/util/stats_calculator.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -13326,7 +13326,7 @@ LIBRARIES = {
             "-Wno-nullability-completeness",
             "/GR",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -13413,7 +13413,7 @@ LIBRARIES = {
             "XNN_ENABLE_KLEIDIAI=0",
             "XNN_ENABLE_SRM_SME=0",
             "XNN_ENABLE_ARM_SME2=0",
-            "XNN_ENABLE_WASM_REVECTORIZE=0",
+            "XNN_ENABLE_WASM_REVECTORIZE=0"
         ],
         "includes": [
             "..",
@@ -13421,7 +13421,7 @@ LIBRARIES = {
             "gen/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -13445,7 +13445,7 @@ LIBRARIES = {
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@flatbuffers//:runtime_cc",
-            "@fp16//:fp16",
+            "@fp16//:fp16"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -13486,7 +13486,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -13574,8 +13574,8 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_builtin_op_resolver": {
         "name": "ml_0b8f545b5a1f351d",
@@ -13618,11 +13618,11 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/kernels/stablehlo_reduce_window.cc",
             "@chromium_tflite//:tensorflow/lite/kernels/stablehlo_shift_left.cc",
             "@chromium_tflite//:tensorflow/lite/kernels/unsorted_segment.cc",
-            "@chromium_tflite//:tensorflow/lite/kernels/var_handle.cc",
+            "@chromium_tflite//:tensorflow/lite/kernels/var_handle.cc"
         ],
         "hdrs": [
             "@chromium_tflite//:tensorflow/lite/core/kernels/register.h",
-            "@chromium_tflite//:tensorflow/lite/kernels/kernel_util.h",
+            "@chromium_tflite//:tensorflow/lite/kernels/kernel_util.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -13713,7 +13713,7 @@ LIBRARIES = {
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -13765,7 +13765,7 @@ LIBRARIES = {
             "TF_VERSION_SUFFIX",
             "GOOGLE_PROTOBUF_NO_RTTI",
             "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
-            "FLATBUFFERS_LOCALE_INDEPENDENT=0",
+            "FLATBUFFERS_LOCALE_INDEPENDENT=0"
         ],
         "includes": [
             "..",
@@ -13773,7 +13773,7 @@ LIBRARIES = {
             "gen/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -13783,7 +13783,7 @@ LIBRARIES = {
             ":ml_ad6d48cb76d151a9",
             ":ml_e5188ce6531cfc58",
             ":ml_ec61bd6ed224cb8a",
-            "@flatbuffers//:runtime_cc",
+            "@flatbuffers//:runtime_cc"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -13824,7 +13824,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -13912,8 +13912,8 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_builtin_op_resolver_internals": {
         "name": "ml_ad6d48cb76d151a9",
@@ -13921,7 +13921,7 @@ LIBRARIES = {
         "srcs": [
             "@chromium_tflite//:tensorflow/lite/kernels/internal/mfcc.cc",
             "@chromium_tflite//:tensorflow/lite/kernels/internal/mfcc_dct.cc",
-            "@chromium_tflite//:tensorflow/lite/kernels/internal/mfcc_mel_filterbank.cc",
+            "@chromium_tflite//:tensorflow/lite/kernels/internal/mfcc_mel_filterbank.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -14011,7 +14011,7 @@ LIBRARIES = {
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -14060,18 +14060,18 @@ LIBRARIES = {
             "TF_MAJOR_VERSION=2",
             "TF_MINOR_VERSION=21",
             "TF_PATCH_VERSION=0",
-            "TF_VERSION_SUFFIX",
+            "TF_VERSION_SUFFIX"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
             ":ml_4f521ea4011aea6e",
-            ":ml_8ec08ce536803ffc",
+            ":ml_8ec08ce536803ffc"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -14085,7 +14085,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -14171,19 +14171,19 @@ LIBRARIES = {
             "/wd4018",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_compiler_utils": {
         "name": "ml_1c6996190baad167",
         "kind": "source_set",
         "srcs": [
             "@chromium_tflite//:tensorflow/compiler/mlir/lite/core/api/flatbuffer_conversions.cc",
-            "@chromium_tflite//:tensorflow/compiler/mlir/lite/tools/versioning/op_signature.cc",
+            "@chromium_tflite//:tensorflow/compiler/mlir/lite/tools/versioning/op_signature.cc"
         ],
         "hdrs": [
             "@chromium_tflite//:tensorflow/compiler/mlir/lite/core/api/flatbuffer_conversions.h",
-            "@chromium_tflite//:tensorflow/compiler/mlir/lite/tools/versioning/op_signature.h",
+            "@chromium_tflite//:tensorflow/compiler/mlir/lite/tools/versioning/op_signature.h"
         ],
         "copts": [
             "/W4",
@@ -14277,7 +14277,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -14330,13 +14330,13 @@ LIBRARIES = {
             "EIGEN_HAS_TYPE_TRAITS=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
             "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
-            "FLATBUFFERS_LOCALE_INDEPENDENT=0",
+            "FLATBUFFERS_LOCALE_INDEPENDENT=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -14345,7 +14345,7 @@ LIBRARIES = {
             ":ml_674f562db2d8f468",
             ":ml_a702e9d79bea5f40",
             ":ml_d0033d669b4fa7a1",
-            "@flatbuffers//:runtime_cc",
+            "@flatbuffers//:runtime_cc"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -14359,7 +14359,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -14450,8 +14450,8 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_kernel_common_headers": {
         "name": "ml_674f562db2d8f468",
@@ -14472,7 +14472,7 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/kernels/kernel_util.h",
             "@chromium_tflite//:tensorflow/lite/kernels/op_macros.h",
             "@chromium_tflite//:tensorflow/lite/kernels/stablehlo_elementwise.h",
-            "@chromium_tflite//:tensorflow/lite/type_to_tflitetype.h",
+            "@chromium_tflite//:tensorflow/lite/type_to_tflitetype.h"
         ],
         "copts": [
             "/W4",
@@ -14563,7 +14563,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -14606,12 +14606,12 @@ LIBRARIES = {
             "XNNPACK_DELEGATE_USE_LATEST_OPS",
             "TFLITE_KERNEL_USE_XNNPACK",
             "TFLITE_MMAP_DISABLED",
-            "TFLITE_WITH_RUY",
+            "TFLITE_WITH_RUY"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -14625,7 +14625,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -14714,8 +14714,8 @@ LIBRARIES = {
             "/wd4018",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_kernel_internals": {
         "name": "ml_3503a960667ea590",
@@ -14735,7 +14735,7 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/kernels/internal/tensor_ctypes.cc",
             "@chromium_tflite//:tensorflow/lite/kernels/internal/tensor_utils.cc",
             "@chromium_tflite//:tensorflow/lite/kernels/internal/transpose_utils.cc",
-            "@chromium_tflite//:tensorflow/lite/kernels/internal/utils/sparsity_format_converter.cc",
+            "@chromium_tflite//:tensorflow/lite/kernels/internal/utils/sparsity_format_converter.cc"
         ],
         "hdrs": [
             "@chromium_tflite//:tensorflow/lite/kernels/internal/common.h",
@@ -14830,7 +14830,7 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/kernels/internal/tensor_utils.h",
             "@chromium_tflite//:tensorflow/lite/kernels/internal/transpose_utils.h",
             "@chromium_tflite//:tensorflow/lite/kernels/internal/types.h",
-            "@chromium_tflite//:tensorflow/lite/kernels/internal/utils/sparsity_format_converter.h",
+            "@chromium_tflite//:tensorflow/lite/kernels/internal/utils/sparsity_format_converter.h"
         ],
         "copts": [
             "/W4",
@@ -14929,7 +14929,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -14980,13 +14980,13 @@ LIBRARIES = {
             "EIGEN_MPL2_ONLY",
             "EIGEN_MAX_ALIGN_BYTES=64",
             "EIGEN_HAS_TYPE_TRAITS=0",
-            "FLATBUFFERS_LOCALE_INDEPENDENT=0",
+            "FLATBUFFERS_LOCALE_INDEPENDENT=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -14998,7 +14998,7 @@ LIBRARIES = {
             ":ml_d5316b12be605100",
             ":ml_ec61bd6ed224cb8a",
             "@flatbuffers//:runtime_cc",
-            "@fp16//:fp16",
+            "@fp16//:fp16"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -15012,7 +15012,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -15108,8 +15108,8 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_kernels": {
         "name": "ml_5075a0dc6ef0e978",
@@ -15221,7 +15221,7 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/kernels/unpack.cc",
             "@chromium_tflite//:tensorflow/lite/kernels/where.cc",
             "@chromium_tflite//:tensorflow/lite/kernels/while.cc",
-            "@chromium_tflite//:tensorflow/lite/kernels/zeros_like.cc",
+            "@chromium_tflite//:tensorflow/lite/kernels/zeros_like.cc"
         ],
         "hdrs": [
             "@chromium_tflite//:tensorflow/lite/kernels/builtin_op_kernels.h",
@@ -15233,7 +15233,7 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/kernels/lstm_eval.h",
             "@chromium_tflite//:tensorflow/lite/kernels/lstm_shared.h",
             "@chromium_tflite//:tensorflow/lite/kernels/padding.h",
-            "@chromium_tflite//:tensorflow/lite/kernels/tensor_slice_util.h",
+            "@chromium_tflite//:tensorflow/lite/kernels/tensor_slice_util.h"
         ],
         "copts": [
             "/W4",
@@ -15332,7 +15332,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "TFLITE_HAVE_CPUINFO",
@@ -15419,7 +15419,7 @@ LIBRARIES = {
             "XNN_ENABLE_KLEIDIAI=0",
             "XNN_ENABLE_SRM_SME=0",
             "XNN_ENABLE_ARM_SME2=0",
-            "XNN_ENABLE_WASM_REVECTORIZE=0",
+            "XNN_ENABLE_WASM_REVECTORIZE=0"
         ],
         "includes": [
             "..",
@@ -15427,7 +15427,7 @@ LIBRARIES = {
             "gen/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
@@ -15443,7 +15443,7 @@ LIBRARIES = {
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@flatbuffers//:runtime_cc",
-            "@fp16//:fp16",
+            "@fp16//:fp16"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -15484,7 +15484,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -15580,8 +15580,8 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_litert": {
         "name": "ml_423cc0bf2d014e1d",
@@ -15591,11 +15591,11 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/experimental/genai/genai_ops.cc",
             "@chromium_tflite//:tensorflow/lite/experimental/genai/kvcache.cc",
             "@chromium_tflite//:tensorflow/lite/experimental/genai/sdpa.cc",
-            "@chromium_tflite//:tensorflow/lite/experimental/resource/cache_buffer.cc",
+            "@chromium_tflite//:tensorflow/lite/experimental/resource/cache_buffer.cc"
         ],
         "hdrs": [
             "@chromium_tflite//:tensorflow/lite/experimental/genai/genai_ops.h",
-            "@chromium_tflite//:tensorflow/lite/experimental/resource/cache_buffer.h",
+            "@chromium_tflite//:tensorflow/lite/experimental/resource/cache_buffer.h"
         ],
         "copts": [
             "/W4",
@@ -15689,7 +15689,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -15740,7 +15740,7 @@ LIBRARIES = {
             "EIGEN_MPL2_ONLY",
             "EIGEN_MAX_ALIGN_BYTES=64",
             "EIGEN_HAS_TYPE_TRAITS=0",
-            "FLATBUFFERS_LOCALE_INDEPENDENT=0",
+            "FLATBUFFERS_LOCALE_INDEPENDENT=0"
         ],
         "includes": [
             "..",
@@ -15748,14 +15748,14 @@ LIBRARIES = {
             "gen/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
             ":ml_3503a960667ea590",
             ":ml_4aa1c30f4a1e704f",
             ":ml_674f562db2d8f468",
             ":ml_a702e9d79bea5f40",
-            "@flatbuffers//:runtime_cc",
+            "@flatbuffers//:runtime_cc"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -15796,7 +15796,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -15887,14 +15887,14 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_logging": {
         "name": "ml_4aa1c30f4a1e704f",
         "kind": "source_set",
         "srcs": [
-            "//:third_party/tflite/shims/minimal_logging_chromium.cc",
+            "//:third_party/tflite/shims/minimal_logging_chromium.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -15986,7 +15986,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -16033,7 +16033,7 @@ LIBRARIES = {
             "XNNPACK_DELEGATE_USE_LATEST_OPS",
             "TFLITE_KERNEL_USE_XNNPACK",
             "TFLITE_MMAP_DISABLED",
-            "TFLITE_WITH_RUY",
+            "TFLITE_WITH_RUY"
         ],
         "includes": [
             "..",
@@ -16042,11 +16042,11 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
             "gen/third_party/perfetto/build_config/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
             ":base",
-            ":ml_a702e9d79bea5f40",
+            ":ml_a702e9d79bea5f40"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -16087,7 +16087,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -16176,17 +16176,17 @@ LIBRARIES = {
             "/wd4018",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_op_resolver_proto": {
         "name": "ml_e5188ce6531cfc58",
         "kind": "static_library",
         "srcs": [
-            ":gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options.pb.cc",
+            ":gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options.pb.cc"
         ],
         "hdrs": [
-            ":gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options.pb.h",
+            ":gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -16264,7 +16264,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -16298,16 +16298,16 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -16321,7 +16321,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -16397,8 +16397,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_op_resolver_proto_input_group": {
         "name": "ml_acf2863f56fbdcc4",
@@ -16409,12 +16409,12 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/tflite:tflite_op_shim": {
         "name": "ml_aca6065816456acb",
@@ -16423,7 +16423,7 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/kernels/shim/shape.cc",
             "@chromium_tflite//:tensorflow/lite/kernels/shim/tflite_op_shim.cc",
             "@chromium_tflite//:tensorflow/lite/kernels/shim/tflite_tensor_view.cc",
-            "@chromium_tflite//:third_party/xla/xla/tsl/platform/windows/env_time.cc",
+            "@chromium_tflite//:third_party/xla/xla/tsl/platform/windows/env_time.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -16522,7 +16522,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -16573,19 +16573,19 @@ LIBRARIES = {
             "EIGEN_MPL2_ONLY",
             "EIGEN_MAX_ALIGN_BYTES=64",
             "EIGEN_HAS_TYPE_TRAITS=0",
-            "FLATBUFFERS_LOCALE_INDEPENDENT=0",
+            "FLATBUFFERS_LOCALE_INDEPENDENT=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
             ":ml_674f562db2d8f468",
             ":ml_a702e9d79bea5f40",
-            "@flatbuffers//:runtime_cc",
+            "@flatbuffers//:runtime_cc"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -16599,7 +16599,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -16695,8 +16695,8 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_proto": {
         "name": "ml_d0033d669b4fa7a1",
@@ -16705,13 +16705,13 @@ LIBRARIES = {
             ":gen/third_party/tflite/src/tensorflow/lite/acceleration/configuration/configuration.pb.cc",
             ":gen/third_party/tflite/src/tensorflow/lite/profiling/proto/model_runtime_info.pb.cc",
             ":gen/third_party/tflite/src/tensorflow/lite/profiling/proto/profiling_info.pb.cc",
-            ":gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/coordination_config.pb.cc",
+            ":gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/coordination_config.pb.cc"
         ],
         "hdrs": [
             ":gen/third_party/tflite/src/tensorflow/lite/acceleration/configuration/configuration.pb.h",
             ":gen/third_party/tflite/src/tensorflow/lite/profiling/proto/model_runtime_info.pb.h",
             ":gen/third_party/tflite/src/tensorflow/lite/profiling/proto/profiling_info.pb.h",
-            ":gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/coordination_config.pb.h",
+            ":gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/coordination_config.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -16789,7 +16789,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -16823,16 +16823,16 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/tflite/src/",
+            "gen/third_party/tflite/src/"
         ],
         "deps": [
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -16846,7 +16846,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -16922,8 +16922,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:tflite_proto_input_group": {
         "name": "ml_a375544fcd5ea809",
@@ -16934,12 +16934,12 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [],
         "asm_copts": [],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/tflite:tflite_public_headers": {
         "name": "ml_a702e9d79bea5f40",
@@ -16974,7 +16974,7 @@ LIBRARIES = {
             "@chromium_tflite//:tensorflow/lite/stderr_reporter.h",
             "@chromium_tflite//:tensorflow/lite/string_type.h",
             "@chromium_tflite//:tensorflow/lite/string_util.h",
-            "@chromium_tflite//:tensorflow/lite/util.h",
+            "@chromium_tflite//:tensorflow/lite/util.h"
         ],
         "copts": [
             "/W4",
@@ -17065,7 +17065,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -17108,12 +17108,12 @@ LIBRARIES = {
             "XNNPACK_DELEGATE_USE_LATEST_OPS",
             "TFLITE_KERNEL_USE_XNNPACK",
             "TFLITE_MMAP_DISABLED",
-            "TFLITE_WITH_RUY",
+            "TFLITE_WITH_RUY"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -17127,7 +17127,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -17216,15 +17216,15 @@ LIBRARIES = {
             "/wd4018",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/tflite:weight_cache_schema_generated": {
         "name": "ml_86e98cce0d932f23",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema_generated.h",
+            ":gen/third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema_generated.h"
         ],
         "copts": [
             "/W4",
@@ -17303,7 +17303,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -17336,15 +17336,15 @@ LIBRARIES = {
             "NDEBUG",
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
-            "FLATBUFFERS_LOCALE_INDEPENDENT=0",
+            "FLATBUFFERS_LOCALE_INDEPENDENT=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            "@flatbuffers//:runtime_cc",
+            "@flatbuffers//:runtime_cc"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -17357,7 +17357,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -17434,8 +17434,8 @@ LIBRARIES = {
             "-Wno-shorten-64-to-32",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:configs_arm64": {
         "name": "ml_a3c4cbe6eb5df1c3",
@@ -17464,10 +17464,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/configs/vmulcaddc-config.c",
             "@chromium_xnnpack//:src/configs/x8-lut-config.c",
             "@chromium_xnnpack//:src/configs/xx-fill-config.c",
-            "@chromium_xnnpack//:src/configs/xx-pad-config.c",
+            "@chromium_xnnpack//:src/configs/xx-pad-config.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -17538,7 +17538,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -17604,20 +17604,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -17658,7 +17658,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -17727,8 +17727,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:enums_arm64": {
         "name": "ml_79c0aa0e971758a3",
@@ -17738,10 +17738,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/enums/datatype-strings.c",
             "@chromium_xnnpack//:src/enums/microkernel-type.c",
             "@chromium_xnnpack//:src/enums/node-type.c",
-            "@chromium_xnnpack//:src/enums/operator-type.c",
+            "@chromium_xnnpack//:src/enums/operator-type.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -17812,7 +17812,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -17878,20 +17878,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -17932,7 +17932,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -18001,17 +18001,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-avgpool_arch=armv8.2-a+fp16": {
         "name": "ml_fbaffe0fe4afab12",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-avgpool/gen/f16-avgpool-9p-minmax-neonfp16arith.c",
+            "@chromium_xnnpack//:src/f16-avgpool/gen/f16-avgpool-9p-minmax-neonfp16arith.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -18083,7 +18083,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -18149,20 +18149,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -18203,7 +18203,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -18273,17 +18273,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-conv-hwc2chw_arch=armv8.2-a+fp16": {
         "name": "ml_1dc2936734d63a8c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-conv-hwc2chw/f16-conv-hwc2chw-3x3s2p1c3x4-neonfp16arith-2x2.c",
+            "@chromium_xnnpack//:src/f16-conv-hwc2chw/f16-conv-hwc2chw-3x3s2p1c3x4-neonfp16arith-2x2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -18355,7 +18355,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -18421,20 +18421,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -18475,7 +18475,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -18545,8 +18545,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-dwconv2d-chw_arch=armv8.2-a+fp16": {
         "name": "ml_86e9cb0c47ef1a7a",
@@ -18555,10 +18555,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f16-dwconv2d-chw/gen/f16-dwconv2d-chw-3x3p1-minmax-neonfp16arith-2x8.c",
             "@chromium_xnnpack//:src/f16-dwconv2d-chw/gen/f16-dwconv2d-chw-3x3s2p1-minmax-neonfp16arith-1x8.c",
             "@chromium_xnnpack//:src/f16-dwconv2d-chw/gen/f16-dwconv2d-chw-5x5p2-minmax-neonfp16arith-1x8.c",
-            "@chromium_xnnpack//:src/f16-dwconv2d-chw/gen/f16-dwconv2d-chw-5x5s2p2-minmax-neonfp16arith-1x8.c",
+            "@chromium_xnnpack//:src/f16-dwconv2d-chw/gen/f16-dwconv2d-chw-5x5s2p2-minmax-neonfp16arith-1x8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -18630,7 +18630,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -18696,20 +18696,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -18750,7 +18750,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -18820,8 +18820,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-dwconv_arch=armv8.2-a+fp16": {
         "name": "ml_d7c8bcabc3e5fbf2",
@@ -18831,10 +18831,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f16-dwconv/gen/f16-dwconv-3p16c-minmax-neonfp16arith.c",
             "@chromium_xnnpack//:src/f16-dwconv/gen/f16-dwconv-4p16c-minmax-neonfp16arith.c",
             "@chromium_xnnpack//:src/f16-dwconv/gen/f16-dwconv-9p16c-minmax-neonfp16arith.c",
-            "@chromium_xnnpack//:src/f16-dwconv/gen/f16-dwconv-9p8c-minmax-neonfp16arith.c",
+            "@chromium_xnnpack//:src/f16-dwconv/gen/f16-dwconv-9p8c-minmax-neonfp16arith.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -18906,7 +18906,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -18972,20 +18972,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -19026,7 +19026,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -19096,8 +19096,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-f32-vcvt_arm64": {
         "name": "ml_60e832b7fb4f49cb",
@@ -19105,10 +19105,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f16-f32-vcvt/gen/f16-f32-vcvt-neon-int16-u16.c",
             "@chromium_xnnpack//:src/f16-f32-vcvt/gen/f16-f32-vcvt-neonfp16-u16.c",
-            "@chromium_xnnpack//:src/f16-f32-vcvt/gen/f16-f32-vcvt-scalar-u4.c",
+            "@chromium_xnnpack//:src/f16-f32-vcvt/gen/f16-f32-vcvt-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -19179,7 +19179,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -19245,20 +19245,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -19299,7 +19299,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -19368,17 +19368,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-f32acc-rdsum2_arch=armv8.2-a+fp16": {
         "name": "ml_cc07be0160e9946c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-f32acc-rdsum2/gen/f16-f32acc-rdsum2-7p7x-minmax-neonfp16arith.c",
+            "@chromium_xnnpack//:src/f16-f32acc-rdsum2/gen/f16-f32acc-rdsum2-7p7x-minmax-neonfp16arith.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -19450,7 +19450,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -19516,20 +19516,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -19570,7 +19570,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -19640,17 +19640,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-f32acc-rdsum_arch=armv8.2-a+fp16": {
         "name": "ml_b8d583b9cab1a029",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-f32acc-rdsum/gen/f16-f32acc-rdsum-7p7x-minmax-neonfp16arith-u16.c",
+            "@chromium_xnnpack//:src/f16-f32acc-rdsum/gen/f16-f32acc-rdsum-7p7x-minmax-neonfp16arith-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -19722,7 +19722,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -19788,20 +19788,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -19842,7 +19842,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -19912,17 +19912,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-f32acc-rsum2_arch=armv8.2-a+fp16": {
         "name": "ml_b03e73802b2a568a",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-f32acc-rsum2/gen/f16-f32acc-rsum2-neonfp16arith.c",
+            "@chromium_xnnpack//:src/f16-f32acc-rsum2/gen/f16-f32acc-rsum2-neonfp16arith.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -19994,7 +19994,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -20060,20 +20060,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -20114,7 +20114,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -20184,17 +20184,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-f32acc-rsum_arch=armv8.2-a+fp16": {
         "name": "ml_85dc06e3b7b42946",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-f32acc-rsum/gen/f16-f32acc-rsum-neonfp16arith-u32-acc4.c",
+            "@chromium_xnnpack//:src/f16-f32acc-rsum/gen/f16-f32acc-rsum-neonfp16arith-u32-acc4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -20266,7 +20266,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -20332,20 +20332,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -20386,7 +20386,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -20456,8 +20456,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-gemm_arch=armv8.2-a+fp16": {
         "name": "ml_aeb61397888e585d",
@@ -20466,10 +20466,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-1x16-minmax-neonfp16arith-ld64.c",
             "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-1x8-minmax-neonfp16arith-ld64.c",
             "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-6x16-minmax-neonfp16arith-ld64.c",
-            "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-6x8-minmax-neonfp16arith-ld64.c",
+            "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-6x8-minmax-neonfp16arith-ld64.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -20541,7 +20541,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -20607,20 +20607,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -20661,7 +20661,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -20731,8 +20731,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-gemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_60400a2fa3eb7e35",
@@ -20743,10 +20743,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-6x16-minmax-asm-aarch64-neonfp16arith-cortex-a55.S",
             "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-6x16-minmax-asm-aarch64-neonfp16arith-cortex-a55r0.S",
             "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-6x16-minmax-asm-aarch64-neonfp16arith-cortex-a75.S",
-            "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-6x16-minmax-asm-aarch64-neonfp16arith-ld64.S",
+            "@chromium_xnnpack//:src/f16-gemm/gen/f16-gemm-6x16-minmax-asm-aarch64-neonfp16arith-ld64.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -20818,7 +20818,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -20884,20 +20884,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -20938,10 +20938,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -21010,17 +21010,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-ibilinear-chw_arch=armv8.2-a+fp16": {
         "name": "ml_e9cd262126911e45",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-ibilinear-chw/gen/f16-ibilinear-chw-neonfp16arith-p8.c",
+            "@chromium_xnnpack//:src/f16-ibilinear-chw/gen/f16-ibilinear-chw-neonfp16arith-p8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -21092,7 +21092,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -21158,20 +21158,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -21212,7 +21212,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -21282,17 +21282,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-ibilinear_arch=armv8.2-a+fp16": {
         "name": "ml_a0f23cd31600ca3e",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-ibilinear/gen/f16-ibilinear-neonfp16arith-u8.c",
+            "@chromium_xnnpack//:src/f16-ibilinear/gen/f16-ibilinear-neonfp16arith-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -21364,7 +21364,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -21430,20 +21430,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -21484,7 +21484,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -21554,8 +21554,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-igemm_arch=armv8.2-a+fp16": {
         "name": "ml_eff1553abd98b864",
@@ -21564,10 +21564,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f16-igemm/gen/f16-igemm-1x16-minmax-neonfp16arith-ld64.c",
             "@chromium_xnnpack//:src/f16-igemm/gen/f16-igemm-1x8-minmax-neonfp16arith-ld64.c",
             "@chromium_xnnpack//:src/f16-igemm/gen/f16-igemm-6x16-minmax-neonfp16arith-ld64.c",
-            "@chromium_xnnpack//:src/f16-igemm/gen/f16-igemm-6x8-minmax-neonfp16arith-ld64.c",
+            "@chromium_xnnpack//:src/f16-igemm/gen/f16-igemm-6x8-minmax-neonfp16arith-ld64.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -21639,7 +21639,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -21705,20 +21705,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -21759,7 +21759,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -21829,8 +21829,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-igemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_cac8fcb26e966cd6",
@@ -21841,10 +21841,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f16-igemm/f16-igemm-6x16-minmax-asm-aarch64-neonfp16arith-cortex-a55.S",
             "@chromium_xnnpack//:src/f16-igemm/f16-igemm-6x16-minmax-asm-aarch64-neonfp16arith-cortex-a55r0.S",
             "@chromium_xnnpack//:src/f16-igemm/f16-igemm-6x16-minmax-asm-aarch64-neonfp16arith-cortex-a75.S",
-            "@chromium_xnnpack//:src/f16-igemm/f16-igemm-6x16-minmax-asm-aarch64-neonfp16arith-ld64.S",
+            "@chromium_xnnpack//:src/f16-igemm/f16-igemm-6x16-minmax-asm-aarch64-neonfp16arith-ld64.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -21916,7 +21916,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -21982,20 +21982,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -22036,10 +22036,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -22108,17 +22108,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-maxpool_arch=armv8.2-a+fp16": {
         "name": "ml_47e6a9f36f469f80",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-maxpool/gen/f16-maxpool-9p-minmax-neonfp16arith-u8.c",
+            "@chromium_xnnpack//:src/f16-maxpool/gen/f16-maxpool-9p-minmax-neonfp16arith-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -22190,7 +22190,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -22256,20 +22256,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -22310,7 +22310,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -22380,17 +22380,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-qs8-vcvt_arch=armv8.2-a+fp16": {
         "name": "ml_1bd2b49d05c3c50b",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-qs8-vcvt/gen/f16-qs8-vcvt-neonfp16arith-u32.c",
+            "@chromium_xnnpack//:src/f16-qs8-vcvt/gen/f16-qs8-vcvt-neonfp16arith-u32.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -22462,7 +22462,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -22528,20 +22528,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -22582,7 +22582,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -22652,17 +22652,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-qs8-vcvt_arm64": {
         "name": "ml_5c668f29cd1c6d07",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-qs8-vcvt/gen/f16-qs8-vcvt-scalar-imagic-u4.c",
+            "@chromium_xnnpack//:src/f16-qs8-vcvt/gen/f16-qs8-vcvt-scalar-imagic-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -22733,7 +22733,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -22799,20 +22799,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -22853,7 +22853,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -22922,17 +22922,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-qu8-vcvt_arm64": {
         "name": "ml_0f0b0834f64deb82",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-qu8-vcvt/gen/f16-qu8-vcvt-scalar-imagic-u4.c",
+            "@chromium_xnnpack//:src/f16-qu8-vcvt/gen/f16-qu8-vcvt-scalar-imagic-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -23003,7 +23003,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -23069,20 +23069,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -23123,7 +23123,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -23192,17 +23192,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-raddstoreexpminusmax_arch=armv8.2-a+fp16": {
         "name": "ml_e6ce1cd6b14ed02c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-raddstoreexpminusmax/gen/f16-raddstoreexpminusmax-neonfp16arith-rr2-p2-u32.c",
+            "@chromium_xnnpack//:src/f16-raddstoreexpminusmax/gen/f16-raddstoreexpminusmax-neonfp16arith-rr2-p2-u32.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -23274,7 +23274,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -23340,20 +23340,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -23394,7 +23394,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -23464,18 +23464,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-rdminmax_arch=armv8.2-a+fp16": {
         "name": "ml_d0387f1c643ff847",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f16-rdminmax/gen/f16-rdmax-2p2x-neonfp16arith-u32.c",
-            "@chromium_xnnpack//:src/f16-rdminmax/gen/f16-rdmin-2p2x-neonfp16arith-u32.c",
+            "@chromium_xnnpack//:src/f16-rdminmax/gen/f16-rdmin-2p2x-neonfp16arith-u32.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -23547,7 +23547,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -23613,20 +23613,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -23667,7 +23667,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -23737,18 +23737,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-rdminmax_arm64": {
         "name": "ml_906946e5cba3a2ee",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f16-rdminmax/gen/f16-rdmax-2p2x-scalar-u2.c",
-            "@chromium_xnnpack//:src/f16-rdminmax/gen/f16-rdmin-2p2x-scalar-u2.c",
+            "@chromium_xnnpack//:src/f16-rdminmax/gen/f16-rdmin-2p2x-scalar-u2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -23819,7 +23819,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -23885,20 +23885,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -23939,7 +23939,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -24008,8 +24008,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-rminmax_arch=armv8.2-a+fp16": {
         "name": "ml_59c863cd0d4d5107",
@@ -24017,10 +24017,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f16-rminmax/gen/f16-rmax-neonfp16arith-u32-acc4.c",
             "@chromium_xnnpack//:src/f16-rminmax/gen/f16-rmin-neonfp16arith-u32-acc4.c",
-            "@chromium_xnnpack//:src/f16-rminmax/gen/f16-rminmax-neonfp16arith-u32-acc4.c",
+            "@chromium_xnnpack//:src/f16-rminmax/gen/f16-rminmax-neonfp16arith-u32-acc4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -24092,7 +24092,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -24158,20 +24158,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -24212,7 +24212,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -24282,8 +24282,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-rminmax_arm64": {
         "name": "ml_a3b6c23ece669f5e",
@@ -24291,10 +24291,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f16-rminmax/gen/f16-rmax-scalar-u2-acc2.c",
             "@chromium_xnnpack//:src/f16-rminmax/gen/f16-rmin-scalar-u2-acc2.c",
-            "@chromium_xnnpack//:src/f16-rminmax/gen/f16-rminmax-scalar-u2-acc2.c",
+            "@chromium_xnnpack//:src/f16-rminmax/gen/f16-rminmax-scalar-u2-acc2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -24365,7 +24365,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -24431,20 +24431,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -24485,7 +24485,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -24554,17 +24554,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-spmm_arch=armv8.2-a+fp16": {
         "name": "ml_d3d97e0ebfe5fa0a",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-spmm/gen/f16-spmm-32x1-minmax-neonfp16arith-pipelined.c",
+            "@chromium_xnnpack//:src/f16-spmm/gen/f16-spmm-32x1-minmax-neonfp16arith-pipelined.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -24636,7 +24636,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -24702,20 +24702,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -24756,7 +24756,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -24826,17 +24826,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vapproxgelu_arch=armv8.2-a+fp16": {
         "name": "ml_0e3df9ee3c44217d",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vapproxgelu/gen/f16-vapproxgelu-neonfp16arith-rational-6-4-div.c",
+            "@chromium_xnnpack//:src/f16-vapproxgelu/gen/f16-vapproxgelu-neonfp16arith-rational-6-4-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -24908,7 +24908,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -24974,20 +24974,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -25028,7 +25028,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -25098,17 +25098,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vapproxgelu_arm64": {
         "name": "ml_bf92186825080b5c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vapproxgelu/gen/f16-vapproxgelu-scalar-rational-6-4-div.c",
+            "@chromium_xnnpack//:src/f16-vapproxgelu/gen/f16-vapproxgelu-scalar-rational-6-4-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -25179,7 +25179,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -25245,20 +25245,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -25299,7 +25299,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -25368,8 +25368,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vbinary_arch=armv8.2-a+fp16": {
         "name": "ml_fb722755032cba83",
@@ -25396,10 +25396,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f16-vbinary/gen/f16-vsqrdiff-neonfp16arith-u16.c",
             "@chromium_xnnpack//:src/f16-vbinary/gen/f16-vsqrdiffc-neonfp16arith-u16.c",
             "@chromium_xnnpack//:src/f16-vbinary/gen/f16-vsub-neonfp16arith-u16.c",
-            "@chromium_xnnpack//:src/f16-vbinary/gen/f16-vsubc-neonfp16arith-u16.c",
+            "@chromium_xnnpack//:src/f16-vbinary/gen/f16-vsubc-neonfp16arith-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -25471,7 +25471,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -25537,20 +25537,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -25591,7 +25591,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -25661,17 +25661,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vclamp_arch=armv8.2-a+fp16": {
         "name": "ml_068076437ed2da2b",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vclamp/gen/f16-vclamp-neonfp16arith-u16.c",
+            "@chromium_xnnpack//:src/f16-vclamp/gen/f16-vclamp-neonfp16arith-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -25743,7 +25743,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -25809,20 +25809,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -25863,7 +25863,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -25933,17 +25933,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vcmul_arch=armv8.2-a+fp16": {
         "name": "ml_5c4766bbba442bcd",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vcmul/gen/f16-vcmul-neonfp16arith-u16.c",
+            "@chromium_xnnpack//:src/f16-vcmul/gen/f16-vcmul-neonfp16arith-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -26015,7 +26015,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -26081,20 +26081,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -26135,7 +26135,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -26205,17 +26205,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vcos_arch=armv8.2-a+fp16": {
         "name": "ml_f3926180d361046c",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vcos/gen/f16-vcos-neonfp16arith-rational-3-2-div.c",
+            "@chromium_xnnpack//:src/f16-vcos/gen/f16-vcos-neonfp16arith-rational-3-2-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -26287,7 +26287,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -26353,20 +26353,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -26407,7 +26407,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -26477,17 +26477,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vcos_arm64": {
         "name": "ml_694987f6266643f2",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vcos/gen/f16-vcos-scalar-rational-3-2-div.c",
+            "@chromium_xnnpack//:src/f16-vcos/gen/f16-vcos-scalar-rational-3-2-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -26558,7 +26558,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -26624,20 +26624,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -26678,7 +26678,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -26747,17 +26747,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-velu_arch=armv8.2-a+fp16": {
         "name": "ml_4ce54b01053e90a5",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-velu/gen/f16-velu-neonfp16arith-rr1-p3-u16.c",
+            "@chromium_xnnpack//:src/f16-velu/gen/f16-velu-neonfp16arith-rr1-p3-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -26829,7 +26829,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -26895,20 +26895,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -26949,7 +26949,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -27019,17 +27019,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vexp_arch=armv8.2-a+fp16": {
         "name": "ml_fdf19a93c7eb66d9",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vexp/gen/f16-vexp-neonfp16arith-poly-3.c",
+            "@chromium_xnnpack//:src/f16-vexp/gen/f16-vexp-neonfp16arith-poly-3.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -27101,7 +27101,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -27167,20 +27167,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -27221,7 +27221,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -27291,17 +27291,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vexp_arm64": {
         "name": "ml_091543d3e07f7050",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vexp/gen/f16-vexp-scalar-poly-3.c",
+            "@chromium_xnnpack//:src/f16-vexp/gen/f16-vexp-scalar-poly-3.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -27372,7 +27372,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -27438,20 +27438,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -27492,7 +27492,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -27561,17 +27561,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vgelu_arch=armv8.2-a+fp16": {
         "name": "ml_2c0c746671a4fbc4",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vgelu/gen/f16-vgelu-neonfp16arith-rational-6-4-div.c",
+            "@chromium_xnnpack//:src/f16-vgelu/gen/f16-vgelu-neonfp16arith-rational-6-4-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -27643,7 +27643,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -27709,20 +27709,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -27763,7 +27763,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -27833,17 +27833,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vgelu_arm64": {
         "name": "ml_62aae86d706477e1",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vgelu/gen/f16-vgelu-scalar-rational-6-4-div.c",
+            "@chromium_xnnpack//:src/f16-vgelu/gen/f16-vgelu-scalar-rational-6-4-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -27914,7 +27914,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -27980,20 +27980,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -28034,7 +28034,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -28103,17 +28103,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vhswish_arch=armv8.2-a+fp16": {
         "name": "ml_bd9c1e874ad9e8d6",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vhswish/gen/f16-vhswish-neonfp16arith-u16.c",
+            "@chromium_xnnpack//:src/f16-vhswish/gen/f16-vhswish-neonfp16arith-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -28185,7 +28185,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -28251,20 +28251,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -28305,7 +28305,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -28375,17 +28375,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vlrelu_arch=armv8.2-a+fp16": {
         "name": "ml_3d27850823ab3ea3",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vlrelu/gen/f16-vlrelu-neonfp16arith-u16.c",
+            "@chromium_xnnpack//:src/f16-vlrelu/gen/f16-vlrelu-neonfp16arith-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -28457,7 +28457,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -28523,20 +28523,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -28577,7 +28577,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -28647,17 +28647,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vmulcaddc_arch=armv8.2-a+fp16": {
         "name": "ml_12ae32edb275db25",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vmulcaddc/gen/f16-vmulcaddc-c8-minmax-neonfp16arith-2x.c",
+            "@chromium_xnnpack//:src/f16-vmulcaddc/gen/f16-vmulcaddc-c8-minmax-neonfp16arith-2x.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -28729,7 +28729,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -28795,20 +28795,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -28849,7 +28849,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -28919,8 +28919,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vrnd_arch=armv8.2-a+fp16": {
         "name": "ml_4dc453f24ea5e1f2",
@@ -28929,10 +28929,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f16-vrnd/gen/f16-vrndd-neonfp16arith-u16.c",
             "@chromium_xnnpack//:src/f16-vrnd/gen/f16-vrndne-neonfp16arith-u16.c",
             "@chromium_xnnpack//:src/f16-vrnd/gen/f16-vrndu-neonfp16arith-u16.c",
-            "@chromium_xnnpack//:src/f16-vrnd/gen/f16-vrndz-neonfp16arith-u16.c",
+            "@chromium_xnnpack//:src/f16-vrnd/gen/f16-vrndz-neonfp16arith-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -29004,7 +29004,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -29070,20 +29070,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -29124,7 +29124,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -29194,17 +29194,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vrsqrt_arch=armv8.2-a+fp16": {
         "name": "ml_e1e45099ebc63585",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vrsqrt/gen/f16-vrsqrt-neonfp16arith-rsqrt-u16.c",
+            "@chromium_xnnpack//:src/f16-vrsqrt/gen/f16-vrsqrt-neonfp16arith-rsqrt-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -29276,7 +29276,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -29342,20 +29342,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -29396,7 +29396,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -29466,18 +29466,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vsigmoid_arch=armv8.2-a+fp16": {
         "name": "ml_ca0617dbfb3b0711",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f16-vsigmoid/gen/f16-vsigmoid-neonfp16arith-rr2-p2-nr1fma-u32.c",
-            "@chromium_xnnpack//:src/f16-vsigmoid/gen/f16-vsigmoid-neonfp16arith-rr2-p2-nr1recps-u16.c",
+            "@chromium_xnnpack//:src/f16-vsigmoid/gen/f16-vsigmoid-neonfp16arith-rr2-p2-nr1recps-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -29549,7 +29549,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -29615,20 +29615,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -29669,7 +29669,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -29739,17 +29739,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vsin_arch=armv8.2-a+fp16": {
         "name": "ml_8b19c88a30cddea8",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vsin/gen/f16-vsin-neonfp16arith-rational-3-2-div.c",
+            "@chromium_xnnpack//:src/f16-vsin/gen/f16-vsin-neonfp16arith-rational-3-2-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -29821,7 +29821,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -29887,20 +29887,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -29941,7 +29941,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -30011,17 +30011,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vsin_arm64": {
         "name": "ml_3a101b4e7563a62d",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f16-vsin/gen/f16-vsin-scalar-rational-3-2-div.c",
+            "@chromium_xnnpack//:src/f16-vsin/gen/f16-vsin-scalar-rational-3-2-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -30092,7 +30092,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -30158,20 +30158,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -30212,7 +30212,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -30281,18 +30281,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vsqrt_arch=armv8.2-a+fp16": {
         "name": "ml_42cd9f8bf56f9cd1",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f16-vsqrt/gen/f16-vsqrt-aarch64-neonfp16arith-sqrt-u8.c",
-            "@chromium_xnnpack//:src/f16-vsqrt/gen/f16-vsqrt-neonfp16arith-nr1fma1adj-u8.c",
+            "@chromium_xnnpack//:src/f16-vsqrt/gen/f16-vsqrt-neonfp16arith-nr1fma1adj-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -30364,7 +30364,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -30430,20 +30430,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -30484,7 +30484,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -30554,18 +30554,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vtanh_arch=armv8.2-a+fp16": {
         "name": "ml_08faf53d214f3c27",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f16-vtanh/gen/f16-vtanh-aarch64-neonfp16arith-expm1minus-rr1-p3h2ts-div-u32.c",
-            "@chromium_xnnpack//:src/f16-vtanh/gen/f16-vtanh-neonfp16arith-expm1minus-rr1-p3h2ts-nr1fma-u32.c",
+            "@chromium_xnnpack//:src/f16-vtanh/gen/f16-vtanh-neonfp16arith-expm1minus-rr1-p3h2ts-nr1fma-u32.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -30637,7 +30637,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -30703,20 +30703,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -30757,7 +30757,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -30827,8 +30827,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f16-vunary_arch=armv8.2-a+fp16": {
         "name": "ml_07cc4d3811a38681",
@@ -30836,10 +30836,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f16-vunary/gen/f16-vabs-neonfp16arith-u16.c",
             "@chromium_xnnpack//:src/f16-vunary/gen/f16-vneg-neonfp16arith-u16.c",
-            "@chromium_xnnpack//:src/f16-vunary/gen/f16-vsqr-neonfp16arith-u16.c",
+            "@chromium_xnnpack//:src/f16-vunary/gen/f16-vsqr-neonfp16arith-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -30911,7 +30911,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -30977,20 +30977,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -31031,7 +31031,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -31101,18 +31101,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-argmaxpool_arm64": {
         "name": "ml_f995907875c679b4",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-argmaxpool/f32-argmaxpool-9p8x-neon-c4.c",
-            "@chromium_xnnpack//:src/f32-argmaxpool/f32-argmaxpool-9p8x-scalar-c1.c",
+            "@chromium_xnnpack//:src/f32-argmaxpool/f32-argmaxpool-9p8x-scalar-c1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -31183,7 +31183,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -31249,20 +31249,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -31303,7 +31303,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -31372,18 +31372,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-avgpool_arm64": {
         "name": "ml_d0d84a76c77e85fb",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-avgpool/gen/f32-avgpool-9p-minmax-neon-u4.c",
-            "@chromium_xnnpack//:src/f32-avgpool/gen/f32-avgpool-9p-minmax-scalar-u1.c",
+            "@chromium_xnnpack//:src/f32-avgpool/gen/f32-avgpool-9p-minmax-scalar-u1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -31454,7 +31454,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -31520,20 +31520,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -31574,7 +31574,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -31643,8 +31643,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-conv-hwc2chw_arm64": {
         "name": "ml_3b1ca603a8695836",
@@ -31652,10 +31652,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f32-conv-hwc2chw/f32-conv-hwc2chw-3x3s2p1c3x4-aarch64-neonfma-2x2.c",
             "@chromium_xnnpack//:src/f32-conv-hwc2chw/f32-conv-hwc2chw-3x3s2p1c3x4-neon-2x2.c",
-            "@chromium_xnnpack//:src/f32-conv-hwc2chw/f32-conv-hwc2chw-3x3s2p1c3x4-scalar-1x1.c",
+            "@chromium_xnnpack//:src/f32-conv-hwc2chw/f32-conv-hwc2chw-3x3s2p1c3x4-scalar-1x1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -31726,7 +31726,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -31792,20 +31792,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -31846,7 +31846,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -31915,8 +31915,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-dwconv2d-chw_arm64": {
         "name": "ml_2a379d1441c8724b",
@@ -31937,10 +31937,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-dwconv2d-chw/gen/f32-dwconv2d-chw-5x5s2p2-minmax-aarch64-neonfma-1x4-acc2.c",
             "@chromium_xnnpack//:src/f32-dwconv2d-chw/gen/f32-dwconv2d-chw-5x5s2p2-minmax-neon-1x4.c",
             "@chromium_xnnpack//:src/f32-dwconv2d-chw/gen/f32-dwconv2d-chw-5x5s2p2-minmax-scalar-1x1-acc5.c",
-            "@chromium_xnnpack//:src/f32-dwconv2d-chw/gen/f32-dwconv2d-chw-5x5s2p2-minmax-scalar-2x1-acc2.c",
+            "@chromium_xnnpack//:src/f32-dwconv2d-chw/gen/f32-dwconv2d-chw-5x5s2p2-minmax-scalar-2x1-acc2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -32011,7 +32011,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -32077,20 +32077,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -32131,7 +32131,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -32200,17 +32200,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-dwconv_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_cf84cfc083d16f08",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/f32-dwconv/f32-dwconv-9p4c-minmax-asm-aarch64-neonfma-cortex-a55.S",
+            "@chromium_xnnpack//:src/f32-dwconv/f32-dwconv-9p4c-minmax-asm-aarch64-neonfma-cortex-a55.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -32282,7 +32282,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -32348,20 +32348,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -32402,10 +32402,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -32474,8 +32474,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-dwconv_arm64": {
         "name": "ml_0cc9c9714b992644",
@@ -32498,10 +32498,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-dwconv/gen/f32-dwconv-9p1c-minmax-scalar-acc2.c",
             "@chromium_xnnpack//:src/f32-dwconv/gen/f32-dwconv-9p1c-scalar-acc2.c",
             "@chromium_xnnpack//:src/f32-dwconv/gen/f32-dwconv-9p8c-minmax-neon.c",
-            "@chromium_xnnpack//:src/f32-dwconv/gen/f32-dwconv-9p8c-minmax-neonfma.c",
+            "@chromium_xnnpack//:src/f32-dwconv/gen/f32-dwconv-9p8c-minmax-neonfma.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -32572,7 +32572,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -32638,20 +32638,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -32692,7 +32692,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -32761,8 +32761,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-f16-vcvt_arm64": {
         "name": "ml_57d31f116f38af36",
@@ -32770,10 +32770,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f32-f16-vcvt/gen/f32-f16-vcvt-neon-u8.c",
             "@chromium_xnnpack//:src/f32-f16-vcvt/gen/f32-f16-vcvt-neonfp16-u16.c",
-            "@chromium_xnnpack//:src/f32-f16-vcvt/gen/f32-f16-vcvt-scalar-fabsf-u2.c",
+            "@chromium_xnnpack//:src/f32-f16-vcvt/gen/f32-f16-vcvt-scalar-fabsf-u2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -32844,7 +32844,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -32910,20 +32910,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -32964,7 +32964,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -33033,8 +33033,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-gemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_8b3bd37bdee06654",
@@ -33060,10 +33060,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-6x8-minmax-asm-aarch64-neonfma-cortex-a75-prfm.S",
             "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-6x8-minmax-asm-aarch64-neonfma-ld128.S",
             "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-7x8-minmax-asm-aarch64-neonfma-ld128-2.S",
-            "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-8x8-minmax-asm-aarch64-neonfma-ld128-2.S",
+            "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-8x8-minmax-asm-aarch64-neonfma-ld128-2.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -33135,7 +33135,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -33201,20 +33201,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -33255,10 +33255,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -33327,8 +33327,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-gemm_arm64": {
         "name": "ml_98579a5978f06846",
@@ -33352,10 +33352,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-4x8-minmax-neon-lane-ld128.c",
             "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-4x8s4-minmax-neonfma.c",
             "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-6x8-minmax-aarch64-neonfma-lane-ld128.c",
-            "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-6x8s4-minmax-neonfma.c",
+            "@chromium_xnnpack//:src/f32-gemm/gen/f32-gemm-6x8s4-minmax-neonfma.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -33426,7 +33426,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -33492,20 +33492,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -33546,7 +33546,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -33615,8 +33615,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-ibilinear-chw_arm64": {
         "name": "ml_e9fb39b7b7f25cfb",
@@ -33624,10 +33624,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f32-ibilinear-chw/gen/f32-ibilinear-chw-neon-p8.c",
             "@chromium_xnnpack//:src/f32-ibilinear-chw/gen/f32-ibilinear-chw-neonfma-p8.c",
-            "@chromium_xnnpack//:src/f32-ibilinear-chw/gen/f32-ibilinear-chw-scalar-p4.c",
+            "@chromium_xnnpack//:src/f32-ibilinear-chw/gen/f32-ibilinear-chw-scalar-p4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -33698,7 +33698,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -33764,20 +33764,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -33818,7 +33818,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -33887,8 +33887,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-ibilinear_arm64": {
         "name": "ml_7923af23e1753179",
@@ -33896,10 +33896,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f32-ibilinear/gen/f32-ibilinear-neon-u8.c",
             "@chromium_xnnpack//:src/f32-ibilinear/gen/f32-ibilinear-neonfma-u8.c",
-            "@chromium_xnnpack//:src/f32-ibilinear/gen/f32-ibilinear-scalar-u2.c",
+            "@chromium_xnnpack//:src/f32-ibilinear/gen/f32-ibilinear-scalar-u2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -33970,7 +33970,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -34036,20 +34036,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -34090,7 +34090,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -34159,8 +34159,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-igemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_5bf9da720e909224",
@@ -34183,10 +34183,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-6x8-minmax-asm-aarch64-neonfma-cortex-a53-prfm.S",
             "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-6x8-minmax-asm-aarch64-neonfma-cortex-a53.S",
             "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-6x8-minmax-asm-aarch64-neonfma-cortex-a75-prfm.S",
-            "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-6x8-minmax-asm-aarch64-neonfma-ld128.S",
+            "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-6x8-minmax-asm-aarch64-neonfma-ld128.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -34258,7 +34258,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -34324,20 +34324,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -34378,10 +34378,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -34450,8 +34450,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-igemm_arm64": {
         "name": "ml_4fd79d64f6761868",
@@ -34475,10 +34475,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-4x8-minmax-neon-lane-ld128.c",
             "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-4x8s4-minmax-neonfma.c",
             "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-6x8-minmax-aarch64-neonfma-lane-ld128.c",
-            "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-6x8s4-minmax-neonfma.c",
+            "@chromium_xnnpack//:src/f32-igemm/gen/f32-igemm-6x8s4-minmax-neonfma.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -34549,7 +34549,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -34615,20 +34615,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -34669,7 +34669,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -34738,18 +34738,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-maxpool_arm64": {
         "name": "ml_990f83673997a945",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-maxpool/gen/f32-maxpool-9p-minmax-neon-u4.c",
-            "@chromium_xnnpack//:src/f32-maxpool/gen/f32-maxpool-9p-minmax-scalar-u1.c",
+            "@chromium_xnnpack//:src/f32-maxpool/gen/f32-maxpool-9p-minmax-scalar-u1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -34820,7 +34820,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -34886,20 +34886,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -34940,7 +34940,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -35009,8 +35009,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-qc4w-gemm_arm64": {
         "name": "ml_cbbc6f1b64a569a8",
@@ -35022,10 +35022,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-qc4w-gemm/gen/f32-qc4w-gemm-4x4-minmax-scalar.c",
             "@chromium_xnnpack//:src/f32-qc4w-gemm/gen/f32-qc4w-gemm-4x8-minmax-aarch64-neonfma-lane-ld128.c",
             "@chromium_xnnpack//:src/f32-qc4w-gemm/gen/f32-qc4w-gemm-4x8-minmax-neon-lane-ld64.c",
-            "@chromium_xnnpack//:src/f32-qc4w-gemm/gen/f32-qc4w-gemm-6x8-minmax-aarch64-neonfma-lane-ld128.c",
+            "@chromium_xnnpack//:src/f32-qc4w-gemm/gen/f32-qc4w-gemm-6x8-minmax-aarch64-neonfma-lane-ld128.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -35096,7 +35096,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -35162,20 +35162,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -35216,7 +35216,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -35285,8 +35285,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-qc8w-gemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_a9e49a94d4070c61",
@@ -35294,10 +35294,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f32-qc8w-gemm/gen/f32-qc8w-gemm-1x8-minmax-asm-aarch64-neonfma-ld128-acc4.S",
             "@chromium_xnnpack//:src/f32-qc8w-gemm/gen/f32-qc8w-gemm-1x8-minmax-asm-aarch64-neonfma-ld128.S",
-            "@chromium_xnnpack//:src/f32-qc8w-gemm/gen/f32-qc8w-gemm-6x8-minmax-asm-aarch64-neonfma-ld128.S",
+            "@chromium_xnnpack//:src/f32-qc8w-gemm/gen/f32-qc8w-gemm-6x8-minmax-asm-aarch64-neonfma-ld128.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -35369,7 +35369,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -35435,20 +35435,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -35489,10 +35489,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -35561,8 +35561,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-qc8w-gemm_arm64": {
         "name": "ml_f2437d9311174033",
@@ -35573,10 +35573,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-qc8w-gemm/gen/f32-qc8w-gemm-1x8-minmax-neon-lane-ld64.c",
             "@chromium_xnnpack//:src/f32-qc8w-gemm/gen/f32-qc8w-gemm-4x4-minmax-scalar.c",
             "@chromium_xnnpack//:src/f32-qc8w-gemm/gen/f32-qc8w-gemm-4x8-minmax-neon-lane-ld64.c",
-            "@chromium_xnnpack//:src/f32-qc8w-gemm/gen/f32-qc8w-gemm-6x8-minmax-aarch64-neonfma-lane-ld64.c",
+            "@chromium_xnnpack//:src/f32-qc8w-gemm/gen/f32-qc8w-gemm-6x8-minmax-aarch64-neonfma-lane-ld64.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -35647,7 +35647,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -35713,20 +35713,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -35767,7 +35767,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -35836,8 +35836,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-qs8-vcvt_arm64": {
         "name": "ml_a4a7635a734d5858",
@@ -35846,10 +35846,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-qs8-vcvt/gen/f32-qs8-vcvt-neon-u32.c",
             "@chromium_xnnpack//:src/f32-qs8-vcvt/gen/f32-qs8-vcvt-neonv8-u32.c",
             "@chromium_xnnpack//:src/f32-qs8-vcvt/gen/f32-qs8-vcvt-scalar-imagic-u4.c",
-            "@chromium_xnnpack//:src/f32-qs8-vcvt/gen/f32-qs8-vcvt-scalar-lrintf-u4.c",
+            "@chromium_xnnpack//:src/f32-qs8-vcvt/gen/f32-qs8-vcvt-scalar-lrintf-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -35920,7 +35920,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -35986,20 +35986,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -36040,7 +36040,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -36109,8 +36109,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-qu8-vcvt_arm64": {
         "name": "ml_7daa6467b6d95fef",
@@ -36119,10 +36119,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-qu8-vcvt/gen/f32-qu8-vcvt-neon-u32.c",
             "@chromium_xnnpack//:src/f32-qu8-vcvt/gen/f32-qu8-vcvt-neonv8-u32.c",
             "@chromium_xnnpack//:src/f32-qu8-vcvt/gen/f32-qu8-vcvt-scalar-imagic-u4.c",
-            "@chromium_xnnpack//:src/f32-qu8-vcvt/gen/f32-qu8-vcvt-scalar-lrintf-u4.c",
+            "@chromium_xnnpack//:src/f32-qu8-vcvt/gen/f32-qu8-vcvt-scalar-lrintf-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -36193,7 +36193,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -36259,20 +36259,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -36313,7 +36313,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -36382,18 +36382,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-raddstoreexpminusmax_arm64": {
         "name": "ml_18b4832aca8744e3",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-raddstoreexpminusmax/gen/f32-raddstoreexpminusmax-neonfma-rr1-lut64-p2-u16-acc2.c",
-            "@chromium_xnnpack//:src/f32-raddstoreexpminusmax/gen/f32-raddstoreexpminusmax-scalar-rr2-p5-u4-acc2.c",
+            "@chromium_xnnpack//:src/f32-raddstoreexpminusmax/gen/f32-raddstoreexpminusmax-scalar-rr2-p5-u4-acc2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -36464,7 +36464,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -36530,20 +36530,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -36584,7 +36584,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -36653,8 +36653,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-rdminmax_arm64": {
         "name": "ml_298b0bf19463914c",
@@ -36663,10 +36663,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-rdminmax/gen/f32-rdmax-2p2x-neon-u32.c",
             "@chromium_xnnpack//:src/f32-rdminmax/gen/f32-rdmax-2p2x-scalar-u2.c",
             "@chromium_xnnpack//:src/f32-rdminmax/gen/f32-rdmin-2p2x-neon-u32.c",
-            "@chromium_xnnpack//:src/f32-rdminmax/gen/f32-rdmin-2p2x-scalar-u2.c",
+            "@chromium_xnnpack//:src/f32-rdminmax/gen/f32-rdmin-2p2x-scalar-u2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -36737,7 +36737,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -36803,20 +36803,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -36857,7 +36857,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -36926,18 +36926,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-rdsum2_arm64": {
         "name": "ml_a97bbad60aaf08f1",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-rdsum2/gen/f32-rdsum2-7p7x-minmax-neon.c",
-            "@chromium_xnnpack//:src/f32-rdsum2/gen/f32-rdsum2-7p7x-minmax-scalar.c",
+            "@chromium_xnnpack//:src/f32-rdsum2/gen/f32-rdsum2-7p7x-minmax-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -37008,7 +37008,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -37074,20 +37074,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -37128,7 +37128,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -37197,18 +37197,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-rdsum_arm64": {
         "name": "ml_9f8973b154544d6d",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-rdsum/gen/f32-rdsum-7p7x-minmax-neon-u16.c",
-            "@chromium_xnnpack//:src/f32-rdsum/gen/f32-rdsum-7p7x-minmax-scalar.c",
+            "@chromium_xnnpack//:src/f32-rdsum/gen/f32-rdsum-7p7x-minmax-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -37279,7 +37279,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -37345,20 +37345,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -37399,7 +37399,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -37468,8 +37468,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-rminmax_arm64": {
         "name": "ml_e07a02b39231a2ba",
@@ -37480,10 +37480,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-rminmax/gen/f32-rmin-neon-u16-acc4.c",
             "@chromium_xnnpack//:src/f32-rminmax/gen/f32-rmin-scalar-u4-acc4.c",
             "@chromium_xnnpack//:src/f32-rminmax/gen/f32-rminmax-neon-u16-acc4.c",
-            "@chromium_xnnpack//:src/f32-rminmax/gen/f32-rminmax-scalar-u4-acc4.c",
+            "@chromium_xnnpack//:src/f32-rminmax/gen/f32-rminmax-scalar-u4-acc4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -37554,7 +37554,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -37620,20 +37620,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -37674,7 +37674,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -37743,18 +37743,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-rsum2_arm64": {
         "name": "ml_dbe6146cb7e5e890",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-rsum2/gen/f32-rsum2-neon.c",
-            "@chromium_xnnpack//:src/f32-rsum2/gen/f32-rsum2-scalar-u1.c",
+            "@chromium_xnnpack//:src/f32-rsum2/gen/f32-rsum2-scalar-u1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -37825,7 +37825,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -37891,20 +37891,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -37945,7 +37945,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -38014,18 +38014,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-rsum_arm64": {
         "name": "ml_3afc1f7a648f3528",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-rsum/gen/f32-rsum-neon-u16-acc4.c",
-            "@chromium_xnnpack//:src/f32-rsum/gen/f32-rsum-scalar-u4-acc4.c",
+            "@chromium_xnnpack//:src/f32-rsum/gen/f32-rsum-scalar-u4-acc4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -38096,7 +38096,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -38162,20 +38162,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -38216,7 +38216,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -38285,8 +38285,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-spmm_arm64": {
         "name": "ml_d8b17bc5e7c9a47a",
@@ -38298,10 +38298,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-spmm/gen/f32-spmm-32x4-minmax-aarch64-neonfma.c",
             "@chromium_xnnpack//:src/f32-spmm/gen/f32-spmm-8x1-minmax-scalar.c",
             "@chromium_xnnpack//:src/f32-spmm/gen/f32-spmm-8x2-minmax-scalar.c",
-            "@chromium_xnnpack//:src/f32-spmm/gen/f32-spmm-8x4-minmax-scalar.c",
+            "@chromium_xnnpack//:src/f32-spmm/gen/f32-spmm-8x4-minmax-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -38372,7 +38372,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -38438,20 +38438,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -38492,7 +38492,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -38561,18 +38561,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vapproxgelu_arm64": {
         "name": "ml_14cb0294bac16beb",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vapproxgelu/gen/f32-vapproxgelu-neon-rational-12-10-div.c",
-            "@chromium_xnnpack//:src/f32-vapproxgelu/gen/f32-vapproxgelu-scalar-rational-12-10-div.c",
+            "@chromium_xnnpack//:src/f32-vapproxgelu/gen/f32-vapproxgelu-scalar-rational-12-10-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -38643,7 +38643,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -38709,20 +38709,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -38763,7 +38763,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -38832,8 +38832,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vbinary_arm64": {
         "name": "ml_b8af2beae09ff5ec",
@@ -38876,10 +38876,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-vbinary/gen/f32-vsub-neon-u8.c",
             "@chromium_xnnpack//:src/f32-vbinary/gen/f32-vsub-scalar-u8.c",
             "@chromium_xnnpack//:src/f32-vbinary/gen/f32-vsubc-neon-u8.c",
-            "@chromium_xnnpack//:src/f32-vbinary/gen/f32-vsubc-scalar-u8.c",
+            "@chromium_xnnpack//:src/f32-vbinary/gen/f32-vsubc-scalar-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -38950,7 +38950,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -39016,20 +39016,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -39070,7 +39070,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -39139,18 +39139,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vclamp_arm64": {
         "name": "ml_61d5f9b18332018b",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vclamp/gen/f32-vclamp-neon.c",
-            "@chromium_xnnpack//:src/f32-vclamp/gen/f32-vclamp-scalar.c",
+            "@chromium_xnnpack//:src/f32-vclamp/gen/f32-vclamp-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -39221,7 +39221,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -39287,20 +39287,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -39341,7 +39341,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -39410,18 +39410,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vcmul_arm64": {
         "name": "ml_8b84e56c4998d96e",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vcmul/gen/f32-vcmul-neon-u8.c",
-            "@chromium_xnnpack//:src/f32-vcmul/gen/f32-vcmul-scalar-u4.c",
+            "@chromium_xnnpack//:src/f32-vcmul/gen/f32-vcmul-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -39492,7 +39492,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -39558,20 +39558,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -39612,7 +39612,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -39681,8 +39681,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vcopysign_arm64": {
         "name": "ml_af10f6f686ba921e",
@@ -39693,10 +39693,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-vcopysign/gen/f32-vcopysignc-neon.c",
             "@chromium_xnnpack//:src/f32-vcopysign/gen/f32-vcopysignc-scalar.c",
             "@chromium_xnnpack//:src/f32-vcopysign/gen/f32-vrcopysignc-neon.c",
-            "@chromium_xnnpack//:src/f32-vcopysign/gen/f32-vrcopysignc-scalar.c",
+            "@chromium_xnnpack//:src/f32-vcopysign/gen/f32-vrcopysignc-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -39767,7 +39767,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -39833,20 +39833,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -39887,7 +39887,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -39956,18 +39956,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vcos_arm64": {
         "name": "ml_00e7b14376805d96",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vcos/gen/f32-vcos-neon-rational-5-4-div.c",
-            "@chromium_xnnpack//:src/f32-vcos/gen/f32-vcos-scalar-rational-5-4-div.c",
+            "@chromium_xnnpack//:src/f32-vcos/gen/f32-vcos-scalar-rational-5-4-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -40038,7 +40038,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -40104,20 +40104,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -40158,7 +40158,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -40227,8 +40227,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-velu_arm64": {
         "name": "ml_cac694a3d4de21f8",
@@ -40237,10 +40237,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-velu/gen/f32-velu-neon-rr2-lut16-p3-u8.c",
             "@chromium_xnnpack//:src/f32-velu/gen/f32-velu-neonfma-rr1-lut16-p3-u16.c",
             "@chromium_xnnpack//:src/f32-velu/gen/f32-velu-neonfma-rr1-p6-u8.c",
-            "@chromium_xnnpack//:src/f32-velu/gen/f32-velu-scalar-rr2-lut16-p3-u4.c",
+            "@chromium_xnnpack//:src/f32-velu/gen/f32-velu-scalar-rr2-lut16-p3-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -40311,7 +40311,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -40377,20 +40377,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -40431,7 +40431,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -40500,18 +40500,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vexp_arm64": {
         "name": "ml_058a6ccec3cad31b",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vexp/gen/f32-vexp-neon-rational-3-2-div.c",
-            "@chromium_xnnpack//:src/f32-vexp/gen/f32-vexp-scalar-rational-3-2-div.c",
+            "@chromium_xnnpack//:src/f32-vexp/gen/f32-vexp-scalar-rational-3-2-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -40582,7 +40582,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -40648,20 +40648,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -40702,7 +40702,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -40771,18 +40771,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vgelu_arm64": {
         "name": "ml_49eed07a3951893d",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vgelu/gen/f32-vgelu-neon-rational-12-10-div.c",
-            "@chromium_xnnpack//:src/f32-vgelu/gen/f32-vgelu-scalar-rational-12-10-div.c",
+            "@chromium_xnnpack//:src/f32-vgelu/gen/f32-vgelu-scalar-rational-12-10-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -40853,7 +40853,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -40919,20 +40919,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -40973,7 +40973,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -41042,18 +41042,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vhswish_arm64": {
         "name": "ml_3fe8b04c29fd657d",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vhswish/gen/f32-vhswish-neon.c",
-            "@chromium_xnnpack//:src/f32-vhswish/gen/f32-vhswish-scalar.c",
+            "@chromium_xnnpack//:src/f32-vhswish/gen/f32-vhswish-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -41124,7 +41124,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -41190,20 +41190,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -41244,7 +41244,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -41313,18 +41313,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vlog_arm64": {
         "name": "ml_2fd7cb4ee64a1feb",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vlog/gen/f32-vlog-neon-rational-3-3-div.c",
-            "@chromium_xnnpack//:src/f32-vlog/gen/f32-vlog-scalar-rational-3-3-div.c",
+            "@chromium_xnnpack//:src/f32-vlog/gen/f32-vlog-scalar-rational-3-3-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -41395,7 +41395,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -41461,20 +41461,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -41515,7 +41515,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -41584,18 +41584,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vlrelu_arm64": {
         "name": "ml_802f5a6b703239ef",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vlrelu/gen/f32-vlrelu-neon-u8.c",
-            "@chromium_xnnpack//:src/f32-vlrelu/gen/f32-vlrelu-scalar-u4.c",
+            "@chromium_xnnpack//:src/f32-vlrelu/gen/f32-vlrelu-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -41666,7 +41666,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -41732,20 +41732,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -41786,7 +41786,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -41855,8 +41855,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vmulcaddc_arm64": {
         "name": "ml_8cf347ac3dfa08eb",
@@ -41864,10 +41864,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f32-vmulcaddc/gen/f32-vmulcaddc-c1-minmax-scalar-2x.c",
             "@chromium_xnnpack//:src/f32-vmulcaddc/gen/f32-vmulcaddc-c4-minmax-neon-2x.c",
-            "@chromium_xnnpack//:src/f32-vmulcaddc/gen/f32-vmulcaddc-c4-minmax-neonfma-2x.c",
+            "@chromium_xnnpack//:src/f32-vmulcaddc/gen/f32-vmulcaddc-c4-minmax-neonfma-2x.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -41938,7 +41938,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -42004,20 +42004,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -42058,7 +42058,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -42127,8 +42127,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vrnd_arm64": {
         "name": "ml_c93fcb972445772e",
@@ -42145,10 +42145,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-vrnd/gen/f32-vrndu-scalar-libm-u1.c",
             "@chromium_xnnpack//:src/f32-vrnd/gen/f32-vrndz-neon-u8.c",
             "@chromium_xnnpack//:src/f32-vrnd/gen/f32-vrndz-neonv8-u8.c",
-            "@chromium_xnnpack//:src/f32-vrnd/gen/f32-vrndz-scalar-libm-u1.c",
+            "@chromium_xnnpack//:src/f32-vrnd/gen/f32-vrndz-scalar-libm-u1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -42219,7 +42219,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -42285,20 +42285,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -42339,7 +42339,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -42408,8 +42408,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vrsqrt_arm64": {
         "name": "ml_e902832e4a3911d1",
@@ -42417,10 +42417,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f32-vrsqrt/gen/f32-vrsqrt-neon-rsqrt.c",
             "@chromium_xnnpack//:src/f32-vrsqrt/gen/f32-vrsqrt-scalar-rsqrt-u1.c",
-            "@chromium_xnnpack//:src/f32-vrsqrt/gen/f32-vrsqrt-scalar-sqrt.c",
+            "@chromium_xnnpack//:src/f32-vrsqrt/gen/f32-vrsqrt-scalar-sqrt.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -42491,7 +42491,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -42557,20 +42557,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -42611,7 +42611,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -42680,8 +42680,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vsigmoid_arm64": {
         "name": "ml_2be0d267abeab1c3",
@@ -42689,10 +42689,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/f32-vsigmoid/gen/f32-vsigmoid-neon-rr2-lut64-p2-nr2recps-u8.c",
             "@chromium_xnnpack//:src/f32-vsigmoid/gen/f32-vsigmoid-neonfma-rr1-lut64-p2-nr2recps-u16.c",
-            "@chromium_xnnpack//:src/f32-vsigmoid/gen/f32-vsigmoid-scalar-rr2-lut64-p2-div-u2.c",
+            "@chromium_xnnpack//:src/f32-vsigmoid/gen/f32-vsigmoid-scalar-rr2-lut64-p2-div-u2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -42763,7 +42763,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -42829,20 +42829,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -42883,7 +42883,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -42952,18 +42952,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vsin_arm64": {
         "name": "ml_56d730aaf3f1e226",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vsin/gen/f32-vsin-neon-rational-5-4-div.c",
-            "@chromium_xnnpack//:src/f32-vsin/gen/f32-vsin-scalar-rational-5-4-div.c",
+            "@chromium_xnnpack//:src/f32-vsin/gen/f32-vsin-scalar-rational-5-4-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -43034,7 +43034,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -43100,20 +43100,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -43154,7 +43154,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -43223,18 +43223,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vsqrt_arm64": {
         "name": "ml_00401a4fedc513e0",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vsqrt/gen/f32-vsqrt-aarch64-neon-sqrt.c",
-            "@chromium_xnnpack//:src/f32-vsqrt/gen/f32-vsqrt-scalar-sqrt.c",
+            "@chromium_xnnpack//:src/f32-vsqrt/gen/f32-vsqrt-scalar-sqrt.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -43305,7 +43305,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -43371,20 +43371,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -43425,7 +43425,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -43494,18 +43494,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vtanh_arm64": {
         "name": "ml_23c8efa57a347222",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/f32-vtanh/gen/f32-vtanh-neon-rational-9-8-div.c",
-            "@chromium_xnnpack//:src/f32-vtanh/gen/f32-vtanh-scalar-rational-9-8-div.c",
+            "@chromium_xnnpack//:src/f32-vtanh/gen/f32-vtanh-scalar-rational-9-8-div.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -43576,7 +43576,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -43642,20 +43642,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -43696,7 +43696,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -43765,8 +43765,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:f32-vunary_arm64": {
         "name": "ml_c5d71c3e23ee741f",
@@ -43777,10 +43777,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/f32-vunary/gen/f32-vneg-neon.c",
             "@chromium_xnnpack//:src/f32-vunary/gen/f32-vneg-scalar.c",
             "@chromium_xnnpack//:src/f32-vunary/gen/f32-vsqr-neon.c",
-            "@chromium_xnnpack//:src/f32-vunary/gen/f32-vsqr-scalar.c",
+            "@chromium_xnnpack//:src/f32-vunary/gen/f32-vsqr-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -43851,7 +43851,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -43917,20 +43917,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -43971,7 +43971,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -44040,8 +44040,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:operators_arm64": {
         "name": "ml_ab56e7fbdd31480b",
@@ -44067,10 +44067,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/operators/softmax-nc.c",
             "@chromium_xnnpack//:src/operators/transpose-nd.c",
             "@chromium_xnnpack//:src/operators/unary-elementwise-nc.c",
-            "@chromium_xnnpack//:src/operators/unpooling-nhwc.c",
+            "@chromium_xnnpack//:src/operators/unpooling-nhwc.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -44141,7 +44141,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -44207,20 +44207,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -44261,7 +44261,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -44330,18 +44330,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:pf16-gemm_arch=armv8.2-a+sve+sve2": {
         "name": "ml_81037df67d890c3d",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/pf16-gemm/pf16-gemm-1x32c2-minmax-neonsme2.c",
-            "@chromium_xnnpack//:src/pf16-gemm/pf16-gemm-32x32c2-minmax-neonsme2.c",
+            "@chromium_xnnpack//:src/pf16-gemm/pf16-gemm-32x32c2-minmax-neonsme2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+sve+sve2",
@@ -44413,7 +44413,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -44479,20 +44479,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -44533,7 +44533,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -44603,8 +44603,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:pf32-gemm_arch=armv8.2-a+sve+sve2": {
         "name": "ml_2759a1a7eb9876a2",
@@ -44613,10 +44613,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/pf32-gemm/pf32-gemm-1x32-minmax-neonsme.c",
             "@chromium_xnnpack//:src/pf32-gemm/pf32-gemm-1x32-minmax-neonsme2.c",
             "@chromium_xnnpack//:src/pf32-gemm/pf32-gemm-32x32-minmax-neonsme.c",
-            "@chromium_xnnpack//:src/pf32-gemm/pf32-gemm-32x32-minmax-neonsme2.c",
+            "@chromium_xnnpack//:src/pf32-gemm/pf32-gemm-32x32-minmax-neonsme2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+sve+sve2",
@@ -44688,7 +44688,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -44754,20 +44754,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -44808,7 +44808,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -44878,17 +44878,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:pqs8-f32-qc8w-igemm_arch=armv8.2-a+sve+sve2": {
         "name": "ml_86a565beb082b2e3",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/pqs8-f32-qc8w-igemm/pqs8-f32-qc8w-igemm-32x32c4-minmax-neonsme2.c",
+            "@chromium_xnnpack//:src/pqs8-f32-qc8w-igemm/pqs8-f32-qc8w-igemm-32x32c4-minmax-neonsme2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+sve+sve2",
@@ -44960,7 +44960,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -45026,20 +45026,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -45080,7 +45080,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -45150,18 +45150,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:pqs8-qc8w-gemm_arch=armv8.2-a+sve+sve2": {
         "name": "ml_42fee0e846fe41a5",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/pqs8-qc8w-gemm/pqs8-qc8w-gemm-1x32c4-minmax-neonsme2.c",
-            "@chromium_xnnpack//:src/pqs8-qc8w-gemm/pqs8-qc8w-gemm-32x32c4-minmax-neonsme2.c",
+            "@chromium_xnnpack//:src/pqs8-qc8w-gemm/pqs8-qc8w-gemm-32x32c4-minmax-neonsme2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+sve+sve2",
@@ -45233,7 +45233,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -45299,20 +45299,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -45353,7 +45353,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -45423,18 +45423,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qb4-packw_arch=armv8.2-a+dotprod": {
         "name": "ml_be6eeca2e1ec7aca",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qb4-packw/gen/qb4-packw-x16c4-gemm-goi-aarch64-neondot.c",
-            "@chromium_xnnpack//:src/qb4-packw/gen/qb4-packw-x16c8-gemm-goi-aarch64-neondot.c",
+            "@chromium_xnnpack//:src/qb4-packw/gen/qb4-packw-x16c8-gemm-goi-aarch64-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -45506,7 +45506,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -45572,20 +45572,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -45626,7 +45626,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -45696,18 +45696,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qb4w-gemm_arch=armv8.2-a+dotprod+fp16": {
         "name": "ml_c76a6a2c282b0f9b",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qb4w-gemm/gen/qd8-f16-qb4w-gemm-1x16c4-minmax-neondotfp16arith.c",
-            "@chromium_xnnpack//:src/qd8-f16-qb4w-gemm/gen/qd8-f16-qb4w-gemm-4x16c4-minmax-neondotfp16arith.c",
+            "@chromium_xnnpack//:src/qd8-f16-qb4w-gemm/gen/qd8-f16-qb4w-gemm-4x16c4-minmax-neondotfp16arith.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod+fp16",
@@ -45779,7 +45779,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -45845,20 +45845,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -45899,7 +45899,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -45969,18 +45969,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qb4w-gemm_arch=armv8.2-a+fp16": {
         "name": "ml_b379cb77c64691c5",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qb4w-gemm/gen/qd8-f16-qb4w-gemm-1x16-minmax-neonfp16arith-mlal-lane.c",
-            "@chromium_xnnpack//:src/qd8-f16-qb4w-gemm/gen/qd8-f16-qb4w-gemm-6x16-minmax-neonfp16arith-mlal-lane.c",
+            "@chromium_xnnpack//:src/qd8-f16-qb4w-gemm/gen/qd8-f16-qb4w-gemm-6x16-minmax-neonfp16arith-mlal-lane.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -46052,7 +46052,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -46118,20 +46118,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -46172,7 +46172,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -46242,18 +46242,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qb4w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_ff31bba98b1cf51a",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qb4w-gemm/gen/qd8-f16-qb4w-gemm-1x16c8-minmax-neoni8mm.c",
-            "@chromium_xnnpack//:src/qd8-f16-qb4w-gemm/gen/qd8-f16-qb4w-gemm-4x16c8-minmax-neoni8mm.c",
+            "@chromium_xnnpack//:src/qd8-f16-qb4w-gemm/gen/qd8-f16-qb4w-gemm-4x16c8-minmax-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -46325,7 +46325,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -46391,20 +46391,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -46445,7 +46445,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -46515,18 +46515,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc4w-gemm_arch=armv8.2-a+dotprod+fp16": {
         "name": "ml_19439d1c69ffbc9e",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qc4w-gemm/gen/qd8-f16-qc4w-gemm-1x16c4-minmax-neondotfp16arith.c",
-            "@chromium_xnnpack//:src/qd8-f16-qc4w-gemm/gen/qd8-f16-qc4w-gemm-4x16c4-minmax-neondotfp16arith.c",
+            "@chromium_xnnpack//:src/qd8-f16-qc4w-gemm/gen/qd8-f16-qc4w-gemm-4x16c4-minmax-neondotfp16arith.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod+fp16",
@@ -46598,7 +46598,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -46664,20 +46664,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -46718,7 +46718,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -46788,18 +46788,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc4w-gemm_arch=armv8.2-a+fp16": {
         "name": "ml_ae56b82cfcbc6981",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qc4w-gemm/gen/qd8-f16-qc4w-gemm-1x16-minmax-neonfp16arith-mlal-lane.c",
-            "@chromium_xnnpack//:src/qd8-f16-qc4w-gemm/gen/qd8-f16-qc4w-gemm-6x16-minmax-neonfp16arith-mlal-lane.c",
+            "@chromium_xnnpack//:src/qd8-f16-qc4w-gemm/gen/qd8-f16-qc4w-gemm-6x16-minmax-neonfp16arith-mlal-lane.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -46871,7 +46871,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -46937,20 +46937,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -46991,7 +46991,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -47061,18 +47061,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc4w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_a51a4da291ca6043",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qc4w-gemm/gen/qd8-f16-qc4w-gemm-1x16c8-minmax-neoni8mm.c",
-            "@chromium_xnnpack//:src/qd8-f16-qc4w-gemm/gen/qd8-f16-qc4w-gemm-4x16c8-minmax-neoni8mm.c",
+            "@chromium_xnnpack//:src/qd8-f16-qc4w-gemm/gen/qd8-f16-qc4w-gemm-4x16c8-minmax-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -47144,7 +47144,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -47210,20 +47210,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -47264,7 +47264,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -47334,8 +47334,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc8w-gemm_arch=armv8.2-a+dotprod+fp16": {
         "name": "ml_f1ba30fec15f9bb6",
@@ -47344,10 +47344,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-1x16c4-minmax-neondotfp16arith.c",
             "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-1x8c4-minmax-neondotfp16arith.c",
             "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-4x16c4-minmax-neondotfp16arith.c",
-            "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-4x8c4-minmax-neondotfp16arith.c",
+            "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-4x8c4-minmax-neondotfp16arith.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod+fp16",
@@ -47419,7 +47419,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -47485,20 +47485,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -47539,7 +47539,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -47609,18 +47609,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc8w-gemm_arch=armv8.2-a+fp16": {
         "name": "ml_45c9c2829b33fefd",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-1x8c2s4-minmax-neonfp16arith.c",
-            "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-2x8c2s4-minmax-neonfp16arith.c",
+            "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-2x8c2s4-minmax-neonfp16arith.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -47692,7 +47692,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -47758,20 +47758,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -47812,7 +47812,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -47882,18 +47882,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc8w-gemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_a35c122e5b344b45",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-4x16c4-minmax-asm-aarch64-neondot-ld128.S",
-            "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-4x16c4-minmax-asm-aarch64-neondotfp16arith-cortex-a55.S",
+            "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-4x16c4-minmax-asm-aarch64-neondotfp16arith-cortex-a55.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -47965,7 +47965,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -48031,20 +48031,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -48085,10 +48085,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -48157,18 +48157,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc8w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_e5780b6c3f97a6c8",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-1x16c8-minmax-neoni8mm.c",
-            "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-4x16c8-minmax-neoni8mm.c",
+            "@chromium_xnnpack//:src/qd8-f16-qc8w-gemm/gen/qd8-f16-qc8w-gemm-4x16c8-minmax-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -48240,7 +48240,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -48306,20 +48306,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -48360,7 +48360,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -48430,8 +48430,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc8w-igemm_arch=armv8.2-a+dotprod+fp16": {
         "name": "ml_974a9f8c4a0b9830",
@@ -48440,10 +48440,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-1x16c4-minmax-neondotfp16arith.c",
             "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-1x8c4-minmax-neondotfp16arith.c",
             "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-4x16c4-minmax-neondotfp16arith.c",
-            "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-4x8c4-minmax-neondotfp16arith.c",
+            "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-4x8c4-minmax-neondotfp16arith.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod+fp16",
@@ -48515,7 +48515,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -48581,20 +48581,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -48635,7 +48635,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -48705,18 +48705,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc8w-igemm_arch=armv8.2-a+fp16": {
         "name": "ml_7432b84fc2f9fd82",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-1x8c2s4-minmax-neonfp16arith-mlal.c",
-            "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-2x8c2s4-minmax-neonfp16arith-mlal.c",
+            "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-2x8c2s4-minmax-neonfp16arith-mlal.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -48788,7 +48788,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -48854,20 +48854,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -48908,7 +48908,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -48978,18 +48978,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc8w-igemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_c03b732811871939",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-4x16c4-minmax-asm-aarch64-neondot-cortex-a55.S",
-            "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-4x16c4-minmax-asm-aarch64-neondot-ld128.S",
+            "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-4x16c4-minmax-asm-aarch64-neondot-ld128.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -49061,7 +49061,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -49127,20 +49127,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -49181,10 +49181,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -49253,18 +49253,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f16-qc8w-igemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_fa5929b7e0e5d87a",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-1x16c8-minmax-neoni8mm.c",
-            "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-4x16c8-minmax-neoni8mm.c",
+            "@chromium_xnnpack//:src/qd8-f16-qc8w-igemm/gen/qd8-f16-qc8w-igemm-4x16c8-minmax-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -49336,7 +49336,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -49402,20 +49402,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -49456,7 +49456,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -49526,18 +49526,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qb4w-gemm_arch=armv8.2-a+dotprod": {
         "name": "ml_81282d142a429177",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-1x16c4-minmax-neondot.c",
-            "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-4x16c4-minmax-neondot.c",
+            "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-4x16c4-minmax-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -49609,7 +49609,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -49675,20 +49675,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -49729,7 +49729,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -49799,18 +49799,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qb4w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_bee6feef88bbb485",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-1x16c8-minmax-neoni8mm.c",
-            "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-4x16c8-minmax-neoni8mm.c",
+            "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-4x16c8-minmax-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -49882,7 +49882,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -49948,20 +49948,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -50002,7 +50002,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -50072,8 +50072,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qb4w-gemm_arm64": {
         "name": "ml_5f4d8967b0f45b8d",
@@ -50082,10 +50082,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-1x16-minmax-neon-mlal-lane.c",
             "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-1x4-minmax-scalar.c",
             "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-4x4-minmax-scalar.c",
-            "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-6x16-minmax-neon-mlal-lane.c",
+            "@chromium_xnnpack//:src/qd8-f32-qb4w-gemm/gen/qd8-f32-qb4w-gemm-6x16-minmax-neon-mlal-lane.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -50156,7 +50156,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -50222,20 +50222,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -50276,7 +50276,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -50345,18 +50345,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc4w-gemm_arch=armv8.2-a+dotprod": {
         "name": "ml_8acd5a610251ba9b",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-1x16c4-minmax-neondot.c",
-            "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-4x16c4-minmax-neondot.c",
+            "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-4x16c4-minmax-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -50428,7 +50428,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -50494,20 +50494,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -50548,7 +50548,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -50618,18 +50618,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc4w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_dd3241f9269242f2",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-1x16c8-minmax-neoni8mm.c",
-            "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-4x16c8-minmax-neoni8mm.c",
+            "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-4x16c8-minmax-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -50701,7 +50701,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -50767,20 +50767,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -50821,7 +50821,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -50891,8 +50891,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc4w-gemm_arm64": {
         "name": "ml_8c941742afa78094",
@@ -50901,10 +50901,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-1x16-minmax-neon-mlal-lane.c",
             "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-1x4-minmax-scalar.c",
             "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-4x4-minmax-scalar.c",
-            "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-6x16-minmax-neon-mlal-lane.c",
+            "@chromium_xnnpack//:src/qd8-f32-qc4w-gemm/gen/qd8-f32-qc4w-gemm-6x16-minmax-neon-mlal-lane.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -50975,7 +50975,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -51041,20 +51041,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -51095,7 +51095,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -51164,8 +51164,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc8w-gemm_arch=armv8.2-a+dotprod": {
         "name": "ml_ee3212d1f688418a",
@@ -51174,10 +51174,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-1x16c4-minmax-neondot.c",
             "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-1x8c4-minmax-neondot.c",
             "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x16c4-minmax-neondot.c",
-            "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x8c4-minmax-neondot.c",
+            "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x8c4-minmax-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -51249,7 +51249,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -51315,20 +51315,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -51369,7 +51369,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -51439,18 +51439,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc8w-gemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_61876471a84834d2",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x16c4-minmax-asm-aarch64-neondot-cortex-a55.S",
-            "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x16c4-minmax-asm-aarch64-neondot-ld128.S",
+            "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x16c4-minmax-asm-aarch64-neondot-ld128.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -51522,7 +51522,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -51588,20 +51588,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -51642,10 +51642,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -51714,18 +51714,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc8w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_062aba0623987216",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-1x16c8-minmax-neoni8mm.c",
-            "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x16c8-minmax-neoni8mm.c",
+            "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x16c8-minmax-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -51797,7 +51797,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -51863,20 +51863,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -51917,7 +51917,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -51987,8 +51987,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc8w-gemm_arm64": {
         "name": "ml_d0cbca6da85e95a7",
@@ -52000,10 +52000,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-1x8c2s4-minmax-neon-mlal.c",
             "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-2x8c2s4-minmax-neon-mlal.c",
             "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x16-minmax-neon-mlal-lane-prfm.c",
-            "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x4-minmax-scalar.c",
+            "@chromium_xnnpack//:src/qd8-f32-qc8w-gemm/gen/qd8-f32-qc8w-gemm-4x4-minmax-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -52074,7 +52074,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -52140,20 +52140,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -52194,7 +52194,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -52263,8 +52263,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc8w-igemm_arch=armv8.2-a+dotprod": {
         "name": "ml_ff359f3e55a580dd",
@@ -52273,10 +52273,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-1x16c4-minmax-neondot.c",
             "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-1x8c4-minmax-neondot.c",
             "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x16c4-minmax-neondot.c",
-            "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x8c4-minmax-neondot.c",
+            "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x8c4-minmax-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -52348,7 +52348,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -52414,20 +52414,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -52468,7 +52468,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -52538,18 +52538,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc8w-igemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_83e002fbf8d32345",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x16c4-minmax-asm-aarch64-neondot-cortex-a55.S",
-            "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x16c4-minmax-asm-aarch64-neondot-ld128.S",
+            "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x16c4-minmax-asm-aarch64-neondot-ld128.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -52621,7 +52621,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -52687,20 +52687,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -52741,10 +52741,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -52813,18 +52813,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc8w-igemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_b6319a11cb268ab1",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-1x16c8-minmax-neoni8mm.c",
-            "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x16c8-minmax-neoni8mm.c",
+            "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x16c8-minmax-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -52896,7 +52896,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -52962,20 +52962,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -53016,7 +53016,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -53086,8 +53086,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qd8-f32-qc8w-igemm_arm64": {
         "name": "ml_6764f238f2e21f85",
@@ -53101,10 +53101,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-2x8c2s4-minmax-neon-mlal.c",
             "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x16-minmax-neon-mlal-lane-prfm.c",
             "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x4-minmax-scalar.c",
-            "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x8-minmax-neon-mlal-lane.c",
+            "@chromium_xnnpack//:src/qd8-f32-qc8w-igemm/gen/qd8-f32-qc8w-igemm-4x8-minmax-neon-mlal-lane.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -53175,7 +53175,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -53241,20 +53241,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -53295,7 +53295,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -53364,8 +53364,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qp8-f32-qb4w-gemm_arch=armv8.2-a+dotprod": {
         "name": "ml_f9bb5b0ca9619081",
@@ -53373,10 +53373,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/qp8-f32-qb4w-gemm/qp8-f32-qb4w-gemm-minmax-1x4c16s2-aarch64-neondot.c",
             "@chromium_xnnpack//:src/qp8-f32-qb4w-gemm/qp8-f32-qb4w-gemm-minmax-1x4c8s2-aarch64-neondot.c",
-            "@chromium_xnnpack//:src/qp8-f32-qb4w-gemm/qp8-f32-qb4w-gemm-minmax-4x4c8s2-aarch64-neondot.c",
+            "@chromium_xnnpack//:src/qp8-f32-qb4w-gemm/qp8-f32-qb4w-gemm-minmax-4x4c8s2-aarch64-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -53448,7 +53448,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -53514,20 +53514,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -53568,7 +53568,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -53638,17 +53638,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qp8-f32-qb4w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_baab18e3761463fb",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qp8-f32-qb4w-gemm/qp8-f32-qb4w-gemm-minmax-16x4c16s2-mstep4-neoni8mm.c",
+            "@chromium_xnnpack//:src/qp8-f32-qb4w-gemm/qp8-f32-qb4w-gemm-minmax-16x4c16s2-mstep4-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -53720,7 +53720,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -53786,20 +53786,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -53840,7 +53840,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -53910,8 +53910,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qp8-f32-qc4w-gemm_arch=armv8.2-a+dotprod": {
         "name": "ml_9142de4c2dee9b3f",
@@ -53919,10 +53919,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/qp8-f32-qc4w-gemm/qp8-f32-qc4w-gemm-minmax-16x4c8s2-mstep4-aarch64-neondot.c",
             "@chromium_xnnpack//:src/qp8-f32-qc4w-gemm/qp8-f32-qc4w-gemm-minmax-1x4c8s2-aarch64-neondot.c",
-            "@chromium_xnnpack//:src/qp8-f32-qc4w-gemm/qp8-f32-qc4w-gemm-minmax-1x8c16s2-aarch64-neondot.c",
+            "@chromium_xnnpack//:src/qp8-f32-qc4w-gemm/qp8-f32-qc4w-gemm-minmax-1x8c16s2-aarch64-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -53994,7 +53994,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -54060,20 +54060,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -54114,7 +54114,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -54184,17 +54184,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qp8-f32-qc4w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_a573ddf410355576",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qp8-f32-qc4w-gemm/qp8-f32-qc4w-gemm-minmax-8x8c16s2-mstep2-neoni8mm.c",
+            "@chromium_xnnpack//:src/qp8-f32-qc4w-gemm/qp8-f32-qc4w-gemm-minmax-8x8c16s2-mstep2-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -54266,7 +54266,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -54332,20 +54332,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -54386,7 +54386,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -54456,18 +54456,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qp8-f32-qc4w-gemm_arch=armv8.2-a+sve+sve2": {
         "name": "ml_c6fc9f1459b9eefa",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qp8-f32-qc4w-gemm/qp8-f32-qc4w-gemm-minmax-16x64c4-neonsme2.c",
-            "@chromium_xnnpack//:src/qp8-f32-qc4w-gemm/qp8-f32-qc4w-gemm-minmax-1x64c4-neonsme2.c",
+            "@chromium_xnnpack//:src/qp8-f32-qc4w-gemm/qp8-f32-qc4w-gemm-minmax-1x64c4-neonsme2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+sve+sve2",
@@ -54539,7 +54539,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -54605,20 +54605,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -54659,7 +54659,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -54729,8 +54729,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qp8-f32-qc8w-gemm_arch=armv8.2-a+dotprod": {
         "name": "ml_ffa54a5499b026dc",
@@ -54738,10 +54738,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/qp8-f32-qc8w-gemm/qp8-f32-qc8w-gemm-minmax-16x4c4-mstep4-aarch64-neondot.c",
             "@chromium_xnnpack//:src/qp8-f32-qc8w-gemm/qp8-f32-qc8w-gemm-minmax-1x4c4-aarch64-neondot.c",
-            "@chromium_xnnpack//:src/qp8-f32-qc8w-gemm/qp8-f32-qc8w-gemm-minmax-1x4c8-aarch64-neondot.c",
+            "@chromium_xnnpack//:src/qp8-f32-qc8w-gemm/qp8-f32-qc8w-gemm-minmax-1x4c8-aarch64-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -54813,7 +54813,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -54879,20 +54879,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -54933,7 +54933,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -55003,17 +55003,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qp8-f32-qc8w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_ac32b6e020770e33",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qp8-f32-qc8w-gemm/qp8-f32-qc8w-gemm-minmax-16x4c8-mstep4-neoni8mm.c",
+            "@chromium_xnnpack//:src/qp8-f32-qc8w-gemm/qp8-f32-qc8w-gemm-minmax-16x4c8-mstep4-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -55085,7 +55085,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -55151,20 +55151,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -55205,7 +55205,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -55275,18 +55275,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qp8-f32-qc8w-gemm_arch=armv8.2-a+sve+sve2": {
         "name": "ml_51450bc1530df139",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qp8-f32-qc8w-gemm/qp8-f32-qc8w-gemm-minmax-16x64c4-neonsme2.c",
-            "@chromium_xnnpack//:src/qp8-f32-qc8w-gemm/qp8-f32-qc8w-gemm-minmax-1x64c4-neonsme2.c",
+            "@chromium_xnnpack//:src/qp8-f32-qc8w-gemm/qp8-f32-qc8w-gemm-minmax-1x64c4-neonsme2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+sve+sve2",
@@ -55358,7 +55358,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -55424,20 +55424,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -55478,7 +55478,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -55548,8 +55548,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-dwconv_arm64": {
         "name": "ml_bfcc5cba43fe66b8",
@@ -55561,10 +55561,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-dwconv/gen/qs8-dwconv-25p8c-minmax-rndnu-neon-mla8-ld64.c",
             "@chromium_xnnpack//:src/qs8-dwconv/gen/qs8-dwconv-9p16c-minmax-rndnu-neon-mla8-ld64.c",
             "@chromium_xnnpack//:src/qs8-dwconv/gen/qs8-dwconv-9p1c-minmax-fp32-scalar-fmagic.c",
-            "@chromium_xnnpack//:src/qs8-dwconv/gen/qs8-dwconv-9p2c-minmax-fp32-scalar-lrintf.c",
+            "@chromium_xnnpack//:src/qs8-dwconv/gen/qs8-dwconv-9p2c-minmax-fp32-scalar-lrintf.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -55635,7 +55635,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -55701,20 +55701,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -55755,7 +55755,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -55824,17 +55824,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-f16-vcvt_arch=armv8.2-a+fp16": {
         "name": "ml_4f7741cb85bc2c4a",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qs8-f16-vcvt/gen/qs8-f16-vcvt-neonfp16arith-u32.c",
+            "@chromium_xnnpack//:src/qs8-f16-vcvt/gen/qs8-f16-vcvt-neonfp16arith-u32.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16",
@@ -55906,7 +55906,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -55972,20 +55972,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -56026,7 +56026,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -56096,18 +56096,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-f32-vcvt_arm64": {
         "name": "ml_3d2cf58bfe7cdae3",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-f32-vcvt/gen/qs8-f32-vcvt-neon-u32.c",
-            "@chromium_xnnpack//:src/qs8-f32-vcvt/gen/qs8-f32-vcvt-scalar-u4.c",
+            "@chromium_xnnpack//:src/qs8-f32-vcvt/gen/qs8-f32-vcvt-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -56178,7 +56178,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -56244,20 +56244,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -56298,7 +56298,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -56367,8 +56367,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-packw_arm64": {
         "name": "ml_64595b4fe6489c7d",
@@ -56377,10 +56377,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-packw/gen/qs8-packw-x16c8-gemm-goi-scalar.c",
             "@chromium_xnnpack//:src/qs8-packw/gen/qs8-packw-x4c8-gemm-gio-scalar.c",
             "@chromium_xnnpack//:src/qs8-packw/gen/qs8-packw-x4c8-gemm-goi-scalar.c",
-            "@chromium_xnnpack//:src/qs8-packw/gen/qs8-packw-x8c8-gemm-gio-scalar.c",
+            "@chromium_xnnpack//:src/qs8-packw/gen/qs8-packw-x8c8-gemm-gio-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -56451,7 +56451,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -56517,20 +56517,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -56571,7 +56571,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -56640,18 +56640,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc4w-gemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_5d0938dff6a65746",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-qc4w-gemm/gen/qs8-qc4w-gemm-1x16-minmax-fp32-asm-aarch64-neondot-ld128.S",
-            "@chromium_xnnpack//:src/qs8-qc4w-gemm/gen/qs8-qc4w-gemm-5x16-minmax-fp32-asm-aarch64-neondot-ld128.S",
+            "@chromium_xnnpack//:src/qs8-qc4w-gemm/gen/qs8-qc4w-gemm-5x16-minmax-fp32-asm-aarch64-neondot-ld128.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -56723,7 +56723,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -56789,20 +56789,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -56843,10 +56843,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -56915,18 +56915,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc4w-gemm_arm64": {
         "name": "ml_a0a62ccc3cc16f47",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-qc4w-gemm/gen/qs8-qc4w-gemm-1x4-minmax-fp32-scalar-fmagic.c",
-            "@chromium_xnnpack//:src/qs8-qc4w-gemm/gen/qs8-qc4w-gemm-3x4-minmax-fp32-scalar-fmagic.c",
+            "@chromium_xnnpack//:src/qs8-qc4w-gemm/gen/qs8-qc4w-gemm-3x4-minmax-fp32-scalar-fmagic.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -56997,7 +56997,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -57063,20 +57063,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -57117,7 +57117,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -57186,8 +57186,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc8w-dwconv_arm64": {
         "name": "ml_39a3365d06e873e4",
@@ -57206,10 +57206,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-qc8w-dwconv/gen/qs8-qc8w-dwconv-9p16c-minmax-fp32-neon-mla8-ld64.c",
             "@chromium_xnnpack//:src/qs8-qc8w-dwconv/gen/qs8-qc8w-dwconv-9p16c-minmax-fp32-neonv8-mla8-ld64.c",
             "@chromium_xnnpack//:src/qs8-qc8w-dwconv/gen/qs8-qc8w-dwconv-9p1c-minmax-fp32-scalar-fmagic.c",
-            "@chromium_xnnpack//:src/qs8-qc8w-dwconv/gen/qs8-qc8w-dwconv-9p2c-minmax-fp32-scalar-lrintf.c",
+            "@chromium_xnnpack//:src/qs8-qc8w-dwconv/gen/qs8-qc8w-dwconv-9p2c-minmax-fp32-scalar-lrintf.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -57280,7 +57280,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -57346,20 +57346,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -57400,7 +57400,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -57469,8 +57469,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc8w-gemm_arch=armv8.2-a+dotprod": {
         "name": "ml_9f5938f40ce47075",
@@ -57479,10 +57479,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-1x16c4-minmax-fp32-neondot.c",
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-1x8c4-minmax-fp32-neondot.c",
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x16c4-minmax-fp32-neondot.c",
-            "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x8c4-minmax-fp32-neondot.c",
+            "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x8c4-minmax-fp32-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -57554,7 +57554,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -57620,20 +57620,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -57674,7 +57674,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -57744,8 +57744,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc8w-gemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_b66b2e14eaee04c0",
@@ -57760,10 +57760,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x16-minmax-fp32-asm-aarch64-neon-mlal-lane-cortex-a53-prfm.S",
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x16-minmax-fp32-asm-aarch64-neon-mlal-lane-ld64.S",
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x16c4-minmax-fp32-asm-aarch64-neondot-cortex-a55.S",
-            "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x16c4-minmax-fp32-asm-aarch64-neondot-ld128.S",
+            "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x16c4-minmax-fp32-asm-aarch64-neondot-ld128.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -57835,7 +57835,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -57901,20 +57901,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -57955,10 +57955,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -58027,18 +58027,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc8w-gemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_e19810a1272b98af",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-1x16c8-minmax-fp32-neoni8mm.c",
-            "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x16c8-minmax-fp32-neoni8mm.c",
+            "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-4x16c8-minmax-fp32-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -58110,7 +58110,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -58176,20 +58176,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -58230,7 +58230,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -58300,8 +58300,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc8w-gemm_arm64": {
         "name": "ml_4850ce2880bce0b4",
@@ -58313,10 +58313,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-1x8c2s4-minmax-fp32-neonv8-mlal.c",
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-2x8c2s4-minmax-fp32-neon-mlal.c",
             "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-2x8c2s4-minmax-fp32-neonv8-mlal.c",
-            "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-3x4-minmax-fp32-scalar-lrintf.c",
+            "@chromium_xnnpack//:src/qs8-qc8w-gemm/gen/qs8-qc8w-gemm-3x4-minmax-fp32-scalar-lrintf.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -58387,7 +58387,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -58453,20 +58453,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -58507,7 +58507,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -58576,8 +58576,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc8w-igemm_arch=armv8.2-a+dotprod": {
         "name": "ml_ca36c9f51961dc3a",
@@ -58586,10 +58586,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-1x16c4-minmax-fp32-neondot.c",
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-1x8c4-minmax-fp32-neondot.c",
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x16c4-minmax-fp32-neondot.c",
-            "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x8c4-minmax-fp32-neondot.c",
+            "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x8c4-minmax-fp32-neondot.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -58661,7 +58661,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -58727,20 +58727,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -58781,7 +58781,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -58851,8 +58851,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc8w-igemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_cc329d9cf366e9e6",
@@ -58867,10 +58867,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x16-minmax-fp32-asm-aarch64-neon-mlal-lane-cortex-a53-prfm.S",
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x16-minmax-fp32-asm-aarch64-neon-mlal-lane-ld64.S",
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x16c4-minmax-fp32-asm-aarch64-neondot-cortex-a55.S",
-            "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x16c4-minmax-fp32-asm-aarch64-neondot-ld128.S",
+            "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x16c4-minmax-fp32-asm-aarch64-neondot-ld128.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -58942,7 +58942,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -59008,20 +59008,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -59062,10 +59062,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -59134,18 +59134,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc8w-igemm_arch=armv8.2-a+i8mm+fp16": {
         "name": "ml_4ec81f9f3284f0de",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-1x16c8-minmax-fp32-neoni8mm.c",
-            "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x16c8-minmax-fp32-neoni8mm.c",
+            "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-4x16c8-minmax-fp32-neoni8mm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+i8mm+fp16",
@@ -59217,7 +59217,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -59283,20 +59283,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -59337,7 +59337,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -59407,8 +59407,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qc8w-igemm_arm64": {
         "name": "ml_5751e6e20ab860ca",
@@ -59420,10 +59420,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-1x8c2s4-minmax-fp32-neonv8-mlal.c",
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-2x8c2s4-minmax-fp32-neon-mlal.c",
             "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-2x8c2s4-minmax-fp32-neonv8-mlal.c",
-            "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-3x4-minmax-fp32-scalar-lrintf.c",
+            "@chromium_xnnpack//:src/qs8-qc8w-igemm/gen/qs8-qc8w-igemm-3x4-minmax-fp32-scalar-lrintf.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -59494,7 +59494,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -59560,20 +59560,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -59614,7 +59614,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -59683,17 +59683,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-qu8-packw_arm64": {
         "name": "ml_857fb492b3f986ed",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qs8-qu8-packw/gen/qs8-qu8-packw-x16c8-gemm-goi-scalar.c",
+            "@chromium_xnnpack//:src/qs8-qu8-packw/gen/qs8-qu8-packw-x16c8-gemm-goi-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -59764,7 +59764,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -59830,20 +59830,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -59884,7 +59884,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -59953,18 +59953,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-rdsum_arm64": {
         "name": "ml_94363b88cb743a5b",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-rdsum/gen/qs8-rdsum-7p7x-minmax-fp32-neon-u32.c",
-            "@chromium_xnnpack//:src/qs8-rdsum/gen/qs8-rdsum-minmax-fp32-scalar-u1-acc1.c",
+            "@chromium_xnnpack//:src/qs8-rdsum/gen/qs8-rdsum-minmax-fp32-scalar-u1-acc1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -60035,7 +60035,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -60101,20 +60101,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -60155,7 +60155,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -60224,17 +60224,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-rsum_arch=armv8.2-a+dotprod": {
         "name": "ml_f4bbcb17957f9fa0",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qs8-rsum/gen/qs8-rsum-neondot-u32-acc2.c",
+            "@chromium_xnnpack//:src/qs8-rsum/gen/qs8-rsum-neondot-u32-acc2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+dotprod",
@@ -60306,7 +60306,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -60372,20 +60372,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -60426,7 +60426,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -60496,18 +60496,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-rsum_arm64": {
         "name": "ml_9fd02ce9d0dbc478",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-rsum/gen/qs8-rsum-neon-u32-acc2.c",
-            "@chromium_xnnpack//:src/qs8-rsum/gen/qs8-rsum-scalar-u4.c",
+            "@chromium_xnnpack//:src/qs8-rsum/gen/qs8-rsum-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -60578,7 +60578,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -60644,20 +60644,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -60698,7 +60698,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -60767,8 +60767,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-vadd_arm64": {
         "name": "ml_220738e7cd34e340",
@@ -60777,10 +60777,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-vadd/gen/qs8-vadd-minmax-neon-ld64-u16.c",
             "@chromium_xnnpack//:src/qs8-vadd/gen/qs8-vadd-minmax-neon-ld64-u32.c",
             "@chromium_xnnpack//:src/qs8-vadd/gen/qs8-vadd-minmax-scalar-u1.c",
-            "@chromium_xnnpack//:src/qs8-vadd/gen/qs8-vadd-minmax-scalar-u4.c",
+            "@chromium_xnnpack//:src/qs8-vadd/gen/qs8-vadd-minmax-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -60851,7 +60851,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -60917,20 +60917,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -60971,7 +60971,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -61040,8 +61040,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-vaddc_arm64": {
         "name": "ml_78d90fd5574b8ed6",
@@ -61050,10 +61050,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qs8-vaddc/gen/qs8-vaddc-minmax-neon-ld64-u16.c",
             "@chromium_xnnpack//:src/qs8-vaddc/gen/qs8-vaddc-minmax-neon-ld64-u32.c",
             "@chromium_xnnpack//:src/qs8-vaddc/gen/qs8-vaddc-minmax-scalar-u1.c",
-            "@chromium_xnnpack//:src/qs8-vaddc/gen/qs8-vaddc-minmax-scalar-u4.c",
+            "@chromium_xnnpack//:src/qs8-vaddc/gen/qs8-vaddc-minmax-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -61124,7 +61124,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -61190,20 +61190,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -61244,7 +61244,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -61313,18 +61313,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-vcvt_arm64": {
         "name": "ml_0107f1979c7022f9",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-vcvt/gen/qs8-vcvt-neon-u32.c",
-            "@chromium_xnnpack//:src/qs8-vcvt/gen/qs8-vcvt-scalar-u4.c",
+            "@chromium_xnnpack//:src/qs8-vcvt/gen/qs8-vcvt-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -61395,7 +61395,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -61461,20 +61461,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -61515,7 +61515,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -61584,18 +61584,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-vlrelu_arm64": {
         "name": "ml_fba91e4404e7978b",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-vlrelu/gen/qs8-vlrelu-neon-u32.c",
-            "@chromium_xnnpack//:src/qs8-vlrelu/gen/qs8-vlrelu-scalar-andxor-u4.c",
+            "@chromium_xnnpack//:src/qs8-vlrelu/gen/qs8-vlrelu-scalar-andxor-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -61666,7 +61666,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -61732,20 +61732,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -61786,7 +61786,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -61855,18 +61855,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-vmul_arm64": {
         "name": "ml_bf88276e47259784",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-vmul/gen/qs8-vmul-minmax-fp32-scalar-u4.c",
-            "@chromium_xnnpack//:src/qs8-vmul/gen/qs8-vmul-minmax-rndnu-neon-ld64-u16.c",
+            "@chromium_xnnpack//:src/qs8-vmul/gen/qs8-vmul-minmax-rndnu-neon-ld64-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -61937,7 +61937,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -62003,20 +62003,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -62057,7 +62057,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -62126,18 +62126,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-vmulc_arm64": {
         "name": "ml_3d4c505040e9381a",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qs8-vmulc/gen/qs8-vmulc-minmax-fp32-scalar-u4.c",
-            "@chromium_xnnpack//:src/qs8-vmulc/gen/qs8-vmulc-minmax-rndnu-neon-ld64-u16.c",
+            "@chromium_xnnpack//:src/qs8-vmulc/gen/qs8-vmulc-minmax-rndnu-neon-ld64-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -62208,7 +62208,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -62274,20 +62274,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -62328,7 +62328,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -62397,17 +62397,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-vprelu_arm64": {
         "name": "ml_841b833d00b7642b",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qs8-vprelu/gen/qs8-vprelu-scalar-u8.c",
+            "@chromium_xnnpack//:src/qs8-vprelu/gen/qs8-vprelu-scalar-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -62478,7 +62478,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -62544,20 +62544,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -62598,7 +62598,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -62667,17 +62667,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-vpreluc_arm64": {
         "name": "ml_041a279c1fa0f7b5",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qs8-vpreluc/gen/qs8-vpreluc-scalar-u8.c",
+            "@chromium_xnnpack//:src/qs8-vpreluc/gen/qs8-vpreluc-scalar-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -62748,7 +62748,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -62814,20 +62814,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -62868,7 +62868,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -62937,17 +62937,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qs8-vrpreluc_arm64": {
         "name": "ml_d3244ba37f563bdb",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qs8-vrpreluc/gen/qs8-vrpreluc-scalar-u8.c",
+            "@chromium_xnnpack//:src/qs8-vrpreluc/gen/qs8-vrpreluc-scalar-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -63018,7 +63018,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -63084,20 +63084,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -63138,7 +63138,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -63207,8 +63207,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-dwconv_arm64": {
         "name": "ml_b77d08bdf1ca97de",
@@ -63219,10 +63219,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qu8-dwconv/gen/qu8-dwconv-25p8c-minmax-rndnu-neon-mul8.c",
             "@chromium_xnnpack//:src/qu8-dwconv/gen/qu8-dwconv-9p16c-minmax-rndnu-neon-mul8.c",
             "@chromium_xnnpack//:src/qu8-dwconv/gen/qu8-dwconv-9p1c-minmax-fp32-scalar-fmagic.c",
-            "@chromium_xnnpack//:src/qu8-dwconv/gen/qu8-dwconv-9p2c-minmax-fp32-scalar-lrintf.c",
+            "@chromium_xnnpack//:src/qu8-dwconv/gen/qu8-dwconv-9p2c-minmax-fp32-scalar-lrintf.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -63293,7 +63293,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -63359,20 +63359,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -63413,7 +63413,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -63482,18 +63482,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-f32-vcvt_arm64": {
         "name": "ml_3adfa7df645df9bf",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qu8-f32-vcvt/gen/qu8-f32-vcvt-neon-u32.c",
-            "@chromium_xnnpack//:src/qu8-f32-vcvt/gen/qu8-f32-vcvt-scalar-u4.c",
+            "@chromium_xnnpack//:src/qu8-f32-vcvt/gen/qu8-f32-vcvt-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -63564,7 +63564,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -63630,20 +63630,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -63684,7 +63684,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -63753,8 +63753,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-gemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_9750635101770268",
@@ -63763,10 +63763,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-4x16-minmax-rndnu-asm-aarch64-neon-mlal-lane-cortex-a53-prfm.S",
             "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-4x16-minmax-rndnu-asm-aarch64-neon-mlal-lane-cortex-a75-prfm.S",
             "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-4x16-minmax-rndnu-asm-aarch64-neon-mlal-lane-cortex-a75.S",
-            "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-4x16-minmax-rndnu16-asm-aarch64-neon-mlal-lane-cortex-a53-prfm.S",
+            "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-4x16-minmax-rndnu16-asm-aarch64-neon-mlal-lane-cortex-a53-prfm.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -63838,7 +63838,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -63904,20 +63904,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -63958,10 +63958,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -64030,8 +64030,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-gemm_arm64": {
         "name": "ml_cc78a3641e40ef33",
@@ -64043,10 +64043,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-1x8-minmax-rndnu-neon-mlal-lane.c",
             "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-3x4-minmax-fp32-scalar-lrintf.c",
             "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-3x8-minmax-rndnu-neon-mlal-lane.c",
-            "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-4x16-minmax-rndnu-neon-mlal-lane.c",
+            "@chromium_xnnpack//:src/qu8-gemm/gen/qu8-gemm-4x16-minmax-rndnu-neon-mlal-lane.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -64117,7 +64117,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -64183,20 +64183,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -64237,7 +64237,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -64306,8 +64306,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-igemm_arch=armv8.2-a+fp16+dotprod": {
         "name": "ml_5a742745b831539d",
@@ -64316,10 +64316,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-4x16-minmax-rndnu-asm-aarch64-neon-mlal-lane-cortex-a53-prfm.S",
             "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-4x16-minmax-rndnu-asm-aarch64-neon-mlal-lane-cortex-a75-prfm.S",
             "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-4x16-minmax-rndnu-asm-aarch64-neon-mlal-lane-cortex-a75.S",
-            "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-4x16-minmax-rndnu16-asm-aarch64-neon-mlal-lane-cortex-a53-prfm.S",
+            "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-4x16-minmax-rndnu16-asm-aarch64-neon-mlal-lane-cortex-a53-prfm.S"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -64391,7 +64391,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -64457,20 +64457,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -64511,10 +64511,10 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [
-            "-march=armv8.2-a+fp16+dotprod",
+            "-march=armv8.2-a+fp16+dotprod"
         ],
         "c_copts": [
             "-march=armv8.2-a+fp16+dotprod",
@@ -64583,8 +64583,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-igemm_arm64": {
         "name": "ml_2da4b6b2e6ae0005",
@@ -64596,10 +64596,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-1x8-minmax-rndnu-neon-mlal-lane.c",
             "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-3x4-minmax-fp32-scalar-lrintf.c",
             "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-3x8-minmax-rndnu-neon-mlal-lane.c",
-            "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-4x16-minmax-rndnu-neon-mlal-lane.c",
+            "@chromium_xnnpack//:src/qu8-igemm/gen/qu8-igemm-4x16-minmax-rndnu-neon-mlal-lane.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -64670,7 +64670,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -64736,20 +64736,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -64790,7 +64790,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -64859,8 +64859,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-rdsum_arm64": {
         "name": "ml_bdd2ab3385268be1",
@@ -64868,10 +64868,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/qu8-rdsum/gen/qu8-rdsum-7p7x-neon-u16.c",
             "@chromium_xnnpack//:src/qu8-rdsum/gen/qu8-rdsum-7p7x-neon-u32.c",
-            "@chromium_xnnpack//:src/qu8-rdsum/gen/qu8-rdsum-scalar.c",
+            "@chromium_xnnpack//:src/qu8-rdsum/gen/qu8-rdsum-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -64942,7 +64942,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -65008,20 +65008,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -65062,7 +65062,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -65131,18 +65131,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-rsum_arm64": {
         "name": "ml_2cb42295367f5b91",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qu8-rsum/gen/qu8-rsum-neon-u32-acc2.c",
-            "@chromium_xnnpack//:src/qu8-rsum/gen/qu8-rsum-scalar-u4.c",
+            "@chromium_xnnpack//:src/qu8-rsum/gen/qu8-rsum-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -65213,7 +65213,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -65279,20 +65279,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -65333,7 +65333,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -65402,8 +65402,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-vadd_arm64": {
         "name": "ml_bff4f7194eba97dd",
@@ -65412,10 +65412,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qu8-vadd/gen/qu8-vadd-minmax-neon-ld64-u16.c",
             "@chromium_xnnpack//:src/qu8-vadd/gen/qu8-vadd-minmax-neon-ld64-u32.c",
             "@chromium_xnnpack//:src/qu8-vadd/gen/qu8-vadd-minmax-scalar-u1.c",
-            "@chromium_xnnpack//:src/qu8-vadd/gen/qu8-vadd-minmax-scalar-u4.c",
+            "@chromium_xnnpack//:src/qu8-vadd/gen/qu8-vadd-minmax-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -65486,7 +65486,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -65552,20 +65552,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -65606,7 +65606,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -65675,8 +65675,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-vaddc_arm64": {
         "name": "ml_6913e43397e5df94",
@@ -65685,10 +65685,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/qu8-vaddc/gen/qu8-vaddc-minmax-neon-ld64-u16.c",
             "@chromium_xnnpack//:src/qu8-vaddc/gen/qu8-vaddc-minmax-neon-ld64-u32.c",
             "@chromium_xnnpack//:src/qu8-vaddc/gen/qu8-vaddc-minmax-scalar-u1.c",
-            "@chromium_xnnpack//:src/qu8-vaddc/gen/qu8-vaddc-minmax-scalar-u4.c",
+            "@chromium_xnnpack//:src/qu8-vaddc/gen/qu8-vaddc-minmax-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -65759,7 +65759,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -65825,20 +65825,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -65879,7 +65879,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -65948,18 +65948,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-vcvt_arm64": {
         "name": "ml_3b0e2f2dac8e2ebe",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qu8-vcvt/gen/qu8-vcvt-neon-u32.c",
-            "@chromium_xnnpack//:src/qu8-vcvt/gen/qu8-vcvt-scalar-u4.c",
+            "@chromium_xnnpack//:src/qu8-vcvt/gen/qu8-vcvt-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -66030,7 +66030,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -66096,20 +66096,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -66150,7 +66150,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -66219,18 +66219,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-vlrelu_arm64": {
         "name": "ml_bdc5a90e8342b656",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qu8-vlrelu/gen/qu8-vlrelu-neon-u32.c",
-            "@chromium_xnnpack//:src/qu8-vlrelu/gen/qu8-vlrelu-scalar-andxor-u4.c",
+            "@chromium_xnnpack//:src/qu8-vlrelu/gen/qu8-vlrelu-scalar-andxor-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -66301,7 +66301,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -66367,20 +66367,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -66421,7 +66421,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -66490,18 +66490,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-vmul_arm64": {
         "name": "ml_057ece06abc50665",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qu8-vmul/gen/qu8-vmul-minmax-fp32-scalar-u4.c",
-            "@chromium_xnnpack//:src/qu8-vmul/gen/qu8-vmul-minmax-rndnu-neon-ld64-u16.c",
+            "@chromium_xnnpack//:src/qu8-vmul/gen/qu8-vmul-minmax-rndnu-neon-ld64-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -66572,7 +66572,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -66638,20 +66638,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -66692,7 +66692,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -66761,18 +66761,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-vmulc_arm64": {
         "name": "ml_2dcce2b75063c62c",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/qu8-vmulc/gen/qu8-vmulc-minmax-fp32-scalar-u4.c",
-            "@chromium_xnnpack//:src/qu8-vmulc/gen/qu8-vmulc-minmax-rndnu-neon-ld64-u16.c",
+            "@chromium_xnnpack//:src/qu8-vmulc/gen/qu8-vmulc-minmax-rndnu-neon-ld64-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -66843,7 +66843,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -66909,20 +66909,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -66963,7 +66963,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -67032,17 +67032,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-vprelu_arm64": {
         "name": "ml_0955024167935c7d",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qu8-vprelu/gen/qu8-vprelu-scalar-u8.c",
+            "@chromium_xnnpack//:src/qu8-vprelu/gen/qu8-vprelu-scalar-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -67113,7 +67113,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -67179,20 +67179,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -67233,7 +67233,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -67302,17 +67302,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-vpreluc_arm64": {
         "name": "ml_4f74aabbf16cca98",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qu8-vpreluc/gen/qu8-vpreluc-scalar-u8.c",
+            "@chromium_xnnpack//:src/qu8-vpreluc/gen/qu8-vpreluc-scalar-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -67383,7 +67383,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -67449,20 +67449,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -67503,7 +67503,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -67572,17 +67572,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:qu8-vrpreluc_arm64": {
         "name": "ml_dbbfc715a199a831",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/qu8-vrpreluc/gen/qu8-vrpreluc-scalar-u8.c",
+            "@chromium_xnnpack//:src/qu8-vrpreluc/gen/qu8-vrpreluc-scalar-u8.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -67653,7 +67653,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -67719,20 +67719,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -67773,7 +67773,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -67842,8 +67842,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:reference_arm64": {
         "name": "ml_227a10e8c9cdc39c",
@@ -67851,10 +67851,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/reference/binary-elementwise.cc",
             "@chromium_xnnpack//:src/reference/packing.cc",
-            "@chromium_xnnpack//:src/reference/unary-elementwise.cc",
+            "@chromium_xnnpack//:src/reference/unary-elementwise.cc"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -67925,7 +67925,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -67991,20 +67991,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -68045,7 +68045,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -68114,8 +68114,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:s8-ibilinear_arm64": {
         "name": "ml_e819480a9966afe4",
@@ -68123,10 +68123,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/s8-ibilinear/gen/s8-ibilinear-neon-u16.c",
             "@chromium_xnnpack//:src/s8-ibilinear/gen/s8-ibilinear-neon-u8.c",
-            "@chromium_xnnpack//:src/s8-ibilinear/gen/s8-ibilinear-scalar-u1.c",
+            "@chromium_xnnpack//:src/s8-ibilinear/gen/s8-ibilinear-scalar-u1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -68197,7 +68197,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -68263,20 +68263,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -68317,7 +68317,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -68386,18 +68386,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:s8-maxpool_arm64": {
         "name": "ml_8992e208bdbf0114",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/s8-maxpool/gen/s8-maxpool-9p-minmax-neon-u16.c",
-            "@chromium_xnnpack//:src/s8-maxpool/gen/s8-maxpool-9p-minmax-scalar-u1.c",
+            "@chromium_xnnpack//:src/s8-maxpool/gen/s8-maxpool-9p-minmax-scalar-u1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -68468,7 +68468,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -68534,20 +68534,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -68588,7 +68588,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -68657,8 +68657,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:s8-rdminmax_arm64": {
         "name": "ml_a57a5bea2a8c02af",
@@ -68667,10 +68667,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/s8-rdminmax/gen/s8-rdmax-2p2x-neon-u32.c",
             "@chromium_xnnpack//:src/s8-rdminmax/gen/s8-rdmax-2p2x-scalar-u2.c",
             "@chromium_xnnpack//:src/s8-rdminmax/gen/s8-rdmin-2p2x-neon-u32.c",
-            "@chromium_xnnpack//:src/s8-rdminmax/gen/s8-rdmin-2p2x-scalar-u2.c",
+            "@chromium_xnnpack//:src/s8-rdminmax/gen/s8-rdmin-2p2x-scalar-u2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -68741,7 +68741,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -68807,20 +68807,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -68861,7 +68861,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -68930,8 +68930,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:s8-rminmax_arm64": {
         "name": "ml_b4bd27990fc6f16f",
@@ -68942,10 +68942,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/s8-rminmax/gen/s8-rmin-neon-u32-acc2.c",
             "@chromium_xnnpack//:src/s8-rminmax/gen/s8-rmin-scalar-u2-acc2.c",
             "@chromium_xnnpack//:src/s8-rminmax/gen/s8-rminmax-neon-u32-acc2.c",
-            "@chromium_xnnpack//:src/s8-rminmax/gen/s8-rminmax-scalar-u2-acc2.c",
+            "@chromium_xnnpack//:src/s8-rminmax/gen/s8-rminmax-scalar-u2-acc2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -69016,7 +69016,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -69082,20 +69082,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -69136,7 +69136,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -69205,18 +69205,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:s8-vclamp_arm64": {
         "name": "ml_604a42cd0ab9d387",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/s8-vclamp/s8-vclamp-neon-u64.c",
-            "@chromium_xnnpack//:src/s8-vclamp/s8-vclamp-scalar-u4.c",
+            "@chromium_xnnpack//:src/s8-vclamp/s8-vclamp-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -69287,7 +69287,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -69353,20 +69353,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -69407,7 +69407,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -69476,8 +69476,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:subgraph_arm64": {
         "name": "ml_2a6917cc33aee853",
@@ -69511,10 +69511,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/subgraph/subgraph-utils.c",
             "@chromium_xnnpack//:src/subgraph/unary.c",
             "@chromium_xnnpack//:src/subgraph/unpooling-2d.c",
-            "@chromium_xnnpack//:src/subgraph/validation.c",
+            "@chromium_xnnpack//:src/subgraph/validation.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -69585,7 +69585,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -69651,20 +69651,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -69705,7 +69705,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -69774,8 +69774,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:tables_arm64": {
         "name": "ml_ef8945deb2190463",
@@ -69789,10 +69789,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/tables/exp2minus-k-over-4.c",
             "@chromium_xnnpack//:src/tables/exp2minus-k-over-64.c",
             "@chromium_xnnpack//:src/tables/exp2minus-k-over-8.c",
-            "@chromium_xnnpack//:src/tables/vlog.c",
+            "@chromium_xnnpack//:src/tables/vlog.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -69863,7 +69863,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -69929,20 +69929,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -69983,7 +69983,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -70052,8 +70052,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:u8-ibilinear_arm64": {
         "name": "ml_1d5f05e170554f37",
@@ -70061,10 +70061,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/u8-ibilinear/gen/u8-ibilinear-neon-u16.c",
             "@chromium_xnnpack//:src/u8-ibilinear/gen/u8-ibilinear-neon-u8.c",
-            "@chromium_xnnpack//:src/u8-ibilinear/gen/u8-ibilinear-scalar-u1.c",
+            "@chromium_xnnpack//:src/u8-ibilinear/gen/u8-ibilinear-scalar-u1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -70135,7 +70135,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -70201,20 +70201,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -70255,7 +70255,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -70324,17 +70324,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:u8-lut32norm_arm64": {
         "name": "ml_c664c53d560c907b",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/u8-lut32norm/u8-lut32norm-scalar.c",
+            "@chromium_xnnpack//:src/u8-lut32norm/u8-lut32norm-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -70405,7 +70405,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -70471,20 +70471,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -70525,7 +70525,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -70594,18 +70594,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:u8-maxpool_arm64": {
         "name": "ml_4449416e478653cb",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/u8-maxpool/gen/u8-maxpool-9p-minmax-neon-u16.c",
-            "@chromium_xnnpack//:src/u8-maxpool/gen/u8-maxpool-9p-minmax-scalar-u1.c",
+            "@chromium_xnnpack//:src/u8-maxpool/gen/u8-maxpool-9p-minmax-scalar-u1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -70676,7 +70676,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -70742,20 +70742,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -70796,7 +70796,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -70865,8 +70865,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:u8-rdminmax_arm64": {
         "name": "ml_577be91ed3102160",
@@ -70875,10 +70875,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/u8-rdminmax/gen/u8-rdmax-2p2x-neon-u32.c",
             "@chromium_xnnpack//:src/u8-rdminmax/gen/u8-rdmax-2p2x-scalar-u2.c",
             "@chromium_xnnpack//:src/u8-rdminmax/gen/u8-rdmin-2p2x-neon-u32.c",
-            "@chromium_xnnpack//:src/u8-rdminmax/gen/u8-rdmin-2p2x-scalar-u2.c",
+            "@chromium_xnnpack//:src/u8-rdminmax/gen/u8-rdmin-2p2x-scalar-u2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -70949,7 +70949,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -71015,20 +71015,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -71069,7 +71069,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -71138,8 +71138,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:u8-rminmax_arm64": {
         "name": "ml_11ff8a184fad4664",
@@ -71150,10 +71150,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/u8-rminmax/gen/u8-rmin-neon-u32-acc2.c",
             "@chromium_xnnpack//:src/u8-rminmax/gen/u8-rmin-scalar-u2-acc2.c",
             "@chromium_xnnpack//:src/u8-rminmax/gen/u8-rminmax-neon-u32-acc2.c",
-            "@chromium_xnnpack//:src/u8-rminmax/gen/u8-rminmax-scalar-u2-acc2.c",
+            "@chromium_xnnpack//:src/u8-rminmax/gen/u8-rminmax-scalar-u2-acc2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -71224,7 +71224,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -71290,20 +71290,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -71344,7 +71344,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -71413,18 +71413,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:u8-vclamp_arm64": {
         "name": "ml_00bd1bef10f79b78",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/u8-vclamp/u8-vclamp-neon-u64.c",
-            "@chromium_xnnpack//:src/u8-vclamp/u8-vclamp-scalar-u4.c",
+            "@chromium_xnnpack//:src/u8-vclamp/u8-vclamp-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -71495,7 +71495,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -71561,20 +71561,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -71615,7 +71615,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -71684,17 +71684,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x16-pack-lh_arch=armv8.2-a+sve+sve2": {
         "name": "ml_5c582d305f099bc6",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/x16-pack-lh/x16-packlh-neonsme2.c",
+            "@chromium_xnnpack//:src/x16-pack-lh/x16-packlh-neonsme2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+sve+sve2",
@@ -71766,7 +71766,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -71832,20 +71832,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -71886,7 +71886,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -71956,18 +71956,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x16-packw_arm64": {
         "name": "ml_c24eb0182ecd865c",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/x16-packw/gen/x16-packw-x16-gemm-goi-neon-ld4lane-u8-prfm.c",
-            "@chromium_xnnpack//:src/x16-packw/gen/x16-packw-x8-gemm-goi-neon-ld4lane-u8-prfm.c",
+            "@chromium_xnnpack//:src/x16-packw/gen/x16-packw-x8-gemm-goi-neon-ld4lane-u8-prfm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -72038,7 +72038,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -72104,20 +72104,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -72158,7 +72158,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -72227,18 +72227,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x16-transposec_arm64": {
         "name": "ml_2916b902c08c1f2b",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/x16-transposec/gen/x16-transposec-2x4-scalar-int.c",
-            "@chromium_xnnpack//:src/x16-transposec/gen/x16-transposec-8x8-reuse-dec-zip-neon.c",
+            "@chromium_xnnpack//:src/x16-transposec/gen/x16-transposec-8x8-reuse-dec-zip-neon.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -72309,7 +72309,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -72375,20 +72375,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -72429,7 +72429,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -72498,18 +72498,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x16-x32-packw_arm64": {
         "name": "ml_c670db1a96a82471",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/x16-x32-packw/gen/x16-x32-packw-x32c2-gemm-gio-scalar.c",
-            "@chromium_xnnpack//:src/x16-x32-packw/gen/x16-x32-packw-x32c2-gemm-goi-scalar.c",
+            "@chromium_xnnpack//:src/x16-x32-packw/gen/x16-x32-packw-x32c2-gemm-goi-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -72580,7 +72580,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -72646,20 +72646,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -72700,7 +72700,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -72769,8 +72769,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x24-transposec_arm64": {
         "name": "ml_adc95f27b878892d",
@@ -72778,10 +72778,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/x24-transposec/gen/x24-transposec-1x2-scalar.c",
             "@chromium_xnnpack//:src/x24-transposec/x24-transposec-2x2-neon-tbl64.c",
-            "@chromium_xnnpack//:src/x24-transposec/x24-transposec-4x4-aarch64-neon-tbl128.c",
+            "@chromium_xnnpack//:src/x24-transposec/x24-transposec-4x4-aarch64-neon-tbl128.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -72852,7 +72852,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -72918,20 +72918,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -72972,7 +72972,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -73041,17 +73041,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x32-pack-lh_arch=armv8.2-a+sve+sve2": {
         "name": "ml_13c8efef808cfd02",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/x32-pack-lh/x32-packlh-neonsme.c",
+            "@chromium_xnnpack//:src/x32-pack-lh/x32-packlh-neonsme.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+sve+sve2",
@@ -73123,7 +73123,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -73189,20 +73189,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -73243,7 +73243,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -73313,8 +73313,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x32-packw_arm64": {
         "name": "ml_4771d9b786740a44",
@@ -73330,10 +73330,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/x32-packw/gen/x32-packw-x4-gemm-goi-scalar-float-u4.c",
             "@chromium_xnnpack//:src/x32-packw/gen/x32-packw-x64-gemm-goi-scalar-int-u2.c",
             "@chromium_xnnpack//:src/x32-packw/gen/x32-packw-x8-gemm-goi-neon-ld4lane-u4-prfm.c",
-            "@chromium_xnnpack//:src/x32-packw/gen/x32-packw-x8s4-gemm-goi-neon-ld4lane-u4-prfm.c",
+            "@chromium_xnnpack//:src/x32-packw/gen/x32-packw-x8s4-gemm-goi-neon-ld4lane-u4-prfm.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -73404,7 +73404,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -73470,20 +73470,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -73524,7 +73524,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -73593,8 +73593,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x32-transposec_arm64": {
         "name": "ml_fdcc0501b5a72b08",
@@ -73602,10 +73602,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/x32-transposec/gen/x32-transposec-2x4-scalar-int.c",
             "@chromium_xnnpack//:src/x32-transposec/gen/x32-transposec-4x4-reuse-dec-zip-neon.c",
-            "@chromium_xnnpack//:src/x32-transposec/x32-transposec-4x4-aarch64-neon-tbl128.c",
+            "@chromium_xnnpack//:src/x32-transposec/x32-transposec-4x4-aarch64-neon-tbl128.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -73676,7 +73676,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -73742,20 +73742,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -73796,7 +73796,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -73865,18 +73865,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x32-unpool_arm64": {
         "name": "ml_75e1ca8136885d4e",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/x32-unpool/x32-unpool-neon.c",
-            "@chromium_xnnpack//:src/x32-unpool/x32-unpool-scalar.c",
+            "@chromium_xnnpack//:src/x32-unpool/x32-unpool-scalar.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -73947,7 +73947,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -74013,20 +74013,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -74067,7 +74067,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -74136,8 +74136,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x64-transposec_arm64": {
         "name": "ml_9e7a25362e3da1a0",
@@ -74145,10 +74145,10 @@ LIBRARIES = {
         "srcs": [
             "@chromium_xnnpack//:src/x64-transposec/gen/x64-transposec-2x2-multi-dec-zip-neon.c",
             "@chromium_xnnpack//:src/x64-transposec/gen/x64-transposec-2x2-reuse-dec-zip-neon.c",
-            "@chromium_xnnpack//:src/x64-transposec/gen/x64-transposec-4x2-scalar-int.c",
+            "@chromium_xnnpack//:src/x64-transposec/gen/x64-transposec-4x2-scalar-int.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -74219,7 +74219,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -74285,20 +74285,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -74339,7 +74339,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -74408,18 +74408,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x8-lut_arm64": {
         "name": "ml_ce5f80a8bd758fd2",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/x8-lut/gen/x8-lut-aarch64-neon-tbx128x4-u64.c",
-            "@chromium_xnnpack//:src/x8-lut/gen/x8-lut-scalar-u4.c",
+            "@chromium_xnnpack//:src/x8-lut/gen/x8-lut-scalar-u4.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -74490,7 +74490,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -74556,20 +74556,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -74610,7 +74610,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -74679,18 +74679,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x8-pack-lh_arch=armv8.2-a+sve+sve2": {
         "name": "ml_e8b78146ca159bf9",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/x8-pack-lh/x8-packlh-igemm-neonsme2.c",
-            "@chromium_xnnpack//:src/x8-pack-lh/x8-packlh-neonsme2.c",
+            "@chromium_xnnpack//:src/x8-pack-lh/x8-packlh-neonsme2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-march=armv8.2-a+sve+sve2",
@@ -74762,7 +74762,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -74828,20 +74828,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -74882,7 +74882,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -74952,18 +74952,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x8-packq_arm64": {
         "name": "ml_98886f592b2f9556",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/x8-packq/x8-packq-aarch64-neon-f32qp8-u2.c",
-            "@chromium_xnnpack//:src/x8-packq/x8-packq-scalar-f32qp8-u1.c",
+            "@chromium_xnnpack//:src/x8-packq/x8-packq-scalar-f32qp8-u1.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -75034,7 +75034,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -75100,20 +75100,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -75154,7 +75154,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -75223,8 +75223,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x8-packw_arm64": {
         "name": "ml_dae931ec40ceed39",
@@ -75233,10 +75233,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/x8-packw/gen/x8-packw-x16-gemm-goi-scalar-u2.c",
             "@chromium_xnnpack//:src/x8-packw/gen/x8-packw-x32-gemm-goi-scalar-u2.c",
             "@chromium_xnnpack//:src/x8-packw/gen/x8-packw-x4-gemm-goi-scalar-u2.c",
-            "@chromium_xnnpack//:src/x8-packw/gen/x8-packw-x8-gemm-goi-scalar-u2.c",
+            "@chromium_xnnpack//:src/x8-packw/gen/x8-packw-x8-gemm-goi-scalar-u2.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -75307,7 +75307,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -75373,20 +75373,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -75427,7 +75427,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -75496,18 +75496,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:x8-transposec_arm64": {
         "name": "ml_8f1d59177b200bba",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/x8-transposec/gen/x8-transposec-16x16-reuse-dec-zip-neon.c",
-            "@chromium_xnnpack//:src/x8-transposec/gen/x8-transposec-2x4-scalar-int.c",
+            "@chromium_xnnpack//:src/x8-transposec/gen/x8-transposec-2x4-scalar-int.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -75578,7 +75578,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -75644,20 +75644,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -75698,7 +75698,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -75767,8 +75767,8 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:xnnpack": {
         "name": "ml_a8529a6945ed975b",
@@ -75795,10 +75795,10 @@ LIBRARIES = {
             "@chromium_xnnpack//:src/runtime.c",
             "@chromium_xnnpack//:src/sanitizers.c",
             "@chromium_xnnpack//:src/subgraph.c",
-            "@chromium_xnnpack//:src/tensor.c",
+            "@chromium_xnnpack//:src/tensor.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -75869,7 +75869,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -75935,14 +75935,14 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":ml_00401a4fedc513e0",
@@ -76165,7 +76165,7 @@ LIBRARIES = {
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -76206,7 +76206,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -76275,17 +76275,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:xx-copy_arm64": {
         "name": "ml_d9220c377e99e776",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/xx-copy/xx-copy-scalar-memcpy.c",
+            "@chromium_xnnpack//:src/xx-copy/xx-copy-scalar-memcpy.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -76356,7 +76356,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -76422,20 +76422,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -76476,7 +76476,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -76545,18 +76545,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:xx-fill_arm64": {
         "name": "ml_ff6b44b81b1df01a",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/xx-fill/xx-fill-neon-u64.c",
-            "@chromium_xnnpack//:src/xx-fill/xx-fill-scalar-u16.c",
+            "@chromium_xnnpack//:src/xx-fill/xx-fill-scalar-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -76627,7 +76627,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -76693,20 +76693,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -76747,7 +76747,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -76816,18 +76816,18 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:xx-pad_arm64": {
         "name": "ml_5ae0c1a628b21625",
         "kind": "source_set",
         "srcs": [
             "@chromium_xnnpack//:src/xx-pad/xx-pad-p16-neon-u16.c",
-            "@chromium_xnnpack//:src/xx-pad/xx-pad-p4-scalar-u16.c",
+            "@chromium_xnnpack//:src/xx-pad/xx-pad-p4-scalar-u16.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -76898,7 +76898,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -76964,20 +76964,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -77018,7 +77018,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -77087,17 +77087,17 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/xnnpack:xx-transposev_arm64": {
         "name": "ml_47497cfb1241ae59",
         "kind": "source_set",
         "srcs": [
-            "@chromium_xnnpack//:src/xx-transposev/xx-transposev-1x1-scalar-memcpy.c",
+            "@chromium_xnnpack//:src/xx-transposev/xx-transposev-1x1-scalar-memcpy.c"
         ],
         "hdrs": [
-            "@chromium_xnnpack//:include/xnnpack.h",
+            "@chromium_xnnpack//:include/xnnpack.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -77168,7 +77168,7 @@ LIBRARIES = {
             "-Wno-invalid-offsetof",
             "-Wenum-compare-conditional",
             "-Wno-nullability-completeness",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -77234,20 +77234,20 @@ LIBRARIES = {
             "PTHREADPOOL_USE_EVENT=0",
             "PTHREADPOOL_USE_FUTEX=0",
             "PTHREADPOOL_USE_GCD=0",
-            "PTHREADPOOL_USE_CONDVAR=0",
+            "PTHREADPOOL_USE_CONDVAR=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":pthreadpool",
             "@cpuinfo//:cpuinfo",
             "@fp16//:fp16",
-            "@fxdiv//:FXdiv",
+            "@fxdiv//:FXdiv"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -77288,7 +77288,7 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
         ],
         "asm_copts": [],
         "c_copts": [
@@ -77357,9 +77357,9 @@ LIBRARIES = {
             "-Wno-deprecated-comma-subscript",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -78378,7 +78378,7 @@ SHARED_HEADERS = [
     "@chromium_xnnpack//:src/xnnpack/vunary.h",
     "@chromium_xnnpack//:src/xx-fill/xx-fill.inc",
     "@chromium_xnnpack//:src/xx-pad/xx-pad.inc",
-    "@chromium_xnnpack//:src/xx-transposev/xx-transposev.inc",
+    "@chromium_xnnpack//:src/xx-transposev/xx-transposev.inc"
 ]
 
 ACTIONS = [
@@ -78387,10 +78387,10 @@ ACTIONS = [
         "name": "ml_361c74e0fbe660f9_0",
         "srcs": {
             "//build:gn_run_binary.py": "build/gn_run_binary.py",
-            "@chromium_tflite//:tensorflow/compiler/mlir/lite/schema/schema.fbs": "third_party/tflite/src/tensorflow/compiler/mlir/lite/schema/schema.fbs",
+            "@chromium_tflite//:tensorflow/compiler/mlir/lite/schema/schema.fbs": "third_party/tflite/src/tensorflow/compiler/mlir/lite/schema/schema.fbs"
         },
         "outs": {
-            "gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h": "gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h",
+            "gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h": "gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -78403,11 +78403,11 @@ ACTIONS = [
             "../../",
             "--gen-mutable",
             "--gen-object-api",
-            "../../third_party/tflite/src/tensorflow/compiler/mlir/lite/schema/schema.fbs",
+            "../../third_party/tflite/src/tensorflow/compiler/mlir/lite/schema/schema.fbs"
         ],
         "deps": [
-            ":ml_6f25ebabccc3eaec_tool",
-        ],
+            ":ml_6f25ebabccc3eaec_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -78415,12 +78415,12 @@ ACTIONS = [
         "srcs": {
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
             "@chromium_tflite//:third_party/xla/xla/tsl/protobuf/rpc_options.proto": "third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options.pb.h": "gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options.pb.h",
             "gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options.pb.cc": "gen/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options.pb.cc",
-            "pyproto/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options_pb2.py": "pyproto/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options_pb2.py",
+            "pyproto/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options_pb2.py": "pyproto/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/rpc_options_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -78436,12 +78436,12 @@ ACTIONS = [
             "lite=true:",
             "--py-out-dir",
             "pyproto/third_party/tflite/src",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":ml_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -78452,7 +78452,7 @@ ACTIONS = [
             "@chromium_tflite//:tensorflow/lite/profiling/proto/model_runtime_info.proto": "third_party/tflite/src/tensorflow/lite/profiling/proto/model_runtime_info.proto",
             "@chromium_tflite//:tensorflow/lite/profiling/proto/profiling_info.proto": "third_party/tflite/src/tensorflow/lite/profiling/proto/profiling_info.proto",
             "@chromium_tflite//:third_party/xla/xla/tsl/protobuf/coordination_config.proto": "third_party/tflite/src/third_party/xla/xla/tsl/protobuf/coordination_config.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/third_party/tflite/src/tensorflow/lite/acceleration/configuration/configuration.pb.h": "gen/third_party/tflite/src/tensorflow/lite/acceleration/configuration/configuration.pb.h",
@@ -78466,7 +78466,7 @@ ACTIONS = [
             "pyproto/third_party/tflite/src/tensorflow/lite/acceleration/configuration/configuration_pb2.py": "pyproto/third_party/tflite/src/tensorflow/lite/acceleration/configuration/configuration_pb2.py",
             "pyproto/third_party/tflite/src/tensorflow/lite/profiling/proto/model_runtime_info_pb2.py": "pyproto/third_party/tflite/src/tensorflow/lite/profiling/proto/model_runtime_info_pb2.py",
             "pyproto/third_party/tflite/src/tensorflow/lite/profiling/proto/profiling_info_pb2.py": "pyproto/third_party/tflite/src/tensorflow/lite/profiling/proto/profiling_info_pb2.py",
-            "pyproto/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/coordination_config_pb2.py": "pyproto/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/coordination_config_pb2.py",
+            "pyproto/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/coordination_config_pb2.py": "pyproto/third_party/tflite/src/third_party/xla/xla/tsl/protobuf/coordination_config_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -78485,22 +78485,22 @@ ACTIONS = [
             "lite=true:",
             "--py-out-dir",
             "pyproto/third_party/tflite/src",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":ml_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
         "name": "ml_d36178669c66bf3d_0",
         "srcs": {
             "//build:gn_run_binary.py": "build/gn_run_binary.py",
-            "@chromium_tflite//:tensorflow/lite/delegates/xnnpack/weight_cache_schema.fbs": "third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema.fbs",
+            "@chromium_tflite//:tensorflow/lite/delegates/xnnpack/weight_cache_schema.fbs": "third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema.fbs"
         },
         "outs": {
-            "gen/third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema_generated.h": "gen/third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema_generated.h",
+            "gen/third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema_generated.h": "gen/third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema_generated.h"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -78512,12 +78512,12 @@ ACTIONS = [
             "-I",
             "../../",
             "--gen-object-api",
-            "../../third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema.fbs",
+            "../../third_party/tflite/src/tensorflow/lite/delegates/xnnpack/weight_cache_schema.fbs"
         ],
         "deps": [
-            ":ml_6f25ebabccc3eaec_tool",
-        ],
-    },
+            ":ml_6f25ebabccc3eaec_tool"
+        ]
+    }
 ]
 
 TOOLS = {
@@ -78525,25 +78525,25 @@ TOOLS = {
         "tool": "@flatbuffers//:flatc",
         "logical_path": "out/bazel-import/clang_x64/flatc",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
     },
     "ml_319da6ea5cc4a541_tool": {
         "tool": ":protobuf_compiler",
-        "logical_path": "out/bazel-import/clang_x64/protoc",
-    },
+        "logical_path": "out/bazel-import/clang_x64/protoc"
+    }
 }
 
 COPIES = [
     {
         "name": "ml_66d6325aeadb8971",
         "srcs": {
-            ":gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h": "out/bazel-import/gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h",
+            ":gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h": "out/bazel-import/gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h"
         },
         "outputs": {
-            "gen/third_party/tflite/src/tensorflow/compiler/mlir/lite/schema/mutable": "out/bazel-import/gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h",
-        },
-    },
+            "gen/third_party/tflite/src/tensorflow/compiler/mlir/lite/schema/mutable": "out/bazel-import/gen/third_party/tflite/src/tensorflow/lite/schema/mutable/schema_generated.h"
+        }
+    }
 ]
 
 PUBLIC_DEFINES = [
@@ -78551,5 +78551,5 @@ PUBLIC_DEFINES = [
     "TF_MAJOR_VERSION=2",
     "TF_MINOR_VERSION=21",
     "TF_PATCH_VERSION=0",
-    "TF_VERSION_SUFFIX",
+    "TF_VERSION_SUFFIX"
 ]

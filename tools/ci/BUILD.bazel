@@ -27,17 +27,17 @@ linux_arm64_browser(
 
 darwin_arm64_browser(
     name = "darwin-arm64",
-    srcs = ["@chromium//native:browser_bundle"],
+    srcs = ["@chromium_darwin_arm64//native:browser_bundle"],
 )
 
 windows_amd64_browser(
     name = "windows-amd64",
-    srcs = ["@chromium//native:browser_bundle"],
+    srcs = ["@chromium_windows_amd64//native:browser_bundle"],
 )
 
 windows_arm64_browser(
     name = "windows-arm64",
-    srcs = ["@chromium//native:browser_bundle"],
+    srcs = ["@chromium_windows_arm64//native:browser_bundle"],
 )
 
 string_flag(

@@ -1,0 +1,48 @@
+exports_files(
+    [
+        "append_truncated.h",
+        "check_impl.h",
+        "check_op.h",
+        "conditions.h",
+        "config.h",
+        "flags.h",
+        "fnmatch.h",
+        "globals.h",
+        "log_format.h",
+        "log_impl.h",
+        "log_message.h",
+        "log_sink_set.h",
+        "nullguard.h",
+        "nullstream.h",
+        "proto.h",
+        "strip.h",
+        "structured.h",
+        "structured_proto.h",
+        "test_actions.h",
+        "test_helpers.h",
+        "test_matchers.h",
+        "vlog_config.h",
+        "voidify.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "check_impl.h",
+    "check_op.h",
+    "conditions.h",
+    "config.h",
+    "log_impl.h",
+    "log_message.h",
+    "nullguard.h",
+    "nullstream.h",
+    "proto.h",
+    "strip.h",
+    "structured_proto.h",
+    "vlog_config.h",
+    "voidify.h"
+])
+# END BROWSER INPUTS

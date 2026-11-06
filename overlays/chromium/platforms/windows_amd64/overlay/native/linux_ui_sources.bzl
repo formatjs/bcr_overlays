@@ -20135,6 +20135,12 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
+        "resource_assets": {
+            ":gen/ui/resources/ui_unscaled_resources.rc": {}
+        },
+        "resource_include_roots": {
+            ":gen/ui/resources/ui_unscaled_resources.rc": "out/bazel-import/gen/ui/resources"
+        },
         "c_copts": [
             "/W4",
             "-Wimplicit-fallthrough",

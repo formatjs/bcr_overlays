@@ -1,17 +1,24 @@
-load(":compositor.bzl", "native_compositor")
 load("@ipcz//bazel:ipcz.bzl", "ipcz_library")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load(":angle_runtime.bzl", "native_angle_runtime")
 load(":base.bzl", "native_base")
 load(":base_sources.bzl", "COPTS")
+load(":blink_core.bzl", "native_blink_core")
+load(":blink_modules.bzl", "native_blink_modules")
+load(":blink_platform.bzl", "native_blink_platform")
+load(":blink_rust.bzl", "native_blink_rust")
+load(":browser.bzl", "native_browser")
 load(":browser_services.bzl", "native_browser_services")
 load(":browser_v8.bzl", "native_browser_v8")
 load(":buildflags.bzl", "native_buildflags")
 load(":codecs.bzl", "native_codecs")
+load(":compositor.bzl", "native_compositor")
+load(":content.bzl", "native_content")
 load(":crypto.bzl", "native_crypto")
 load(":cxx_bridge.bzl", "chromium_cxx_bridge", "native_cxx_tools")
 load(":dawn.bzl", "native_dawn")
 load(":dawn_native.bzl", "native_dawn_backend")
+load(":devtools_inspector.bzl", "native_devtools_inspector")
 load(":ffmpeg.bzl", "native_ffmpeg")
 load(":fonts.bzl", "native_fonts")
 load(":generated_files.bzl", "captured_generated_files")
@@ -41,6 +48,7 @@ load(":tint.bzl", "native_tint")
 load(":url.bzl", "native_url")
 load(":vulkan_loader.bzl", "native_vulkan_loader")
 load(":webui_actions.bzl", "native_webui")
+load(":xslt.bzl", "native_xslt")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -168,3 +176,19 @@ native_ffmpeg()
 native_media()
 
 native_compositor()
+
+native_blink_rust()
+
+native_blink_platform()
+
+native_devtools_inspector()
+
+native_xslt()
+
+native_blink_core()
+
+native_blink_modules()
+
+native_content()
+
+native_browser()

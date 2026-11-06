@@ -1,0 +1,56 @@
+exports_files(
+    [
+        "internal/status_internal.h",
+        "internal/status_matchers.h",
+        "internal/statusor_internal.h",
+        "status.h",
+        "status_matchers.h",
+        "status_payload_printer.h",
+        "statusor.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "internal/status_internal.h",
+    "internal/statusor_internal.h",
+    "status.h",
+    "statusor.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "internal/status_internal.h",
+    "internal/statusor_internal.h",
+    "status.h",
+    "statusor.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "internal/status_internal.h",
+    "status.h"
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "internal/status_internal.h",
+    "internal/statusor_internal.h",
+    "status.h",
+    "statusor.h"
+])
+# END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "internal/status_internal.h",
+    "internal/statusor_internal.h",
+    "status.h",
+    "statusor.h"
+])
+# END BROWSER INPUTS

@@ -1,0 +1,138 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files([
+    "BUILD.bazel",
+    "include/ipcz/ipcz.h",
+    "src/api.h",
+])
+
+cc_library(
+    name = "ipcz",
+    hdrs = [
+        "include/ipcz/ipcz.h",
+        "src/api.h",
+    ],
+    includes = ["../.."],
+    deps = ["//native:ipcz"],
+)
+
+# BEGIN COMPOSITOR INPUTS
+exports_files([
+    "include/ipcz/ipcz.h",
+    "src/api.cc",
+    "src/api.h",
+    "src/ipcz/api_context.cc",
+    "src/ipcz/api_context.h",
+    "src/ipcz/api_object.cc",
+    "src/ipcz/api_object.h",
+    "src/ipcz/application_object.cc",
+    "src/ipcz/application_object.h",
+    "src/ipcz/block_allocator.cc",
+    "src/ipcz/block_allocator.h",
+    "src/ipcz/block_allocator_pool.cc",
+    "src/ipcz/block_allocator_pool.h",
+    "src/ipcz/box.cc",
+    "src/ipcz/box.h",
+    "src/ipcz/buffer_id.h",
+    "src/ipcz/buffer_pool.cc",
+    "src/ipcz/buffer_pool.h",
+    "src/ipcz/driver_memory.cc",
+    "src/ipcz/driver_memory.h",
+    "src/ipcz/driver_memory_mapping.cc",
+    "src/ipcz/driver_memory_mapping.h",
+    "src/ipcz/driver_object.cc",
+    "src/ipcz/driver_object.h",
+    "src/ipcz/driver_transport.cc",
+    "src/ipcz/driver_transport.h",
+    "src/ipcz/features.cc",
+    "src/ipcz/features.h",
+    "src/ipcz/fragment.cc",
+    "src/ipcz/fragment.h",
+    "src/ipcz/fragment_descriptor.h",
+    "src/ipcz/fragment_ref.cc",
+    "src/ipcz/fragment_ref.h",
+    "src/ipcz/handle_type.h",
+    "src/ipcz/link_side.cc",
+    "src/ipcz/link_side.h",
+    "src/ipcz/link_type.cc",
+    "src/ipcz/link_type.h",
+    "src/ipcz/local_router_link.cc",
+    "src/ipcz/local_router_link.h",
+    "src/ipcz/message.cc",
+    "src/ipcz/message.h",
+    "src/ipcz/node.cc",
+    "src/ipcz/node.h",
+    "src/ipcz/node_connector.cc",
+    "src/ipcz/node_connector.h",
+    "src/ipcz/node_link.cc",
+    "src/ipcz/node_link.h",
+    "src/ipcz/node_link_memory.cc",
+    "src/ipcz/node_link_memory.h",
+    "src/ipcz/node_messages.cc",
+    "src/ipcz/node_messages.h",
+    "src/ipcz/node_name.cc",
+    "src/ipcz/node_name.h",
+    "src/ipcz/node_type.h",
+    "src/ipcz/parcel.cc",
+    "src/ipcz/parcel.h",
+    "src/ipcz/parcel_queue.h",
+    "src/ipcz/parcel_wrapper.cc",
+    "src/ipcz/parcel_wrapper.h",
+    "src/ipcz/pending_transaction_set.cc",
+    "src/ipcz/pending_transaction_set.h",
+    "src/ipcz/ref_counted_fragment.cc",
+    "src/ipcz/ref_counted_fragment.h",
+    "src/ipcz/remote_router_link.cc",
+    "src/ipcz/remote_router_link.h",
+    "src/ipcz/route_edge.cc",
+    "src/ipcz/route_edge.h",
+    "src/ipcz/router.cc",
+    "src/ipcz/router.h",
+    "src/ipcz/router_descriptor.h",
+    "src/ipcz/router_link.h",
+    "src/ipcz/router_link_state.cc",
+    "src/ipcz/router_link_state.h",
+    "src/ipcz/sequence_number.h",
+    "src/ipcz/sequenced_queue.h",
+    "src/ipcz/sublink_id.h",
+    "src/ipcz/trap_event_dispatcher.cc",
+    "src/ipcz/trap_event_dispatcher.h",
+    "src/ipcz/trap_set.cc",
+    "src/ipcz/trap_set.h",
+    "src/util/log.h",
+    "src/util/multi_mutex_lock.h",
+    "src/util/ref_counted.cc",
+    "src/util/ref_counted.h",
+    "src/util/stack_trace.h",
+    "src/util/strong_alias.h",
+    "src/util/unique_ptr_comparator.h",
+    "src/util/unsafe_buffers.h"
+])
+# END COMPOSITOR INPUTS
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "include/ipcz/ipcz.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "include/ipcz/ipcz.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "include/ipcz/ipcz.h"
+])
+# END CONTENT INPUTS
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "include/ipcz/ipcz.h"
+])
+# END BROWSER INPUTS

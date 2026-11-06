@@ -1,0 +1,33 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+package(default_visibility = ["//visibility:public"])
+cc_library(name = "ced", hdrs = ["src/compact_enc_det/compact_enc_det.h", "src/compact_enc_det/compact_enc_det_generated_tables.h", "src/compact_enc_det/compact_enc_det_generated_tables2.h", "src/compact_enc_det/compact_enc_det_hint_code.h", "src/util/basictypes.h", "src/util/case_insensitive_hash.h", "src/util/commandlineflags.h", "src/util/encodings/encodings.h", "src/util/encodings/encodings.pb.h", "src/util/languages/languages.h", "src/util/languages/languages.pb.h", "src/util/logging.h", "src/util/port.h", "src/util/string_util.h", "src/util/varsetter.h"], includes = ["../.."], deps = ["@compact_enc_det//:ced"])
+exports_files(["BUILD.bazel"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "src/compact_enc_det/compact_enc_det.h",
+    "src/util/encodings/encodings.h",
+    "src/util/encodings/encodings.pb.h",
+    "src/util/languages/languages.h",
+    "src/util/languages/languages.pb.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "src/util/encodings/encodings.h",
+    "src/util/encodings/encodings.pb.h",
+    "src/util/string_util.h"
+])
+# END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "src/compact_enc_det/compact_enc_det.h",
+    "src/util/encodings/encodings.h",
+    "src/util/encodings/encodings.pb.h",
+    "src/util/languages/languages.h",
+    "src/util/languages/languages.pb.h",
+    "src/util/string_util.h"
+])
+# END BROWSER INPUTS

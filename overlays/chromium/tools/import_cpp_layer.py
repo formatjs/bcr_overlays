@@ -992,6 +992,8 @@ def main():
         relative = path[2:]
         if relative.startswith('third_party/node/node_modules/'):
             return '@chromium_node_modules//:node_modules/' + relative.removeprefix('third_party/node/node_modules/')
+        if relative.startswith('third_party/perfetto/protos/'):
+            return '@perfetto//:' + relative.removeprefix('third_party/perfetto/')
         if relative == 'third_party/icu/common/icudtl.dat':
             return '@chromium_icu//:common/icudtl.dat'
         generated = BUILD + 'gen/' + relative
@@ -1235,6 +1237,14 @@ def main():
                 continue
             if option in ('-isysroot', '--sysroot'):
                 next(linker_flags)
+                continue
+            if layer == 'browser' and option.startswith(('-Wl,-order_file,', '-Wl,-exported_symbols_list,')):
+                flag, path = option.rsplit(',', 1)
+                if not path.startswith('../../'):
+                    raise ValueError('unmapped linker input: ' + path)
+                dependency = file_label('//' + path.removeprefix('../../'))
+                linker_inputs.append(dependency)
+                linkopts.append(flag + ',$(location ' + dependency + ')')
                 continue
             if layer == 'browser' and option in ('-Wl,-order_file', '-Wl,-exported_symbols_list'):
                 path = next(linker_flags).removeprefix('-Wl,')
@@ -1784,9 +1794,14 @@ def main():
                 revision.parent.mkdir(parents=True, exist_ok=True)
                 revision.write_bytes((args.source_root / 'build/util/LASTCHANGE').read_bytes())
             if (target['script'].startswith('//tools/grit/')
-                    or target['script'].endswith('/generate_permission_element_grd.py')):
+                    or target['script'].endswith('/generate_permission_element_grd.py')
+                    or target['script'] == '//base/win/embedded_i18n/create_string_rc.py'):
+                directories = ['tools/grit']
+                if target['script'] == '//base/win/embedded_i18n/create_string_rc.py':
+                    directories.append('tools/python')
                 inputs.update('//' + str(path.relative_to(args.source_root))
-                              for path in (args.source_root / 'tools/grit').rglob('*.py')
+                              for directory in directories
+                              for path in (args.source_root / directory).rglob('*.py')
                               if '__pycache__' not in path.parts)
             if target['script'].endswith('/generate_permission_element_grd.py'):
                 arguments = target['args']

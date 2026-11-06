@@ -126,7 +126,7 @@ def build(target, destination, revision, hosted=False):
     if hosted:
         if not os.environ.get('BUILDBUDDY_CI_RUNNER_ABSPATH'):
             raise ValueError('Hosted mode requires a BuildBuddy workflow runner')
-        flags.append('--config=buildbuddy')
+        flags.extend(['--config=buildbuddy', '--keep_going'])
     if target['os'] == 'windows':
         flags.extend([
             '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',

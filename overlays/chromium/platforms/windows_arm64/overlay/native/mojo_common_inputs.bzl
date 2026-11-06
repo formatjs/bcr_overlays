@@ -1,7 +1,8 @@
 """Shared declared source inputs for native Mojo actions."""
 
-load(":mojo_parameters.bzl", "input_files")
 load(":python_action.bzl", "chromium_filegroup")
+
+load(":mojo_parameters.bzl", "input_files")
 
 # buildifier: disable=unnamed-macro
 def declare_common_inputs():

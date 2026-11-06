@@ -1,0 +1,34 @@
+exports_files(
+    [
+        "absl_check.h",
+        "absl_log.h",
+        "absl_vlog_is_on.h",
+        "check.h",
+        "die_if_null.h",
+        "flags.h",
+        "globals.h",
+        "initialize.h",
+        "log.h",
+        "log_entry.h",
+        "log_sink.h",
+        "log_sink_registry.h",
+        "log_streamer.h",
+        "scoped_mock_log.h",
+        "structured.h",
+        "vlog_is_on.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "absl_check.h",
+    "absl_vlog_is_on.h",
+    "check.h",
+    "log.h",
+    "log_entry.h",
+    "log_sink.h"
+])
+# END BROWSER INPUTS

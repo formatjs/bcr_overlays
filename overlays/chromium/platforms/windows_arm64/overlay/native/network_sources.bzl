@@ -6,7 +6,7 @@ LIBRARIES = {
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/base/version_info/version_info_values.h",
+            ":gen/base/version_info/version_info_values.h"
         ],
         "copts": [
             "/W4",
@@ -83,7 +83,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -115,12 +115,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -134,17 +134,17 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//base/version_info:version_info": {
         "name": "network_f69d39c4c7e97bd6",
         "kind": "static_library",
         "srcs": [
-            "//:base/version_info/version_info.cc",
+            "//:base/version_info/version_info.cc"
         ],
         "hdrs": [
-            "//:base/version_info/version_info.h",
+            "//:base/version_info/version_info.h"
         ],
         "copts": [
             "/W4",
@@ -221,7 +221,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -253,7 +253,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -261,11 +261,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":network_062374b14d6c1611",
+            ":network_062374b14d6c1611"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -306,17 +306,17 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//components/miracle_parameter/common:common": {
         "name": "network_0b8264d7eb7b2ad9",
         "kind": "static_library",
         "srcs": [
-            "//:components/miracle_parameter/common/public/miracle_parameter.cc",
+            "//:components/miracle_parameter/common/public/miracle_parameter.cc"
         ],
         "hdrs": [
-            "//:components/miracle_parameter/common/public/miracle_parameter.h",
+            "//:components/miracle_parameter/common/public/miracle_parameter.h"
         ],
         "copts": [
             "/W4",
@@ -393,7 +393,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_MIRACLE_PARAMETER_IMPL",
@@ -426,7 +426,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -434,10 +434,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -478,17 +478,17 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//components/network_time/time_tracker:time_tracker": {
         "name": "network_3d42a633c3e954bc",
         "kind": "static_library",
         "srcs": [
-            "//:components/network_time/time_tracker/time_tracker.cc",
+            "//:components/network_time/time_tracker/time_tracker.cc"
         ],
         "hdrs": [
-            "//:components/network_time/time_tracker/time_tracker.h",
+            "//:components/network_time/time_tracker/time_tracker.h"
         ],
         "copts": [
             "/W4",
@@ -565,7 +565,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -597,7 +597,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -605,10 +605,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -649,8 +649,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//components/performance_manager/scenario_api:scenario_api": {
         "name": "network_c57b918e9148e3ae",
@@ -658,13 +658,13 @@ LIBRARIES = {
         "srcs": [
             "//:components/performance_manager/scenario_api/performance_scenario_memory.cc",
             "//:components/performance_manager/scenario_api/performance_scenario_observer.cc",
-            "//:components/performance_manager/scenario_api/performance_scenarios.cc",
+            "//:components/performance_manager/scenario_api/performance_scenarios.cc"
         ],
         "hdrs": [
             "//:components/performance_manager/scenario_api/performance_scenario_memory.h",
             "//:components/performance_manager/scenario_api/performance_scenario_memory_forward.h",
             "//:components/performance_manager/scenario_api/performance_scenario_observer.h",
-            "//:components/performance_manager/scenario_api/performance_scenarios.h",
+            "//:components/performance_manager/scenario_api/performance_scenarios.h"
         ],
         "copts": [
             "/W4",
@@ -741,7 +741,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_SCENARIO_API_IMPL",
@@ -774,7 +774,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -782,10 +782,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -826,8 +826,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//components/sqlite_proto:sqlite_proto": {
         "name": "network_2c17b3344f800fae",
@@ -835,13 +835,13 @@ LIBRARIES = {
         "srcs": [
             "//:components/sqlite_proto/key_value_table.cc",
             "//:components/sqlite_proto/proto_table_manager.cc",
-            "//:components/sqlite_proto/table_manager.cc",
+            "//:components/sqlite_proto/table_manager.cc"
         ],
         "hdrs": [
             "//:components/sqlite_proto/key_value_data.h",
             "//:components/sqlite_proto/key_value_table.h",
             "//:components/sqlite_proto/proto_table_manager.h",
-            "//:components/sqlite_proto/table_manager.h",
+            "//:components/sqlite_proto/table_manager.h"
         ],
         "copts": [
             "/W4",
@@ -918,7 +918,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -952,7 +952,7 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
@@ -960,12 +960,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
             ":network_a866aa0adf8cd857",
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1006,8 +1006,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//components/unexportable_keys:unexportable_keys": {
         "name": "network_12f64e8082dc6a5c",
@@ -1021,7 +1021,7 @@ LIBRARIES = {
             "//:components/unexportable_keys/unexportable_key_loader.cc",
             "//:components/unexportable_keys/unexportable_key_service_impl.cc",
             "//:components/unexportable_keys/unexportable_key_task_manager.cc",
-            "//:components/unexportable_keys/unexportable_key_tasks.cc",
+            "//:components/unexportable_keys/unexportable_key_tasks.cc"
         ],
         "hdrs": [
             "//:components/unexportable_keys/background_long_task_scheduler.h",
@@ -1037,7 +1037,7 @@ LIBRARIES = {
             "//:components/unexportable_keys/unexportable_key_service.h",
             "//:components/unexportable_keys/unexportable_key_service_impl.h",
             "//:components/unexportable_keys/unexportable_key_task_manager.h",
-            "//:components/unexportable_keys/unexportable_key_tasks.h",
+            "//:components/unexportable_keys/unexportable_key_tasks.h"
         ],
         "copts": [
             "/W4",
@@ -1114,7 +1114,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_UNEXPORTABLE_KEYS_IMPL",
@@ -1147,7 +1147,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -1155,12 +1155,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             "//third_party/abseil-cpp:absl",
             ":base",
-            ":crypto",
+            ":crypto"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -1203,17 +1203,17 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net/cert:root_store_proto_full(//build/toolchain/linux:clang_x64)": {
         "name": "network_a61c6cf9c889fc33",
         "kind": "static_library",
         "srcs": [
-            ":clang_x64/gen/net/cert/root_store_proto_full/root_store.pb.cc",
+            ":clang_x64/gen/net/cert/root_store_proto_full/root_store.pb.cc"
         ],
         "hdrs": [
-            ":clang_x64/gen/net/cert/root_store_proto_full/root_store.pb.h",
+            ":clang_x64/gen/net/cert/root_store_proto_full/root_store.pb.h"
         ],
         "copts": [
             "-Wall",
@@ -1289,7 +1289,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -1313,15 +1313,15 @@ LIBRARIES = {
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
             "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
-            "HAVE_PTHREAD",
+            "HAVE_PTHREAD"
         ],
         "includes": [
             "..",
             "clang_x64/gen/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "@chromium//native:protobuf_full_runtime",
+            "@chromium//native:protobuf_full_runtime"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -1337,8 +1337,8 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,--gc-sections",
             "-Wl,-z,defs",
-            "-Wl,--as-needed",
-        ],
+            "-Wl,--as-needed"
+        ]
     },
     "//net/cert:root_store_proto_full_input_group(//build/toolchain/linux:clang_x64)": {
         "name": "network_a03d59517f78fc8e",
@@ -1349,19 +1349,19 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
-        "linkopts": [],
+        "linkopts": []
     },
     "//net/cert:root_store_proto_lite": {
         "name": "network_ee4fbee20609553b",
         "kind": "static_library",
         "srcs": [
-            ":gen/net/cert/root_store_proto_lite/root_store.pb.cc",
+            ":gen/net/cert/root_store_proto_lite/root_store.pb.cc"
         ],
         "hdrs": [
-            ":gen/net/cert/root_store_proto_lite/root_store.pb.h",
+            ":gen/net/cert/root_store_proto_lite/root_store.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -1439,7 +1439,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1473,15 +1473,15 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -1495,8 +1495,8 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//net/cert:root_store_proto_lite_input_group": {
         "name": "network_4b26f2c332808ac1",
@@ -1507,10 +1507,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
-        "linkopts": [],
+        "linkopts": []
     },
     "//net/dns/public:public": {
         "name": "network_29a09fb96f80f53b",
@@ -1526,7 +1526,7 @@ LIBRARIES = {
             "//:net/dns/public/resolve_error_info.cc",
             "//:net/dns/public/secure_dns_policy.cc",
             "//:net/dns/public/util.cc",
-            "//:net/dns/public/win_dns_system_settings.cc",
+            "//:net/dns/public/win_dns_system_settings.cc"
         ],
         "hdrs": [
             "//:net/dns/public/dns_config_overrides.h",
@@ -1542,7 +1542,7 @@ LIBRARIES = {
             "//:net/dns/public/secure_dns_mode.h",
             "//:net/dns/public/secure_dns_policy.h",
             "//:net/dns/public/util.h",
-            "//:net/dns/public/win_dns_system_settings.h",
+            "//:net/dns/public/win_dns_system_settings.h"
         ],
         "copts": [
             "/W4",
@@ -1620,7 +1620,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1663,7 +1663,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -1672,11 +1672,11 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":network_608e18526e5d54cf",
-            ":network_e6d5eaabe0fbdd6e",
+            ":network_e6d5eaabe0fbdd6e"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -1719,8 +1719,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net/dns:dns": {
         "name": "network_907728a31a81f45f",
@@ -1776,7 +1776,7 @@ LIBRARIES = {
             "//:net/dns/dns_client.cc",
             "//:net/dns/mdns_cache.cc",
             "//:net/dns/mdns_client.cc",
-            "//:net/dns/mdns_client_impl.cc",
+            "//:net/dns/mdns_client_impl.cc"
         ],
         "hdrs": [
             "//:net/dns/address_info.h",
@@ -1816,7 +1816,7 @@ LIBRARIES = {
             "//:net/dns/serial_worker.h",
             "//:net/dns/stale_host_resolver.h",
             "//:net/dns/system_dns_config_change_notifier.h",
-            "//:net/dns/test_dns_config_service.h",
+            "//:net/dns/test_dns_config_service.h"
         ],
         "copts": [
             "/W4",
@@ -1894,7 +1894,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1937,7 +1937,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -1946,7 +1946,7 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":network_11729a43bb3c6b7e",
@@ -1955,7 +1955,7 @@ LIBRARIES = {
             ":network_8afdac9e2f8792ca",
             ":network_e6d5eaabe0fbdd6e",
             ":network_e8a7401b2d5ed5f4",
-            "@re2//:re2",
+            "@re2//:re2"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -1998,8 +1998,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net/dns:dns_client": {
         "name": "network_e8a7401b2d5ed5f4",
@@ -2012,7 +2012,7 @@ LIBRARIES = {
             "//:net/dns/https_record_rdata.h",
             "//:net/dns/opt_record_rdata.h",
             "//:net/dns/record_parsed.h",
-            "//:net/dns/record_rdata.h",
+            "//:net/dns/record_rdata.h"
         ],
         "copts": [
             "/W4",
@@ -2090,7 +2090,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2133,7 +2133,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -2142,13 +2142,13 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":network_29a09fb96f80f53b",
             ":network_608e18526e5d54cf",
             ":network_8afdac9e2f8792ca",
-            ":network_e6d5eaabe0fbdd6e",
+            ":network_e6d5eaabe0fbdd6e"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -2191,8 +2191,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net/dns:host_resolver": {
         "name": "network_8afdac9e2f8792ca",
@@ -2202,7 +2202,7 @@ LIBRARIES = {
             "//:net/dns/dns_config.h",
             "//:net/dns/host_cache.h",
             "//:net/dns/host_resolver.h",
-            "//:net/dns/mapped_host_resolver.h",
+            "//:net/dns/mapped_host_resolver.h"
         ],
         "copts": [
             "/W4",
@@ -2280,7 +2280,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2323,7 +2323,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -2332,12 +2332,12 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":network_29a09fb96f80f53b",
             ":network_608e18526e5d54cf",
-            ":network_e6d5eaabe0fbdd6e",
+            ":network_e6d5eaabe0fbdd6e"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -2380,15 +2380,15 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net/dns:host_resolver_manager": {
         "name": "network_3eb0649cf3bdb25a",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:net/dns/host_resolver_manager.h",
+            "//:net/dns/host_resolver_manager.h"
         ],
         "copts": [
             "/W4",
@@ -2466,7 +2466,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2509,7 +2509,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -2518,13 +2518,13 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":network_29a09fb96f80f53b",
             ":network_608e18526e5d54cf",
             ":network_8afdac9e2f8792ca",
-            ":network_e6d5eaabe0fbdd6e",
+            ":network_e6d5eaabe0fbdd6e"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -2567,15 +2567,15 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net/dns:mdns_client": {
         "name": "network_11729a43bb3c6b7e",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:net/dns/mdns_client.h",
+            "//:net/dns/mdns_client.h"
         ],
         "copts": [
             "/W4",
@@ -2653,7 +2653,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2696,7 +2696,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -2705,13 +2705,13 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":network_608e18526e5d54cf",
             ":network_8afdac9e2f8792ca",
             ":network_e6d5eaabe0fbdd6e",
-            ":network_e8a7401b2d5ed5f4",
+            ":network_e8a7401b2d5ed5f4"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -2754,17 +2754,17 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net/http:transport_security_state_generated_files": {
         "name": "network_ae2fc68c459a6e0c",
         "kind": "source_set",
         "srcs": [
-            "//:net/http/transport_security_state.cc",
+            "//:net/http/transport_security_state.cc"
         ],
         "hdrs": [
-            ":gen/net/http/transport_security_state_static.h",
+            ":gen/net/http/transport_security_state_static.h"
         ],
         "copts": [
             "/W4",
@@ -2842,7 +2842,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -2885,7 +2885,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -2894,12 +2894,12 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":network_608e18526e5d54cf",
             ":network_907728a31a81f45f",
-            ":network_e6d5eaabe0fbdd6e",
+            ":network_e6d5eaabe0fbdd6e"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -2942,17 +2942,17 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net/third_party/quiche:net_quic_test_tools_proto": {
         "name": "network_8230d4a8e742ff95",
         "kind": "static_library",
         "srcs": [
-            ":gen/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.pb.cc",
+            ":gen/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.pb.cc"
         ],
         "hdrs": [
-            ":gen/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.pb.h",
+            ":gen/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -3030,7 +3030,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "NET_IMPLEMENTATION",
@@ -3065,16 +3065,16 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":network_a8f579c34f91d38c",
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -3088,8 +3088,8 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//net/third_party/quiche:net_quic_test_tools_proto_input_group": {
         "name": "network_4ce37201e824583d",
@@ -3100,10 +3100,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
-        "linkopts": [],
+        "linkopts": []
     },
     "//net/tools/huffman_trie:huffman_trie_generator_sources(//build/toolchain/linux:clang_x64)": {
         "name": "network_f2243d865cfeef34",
@@ -3113,14 +3113,14 @@ LIBRARIES = {
             "//:net/tools/huffman_trie/huffman/huffman_builder.cc",
             "//:net/tools/huffman_trie/trie/trie_bit_buffer.cc",
             "//:net/tools/huffman_trie/trie/trie_writer.cc",
-            "//:net/tools/huffman_trie/trie_entry.cc",
+            "//:net/tools/huffman_trie/trie_entry.cc"
         ],
         "hdrs": [
             "//:net/tools/huffman_trie/bit_writer.h",
             "//:net/tools/huffman_trie/huffman/huffman_builder.h",
             "//:net/tools/huffman_trie/trie/trie_bit_buffer.h",
             "//:net/tools/huffman_trie/trie/trie_writer.h",
-            "//:net/tools/huffman_trie/trie_entry.h",
+            "//:net/tools/huffman_trie/trie_entry.h"
         ],
         "copts": [
             "-Wall",
@@ -3196,7 +3196,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -3219,7 +3219,7 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_56",
-            "GLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56",
+            "GLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56"
         ],
         "includes": [
             "..",
@@ -3227,13 +3227,13 @@ LIBRARIES = {
             "clang_x64/gen/base/allocator/partition_allocator/src/",
             "clang_x64/gen/third_party/perfetto/",
             "clang_x64/gen/third_party/perfetto/build_config/",
-            "gen",
+            "gen"
         ],
         "deps": [
             "@chromium//native:base",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject",
+            "@glib//gobject"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -3249,14 +3249,14 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,--gc-sections",
             "-Wl,-z,defs",
-            "-Wl,--as-needed",
-        ],
+            "-Wl,--as-needed"
+        ]
     },
     "//net/tools/root_store_tool:root_store_tool(//build/toolchain/linux:clang_x64)": {
         "name": "network_3d99bd83fa487c2b",
         "kind": "executable",
         "srcs": [
-            "//:net/tools/root_store_tool/root_store_tool.cc",
+            "//:net/tools/root_store_tool/root_store_tool.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -3333,7 +3333,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -3359,7 +3359,7 @@ LIBRARIES = {
             "GLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56",
             "GOOGLE_PROTOBUF_NO_RTTI",
             "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
-            "HAVE_PTHREAD",
+            "HAVE_PTHREAD"
         ],
         "includes": [
             "..",
@@ -3367,7 +3367,7 @@ LIBRARIES = {
             "clang_x64/gen/base/allocator/partition_allocator/src/",
             "clang_x64/gen/third_party/perfetto/",
             "clang_x64/gen/third_party/perfetto/build_config/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":network_a61c6cf9c889fc33",
@@ -3377,7 +3377,7 @@ LIBRARIES = {
             "@glib//glib",
             "@glib//gmodule",
             "@glib//gobject",
-            "@nss//:nss",
+            "@nss//:nss"
         ],
         "linkopts": [
             "-ldl",
@@ -3399,14 +3399,14 @@ LIBRARIES = {
             "-Wl,--as-needed",
             "-rdynamic",
             "-pie",
-            "-Wl,--disable-new-dtags",
-        ],
+            "-Wl,--disable-new-dtags"
+        ]
     },
     "//net/tools/transport_security_state_generator:transport_security_state_generator(//build/toolchain/linux:clang_x64)": {
         "name": "network_7c0d6693263d0009",
         "kind": "executable",
         "srcs": [
-            "//:net/tools/transport_security_state_generator/transport_security_state_generator.cc",
+            "//:net/tools/transport_security_state_generator/transport_security_state_generator.cc"
         ],
         "hdrs": [],
         "copts": [
@@ -3483,7 +3483,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -3506,7 +3506,7 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_56",
-            "GLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56",
+            "GLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56"
         ],
         "includes": [
             "..",
@@ -3514,7 +3514,7 @@ LIBRARIES = {
             "clang_x64/gen/base/allocator/partition_allocator/src/",
             "clang_x64/gen/third_party/perfetto/",
             "clang_x64/gen/third_party/perfetto/build_config/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":network_c094ea7d10ce7256",
@@ -3522,7 +3522,7 @@ LIBRARIES = {
             "@chromium//third_party/boringssl",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject",
+            "@glib//gobject"
         ],
         "linkopts": [
             "-ldl",
@@ -3544,8 +3544,8 @@ LIBRARIES = {
             "-Wl,--as-needed",
             "-rdynamic",
             "-pie",
-            "-Wl,--disable-new-dtags",
-        ],
+            "-Wl,--disable-new-dtags"
+        ]
     },
     "//net/tools/transport_security_state_generator:transport_security_state_generator_sources(//build/toolchain/linux:clang_x64)": {
         "name": "network_c094ea7d10ce7256",
@@ -3557,7 +3557,7 @@ LIBRARIES = {
             "//:net/tools/transport_security_state_generator/pinsets.cc",
             "//:net/tools/transport_security_state_generator/preloaded_state_generator.cc",
             "//:net/tools/transport_security_state_generator/spki_hash.cc",
-            "//:net/tools/transport_security_state_generator/transport_security_state_entry.cc",
+            "//:net/tools/transport_security_state_generator/transport_security_state_entry.cc"
         ],
         "hdrs": [
             "//:net/tools/transport_security_state_generator/cert_util.h",
@@ -3566,7 +3566,7 @@ LIBRARIES = {
             "//:net/tools/transport_security_state_generator/pinsets.h",
             "//:net/tools/transport_security_state_generator/preloaded_state_generator.h",
             "//:net/tools/transport_security_state_generator/spki_hash.h",
-            "//:net/tools/transport_security_state_generator/transport_security_state_entry.h",
+            "//:net/tools/transport_security_state_generator/transport_security_state_entry.h"
         ],
         "copts": [
             "-Wall",
@@ -3642,7 +3642,7 @@ LIBRARIES = {
             "-fvisibility-inlines-hidden",
             "-Wno-modules-ambiguous-internal-linkage",
             "-Wno-modules-import-nested-redundant",
-            "-Wno-module-import-in-extern-c",
+            "-Wno-module-import-in-extern-c"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -3665,7 +3665,7 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_56",
-            "GLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56",
+            "GLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56"
         ],
         "includes": [
             "..",
@@ -3673,7 +3673,7 @@ LIBRARIES = {
             "clang_x64/gen/base/allocator/partition_allocator/src/",
             "clang_x64/gen/third_party/perfetto/",
             "clang_x64/gen/third_party/perfetto/build_config/",
-            "gen",
+            "gen"
         ],
         "deps": [
             ":network_f2243d865cfeef34",
@@ -3681,7 +3681,7 @@ LIBRARIES = {
             "@chromium//third_party/boringssl",
             "@glib//glib",
             "@glib//gmodule",
-            "@glib//gobject",
+            "@glib//gobject"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -3697,15 +3697,15 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,--gc-sections",
             "-Wl,-z,defs",
-            "-Wl,--as-needed",
-        ],
+            "-Wl,--as-needed"
+        ]
     },
     "//net/traffic_annotation:traffic_annotation": {
         "name": "network_61e9565d25d2832a",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:net/traffic_annotation/network_traffic_annotation.h",
+            "//:net/traffic_annotation/network_traffic_annotation.h"
         ],
         "copts": [
             "/W4",
@@ -3782,7 +3782,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3814,7 +3814,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -3822,10 +3822,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -3866,15 +3866,15 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net:constants": {
         "name": "network_60ad37b37979b5c6",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:net/base/trace_constants.h",
+            "//:net/base/trace_constants.h"
         ],
         "copts": [
             "/W4",
@@ -3951,7 +3951,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -3983,7 +3983,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -3991,10 +3991,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -4035,17 +4035,17 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net:device_bound_sessions_storage_proto": {
         "name": "network_a29f0baaa501606b",
         "kind": "static_library",
         "srcs": [
-            ":gen/net/device_bound_sessions/proto/storage.pb.cc",
+            ":gen/net/device_bound_sessions/proto/storage.pb.cc"
         ],
         "hdrs": [
-            ":gen/net/device_bound_sessions/proto/storage.pb.h",
+            ":gen/net/device_bound_sessions/proto/storage.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -4123,7 +4123,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4157,15 +4157,15 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -4179,8 +4179,8 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//net:device_bound_sessions_storage_proto_input_group": {
         "name": "network_c6d4c3ed93981e02",
@@ -4191,19 +4191,19 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
-        "linkopts": [],
+        "linkopts": []
     },
     "//net:isolation_info_proto": {
         "name": "network_4dbbc26bd1a3c4c0",
         "kind": "static_library",
         "srcs": [
-            ":gen/net/base/isolation_info.pb.cc",
+            ":gen/net/base/isolation_info.pb.cc"
         ],
         "hdrs": [
-            ":gen/net/base/isolation_info.pb.h",
+            ":gen/net/base/isolation_info.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -4281,7 +4281,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -4315,15 +4315,15 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -4337,8 +4337,8 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//net:isolation_info_proto_input_group": {
         "name": "network_85dc710ff4f87d1e",
@@ -4349,10 +4349,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
-        "linkopts": [],
+        "linkopts": []
     },
     "//net:net": {
         "name": "network_211be4e8e759f7c4",
@@ -4915,7 +4915,7 @@ LIBRARIES = {
             "//:net/disk_cache/sql/exclusive_operation_coordinator.cc",
             "//:net/disk_cache/sql/sql_backend_impl.cc",
             "//:net/disk_cache/sql/sql_entry_impl.cc",
-            "//:net/disk_cache/sql/sql_persistent_store.cc",
+            "//:net/disk_cache/sql/sql_persistent_store.cc"
         ],
         "hdrs": [
             "//:net/base/address_family.h",
@@ -5570,7 +5570,7 @@ LIBRARIES = {
             "//:net/websockets/websocket_quic_spdy_stream.h",
             "//:net/websockets/websocket_stream.h",
             ":gen/net/data/ssl/chrome_root_store/chrome-ev-roots-inc.cc",
-            ":gen/net/data/ssl/chrome_root_store/chrome-root-store-inc.cc",
+            ":gen/net/data/ssl/chrome_root_store/chrome-root-store-inc.cc"
         ],
         "copts": [
             "/W4",
@@ -5647,7 +5647,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5690,7 +5690,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -5699,7 +5699,7 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
@@ -5725,7 +5725,7 @@ LIBRARIES = {
             ":network_ee4fbee20609553b",
             ":network_f69d39c4c7e97bd6",
             ":quiche",
-            "@simdutf//:simdutf",
+            "@simdutf//:simdutf"
         ],
         "linkopts": [
             "-DEFAULTLIB:crypt32.lib",
@@ -5775,8 +5775,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net:net_deps": {
         "name": "network_608e18526e5d54cf",
@@ -5789,7 +5789,7 @@ LIBRARIES = {
             ":gen/net/base/registry_controlled_domains/effective_tld_names_unittest3-reversed-inc.cc",
             ":gen/net/base/registry_controlled_domains/effective_tld_names_unittest4-reversed-inc.cc",
             ":gen/net/base/registry_controlled_domains/effective_tld_names_unittest5-reversed-inc.cc",
-            ":gen/net/base/registry_controlled_domains/effective_tld_names_unittest6-reversed-inc.cc",
+            ":gen/net/base/registry_controlled_domains/effective_tld_names_unittest6-reversed-inc.cc"
         ],
         "copts": [
             "/W4",
@@ -5867,7 +5867,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -5910,7 +5910,7 @@ LIBRARIES = {
             "U_ENABLE_TRACING=1",
             "U_ENABLE_RESOURCE_TRACING=0",
             "U_STATIC_IMPLEMENTATION",
-            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+            "ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE"
         ],
         "includes": [
             "..",
@@ -5918,7 +5918,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             "//third_party/icu:icu",
@@ -5933,7 +5933,7 @@ LIBRARIES = {
             ":network_ad8ba7dbad5fa137",
             ":protobuf_lite_runtime",
             "@brotli//:brotlidec",
-            "@zstd//:zstd",
+            "@zstd//:zstd"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -5974,15 +5974,15 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net:net_export_header": {
         "name": "network_a8f579c34f91d38c",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:net/base/net_export.h",
+            "//:net/base/net_export.h"
         ],
         "copts": [
             "/W4",
@@ -6059,7 +6059,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6091,12 +6091,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -6110,15 +6110,15 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//net:net_features": {
         "name": "network_ad8ba7dbad5fa137",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "//:net/base/features.h",
+            "//:net/base/features.h"
         ],
         "copts": [
             "/W4",
@@ -6195,7 +6195,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6227,7 +6227,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -6235,11 +6235,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":network_a8f579c34f91d38c",
+            ":network_a8f579c34f91d38c"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6280,17 +6280,17 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net:net_nqe_proto": {
         "name": "network_9b4f81329dfd210b",
         "kind": "static_library",
         "srcs": [
-            ":gen/net/nqe/proto/network_id_proto.pb.cc",
+            ":gen/net/nqe/proto/network_id_proto.pb.cc"
         ],
         "hdrs": [
-            ":gen/net/nqe/proto/network_id_proto.pb.h",
+            ":gen/net/nqe/proto/network_id_proto.pb.h"
         ],
         "copts": [
             "/wd4125",
@@ -6368,7 +6368,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "NET_IMPLEMENTATION",
@@ -6403,16 +6403,16 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [
             ":network_a8f579c34f91d38c",
-            ":protobuf_lite_runtime",
+            ":protobuf_lite_runtime"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -6426,8 +6426,8 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//net:net_nqe_proto_input_group": {
         "name": "network_8fb5955ab19f839c",
@@ -6438,10 +6438,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [],
-        "linkopts": [],
+        "linkopts": []
     },
     "//net:net_public_deps": {
         "name": "network_e6d5eaabe0fbdd6e",
@@ -6523,7 +6523,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6557,7 +6557,7 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "GOOGLE_PROTOBUF_NO_RTTI",
-            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT",
+            "PROTOBUF_INTERNAL_BOUNDS_CHECK_MODE_ABORT"
         ],
         "includes": [
             "..",
@@ -6566,7 +6566,7 @@ LIBRARIES = {
             "gen/base/allocator/partition_allocator/src/",
             "gen/net/third_party/quiche/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             "//third_party/boringssl",
@@ -6578,7 +6578,7 @@ LIBRARIES = {
             ":network_ee4fbee20609553b",
             ":quiche",
             ":uri_template",
-            ":url",
+            ":url"
         ],
         "linkopts": [
             "-DEFAULTLIB:bcrypt.lib",
@@ -6621,15 +6621,15 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//net:net_resources": {
         "name": "network_37b46184a17e5302",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            ":gen/net/grit/net_resources.h",
+            ":gen/net/grit/net_resources.h"
         ],
         "copts": [
             "/W4",
@@ -6706,7 +6706,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6738,12 +6738,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -6757,17 +6757,17 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
-        ],
+            "/OPT:ICF"
+        ]
     },
     "//net:preload_decoder": {
         "name": "network_8c389311d553d2c8",
         "kind": "static_library",
         "srcs": [
-            "//:net/extras/preload_data/decoder.cc",
+            "//:net/extras/preload_data/decoder.cc"
         ],
         "hdrs": [
-            "//:net/extras/preload_data/decoder.h",
+            "//:net/extras/preload_data/decoder.h"
         ],
         "copts": [
             "/W4",
@@ -6844,7 +6844,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -6876,7 +6876,7 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
@@ -6884,10 +6884,10 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
-            ":base",
+            ":base"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -6928,8 +6928,8 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
     },
     "//sql:sql": {
         "name": "network_a866aa0adf8cd857",
@@ -6949,7 +6949,7 @@ LIBRARIES = {
             "//:sql/statement.cc",
             "//:sql/streaming_blob_handle.cc",
             "//:sql/transaction.cc",
-            "//:sql/vfs_wrapper.cc",
+            "//:sql/vfs_wrapper.cc"
         ],
         "hdrs": [
             "//:sql/database.h",
@@ -6970,7 +6970,7 @@ LIBRARIES = {
             "//:sql/streaming_blob_handle.h",
             "//:sql/transaction.h",
             "//:sql/vfs_wrapper.h",
-            ":gen/sql/sql_name_variants.h",
+            ":gen/sql/sql_name_variants.h"
         ],
         "copts": [
             "/W4",
@@ -7047,7 +7047,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "IS_SQL_IMPL",
@@ -7122,7 +7122,7 @@ LIBRARIES = {
             "SQLITE_ENABLE_BATCH_ATOMIC_WRITE",
             "SQLITE_TEMP_STORE=3",
             "SQLITE_ENABLE_LOCKING_STYLE=0",
-            "SQLITE_ENABLE_API_ARMOR",
+            "SQLITE_ENABLE_API_ARMOR"
         ],
         "includes": [
             "..",
@@ -7130,11 +7130,11 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/perfetto/",
-            "gen/third_party/perfetto/build_config/",
+            "gen/third_party/perfetto/build_config/"
         ],
         "deps": [
             ":base",
-            ":chromium_sqlite",
+            ":chromium_sqlite"
         ],
         "linkopts": [
             "-DEFAULTLIB:cfgmgr32.lib",
@@ -7175,9 +7175,9 @@ LIBRARIES = {
             "-DEFAULTLIB:synchronization.lib",
             "-DEFAULTLIB:userenv.lib",
             "-DEFAULTLIB:ws2_32.lib",
-            "-DEFAULTLIB:legacy_stdio_definitions.lib",
-        ],
-    },
+            "-DEFAULTLIB:legacy_stdio_definitions.lib"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -7995,7 +7995,7 @@ SHARED_HEADERS = [
     "//:sql/streaming_blob_handle.h",
     "//:sql/transaction.h",
     "//:sql/vfs_wrapper.h",
-    "//:sql/vfs_wrapper_fuchsia.h",
+    "//:sql/vfs_wrapper_fuchsia.h"
 ]
 
 ACTIONS = [
@@ -8008,10 +8008,10 @@ ACTIONS = [
             "//build:util/android_chrome_version.py": "build/util/android_chrome_version.py",
             "//build:util/version.py": "build/util/version.py",
             "//:chrome/VERSION": "chrome/VERSION",
-            "//:chrome/app/theme/chromium/BRANDING": "chrome/app/theme/chromium/BRANDING",
+            "//:chrome/app/theme/chromium/BRANDING": "chrome/app/theme/chromium/BRANDING"
         },
         "outs": {
-            "gen/base/version_info/version_info_values.h": "gen/base/version_info/version_info_values.h",
+            "gen/base/version_info/version_info_values.h": "gen/base/version_info/version_info_values.h"
         },
         "script": "build/util/version.py",
         "args": [
@@ -8023,9 +8023,9 @@ ACTIONS = [
             "../../build/util/LASTCHANGE.dummy",
             "-o",
             "gen/base/version_info/version_info_values.h",
-            "../../base/version_info/version_info_values.h.version",
+            "../../base/version_info/version_info_values.h.version"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -8038,18 +8038,18 @@ ACTIONS = [
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf",
-            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py",
+            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py"
         },
         "outs": {
-            "gen/net/base/registry_controlled_domains/effective_tld_names-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names-reversed-inc.cc"
         },
         "script": "net/tools/dafsa/make_dafsa.py",
         "args": [
             "--reverse",
             "../../net/base/registry_controlled_domains/effective_tld_names.gperf",
-            "gen/net/base/registry_controlled_domains/effective_tld_names-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names-reversed-inc.cc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -8062,18 +8062,18 @@ ACTIONS = [
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf",
-            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py",
+            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py"
         },
         "outs": {
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest1-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest1-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest1-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest1-reversed-inc.cc"
         },
         "script": "net/tools/dafsa/make_dafsa.py",
         "args": [
             "--reverse",
             "../../net/base/registry_controlled_domains/effective_tld_names_unittest1.gperf",
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest1-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest1-reversed-inc.cc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -8086,18 +8086,18 @@ ACTIONS = [
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf",
-            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py",
+            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py"
         },
         "outs": {
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest2-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest2-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest2-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest2-reversed-inc.cc"
         },
         "script": "net/tools/dafsa/make_dafsa.py",
         "args": [
             "--reverse",
             "../../net/base/registry_controlled_domains/effective_tld_names_unittest2.gperf",
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest2-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest2-reversed-inc.cc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -8110,18 +8110,18 @@ ACTIONS = [
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf",
-            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py",
+            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py"
         },
         "outs": {
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest3-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest3-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest3-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest3-reversed-inc.cc"
         },
         "script": "net/tools/dafsa/make_dafsa.py",
         "args": [
             "--reverse",
             "../../net/base/registry_controlled_domains/effective_tld_names_unittest3.gperf",
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest3-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest3-reversed-inc.cc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -8134,18 +8134,18 @@ ACTIONS = [
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf",
-            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py",
+            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py"
         },
         "outs": {
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest4-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest4-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest4-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest4-reversed-inc.cc"
         },
         "script": "net/tools/dafsa/make_dafsa.py",
         "args": [
             "--reverse",
             "../../net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf",
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest4-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest4-reversed-inc.cc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -8158,18 +8158,18 @@ ACTIONS = [
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf",
-            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py",
+            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py"
         },
         "outs": {
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest5-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest5-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest5-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest5-reversed-inc.cc"
         },
         "script": "net/tools/dafsa/make_dafsa.py",
         "args": [
             "--reverse",
             "../../net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf",
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest5-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest5-reversed-inc.cc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -8182,18 +8182,18 @@ ACTIONS = [
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest4.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest5.gperf",
             "//:net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf": "net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf",
-            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py",
+            "//:net/tools/dafsa/make_dafsa.py": "net/tools/dafsa/make_dafsa.py"
         },
         "outs": {
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest6-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest6-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest6-reversed-inc.cc": "gen/net/base/registry_controlled_domains/effective_tld_names_unittest6-reversed-inc.cc"
         },
         "script": "net/tools/dafsa/make_dafsa.py",
         "args": [
             "--reverse",
             "../../net/base/registry_controlled_domains/effective_tld_names_unittest6.gperf",
-            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest6-reversed-inc.cc",
+            "gen/net/base/registry_controlled_domains/effective_tld_names_unittest6-reversed-inc.cc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -8201,12 +8201,12 @@ ACTIONS = [
         "srcs": {
             "//:net/cert/root_store.proto": "net/cert/root_store.proto",
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "clang_x64/gen/net/cert/root_store_proto_full/root_store.pb.h": "clang_x64/gen/net/cert/root_store_proto_full/root_store.pb.h",
             "clang_x64/gen/net/cert/root_store_proto_full/root_store.pb.cc": "clang_x64/gen/net/cert/root_store_proto_full/root_store.pb.cc",
-            "clang_x64/pyproto/net/cert/root_store_proto_full/root_store_pb2.py": "clang_x64/pyproto/net/cert/root_store_proto_full/root_store_pb2.py",
+            "clang_x64/pyproto/net/cert/root_store_proto_full/root_store_pb2.py": "clang_x64/pyproto/net/cert/root_store_proto_full/root_store_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -8220,12 +8220,12 @@ ACTIONS = [
             "clang_x64/gen/net/cert/root_store_proto_full/",
             "--py-out-dir",
             "clang_x64/pyproto/net/cert/root_store_proto_full/",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":network_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -8233,12 +8233,12 @@ ACTIONS = [
         "srcs": {
             "//:net/cert/root_store.proto": "net/cert/root_store.proto",
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/net/cert/root_store_proto_lite/root_store.pb.h": "gen/net/cert/root_store_proto_lite/root_store.pb.h",
             "gen/net/cert/root_store_proto_lite/root_store.pb.cc": "gen/net/cert/root_store_proto_lite/root_store.pb.cc",
-            "pyproto/net/cert/root_store_proto_lite/root_store_pb2.py": "pyproto/net/cert/root_store_proto_lite/root_store_pb2.py",
+            "pyproto/net/cert/root_store_proto_lite/root_store_pb2.py": "pyproto/net/cert/root_store_proto_lite/root_store_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -8254,12 +8254,12 @@ ACTIONS = [
             "lite=true:",
             "--py-out-dir",
             "pyproto/net/cert/root_store_proto_lite/",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":network_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -8268,11 +8268,11 @@ ACTIONS = [
             "//build:gn_run_binary.py": "build/gn_run_binary.py",
             "//:net/data/ssl/chrome_root_store/additional.certs": "net/data/ssl/chrome_root_store/additional.certs",
             "//:net/data/ssl/chrome_root_store/root_store.certs": "net/data/ssl/chrome_root_store/root_store.certs",
-            "//:net/data/ssl/chrome_root_store/root_store.textproto": "net/data/ssl/chrome_root_store/root_store.textproto",
+            "//:net/data/ssl/chrome_root_store/root_store.textproto": "net/data/ssl/chrome_root_store/root_store.textproto"
         },
         "outs": {
             "gen/net/data/ssl/chrome_root_store/chrome-root-store-inc.cc": "gen/net/data/ssl/chrome_root_store/chrome-root-store-inc.cc",
-            "gen/net/data/ssl/chrome_root_store/chrome-ev-roots-inc.cc": "gen/net/data/ssl/chrome_root_store/chrome-ev-roots-inc.cc",
+            "gen/net/data/ssl/chrome_root_store/chrome-ev-roots-inc.cc": "gen/net/data/ssl/chrome_root_store/chrome-ev-roots-inc.cc"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -8281,11 +8281,11 @@ ACTIONS = [
             "--certs=../../net/data/ssl/chrome_root_store/root_store.certs",
             "--additional-certs=../../net/data/ssl/chrome_root_store/additional.certs",
             "--write-cpp-root-store=gen/net/data/ssl/chrome_root_store/chrome-root-store-inc.cc",
-            "--write-cpp-ev-roots=gen/net/data/ssl/chrome_root_store/chrome-ev-roots-inc.cc",
+            "--write-cpp-ev-roots=gen/net/data/ssl/chrome_root_store/chrome-ev-roots-inc.cc"
         ],
         "deps": [
-            ":network_3d99bd83fa487c2b_tool",
-        ],
+            ":network_3d99bd83fa487c2b_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -8295,10 +8295,10 @@ ACTIONS = [
             "//:net/http/transport_security_state_static.json": "net/http/transport_security_state_static.json",
             "//:net/http/transport_security_state_static.pins": "net/http/transport_security_state_static.pins",
             "//:net/http/transport_security_state_static.template": "net/http/transport_security_state_static.template",
-            "//:net/http/transport_security_state_static_pins.json": "net/http/transport_security_state_static_pins.json",
+            "//:net/http/transport_security_state_static_pins.json": "net/http/transport_security_state_static_pins.json"
         },
         "outs": {
-            "gen/net/http/transport_security_state_static.h": "gen/net/http/transport_security_state_static.h",
+            "gen/net/http/transport_security_state_static.h": "gen/net/http/transport_security_state_static.h"
         },
         "script": "build/gn_run_binary.py",
         "args": [
@@ -8307,11 +8307,11 @@ ACTIONS = [
             "../../net/http/transport_security_state_static_pins.json",
             "../../net/http/transport_security_state_static.pins",
             "../../net/http/transport_security_state_static.template",
-            "gen/net/http/transport_security_state_static.h",
+            "gen/net/http/transport_security_state_static.h"
         ],
         "deps": [
-            ":network_7c0d6693263d0009_tool",
-        ],
+            ":network_7c0d6693263d0009_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -8319,12 +8319,12 @@ ACTIONS = [
         "srcs": {
             "@chromium_quiche//:net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.proto": "net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.proto",
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.pb.h": "gen/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.pb.h",
             "gen/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.pb.cc": "gen/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result.pb.cc",
-            "pyproto/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result_pb2.py": "pyproto/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result_pb2.py",
+            "pyproto/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result_pb2.py": "pyproto/net/third_party/quiche/src/quiche/quic/test_tools/send_algorithm_test_result_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -8342,12 +8342,12 @@ ACTIONS = [
             "net/base/net_export.h",
             "--py-out-dir",
             "pyproto/net/third_party/quiche/src/quiche/quic/test_tools",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":network_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -8355,12 +8355,12 @@ ACTIONS = [
         "srcs": {
             "//:net/device_bound_sessions/proto/storage.proto": "net/device_bound_sessions/proto/storage.proto",
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/net/device_bound_sessions/proto/storage.pb.h": "gen/net/device_bound_sessions/proto/storage.pb.h",
             "gen/net/device_bound_sessions/proto/storage.pb.cc": "gen/net/device_bound_sessions/proto/storage.pb.cc",
-            "pyproto/net/device_bound_sessions/proto/storage_pb2.py": "pyproto/net/device_bound_sessions/proto/storage_pb2.py",
+            "pyproto/net/device_bound_sessions/proto/storage_pb2.py": "pyproto/net/device_bound_sessions/proto/storage_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -8374,12 +8374,12 @@ ACTIONS = [
             "gen/",
             "--py-out-dir",
             "pyproto/",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":network_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -8387,12 +8387,12 @@ ACTIONS = [
         "srcs": {
             "//:net/base/isolation_info.proto": "net/base/isolation_info.proto",
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/net/base/isolation_info.pb.h": "gen/net/base/isolation_info.pb.h",
             "gen/net/base/isolation_info.pb.cc": "gen/net/base/isolation_info.pb.cc",
-            "pyproto/net/base/isolation_info_pb2.py": "pyproto/net/base/isolation_info_pb2.py",
+            "pyproto/net/base/isolation_info_pb2.py": "pyproto/net/base/isolation_info_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -8406,12 +8406,12 @@ ACTIONS = [
             "gen/net/base",
             "--py-out-dir",
             "pyproto/net/base",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":network_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -8419,12 +8419,12 @@ ACTIONS = [
         "srcs": {
             "//:net/nqe/proto/network_id_proto.proto": "net/nqe/proto/network_id_proto.proto",
             "@protobuf//:descriptor_proto_srcs": "third_party/protobuf/src/google/protobuf/descriptor.proto",
-            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py",
+            "//:tools/protoc_wrapper/protoc_wrapper.py": "tools/protoc_wrapper/protoc_wrapper.py"
         },
         "outs": {
             "gen/net/nqe/proto/network_id_proto.pb.h": "gen/net/nqe/proto/network_id_proto.pb.h",
             "gen/net/nqe/proto/network_id_proto.pb.cc": "gen/net/nqe/proto/network_id_proto.pb.cc",
-            "pyproto/net/nqe/proto/network_id_proto_pb2.py": "pyproto/net/nqe/proto/network_id_proto_pb2.py",
+            "pyproto/net/nqe/proto/network_id_proto_pb2.py": "pyproto/net/nqe/proto/network_id_proto_pb2.py"
         },
         "script": "tools/protoc_wrapper/protoc_wrapper.py",
         "args": [
@@ -8442,12 +8442,12 @@ ACTIONS = [
             "net/base/net_export.h",
             "--py-out-dir",
             "pyproto/net/nqe/proto",
-            "--import-dir=../../third_party/protobuf/src",
+            "--import-dir=../../third_party/protobuf/src"
         ],
         "deps": [
             ":network_319da6ea5cc4a541_tool",
-            ":protoc_tool",
-        ],
+            ":protoc_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -8618,10 +8618,10 @@ ACTIONS = [
             "//:tools/metrics/ukm/ukm_model_test.py": "tools/metrics/ukm/ukm_model_test.py",
             "//:tools/metrics/ukm/validate_format.py": "tools/metrics/ukm/validate_format.py",
             "//:tools/metrics/ukm/xml_validations.py": "tools/metrics/ukm/xml_validations.py",
-            "//:tools/metrics/ukm/xml_validations_test.py": "tools/metrics/ukm/xml_validations_test.py",
+            "//:tools/metrics/ukm/xml_validations_test.py": "tools/metrics/ukm/xml_validations_test.py"
         },
         "outs": {
-            "gen/sql/sql_name_variants.h": "gen/sql/sql_name_variants.h",
+            "gen/sql/sql_name_variants.h": "gen/sql/sql_name_variants.h"
         },
         "script": "tools/metrics/histograms/generate_allowlist_from_histograms_file.py",
         "args": [
@@ -8630,29 +8630,29 @@ ACTIONS = [
             "--tag=variant",
             "--output_dir=gen",
             "--file=sql/sql_name_variants.h",
-            "--input=../../tools/metrics/histograms/metadata/sql/histograms.xml",
+            "--input=../../tools/metrics/histograms/metadata/sql/histograms.xml"
         ],
-        "deps": [],
-    },
+        "deps": []
+    }
 ]
 
 TOOLS = {
     "network_319da6ea5cc4a541_tool": {
         "tool": ":protobuf_compiler",
-        "logical_path": "out/bazel-import/clang_x64/protoc",
+        "logical_path": "out/bazel-import/clang_x64/protoc"
     },
     "network_3d99bd83fa487c2b_tool": {
         "tool": ":network_3d99bd83fa487c2b",
         "logical_path": "out/bazel-import/clang_x64/root_store_tool",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
     },
     "network_7c0d6693263d0009_tool": {
         "tool": ":network_7c0d6693263d0009",
         "logical_path": "out/bazel-import/clang_x64/transport_security_state_generator",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
-    },
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
+    }
 }

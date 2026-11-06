@@ -1,0 +1,27 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "frame_buffer_common_utils.cc",
+    "frame_buffer_common_utils.h",
+    "frame_buffer_utils.cc",
+    "frame_buffer_utils.h",
+    "frame_buffer_utils_interface.h",
+    "image_tensor_specs.cc",
+    "image_tensor_specs.h",
+    "libyuv_frame_buffer_utils.cc",
+    "libyuv_frame_buffer_utils.h",
+    "score_calibration.cc",
+    "score_calibration.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "frame_buffer_utils.h",
+    "frame_buffer_utils_interface.h",
+    "image_tensor_specs.h",
+    "score_calibration.h"
+])
+# END BROWSER INPUTS

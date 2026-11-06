@@ -1,0 +1,59 @@
+exports_files(
+    [
+        "hash.h",
+        "hash_testing.h",
+        "internal/city.h",
+        "internal/hash.h",
+        "internal/hash_test.h",
+        "internal/spy_hash_state.h",
+        "internal/weakly_mixed_integer.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "hash.h",
+    "internal/city.h",
+    "internal/hash.h",
+    "internal/weakly_mixed_integer.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "hash.h",
+    "internal/city.h",
+    "internal/hash.h",
+    "internal/weakly_mixed_integer.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "hash.h",
+    "internal/city.h",
+    "internal/hash.h",
+    "internal/weakly_mixed_integer.h"
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "hash.h",
+    "internal/city.h",
+    "internal/hash.h",
+    "internal/weakly_mixed_integer.h"
+])
+# END CONTENT INPUTS
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "hash.h",
+    "internal/city.h",
+    "internal/hash.h",
+    "internal/weakly_mixed_integer.h"
+])
+# END BROWSER INPUTS

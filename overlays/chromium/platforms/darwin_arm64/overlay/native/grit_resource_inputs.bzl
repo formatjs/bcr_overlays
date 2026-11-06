@@ -94,6 +94,6 @@ RESOURCE_INPUTS = {
         "//:tools/grit/xtb_util.py": "tools/grit/xtb_util.py",
         "//:tools/gritsettings/startup_resources_mac.txt": "tools/gritsettings/startup_resources_mac.txt",
         "//:ui/resources/ui_unscaled_resources.grd": "ui/resources/ui_unscaled_resources.grd",
-        ":obj/ui/resources/ui_unscaled_resources_grd_expected_outputs.txt": "out/bazel-import/obj/ui/resources/ui_unscaled_resources_grd_expected_outputs.txt",
-    },
+        ":obj/ui/resources/ui_unscaled_resources_grd_expected_outputs.txt": "out/bazel-import/obj/ui/resources/ui_unscaled_resources_grd_expected_outputs.txt"
+    }
 }

@@ -1,0 +1,39 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "bert_preprocessor.cc",
+    "bert_preprocessor.h",
+    "embedding_postprocessor.cc",
+    "embedding_postprocessor.h",
+    "image_preprocessor.cc",
+    "image_preprocessor.h",
+    "processor.cc",
+    "processor.h",
+    "regex_preprocessor.cc",
+    "regex_preprocessor.h",
+    "text_preprocessor.h",
+    "universal_sentence_encoder_preprocessor.cc",
+    "universal_sentence_encoder_preprocessor.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "bert_preprocessor.h",
+    "processor.h",
+    "regex_preprocessor.h",
+    "text_preprocessor.h"
+])
+# END CONTENT INPUTS
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "embedding_postprocessor.h",
+    "image_preprocessor.h",
+    "processor.h",
+    "regex_preprocessor.h",
+    "text_preprocessor.h"
+])
+# END BROWSER INPUTS

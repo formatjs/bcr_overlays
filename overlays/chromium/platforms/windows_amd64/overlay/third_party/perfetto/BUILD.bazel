@@ -1,0 +1,7 @@
+alias(
+    name = "libperfetto",
+    actual = "//native:perfetto_runtime",
+    visibility = ["//visibility:public"],
+)
+
+exports_files(["BUILD.bazel"])

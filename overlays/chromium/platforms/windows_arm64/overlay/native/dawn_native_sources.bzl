@@ -10,15 +10,15 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            "//third_party/abseil-cpp:absl",
+            "//third_party/abseil-cpp:absl"
         ],
         "linkopts": [
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/dawn/src/dawn/native:headers": {
         "name": "dawn_native_e28ebc3635d1d0a2",
@@ -34,7 +34,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/include/dawn/native/OpenGLBackend.h",
             "@chromium_dawn//:third_party/dawn/include/dawn/native/VulkanBackend.h",
             "@chromium_dawn//:third_party/dawn/include/dawn/native/WebGPUBackend.h",
-            "@chromium_dawn//:third_party/dawn/include/dawn/native/dawn_native_export.h",
+            "@chromium_dawn//:third_party/dawn/include/dawn/native/dawn_native_export.h"
         ],
         "copts": [
             "/W4",
@@ -112,7 +112,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -144,16 +144,16 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/include/",
+            "gen/third_party/dawn/include/"
         ],
         "deps": [
-            ":dawn_c1edac13edbb27af",
+            ":dawn_c1edac13edbb27af"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -166,7 +166,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -240,8 +240,8 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/dawn/native:native": {
         "name": "dawn_native_31f8d3693f8be4d4",
@@ -252,10 +252,10 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":dawn_native_f081791171bc714a",
+            ":dawn_native_f081791171bc714a"
         ],
         "linkopts": [
             "-DEFAULTLIB:onecore.lib",
@@ -263,9 +263,9 @@ LIBRARIES = {
             "-DEFAULTLIB:delayimp.lib",
             "-DEFAULTLIB:dxguid.lib",
             "-DEFAULTLIB:bcrypt.lib",
-            "-DEFAULTLIB:winmm.lib",
+            "-DEFAULTLIB:winmm.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/dawn/src/dawn/native:sources": {
         "name": "dawn_native_9225edff41a76fd5",
@@ -521,7 +521,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/external_memory/MemoryService.cpp",
             "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/external_memory/MemoryServiceImplementation.cpp",
             "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/external_semaphore/SemaphoreService.cpp",
-            "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/external_semaphore/SemaphoreServiceImplementation.cpp",
+            "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/external_semaphore/SemaphoreServiceImplementation.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/src/dawn/native/ChainUtils_autogen.h",
@@ -813,7 +813,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/external_memory/MemoryServiceImplementation.h",
             "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/external_semaphore/SemaphoreService.h",
             "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/external_semaphore/SemaphoreServiceImplementation.h",
-            "@chromium_dawn//:third_party/dawn/src/dawn/native/webgpu_absl_format.h",
+            "@chromium_dawn//:third_party/dawn/src/dawn/native/webgpu_absl_format.h"
         ],
         "copts": [
             "-Wglobal-constructors",
@@ -897,7 +897,7 @@ LIBRARIES = {
             "/GR-",
             "-Wno-thread-safety",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "DAWN_USE_BUILT_DXC",
@@ -957,7 +957,7 @@ LIBRARIES = {
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
             "TINT_ENABLE_IR_VALIDATION=0",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
@@ -965,7 +965,7 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/dawn/src/",
+            "gen/third_party/dawn/src/"
         ],
         "deps": [
             ":dawn_06cc7db9c0f83700",
@@ -980,7 +980,7 @@ LIBRARIES = {
             ":tint_d9e9faeffab5d3bb",
             "@spirv_tools//:spirv_tools",
             "@spirv_tools//:spirv_tools_opt",
-            "@vulkan_headers//:vulkan_headers",
+            "@vulkan_headers//:vulkan_headers"
         ],
         "linkopts": [
             "-DEFAULTLIB:onecore.lib",
@@ -1000,7 +1000,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF",
-            "/DELAYLOAD:user32.dll",
+            "/DELAYLOAD:user32.dll"
         ],
         "c_copts": [
             "-Wglobal-constructors",
@@ -1078,8 +1078,8 @@ LIBRARIES = {
             "-Wno-assume",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/dawn/native:static": {
         "name": "dawn_native_f081791171bc714a",
@@ -1091,7 +1091,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/dawn/native/d3d12/D3D12Backend.cpp",
             "@chromium_dawn//:third_party/dawn/src/dawn/native/null/NullBackend.cpp",
             "@chromium_dawn//:third_party/dawn/src/dawn/native/opengl/OpenGLBackend.cpp",
-            "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/VulkanBackend.cpp",
+            "@chromium_dawn//:third_party/dawn/src/dawn/native/vulkan/VulkanBackend.cpp"
         ],
         "hdrs": [],
         "copts": [
@@ -1175,7 +1175,7 @@ LIBRARIES = {
             "/GR-",
             "-Wno-thread-safety",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -1230,7 +1230,7 @@ LIBRARIES = {
             "TINT_BUILD_IS_MAC=0",
             "TINT_BUILD_IS_LINUX=0",
             "TINT_ENABLE_IR_VALIDATION=0",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
@@ -1238,12 +1238,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/dawn/src/",
+            "gen/third_party/dawn/src/"
         ],
         "deps": [
             ":dawn_1dd6c1eff7402905",
             ":dawn_native_9225edff41a76fd5",
-            ":dawn_native_e28ebc3635d1d0a2",
+            ":dawn_native_e28ebc3635d1d0a2"
         ],
         "linkopts": [
             "-DEFAULTLIB:onecore.lib",
@@ -1263,7 +1263,7 @@ LIBRARIES = {
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
             "/OPT:ICF",
-            "/DELAYLOAD:user32.dll",
+            "/DELAYLOAD:user32.dll"
         ],
         "c_copts": [
             "/W4",
@@ -1340,8 +1340,8 @@ LIBRARIES = {
             "-Wno-assume",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/src/dawn/platform:platform": {
         "name": "dawn_native_c71c06d350616304",
@@ -1352,16 +1352,16 @@ LIBRARIES = {
         "defines": [],
         "includes": [
             "..",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":dawn_native_1a0f5c87863005dc",
+            ":dawn_native_1a0f5c87863005dc"
         ],
         "linkopts": [
             "-DEFAULTLIB:winmm.lib",
-            "-DEFAULTLIB:bcrypt.lib",
+            "-DEFAULTLIB:bcrypt.lib"
         ],
-        "c_copts": [],
+        "c_copts": []
     },
     "//third_party/dawn/src/dawn/platform:static": {
         "name": "dawn_native_1a0f5c87863005dc",
@@ -1370,7 +1370,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/dawn/platform/DawnPlatform.cpp",
             "@chromium_dawn//:third_party/dawn/src/dawn/platform/WorkerThread.cpp",
             "@chromium_dawn//:third_party/dawn/src/dawn/platform/metrics/HistogramMacros.cpp",
-            "@chromium_dawn//:third_party/dawn/src/dawn/platform/tracing/EventTracer.cpp",
+            "@chromium_dawn//:third_party/dawn/src/dawn/platform/tracing/EventTracer.cpp"
         ],
         "hdrs": [
             "@chromium_dawn//:third_party/dawn/include/dawn/platform/DawnPlatform.h",
@@ -1378,7 +1378,7 @@ LIBRARIES = {
             "@chromium_dawn//:third_party/dawn/src/dawn/platform/WorkerThread.h",
             "@chromium_dawn//:third_party/dawn/src/dawn/platform/metrics/HistogramMacros.h",
             "@chromium_dawn//:third_party/dawn/src/dawn/platform/tracing/EventTracer.h",
-            "@chromium_dawn//:third_party/dawn/src/dawn/platform/tracing/TraceEvent.h",
+            "@chromium_dawn//:third_party/dawn/src/dawn/platform/tracing/TraceEvent.h"
         ],
         "copts": [
             "/W4",
@@ -1459,7 +1459,7 @@ LIBRARIES = {
             "-Wno-trigraphs",
             "/GR-",
             "-Wno-thread-safety",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "DAWN_USE_BUILT_DXC",
@@ -1502,7 +1502,7 @@ LIBRARIES = {
             "DAWN_ENABLE_BACKEND_OPENGLES",
             "DAWN_ENABLE_BACKEND_VULKAN",
             "DAWN_USE_WINDOWS_UI",
-            "VK_USE_PLATFORM_WIN32_KHR",
+            "VK_USE_PLATFORM_WIN32_KHR"
         ],
         "includes": [
             "..",
@@ -1510,12 +1510,12 @@ LIBRARIES = {
             "gen/",
             "gen/base/allocator/partition_allocator/src/",
             "gen/third_party/dawn/include/",
-            "gen/third_party/dawn/src/",
+            "gen/third_party/dawn/src/"
         ],
         "deps": [
             ":dawn_06cc7db9c0f83700",
             ":dawn_1dd6c1eff7402905",
-            ":dawn_9d7389ed01b1ee62",
+            ":dawn_9d7389ed01b1ee62"
         ],
         "linkopts": [
             "-DEFAULTLIB:winmm.lib",
@@ -1530,7 +1530,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -1606,8 +1606,8 @@ LIBRARIES = {
             "-Wno-redundant-parens",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:Support": {
         "name": "dawn_native_9c76c50226819b7a",
@@ -1706,18 +1706,18 @@ LIBRARIES = {
             "@chromium_dxc//:lib/Support/regexec.c",
             "@chromium_dxc//:lib/Support/regfree.c",
             "@chromium_dxc//:lib/Support/regmalloc.cpp",
-            "@chromium_dxc//:lib/Support/regstrlcpy.c",
+            "@chromium_dxc//:lib/Support/regstrlcpy.c"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h",
             ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def",
             ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def",
             ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def",
             ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def",
+            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h",
+            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h",
+            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h",
+            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -1829,7 +1829,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "LLVM_ASSERTIONS_NO_STRINGS",
@@ -1857,13 +1857,13 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/third_party/gn/dxc/include/",
+            "gen/third_party/dawn/third_party/gn/dxc/include/"
         ],
         "deps": [],
         "linkopts": [
@@ -1877,7 +1877,13 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -1983,14 +1989,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:Support(//build/toolchain/linux:clang_x64)": {
         "name": "dawn_native_143bafdd9b6ef56e",
@@ -2089,18 +2089,18 @@ LIBRARIES = {
             "@chromium_dxc//:lib/Support/regexec.c",
             "@chromium_dxc//:lib/Support/regfree.c",
             "@chromium_dxc//:lib/Support/regmalloc.cpp",
-            "@chromium_dxc//:lib/Support/regstrlcpy.c",
+            "@chromium_dxc//:lib/Support/regstrlcpy.c"
         ],
         "hdrs": [
             ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h",
-            ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h",
-            ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h",
-            ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h",
-            ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h",
             ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def",
             ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def",
             ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def",
             ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def",
+            ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h",
+            ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h",
+            ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h",
+            ":clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -2207,7 +2207,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "_DEBUG",
@@ -2225,13 +2225,13 @@ LIBRARIES = {
             "USE_UDEV",
             "USE_AURA=1",
             "USE_GLIB=1",
-            "USE_OZONE=1",
+            "USE_OZONE=1"
         ],
         "includes": [
             "..",
             "clang_x64/gen/",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/",
-            "gen",
+            "gen"
         ],
         "deps": [],
         "linkopts": [
@@ -2248,7 +2248,12 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,--gc-sections",
             "-Wl,-z,defs",
-            "-Wl,--as-needed",
+            "-Wl,--as-needed"
+        ],
+        "dxc_include_dirs": [
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -2343,13 +2348,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:TableGen(//build/toolchain/linux:clang_x64)": {
         "name": "dawn_native_160f34790972d848",
@@ -2362,7 +2362,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/TableGen/StringMatcher.cpp",
             "@chromium_dxc//:lib/TableGen/TGLexer.cpp",
             "@chromium_dxc//:lib/TableGen/TGParser.cpp",
-            "@chromium_dxc//:lib/TableGen/TableGenBackend.cpp",
+            "@chromium_dxc//:lib/TableGen/TableGenBackend.cpp"
         ],
         "hdrs": [],
         "copts": [
@@ -2481,7 +2481,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -2502,16 +2502,16 @@ LIBRARIES = {
             "USE_OZONE=1",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "clang_x64/gen/",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":dawn_native_143bafdd9b6ef56e",
+            ":dawn_native_143bafdd9b6ef56e"
         ],
         "linkopts": [
             "-Wl,--fatal-warnings",
@@ -2527,7 +2527,12 @@ LIBRARIES = {
             "-no-canonical-prefixes",
             "-Wl,--gc-sections",
             "-Wl,-z,defs",
-            "-Wl,--as-needed",
+            "-Wl,--as-needed"
+        ],
+        "dxc_include_dirs": [
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools"
         ],
         "c_copts": [
             "-Wall",
@@ -2633,13 +2638,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang-tblgen(//build/toolchain/linux:clang_x64)": {
         "name": "dawn_native_c330179c9e9e709e",
@@ -2653,7 +2653,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/utils/TableGen/ClangDiagnosticsEmitter.cpp",
             "@chromium_dxc//:tools/clang/utils/TableGen/ClangSACheckersEmitter.cpp",
             "@chromium_dxc//:tools/clang/utils/TableGen/NeonEmitter.cpp",
-            "@chromium_dxc//:tools/clang/utils/TableGen/TableGen.cpp",
+            "@chromium_dxc//:tools/clang/utils/TableGen/TableGen.cpp"
         ],
         "hdrs": [],
         "copts": [
@@ -2772,7 +2772,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -2793,16 +2793,16 @@ LIBRARIES = {
             "USE_OZONE=1",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "clang_x64/gen/",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":dawn_native_160f34790972d848",
+            ":dawn_native_160f34790972d848"
         ],
         "linkopts": [
             "-ldl",
@@ -2824,7 +2824,12 @@ LIBRARIES = {
             "-Wl,--as-needed",
             "-rdynamic",
             "-pie",
-            "-Wl,--disable-new-dtags",
+            "-Wl,--disable-new-dtags"
+        ],
+        "dxc_include_dirs": [
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools"
         ],
         "c_copts": [
             "-Wall",
@@ -2930,13 +2935,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_analysis": {
         "name": "dawn_native_dc49fd56a45bd7e2",
@@ -2961,7 +2961,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Analysis/ThreadSafetyCommon.cpp",
             "@chromium_dxc//:tools/clang/lib/Analysis/ThreadSafetyLogical.cpp",
             "@chromium_dxc//:tools/clang/lib/Analysis/ThreadSafetyTIL.cpp",
-            "@chromium_dxc//:tools/clang/lib/Analysis/UninitializedValues.cpp",
+            "@chromium_dxc//:tools/clang/lib/Analysis/UninitializedValues.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -3004,7 +3004,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3116,7 +3116,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -3148,7 +3148,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -3161,10 +3161,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -3177,7 +3177,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3283,15 +3290,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_ast": {
         "name": "dawn_native_419ceae30dc858c5",
@@ -3353,7 +3353,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/AST/TypeLoc.cpp",
             "@chromium_dxc//:tools/clang/lib/AST/TypePrinter.cpp",
             "@chromium_dxc//:tools/clang/lib/AST/VTTBuilder.cpp",
-            "@chromium_dxc//:tools/clang/lib/AST/VTableBuilder.cpp",
+            "@chromium_dxc//:tools/clang/lib/AST/VTableBuilder.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -3396,7 +3396,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3508,7 +3508,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -3540,7 +3540,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -3553,10 +3553,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -3569,7 +3569,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -3675,15 +3682,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_basic": {
         "name": "dawn_native_8a44f439be8c7590",
@@ -3713,7 +3713,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Basic/Version.cpp",
             "@chromium_dxc//:tools/clang/lib/Basic/VersionTuple.cpp",
             "@chromium_dxc//:tools/clang/lib/Basic/VirtualFileSystem.cpp",
-            "@chromium_dxc//:tools/clang/lib/Basic/Warnings.cpp",
+            "@chromium_dxc//:tools/clang/lib/Basic/Warnings.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -3756,7 +3756,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -3868,7 +3868,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -3900,7 +3900,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -3913,10 +3913,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -3929,7 +3929,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4035,15 +4042,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_codegen": {
         "name": "dawn_native_1e7934178f40b19d",
@@ -4094,7 +4094,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/CodeGen/ModuleBuilder.cpp",
             "@chromium_dxc//:tools/clang/lib/CodeGen/ObjectFilePCHContainerOperations.cpp",
             "@chromium_dxc//:tools/clang/lib/CodeGen/SanitizerMetadata.cpp",
-            "@chromium_dxc//:tools/clang/lib/CodeGen/TargetInfo.cpp",
+            "@chromium_dxc//:tools/clang/lib/CodeGen/TargetInfo.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -4137,7 +4137,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4249,7 +4249,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -4281,7 +4281,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -4294,10 +4294,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -4310,7 +4310,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4416,15 +4423,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_driver": {
         "name": "dawn_native_a30f3246ac55c78f",
@@ -4445,7 +4445,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Driver/ToolChain.cpp",
             "@chromium_dxc//:tools/clang/lib/Driver/ToolChains.cpp",
             "@chromium_dxc//:tools/clang/lib/Driver/Tools.cpp",
-            "@chromium_dxc//:tools/clang/lib/Driver/Types.cpp",
+            "@chromium_dxc//:tools/clang/lib/Driver/Types.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -4488,7 +4488,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4600,7 +4600,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -4632,7 +4632,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -4645,10 +4645,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -4661,7 +4661,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -4767,22 +4774,15 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_edit": {
         "name": "dawn_native_978cb00e08694980",
         "kind": "static_library",
         "srcs": [
             "@chromium_dxc//:tools/clang/lib/Edit/Commit.cpp",
-            "@chromium_dxc//:tools/clang/lib/Edit/EditedSource.cpp",
+            "@chromium_dxc//:tools/clang/lib/Edit/EditedSource.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -4825,7 +4825,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -4937,7 +4937,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -4969,7 +4969,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -4982,10 +4982,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -4998,7 +4998,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5104,15 +5111,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_format": {
         "name": "dawn_native_655bba918c9cb905",
@@ -5125,7 +5125,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Format/TokenAnnotator.cpp",
             "@chromium_dxc//:tools/clang/lib/Format/UnwrappedLineFormatter.cpp",
             "@chromium_dxc//:tools/clang/lib/Format/UnwrappedLineParser.cpp",
-            "@chromium_dxc//:tools/clang/lib/Format/WhitespaceManager.cpp",
+            "@chromium_dxc//:tools/clang/lib/Format/WhitespaceManager.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -5168,7 +5168,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -5280,7 +5280,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -5312,7 +5312,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -5325,10 +5325,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -5341,7 +5341,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5447,15 +5454,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_frontend": {
         "name": "dawn_native_5a1b7a6941139907",
@@ -5490,7 +5490,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Frontend/TextDiagnostic.cpp",
             "@chromium_dxc//:tools/clang/lib/Frontend/TextDiagnosticBuffer.cpp",
             "@chromium_dxc//:tools/clang/lib/Frontend/TextDiagnosticPrinter.cpp",
-            "@chromium_dxc//:tools/clang/lib/Frontend/VerifyDiagnosticConsumer.cpp",
+            "@chromium_dxc//:tools/clang/lib/Frontend/VerifyDiagnosticConsumer.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -5533,7 +5533,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -5645,7 +5645,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -5677,7 +5677,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -5690,10 +5690,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -5706,7 +5706,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -5812,22 +5819,15 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_index": {
         "name": "dawn_native_78c407599c7a1909",
         "kind": "static_library",
         "srcs": [
             "@chromium_dxc//:tools/clang/lib/Index/CommentToXML.cpp",
-            "@chromium_dxc//:tools/clang/lib/Index/USRGeneration.cpp",
+            "@chromium_dxc//:tools/clang/lib/Index/USRGeneration.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -5870,7 +5870,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -5982,7 +5982,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -6014,7 +6014,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -6027,10 +6027,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -6043,7 +6043,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -6149,15 +6156,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_lex": {
         "name": "dawn_native_861b6d8af06523eb",
@@ -6185,7 +6185,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Lex/PreprocessorLexer.cpp",
             "@chromium_dxc//:tools/clang/lib/Lex/ScratchBuffer.cpp",
             "@chromium_dxc//:tools/clang/lib/Lex/TokenConcatenation.cpp",
-            "@chromium_dxc//:tools/clang/lib/Lex/TokenLexer.cpp",
+            "@chromium_dxc//:tools/clang/lib/Lex/TokenLexer.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -6228,7 +6228,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -6340,7 +6340,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -6372,7 +6372,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -6385,10 +6385,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -6401,7 +6401,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -6507,15 +6514,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_parse": {
         "name": "dawn_native_5fa38257d56aa401",
@@ -6537,7 +6537,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Parse/ParseStmtAsm.cpp",
             "@chromium_dxc//:tools/clang/lib/Parse/ParseTemplate.cpp",
             "@chromium_dxc//:tools/clang/lib/Parse/ParseTentative.cpp",
-            "@chromium_dxc//:tools/clang/lib/Parse/Parser.cpp",
+            "@chromium_dxc//:tools/clang/lib/Parse/Parser.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -6580,7 +6580,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -6692,7 +6692,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -6724,7 +6724,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -6737,10 +6737,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -6753,7 +6753,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -6859,15 +6866,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_rewrite": {
         "name": "dawn_native_b389a8089d320f9f",
@@ -6877,7 +6877,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Rewrite/HTMLRewrite.cpp",
             "@chromium_dxc//:tools/clang/lib/Rewrite/RewriteRope.cpp",
             "@chromium_dxc//:tools/clang/lib/Rewrite/Rewriter.cpp",
-            "@chromium_dxc//:tools/clang/lib/Rewrite/TokenRewriter.cpp",
+            "@chromium_dxc//:tools/clang/lib/Rewrite/TokenRewriter.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -6920,7 +6920,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -7032,7 +7032,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -7064,7 +7064,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -7077,10 +7077,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -7093,7 +7093,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -7199,15 +7206,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_sema": {
         "name": "dawn_native_5a89772ecfef9879",
@@ -7261,7 +7261,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Sema/SemaTemplateInstantiateDecl.cpp",
             "@chromium_dxc//:tools/clang/lib/Sema/SemaTemplateVariadic.cpp",
             "@chromium_dxc//:tools/clang/lib/Sema/SemaType.cpp",
-            "@chromium_dxc//:tools/clang/lib/Sema/TypeLocBuilder.cpp",
+            "@chromium_dxc//:tools/clang/lib/Sema/TypeLocBuilder.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -7304,7 +7304,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -7416,7 +7416,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -7448,7 +7448,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -7461,10 +7461,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -7477,7 +7477,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -7583,15 +7590,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_serialization": {
         "name": "dawn_native_de761d69edb423bf",
@@ -7607,7 +7607,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Serialization/GeneratePCH.cpp",
             "@chromium_dxc//:tools/clang/lib/Serialization/GlobalModuleIndex.cpp",
             "@chromium_dxc//:tools/clang/lib/Serialization/Module.cpp",
-            "@chromium_dxc//:tools/clang/lib/Serialization/ModuleManager.cpp",
+            "@chromium_dxc//:tools/clang/lib/Serialization/ModuleManager.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -7650,7 +7650,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -7762,7 +7762,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -7794,7 +7794,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -7807,10 +7807,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -7823,7 +7823,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -7929,15 +7936,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_lib_tooling": {
         "name": "dawn_native_6ce93cd2c3e70de0",
@@ -7951,7 +7951,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/lib/Tooling/JSONCompilationDatabase.cpp",
             "@chromium_dxc//:tools/clang/lib/Tooling/Refactoring.cpp",
             "@chromium_dxc//:tools/clang/lib/Tooling/RefactoringCallbacks.cpp",
-            "@chromium_dxc//:tools/clang/lib/Tooling/Tooling.cpp",
+            "@chromium_dxc//:tools/clang/lib/Tooling/Tooling.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -7994,7 +7994,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -8106,7 +8106,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -8138,7 +8138,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -8151,10 +8151,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -8167,7 +8167,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -8273,15 +8280,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:clang_tools_libclang": {
         "name": "dawn_native_992e7b3c46c73be5",
@@ -8309,7 +8309,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/tools/libclang/Indexing.cpp",
             "@chromium_dxc//:tools/clang/tools/libclang/IndexingContext.cpp",
             "@chromium_dxc//:tools/clang/tools/libclang/dxcisenseimpl.cpp",
-            "@chromium_dxc//:tools/clang/tools/libclang/dxcrewriteunused.cpp",
+            "@chromium_dxc//:tools/clang/tools/libclang/dxcrewriteunused.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -8352,7 +8352,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -8464,7 +8464,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -8496,7 +8496,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -8509,10 +8509,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -8525,7 +8525,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -8631,15 +8638,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:dxclib": {
         "name": "dawn_native_9c95c545872494a9",
@@ -8690,12 +8690,12 @@ LIBRARIES = {
             "@chromium_dxc//:lib/Option/Arg.cpp",
             "@chromium_dxc//:lib/Option/ArgList.cpp",
             "@chromium_dxc//:lib/Option/OptTable.cpp",
-            "@chromium_dxc//:lib/Option/Option.cpp",
+            "@chromium_dxc//:lib/Option/Option.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/HLSLOptions.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/SharedLibAffix.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/IR/Intrinsics.gen",
+            ":gen/third_party/dawn/third_party/gn/dxc/include/llvm/IR/Intrinsics.gen"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -8807,7 +8807,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "LLVM_ASSERTIONS_NO_STRINGS",
@@ -8835,16 +8835,16 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/third_party/gn/dxc/include/",
+            "gen/third_party/dawn/third_party/gn/dxc/include/"
         ],
         "deps": [
-            ":dawn_native_9c76c50226819b7a",
+            ":dawn_native_9c76c50226819b7a"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -8857,7 +8857,13 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -8963,21 +8969,15 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:dxcompiler": {
         "name": "dawn_native_ecade51b399454e3",
         "kind": "shared_library",
         "srcs": [],
         "hdrs": [
-            ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/DxcDisassembler.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/DxcDisassembler.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -9089,7 +9089,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "__ARM_NEON__=1",
@@ -9120,13 +9120,13 @@ LIBRARIES = {
             "NVALGRIND",
             "DYNAMIC_ANNOTATIONS_ENABLED=0",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
             "gen",
             "gen/",
-            "gen/third_party/dawn/third_party/gn/dxc/include/",
+            "gen/third_party/dawn/third_party/gn/dxc/include/"
         ],
         "deps": [
             ":dawn_native_0cbd38de8e2cad13",
@@ -9167,7 +9167,7 @@ LIBRARIES = {
             ":dawn_native_e1735eb5cbb7b139",
             ":dawn_native_eaef9ad79d95236f",
             ":dawn_native_ed89c11a2e81b2e5",
-            ":dawn_native_fa75e58e5432b758",
+            ":dawn_native_fa75e58e5432b758"
         ],
         "linkopts": [
             "-DEFAULTLIB:advapi32.lib",
@@ -9210,8 +9210,15 @@ LIBRARIES = {
             "/DYNAMICBASE",
             "/INCREMENTAL:NO",
             "/SUBSYSTEM:CONSOLE,10.0",
-            "/guard:cf",
+            "/guard:cf"
         ],
+        "dxc_include_dirs": [
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
+        ],
+        "win_def_file": "@chromium_dxc//:tools/clang/tools/dxcompiler/DXCompiler.def",
         "c_copts": [
             "-fno-delete-null-pointer-checks",
             "/clang:-fno-strict-overflow",
@@ -9316,14 +9323,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:dxcompiler_sources": {
         "name": "dawn_native_88f6554398e1cae7",
@@ -9340,7 +9341,7 @@ LIBRARIES = {
             "@chromium_dxc//:tools/clang/tools/dxcompiler/dxcpdbutils.cpp",
             "@chromium_dxc//:tools/clang/tools/dxcompiler/dxcshadersourceinfo.cpp",
             "@chromium_dxc//:tools/clang/tools/dxcompiler/dxcutil.cpp",
-            "@chromium_dxc//:tools/clang/tools/dxcompiler/dxcvalidator.cpp",
+            "@chromium_dxc//:tools/clang/tools/dxcompiler/dxcvalidator.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -9384,7 +9385,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/DxcDisassembler.inc",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -9496,7 +9497,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -9528,7 +9529,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -9541,10 +9542,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -9557,7 +9558,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -9663,21 +9671,14 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:dxcvalidator_lib": {
         "name": "dawn_native_435d9d7b5be9c49a",
         "kind": "static_library",
         "srcs": [
-            "@chromium_dxc//:tools/clang/tools/dxcvalidator/dxcvalidator.cpp",
+            "@chromium_dxc//:tools/clang/tools/dxcvalidator/dxcvalidator.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -9720,7 +9721,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -9832,7 +9833,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -9864,7 +9865,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -9877,10 +9878,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -9893,7 +9894,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -9999,15 +10007,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_analysis": {
         "name": "dawn_native_6f33618b5d865b7c",
@@ -10088,7 +10089,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/Analysis/VectorUtils.cpp",
             "@chromium_dxc//:lib/Analysis/VectorUtils2.cpp",
             "@chromium_dxc//:lib/Analysis/regioninfo.cpp",
-            "@chromium_dxc//:lib/Analysis/regionprinter.cpp",
+            "@chromium_dxc//:lib/Analysis/regionprinter.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -10131,7 +10132,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -10243,7 +10244,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -10275,7 +10276,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -10288,10 +10289,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -10304,7 +10305,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -10410,15 +10418,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_asmparser": {
         "name": "dawn_native_9311e5812f395b25",
@@ -10426,7 +10427,7 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dxc//:lib/AsmParser/LLLexer.cpp",
             "@chromium_dxc//:lib/AsmParser/LLParser.cpp",
-            "@chromium_dxc//:lib/AsmParser/Parser.cpp",
+            "@chromium_dxc//:lib/AsmParser/Parser.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -10469,7 +10470,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -10581,7 +10582,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -10613,7 +10614,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -10626,10 +10627,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -10642,7 +10643,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -10748,22 +10756,15 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_astmatchers": {
         "name": "dawn_native_40a091d9e118b496",
         "kind": "static_library",
         "srcs": [
             "@chromium_dxc//:tools/clang/lib/ASTMatchers/ASTMatchFinder.cpp",
-            "@chromium_dxc//:tools/clang/lib/ASTMatchers/ASTMatchersInternal.cpp",
+            "@chromium_dxc//:tools/clang/lib/ASTMatchers/ASTMatchersInternal.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -10806,7 +10807,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -10918,7 +10919,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -10950,7 +10951,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -10963,10 +10964,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -10979,7 +10980,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -11085,15 +11093,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_bitcode": {
         "name": "dawn_native_3b25d1336da0b671",
@@ -11104,7 +11105,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/Bitcode/Writer/BitWriter.cpp",
             "@chromium_dxc//:lib/Bitcode/Writer/BitcodeWriter.cpp",
             "@chromium_dxc//:lib/Bitcode/Writer/BitcodeWriterPass.cpp",
-            "@chromium_dxc//:lib/Bitcode/Writer/ValueEnumerator.cpp",
+            "@chromium_dxc//:lib/Bitcode/Writer/ValueEnumerator.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -11147,7 +11148,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -11259,7 +11260,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -11291,7 +11292,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -11304,10 +11305,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -11320,7 +11321,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -11426,21 +11434,14 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_dxcbindingtable": {
         "name": "dawn_native_980f730cb0228a0f",
         "kind": "static_library",
         "srcs": [
-            "@chromium_dxc//:lib/DxcBindingTable/DxcBindingTable.cpp",
+            "@chromium_dxc//:lib/DxcBindingTable/DxcBindingTable.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -11483,7 +11484,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -11595,7 +11596,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -11627,7 +11628,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -11640,10 +11641,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -11656,7 +11657,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -11762,22 +11770,15 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_dxilcompression": {
         "name": "dawn_native_d35f9e91bdcc2820",
         "kind": "static_library",
         "srcs": [
             "@chromium_dxc//:lib/DxilCompression/DxilCompression.cpp",
-            "@chromium_dxc//:lib/DxilCompression/miniz.c",
+            "@chromium_dxc//:lib/DxilCompression/miniz.c"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -11820,7 +11821,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -11932,7 +11933,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -11964,7 +11965,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -11977,10 +11978,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -11993,7 +11994,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -12099,15 +12107,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_dxildia": {
         "name": "dawn_native_fa75e58e5432b758",
@@ -12134,7 +12135,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/DxilDia/DxilDiaTableSections.cpp",
             "@chromium_dxc//:lib/DxilDia/DxilDiaTableSegmentMap.cpp",
             "@chromium_dxc//:lib/DxilDia/DxilDiaTableSourceFiles.cpp",
-            "@chromium_dxc//:lib/DxilDia/DxilDiaTableSymbols.cpp",
+            "@chromium_dxc//:lib/DxilDia/DxilDiaTableSymbols.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -12177,7 +12178,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -12289,7 +12290,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -12321,7 +12322,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -12334,10 +12335,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -12350,7 +12351,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -12456,15 +12464,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_dxilpixpasses": {
         "name": "dawn_native_cf42820a96406ac6",
@@ -12485,7 +12486,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/DxilPIXPasses/DxilReduceMSAAToSingleSample.cpp",
             "@chromium_dxc//:lib/DxilPIXPasses/DxilRemoveDiscards.cpp",
             "@chromium_dxc//:lib/DxilPIXPasses/DxilShaderAccessTracking.cpp",
-            "@chromium_dxc//:lib/DxilPIXPasses/PixPassHelpers.cpp",
+            "@chromium_dxc//:lib/DxilPIXPasses/PixPassHelpers.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -12528,7 +12529,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -12640,7 +12641,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -12672,7 +12673,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -12685,10 +12686,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -12701,7 +12702,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -12807,15 +12815,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_dxilrootsignature": {
         "name": "dawn_native_1b90204dde86246d",
@@ -12824,7 +12825,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/DxilRootSignature/DxilRootSignature.cpp",
             "@chromium_dxc//:lib/DxilRootSignature/DxilRootSignatureConvert.cpp",
             "@chromium_dxc//:lib/DxilRootSignature/DxilRootSignatureSerializer.cpp",
-            "@chromium_dxc//:lib/DxilRootSignature/DxilRootSignatureValidator.cpp",
+            "@chromium_dxc//:lib/DxilRootSignature/DxilRootSignatureValidator.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -12867,7 +12868,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -12979,7 +12980,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -13011,7 +13012,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -13024,10 +13025,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -13040,7 +13041,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -13146,15 +13154,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_dxilvalidation": {
         "name": "dawn_native_c397613456ff43d4",
@@ -13162,7 +13163,7 @@ LIBRARIES = {
         "srcs": [
             "@chromium_dxc//:lib/DxilValidation/DxilContainerValidation.cpp",
             "@chromium_dxc//:lib/DxilValidation/DxilValidation.cpp",
-            "@chromium_dxc//:lib/DxilValidation/DxilValidationUtils.cpp",
+            "@chromium_dxc//:lib/DxilValidation/DxilValidationUtils.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/DxilValidation/DxilValidation.inc",
@@ -13207,7 +13208,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -13319,7 +13320,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -13351,7 +13352,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -13366,10 +13367,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -13382,7 +13383,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -13488,15 +13496,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_hlsl": {
         "name": "dawn_native_5447f5b4cd56c970",
@@ -13552,7 +13553,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/HLSL/HLSignatureLower.cpp",
             "@chromium_dxc//:lib/HLSL/HLUtil.cpp",
             "@chromium_dxc//:lib/HLSL/PauseResumePasses.cpp",
-            "@chromium_dxc//:lib/HLSL/WaveSensitivityAnalysis.cpp",
+            "@chromium_dxc//:lib/HLSL/WaveSensitivityAnalysis.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -13595,7 +13596,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -13707,7 +13708,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -13739,7 +13740,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -13752,10 +13753,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -13768,7 +13769,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -13874,15 +13882,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_ir": {
         "name": "dawn_native_804a9ea657e7164b",
@@ -13935,7 +13936,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/IR/Value.cpp",
             "@chromium_dxc//:lib/IR/ValueSymbolTable.cpp",
             "@chromium_dxc//:lib/IR/ValueTypes.cpp",
-            "@chromium_dxc//:lib/IR/Verifier.cpp",
+            "@chromium_dxc//:lib/IR/Verifier.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -13978,7 +13979,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -14090,7 +14091,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -14122,7 +14123,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -14135,10 +14136,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -14151,7 +14152,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -14257,21 +14265,14 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_irreader": {
         "name": "dawn_native_300cca0c9f2c36bf",
         "kind": "static_library",
         "srcs": [
-            "@chromium_dxc//:lib/IRReader/IRReader.cpp",
+            "@chromium_dxc//:lib/IRReader/IRReader.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -14314,7 +14315,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -14426,7 +14427,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -14458,7 +14459,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -14471,10 +14472,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -14487,7 +14488,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -14593,21 +14601,14 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_linker": {
         "name": "dawn_native_a2e08eb7d95002b3",
         "kind": "static_library",
         "srcs": [
-            "@chromium_dxc//:lib/Linker/LinkModules.cpp",
+            "@chromium_dxc//:lib/Linker/LinkModules.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -14650,7 +14651,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -14762,7 +14763,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -14794,7 +14795,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -14807,10 +14808,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -14823,7 +14824,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -14929,15 +14937,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_mc": {
         "name": "dawn_native_ccd9a5ad4dd000d4",
@@ -14991,7 +14992,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/MC/SubtargetFeature.cpp",
             "@chromium_dxc//:lib/MC/WinCOFFObjectWriter.cpp",
             "@chromium_dxc//:lib/MC/WinCOFFStreamer.cpp",
-            "@chromium_dxc//:lib/MC/YAML.cpp",
+            "@chromium_dxc//:lib/MC/YAML.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -15034,7 +15035,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -15146,7 +15147,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -15178,7 +15179,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -15191,10 +15192,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -15207,7 +15208,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -15313,15 +15321,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_object": {
         "name": "dawn_native_1456e8cb132f541c",
@@ -15343,7 +15344,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/Object/ObjectFile.cpp",
             "@chromium_dxc//:lib/Object/RecordStreamer.cpp",
             "@chromium_dxc//:lib/Object/SymbolSize.cpp",
-            "@chromium_dxc//:lib/Object/SymbolicFile.cpp",
+            "@chromium_dxc//:lib/Object/SymbolicFile.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -15386,7 +15387,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -15498,7 +15499,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -15530,7 +15531,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -15543,10 +15544,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -15559,7 +15560,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -15665,21 +15673,14 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_passprinters": {
         "name": "dawn_native_e1735eb5cbb7b139",
         "kind": "static_library",
         "srcs": [
-            "@chromium_dxc//:lib/PassPrinters/PassPrinters.cpp",
+            "@chromium_dxc//:lib/PassPrinters/PassPrinters.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -15722,7 +15723,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -15834,7 +15835,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -15866,7 +15867,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -15879,10 +15880,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -15895,7 +15896,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -16001,15 +16009,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_profiledata": {
         "name": "dawn_native_eaef9ad79d95236f",
@@ -16023,7 +16024,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/ProfileData/InstrProfWriter.cpp",
             "@chromium_dxc//:lib/ProfileData/SampleProf.cpp",
             "@chromium_dxc//:lib/ProfileData/SampleProfReader.cpp",
-            "@chromium_dxc//:lib/ProfileData/SampleProfWriter.cpp",
+            "@chromium_dxc//:lib/ProfileData/SampleProfWriter.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -16066,7 +16067,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -16178,7 +16179,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -16210,7 +16211,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -16223,10 +16224,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -16239,7 +16240,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -16345,15 +16353,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_target": {
         "name": "dawn_native_480b8cb6c43c81f8",
@@ -16365,7 +16366,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/Target/TargetMachine.cpp",
             "@chromium_dxc//:lib/Target/TargetMachineC.cpp",
             "@chromium_dxc//:lib/Target/TargetRecip.cpp",
-            "@chromium_dxc//:lib/Target/TargetSubtargetInfo.cpp",
+            "@chromium_dxc//:lib/Target/TargetSubtargetInfo.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -16408,7 +16409,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -16520,7 +16521,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -16552,7 +16553,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -16565,10 +16566,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -16581,7 +16582,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -16687,15 +16695,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:lib_transforms": {
         "name": "dawn_native_ed89c11a2e81b2e5",
@@ -16836,7 +16837,7 @@ LIBRARIES = {
             "@chromium_dxc//:lib/Transforms/Utils/SymbolRewriter.cpp",
             "@chromium_dxc//:lib/Transforms/Utils/UnifyFunctionExitNodes.cpp",
             "@chromium_dxc//:lib/Transforms/Utils/Utils.cpp",
-            "@chromium_dxc//:lib/Transforms/Utils/ValueMapper.cpp",
+            "@chromium_dxc//:lib/Transforms/Utils/ValueMapper.cpp"
         ],
         "hdrs": [
             ":gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
@@ -16879,7 +16880,7 @@ LIBRARIES = {
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
             ":gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
-            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc",
+            ":gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc"
         ],
         "copts": [
             "-fno-delete-null-pointer-checks",
@@ -16991,7 +16992,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "DXC_API_IMPORT=",
@@ -17023,7 +17024,7 @@ LIBRARIES = {
             "_WIN32_WINNT=0x0A00",
             "WINVER=0x0A00",
             "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS"
         ],
         "includes": [
             "..",
@@ -17036,10 +17037,10 @@ LIBRARIES = {
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/",
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/",
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/"
         ],
         "deps": [
-            ":dawn_native_9c95c545872494a9",
+            ":dawn_native_9c95c545872494a9"
         ],
         "linkopts": [
             "--color-diagnostics",
@@ -17052,7 +17053,14 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "dxc_include_dirs": [
+            "tools/clang/tools/dxcvalidator",
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools",
+            "include/llvm/llvm_assert"
         ],
         "c_copts": [
             "-fno-delete-null-pointer-checks",
@@ -17158,15 +17166,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "tools/clang/tools/dxcvalidator",
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-            "include/llvm/llvm_assert",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:llvm-tblgen(//build/toolchain/linux:clang_x64)": {
         "name": "dawn_native_dcf031d648dc94e7",
@@ -17199,7 +17200,7 @@ LIBRARIES = {
             "@chromium_dxc//:utils/TableGen/PseudoLoweringEmitter.cpp",
             "@chromium_dxc//:utils/TableGen/RegisterInfoEmitter.cpp",
             "@chromium_dxc//:utils/TableGen/SubtargetEmitter.cpp",
-            "@chromium_dxc//:utils/TableGen/TableGen.cpp",
+            "@chromium_dxc//:utils/TableGen/TableGen.cpp"
         ],
         "hdrs": [],
         "copts": [
@@ -17318,7 +17319,7 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
+            "-Wno-invalid-specialization"
         ],
         "defines": [
             "__STDC_CONSTANT_MACROS",
@@ -17339,16 +17340,16 @@ LIBRARIES = {
             "USE_OZONE=1",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "clang_x64/gen/",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/",
-            "gen",
+            "gen"
         ],
         "deps": [
-            ":dawn_native_160f34790972d848",
+            ":dawn_native_160f34790972d848"
         ],
         "linkopts": [
             "-ldl",
@@ -17370,7 +17371,12 @@ LIBRARIES = {
             "-Wl,--as-needed",
             "-rdynamic",
             "-pie",
-            "-Wl,--disable-new-dtags",
+            "-Wl,--disable-new-dtags"
+        ],
+        "dxc_include_dirs": [
+            "include",
+            "tools/clang/include",
+            "tools/clang/tools"
         ],
         "c_copts": [
             "-Wall",
@@ -17476,13 +17482,8 @@ LIBRARIES = {
             "-Wno-deprecated-enum-enum-conversion",
             "-Wno-deprecated-anon-enum-enum-conversion",
             "-Wno-ambiguous-reversed-operator",
-            "-Wno-invalid-specialization",
-        ],
-        "dxc_include_dirs": [
-            "include",
-            "tools/clang/include",
-            "tools/clang/tools",
-        ],
+            "-Wno-invalid-specialization"
+        ]
     },
     "//third_party/dawn/third_party/gn/dxc:windows_version_resource": {
         "name": "dawn_native_0cbd38de8e2cad13",
@@ -17565,13 +17566,13 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -17585,7 +17586,46 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
+        ],
+        "resource_srcs": [
+            "@chromium_dxc//:resources/windows_version_resource.rc"
+        ],
+        "resource_defines": [
+            "INCLUDE_HLSL_VERSION_FILE",
+            "RC_INTERNAL_NAME=\" \"",
+            "RC_ORIGINAL_FILENAME=\" \"",
+            "_HAS_NODISCARD",
+            "_CRT_NONSTDC_NO_WARNINGS",
+            "_WINSOCK_DEPRECATED_NO_WARNINGS",
+            "__ARM_NEON__=1",
+            "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
+            "_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS",
+            "_LIBCPP_INSTRUMENTED_WITH_ASAN=0",
+            "CR_LIBCXX_REVISION=b77132b512d5411f8393fd3decb3abaeaf1d3ec8",
+            "__STD_C",
+            "_CRT_RAND_S",
+            "_CRT_SECURE_NO_DEPRECATE",
+            "_SCL_SECURE_NO_DEPRECATE",
+            "_ATL_NO_OPENGL",
+            "_WINDOWS",
+            "CERT_CHAIN_PARA_HAS_EXTRA_FIELDS",
+            "PSAPI_VERSION=2",
+            "WIN32",
+            "_SECURE_ATL",
+            "WINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP",
+            "DCHECK_ALWAYS_ON=1",
+            "USE_AURA=1",
+            "WIN32_LEAN_AND_MEAN",
+            "NOMINMAX",
+            "_UNICODE",
+            "UNICODE",
+            "NTDDI_VERSION=NTDDI_WIN11_GE",
+            "_WIN32_WINNT=0x0A00",
+            "WINVER=0x0A00",
+            "NDEBUG",
+            "NVALGRIND",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "c_copts": [
             "/W4",
@@ -17659,54 +17699,15 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-        "resource_srcs": [
-            "@chromium_dxc//:resources/windows_version_resource.rc",
-        ],
-        "resource_defines": [
-            "INCLUDE_HLSL_VERSION_FILE",
-            "RC_INTERNAL_NAME=\" \"",
-            "RC_ORIGINAL_FILENAME=\" \"",
-            "_HAS_NODISCARD",
-            "_CRT_NONSTDC_NO_WARNINGS",
-            "_WINSOCK_DEPRECATED_NO_WARNINGS",
-            "__ARM_NEON__=1",
-            "_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
-            "_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS",
-            "_LIBCPP_INSTRUMENTED_WITH_ASAN=0",
-            "CR_LIBCXX_REVISION=b77132b512d5411f8393fd3decb3abaeaf1d3ec8",
-            "__STD_C",
-            "_CRT_RAND_S",
-            "_CRT_SECURE_NO_DEPRECATE",
-            "_SCL_SECURE_NO_DEPRECATE",
-            "_ATL_NO_OPENGL",
-            "_WINDOWS",
-            "CERT_CHAIN_PARA_HAS_EXTRA_FIELDS",
-            "PSAPI_VERSION=2",
-            "WIN32",
-            "_SECURE_ATL",
-            "WINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP",
-            "DCHECK_ALWAYS_ON=1",
-            "USE_AURA=1",
-            "WIN32_LEAN_AND_MEAN",
-            "NOMINMAX",
-            "_UNICODE",
-            "UNICODE",
-            "NTDDI_VERSION=NTDDI_WIN11_GE",
-            "_WIN32_WINNT=0x0A00",
-            "WINVER=0x0A00",
-            "NDEBUG",
-            "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
-        ],
+            "/EHs-c-"
+        ]
     },
     "//third_party/dawn/third_party/khronos:khronos_platform": {
         "name": "dawn_native_681ad7793e77281c",
         "kind": "source_set",
         "srcs": [],
         "hdrs": [
-            "@chromium_egl_registry//:api/KHR/khrplatform.h",
+            "@chromium_egl_registry//:api/KHR/khrplatform.h"
         ],
         "copts": [
             "/W4",
@@ -17784,7 +17785,7 @@ LIBRARIES = {
             "/std:c++20",
             "-Wno-trigraphs",
             "/GR-",
-            "/EHs-c-",
+            "/EHs-c-"
         ],
         "defines": [
             "_HAS_NODISCARD",
@@ -17816,12 +17817,12 @@ LIBRARIES = {
             "WINVER=0x0A00",
             "NDEBUG",
             "NVALGRIND",
-            "DYNAMIC_ANNOTATIONS_ENABLED=0",
+            "DYNAMIC_ANNOTATIONS_ENABLED=0"
         ],
         "includes": [
             "..",
             "gen",
-            "gen/",
+            "gen/"
         ],
         "deps": [],
         "linkopts": [
@@ -17835,7 +17836,7 @@ LIBRARIES = {
             "/FIXED:NO",
             "/OPT:NOLLDTAILMERGE",
             "/PROFILE",
-            "/OPT:ICF",
+            "/OPT:ICF"
         ],
         "c_copts": [
             "/W4",
@@ -17909,9 +17910,9 @@ LIBRARIES = {
             "-Wtautological-overlap-compare",
             "/std:c11",
             "/TC",
-            "/EHs-c-",
-        ],
-    },
+            "/EHs-c-"
+        ]
+    }
 }
 
 SHARED_HEADERS = [
@@ -18419,7 +18420,7 @@ SHARED_HEADERS = [
     "@chromium_egl_registry//:api/EGL/egl.h",
     "@chromium_egl_registry//:api/EGL/eglext.h",
     "@chromium_egl_registry//:api/EGL/eglplatform.h",
-    "@chromium_egl_registry//:api/KHR/khrplatform.h",
+    "@chromium_egl_registry//:api/KHR/khrplatform.h"
 ]
 
 ACTIONS = [
@@ -18537,19 +18538,19 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
             "gen/third_party/dawn/src/dawn/native/opengl/OpenGLFunctionsBase_autogen.cpp": "gen/third_party/dawn/src/dawn/native/opengl/OpenGLFunctionsBase_autogen.cpp",
             "gen/third_party/dawn/src/dawn/native/opengl/OpenGLFunctionsBase_autogen.h": "gen/third_party/dawn/src/dawn/native/opengl/OpenGLFunctionsBase_autogen.h",
-            "gen/third_party/dawn/src/dawn/native/opengl/opengl_platform_autogen.h": "gen/third_party/dawn/src/dawn/native/opengl/opengl_platform_autogen.h",
+            "gen/third_party/dawn/src/dawn/native/opengl/opengl_platform_autogen.h": "gen/third_party/dawn/src/dawn/native/opengl/opengl_platform_autogen.h"
         },
         "script": "third_party/dawn/generator/extract_json.py",
         "args": [
             "gen/third_party/dawn/opengl_loader_gen.json_tarball",
-            "gen/third_party/dawn",
+            "gen/third_party/dawn"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -18667,10 +18668,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/opengl_loader_gen.json_tarball": "gen/third_party/dawn/opengl_loader_gen.json_tarball",
+            "gen/third_party/dawn/opengl_loader_gen.json_tarball": "gen/third_party/dawn/opengl_loader_gen.json_tarball"
         },
         "script": "third_party/dawn/generator/opengl_loader_generator.py",
         "args": [
@@ -18687,9 +18688,9 @@ ACTIONS = [
             "--depfile",
             "gen/third_party/dawn/opengl_loader_gen.json_tarball.d",
             "--expected-outputs-file",
-            "gen/third_party/dawn/opengl_loader_gen.expected_outputs",
+            "gen/third_party/dawn/opengl_loader_gen.expected_outputs"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -18805,7 +18806,7 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
             "gen/third_party/dawn/src/dawn/native/ChainUtils_autogen.h": "gen/third_party/dawn/src/dawn/native/ChainUtils_autogen.h",
@@ -18822,14 +18823,14 @@ ACTIONS = [
             "gen/third_party/dawn/src/dawn/native/webgpu_absl_format_autogen.cpp": "gen/third_party/dawn/src/dawn/native/webgpu_absl_format_autogen.cpp",
             "gen/third_party/dawn/src/dawn/native/webgpu_StreamImpl_autogen.cpp": "gen/third_party/dawn/src/dawn/native/webgpu_StreamImpl_autogen.cpp",
             "gen/third_party/dawn/src/dawn/native/ObjectType_autogen.h": "gen/third_party/dawn/src/dawn/native/ObjectType_autogen.h",
-            "gen/third_party/dawn/src/dawn/native/ObjectType_autogen.cpp": "gen/third_party/dawn/src/dawn/native/ObjectType_autogen.cpp",
+            "gen/third_party/dawn/src/dawn/native/ObjectType_autogen.cpp": "gen/third_party/dawn/src/dawn/native/ObjectType_autogen.cpp"
         },
         "script": "third_party/dawn/generator/extract_json.py",
         "args": [
             "gen/third_party/dawn/utils_gen.json_tarball",
-            "gen/third_party/dawn",
+            "gen/third_party/dawn"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -18948,10 +18949,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/utils_gen.json_tarball": "gen/third_party/dawn/utils_gen.json_tarball",
+            "gen/third_party/dawn/utils_gen.json_tarball": "gen/third_party/dawn/utils_gen.json_tarball"
         },
         "script": "third_party/dawn/generator/dawn_json_generator.py",
         "args": [
@@ -18972,9 +18973,9 @@ ACTIONS = [
             "--depfile",
             "gen/third_party/dawn/utils_gen.json_tarball.d",
             "--expected-outputs-file",
-            "gen/third_party/dawn/utils_gen.expected_outputs",
+            "gen/third_party/dawn/utils_gen.expected_outputs"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -19091,18 +19092,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def",
+            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/AsmParsers.def.in",
             "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def",
-            "LLVM_ENUM_ASM_PARSERS=",
+            "LLVM_ENUM_ASM_PARSERS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -19219,18 +19220,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def",
+            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/AsmParsers.def.in",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmParsers.def",
-            "LLVM_ENUM_ASM_PARSERS=",
+            "LLVM_ENUM_ASM_PARSERS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -19347,18 +19348,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def",
+            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/AsmPrinters.def.in",
             "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def",
-            "LLVM_ENUM_ASM_PRINTERS=",
+            "LLVM_ENUM_ASM_PRINTERS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -19475,18 +19476,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def",
+            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/AsmPrinters.def.in",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/AsmPrinters.def",
-            "LLVM_ENUM_ASM_PRINTERS=",
+            "LLVM_ENUM_ASM_PRINTERS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -19723,10 +19724,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrDump.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrDump.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrDump.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrDump.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -19742,11 +19743,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-dump",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -19983,10 +19984,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/AttrHasAttributeImpl.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/AttrHasAttributeImpl.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/AttrHasAttributeImpl.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/AttrHasAttributeImpl.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -20002,11 +20003,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-has-attribute-impl",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -20243,10 +20244,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrImpl.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrImpl.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrImpl.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrImpl.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -20262,11 +20263,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-impl",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -20503,10 +20504,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/AttrList.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/AttrList.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/AttrList.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/AttrList.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -20522,11 +20523,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-list",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -20763,10 +20764,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHRead.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -20782,11 +20783,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-pch-read",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -21023,10 +21024,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Serialization/AttrPCHWrite.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -21042,11 +21043,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-pch-write",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -21283,10 +21284,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrImpl.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrImpl.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrImpl.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrImpl.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -21302,11 +21303,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-parsed-attr-impl",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -21543,10 +21544,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -21562,11 +21563,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-parsed-attr-kinds",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -21803,10 +21804,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrList.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrList.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrList.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrParsedAttrList.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -21822,11 +21823,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-parsed-attr-list",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -22063,10 +22064,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Parse/AttrParserStringSwitches.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Parse/AttrParserStringSwitches.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Parse/AttrParserStringSwitches.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Parse/AttrParserStringSwitches.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -22082,11 +22083,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-parser-string-switches",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -22323,10 +22324,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrSpellingListIndex.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrSpellingListIndex.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrSpellingListIndex.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrSpellingListIndex.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -22342,11 +22343,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-spelling-index",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -22583,10 +22584,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrTemplateInstantiate.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrTemplateInstantiate.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrTemplateInstantiate.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Sema/AttrTemplateInstantiate.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -22602,11 +22603,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-template-instantiate",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -22843,10 +22844,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrVisitor.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrVisitor.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrVisitor.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/AttrVisitor.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -22862,11 +22863,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-ast-visitor",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -23103,10 +23104,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/Attrs.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/Attrs.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/Attrs.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/Attrs.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -23122,11 +23123,11 @@ ACTIONS = [
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Attr.td",
             "-gen-clang-attr-classes",
             "-I",
-            "../../third_party/dawn/third_party/dxc/tools/clang/include",
+            "../../third_party/dawn/third_party/dxc/tools/clang/include"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -23363,10 +23364,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandInfo.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandInfo.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandInfo.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandInfo.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -23380,11 +23381,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandInfo.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/AST/CommentCommands.td",
-            "-gen-clang-comment-command-info",
+            "-gen-clang-comment-command-info"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -23621,10 +23622,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandList.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandList.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandList.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandList.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -23638,11 +23639,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentCommandList.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/AST/CommentCommands.td",
-            "-gen-clang-comment-command-list",
+            "-gen-clang-comment-command-list"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -23879,10 +23880,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -23896,11 +23897,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.td",
-            "-gen-clang-comment-html-named-character-references",
+            "-gen-clang-comment-html-named-character-references"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -24137,10 +24138,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTags.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTags.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTags.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTags.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -24154,11 +24155,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTags.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/AST/CommentHTMLTags.td",
-            "-gen-clang-comment-html-tags",
+            "-gen-clang-comment-html-tags"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -24395,10 +24396,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTagsProperties.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTagsProperties.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTagsProperties.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTagsProperties.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -24412,11 +24413,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentHTMLTagsProperties.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/AST/CommentHTMLTags.td",
-            "-gen-clang-comment-html-tags-properties",
+            "-gen-clang-comment-html-tags-properties"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -24653,10 +24654,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentNodes.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentNodes.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentNodes.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentNodes.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -24670,11 +24671,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/CommentNodes.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/CommentNodes.td",
-            "-gen-clang-comment-nodes",
+            "-gen-clang-comment-nodes"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -24791,10 +24792,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h",
+            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
@@ -24803,9 +24804,9 @@ ACTIONS = [
             "HAVE_INTTYPES_H=1",
             "HAVE_STDINT_H=1",
             "HAVE_UINT64_T=1",
-            "HAVE_U_INT64_T=",
+            "HAVE_U_INT64_T="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -24922,10 +24923,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h",
+            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Support/DataTypes.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
@@ -24934,9 +24935,9 @@ ACTIONS = [
             "HAVE_INTTYPES_H=1",
             "HAVE_STDINT_H=1",
             "HAVE_UINT64_T=1",
-            "HAVE_U_INT64_T=",
+            "HAVE_U_INT64_T="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -25173,10 +25174,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/DeclNodes.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/DeclNodes.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/DeclNodes.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/DeclNodes.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -25190,11 +25191,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/DeclNodes.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/DeclNodes.td",
-            "-gen-clang-decl-nodes",
+            "-gen-clang-decl-nodes"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -25431,10 +25432,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticASTKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticASTKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticASTKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticASTKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -25449,11 +25450,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticASTKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=AST",
+            "-clang-component=AST"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -25690,10 +25691,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticAnalysisKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticAnalysisKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticAnalysisKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticAnalysisKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -25708,11 +25709,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticAnalysisKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=Analysis",
+            "-clang-component=Analysis"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -25949,10 +25950,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommentKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommentKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommentKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommentKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -25967,11 +25968,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommentKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=Comment",
+            "-clang-component=Comment"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -26208,10 +26209,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommonKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommonKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommonKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommonKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -26226,11 +26227,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticCommonKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=Common",
+            "-clang-component=Common"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -26467,10 +26468,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticDriverKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticDriverKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticDriverKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticDriverKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -26485,11 +26486,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticDriverKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=Driver",
+            "-clang-component=Driver"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -26726,10 +26727,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticFrontendKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticFrontendKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticFrontendKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticFrontendKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -26744,11 +26745,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticFrontendKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=Frontend",
+            "-clang-component=Frontend"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -26985,10 +26986,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticGroups.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticGroups.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticGroups.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticGroups.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -27002,11 +27003,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticGroups.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
-            "-gen-clang-diag-groups",
+            "-gen-clang-diag-groups"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -27243,10 +27244,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticLexKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticLexKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticLexKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticLexKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -27261,11 +27262,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticLexKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=Lex",
+            "-clang-component=Lex"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -27502,10 +27503,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticParseKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticParseKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticParseKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticParseKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -27520,11 +27521,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticParseKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=Parse",
+            "-clang-component=Parse"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -27761,10 +27762,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSemaKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSemaKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSemaKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSemaKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -27779,11 +27780,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSemaKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=Sema",
+            "-clang-component=Sema"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -28020,10 +28021,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSerializationKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSerializationKinds.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSerializationKinds.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSerializationKinds.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -28038,11 +28039,11 @@ ACTIONS = [
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/DiagnosticSerializationKinds.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/Diagnostic.td",
             "-gen-clang-diags-defs",
-            "-clang-component=Serialization",
+            "-clang-component=Serialization"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -28159,18 +28160,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def",
+            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/Disassemblers.def.in",
             "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def",
-            "LLVM_ENUM_DISASSEMBLERS=",
+            "LLVM_ENUM_DISASSEMBLERS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -28287,18 +28288,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def",
+            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/Disassemblers.def.in",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Disassemblers.def",
-            "LLVM_ENUM_DISASSEMBLERS=",
+            "LLVM_ENUM_DISASSEMBLERS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -28418,9 +28419,8 @@ ACTIONS = [
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
             "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
-            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
-            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/hct/CMakeLists.txt",
+            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/ExtractIRForPassTest.py": "third_party/dawn/third_party/dxc/utils/hct/ExtractIRForPassTest.py",
             "@chromium_dxc//:utils/hct/VerifierHelper.py": "third_party/dawn/third_party/dxc/utils/hct/VerifierHelper.py",
             "@chromium_dxc//:utils/hct/hctbins.cmd": "third_party/dawn/third_party/dxc/utils/hct/hctbins.cmd",
@@ -28449,19 +28449,20 @@ ACTIONS = [
             "@chromium_dxc//:utils/hct/query.py": "third_party/dawn/third_party/dxc/utils/hct/query.py",
             "@chromium_dxc//:utils/version/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/version/CMakeLists.txt",
             "@chromium_dxc//:utils/version/gen_version.py": "third_party/dawn/third_party/dxc/utils/version/gen_version.py",
-            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc",
+            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
+            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/DxcDisassembler.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/DxcDisassembler.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/DxcDisassembler.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/DxcDisassembler.inc"
         },
         "script": "third_party/dawn/third_party/dxc/utils/hct/hctgen.py",
         "args": [
             "--force-lf",
             "DxcDisassembler",
             "--output",
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/DxcDisassembler.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/tools/dxcompiler/DxcDisassembler.inc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -28581,9 +28582,8 @@ ACTIONS = [
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
             "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
-            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
-            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/hct/CMakeLists.txt",
+            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/ExtractIRForPassTest.py": "third_party/dawn/third_party/dxc/utils/hct/ExtractIRForPassTest.py",
             "@chromium_dxc//:utils/hct/VerifierHelper.py": "third_party/dawn/third_party/dxc/utils/hct/VerifierHelper.py",
             "@chromium_dxc//:utils/hct/hctbins.cmd": "third_party/dawn/third_party/dxc/utils/hct/hctbins.cmd",
@@ -28612,19 +28612,20 @@ ACTIONS = [
             "@chromium_dxc//:utils/hct/query.py": "third_party/dawn/third_party/dxc/utils/hct/query.py",
             "@chromium_dxc//:utils/version/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/version/CMakeLists.txt",
             "@chromium_dxc//:utils/version/gen_version.py": "third_party/dawn/third_party/dxc/utils/version/gen_version.py",
-            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc",
+            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
+            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/lib/HLSL/DxcOptimizer.inc": "gen/third_party/dawn/third_party/gn/dxc/lib/HLSL/DxcOptimizer.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/lib/HLSL/DxcOptimizer.inc": "gen/third_party/dawn/third_party/gn/dxc/lib/HLSL/DxcOptimizer.inc"
         },
         "script": "third_party/dawn/third_party/dxc/utils/hct/hctgen.py",
         "args": [
             "--force-lf",
             "DxcOptimizer",
             "--output",
-            "gen/third_party/dawn/third_party/gn/dxc/lib/HLSL/DxcOptimizer.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/lib/HLSL/DxcOptimizer.inc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -28744,9 +28745,8 @@ ACTIONS = [
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
             "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
-            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
-            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/hct/CMakeLists.txt",
+            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/ExtractIRForPassTest.py": "third_party/dawn/third_party/dxc/utils/hct/ExtractIRForPassTest.py",
             "@chromium_dxc//:utils/hct/VerifierHelper.py": "third_party/dawn/third_party/dxc/utils/hct/VerifierHelper.py",
             "@chromium_dxc//:utils/hct/hctbins.cmd": "third_party/dawn/third_party/dxc/utils/hct/hctbins.cmd",
@@ -28775,19 +28775,20 @@ ACTIONS = [
             "@chromium_dxc//:utils/hct/query.py": "third_party/dawn/third_party/dxc/utils/hct/query.py",
             "@chromium_dxc//:utils/version/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/version/CMakeLists.txt",
             "@chromium_dxc//:utils/version/gen_version.py": "third_party/dawn/third_party/dxc/utils/version/gen_version.py",
-            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc",
+            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
+            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/lib/DxilPIXPasses/DxilPIXPasses.inc": "gen/third_party/dawn/third_party/gn/dxc/lib/DxilPIXPasses/DxilPIXPasses.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/lib/DxilPIXPasses/DxilPIXPasses.inc": "gen/third_party/dawn/third_party/gn/dxc/lib/DxilPIXPasses/DxilPIXPasses.inc"
         },
         "script": "third_party/dawn/third_party/dxc/utils/hct/hctgen.py",
         "args": [
             "--force-lf",
             "DxilPIXPasses",
             "--output",
-            "gen/third_party/dawn/third_party/gn/dxc/lib/DxilPIXPasses/DxilPIXPasses.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/lib/DxilPIXPasses/DxilPIXPasses.inc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -28907,9 +28908,8 @@ ACTIONS = [
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
             "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
-            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
-            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/hct/CMakeLists.txt",
+            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/ExtractIRForPassTest.py": "third_party/dawn/third_party/dxc/utils/hct/ExtractIRForPassTest.py",
             "@chromium_dxc//:utils/hct/VerifierHelper.py": "third_party/dawn/third_party/dxc/utils/hct/VerifierHelper.py",
             "@chromium_dxc//:utils/hct/hctbins.cmd": "third_party/dawn/third_party/dxc/utils/hct/hctbins.cmd",
@@ -28938,19 +28938,20 @@ ACTIONS = [
             "@chromium_dxc//:utils/hct/query.py": "third_party/dawn/third_party/dxc/utils/hct/query.py",
             "@chromium_dxc//:utils/version/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/version/CMakeLists.txt",
             "@chromium_dxc//:utils/version/gen_version.py": "third_party/dawn/third_party/dxc/utils/version/gen_version.py",
-            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc",
+            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
+            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/DxilValidation/DxilValidation.inc": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/DxilValidation/DxilValidation.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/DxilValidation/DxilValidation.inc": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/DxilValidation/DxilValidation.inc"
         },
         "script": "third_party/dawn/third_party/dxc/utils/hct/hctgen.py",
         "args": [
             "--force-lf",
             "DxilValidationInc",
             "--output",
-            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/DxilValidation/DxilValidation.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/DxilValidation/DxilValidation.inc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -29070,9 +29071,8 @@ ACTIONS = [
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
             "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
-            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
-            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/hct/CMakeLists.txt",
+            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/ExtractIRForPassTest.py": "third_party/dawn/third_party/dxc/utils/hct/ExtractIRForPassTest.py",
             "@chromium_dxc//:utils/hct/VerifierHelper.py": "third_party/dawn/third_party/dxc/utils/hct/VerifierHelper.py",
             "@chromium_dxc//:utils/hct/hctbins.cmd": "third_party/dawn/third_party/dxc/utils/hct/hctbins.cmd",
@@ -29101,19 +29101,20 @@ ACTIONS = [
             "@chromium_dxc//:utils/hct/query.py": "third_party/dawn/third_party/dxc/utils/hct/query.py",
             "@chromium_dxc//:utils/version/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/version/CMakeLists.txt",
             "@chromium_dxc//:utils/version/gen_version.py": "third_party/dawn/third_party/dxc/utils/version/gen_version.py",
-            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc",
+            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
+            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/lib/DxilValidation/DxilValidationImpl.inc": "gen/third_party/dawn/third_party/gn/dxc/lib/DxilValidation/DxilValidationImpl.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/lib/DxilValidation/DxilValidationImpl.inc": "gen/third_party/dawn/third_party/gn/dxc/lib/DxilValidation/DxilValidationImpl.inc"
         },
         "script": "third_party/dawn/third_party/dxc/utils/hct/hctgen.py",
         "args": [
             "--force-lf",
             "DxilValidation",
             "--output",
-            "gen/third_party/dawn/third_party/gn/dxc/lib/DxilValidation/DxilValidationImpl.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/lib/DxilValidation/DxilValidationImpl.inc"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -29350,10 +29351,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/HLSLOptions.inc": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/HLSLOptions.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/HLSLOptions.inc": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/HLSLOptions.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -29367,11 +29368,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/HLSLOptions.inc",
             "../../third_party/dawn/third_party/dxc/include/dxc/Support/HLSLOptions.td",
-            "-gen-opt-parser-defs",
+            "-gen-opt-parser-defs"
         ],
         "deps": [
-            ":dawn_native_dcf031d648dc94e7_tool",
-        ],
+            ":dawn_native_dcf031d648dc94e7_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -29608,10 +29609,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/IR/Intrinsics.gen": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/IR/Intrinsics.gen",
+            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/IR/Intrinsics.gen": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/IR/Intrinsics.gen"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -29625,11 +29626,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/include/llvm/IR/Intrinsics.gen",
             "../../third_party/dawn/third_party/dxc/include/llvm/IR/Intrinsics.td",
-            "-gen-intrinsic",
+            "-gen-intrinsic"
         ],
         "deps": [
-            ":dawn_native_dcf031d648dc94e7_tool",
-        ],
+            ":dawn_native_dcf031d648dc94e7_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -29746,19 +29747,19 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/SharedLibAffix.h": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/SharedLibAffix.h",
+            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/SharedLibAffix.h": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/SharedLibAffix.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/lib/DxcSupport/SharedLibAffix.inc",
             "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Support/SharedLibAffix.h",
             "CMAKE_SHARED_LIBRARY_PREFIX=",
-            "CMAKE_SHARED_LIBRARY_SUFFIX=.dll",
+            "CMAKE_SHARED_LIBRARY_SUFFIX=.dll"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -29995,10 +29996,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/StmtNodes.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/StmtNodes.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/StmtNodes.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/StmtNodes.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -30012,11 +30013,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/AST/StmtNodes.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Basic/StmtNodes.td",
-            "-gen-clang-stmt-nodes",
+            "-gen-clang-stmt-nodes"
         ],
         "deps": [
-            ":dawn_native_c330179c9e9e709e_tool",
-        ],
+            ":dawn_native_c330179c9e9e709e_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -30133,18 +30134,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def",
+            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/Targets.def.in",
             "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def",
-            "LLVM_ENUM_TARGETS=",
+            "LLVM_ENUM_TARGETS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -30261,18 +30262,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def",
+            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/Targets.def.in",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/Targets.def",
-            "LLVM_ENUM_TARGETS=",
+            "LLVM_ENUM_TARGETS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -30389,18 +30390,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h",
+            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/abi-breaking.h.cmake",
             "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h",
-            "LLVM_ENABLE_ABI_BREAKING_CHECKS=",
+            "LLVM_ENABLE_ABI_BREAKING_CHECKS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -30517,18 +30518,18 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h",
+            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/llvm/Config/abi-breaking.h.cmake",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/abi-breaking.h",
-            "LLVM_ENABLE_ABI_BREAKING_CHECKS=",
+            "LLVM_ENABLE_ABI_BREAKING_CHECKS="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -30765,10 +30766,10 @@ ACTIONS = [
             "@chromium_dxc//:tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td": "third_party/dawn/third_party/dxc/tools/clang/lib/StaticAnalyzer/Checkers/Checkers.td",
             "@chromium_dxc//:tools/clang/test/TableGen/anonymous-groups.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/anonymous-groups.td",
             "@chromium_dxc//:tools/clang/test/TableGen/tg-fixits.td": "third_party/dawn/third_party/dxc/tools/clang/test/TableGen/tg-fixits.td",
-            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td",
+            "@chromium_dxc//:unittests/Option/Opts.td": "third_party/dawn/third_party/dxc/unittests/Option/Opts.td"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Driver/Options.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Driver/Options.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Driver/Options.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Driver/Options.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/run_built_binary.py",
         "args": [
@@ -30782,11 +30783,11 @@ ACTIONS = [
             "-o",
             "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Driver/Options.inc",
             "../../third_party/dawn/third_party/dxc/tools/clang/include/clang/Driver/Options.td",
-            "-gen-opt-parser-defs",
+            "-gen-opt-parser-defs"
         ],
         "deps": [
-            ":dawn_native_dcf031d648dc94e7_tool",
-        ],
+            ":dawn_native_dcf031d648dc94e7_tool"
+        ]
     },
     {
         "response_file_contents": [],
@@ -30903,10 +30904,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/Version.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/Version.inc",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/Version.inc": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Basic/Version.inc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
@@ -30916,9 +30917,9 @@ ACTIONS = [
             "CLANG_VERSION_MAJOR=3",
             "CLANG_VERSION_MINOR=7",
             "CLANG_VERSION_PATCHLEVEL=0",
-            "CLANG_HAS_VERSION_PATCHLEVEL=0",
+            "CLANG_HAS_VERSION_PATCHLEVEL=0"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -31035,10 +31036,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Config/config.h": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Config/config.h",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Config/config.h": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/include/clang/Config/config.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
@@ -31053,9 +31054,9 @@ ACTIONS = [
             "GCC_INSTALL_PREFIX=",
             "CLANG_HAVE_LIBXML=",
             "BACKEND_PACKAGE_STRING=",
-            "HOST_LINK_VERSION=",
+            "HOST_LINK_VERSION="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -31172,10 +31173,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h",
+            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
@@ -31338,9 +31339,9 @@ ACTIONS = [
             "HAVE_MALLOC_MALLOC_H=",
             "HAVE_MALLOC_ZONE_STATISTICS=",
             "LLVM_ON_UNIX=",
-            "LLVM_ON_WIN32=1",
+            "LLVM_ON_WIN32=1"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -31457,10 +31458,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h",
+            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/config.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
@@ -31623,9 +31624,9 @@ ACTIONS = [
             "HAVE_MALLOC_MALLOC_H=",
             "HAVE_MALLOC_ZONE_STATISTICS=",
             "LLVM_ON_UNIX=1",
-            "LLVM_ON_WIN32=",
+            "LLVM_ON_WIN32="
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -31742,19 +31743,19 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h",
+            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/dxc/config.h.cmake",
             "gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h",
             "DXC_DISABLE_ALLOCATOR_OVERRIDES=1",
-            "DXC_CODEGEN_EXCEPTIONS_TRAP=1",
+            "DXC_CODEGEN_EXCEPTIONS_TRAP=1"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -31871,19 +31872,19 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h",
+            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
             "../../third_party/dawn/third_party/dxc/include/dxc/config.h.cmake",
             "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/dxc/config.h",
             "DXC_DISABLE_ALLOCATOR_OVERRIDES=1",
-            "DXC_CODEGEN_EXCEPTIONS_TRAP=1",
+            "DXC_CODEGEN_EXCEPTIONS_TRAP=1"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -32006,11 +32007,11 @@ ACTIONS = [
             "@chromium_dawn//:third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetw.h": "third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetw.h",
             "@chromium_dawn//:third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetw.rc": "third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetw.rc",
             "@chromium_dawn//:third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetwTEMP.BIN": "third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetwTEMP.BIN",
-            "@chromium_dawn//:third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetw_MSG00001.bin": "third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetw_MSG00001.bin",
+            "@chromium_dawn//:third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetw_MSG00001.bin": "third_party/dawn/third_party/gn/dxc/win_build_output/mc/include/dxc/Tracing/dxcetw/dxcetw_MSG00001.bin"
         },
         "outs": {
             "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.h",
-            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.rc": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.rc",
+            "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.rc": "gen/third_party/dawn/third_party/gn/dxc/include/dxc/Tracing/dxcetw/dxcetw.rc"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/message_compiler.py",
         "args": [
@@ -32025,9 +32026,9 @@ ACTIONS = [
             "-um",
             "-z",
             "dxcetw",
-            "../../third_party/dawn/third_party/dxc/include/dxc/Tracing/dxcetw.man",
+            "../../third_party/dawn/third_party/dxc/include/dxc/Tracing/dxcetw.man"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -32147,9 +32148,8 @@ ACTIONS = [
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
             "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
-            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
-            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/hct/CMakeLists.txt",
+            "@chromium_dxc//:utils/hct/CodeTags.py": "third_party/dawn/third_party/dxc/utils/hct/CodeTags.py",
             "@chromium_dxc//:utils/hct/ExtractIRForPassTest.py": "third_party/dawn/third_party/dxc/utils/hct/ExtractIRForPassTest.py",
             "@chromium_dxc//:utils/hct/VerifierHelper.py": "third_party/dawn/third_party/dxc/utils/hct/VerifierHelper.py",
             "@chromium_dxc//:utils/hct/hctbins.cmd": "third_party/dawn/third_party/dxc/utils/hct/hctbins.cmd",
@@ -32178,19 +32178,20 @@ ACTIONS = [
             "@chromium_dxc//:utils/hct/query.py": "third_party/dawn/third_party/dxc/utils/hct/query.py",
             "@chromium_dxc//:utils/version/CMakeLists.txt": "third_party/dawn/third_party/dxc/utils/version/CMakeLists.txt",
             "@chromium_dxc//:utils/version/gen_version.py": "third_party/dawn/third_party/dxc/utils/version/gen_version.py",
-            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc",
+            "@chromium_dxc//:utils/version/latest-release.json": "third_party/dawn/third_party/dxc/utils/version/latest-release.json",
+            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h": "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h"
         },
         "script": "third_party/dawn/third_party/dxc/utils/hct/hctgen.py",
         "args": [
             "--force-lf",
             "DxilIntrinsicTables",
             "--output",
-            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h",
+            "gen/third_party/dawn/third_party/gn/dxc/tools/clang/lib/Sema/gen_intrin_main_tables_15.h"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -32307,10 +32308,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h",
+            "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h": "gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
@@ -32344,9 +32345,9 @@ ACTIONS = [
             "LINK_POLLY_INTO_TOOLS=",
             "LLVM_ENABLE_THREADS=1",
             "LLVM_ON_UNIX=",
-            "LLVM_ON_WIN32=1",
+            "LLVM_ON_WIN32=1"
         ],
-        "deps": [],
+        "deps": []
     },
     {
         "response_file_contents": [],
@@ -32463,10 +32464,10 @@ ACTIONS = [
             "//:third_party/markupsafe/__init__.py": "third_party/markupsafe/__init__.py",
             "//:third_party/markupsafe/_compat.py": "third_party/markupsafe/_compat.py",
             "//:third_party/markupsafe/_constants.py": "third_party/markupsafe/_constants.py",
-            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py",
+            "//:third_party/markupsafe/_native.py": "third_party/markupsafe/_native.py"
         },
         "outs": {
-            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h",
+            "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h": "clang_x64/gen/third_party/dawn/third_party/gn/dxc/include/llvm/Config/llvm-config.h"
         },
         "script": "third_party/dawn/third_party/gn/dxc/build/cmake_configure_file.py",
         "args": [
@@ -32500,10 +32501,10 @@ ACTIONS = [
             "LINK_POLLY_INTO_TOOLS=",
             "LLVM_ENABLE_THREADS=1",
             "LLVM_ON_UNIX=1",
-            "LLVM_ON_WIN32=",
+            "LLVM_ON_WIN32="
         ],
-        "deps": [],
-    },
+        "deps": []
+    }
 ]
 
 TOOLS = {
@@ -32511,48 +32512,48 @@ TOOLS = {
         "tool": ":dawn_native_c330179c9e9e709e",
         "logical_path": "out/bazel-import/clang_x64/clang-tblgen",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
     },
     "dawn_native_dcf031d648dc94e7_tool": {
         "tool": ":dawn_native_dcf031d648dc94e7",
         "logical_path": "out/bazel-import/clang_x64/llvm-tblgen",
         "exec_compatible_with": [
-            "@llvm//constraints/libc:gnu.2.31",
-        ],
-    },
+            "@llvm//constraints/libc:gnu.2.31"
+        ]
+    }
 }
 
 COPIES = [
     {
         "name": "dawn_native_776051ec6502d102",
         "srcs": {
-            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc",
+            "@chromium_dxc//:utils/version/version.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc"
         },
         "outputs": {
-            "gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc",
-        },
-    },
+            "gen/third_party/dawn/third_party/gn/dxc/utils/version/dxcversion.inc": "third_party/dawn/third_party/dxc/utils/version/version.inc"
+        }
+    }
 ]
 
 RUNTIME_DEPS = {
     "//third_party/dawn/src/dawn/native:sources": [
         "//third_party/dawn/third_party/gn/dxc:copy_dxil_dll",
-        "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan",
+        "//third_party/swiftshader/src/Vulkan:swiftshader_libvulkan"
     ],
     "//third_party/dawn/src/dawn/native:static": [
         "//third_party/vulkan-validation-layers/src:vulkan_gen_json_files",
-        "//third_party/vulkan-validation-layers/src:vulkan_validation_layers",
-    ],
+        "//third_party/vulkan-validation-layers/src:vulkan_validation_layers"
+    ]
 }
 
 PUBLIC_DEFINES = [
     "DCHECK_ALWAYS_ON=1",
-    "NDEBUG",
+    "NDEBUG"
 ]
 
 METADATA = {
     "gpu/webgpu/DAWN_VERSION": "cee9cb0d67e749bf42f5e90cb3b8a6f525dbb920",
     "gen/third_party/dawn/opengl_loader_gen.expected_outputs": "src/dawn/native/opengl/OpenGLFunctionsBase_autogen.cpp\nsrc/dawn/native/opengl/OpenGLFunctionsBase_autogen.h\nsrc/dawn/native/opengl/opengl_platform_autogen.h\n",
-    "gen/third_party/dawn/utils_gen.expected_outputs": "src/dawn/native/ChainUtils_autogen.h\nsrc/dawn/native/ChainUtils_autogen.cpp\nsrc/dawn/native/Features_autogen.h\nsrc/dawn/native/Features_autogen.inl\nsrc/dawn/native/ProcTable.cpp\nsrc/dawn/native/dawn_platform_autogen.h\nsrc/dawn/native/wgpu_structs_autogen.h\nsrc/dawn/native/wgpu_structs_autogen.cpp\nsrc/dawn/native/ValidationUtils_autogen.h\nsrc/dawn/native/ValidationUtils_autogen.cpp\nsrc/dawn/native/webgpu_absl_format_autogen.h\nsrc/dawn/native/webgpu_absl_format_autogen.cpp\nsrc/dawn/native/webgpu_StreamImpl_autogen.cpp\nsrc/dawn/native/ObjectType_autogen.h\nsrc/dawn/native/ObjectType_autogen.cpp\n",
+    "gen/third_party/dawn/utils_gen.expected_outputs": "src/dawn/native/ChainUtils_autogen.h\nsrc/dawn/native/ChainUtils_autogen.cpp\nsrc/dawn/native/Features_autogen.h\nsrc/dawn/native/Features_autogen.inl\nsrc/dawn/native/ProcTable.cpp\nsrc/dawn/native/dawn_platform_autogen.h\nsrc/dawn/native/wgpu_structs_autogen.h\nsrc/dawn/native/wgpu_structs_autogen.cpp\nsrc/dawn/native/ValidationUtils_autogen.h\nsrc/dawn/native/ValidationUtils_autogen.cpp\nsrc/dawn/native/webgpu_absl_format_autogen.h\nsrc/dawn/native/webgpu_absl_format_autogen.cpp\nsrc/dawn/native/webgpu_StreamImpl_autogen.cpp\nsrc/dawn/native/ObjectType_autogen.h\nsrc/dawn/native/ObjectType_autogen.cpp\n"
 }

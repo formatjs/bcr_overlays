@@ -22,7 +22,7 @@
     {
       "id": "darwin-arm64",
       "platform": "@llvm//platforms:macos_aarch64",
-      "build_runner": "macos-15",
+      "build_runner": "ubuntu-24.04",
       "smoke_runner": "macos-15",
       "os": "darwin",
       "arch": "arm64",

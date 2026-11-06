@@ -33037,7 +33037,7 @@ _PATHS = [
     "//ui/webui/resources/js/tracked_element/tracked_element.mojom",
     "//url/mojom/origin.mojom",
     "//url/mojom/scheme_host_port.mojom",
-    "//url/mojom/url.mojom",
+    "//url/mojom/url.mojom"
 ]
 
 _ARGUMENTS = [
@@ -39773,7 +39773,7 @@ _ARGUMENTS = [
     "webui_module_path=chrome://resources/mojo/ui/latency/mojom",
     "webui_module_path=chrome://resources/mojo/ui/webui/resources/js/tracked_element",
     "webui_module_path=chrome://resources/mojo/url/mojom",
-    "win_permissions_validation",
+    "win_permissions_validation"
 ]
 
 def source_path(index):

@@ -1,0 +1,63 @@
+exports_files(
+    [
+        "crc32c.h",
+        "internal/cpu_detect.h",
+        "internal/crc.h",
+        "internal/crc32_x86_arm_combined_simd.h",
+        "internal/crc32c.h",
+        "internal/crc32c_inline.h",
+        "internal/crc_cord_state.h",
+        "internal/crc_internal.h",
+        "internal/crc_memcpy.h",
+        "internal/non_temporal_arm_intrinsics.h",
+        "internal/non_temporal_memcpy.h",
+        "BUILD.bazel",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "crc32c.h",
+    "internal/crc32_x86_arm_combined_simd.h",
+    "internal/crc32c_inline.h",
+    "internal/crc_cord_state.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "crc32c.h",
+    "internal/crc32_x86_arm_combined_simd.h",
+    "internal/crc32c_inline.h",
+    "internal/crc_cord_state.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN BLINK_MODULES INPUTS
+exports_files([
+    "crc32c.h",
+    "internal/crc32_x86_arm_combined_simd.h",
+    "internal/crc32c_inline.h",
+    "internal/crc_cord_state.h"
+])
+# END BLINK_MODULES INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "crc32c.h",
+    "internal/crc32_x86_arm_combined_simd.h",
+    "internal/crc32c_inline.h",
+    "internal/crc_cord_state.h"
+])
+# END CONTENT INPUTS
+
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "crc32c.h",
+    "internal/crc32_x86_arm_combined_simd.h",
+    "internal/crc32c_inline.h",
+    "internal/crc_cord_state.h"
+])
+# END BROWSER INPUTS

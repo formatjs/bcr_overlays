@@ -1,0 +1,4 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+package(default_visibility = ["//visibility:public"])
+cc_library(name = "lss", hdrs = ["linux_syscall_support.h"], includes = ["../.."], deps = ["@linux-syscall-support//:linux-syscall-support"])
+exports_files(["BUILD.bazel"])

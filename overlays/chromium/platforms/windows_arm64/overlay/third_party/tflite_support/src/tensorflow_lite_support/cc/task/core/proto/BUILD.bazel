@@ -1,0 +1,24 @@
+package(default_visibility = ["//visibility:public"])
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "base_options.proto",
+    "base_options_proto_inc.h",
+    "external_file.proto",
+    "external_file_proto_inc.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "base_options_proto_inc.h",
+    "external_file_proto_inc.h"
+])
+# END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "base_options_proto_inc.h",
+    "external_file_proto_inc.h"
+])
+# END BROWSER INPUTS

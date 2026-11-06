@@ -1,0 +1,44 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files([
+    "BUILD.bazel",
+    "include/ipcz/ipcz.h",
+    "src/api.h",
+])
+
+cc_library(
+    name = "ipcz",
+    hdrs = [
+        "include/ipcz/ipcz.h",
+        "src/api.h",
+    ],
+    includes = ["../.."],
+    deps = ["//native:ipcz"],
+)
+
+
+# BEGIN BLINK_PLATFORM INPUTS
+exports_files([
+    "include/ipcz/ipcz.h"
+])
+# END BLINK_PLATFORM INPUTS
+
+# BEGIN BLINK_CORE INPUTS
+exports_files([
+    "include/ipcz/ipcz.h"
+])
+# END BLINK_CORE INPUTS
+
+# BEGIN CONTENT INPUTS
+exports_files([
+    "include/ipcz/ipcz.h"
+])
+# END CONTENT INPUTS
+
+# BEGIN BROWSER INPUTS
+exports_files([
+    "include/ipcz/ipcz.h"
+])
+# END BROWSER INPUTS

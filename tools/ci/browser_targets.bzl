@@ -25,9 +25,9 @@ darwin_arm64_browser, _darwin_arm64_browser = with_cfg(native.filegroup).set(
 windows_amd64_browser, _windows_amd64_browser = with_cfg(native.filegroup).set(
     "platforms",
     [Label("@llvm//platforms:windows_x86_64_msvc")],
-).build()
+).set("features", ["static_link_msvcrt", "-dynamic_link_msvcrt"]).build()
 
 windows_arm64_browser, _windows_arm64_browser = with_cfg(native.filegroup).set(
     "platforms",
     [Label("@llvm//platforms:windows_aarch64_msvc")],
-).build()
+).set("features", ["static_link_msvcrt", "-dynamic_link_msvcrt"]).build()

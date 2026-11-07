@@ -199,7 +199,7 @@ def native_library_providers(overlay):
 def native_graphics_providers(overlay):
     """Read providers from the native overlay, not the cross-import staging tree."""
     providers = {}
-    for component in ('geometry', 'dawn', 'dawn_native', 'linux_ui', 'gpu_service', 'gpu_protocol', 'compositor', 'network', 'fonts', 'codecs', 'pthreadpool', 'ml', 'ffmpeg', 'skia', 'angle_runtime', 'swiftshader', 'vulkan_loader',
+    for component in ('geometry', 'dawn', 'dawn_native', 'linux_ui', 'gpu_service', 'gpu_protocol', 'compositor', 'network', 'fonts', 'codecs', 'pthreadpool', 'ml', 'ffmpeg', 'skia', 'angle_runtime', 'swiftshader', 'vulkan_loader', 'blink_platform', 'blink_core', 'blink_modules',
                       'vulkan_validation', 'vulkan_tools'):
         tree = ast.parse((overlay / 'native' / (component + '_sources.bzl')).read_text())
         records = next(ast.literal_eval(node.value) for node in tree.body
@@ -314,7 +314,9 @@ def reuse_host_graphics(graph, reference, libraries, providers):
 
     count = 0
     for label, library in libraries.items():
-        if not label.startswith(prefixes) or not label.endswith(suffix):
+        shared_blink_mojom = (label.startswith('//third_party/blink/public/mojom')
+                             and label.removesuffix(suffix).endswith('_shared_cpp_sources'))
+        if not (label.startswith(prefixes) or shared_blink_mojom) or not label.endswith(suffix):
             continue
         original = label.removesuffix(suffix)
         target = graph['targets'][label]

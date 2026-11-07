@@ -456,10 +456,78 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: ["perf/native-blink-wide"]
+        branches: ["perf/native-blink-wide", "perf/native-blink-platforms"]
     steps:
       - run: |
           python3 -m tools.ci.compile.experiment --wide-native-blink \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/compile-input-experiment"
+
+  - name: Chromium compile inputs native-wide linux-arm64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 1h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/native-blink-platforms"]
+    steps:
+      - run: |
+          python3 -m tools.ci.compile.experiment --wide-native-blink --platform linux-arm64 \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/compile-input-experiment"
+
+  - name: Chromium compile inputs native-wide darwin-arm64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 1h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/native-blink-platforms"]
+    steps:
+      - run: |
+          python3 -m tools.ci.compile.experiment --wide-native-blink --platform darwin-arm64 \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/compile-input-experiment"
+
+  - name: Chromium compile inputs native-wide windows-amd64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 1h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/native-blink-platforms"]
+    steps:
+      - run: |
+          python3 -m tools.ci.compile.experiment --wide-native-blink --platform windows-amd64 \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/compile-input-experiment"
+
+  - name: Chromium compile inputs native-wide windows-arm64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 1h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/native-blink-platforms"]
+    steps:
+      - run: |
+          python3 -m tools.ci.compile.experiment --wide-native-blink --platform windows-arm64 \
             --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/compile-input-experiment"
 
   - name: Chromium compile throughput concurrency

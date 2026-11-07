@@ -159,8 +159,10 @@ def main():
     args = parser.parse_args()
     if args.batch and args.platform != 'linux-amd64':
         parser.error('Throughput batch currently targets Linux amd64 host compiles')
-    if (args.host_blink or args.wide_host_blink or args.wide_native_blink or args.browser) and (args.batch or args.platform != 'linux-amd64'):
+    if (args.host_blink or args.wide_host_blink or args.browser) and (args.batch or args.platform != 'linux-amd64'):
         parser.error('Host Blink probe runs on Linux amd64 without --batch')
+    if args.wide_native_blink and args.batch:
+        parser.error('--wide-native-blink does not use --batch')
     if sum([args.host_blink, args.wide_host_blink, args.wide_native_blink, args.browser]) > 1:
         parser.error('Choose one Blink context')
     if args.compare_merkle_retention and not args.batch:
@@ -180,7 +182,10 @@ def main():
     if args.wide_host_blink:
         target = '//tools/ci/compile/host_wide:blink-host-linux-arm64'
     if args.wide_native_blink:
-        target = '//tools/ci/compile/native_wide:blink-native-linux-amd64'
+        package = '//tools/ci/compile/native_wide'
+        if args.platform != 'linux-amd64':
+            package += '/' + args.platform.replace('-', '_')
+        target = package + ':blink-native-' + args.platform
     owners = OWNERS
     if args.browser:
         groups = browser_source_groups()

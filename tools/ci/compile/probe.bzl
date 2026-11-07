@@ -118,7 +118,7 @@ def host_blink_compile_probe(name, libraries, repository, wide = False, captured
             repository,
             sources,
             forwarders = forwarders,
-            gpu_header = "@chromium//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
+            gpu_header = ("@chromium" if captured_host else repository) + "//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
         )
 
 def browser_compile_probe(name, libraries):

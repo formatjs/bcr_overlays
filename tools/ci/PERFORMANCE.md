@@ -98,6 +98,13 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- [Native 19-source regression](https://formatjs.buildbuddy.io/invocation/7a4c660c-f4c6-4d06-9e54-1996c0eafbe6)
+  passed baseline/scanner/scanner/baseline with identical archives using Linux
+  AMD64's native library contexts. The next candidate extends scoped scanning to
+  its Blink modules, bindings, and platform libraries: 140 libraries and 3,842
+  source entries. Mandatory macro-selected headers remain declared. Other native
+  platform captures retain their prior scope until validation. Full artifact,
+  native rendering, and cold timing gates remain pending.
 - [101-source scanner benchmark](https://formatjs.buildbuddy.io/invocation/33661bf5-b986-4a93-9bbc-a49441f975b8)
   passed two warmups and ABBA comparisons: 606 real remote compiles, identical
   archive sets. Each pair removed 7,535,800 input paths and added 29,472:

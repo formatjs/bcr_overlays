@@ -4,6 +4,7 @@ import io
 import json
 from pathlib import Path
 import tempfile
+import struct
 import tarfile
 import unittest
 from unittest import mock
@@ -14,6 +15,26 @@ from tools.ci.compare_payloads import payload_digest
 
 
 class PayloadComparisonTest(unittest.TestCase):
+    def test_pe_diagnostic_distinguishes_code_from_other_sections(self):
+        data = bytearray(512)
+        data[:2] = b'MZ'
+        struct.pack_into('<I', data, 60, 64)
+        data[64:68] = b'PE\0\0'
+        struct.pack_into('<HHI', data, 68, 0x8664, 2, 123)
+        for index, name in enumerate((b'.text', b'.rdata')):
+            start = 88 + index * 40
+            data[start:start + len(name)] = name
+            struct.pack_into('<II', data, start + 16, 16, 256 + index * 16)
+        original = comparison.pe_summary(data)
+        data[275] = 1
+        changed = comparison.pe_summary(data)
+        self.assertEqual(original['sections'][0], changed['sections'][0])
+        self.assertNotEqual(original['sections'][1]['sha256'], changed['sections'][1]['sha256'])
+        self.assertEqual(changed['timestamp'], 123)
+        struct.pack_into('<I', data, 88 + 16, len(data) + 1)
+        with self.assertRaisesRegex(ValueError, 'section bounds'):
+            comparison.pe_summary(data)
+
     def test_same_commit_cold_and_regular_builds_are_compared_independently(self):
         revision = '1' * 40
         platform = 'linux-amd64'

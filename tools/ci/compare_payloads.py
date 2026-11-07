@@ -9,6 +9,7 @@ import json
 import os
 from pathlib import Path
 import re
+import struct
 import tarfile
 import tempfile
 import urllib.request
@@ -63,6 +64,30 @@ def payload_digest(source, expected_checksum, revision, platform):
     return {'sha256': payload_hash.hexdigest(), 'size_bytes': payload_size}
 
 
+def pe_summary(data):
+    """Report section hashes without changing the payload comparison gate."""
+    if len(data) < 64 or data[:2] != b'MZ':
+        raise ValueError('Invalid PE DOS header')
+    offset = struct.unpack_from('<I', data, 60)[0]
+    if offset + 24 > len(data) or data[offset:offset + 4] != b'PE\0\0':
+        raise ValueError('Invalid PE header')
+    machine, count, timestamp = struct.unpack_from('<HHI', data, offset + 4)
+    optional_size = struct.unpack_from('<H', data, offset + 20)[0]
+    table = offset + 24 + optional_size
+    if count > 96 or table + count * 40 > len(data):
+        raise ValueError('Invalid PE section table')
+    sections = []
+    for index in range(count):
+        start = table + index * 40
+        name = data[start:start + 8].rstrip(b'\0').decode('ascii')
+        size, position = struct.unpack_from('<II', data, start + 16)
+        if position + size > len(data):
+            raise ValueError('Invalid PE section bounds')
+        sections.append({'name': name, 'offset': position, 'size': size,
+                         'sha256': hashlib.sha256(memoryview(data)[position:position + size]).hexdigest()})
+    return {'machine': machine, 'timestamp': timestamp, 'sections': sections}
+
+
 def payload_manifest(path, verify_nss=False):
     """Inspect the cached gzip member without extracting or executing files."""
     modules = _nss_modules() if verify_nss else {}
@@ -97,7 +122,13 @@ def payload_manifest(path, verify_nss=False):
                 row['type'] = member.type.decode('latin1')
                 if member.isfile():
                     with archive.extractfile(member) as content:
-                        if verify_nss and member.name in modules:
+                        if member.name == 'bundle/chrome.dll':
+                            if member.size > 1024 * 1024 * 1024:
+                                raise ValueError('PE diagnostic exceeds 1 GiB')
+                            data = content.read()
+                            row['sha256'] = hashlib.sha256(data).hexdigest()
+                            row['pe'] = pe_summary(data)
+                        elif verify_nss and member.name in modules:
                             data = content.read(4097)
                             if len(data) > 4096 or len(data) != member.size:
                                 raise ValueError('Invalid NSS integrity file size')

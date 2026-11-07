@@ -63,8 +63,9 @@ def payload_digest(source, expected_checksum, revision, platform):
     return {'sha256': payload_hash.hexdigest(), 'size_bytes': payload_size}
 
 
-def payload_manifest(path):
+def payload_manifest(path, verify_nss=False):
     """Inspect the cached gzip member without extracting or executing files."""
+    modules = _nss_modules() if verify_nss else {}
     with path.open('rb') as raw:
         prefix = raw.read(1024 * 1024)
         decoder = zlib.decompressobj(16 + zlib.MAX_WBITS)
@@ -83,9 +84,12 @@ def payload_manifest(path):
                     raise ValueError('Uncompressed payload exceeds 32 GiB')
                 digest.update(chunk)
         raw.seek(offset)
-        members = []
+        members, names, checksums, ranges = [], set(), {}, []
         with gzip.GzipFile(fileobj=raw, mode='rb') as source, tarfile.open(fileobj=source, mode='r|') as archive:
             for member in archive:
+                if member.name in names:
+                    raise ValueError('Duplicate payload member')
+                names.add(member.name)
                 if len(members) >= 100000:
                     raise ValueError('Payload contains too many members')
                 row = {key: getattr(member, key) for key in (
@@ -93,10 +97,57 @@ def payload_manifest(path):
                 row['type'] = member.type.decode('latin1')
                 if member.isfile():
                     with archive.extractfile(member) as content:
-                        row['sha256'] = hashlib.file_digest(content, 'sha256').hexdigest()
+                        if verify_nss and member.name in modules:
+                            data = content.read(4097)
+                            if len(data) > 4096 or len(data) != member.size:
+                                raise ValueError('Invalid NSS integrity file size')
+                            checksums[member.name] = data
+                            ranges.append((member.offset_data, member.size))
+                            row['sha256'] = hashlib.sha256(data).hexdigest()
+                        else:
+                            row['sha256'] = hashlib.file_digest(content, 'sha256').hexdigest()
                 members.append(row)
+        verification = {}
+        if verify_nss:
+            from tools.ci.nss_integrity import verify_checksum
+            if names.intersection(modules) and set(checksums) != set(modules):
+                raise ValueError('Missing NSS integrity files')
+            by_name = {member['name']: member for member in members}
+            for name, data in checksums.items():
+                module = by_name.get(modules[name], {})
+                if 'sha256' not in module:
+                    raise ValueError('Missing NSS module bytes')
+                verification[name] = verify_checksum(data, module['sha256'])
+        canonical = digest.hexdigest()
+        if ranges:
+            # Only verified NSS integrity data may vary.
+            raw.seek(offset)
+            canonical_hash, position = hashlib.sha256(), 0
+            with gzip.GzipFile(fileobj=raw, mode='rb') as source:
+                while chunk := source.read(1024 * 1024):
+                    normalized = bytearray(chunk)
+                    for start, length in ranges:
+                        left, right = max(position, start), min(position + len(chunk), start + length)
+                        if left < right:
+                            normalized[left - position:right - position] = b'\0' * (right - left)
+                    canonical_hash.update(normalized)
+                    position += len(chunk)
+            canonical = canonical_hash.hexdigest()
     return {'tar_sha256': digest.hexdigest(), 'tar_size_bytes': size,
-            'gzip_header_hex': header, 'members': members}
+            'gzip_header_hex': header, 'members': members,
+            'verified_tar_sha256': canonical, 'nss_integrity': verification}
+
+
+def _nss_modules():
+    from tools.ci.nss_integrity import MODULES
+    return MODULES
+
+
+def verified_contents_match(left, right):
+    a, b = left['manifest'], right['manifest']
+    return (a['verified_tar_sha256'] == b['verified_tar_sha256']
+            and a['tar_size_bytes'] == b['tar_size_bytes']
+            and a['nss_integrity'] == b['nss_integrity'])
 
 
 def build_urls(revision, platforms=PLATFORMS, kind='browser'):
@@ -119,7 +170,7 @@ def build_urls(revision, platforms=PLATFORMS, kind='browser'):
     return urls
 
 
-def digest_artifact(url, revision, platform, kind='browser', *, diagnose_members=False):
+def digest_artifact(url, revision, platform, kind='browser', *, diagnose_members=False, verify_nss=False):
     key = os.environ['BUILDBUDDY_API_KEY']
     with api_request('GetInvocation', {
             'selector': {'invocation_id': invocation_id(url)}, 'include_artifacts': True,
@@ -131,7 +182,7 @@ def digest_artifact(url, revision, platform, kind='browser', *, diagnose_members
     if not re.fullmatch(r'[0-9a-f]{64}', expected):
         raise ValueError('Invalid artifact checksum')
     with api_request('GetFile', {'uri': uris[name]}, key) as response:
-        if not diagnose_members:
+        if not diagnose_members and not verify_nss:
             return payload_digest(response, expected, revision, platform)
         with tempfile.TemporaryDirectory(prefix='chromium-payload-diff-') as temporary:
             path = Path(temporary) / name
@@ -144,7 +195,7 @@ def digest_artifact(url, revision, platform, kind='browser', *, diagnose_members
                     output.write(chunk)
             with path.open('rb') as source:
                 result = payload_digest(source, expected, revision, platform)
-            result['manifest'] = payload_manifest(path)
+            result['manifest'] = payload_manifest(path, verify_nss=verify_nss)
             return result
 
 
@@ -156,6 +207,7 @@ def main():
     parser.add_argument('--platform', choices=sorted(PLATFORMS))
     parser.add_argument('--revision-kind', choices=['browser', 'cold-browser'], default='browser')
     parser.add_argument('--diagnose-members', action='store_true')
+    parser.add_argument('--verify-nss-integrity', action='store_true')
     args = parser.parse_args()
     if any(not re.fullmatch(r'[0-9a-f]{40}', value) for value in (args.baseline, args.revision)):
         parser.error('Expected full source commit SHAs')
@@ -169,7 +221,8 @@ def main():
     with ThreadPoolExecutor(max_workers=2) as executor:
         futures = {
             (platform, *key): executor.submit(digest_artifact, urls[platform], key[0], platform, key[1],
-                                            **({'diagnose_members': True} if args.diagnose_members else {}))
+                                            **({**({'diagnose_members': True} if args.diagnose_members else {}),
+                                               **({'verify_nss': True} if args.verify_nss_integrity else {})}))
             for platform in platforms
             for key, urls in urls_by_build.items()
         }
@@ -177,11 +230,20 @@ def main():
             baseline = futures[platform, *baseline_key].result()
             current = futures[platform, *revision_key].result()
             result['platforms'][platform] = {
-                'baseline': baseline, 'current': current, 'payload_bytes_match': baseline == current,
+                'baseline': baseline, 'current': current,
+                'payload_bytes_match': (baseline['sha256'], baseline['size_bytes'])
+                                       == (current['sha256'], current['size_bytes']),
             }
-            print(platform + ': payload bytes ' + ('match' if baseline == current else 'changed'), flush=True)
+            if args.verify_nss_integrity:
+                result['platforms'][platform]['verified_contents_match'] = verified_contents_match(baseline, current)
+            byte_match = result['platforms'][platform]['payload_bytes_match']
+            print(platform + ': payload bytes ' + ('match' if byte_match else 'changed'), flush=True)
+            if args.verify_nss_integrity:
+                match = result['platforms'][platform]['verified_contents_match']
+                print(platform + ': verified payload contents ' + ('match' if match else 'changed'), flush=True)
             (args.directory / 'payload-comparison.json').write_text(json.dumps(result, indent=2) + '\n')
-    if not all(item['payload_bytes_match'] for item in result['platforms'].values()):
+    gate = 'verified_contents_match' if args.verify_nss_integrity else 'payload_bytes_match'
+    if not all(item[gate] for item in result['platforms'].values()):
         raise ValueError('Browser payload bytes changed; inspect code and debug differences')
 
 

@@ -373,3 +373,19 @@ with identical archives in all modes. Net paths removed per pair: Linux AMD64
 1,408,793; Linux ARM64 1,417,683; Darwin ARM64 1,381,646; Windows AMD64 1,413,986;
 Windows ARM64 1,428,014. Linux AMD64 at `9cb5359` also passes full browser and
 native rendering validation. Cross-platform full validation remains in progress.
+
+## NSS integrity-file variation
+
+The full Linux AMD64 payload comparison at `9cb5359` finds identical binaries,
+resources, tar metadata, and member order. Only four NSS `.chk` files differ;
+the compressed payload changes by two bytes. NSS 3.61's original signer creates
+a fresh DSA key and signature per invocation. This predates the performance
+changes; [upstream tracks the same reproducibility issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1902078).
+
+An explicit `--verify-nss-integrity` comparison mode verifies every integrity
+file against its exact module SHA-256 with pinned cryptography. Both artifacts
+must retain identical DSA parameters. Whole-tar hashing then normalizes only
+those verified file bodies; every other tar byte remains covered, including
+metadata and ordering. Invalid signatures, changed modules, altered metadata,
+and missing files fail. Default compressed-byte equality stays unchanged.
+Runtime signing and cryptographic checks remain unchanged.

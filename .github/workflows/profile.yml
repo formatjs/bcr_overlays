@@ -15,6 +15,11 @@ on:
         type: choice
         default: browser
         options: [browser, cold-browser]
+      verify_nss_integrity:
+        description: Verify randomized NSS signatures while comparing all other payload bytes
+        required: false
+        type: boolean
+        default: false
       diagnose_payload:
         description: Include tar member hashes and metadata when comparing payloads
         required: false
@@ -43,6 +48,15 @@ jobs:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
+      - uses: actions/setup-python@v7
+        if: inputs.verify_nss_integrity
+        with:
+          python-version: '3.13'
+      - name: Install pinned integrity verifier
+        if: inputs.verify_nss_integrity
+        run: >-
+          python -m pip install --require-hashes --only-binary=:all:
+          -r tools/ci/integrity_requirements.txt
       - name: Collect Bazel metrics and sanitized timing summaries
         env:
           BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_RO_PUBLIC_KEY }}
@@ -59,10 +73,12 @@ jobs:
           REVISION_KIND: ${{ inputs.revision_kind }}
           PLATFORM: ${{ inputs.platform }}
           DIAGNOSE_PAYLOAD: ${{ inputs.diagnose_payload }}
+          VERIFY_NSS_INTEGRITY: ${{ inputs.verify_nss_integrity }}
         run: |
           arguments=(--baseline "$BASELINE_SHA" --revision "$BUILD_SHA" --directory "$RUNNER_TEMP/build-profile" --revision-kind "$REVISION_KIND")
           if [[ "$PLATFORM" != all ]]; then arguments+=(--platform "$PLATFORM"); fi
           if [[ "$DIAGNOSE_PAYLOAD" == true ]]; then arguments+=(--diagnose-members); fi
+          if [[ "$VERIFY_NSS_INTEGRITY" == true ]]; then arguments+=(--verify-nss-integrity); fi
           python3 -m tools.ci.compare_payloads "${arguments[@]}"
       - uses: actions/upload-artifact@v7
         if: always()

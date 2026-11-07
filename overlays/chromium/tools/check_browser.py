@@ -76,17 +76,33 @@ def windows_version(browser):
     return f'{product} {major}.{minor}.{build}.{patch}'
 
 
+def sample_browser(process, directory):
+    if sys.platform != 'darwin':
+        return ''
+    sample = directory / 'browser-timeout.sample.txt'
+    try:
+        subprocess.run(['/usr/bin/sample', str(process.pid), '1', '1', '-file', str(sample)],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT,
+                       check=True, timeout=10)
+        return '\nmacOS process sample:\n' + sample.read_text(errors='replace')[:24000]
+    except (OSError, subprocess.SubprocessError) as error:
+        return '\nmacOS process sample unavailable: ' + str(error)
+
+
 def run(browser, arguments, environment, directory, timeout):
     # Helpers can retain inherited pipes after the browser has exited.
     with tempfile.TemporaryFile() as stdout, tempfile.TemporaryFile() as stderr:
         timed_out = None
-        try:
-            result = subprocess.run(
-                [str(browser), *arguments], cwd=directory, env=environment,
-                stdout=stdout, stderr=stderr, timeout=timeout,
-            )
-        except subprocess.TimeoutExpired as error:
-            timed_out = error
+        diagnostic = ''
+        with subprocess.Popen([str(browser), *arguments], cwd=directory, env=environment,
+                              stdout=stdout, stderr=stderr) as process:
+            try:
+                process.wait(timeout=timeout)
+            except subprocess.TimeoutExpired as error:
+                diagnostic = sample_browser(process, directory)
+                process.kill()
+                process.wait(timeout=5)
+                timed_out = error
         stdout.seek(0)
         stderr.seek(0)
         output = stdout.read().decode('utf-8', errors='replace')
@@ -94,9 +110,10 @@ def run(browser, arguments, environment, directory, timeout):
         if timed_out is not None:
             captured = [name + ': ' + value[-8000:]
                         for name, value in [('stdout', output), ('stderr', errors)] if value]
-            raise RuntimeError(f'browser timed out after {timeout}s: ' + '\n'.join(captured)) from timed_out
-        if result.returncode:
-            raise RuntimeError(f'browser exited {result.returncode}: {errors[-8000:]}')
+            raise RuntimeError(f'browser timed out after {timeout}s: ' + '\n'.join(captured)
+                               + diagnostic) from timed_out
+        if process.returncode:
+            raise RuntimeError(f'browser exited {process.returncode}: {errors[-8000:]}')
         return output
 
 

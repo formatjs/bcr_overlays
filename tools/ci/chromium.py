@@ -4,7 +4,6 @@
 import argparse
 import gzip
 import hashlib
-import io
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -56,19 +55,9 @@ def checksum(path):
         return hashlib.file_digest(source, 'sha256').hexdigest()
 
 
-def package(bundle, destination, target, revision):
+def package_payload(bundle, payload, target):
     validate_binary(bundle, target)
-    if not re.fullmatch(r'[0-9a-f]{40}', revision):
-        raise ValueError('Expected a full source commit SHA')
-    destination.mkdir(parents=True, exist_ok=True)
-    archive = destination / ('chromium-' + target['id'] + '.tar.gz')
-    manifest = (json.dumps({
-        'schema_version': 1,
-        'platform': target['id'],
-        'version': CONFIGURATION['version'],
-        'revision': revision,
-        'executable': target['executable'],
-    }, indent=2) + '\n').encode()
+    payload.parent.mkdir(parents=True, exist_ok=True)
 
     def normalize(member):
         if member.islnk():
@@ -82,16 +71,45 @@ def package(bundle, destination, target, revision):
         member.mode = 0o755 if member.isdir() or member.mode & 0o111 else 0o644
         return member
 
-    with archive.open('wb') as raw, gzip.GzipFile(
+    with payload.open('wb') as raw, gzip.GzipFile(
             filename='', mode='wb', fileobj=raw, mtime=0, compresslevel=6) as compressed:
         with tarfile.open(fileobj=compressed, mode='w|', format=tarfile.PAX_FORMAT,
                           dereference=False) as output:
-            member = normalize(tarfile.TarInfo('artifact.json'))
-            member.size = len(manifest)
-            output.addfile(member, io.BytesIO(manifest))
             output.add(bundle, arcname='bundle', filter=normalize)
+    return payload
+
+
+def stamp_payload(payload, destination, target, revision):
+    if not re.fullmatch(r'[0-9a-f]{40}', revision):
+        raise ValueError('Expected a full source commit SHA')
+    destination.mkdir(parents=True, exist_ok=True)
+    archive = destination / ('chromium-' + target['id'] + '.tar.gz')
+    manifest = (json.dumps({
+        'schema_version': 1,
+        'platform': target['id'],
+        'version': CONFIGURATION['version'],
+        'revision': revision,
+        'executable': target['executable'],
+    }, indent=2) + '\n').encode()
+    member = tarfile.TarInfo('artifact.json')
+    member.size = len(manifest)
+    member.mode = 0o644
+    # No tar end marker here: the cached payload completes this tar stream.
+    prefix = member.tobuf(format=tarfile.PAX_FORMAT) + manifest
+    prefix += b'\0' * (-len(manifest) % tarfile.BLOCKSIZE)
+    with archive.open('wb') as output:
+        with gzip.GzipFile(filename='', mode='wb', fileobj=output, mtime=0, compresslevel=6) as compressed:
+            compressed.write(prefix)
+        with payload.open('rb') as source:
+            shutil.copyfileobj(source, output, length=1024 * 1024)
     archive.with_suffix(archive.suffix + '.sha256').write_text(checksum(archive) + '\n')
     return archive
+
+
+def package(bundle, destination, target, revision):
+    with tempfile.TemporaryDirectory(prefix='chromium-payload-') as temporary:
+        payload = package_payload(bundle, Path(temporary) / 'bundle.tar.gz', target)
+        return stamp_payload(payload, destination, target, revision)
 
 
 def grant_windows_sandbox_access(bundle):
@@ -203,12 +221,13 @@ def artifact_outputs(events, label):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['matrix', 'build', 'package', 'smoke'])
+    parser.add_argument('command', choices=['matrix', 'build', 'package', 'package-payload', 'stamp-payload', 'smoke'])
     parser.add_argument('--platform', choices=sorted(PLATFORMS))
     parser.add_argument('--revision')
     parser.add_argument('--bundle', type=Path)
     parser.add_argument('--directory', type=Path)
     parser.add_argument('--artifact', type=Path)
+    parser.add_argument('--payload', type=Path)
     parser.add_argument('--screenshots', type=Path, help='Rendering evidence directory for smoke tests')
     parser.add_argument('--buildbuddy-hosted', action='store_true',
                         help='Use credentials injected by the BuildBuddy workflow runner')
@@ -216,10 +235,19 @@ def main():
     if args.command == 'matrix':
         print(json.dumps({'include': CONFIGURATION['platforms']}, separators=(',', ':')))
         return
+    if args.command == 'package-payload':
+        if not args.platform or not args.bundle or not args.payload:
+            parser.error('--platform, --bundle and --payload are required')
+        print(package_payload(args.bundle, args.payload, PLATFORMS[args.platform]))
+        return
     if not args.platform or not args.revision or not args.directory:
         parser.error('--platform, --revision and --directory are required')
     target = PLATFORMS[args.platform]
-    if args.command == 'build':
+    if args.command == 'stamp-payload':
+        if not args.payload:
+            parser.error('--payload is required')
+        print(stamp_payload(args.payload, args.directory, target, args.revision))
+    elif args.command == 'build':
         print(build(target, args.directory, args.revision, hosted=args.buildbuddy_hosted))
     elif args.command == 'package':
         if not args.bundle:

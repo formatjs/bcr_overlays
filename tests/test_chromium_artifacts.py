@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from unittest import mock
 
-from tools.ci.chromium import PLATFORMS, ROOT, binary_platform, build, checksum, package, unpack, artifact_outputs
+from tools.ci.chromium import PLATFORMS, ROOT, binary_platform, build, checksum, package, package_payload, stamp_payload, unpack, artifact_outputs
 
 
 REVISION = '1' * 40
@@ -35,6 +35,17 @@ class ArtifactsTest(unittest.TestCase):
 
     def archive(self):
         return package(self.bundle, self.root / 'artifacts', self.target, REVISION)
+
+    def test_revision_stamping_reuses_compressed_payload_without_recompression(self):
+        payload = package_payload(self.bundle, self.root / 'payload.tar.gz', self.target)
+        original = payload.read_bytes()
+        for revision in (REVISION, '2' * 40):
+            archive = stamp_payload(payload, self.root / revision, self.target, revision)
+            self.assertTrue(archive.read_bytes().endswith(original))
+            relocated = unpack(archive, self.root / ('relocated-' + revision), self.target, revision)
+            self.assertEqual((relocated / 'chrome').read_bytes(), elf())
+            self.assertEqual((relocated / 'resources.pak').read_bytes(), b'locale data')
+        self.assertEqual(payload.read_bytes(), original)
 
     def windows_archive(self):
         self.target = PLATFORMS['windows-amd64']

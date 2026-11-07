@@ -55,3 +55,19 @@ on its Linux worker, including the private Xvfb integration test. Independent
 compatibility consumers build in a separate BuildBuddy action so their own module
 and toolchain configuration remains isolated. GitHub retains Python metadata
 checks and native artifact smoke/rendering tests.
+
+BuildBuddy timing profiles are available on each child Bazel invocation, rather
+than the outer workflow run. `Profile BuildBuddy builds` collects action counts,
+cache statistics and sanitized timing summaries for a commit; raw traces remain
+in BuildBuddy.
+
+Profiling `3b90aa7` found 155,835–202,264 registered actions per full browser
+configuration. Warm browser builds took 324–512 seconds while executing only
+one or two remote actions. Windows archive compression consumed 221–229 seconds.
+Archives now cache the compressed bundle independently of the commit manifest.
+Revision stamping prepends a deterministic gzip member, preserving the existing
+tar layout, checksums and provenance validation without recompressing the bundle.
+Bazel action keys were checked across two revisions: payload unchanged, stamp
+changed. A 5.9 GB real DLL/PDB bundle took 138.6 seconds to compress locally;
+reusing its 1.12 GB compressed payload took 1.3–5.7 seconds to stamp. Full CI
+wall-time improvement still needs comparison after the new payload cache warms.

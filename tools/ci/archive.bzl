@@ -11,6 +11,7 @@ def _archive_impl(ctx):
         fail("set --//tools/ci:revision to the full source commit SHA")
     archive = ctx.actions.declare_file(ctx.label.name + "/chromium-" + ctx.attr.platform + ".tar.gz")
     checksum = ctx.actions.declare_file(archive.basename + ".sha256", sibling = archive)
+    payload = ctx.actions.declare_file(ctx.label.name + "/bundle.tar.gz")
     runtime = ctx.attr._python[platform_common.ToolchainInfo].py3_runtime
     ctx.actions.run(
         executable = runtime.interpreter,
@@ -18,9 +19,28 @@ def _archive_impl(ctx):
             "-I",
             "-B",
             ctx.file._script.path,
-            "package",
+            "package-payload",
             "--bundle",
             bundle[0].path,
+            "--payload",
+            payload.path,
+            "--platform",
+            ctx.attr.platform,
+        ],
+        inputs = depset(bundle + [ctx.file._script, ctx.file._configuration], transitive = [runtime.files]),
+        outputs = [payload],
+        mnemonic = "ChromiumPayloadArchive",
+        progress_message = "Compressing Chromium %s" % ctx.attr.platform,
+    )
+    ctx.actions.run(
+        executable = runtime.interpreter,
+        arguments = [
+            "-I",
+            "-B",
+            ctx.file._script.path,
+            "stamp-payload",
+            "--payload",
+            payload.path,
             "--directory",
             archive.dirname,
             "--platform",
@@ -28,7 +48,7 @@ def _archive_impl(ctx):
             "--revision",
             revision,
         ],
-        inputs = depset(bundle + [ctx.file._script, ctx.file._configuration], transitive = [runtime.files]),
+        inputs = depset([payload, ctx.file._script, ctx.file._configuration], transitive = [runtime.files]),
         outputs = [archive, checksum],
         mnemonic = "ChromiumArchive",
         progress_message = "Packaging Chromium %s" % ctx.attr.platform,

@@ -23,7 +23,8 @@ target, then rerun with `--generated-root` pointing at the platform's native
 Bazel output directory. The built GRD files discover inputs; Bazel regenerates
 the resources from declared sources.
 
-To recapture, apply `capture/mac_sdk_cross.patch` to the pinned Chromium checkout,
+To recapture, apply `capture/mac_sdk_cross.patch` and `capture/v8_snapshot_cross.patch`
+to the pinned Chromium checkout,
 materialize the source revisions in `capture/inputs.json`, and configure
 `target_os="mac"`, `target_cpu="arm64"`, `use_system_xcode=false`,
 `clang_use_chrome_plugins=false`, `mac_sdk_path`, and `mac_llvm_bin_path`.

@@ -11,6 +11,10 @@
     {
       "path": "platforms/darwin_arm64/capture/mac_sdk_cross.patch",
       "sha256": "391db355655f028106fca989f024383d581e8596288b14b42f02b85ceb57c057"
+    },
+    {
+      "path": "platforms/darwin_arm64/capture/v8_snapshot_cross.patch",
+      "sha256": "427163eb841e5b0daf38efaeb131d990e53215c394ef9193c159a04b78fb23e4"
     }
   ],
   "sources": [

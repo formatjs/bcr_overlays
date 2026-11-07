@@ -1,0 +1,11 @@
+--- a/v8/BUILD.gn
++++ b/v8/BUILD.gn
+@@ -330,7 +330,7 @@
+   # ARM64. Enable it by default for simulator builds and when native code
+   # supports it as well. On Mac, control-flow integrity does not work so we
+   # avoid enabling it when using the simulator.
+-  v8_control_flow_integrity = v8_current_cpu == "arm64" &&
++  v8_control_flow_integrity = v8_current_cpu == "arm64" && target_os != "win" && target_os != "mac" &&
+                               ((v8_target_is_simulator && target_os != "mac") ||
+                                arm_control_flow_integrity != "none")
+ 

@@ -18,6 +18,10 @@
                 {
                     "path": "platforms/darwin_arm64/capture/mac_sdk_cross.patch",
                     "sha256": "391db355655f028106fca989f024383d581e8596288b14b42f02b85ceb57c057"
+                },
+                {
+                    "path": "platforms/darwin_arm64/capture/v8_snapshot_cross.patch",
+                    "sha256": "427163eb841e5b0daf38efaeb131d990e53215c394ef9193c159a04b78fb23e4"
                 }
             ],
             "sources": [
@@ -36,8 +40,8 @@
             ]
         }
     },
-    "graph_sha256": "fdf6f7ca6caadbe0ac71cd168dabd805b001f56f33bbcd41977ed354308cac1b",
-    "compressed_sha256": "80393473456112ad24b3866e00f0b0856c96c1de3e57986622ad2b69886fa4b7",
+    "graph_sha256": "35146676327cd059edd7063db625516d73941b8445634c99c7c89df55d0d3c6f",
+    "compressed_sha256": "35a0d86ed3469fa2ae0052c3236e4efa52d39dcd103efe1bf8168af3842da1f2",
     "target_types": {
         "action": 8342,
         "action_foreach": 35,

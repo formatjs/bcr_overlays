@@ -79,6 +79,27 @@ class CaptureNativeGraphTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'snapshot architecture mismatch'):
             self.run_capture()
 
+    def test_snapshot_return_address_signing_matches_runtime(self):
+        generator = '//v8:mksnapshot(//toolchain:host)'
+        signing = 'V8_ENABLE_CONTROL_FLOW_INTEGRITY'
+        for native, host in [(False, False), (True, True), (False, True), (True, False)]:
+            with self.subTest(native=native, host=host):
+                self.project['targets']['//v8:v8_base_without_compiler'] = {
+                    'type': 'source_set', 'defines': [signing] if native else [],
+                }
+                self.project['targets'][generator] = {
+                    'type': 'executable',
+                    'defines': ['V8_TARGET_ARCH_ARM64'] + ([signing] if host else []),
+                }
+                self.project['targets']['//v8:run_mksnapshot_default'] = {
+                    'type': 'action', 'deps': [generator], 'args': ['--target_arch=arm64'],
+                }
+                if native == host:
+                    self.run_capture()
+                else:
+                    with self.assertRaisesRegex(ValueError, 'snapshot return-address ABI mismatch'):
+                        self.run_capture()
+
     def test_rejects_missing_dependency_or_output_producer(self):
         self.project['targets']['//:browser']['deps'].append('//:absent')
         with self.assertRaisesRegex(ValueError, 'missing dependency'):

@@ -49,6 +49,14 @@ def validate_snapshot_architecture(targets):
     if expected not in targets[generators[0]].get('defines', []):
         raise ValueError(f'snapshot architecture mismatch: {architecture} requires '
                          f'{expected} in {generators[0]}')
+    runtime = targets.get('//v8:v8_base_without_compiler')
+    if runtime is not None:
+        signing = 'V8_ENABLE_CONTROL_FLOW_INTEGRITY'
+        native_signing = signing in runtime.get('defines', [])
+        host_signing = signing in targets[generators[0]].get('defines', [])
+        if native_signing != host_signing:
+            raise ValueError('snapshot return-address ABI mismatch: '
+                             f'{signing} differs between generator and runtime')
 
 
 def capture(project, runtime, source_root, replacements, runtime_inputs=None):

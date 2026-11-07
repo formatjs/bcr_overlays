@@ -9,14 +9,14 @@
             "maintainer_patches": [
                 {
                     "path": "platforms/windows_arm64/capture/v8_snapshot_cross.patch",
-                    "sha256": "ce83b10b144e00719ca115d0bc55d352acd87819dd15a478bf05b8927372de9d"
+                    "sha256": "4bbfbd1123f0c43364d6a5474be452536aa864ac55a7a59ed606ab159146452d"
                 }
             ],
             "snapshot_toolchain": "//build/toolchain/linux:clang_x64_v8_arm64"
         }
     },
-    "graph_sha256": "984e8bd10c6f9b96c72f66e818f8f8e63d434c1e39512048d19186bd2f3e7839",
-    "compressed_sha256": "5d5c86a6fdd47ec13ddec3a8e9f802dff01e10dce1b33ce9c4561c9ddfc333bd",
+    "graph_sha256": "58339c16b26ce9406bd278167e5a3172776b9aa5b38c8ec25249ecbc13110001",
+    "compressed_sha256": "5ece955bd6c5a747353c7bd2f233a15b356a5513f82c845da6b54548cb392e53",
     "target_types": {
         "action": 7930,
         "action_foreach": 42,

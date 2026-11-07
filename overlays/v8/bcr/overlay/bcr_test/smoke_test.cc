@@ -2,7 +2,23 @@
 #include <memory>
 
 #include "libplatform/libplatform.h"
+#include "v8-debug.h"
 #include "v8.h"
+
+namespace {
+void CaptureNativeStack(const v8::FunctionCallbackInfo<v8::Value>& arguments) {
+  auto* isolate = arguments.GetIsolate();
+  auto stack =
+      v8::StackTrace::CurrentStackTrace(isolate, 10, v8::StackTrace::kDetailed);
+  auto expected = v8::String::NewFromUtf8Literal(isolate, "nativeCaller");
+  bool found = false;
+  for (int index = 0; index < stack->GetFrameCount(); ++index) {
+    auto name = stack->GetFrame(isolate, index)->GetFunctionName();
+    found |= !name.IsEmpty() && name->StringEquals(expected);
+  }
+  arguments.GetReturnValue().Set(found);
+}
+}  // namespace
 
 int main(int argc, char** argv) {
   if (!v8::V8::InitializeICUDefaultLocation(argv[0])) return 1;
@@ -23,6 +39,11 @@ int main(int argc, char** argv) {
     auto context = v8::Context::New(isolate);
     v8::Context::Scope context_scope(context);
     v8::TryCatch errors(isolate);
+    context->Global()
+        ->Set(context,
+              v8::String::NewFromUtf8Literal(isolate, "captureNativeStack"),
+              v8::Function::New(context, CaptureNativeStack).ToLocalChecked())
+        .Check();
     auto source = v8::String::NewFromUtf8Literal(isolate,
 #ifdef EXPECT_INTL
       R"JS(
@@ -39,6 +60,8 @@ int main(int argc, char** argv) {
 #endif
       R"JS(
       (() => {
+        function nativeCaller() { return captureNativeStack(); }
+        if (!nativeCaller()) throw Error('native callback stack trace failed');
         function fib(n) { return n < 2 ? n : fib(n - 1) + fib(n - 2); }
         if (fib(12) !== 144) throw Error('JavaScript execution failed');
         if ((2n ** 64n).toString() !== '18446744073709551616')
@@ -93,6 +116,7 @@ int main(int argc, char** argv) {
   v8::V8::DisposePlatform();
   if (!passed) return 1;
   std::cout << "V8 " << v8::V8::GetVersion()
-            << ": JavaScript, BigInt, WebAssembly, buffers, microtasks passed\n";
+            << ": JavaScript, native callbacks, BigInt, WebAssembly, buffers, "
+               "microtasks passed\n";
   return 0;
 }

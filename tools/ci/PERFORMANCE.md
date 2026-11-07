@@ -8,8 +8,9 @@ registered actions are not executed compiles.
 
 Target: under one hour per supported triple on BuildBuddy, including artifact
 packaging. Preserve hermetic toolchains, declared inputs, compiler options,
-target ABIs, and native rendering smoke coverage. No successful cold result has
-been established. The user's observed build effort, including retries, is about
+target ABIs, and native rendering smoke coverage. All five cold builds at
+`24375b5` finish in 35m56s–46m04s and pass native rendering smoke. Windows
+PDB byte variation remains under investigation below. The user's observed build effort, including retries, is about
 2.5 hours; the mixed-cache profile below is not a cold baseline.
 
 Measure with fresh Bazel output state and action-cache reuse disabled. Record
@@ -417,6 +418,46 @@ the default payload equality gate stays strict. The diagnostics do not authorize
 ignoring arbitrary debug data. Cold artifacts must also be compared with the
 validated `6c9b871` outputs, whose build inputs match the cold candidate.
 
+## Verified cold cohort
+
 The five cold trials at `24375b5` combine 128 jobs with measured gzip level 1.
-Toolchains, compiler options, ABIs, and native rendering tests stay unchanged.
-Their results remain pending; no successful sub-hour cold claim yet.
+Each uses 16 client CPUs, 32GB memory, and a 12GiB JVM heap. Toolchains, compiler
+options, ABIs, and native rendering tests stay unchanged.
+
+| Target | Complete BB workflow | Executed C++ compiles | Executed Bazel actions |
+| --- | ---: | ---: | ---: |
+| [Darwin ARM64](https://formatjs.buildbuddy.io/invocation/b46d94df-3dd6-41c8-9ac7-f3cdb04b040e) | 35m56s | 54,966 | 127,570 |
+| [Windows MSVC AMD64](https://formatjs.buildbuddy.io/invocation/55244f41-71c6-4117-80c0-7a0732ce22ce) | 38m38s | 55,019 | 122,379 |
+| [Windows MSVC ARM64](https://formatjs.buildbuddy.io/invocation/ba0ba31d-81cf-4c97-9297-f6aa5a63694c) | 39m38s | 55,764 | 124,685 |
+| [Linux AMD64](https://formatjs.buildbuddy.io/invocation/61e548c4-e2dd-4b0e-9801-936011f91e61) | 40m36s | 75,286 | 154,750 |
+| [Linux ARM64](https://formatjs.buildbuddy.io/invocation/3d45f95a-cfb9-48d3-8777-7e2ffa4dc364) | 46m04s | 77,537 | 161,470 |
+
+Times include workflow setup, source fetching, analysis, linking, packaging,
+and artifact upload. Each report verifies zero reused actions, a fresh Bazel
+output root and repository download cache, disabled disk/remote action-cache
+reads, and disabled in-flight merging. Shared remote CAS and worker input caches
+are not cleared. The cohort executes 690,854 actions, including 318,572 C++
+compiles. All five exact cold artifacts pass native ABI and rendering smoke.
+
+Cold profiles show 3m33s–3m58s analysis and 31m08s–41m16s execution. Critical
+paths are 6m43s–10m55s, below execution time: aggregate throughput dominates.
+Mean Bazel CPU usage is 7.5–11.3 cores; peak sampled heap is 9.2–10.7GB.
+Sampled worker queues average 59–83ms. These spans overlap; task sums are not
+wall-time savings. Increasing concurrency again needs a measured heap budget.
+
+Linux and Darwin payload contents match the validated `6c9b871` outputs after
+verifying existing randomized NSS integrity files where present. Both Windows
+native tests pass; byte comparisons still flag only `chrome.dll`'s CodeView GUID
+and its PDB. No comparison exception hides those differences. PDB stream
+diagnostics find only two changed streams out of 39,954: the PDB GUID and
+`unexpire_flags_gen.obj`. All other streams, including linker environment paths,
+are identical. The upstream generator writes `sys.argv[0]` into a source comment;
+our runner had supplied its random temporary directory. That changed the source
+checksum and derived PDB GUID despite identical runtime code.
+
+Invoke scripts and response files through stable paths relative to the staged
+build directory. Keep temporary isolation and upstream generators intact. A real
+replay of the pinned generator produces varying `.cc`/`.h` bytes before the fix
+and identical `.cc`/`.h`/`.inc` bytes afterward. A regression exercises the same
+provenance pattern across distinct execution roots. No debug data is stripped or
+ignored. Final platform validation follows this hermeticity fix.

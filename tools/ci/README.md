@@ -40,13 +40,18 @@ GitHub downloads reuse the existing organization secret
 or GitHub write token is needed. Pull requests build without merging the base
 branch so artifact provenance matches the reported commit.
 
-Full Chromium packaging and relocated rendering smoke pass on Linux amd64 through
-BuildBuddy and native GitHub Actions. Linux ARM64 has a complete captured graph;
-full compilation and native browser smoke remain in progress. All five GN graphs
-are captured, including explicit Windows SDK debugger runtime inputs.
+All five full browser builds and native rendering checks passed on `8e59628`.
+macOS and Windows use the same Linux cross-build and native smoke handoff.
 
-macOS ARM64 and Windows MSVC amd64/ARM64 base, Mojo and network executables cross-link.
-`native.yml` hands those executables to native runners for allocator, JSON/files/
-threads, message-pipe, shared-memory and TCP loopback smoke checks. Full macOS and Windows
-browser translation remains unfinished; component probes do not replace browser
-artifact and rendering smoke.
+Component builds also run in BuildBuddy, one action per platform. Their archives
+include Rust and Expat probes; macOS and Windows additionally include allocator,
+base, Mojo, TCP, graphics, V8, Dawn, ANGLE and GPU probes, plus DXC on Windows.
+`platform-components.yml` accepts only BuildBuddy statuses, verifies invocation
+provenance and checksums, then executes downloaded probes on matching native
+GitHub runners. GitHub Actions never invokes Bazel.
+
+Linux runtime tests build remotely from a hosted BuildBuddy action and execute
+on its Linux worker, including the private Xvfb integration test. Independent
+compatibility consumers build in a separate BuildBuddy action so their own module
+and toolchain configuration remains isolated. GitHub retains Python metadata
+checks and native artifact smoke/rendering tests.

@@ -64,7 +64,8 @@ def main():
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--bazel', default='bazel')
     parser.add_argument('--output-user-root')
-    parser.add_argument('--platform', action='append', choices=['darwin-arm64', 'windows-amd64', 'windows-arm64'])
+    parser.add_argument('--bazel-arg', action='append', default=[])
+    parser.add_argument('--platform', action='append', choices=['linux-amd64', 'linux-arm64', 'darwin-arm64', 'windows-amd64', 'windows-arm64'])
     args = parser.parse_args()
     startup = [args.bazel]
     if args.output_user_root:
@@ -97,6 +98,8 @@ def main():
     gpu_platforms = ['darwin-arm64', 'windows-amd64', 'windows-arm64']
     requested = set(args.platform or v8_platforms)
     targets = [(target, platform) for target, platform in targets if platform in requested]
+    targets += [(probe + '-' + platform, platform)
+                for platform in sorted(requested) for probe in ('rust', 'expat')]
     v8_platforms = [platform for platform in v8_platforms if platform in requested]
     dxc_platforms = [platform for platform in dxc_platforms if platform in requested]
     angle_platforms = [platform for platform in angle_platforms if platform in requested]
@@ -105,7 +108,7 @@ def main():
              + ['dxc-' + platform for platform in dxc_platforms] + ['angle-' + platform for platform in angle_platforms]
              + ['gpu-' + platform for platform in gpu_platforms])
     expression = 'set(' + ' '.join('//tools/ci:' + name for name in names) + ')'
-    command = startup + ['cquery', expression,
+    command = startup + ['cquery', expression, *args.bazel_arg,
                         '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',
                         '--repo_env=BAZEL_WINDOWS_SDK_EULA=1', '--output=starlark',
                         '--starlark:expr=json.encode({"label": str(target.label), "files": [f.path for f in target.files.to_list()]})']

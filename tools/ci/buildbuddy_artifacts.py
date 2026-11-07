@@ -25,9 +25,12 @@ def invocation_id(url):
     return match.group(1)
 
 
-def artifact_uris(response, revision, target):
+def artifact_uris(response, revision, target, kind='browser'):
     if target not in PLATFORMS or not re.fullmatch(r'[0-9a-f]{40}', revision):
         raise ValueError('Invalid artifact platform or commit')
+    if kind not in ('browser', 'components'):
+        raise ValueError('Invalid artifact kind')
+    prefix = 'Chromium ' if kind == 'browser' else 'Chromium components '
     invocations = response.get('invocation', [])
     if len(invocations) != 1:
         raise ValueError('Expected exactly one BuildBuddy invocation')
@@ -35,11 +38,11 @@ def artifact_uris(response, revision, target):
     if (invocation.get('commitSha') != revision
             or invocation.get('repoUrl', '').removesuffix('.git')
             != 'https://github.com/formatjs/chromium'
-            or invocation.get('pattern') != 'Chromium ' + target
+            or invocation.get('pattern') != prefix + target
             or not invocation.get('success')
             or invocation.get('invocationStatus') != 'COMPLETE_INVOCATION_STATUS'):
         raise ValueError('Cross-build invocation does not match successful commit')
-    archive = 'chromium-' + target + '.tar.gz'
+    archive = 'chromium-' + ('' if kind == 'browser' else 'components-') + target + '.tar.gz'
     uris = {}
     for name in [archive, archive + '.sha256']:
         artifacts = [item for item in invocation.get('artifacts', [])
@@ -63,14 +66,14 @@ def api_request(method, body, key):
     return urllib.request.urlopen(request, timeout=120)
 
 
-def download(url, revision, target, destination, key):
+def download(url, revision, target, destination, key, kind='browser'):
     if not key:
         raise ValueError('BuildBuddy read-only key is not configured')
     identifier = invocation_id(url)
     with api_request('GetInvocation', {
         'selector': {'invocation_id': identifier}, 'include_artifacts': True,
     }, key) as response:
-        uris = artifact_uris(json.load(response), revision, target)
+        uris = artifact_uris(json.load(response), revision, target, kind)
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists():
         raise FileExistsError(destination)
@@ -87,7 +90,7 @@ def download(url, revision, target, destination, key):
                     if total > limit:
                         raise ValueError('Artifact exceeds size limit: ' + name)
                     output.write(chunk)
-        archive = staging / ('chromium-' + target + '.tar.gz')
+        archive = staging / ('chromium-' + ('' if kind == 'browser' else 'components-') + target + '.tar.gz')
         expected = archive.with_suffix('.gz.sha256').read_text().strip()
         if not re.fullmatch(r'[0-9a-f]{64}', expected) or checksum(archive) != expected:
             raise ValueError('Artifact SHA256 mismatch')
@@ -97,7 +100,7 @@ def download(url, revision, target, destination, key):
 def main():
     download(os.environ['INVOCATION_URL'], os.environ['BUILD_SHA'],
              os.environ['TARGET_PLATFORM'], Path(os.environ['ARTIFACT_DIRECTORY']),
-             os.environ.get('BUILDBUDDY_API_KEY', ''))
+             os.environ.get('BUILDBUDDY_API_KEY', ''), os.environ.get('ARTIFACT_KIND', 'browser'))
 
 
 if __name__ == '__main__':

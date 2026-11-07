@@ -14,7 +14,7 @@ jobs:
   platform:
     if: >-
       github.event.sender.login == 'buildbuddy-io[bot]' &&
-      startsWith(github.event.context, 'Chromium ')
+      contains(fromJSON('["Chromium linux-amd64", "Chromium linux-arm64", "Chromium darwin-arm64", "Chromium windows-amd64", "Chromium windows-arm64"]'), github.event.context)
     runs-on: ubuntu-24.04
     outputs:
       id: ${{ steps.target.outputs.id }}

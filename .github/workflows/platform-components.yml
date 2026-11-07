@@ -1,201 +1,324 @@
 name: Cross-compiled Chromium components
-on: [push, pull_request]
-concurrency:
-  group: components-${{ github.ref }}
-  cancel-in-progress: true
+on:
+  status:
 permissions:
   contents: read
+concurrency:
+  group: components-${{ github.event.context }}-${{ github.event.sha }}
+  cancel-in-progress: true
 jobs:
-  toolchains:
+  platform:
+    if: >-
+      github.event.sender.login == 'buildbuddy-io[bot]' &&
+      startsWith(github.event.context, 'Chromium components ')
     runs-on: ubuntu-24.04
-    strategy:
-      fail-fast: false
-      matrix:
-        platform: [darwin-arm64, windows-amd64, windows-arm64]
+    outputs:
+      id: ${{ steps.target.outputs.id }}
+      os: ${{ steps.target.outputs.os }}
+      arch: ${{ steps.target.outputs.arch }}
+      runner: ${{ steps.target.outputs.runner }}
     steps:
       - uses: actions/checkout@v7
-      - uses: bazel-contrib/setup-bazel@0.19.1
         with:
-          bazelisk-cache: true
-          repository-cache: true
-          cache-version: components-${{ matrix.platform }}
-      - name: Cross-compile platform components
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - id: target
         env:
-          PLATFORM: ${{ matrix.platform }}
-          BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA: '1'
-          BAZEL_WINDOWS_SDK_EULA: '1'
-          BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_RO_PUBLIC_KEY }}
+          STATUS_CONTEXT: ${{ github.event.context }}
         run: |
-          targets=()
-          for probe in rust expat allocator base ipc network graphics v8 dawn angle gpu; do
-            targets+=("//tools/ci:$probe-$PLATFORM")
-          done
-          if [[ "$PLATFORM" == windows-* ]]; then
-            targets+=("//tools/ci:dxc-$PLATFORM")
-          fi
-          cache=()
-          if [[ -n "$BUILDBUDDY_API_KEY" ]]; then
-            cache+=(--remote_cache=grpcs://formatjs.buildbuddy.io
-              "--remote_header=x-buildbuddy-api-key=$BUILDBUDDY_API_KEY"
-              --remote_upload_local_results=false --remote_download_outputs=toplevel)
-          fi
-          bazel build --jobs=4 "${cache[@]}" \
-            --repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA \
-            --repo_env=BAZEL_WINDOWS_SDK_EULA "${targets[@]}"
-      - name: Collect native smoke artifacts
-        run: python3 -m tools.ci.collect_allocator_probes --platform "${{ matrix.platform }}" --output "$RUNNER_TEMP/allocator-probes"
+          python3 - <<'PYTHON'
+          import os
+          from tools.ci.chromium import PLATFORMS
+          target = PLATFORMS[os.environ['STATUS_CONTEXT'].removeprefix('Chromium components ')]
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              for key in ('id', 'os', 'arch'):
+                  output.write(key + '=' + target[key] + '\n')
+              output.write('runner=' + target['smoke_runner'] + '\n')
+          PYTHON
+
+  record_status:
+    needs: platform
+    runs-on: ubuntu-24.04
+    permissions:
+      statuses: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BUILD_SHA: ${{ github.event.sha }}
+      CHECK_STATE: ${{ github.event.state == 'success' && 'pending' || github.event.state }}
+      TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+    steps:
+      - name: Record component smoke status
+        run: |
+          gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$BUILD_SHA" \
+            -f state="$CHECK_STATE" -f context="Chromium components smoke $TARGET_PLATFORM" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            -f description="BuildBuddy component build: $CHECK_STATE"
+
+  download:
+    needs: [platform, record_status]
+    if: github.event.state == 'success'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - name: Download verified BuildBuddy component artifacts
+        env:
+          BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_RO_PUBLIC_KEY }}
+          INVOCATION_URL: ${{ github.event.target_url }}
+          BUILD_SHA: ${{ github.event.sha }}
+          TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+          ARTIFACT_KIND: components
+          ARTIFACT_DIRECTORY: ${{ runner.temp }}/component-artifact
+        run: python3 -m tools.ci.buildbuddy_artifacts
       - uses: actions/upload-artifact@v7
         with:
-          name: allocators-${{ github.sha }}-${{ matrix.platform }}
-          path: ${{ runner.temp }}/allocator-probes/*
+          name: components-${{ needs.platform.outputs.id }}-${{ github.event.sha }}
+          path: ${{ runner.temp }}/component-artifact/*
           if-no-files-found: error
-  linux-toolchains:
-    runs-on: ubuntu-24.04
+          compression-level: 0
+          retention-days: 7
+
+  windows-allocator:
+    needs: [platform, download]
+    if: needs.platform.outputs.os == 'windows'
+    runs-on: ${{ needs.platform.outputs.runner }}
     steps:
       - uses: actions/checkout@v7
-      - uses: bazel-contrib/setup-bazel@0.19.1
         with:
-          bazelisk-cache: true
-          repository-cache: true
-          cache-version: components-linux
-      - name: Cross-compile Linux Rust and XML parsers
-        run: >-
-          bazel build --jobs=4
-          //tools/ci:rust-linux-amd64 //tools/ci:rust-linux-arm64
-          //tools/ci:expat-linux-amd64 //tools/ci:expat-linux-arm64
-      - name: Run native XML parser probe
-        run: bazel run --jobs=4 //tools/ci:expat_toolchain_probe
-      - name: Run native Rust probe
-        run: bazel run --jobs=4 //tools/ci:rust_toolchain_probe
-  windows-allocator:
-    if: ${{ !cancelled() }}
-    needs: toolchains
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - arch: amd64
-            runner: windows-2022
-          - arch: arm64
-            runner: windows-11-arm
-    runs-on: ${{ matrix.runner }}
-    steps:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
       - uses: actions/download-artifact@v8
         with:
-          name: allocators-${{ github.sha }}-windows-${{ matrix.arch }}
-          path: ${{ runner.temp }}/allocator-probes
+          name: components-${{ needs.platform.outputs.id }}-${{ github.event.sha }}
+          path: ${{ runner.temp }}/component-artifact
+      - name: Check component provenance and architecture
+        shell: bash
+        env:
+          TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+          BUILD_SHA: ${{ github.event.sha }}
+        run: >-
+          python -m tools.ci.components unpack --platform "$TARGET_PLATFORM"
+          --revision "$BUILD_SHA" --directory "$RUNNER_TEMP/components"
+          --artifact "$RUNNER_TEMP/component-artifact/chromium-components-$TARGET_PLATFORM.tar.gz"
+      - name: Exercise Rust and XML parser probes
+        shell: bash
+        env:
+          TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+        run: |
+          suffix=""
+          if [[ "$TARGET_PLATFORM" == windows-* ]]; then suffix=".exe"; fi
+          for probe in rust expat; do
+            file="$RUNNER_TEMP/components/bundle/$probe-$TARGET_PLATFORM$suffix"
+            chmod +x "$file"
+            "$file"
+          done
       - name: Exercise cross-compiled allocator
         shell: pwsh
         run: |
-          & "$env:RUNNER_TEMP/allocator-probes/allocator-windows-${{ matrix.arch }}.exe"
+          & "$env:RUNNER_TEMP/components/bundle/allocator-windows-${{ needs.platform.outputs.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Exercise cross-compiled Chromium base
         shell: pwsh
         run: |
-          & "$env:RUNNER_TEMP/allocator-probes/base-windows-${{ matrix.arch }}.exe"
+          & "$env:RUNNER_TEMP/components/bundle/base-windows-${{ needs.platform.outputs.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Exercise cross-compiled Chromium IPC
         shell: pwsh
         run: |
-          & "$env:RUNNER_TEMP/allocator-probes/ipc-windows-${{ matrix.arch }}.exe"
+          & "$env:RUNNER_TEMP/components/bundle/ipc-windows-${{ needs.platform.outputs.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Exercise cross-compiled Chromium TCP sockets
         shell: pwsh
         run: |
-          & "$env:RUNNER_TEMP/allocator-probes/network-windows-${{ matrix.arch }}.exe"
+          & "$env:RUNNER_TEMP/components/bundle/network-windows-${{ needs.platform.outputs.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Exercise cross-compiled V8
         shell: pwsh
         run: |
-          & "$env:RUNNER_TEMP/allocator-probes/v8-windows-${{ matrix.arch }}/v8-windows-${{ matrix.arch }}.exe"
+          & "$env:RUNNER_TEMP/components/bundle/v8-windows-${{ needs.platform.outputs.arch }}/v8-windows-${{ needs.platform.outputs.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Exercise Dawn validation and buffer mapping
         shell: pwsh
         run: |
-          & "$env:RUNNER_TEMP/allocator-probes/dawn-windows-${{ matrix.arch }}.exe"
+          & "$env:RUNNER_TEMP/components/bundle/dawn-windows-${{ needs.platform.outputs.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Load ANGLE EGL and GLES DLLs
         shell: pwsh
         run: |
-          $bundle = "$env:RUNNER_TEMP/allocator-probes/angle-windows-${{ matrix.arch }}"
-          & "$bundle/angle-windows-${{ matrix.arch }}.exe" "$bundle/libEGL.dll" "$bundle/libGLESv2.dll"
+          $bundle = "$env:RUNNER_TEMP/components/bundle/angle-windows-${{ needs.platform.outputs.arch }}"
+          & "$bundle/angle-windows-${{ needs.platform.outputs.arch }}.exe" "$bundle/libEGL.dll" "$bundle/libGLESv2.dll"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Exercise GPU command buffer
         shell: pwsh
         run: |
-          $bundle = "$env:RUNNER_TEMP/allocator-probes/gpu-windows-${{ matrix.arch }}"
-          & "$bundle/gpu-windows-${{ matrix.arch }}.exe"
+          $bundle = "$env:RUNNER_TEMP/components/bundle/gpu-windows-${{ needs.platform.outputs.arch }}"
+          & "$bundle/gpu-windows-${{ needs.platform.outputs.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Compile HLSL with shipped DXC
         shell: pwsh
         run: |
-          & "$env:RUNNER_TEMP/allocator-probes/dxc-windows-${{ matrix.arch }}/dxc-windows-${{ matrix.arch }}.exe"
+          & "$env:RUNNER_TEMP/components/bundle/dxc-windows-${{ needs.platform.outputs.arch }}/dxc-windows-${{ needs.platform.outputs.arch }}.exe"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Render and round-trip PNG pixels
         shell: pwsh
         run: |
-          & "$env:RUNNER_TEMP/allocator-probes/graphics-windows-${{ matrix.arch }}.exe" "$env:RUNNER_TEMP/graphics-windows-${{ matrix.arch }}.png"
+          & "$env:RUNNER_TEMP/components/bundle/graphics-windows-${{ needs.platform.outputs.arch }}.exe" "$env:RUNNER_TEMP/graphics-windows-${{ needs.platform.outputs.arch }}.png"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Upload native rendering evidence
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: graphics-windows-${{ matrix.arch }}-${{ github.sha }}
-          path: ${{ runner.temp }}/graphics-windows-${{ matrix.arch }}.png
+          name: graphics-windows-${{ needs.platform.outputs.arch }}-${{ github.event.sha }}
+          path: ${{ runner.temp }}/graphics-windows-${{ needs.platform.outputs.arch }}.png
           if-no-files-found: ignore
           retention-days: 7
+
   darwin-allocator:
-    if: ${{ !cancelled() }}
-    needs: toolchains
-    runs-on: macos-15
+    needs: [platform, download]
+    if: needs.platform.outputs.os == 'darwin'
+    runs-on: ${{ needs.platform.outputs.runner }}
     steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
       - uses: actions/download-artifact@v8
         with:
-          name: allocators-${{ github.sha }}-darwin-arm64
-          path: ${{ runner.temp }}/allocator-probes
+          name: components-${{ needs.platform.outputs.id }}-${{ github.event.sha }}
+          path: ${{ runner.temp }}/component-artifact
+      - name: Check component provenance and architecture
+        shell: bash
+        env:
+          TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+          BUILD_SHA: ${{ github.event.sha }}
+        run: >-
+          python -m tools.ci.components unpack --platform "$TARGET_PLATFORM"
+          --revision "$BUILD_SHA" --directory "$RUNNER_TEMP/components"
+          --artifact "$RUNNER_TEMP/component-artifact/chromium-components-$TARGET_PLATFORM.tar.gz"
+      - name: Exercise Rust and XML parser probes
+        shell: bash
+        env:
+          TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+        run: |
+          suffix=""
+          if [[ "$TARGET_PLATFORM" == windows-* ]]; then suffix=".exe"; fi
+          for probe in rust expat; do
+            file="$RUNNER_TEMP/components/bundle/$probe-$TARGET_PLATFORM$suffix"
+            chmod +x "$file"
+            "$file"
+          done
       - name: Exercise cross-compiled allocator
         run: |
-          chmod +x "$RUNNER_TEMP/allocator-probes/allocator-darwin-arm64"
-          "$RUNNER_TEMP/allocator-probes/allocator-darwin-arm64"
+          chmod +x "$RUNNER_TEMP/components/bundle/allocator-darwin-arm64"
+          "$RUNNER_TEMP/components/bundle/allocator-darwin-arm64"
       - name: Exercise cross-compiled Chromium base
         run: |
-          chmod +x "$RUNNER_TEMP/allocator-probes/base-darwin-arm64"
-          "$RUNNER_TEMP/allocator-probes/base-darwin-arm64"
+          chmod +x "$RUNNER_TEMP/components/bundle/base-darwin-arm64"
+          "$RUNNER_TEMP/components/bundle/base-darwin-arm64"
       - name: Exercise cross-compiled Chromium IPC
         run: |
-          chmod +x "$RUNNER_TEMP/allocator-probes/ipc-darwin-arm64"
-          "$RUNNER_TEMP/allocator-probes/ipc-darwin-arm64"
+          chmod +x "$RUNNER_TEMP/components/bundle/ipc-darwin-arm64"
+          "$RUNNER_TEMP/components/bundle/ipc-darwin-arm64"
       - name: Exercise cross-compiled Chromium TCP sockets
         run: |
-          chmod +x "$RUNNER_TEMP/allocator-probes/network-darwin-arm64"
-          "$RUNNER_TEMP/allocator-probes/network-darwin-arm64"
+          chmod +x "$RUNNER_TEMP/components/bundle/network-darwin-arm64"
+          "$RUNNER_TEMP/components/bundle/network-darwin-arm64"
       - name: Exercise cross-compiled V8
         run: |
-          chmod +x "$RUNNER_TEMP/allocator-probes/v8-darwin-arm64/v8-darwin-arm64"
-          "$RUNNER_TEMP/allocator-probes/v8-darwin-arm64/v8-darwin-arm64"
+          chmod +x "$RUNNER_TEMP/components/bundle/v8-darwin-arm64/v8-darwin-arm64"
+          "$RUNNER_TEMP/components/bundle/v8-darwin-arm64/v8-darwin-arm64"
       - name: Exercise Dawn validation and buffer mapping
         run: |
-          chmod +x "$RUNNER_TEMP/allocator-probes/dawn-darwin-arm64"
-          "$RUNNER_TEMP/allocator-probes/dawn-darwin-arm64"
+          chmod +x "$RUNNER_TEMP/components/bundle/dawn-darwin-arm64"
+          "$RUNNER_TEMP/components/bundle/dawn-darwin-arm64"
       - name: Load ANGLE and exercise EGL/GLES dispatch
         run: |
-          directory="$RUNNER_TEMP/allocator-probes/angle-darwin-arm64"
+          directory="$RUNNER_TEMP/components/bundle/angle-darwin-arm64"
           chmod +x "$directory/angle-darwin-arm64" "$directory/"*.dylib
           "$directory/angle-darwin-arm64" "$directory/libEGL.dylib" "$directory/libGLESv2.dylib"
       - name: Exercise GPU command buffer
         run: |
-          directory="$RUNNER_TEMP/allocator-probes/gpu-darwin-arm64"
+          directory="$RUNNER_TEMP/components/bundle/gpu-darwin-arm64"
           chmod +x "$directory/gpu-darwin-arm64" "$directory/"*.dylib
           "$directory/gpu-darwin-arm64"
       - name: Render and round-trip PNG pixels
         run: |
-          chmod +x "$RUNNER_TEMP/allocator-probes/graphics-darwin-arm64"
-          "$RUNNER_TEMP/allocator-probes/graphics-darwin-arm64" "$RUNNER_TEMP/graphics-darwin-arm64.png"
+          chmod +x "$RUNNER_TEMP/components/bundle/graphics-darwin-arm64"
+          "$RUNNER_TEMP/components/bundle/graphics-darwin-arm64" "$RUNNER_TEMP/graphics-darwin-arm64.png"
       - name: Upload native rendering evidence
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: graphics-darwin-arm64-${{ github.sha }}
+          name: graphics-darwin-arm64-${{ github.event.sha }}
           path: ${{ runner.temp }}/graphics-darwin-arm64.png
           if-no-files-found: ignore
           retention-days: 7
+
+  linux-toolchains:
+    needs: [platform, download]
+    if: needs.platform.outputs.os == 'linux'
+    runs-on: ${{ needs.platform.outputs.runner }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v8
+        with:
+          name: components-${{ needs.platform.outputs.id }}-${{ github.event.sha }}
+          path: ${{ runner.temp }}/component-artifact
+      - name: Check component provenance and architecture
+        shell: bash
+        env:
+          TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+          BUILD_SHA: ${{ github.event.sha }}
+        run: >-
+          python -m tools.ci.components unpack --platform "$TARGET_PLATFORM"
+          --revision "$BUILD_SHA" --directory "$RUNNER_TEMP/components"
+          --artifact "$RUNNER_TEMP/component-artifact/chromium-components-$TARGET_PLATFORM.tar.gz"
+      - name: Exercise Rust and XML parser probes
+        shell: bash
+        env:
+          TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+        run: |
+          suffix=""
+          if [[ "$TARGET_PLATFORM" == windows-* ]]; then suffix=".exe"; fi
+          for probe in rust expat; do
+            file="$RUNNER_TEMP/components/bundle/$probe-$TARGET_PLATFORM$suffix"
+            chmod +x "$file"
+            "$file"
+          done
+
+  publish_status:
+    needs: [platform, record_status, download, windows-allocator, darwin-allocator, linux-toolchains]
+    if: >-
+      always() && !cancelled() &&
+      needs.record_status.result != 'skipped' &&
+      github.event.state == 'success'
+    runs-on: ubuntu-24.04
+    permissions:
+      statuses: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BUILD_SHA: ${{ github.event.sha }}
+      TARGET_PLATFORM: ${{ needs.platform.outputs.id }}
+      RESULTS: ${{ toJSON(needs) }}
+    steps:
+      - name: Publish native component result
+        run: |
+          state=$(jq -r 'if .platform.result == "success" and .record_status.result == "success" and .download.result == "success" and ([.["windows-allocator"].result, .["darwin-allocator"].result, .["linux-toolchains"].result] | (map(select(. == "success")) | length) == 1 and all(.[]; . == "success" or . == "skipped")) then "success" else "failure" end' <<< "$RESULTS")
+          gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$BUILD_SHA" \
+            -f state="$state" -f context="Chromium components smoke $TARGET_PLATFORM" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            -f description="Native component smoke tests: $state"

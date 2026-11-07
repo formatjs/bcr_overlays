@@ -94,3 +94,8 @@ The compiler pilot uses the browser's bounded-analysis settings and compact
 execution logs to avoid flat spawn-log expansion in the 8 GB Bazel heap.
 `bb explain` compares compiler inputs; timing comes from the selected C++ action.
 The initial pilot exhausted that heap before the compiler comparison completed.
+
+The first compact-log comparison produced identical archives but removed zero
+inputs. Its single compiler timing pair (31.2s versus 21.8s) does not establish a
+speedup. Bazel 9.2 requires both `--cc_include_scanning` and the requested
+`cc_include_scanning` feature; the pilot now enables both in its scanner mode.

@@ -1,0 +1,24 @@
+load("@chromium_darwin_arm64//native:blink_core_sources.bzl", "ACTIONS")
+load("//tools/ci:browser_targets.bzl", "darwin_arm64_browser")
+load(":probe.bzl", "bindings_candidate", "compare_bindings")
+
+bindings_candidate(
+    name = "candidate_raw",
+    actions = ACTIONS,
+)
+
+darwin_arm64_browser(
+    name = "baseline",
+    srcs = ["@chromium_darwin_arm64//native:blink_core_d891bf49f6c231ad_0"],
+)
+
+darwin_arm64_browser(
+    name = "candidate",
+    srcs = [":candidate_raw"],
+)
+
+compare_bindings(
+    name = "compare",
+    baseline = ":baseline",
+    candidate = ":candidate",
+)

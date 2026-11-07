@@ -219,7 +219,8 @@ def build(target, destination, revision, hosted=False, cold=False):
         flags.extend(['--config=buildbuddy', '--keep_going', '--noexperimental_remote_discard_merkle_trees'])
         if target['os'] == 'darwin':
             # Bound input downloads for the large framework link.
-            flags.extend(['--strategy=CppLink=sandboxed', '--remote_max_connections=8'])
+            flags.extend(['--strategy=CppLink=sandboxed', '--remote_max_connections=8',
+                          '--ui_event_filters=-debug'])
     if target['os'] == 'windows':
         flags.extend([
             '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',

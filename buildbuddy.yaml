@@ -662,7 +662,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: ["perf/cold-darwin-arm64"]
+        branches: ["perf/cold-darwin-arm64", "perf/darwin-rewind"]
     steps:
       - run: |
           python3 tools/ci/chromium.py build --buildbuddy-hosted --cold \

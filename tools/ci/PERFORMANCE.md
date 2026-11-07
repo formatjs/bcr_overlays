@@ -298,3 +298,11 @@ source. The sample belongs to all five captured core owners. Compare 64/128 jobs
 with 16 client CPUs, identical scanning/retention, warmups, real executions,
 complete input-diff coverage, and repeated archive equality. Record observed
 worker sums and critical paths again; sample selection is not a speedup result.
+
+Cold-profile collection also attributes completed Merkle, worker, and discovery
+spans to containing compiler spans on the same thread, grouped by source family.
+Processed compiler spans include cache checks; worker spans and BEP execution
+counts establish actual execution. Unpaired spans stay in global totals. All
+group durations are overlapping task sums. Raw names, arguments, and paths do
+not enter the exported report. The same attribution reproduces Chrome's roughly
+7,919 Merkle task-seconds in the earlier completed Linux code-build profile.

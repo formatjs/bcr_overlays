@@ -8,7 +8,7 @@ import unittest
 from unittest import mock
 
 from tools.ci import profile_buildbuddy
-from tools.ci.profile_buildbuddy import summarize, trace_summary
+from tools.ci.profile_buildbuddy import compiler_work, summarize, trace_summary
 
 
 class BuildProfileTest(unittest.TestCase):
@@ -70,6 +70,33 @@ class BuildProfileTest(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     trace_summary(path, allow_partial=True)
 
+    def test_compiler_attribution_respects_threads_intervals_and_generated_sources(self):
+        events = [
+            {'cat': 'action processing', 'name': 'Compiling native/gen/third_party/blink/a.cc [for tool]',
+             'ph': 'X', 'tid': 1, 'ts': 0, 'dur': 10000000},
+            {'cat': 'action processing', 'name': 'Compiling components/b.cc',
+             'ph': 'X', 'tid': 2, 'ts': 0, 'dur': 10000000},
+            {'cat': 'action processing', 'name': 'Compiling DO_NOT_EXPORT',
+             'ph': 'X', 'tid': 3, 'ts': 0, 'dur': 10000000},
+            *[{'cat': 'general information', 'name': 'MerkleTreeComputer.buildForSpawn',
+               'ph': 'X', 'tid': thread, 'ts': 100, 'dur': duration}
+              for thread, duration in [(1, 1000000), (2, 2000000), (99, 5000000)]],
+            {'cat': 'Remote execution process wall time', 'ph': 'X',
+             'tid': 1, 'ts': 2000000, 'dur': 3000000},
+            {'cat': 'Remote execution process wall time', 'ph': 'X',
+             'tid': 2, 'ts': 9000000, 'dur': 3000000},
+            {'cat': 'discover inputs', 'ph': 'X', 'tid': 1, 'ts': 100, 'dur': 500000},
+        ]
+        result = compiler_work(events)
+        self.assertEqual(result['blink']['compile_spans'], 1)
+        self.assertEqual(result['blink']['tool_compile_spans'], 1)
+        self.assertEqual(result['blink']['merkle_task_seconds'], 1)
+        self.assertEqual(result['blink']['worker_task_seconds'], 3)
+        self.assertEqual(result['blink']['input_discovery_task_seconds'], 0.5)
+        self.assertEqual(result['components']['merkle_task_seconds'], 2)
+        self.assertEqual(result['components']['worker_task_seconds'], 0)
+        self.assertNotIn('DO_NOT_EXPORT', json.dumps(result))
+
     def test_metrics_preserved_without_command_credentials(self):
         metrics = {'actionSummary': {'actionsCreated': '42123', 'actionsExecuted': '17'},
                    'timingMetrics': {'wallTimeInMs': '12345'}}
@@ -91,7 +118,7 @@ class BuildProfileTest(unittest.TestCase):
 
     def test_trace_summary_keeps_durations_and_phases_without_event_arguments(self):
         events = [
-            {'name': 'compile', 'cat': 'action processing', 'ph': 'X', 'ts': 10, 'dur': 40,
+            {'name': 'PRIVATE_SOURCE_NAME', 'cat': 'action processing', 'ph': 'X', 'ts': 10, 'dur': 40,
              'args': {'command': 'DO_NOT_EXPORT'}},
             {'name': 'analysis', 'cat': 'build phase marker', 'ph': 'X', 'ts': 0, 'dur': 10},
             {'name': 'counter', 'ph': 'C', 'ts': 1, 'dur': 9999},
@@ -104,7 +131,7 @@ class BuildProfileTest(unittest.TestCase):
         self.assertEqual([item['dur'] for item in result['longest_events']], [40, 10])
         self.assertEqual([item['dur'] for item in result['phases']], [10])
         self.assertNotIn('DO_NOT_EXPORT', json.dumps(result))
-        self.assertNotIn('compile', json.dumps(result))
+        self.assertNotIn('PRIVATE_SOURCE_NAME', json.dumps(result))
 
     def test_trace_summary_preserves_instant_phases_and_selected_resource_samples(self):
         events = [

@@ -1,6 +1,7 @@
 """Collect BuildBuddy action counts and sanitized timing summaries for one revision."""
 
 import argparse
+from bisect import bisect_right
 from concurrent.futures import ThreadPoolExecutor
 import gzip
 import json
@@ -41,6 +42,58 @@ def summarize(invocation):
             if 'profile' in log.get('name', '') and log.get('uri', '').startswith('bytestream://'):
                 result['profiles'].append({'name': log['name'], 'uri': log['uri']})
     return result
+
+
+def compiler_work(events):
+    """Attribute completed task spans to compiler intervals on the same thread."""
+    threads, groups = {}, {}
+    for event in events:
+        name = event.get('name', '')
+        if event.get('cat') != 'action processing' or not name.startswith('Compiling '):
+            continue
+        source = name.removeprefix('Compiling ').removesuffix(' [for tool]')
+        if '/gen/' in source:
+            source = source.split('/gen/', 1)[1]
+        source = source.removeprefix('gen/')
+        group = next((group for prefix, group in (
+            ('third_party/blink/', 'blink'), ('third_party/v8/', 'v8'),
+            ('v8/', 'v8'), ('chrome/', 'chrome'), ('components/', 'components'),
+            ('content/', 'content'),
+        ) if source.startswith(prefix)), 'other')
+        row = groups.setdefault(group, {
+            'compile_spans': 0, 'tool_compile_spans': 0, 'action_task_seconds': 0,
+            'merkle_task_seconds': 0, 'worker_task_seconds': 0, 'worker_spans': 0,
+            'input_discovery_task_seconds': 0,
+        })
+        row['compile_spans'] += 1
+        row['tool_compile_spans'] += int(name.endswith(' [for tool]'))
+        row['action_task_seconds'] += event['dur'] / 1e6
+        threads.setdefault(event.get('tid'), []).append((event['ts'], event['ts'] + event['dur'], group))
+    indices = {}
+    for thread, intervals in threads.items():
+        intervals.sort()
+        indices[thread] = ([item[0] for item in intervals], intervals)
+    for event in events:
+        field = None
+        if event.get('cat') == 'general information' and event.get('name') == 'MerkleTreeComputer.buildForSpawn':
+            field = 'merkle_task_seconds'
+        elif event.get('cat') == 'Remote execution process wall time':
+            field = 'worker_task_seconds'
+        elif event.get('cat') == 'discover inputs':
+            field = 'input_discovery_task_seconds'
+        index = indices.get(event.get('tid'))
+        if field is None or index is None:
+            continue
+        starts, intervals = index
+        position = bisect_right(starts, event['ts']) - 1
+        if position < 0:
+            continue
+        start, end, group = intervals[position]
+        if event['ts'] >= start and event['ts'] + event['dur'] <= end + 1000:
+            groups[group][field] += event['dur'] / 1e6
+            if field == 'worker_task_seconds':
+                groups[group]['worker_spans'] += 1
+    return groups
 
 
 def trace_summary(path, allow_partial=False):
@@ -106,6 +159,7 @@ def trace_summary(path, allow_partial=False):
             counters[label] = {'samples': len(samples), 'sample_mean': statistics.fmean(samples),
                                'sample_max': max(samples), 'unit': unit}
     return {'trace_complete': complete, 'event_count': len(events),
+            'compiler_work': compiler_work(durations),
             'phases': phase_summary,
             'longest_events': [{key: event.get(key) for key in fields} for event in longest],
             'tasks': tasks, 'counters': counters}

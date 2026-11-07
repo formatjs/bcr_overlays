@@ -116,6 +116,12 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- After hiding Chromium's unused protobuf copy, the browser probe found the
+  same shadowing through openscreen's private repository quote roots. Content
+  and browser header groups now share the existing public dependency adapter,
+  retaining public headers, include paths, defines, and linker context. A real
+  13-action query confirms the only argument changes remove those two private
+  quote roots. The repeated browser archive gate is rerunning.
 - Native 19-source comparisons now pass on all five triples at `9730c78`,
   including generated bindings and GPU/codec paths. All four archive sets match
   per platform, with complete selected-compiler diff coverage: 380 real selected

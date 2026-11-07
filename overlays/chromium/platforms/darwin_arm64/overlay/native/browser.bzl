@@ -9,7 +9,7 @@ load(":browser_sources.bzl", "ACTIONS", "ASSET_GROUPS", "BRIDGES", "BUNDLES", "C
 load(":cxx_bridge.bzl", "chromium_cxx_bridge")
 load(":host_support.bzl", cc_library = "platform_cc_library")
 load(":objcxx.bzl", "chromium_objc_libraries")
-load(":public_dependency.bzl", "chromium_header_dependency", "chromium_snapshot_dependencies")
+load(":public_dependency.bzl", "chromium_header_dependency", "chromium_public_dependency", "chromium_snapshot_dependencies")
 load(":python_action.bzl", "ChromiumFilesInfo", "chromium_filegroup", "chromium_python_action")
 load(":resource_copy.bzl", "chromium_resource_copy")
 load(":runtime_bundle.bzl", "chromium_runtime_bundle")
@@ -112,7 +112,7 @@ def native_browser():
         name = "browser_headers_with_links",
         hdrs = SHARED_HEADERS + [":all_buildflags"] + native.glob(["browser_forwarders/**/*.h"], allow_empty = True),
         includes = ["..", "gen", "browser_forwarders"],
-        deps = [":content_headers", "@fast_float//:fast_float"] + ["@chromium_" + project + "//:chromium_headers" for project in [
+        deps = [":content_headers", "@fast_float//:fast_float"] + [":openscreen_public_headers" if project == "openscreen" else "@chromium_" + project + "//:chromium_headers" for project in [
             "anonymous_tokens",
             "google_toolbox_for_mac",
             "content_analysis_sdk",

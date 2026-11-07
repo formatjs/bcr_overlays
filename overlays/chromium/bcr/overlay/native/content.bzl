@@ -5,6 +5,7 @@ load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_python//python:py_info.bzl", "PyInfo")
 load(":content_sources.bzl", "ACTIONS", "COPIES", "LIBRARIES", "METADATA", "SHARED_HEADERS", "TOOLS")
 load(":generated_files.bzl", "CAPTURED_FILES")
+load(":public_dependency.bzl", "chromium_public_dependency")
 load(":python_action.bzl", "ChromiumFilesInfo", "ChromiumGeneratedFilesInfo", "chromium_python_action")
 load(":resource_copy.bzl", "chromium_resource_copy")
 load(":tool_inputs.bzl", "chromium_tool_inputs")
@@ -29,6 +30,7 @@ _protobuf_python_inputs = rule(
 )
 
 def native_content():
+    chromium_public_dependency(name = "openscreen_public_headers", dependency = "@chromium_openscreen//:chromium_headers")
     for path, content in METADATA.items():
         if path in CAPTURED_FILES:
             continue
@@ -52,7 +54,7 @@ def native_content():
         name = "content_headers",
         hdrs = SHARED_HEADERS + [":all_buildflags"] + native.glob(["content_forwarders/**/*.h"], allow_empty = True),
         includes = ["..", "gen", "content_forwarders"],
-        deps = [":blink_modules_headers", ":libxslt", "@chromium_openscreen//:chromium_headers", "@chromium_pdfium//:chromium_headers"],
+        deps = [":blink_modules_headers", ":libxslt", ":openscreen_public_headers", "@chromium_pdfium//:chromium_headers"],
     )
     for original, library in LIBRARIES.items():
         library = dict(library)

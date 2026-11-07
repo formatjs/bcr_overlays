@@ -116,6 +116,12 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- The Linux browser candidate now requests scanning for captured Chrome,
+  extensions, and component libraries: 2,480 eligible library targets with 10,482
+  C/C++ source entries. Its 13-source owner-context probe passes repeated archive
+  equality. Executables and shared-library targets keep their prior selection.
+  Full artifact, rendering, payload equivalence, and cold timing remain gated;
+  other native platform scopes wait for their matching owner-context probes.
 - Browser hotspot comparisons at `56c692e` now pass all four modes with
   identical archives after removing private protobuf shadows. The benchmark's
   next scanner switch selects the probe rules' feature locally, leaving support

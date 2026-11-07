@@ -60,7 +60,9 @@ def collect(identifier):
         'invocationId': identifier, 'fetchChildInvocations': True}})['invocation'][0]
     result = summarize(outer)
     result['children'] = []
-    if outer.get('pattern') == ['Chromium compile input experiment']:
+    pattern = outer.get('pattern', [])
+    if pattern == ['Chromium compile input experiment'] or (
+            len(pattern) == 1 and pattern[0].startswith('Chromium compile inputs ')):
         with api_request('GetInvocation', {
                 'selector': {'invocation_id': identifier}, 'include_artifacts': True,
         }, os.environ['BUILDBUDDY_API_KEY']) as response:

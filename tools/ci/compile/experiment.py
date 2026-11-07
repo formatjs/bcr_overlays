@@ -14,6 +14,10 @@ import uuid
 
 ROOT = Path(__file__).resolve().parents[3]
 TARGET = '//tools/ci/compile:blink-layout-linux-amd64'
+TARGETS = {'linux-amd64': TARGET, **{
+    platform: '//tools/ci/compile/' + platform.replace('-', '_') + ':blink-layout-' + platform
+    for platform in ('linux-arm64', 'darwin-arm64', 'windows-amd64', 'windows-arm64')
+}}
 OWNER = ':blink_layout_compile_probe'
 SOURCES = ('layout_box.cc', 'layout_view.cc', 'svg_object_painter.cc')
 
@@ -53,7 +57,7 @@ def compiler_profile(path, source_name='layout_box.cc'):
     }
 
 
-def archive_outputs(events):
+def archive_outputs(events, target=TARGET):
     sets, roots = {}, []
     complete = False
     metrics = {}
@@ -61,7 +65,7 @@ def archive_outputs(events):
         event = json.loads(line)
         if 'namedSetOfFiles' in event:
             sets[event['id']['namedSet']['id']] = event['namedSetOfFiles']
-        if event.get('id', {}).get('targetCompleted', {}).get('label') == TARGET:
+        if event.get('id', {}).get('targetCompleted', {}).get('label') == target:
             complete = event['completed']['success']
             for group in event['completed'].get('outputGroup', []):
                 if group['name'] == 'default':
@@ -83,7 +87,7 @@ def archive_outputs(events):
             if uri.scheme != 'file' or uri.netloc:
                 raise ValueError('Compiler outputs must be downloaded locally')
             file = Path(unquote(uri.path))
-            if file.suffix == '.a':
+            if file.suffix in ('.a', '.lib'):
                 files.add(file)
     if not files:
         raise ValueError('Blink compile did not produce an archive')
@@ -97,6 +101,7 @@ def archive_outputs(events):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--directory', type=Path, required=True)
+    parser.add_argument('--platform', choices=sorted(TARGETS), default='linux-amd64')
     args = parser.parse_args()
     if not os.environ.get('BUILDBUDDY_CI_RUNNER_ABSPATH'):
         raise ValueError('Compile experiment requires a BuildBuddy workflow runner')
@@ -115,13 +120,18 @@ def main():
                        '--execution_log_compact_file=' + str(execution_log),
                        '--profile=' + str(profile),
                        '--cc_include_scanning=' + ('true' if mode.startswith('include-scan') else 'false')]
-            command.append(TARGET)
+            if args.platform.startswith('windows-'):
+                command.extend([
+                    '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',
+                    '--repo_env=BAZEL_WINDOWS_SDK_EULA=1',
+                ])
+            command.append(TARGETS[args.platform])
             result = subprocess.run(command, cwd=ROOT)
             if result.returncode:
                 report[mode] = {'exit_code': result.returncode}
                 (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
                 raise RuntimeError(mode + ' compile failed')
-            digests, metrics = archive_outputs(events)
+            digests, metrics = archive_outputs(events, TARGETS[args.platform])
             report[mode] = {
                 'compiles': {source: compiler_profile(profile, source) for source in SOURCES},
                 'output_sha256': digests,

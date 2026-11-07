@@ -74,6 +74,25 @@ class CompileExperimentTest(unittest.TestCase):
                     with self.assertRaises(ValueError):
                         archive_outputs(events)
 
+    def test_windows_archive_uses_selected_platform_target(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            artifact = root / 'probe.lib'
+            artifact.write_bytes(b'COFF archive')
+            target = '//tools/ci/compile/windows_arm64:blink-layout-windows-arm64'
+            events = root / 'events.json'
+            events.write_text('\n'.join(json.dumps(item) for item in [
+                {'id': {'namedSet': {'id': 'archive'}},
+                 'namedSetOfFiles': {'files': [{'uri': artifact.as_uri()}]}},
+                {'id': {'targetCompleted': {'label': target}},
+                 'completed': {'success': True, 'outputGroup': [
+                     {'name': 'default', 'fileSets': [{'id': 'archive'}]}]}},
+            ]))
+            digests, _ = archive_outputs(events, target)
+            self.assertEqual(list(digests), ['probe.lib'])
+            with self.assertRaisesRegex(ValueError, 'did not complete'):
+                archive_outputs(events)
+
 
 if __name__ == '__main__':
     unittest.main()

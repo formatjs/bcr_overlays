@@ -81,6 +81,11 @@ per-source timings, and requires identical archive bytes. Distinct unused macros
 force every selected source to recompile; timing excludes generator preparation.
 Production builds keep their current settings during the pilot.
 
+`--platform` selects any supported browser triple. Each cross-platform probe lives
+in its own package and uses that platform's captured compilation context. Windows
+uses the MSVC transition and accepts both SDK/runtime licenses, matching browser
+CI. BuildBuddy runs the five comparisons; GitHub only collects sanitized reports.
+
 Next: reduce oversized header closures, audit host-library reuse where compiler
 and ABI settings match, then benchmark client CPU and action concurrency. Rollout
 requires representative compiler equivalence plus the five browser/native smoke

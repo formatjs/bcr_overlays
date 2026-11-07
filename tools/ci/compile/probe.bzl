@@ -1,6 +1,5 @@
 """Compile representative Blink sources with their real compiler inputs."""
 
-load("@chromium//native:blink_core_sources.bzl", "LIBRARIES")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_cc//cc/common:cc_info.bzl", "CcInfo")
 
@@ -15,19 +14,19 @@ _compilation_headers = rule(
     attrs = {"library": attr.label(mandatory = True, providers = [CcInfo])},
 )
 
-def blink_compile_probe(name):
+def blink_compile_probe(name, libraries, repository = "@chromium"):
     """Reuse compilation context without requesting the owning library's objects."""
-    library = LIBRARIES["//third_party/blink/renderer/core:core"]
+    library = libraries["//third_party/blink/renderer/core:core"]
     _compilation_headers(
         name = name + "_headers",
-        library = "@chromium//native:" + library["name"],
+        library = repository + "//native:" + library["name"],
     )
     cc_library(
         name = name,
         srcs = [
-            "@chromium//:third_party/blink/renderer/core/layout/layout_box.cc",
-            "@chromium//:third_party/blink/renderer/core/layout/layout_view.cc",
-            "@chromium//:third_party/blink/renderer/core/paint/svg_object_painter.cc",
+            repository + "//:third_party/blink/renderer/core/layout/layout_box.cc",
+            repository + "//:third_party/blink/renderer/core/layout/layout_view.cc",
+            repository + "//:third_party/blink/renderer/core/paint/svg_object_painter.cc",
         ],
         copts = library["copts"],
         local_defines = library["defines"],
@@ -35,12 +34,12 @@ def blink_compile_probe(name):
         features = ["cc_include_scanning"],
         # Skia selects these headers through macro includes.
         additional_compiler_inputs = [
-            "@chromium//:skia/config/SkUserConfig.h",
-            "@chromium//:skia/config/sk_ref_cnt_ext_debug.h",
-            "@chromium//:skia/config/sk_ref_cnt_ext_release.h",
-            "@chromium//:skia/ext/skia_histogram.h",
+            repository + "//:skia/config/SkUserConfig.h",
+            repository + "//:skia/config/sk_ref_cnt_ext_debug.h",
+            repository + "//:skia/config/sk_ref_cnt_ext_release.h",
+            repository + "//:skia/ext/skia_histogram.h",
             # Preserve the directory used by ../../skia/config includes.
-            "@chromium//native:blink_core_forwarders/third_party/re2/src/re2/re2.h",
+            repository + "//native:blink_core_forwarders/third_party/re2/src/re2/re2.h",
         ],
         tags = ["manual"],
     )

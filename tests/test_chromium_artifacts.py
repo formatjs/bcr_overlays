@@ -1,4 +1,6 @@
 import io
+import gzip
+from contextlib import redirect_stdout
 import json
 import os
 from pathlib import Path
@@ -8,7 +10,8 @@ import tempfile
 import unittest
 from unittest import mock
 
-from tools.ci.chromium import PLATFORMS, ROOT, binary_platform, build, checksum, package, package_payload, stamp_payload, unpack, artifact_outputs
+from tools.ci.compression_benchmark import benchmark, tar_digest
+from tools.ci.chromium import PLATFORMS, ROOT, binary_platform, build, checksum, cold_build_report, package, package_payload, stamp_payload, unpack, artifact_outputs
 
 
 REVISION = '1' * 40
@@ -35,6 +38,28 @@ class ArtifactsTest(unittest.TestCase):
 
     def archive(self):
         return package(self.bundle, self.root / 'artifacts', self.target, REVISION)
+
+    def test_compression_benchmark_follows_runfiles_bundle_link(self):
+        linked = self.root / 'runfiles-bundle'
+        linked.symlink_to(self.bundle, target_is_directory=True)
+        directory = self.root / 'compression-report'
+        with redirect_stdout(io.StringIO()):
+            benchmark(linked, self.target, directory)
+        report = json.loads((directory / 'report.json').read_text())
+        original = package_payload(self.bundle, self.root / 'original.tar.gz', self.target)
+        self.assertTrue(report['tar_bytes_match'])
+        self.assertTrue(report['repeated_gzip_bytes_match'])
+        self.assertEqual([mode['compression_level'] for mode in report['modes']], [6, 1, 1, 6])
+        self.assertTrue(all(mode['tar'] == tar_digest(original) for mode in report['modes']))
+
+    def test_compression_levels_preserve_complete_tar_bytes(self):
+        digests = []
+        for level in (1, 6):
+            payload = package_payload(self.bundle, self.root / f'level-{level}.tar.gz',
+                                      self.target, compression_level=level)
+            with gzip.open(payload, 'rb') as source:
+                digests.append(source.read())
+        self.assertEqual(digests[0], digests[1])
 
     def test_revision_stamping_reuses_compressed_payload_without_recompression(self):
         payload = package_payload(self.bundle, self.root / 'payload.tar.gz', self.target)
@@ -141,7 +166,9 @@ class ArtifactsTest(unittest.TestCase):
         label = '//tools/ci:linux-amd64_archive'
 
         def execute(command, **kwargs):
-            self.assertEqual(command[:4], ['bazel', 'build', '--config=browser', '--config=buildbuddy'])
+            self.assertEqual(command[:5], ['bazel', '--host_jvm_args=-Xmx12g', 'build',
+                                          '--config=browser', '--config=buildbuddy'])
+            self.assertIn('--noexperimental_remote_discard_merkle_trees', command)
             self.assertIn('--//tools/ci:revision=' + REVISION, command)
             self.assertEqual(command[-1], label)
             self.assertEqual(kwargs, {'cwd': ROOT, 'check': True})
@@ -236,5 +263,102 @@ class ArtifactsTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'BuildBuddy workflow runner'):
                 build(self.target, self.root / 'artifacts', REVISION, hosted=True)
         execute.assert_not_called()
+
+    def test_cold_result_requires_success_real_compiles_and_no_cache_reuse(self):
+        events = self.root / 'events.json'
+        for success, local_hits, remote_hits, compiles, verified in [
+            (True, 0, 0, 12345, True),
+            (False, 0, 0, 12345, False),
+            (True, 1, 0, 12345, False),
+            (True, 0, 1, 12345, False),
+            (True, 0, 0, 0, False),
+        ]:
+            with self.subTest(success=success, local_hits=local_hits, remote_hits=remote_hits, compiles=compiles):
+                events.write_text(json.dumps({'structuredCommandLine': {
+                    'commandLineLabel': 'canonical', 'sections': [{
+                        'sectionLabel': 'startup options', 'optionList': {'option': [{
+                            'optionName': 'output_base', 'optionValue': str(self.root / 'fresh-base'),
+                        }]},
+                    }],
+                }}) + '\n' + json.dumps({'buildMetrics': {'actionSummary': {
+                    'actionData': [{'mnemonic': 'CppCompile', 'actionsExecuted': str(compiles)}],
+                    'actionCacheStatistics': {'hits': local_hits},
+                    'runnerCount': [{'name': 'remote', 'count': compiles},
+                                    {'name': 'remote cache hit', 'count': remote_hits}],
+                }}}))
+                result = cold_build_report(events, 9000, success,
+                                           expected_output_base=self.root / 'fresh-base',
+                                           output_base_was_fresh=True)
+                self.assertEqual(result['cold_result_verified'], verified)
+                self.assertEqual(result['elapsed_seconds'], 9000)
+                self.assertEqual(result['cpp_compile_actions'], compiles)
+        events.write_text('{"incomplete":')
+        self.assertFalse(cold_build_report(events, 1, False)['cold_result_verified'])
+
+    def test_cold_result_rejects_managed_rc_output_base(self):
+        events = self.root / 'events.json'
+        events.write_text('\n'.join(json.dumps(event) for event in [
+            {'structuredCommandLine': {'commandLineLabel': 'canonical', 'sections': [{
+                'sectionLabel': 'startup options', 'optionList': {'option': [
+                    {'optionName': 'output_base', 'optionValue': '/home/buildbuddy/workspace/output-base'},
+                    {'optionName': 'remote_header', 'optionValue': 'DO_NOT_EXPORT'},
+                ]}}]}},
+            {'buildMetrics': {'actionSummary': {
+                'actionData': [{'mnemonic': 'CppCompile', 'actionsExecuted': '12345'}],
+                'actionCacheStatistics': {'hits': 0},
+                'runnerCount': [{'name': 'remote', 'count': 12345}],
+            }}},
+        ]))
+        result = cold_build_report(events, 100, True)
+        self.assertFalse(result['cold_result_verified'])
+        self.assertNotIn('DO_NOT_EXPORT', json.dumps(result))
+        result = cold_build_report(events, 100, True, expected_output_base=self.root / 'fresh-base',
+                                   output_base_was_fresh=True)
+        self.assertFalse(result['cold_result_verified'])
+        self.assertEqual(result['cache_state']['bazel_output_state'], 'unverified')
+
+    def test_cold_failure_keeps_measurement_without_reusing_bazel_state(self):
+        directory = self.root / 'cold-artifacts'
+        environment = {'BUILDBUDDY_CI_RUNNER_ABSPATH': '/runner/ci_runner'}
+        roots = []
+
+        def fail(command, **kwargs):
+            root = Path(next(value.split('=', 1)[1] for value in command
+                             if value.startswith('--output_user_root=')))
+            self.assertFalse(root.exists())
+            output_base = Path(next(value.split('=', 1)[1] for value in command
+                                    if value.startswith('--output_base=')))
+            self.assertFalse(output_base.exists())
+            self.assertEqual(output_base, root.parent / 'output-base')
+            roots.append(root)
+            self.assertIn('--batch', command[:command.index('build')])
+            self.assertIn('--remote_accept_cached=false', command)
+            self.assertIn('--disk_cache=', command)
+            self.assertIn('--repo_contents_cache=', command)
+            self.assertIn('--modify_execution_info=.*=+no-cache', command)
+            self.assertIn('--repository_cache=' + str(root.parent / 'repository-cache'), command)
+            events = Path(next(value.split('=', 1)[1] for value in command
+                               if value.startswith('--build_event_json_file=')))
+            profile = Path(next(value.split('=', 1)[1] for value in command
+                                if value.startswith('--profile=')))
+            self.assertFalse(events.resolve().is_relative_to(directory.resolve()))
+            self.assertEqual(profile.parent, directory)
+            events.write_text(json.dumps({'started': {'uuid': 'cold-failure'}}) + '\n')
+            profile.write_text('{"traceEvents":[')
+            raise RuntimeError('build failed')
+
+        with mock.patch.dict(os.environ, environment, clear=True), \
+                mock.patch('tools.ci.chromium.subprocess.run', side_effect=fail):
+            for _ in range(2):
+                with self.assertRaisesRegex(RuntimeError, 'build failed'):
+                    build(self.target, directory, REVISION, hosted=True, cold=True)
+                report = json.loads((directory / 'cold-build.json').read_text())
+                self.assertFalse(report['build_succeeded'])
+                self.assertFalse(report['cold_result_verified'])
+                self.assertEqual(report['invocation_id'], 'cold-failure')
+                self.assertFalse((directory / 'cold-events.json').exists())
+                self.assertTrue((directory / 'cold-profile.json').exists())
+                self.assertEqual(report['cache_state']['execution_policy'], 'no-cache; no in-flight action merging')
+        self.assertNotEqual(roots[0], roots[1])
 if __name__ == '__main__':
     unittest.main()

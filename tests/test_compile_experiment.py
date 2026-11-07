@@ -56,6 +56,11 @@ class CompileExperimentTest(unittest.TestCase):
             self.assertEqual(compiler_input_diff(path, (':browser_compile_probe_0',)), {
                 'comparison': 'paired', 'input_paths_removed': 3, 'input_paths_added': 1,
             })
+            self.assertEqual(compiler_input_diff(path, (':browser_compile_probe_0',), expected_compiles=1), {
+                'comparison': 'paired', 'input_paths_removed': 3, 'input_paths_added': 1,
+            })
+            with self.assertRaisesRegex(ValueError, 'Expected 2 compiler diffs, found 1'):
+                compiler_input_diff(path, (':browser_compile_probe_0',), expected_compiles=2)
 
     def test_compiler_timing_excludes_other_actions_and_nested_wrapper_time(self):
         events = [

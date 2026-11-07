@@ -34,9 +34,11 @@ WIDE_HOST_SOURCES = (*SOURCES, 'ax_object.cc', 'ax_node_object.cc', 'canvas_rend
                      'convert_to_webrtc_video_frame_buffer.cc', 'web_media_player_ms_compositor.cc', 'video_frame.cc')
 
 
-def compiler_input_diff(path, owners=OWNERS):
+def compiler_input_diff(path, owners=OWNERS, expected_compiles=None):
     changes = [item for item in json.loads(path.read_text()).get('spawn_diffs', [])
                if item.get('mnemonic') == 'CppCompile' and item.get('target_label', '').endswith(owners)]
+    if expected_compiles is not None and len(changes) != expected_compiles:
+        raise ValueError(f'Expected {expected_compiles} compiler diffs, found {len(changes)}')
     if any('old_only' in item or 'new_only' in item for item in changes):
         return {'comparison': 'unpaired', 'reason': 'Compiler output paths changed between configurations'}
     removed, added = 0, 0
@@ -255,7 +257,7 @@ def main():
                 subprocess.run(['bb', 'explain', '--old', str(Path(temporary) / ('baseline-' + pair + '.binpb.zst')),
                                 '--new', str(Path(temporary) / (variant + '-' + pair + '.binpb.zst')),
                                 '--output_format', 'json'], stdout=output, cwd=ROOT, check=True)
-            report['input_diff'][pair] = compiler_input_diff(diff, owners)
+            report['input_diff'][pair] = compiler_input_diff(diff, owners, expected_compiles=len(sources))
         (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
     print('Compiler output bytes match', flush=True)
 

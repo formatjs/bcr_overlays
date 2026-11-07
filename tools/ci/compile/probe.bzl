@@ -65,7 +65,7 @@ def host_blink_compile_probe(name, libraries, repository, wide = False):
             "third_party/blink/renderer/core/paint/svg_object_painter.cc",
             "third_party/blink/renderer/core/css/css_palette_mix_value.cc",
             "third_party/blink/renderer/core/css/css_relative_color_value.cc",
-        ]),
+        ] + ([":clang_x64_v8_arm64/gen/third_party/blink/renderer/core/html/html_permission_element_strings_map.cc"] if wide else [])),
         ("_canvas", "//third_party/blink/renderer/core/probe:probe", [
             "third_party/blink/renderer/core/probe/core_probes.cc",
         ]),

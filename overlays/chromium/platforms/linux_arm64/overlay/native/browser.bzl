@@ -208,8 +208,12 @@ def native_browser():
             if not main and [path for path in outputs if path in RUNTIME_FILES]:
                 runtime_binaries.append(":" + library["name"])
             continue
+        headers = library["hdrs"]
+        if original.split("(")[0] == "//third_party/blink/renderer/core:core":
+            # Generated permission strings include this header from reused base.
+            headers = headers + ["//:base/strings/string_slice.h"]
         common.update(
-            hdrs = library["hdrs"],
+            hdrs = headers,
             includes = library["includes"],
             alwayslink = library["kind"] == "source_set",
         )

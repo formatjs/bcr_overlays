@@ -27,7 +27,8 @@ OWNERS = tuple(':blink_layout_compile_probe' + suffix for suffix in (
 SOURCES = ('layout_box.cc', 'layout_view.cc', 'svg_object_painter.cc',
            'css_palette_mix_value.cc', 'css_relative_color_value.cc', 'core_probes.cc')
 WIDE_HOST_SOURCES = (*SOURCES, 'ax_object.cc', 'ax_node_object.cc', 'canvas_rendering_context_2d.cc',
-                     'date_math.cc', 'v8_video_frame.cc', 'v8_webgl2_rendering_context_webgpu.cc')
+                     'date_math.cc', 'v8_video_frame.cc', 'v8_webgl2_rendering_context_webgpu.cc',
+                     'html_permission_element_strings_map.cc')
 
 
 def compiler_input_diff(path):

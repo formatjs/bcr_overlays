@@ -354,6 +354,10 @@ revision stamping stay unchanged.
 The benchmark's test body passed, but Bazel's optional output zipper failed
 because the worker lacked system `zip`. Disable zipped undeclared outputs and
 read the declared report from the output directory instead. No host tool install.
+The fixed harness passes at `24375b5`: level 6 takes 200.31/195.04s; level 1
+takes 80.45/78.89s. Worker speeds differ from the first trial, but both show
+roughly 60% less compression CPU time. Complete tar and repeated gzip hashes
+match within and across both trials. Python 3.11.14 and zlib 1.3.1 are recorded.
 
 Cold artifacts can also run native rendering smoke directly through the profile
 workflow: select one platform, enable `smoke_cold_artifact`, and supply its successful

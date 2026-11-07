@@ -15,7 +15,7 @@ _compilation_headers = rule(
     attrs = {"library": attr.label(mandatory = True, providers = [CcInfo])},
 )
 
-def _blink_library_probe(name, library, repository, sources, forwarders = "blink_core_forwarders"):
+def _blink_library_probe(name, library, repository, sources, forwarders = "blink_core_forwarders", gpu_header = None):
     _compilation_headers(
         name = name + "_headers",
         library = repository + "//native:" + library["name"],
@@ -37,7 +37,7 @@ def _blink_library_probe(name, library, repository, sources, forwarders = "blink
             repository + "//:skia/ext/skia_histogram.h",
             # Preserve the directory used by ../../skia/config includes.
             repository + "//native:" + forwarders + "/third_party/re2/src/re2/re2.h",
-        ] + (["@chromium//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h"] if forwarders == "browser_forwarders" else []),
+        ] + ([gpu_header] if gpu_header else []),
         tags = ["manual"],
     )
 
@@ -55,9 +55,10 @@ def blink_compile_probe(name, libraries, repository = "@chromium", batch = False
         "third_party/blink/renderer/core/probe/core_probes.cc",
     ])
 
-def host_blink_compile_probe(name, libraries, repository, wide = False):
-    """Compile Linux ARM64's captured x64 host Blink context independently."""
-    toolchain = "(//build/toolchain/linux:clang_x64_v8_arm64)"
+def host_blink_compile_probe(name, libraries, repository, wide = False, captured_host = True):
+    """Compile Blink contexts independently, including the captured ARM64 host."""
+    toolchain = "(//build/toolchain/linux:clang_x64_v8_arm64)" if captured_host else ""
+    generated = ":clang_x64_v8_arm64/gen/" if captured_host else ":gen/"
     owners = [
         ("", "//third_party/blink/renderer/core:core", [
             "third_party/blink/renderer/core/layout/layout_box.cc",
@@ -65,7 +66,7 @@ def host_blink_compile_probe(name, libraries, repository, wide = False):
             "third_party/blink/renderer/core/paint/svg_object_painter.cc",
             "third_party/blink/renderer/core/css/css_palette_mix_value.cc",
             "third_party/blink/renderer/core/css/css_relative_color_value.cc",
-        ] + ([":clang_x64_v8_arm64/gen/third_party/blink/renderer/core/html/html_permission_element_strings_map.cc"] if wide else [])),
+        ] + ([generated + "third_party/blink/renderer/core/html/html_permission_element_strings_map.cc"] if wide else [])),
         ("_canvas", "//third_party/blink/renderer/core/probe:probe", [
             "third_party/blink/renderer/core/probe/core_probes.cc",
         ]),
@@ -83,8 +84,8 @@ def host_blink_compile_probe(name, libraries, repository, wide = False):
                 "third_party/blink/renderer/platform/wtf/date_math.cc",
             ]),
             ("_bindings", "//third_party/blink/renderer/bindings/modules/v8:v8", [
-                ":clang_x64_v8_arm64/gen/third_party/blink/renderer/bindings/modules/v8/v8_video_frame.cc",
-                ":clang_x64_v8_arm64/gen/third_party/blink/renderer/bindings/modules/v8/v8_webgl2_rendering_context_webgpu.cc",
+                generated + "third_party/blink/renderer/bindings/modules/v8/v8_video_frame.cc",
+                generated + "third_party/blink/renderer/bindings/modules/v8/v8_webgl2_rendering_context_webgpu.cc",
             ]),
             ("_graphics", "//third_party/blink/renderer/platform:platform", [
                 "third_party/blink/renderer/platform/graphics/accelerated_static_bitmap_image.cc",
@@ -102,4 +103,19 @@ def host_blink_compile_probe(name, libraries, repository, wide = False):
     for suffix, owner, sources in owners:
         library = dict(libraries[owner + toolchain])
         library["copts"] = library["copts"] + ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
-        _blink_library_probe(name + suffix, library, repository, sources, forwarders = "browser_forwarders")
+        forwarders = "browser_forwarders"
+        if not captured_host:
+            if owner.startswith("//third_party/blink/renderer/core"):
+                forwarders = "blink_core_forwarders"
+            elif owner.startswith("//third_party/blink/renderer/platform"):
+                forwarders = "blink_platform_forwarders"
+            else:
+                forwarders = "blink_modules_forwarders"
+        _blink_library_probe(
+            name + suffix,
+            library,
+            repository,
+            sources,
+            forwarders = forwarders,
+            gpu_header = "@chromium//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
+        )

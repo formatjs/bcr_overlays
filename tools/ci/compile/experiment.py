@@ -140,6 +140,7 @@ def main():
     parser.add_argument('--batch', action='store_true', help='Measure fixed host throughput batch after warmups')
     parser.add_argument('--host-blink', action='store_true', help='Probe Linux ARM64 captured x64 host Blink libraries')
     parser.add_argument('--wide-host-blink', action='store_true', help='Include host modules, platform, and generated bindings')
+    parser.add_argument('--wide-native-blink', action='store_true', help='Probe native Linux modules, platform, and generated bindings')
     comparison = parser.add_mutually_exclusive_group()
     comparison.add_argument('--compare-merkle-retention', action='store_true',
                             help='Compare retained input trees on the unscanned batch; compiler options stay fixed')
@@ -148,8 +149,10 @@ def main():
     args = parser.parse_args()
     if args.batch and args.platform != 'linux-amd64':
         parser.error('Throughput batch currently targets Linux amd64 host compiles')
-    if (args.host_blink or args.wide_host_blink) and (args.batch or args.platform != 'linux-amd64'):
+    if (args.host_blink or args.wide_host_blink or args.wide_native_blink) and (args.batch or args.platform != 'linux-amd64'):
         parser.error('Host Blink probe runs on Linux amd64 without --batch')
+    if sum([args.host_blink, args.wide_host_blink, args.wide_native_blink]) > 1:
+        parser.error('Choose one Blink context')
     if args.compare_merkle_retention and not args.batch:
         parser.error('--compare-merkle-retention requires --batch')
     if args.compare_concurrency and not args.batch:
@@ -159,13 +162,15 @@ def main():
     args.directory.mkdir(parents=True, exist_ok=True)
     nonce = uuid.uuid4().hex
     sources = batch_sources() if args.batch else SOURCES
-    if args.wide_host_blink:
+    if args.wide_host_blink or args.wide_native_blink:
         sources = WIDE_HOST_SOURCES
     target = '//tools/ci/compile/throughput:blink-throughput-linux-amd64' if args.batch else TARGETS[args.platform]
     if args.host_blink:
         target = '//tools/ci/compile/host:blink-host-linux-arm64'
     if args.wide_host_blink:
         target = '//tools/ci/compile/host_wide:blink-host-linux-arm64'
+    if args.wide_native_blink:
+        target = '//tools/ci/compile/native_wide:blink-native-linux-amd64'
     pattern = '.*(' + '|'.join(re.escape(source) for source in sources) + ')'
     variant = 'retain-merkle' if args.compare_merkle_retention else 'include-scan'
     if args.compare_concurrency:

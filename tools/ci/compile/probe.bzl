@@ -3,7 +3,7 @@
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_cc//cc/common:cc_info.bzl", "CcInfo")
 load(":batch_sources.bzl", BATCH_SOURCES = "SOURCES")
-load(":browser_probe_sources.bzl", "SOURCE_GROUPS")
+load(":browser_probe_sources.bzl", "PLATFORM_SOURCE_OVERRIDES", "SOURCE_GROUPS")
 
 def _headers_impl(ctx):
     return [
@@ -124,16 +124,21 @@ def host_blink_compile_probe(name, libraries, repository, wide = False, captured
             gpu_header = ("@chromium" if captured_host else repository) + "//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
         )
 
-def browser_compile_probe(name, libraries):
+def browser_compile_probe(name, libraries, repository = "@chromium", platform = "linux-amd64"):
     """Compile measured browser hotspots with each source's owning context."""
+    overrides = PLATFORM_SOURCE_OVERRIDES.get(platform, {})
     for index, (owner, sources) in enumerate(SOURCE_GROUPS.items()):
         library = dict(libraries[owner])
+        sources = [overrides.get(source, source) for source in sources]
+        for source in sources:
+            if source not in library["srcs"] and "//:" + source not in library["srcs"]:
+                fail("Probe source is not compiled by " + owner + ": " + source)
         library["copts"] = library["copts"] + ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
         _blink_library_probe(
             name + "_" + str(index),
             library,
-            "@chromium",
+            repository,
             sources,
             forwarders = "browser_forwarders",
-            gpu_header = "@chromium//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
+            gpu_header = repository + "//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
         )

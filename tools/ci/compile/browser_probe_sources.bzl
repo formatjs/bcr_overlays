@@ -1,5 +1,17 @@
 """Profile-selected Chrome, extensions, and component sources."""
 
+PLATFORM_SOURCE_OVERRIDES = {
+    "darwin-arm64": {
+        "chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc": "chrome/browser/media/router/discovery/discovery_network_list_posix.cc",
+    },
+    "windows-amd64": {
+        "chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc": "chrome/browser/media/router/discovery/discovery_network_list_win.cc",
+    },
+    "windows-arm64": {
+        "chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc": "chrome/browser/media/router/discovery/discovery_network_list_win.cc",
+    },
+}
+
 SOURCE_GROUPS = {
     "//chrome/renderer/extensions:extensions": [
         "chrome/renderer/extensions/api/chrome_extensions_renderer_api_provider.cc",

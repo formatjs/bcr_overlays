@@ -94,11 +94,13 @@ def batch_sources():
     return (*sources, 'third_party/blink/renderer/core/probe/core_probes.cc')
 
 
-def browser_source_groups():
+def browser_source_groups(platform='linux-amd64'):
     tree = ast.parse(Path(__file__).with_name('browser_probe_sources.bzl').read_text())
-    return next(ast.literal_eval(node.value) for node in tree.body
-                if isinstance(node, ast.Assign) and any(
-                    isinstance(target, ast.Name) and target.id == 'SOURCE_GROUPS' for target in node.targets))
+    constants = {target.id: ast.literal_eval(node.value) for node in tree.body
+                 if isinstance(node, ast.Assign) for target in node.targets if isinstance(target, ast.Name)}
+    overrides = constants['PLATFORM_SOURCE_OVERRIDES'].get(platform, {})
+    return {owner: [overrides.get(source, source) for source in sources]
+            for owner, sources in constants['SOURCE_GROUPS'].items()}
 
 
 def archive_outputs(events, target=TARGET):
@@ -159,8 +161,10 @@ def main():
     args = parser.parse_args()
     if args.batch and args.platform != 'linux-amd64':
         parser.error('Throughput batch currently targets Linux amd64 host compiles')
-    if (args.host_blink or args.wide_host_blink or args.browser) and (args.batch or args.platform != 'linux-amd64'):
+    if (args.host_blink or args.wide_host_blink) and (args.batch or args.platform != 'linux-amd64'):
         parser.error('Host Blink probe runs on Linux amd64 without --batch')
+    if args.browser and args.batch:
+        parser.error('--browser does not use --batch')
     if args.wide_native_blink and args.batch:
         parser.error('--wide-native-blink does not use --batch')
     if sum([args.host_blink, args.wide_host_blink, args.wide_native_blink, args.browser]) > 1:
@@ -188,10 +192,13 @@ def main():
         target = package + ':blink-native-' + args.platform
     owners = OWNERS
     if args.browser:
-        groups = browser_source_groups()
+        groups = browser_source_groups(args.platform)
         sources = tuple(source for group in groups.values() for source in group)
         owners = tuple(':browser_compile_probe_' + str(index) for index in range(len(groups)))
-        target = '//tools/ci/compile/browser:browser-inputs-linux-amd64'
+        package = '//tools/ci/compile/browser'
+        if args.platform != 'linux-amd64':
+            package += '/' + args.platform.replace('-', '_')
+        target = package + ':browser-inputs-' + args.platform
     pattern = '.*(' + '|'.join(re.escape(source) for source in sources) + ')'
     variant = 'retain-merkle' if args.compare_merkle_retention else 'include-scan'
     if args.compare_concurrency:
@@ -265,6 +272,12 @@ def main():
                                 '--new', str(Path(temporary) / (variant + '-' + pair + '.binpb.zst')),
                                 '--output_format', 'json'], stdout=output, cwd=ROOT, check=True)
             report['input_diff'][pair] = compiler_input_diff(diff, owners, expected_compiles=len(sources))
+            (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
+            result = report['input_diff'][pair]
+            if result['comparison'] != 'paired':
+                raise ValueError('Compiler inputs could not be paired')
+            if variant == 'include-scan' and result['input_paths_removed'] <= result['input_paths_added']:
+                raise ValueError('Scanner did not reduce compiler input paths')
         (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
     print('Compiler output bytes match', flush=True)
 

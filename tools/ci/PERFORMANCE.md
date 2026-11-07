@@ -116,6 +116,11 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- The next 13-source browser comparison covers all five triples. Discovery
+  uses the captured Linux Wi-Fi, POSIX, or Windows implementation; every selected
+  source must belong to its captured GN owner. Each platform retains its own
+  compiler context and generated GPU header producer. Full cross-platform browser
+  scanning waits for these comparisons; Linux's artifact candidate runs separately.
 - The Linux browser candidate now requests scanning for captured Chrome,
   extensions, and component libraries: 2,480 eligible library targets with 10,482
   C/C++ source entries. Its 13-source owner-context probe passes repeated archive
@@ -127,7 +132,10 @@ object equivalence before changing that boundary.
   next scanner switch selects the probe rules' feature locally, leaving support
   generators on production scanning. Real queries resolve the feature off/on,
   preserve all 13 probe compiler commands, and preserve 4,796 supporting C++
-  action keys. Runtime checks of this narrower experiment boundary remain gated.
+  action keys. The narrower six-source comparison also passes on all five triples: archive
+  sets match and both pairs remove 0.421–0.443 million input paths net. This
+  isolates the rule feature; the earlier global-flag comparison also varied
+  supporting input setup. New scanner trials require positive net input reduction.
 - After hiding Chromium's unused protobuf copy, the browser probe found the
   same shadowing through openscreen's private repository quote roots. Content
   and browser header groups now share the existing public dependency adapter,

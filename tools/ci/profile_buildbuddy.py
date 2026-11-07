@@ -183,6 +183,9 @@ def collect(identifier):
     elif len(pattern) == 1 and pattern[0].startswith('Chromium compression benchmark '):
         report_key = 'compression_experiment'
         report_path = 'compression-experiment/report.json'
+    elif len(pattern) == 1 and pattern[0].startswith('Chromium bindings budget '):
+        report_key = 'bindings_experiment'
+        report_path = 'bindings-budget/report.json'
     elif len(pattern) == 1 and pattern[0].startswith('Chromium cold build '):
         report_key = 'cold_build'
         report_path = pattern[0].removeprefix('Chromium cold build ') + '/cold-build.json'

@@ -28,6 +28,14 @@ The replacement sets both paths explicitly and requires canonical BEP startup
 options to confirm the expected output base was used and was absent before the
 build. Cache counters alone cannot verify fresh state.
 
+The corrected `95086b7` trials verify distinct temporary output bases from actual
+canonical startup options. Windows AMD64 finishes in 39m40s, Linux AMD64 in
+41m08s, Windows ARM64 in 42m19s, and Linux ARM64 in 48m43s. Their reports verify
+fresh state and zero reused actions. Windows AMD64 also has 55,019 distinct,
+completed, unmerged compiler executions in RBE metadata. Both Windows payloads,
+including PDBs, match same-commit cached builds byte-for-byte after the provenance
+fix. Darwin remains blocked on the large Blink bindings producer.
+
 The initial scanner candidate left a host gap: Linux ARM64's browser capture contains
 19 host Blink-core libraries with 2,733 source entries outside the dedicated
 Blink-core macro. The follow-up covers captured host core, modules, platform,
@@ -471,3 +479,18 @@ replay of the pinned generator produces varying `.cc`/`.h` bytes before the fix
 and identical `.cc`/`.h`/`.inc` bytes afterward. A regression exercises the same
 provenance pattern across distinct execution roots. No debug data is stripped or
 ignored. Final platform validation follows this hermeticity fix.
+
+## Binding generator budget
+
+The corrected Darwin trial stops dispatching C++ work while one bindings action
+remains active. It produces 5,574 files. Upstream's `TaskQueue` sizes a process
+pool from the executor host's CPU count, independently of the action budget;
+its pool can wait indefinitely if a worker disappears. Pool resource pressure
+is a hypothesis, not an observed OOM diagnosis.
+
+[A separate probe](https://formatjs.buildbuddy.io/invocation/0c21dca6-b59c-4dca-9596-2cbb3f9b8aaf)
+at `340cdb9` runs upstream `--single_process` and compares all 5,574 output hashes
+with the cached parallel producer. Every file matches. Use that supported mode
+for binding generation, keeping upstream code and output coverage intact. The
+production action query confirms exactly one flag and the complete output set.
+Final fresh-state trials validate the bounded producer across all five targets.

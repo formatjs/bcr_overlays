@@ -20,6 +20,7 @@ class BuildProfileTest(unittest.TestCase):
             ('Chromium compile inputs host-blink', 'compile-input-experiment/report.json', 'compile_experiment'),
             ('Chromium cold build linux-amd64', 'linux-amd64/cold-build.json', 'cold_build'),
             ('Chromium compression benchmark windows-amd64', 'compression-experiment/report.json', 'compression_experiment'),
+            ('Chromium bindings budget darwin-arm64', 'bindings-budget/report.json', 'bindings_experiment'),
         ]:
             with self.subTest(pattern=pattern):
                 outer = {'pattern': [pattern]}

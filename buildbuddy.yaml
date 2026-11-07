@@ -392,3 +392,93 @@ actions:
       - run: |
           python3 -m tools.ci.compile.experiment --batch \
             --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/compile-input-experiment"
+
+  - name: Chromium cold build linux-amd64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/cold-linux-amd64"]
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted --cold \
+            --platform linux-amd64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/linux-amd64"
+
+  - name: Chromium cold build linux-arm64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/cold-linux-arm64"]
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted --cold \
+            --platform linux-arm64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/linux-arm64"
+
+  - name: Chromium cold build darwin-arm64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/cold-darwin-arm64"]
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted --cold \
+            --platform darwin-arm64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/darwin-arm64"
+
+  - name: Chromium cold build windows-amd64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/cold-windows-amd64"]
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted --cold \
+            --platform windows-amd64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/windows-amd64"
+
+  - name: Chromium cold build windows-arm64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 6h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/cold-windows-arm64"]
+    steps:
+      - run: |
+          python3 tools/ci/chromium.py build --buildbuddy-hosted --cold \
+            --platform windows-arm64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/windows-arm64"

@@ -24,6 +24,17 @@ Current scanner coverage has a host gap: Linux ARM64's browser capture contains
 Blink-core macro. Validate these compiler contexts separately before extending
 scanning. The other four browser captures contain no Blink-core libraries.
 
+The hosted build command accepts `--cold`. It starts a batch Bazel process with
+a unique output root and fresh repository download cache, disables disk caches
+and remote action-cache reads, and writes `cold-build.json` even on failure.
+Successful results require actual C++ executions, complete cache metrics, and
+zero observed action-cache hits. Elapsed time includes artifact copying but
+excludes temporary-directory cleanup. Shared remote CAS remains populated.
+
+Each `perf/cold-<platform>` branch triggers only that platform's cold browser
+job. Run sequentially after the regular browser and throughput trials finish;
+do not report shared-load experiments as controlled concurrency comparisons.
+
 ## Baseline
 
 [Linux ARM64 compile-heavy profile](https://formatjs.buildbuddy.io/invocation/97238e03-06be-49ad-abed-4699731fe294):

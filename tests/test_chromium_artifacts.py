@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from unittest import mock
 
-from tools.ci.chromium import PLATFORMS, ROOT, binary_platform, build, checksum, package, package_payload, stamp_payload, unpack, artifact_outputs
+from tools.ci.chromium import PLATFORMS, ROOT, binary_platform, build, checksum, cold_build_report, package, package_payload, stamp_payload, unpack, artifact_outputs
 
 
 REVISION = '1' * 40
@@ -236,5 +236,55 @@ class ArtifactsTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'BuildBuddy workflow runner'):
                 build(self.target, self.root / 'artifacts', REVISION, hosted=True)
         execute.assert_not_called()
+
+    def test_cold_result_requires_success_real_compiles_and_no_cache_reuse(self):
+        events = self.root / 'events.json'
+        for success, local_hits, remote_hits, compiles, verified in [
+            (True, 0, 0, 12345, True),
+            (False, 0, 0, 12345, False),
+            (True, 1, 0, 12345, False),
+            (True, 0, 1, 12345, False),
+            (True, 0, 0, 0, False),
+        ]:
+            with self.subTest(success=success, local_hits=local_hits, remote_hits=remote_hits, compiles=compiles):
+                events.write_text(json.dumps({'buildMetrics': {'actionSummary': {
+                    'actionData': [{'mnemonic': 'CppCompile', 'actionsExecuted': str(compiles)}],
+                    'actionCacheStatistics': {'hits': local_hits},
+                    'runnerCount': [{'name': 'remote', 'count': compiles},
+                                    {'name': 'remote cache hit', 'count': remote_hits}],
+                }}}))
+                result = cold_build_report(events, 9000, success)
+                self.assertEqual(result['cold_result_verified'], verified)
+                self.assertEqual(result['elapsed_seconds'], 9000)
+                self.assertEqual(result['cpp_compile_actions'], compiles)
+        events.write_text('{"incomplete":')
+        self.assertFalse(cold_build_report(events, 1, False)['cold_result_verified'])
+
+    def test_cold_failure_keeps_measurement_without_reusing_bazel_state(self):
+        directory = self.root / 'cold-artifacts'
+        environment = {'BUILDBUDDY_CI_RUNNER_ABSPATH': '/runner/ci_runner'}
+        roots = []
+
+        def fail(command, **kwargs):
+            root = Path(next(value.split('=', 1)[1] for value in command
+                             if value.startswith('--output_user_root=')))
+            self.assertFalse(root.exists())
+            roots.append(root)
+            self.assertIn('--batch', command[:command.index('build')])
+            self.assertIn('--remote_accept_cached=false', command)
+            self.assertIn('--disk_cache=', command)
+            self.assertIn('--repo_contents_cache=', command)
+            self.assertIn('--repository_cache=' + str(root.parent / 'repository-cache'), command)
+            raise RuntimeError('build failed')
+
+        with mock.patch.dict(os.environ, environment, clear=True), \
+                mock.patch('tools.ci.chromium.subprocess.run', side_effect=fail):
+            for _ in range(2):
+                with self.assertRaisesRegex(RuntimeError, 'build failed'):
+                    build(self.target, directory, REVISION, hosted=True, cold=True)
+                report = json.loads((directory / 'cold-build.json').read_text())
+                self.assertFalse(report['build_succeeded'])
+                self.assertFalse(report['cold_result_verified'])
+        self.assertNotEqual(roots[0], roots[1])
 if __name__ == '__main__':
     unittest.main()

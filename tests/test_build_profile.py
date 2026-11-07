@@ -15,20 +15,26 @@ class BuildProfileTest(unittest.TestCase):
     def test_compiler_experiment_report_is_collected_from_workflow_artifact(self):
         report = {'baseline': {'input_entries': 76130}, 'include-scan': {'input_entries': 1000}}
         uri = 'bytestream://formatjs.buildbuddy.io/report'
-        outer = {'pattern': ['Chromium compile input experiment']}
-        artifacts = {'invocation': [{'artifacts': [{
-            'name': 'command-0/compile-input-experiment/report.json', 'uri': uri}]}]}
-        with mock.patch.object(profile_buildbuddy, 'rpc', return_value={'invocation': [outer]}), \
-                mock.patch.object(profile_buildbuddy, 'api_request', side_effect=[
-                    io.BytesIO(json.dumps(artifacts).encode()), io.BytesIO(json.dumps(report).encode())]) as api, \
-                mock.patch.dict(os.environ, {'BUILDBUDDY_API_KEY': 'read-only-test-key'}):
-            result = profile_buildbuddy.collect('workflow')
-        self.assertEqual(result['compile_experiment'], report)
-        api.assert_has_calls([
-            mock.call('GetInvocation', {'selector': {'invocation_id': 'workflow'},
-                                       'include_artifacts': True}, 'read-only-test-key'),
-            mock.call('GetFile', {'uri': uri}, 'read-only-test-key'),
-        ])
+        for pattern, artifact_path, key in [
+            ('Chromium compile input experiment', 'compile-input-experiment/report.json', 'compile_experiment'),
+            ('Chromium compile inputs host-blink', 'compile-input-experiment/report.json', 'compile_experiment'),
+            ('Chromium cold build linux-amd64', 'linux-amd64/cold-build.json', 'cold_build'),
+        ]:
+            with self.subTest(pattern=pattern):
+                outer = {'pattern': [pattern]}
+                artifacts = {'invocation': [{'artifacts': [{
+                    'name': 'command-0/' + artifact_path, 'uri': uri}]}]}
+                with mock.patch.object(profile_buildbuddy, 'rpc', return_value={'invocation': [outer]}), \
+                        mock.patch.object(profile_buildbuddy, 'api_request', side_effect=[
+                            io.BytesIO(json.dumps(artifacts).encode()), io.BytesIO(json.dumps(report).encode())]) as api, \
+                        mock.patch.dict(os.environ, {'BUILDBUDDY_API_KEY': 'read-only-test-key'}):
+                    result = profile_buildbuddy.collect('workflow')
+                self.assertEqual(result[key], report)
+                api.assert_has_calls([
+                    mock.call('GetInvocation', {'selector': {'invocation_id': 'workflow'},
+                                               'include_artifacts': True}, 'read-only-test-key'),
+                    mock.call('GetFile', {'uri': uri}, 'read-only-test-key'),
+                ])
 
     def test_metrics_preserved_without_command_credentials(self):
         metrics = {'actionSummary': {'actionsCreated': '42123', 'actionsExecuted': '17'},

@@ -61,23 +61,30 @@ def collect(identifier):
     result = summarize(outer)
     result['children'] = []
     pattern = outer.get('pattern', [])
+    report_key = None
+    report_path = 'compile-input-experiment/report.json'
     if pattern == ['Chromium compile input experiment'] or (
             len(pattern) == 1 and pattern[0].startswith(('Chromium compile inputs ', 'Chromium compile throughput '))):
+        report_key = 'compile_experiment'
+    elif len(pattern) == 1 and pattern[0].startswith('Chromium cold build '):
+        report_key = 'cold_build'
+        report_path = pattern[0].removeprefix('Chromium cold build ') + '/cold-build.json'
+    if report_key:
         with api_request('GetInvocation', {
                 'selector': {'invocation_id': identifier}, 'include_artifacts': True,
         }, os.environ['BUILDBUDDY_API_KEY']) as response:
             invocations = json.load(response).get('invocation', [])
         reports = [artifact for invocation in invocations
                    for artifact in invocation.get('artifacts', [])
-                   if artifact.get('name', '').endswith('/compile-input-experiment/report.json')
-                   or artifact.get('name') == 'compile-input-experiment/report.json']
+                   if artifact.get('name', '').endswith('/' + report_path)
+                   or artifact.get('name') == report_path]
         if len(reports) == 1:
             with api_request('GetFile', {'uri': reports[0]['uri']},
                              os.environ['BUILDBUDDY_API_KEY']) as response:
                 payload = response.read(4 * 1024 * 1024 + 1)
             if len(payload) > 4 * 1024 * 1024:
-                raise ValueError('Compiler experiment report exceeds 4 MiB')
-            result['compile_experiment'] = json.loads(payload)
+                raise ValueError('Build measurement report exceeds 4 MiB')
+            result[report_key] = json.loads(payload)
     for child in outer.get('childInvocations', []):
         child_id = child['invocationId']
         full = rpc('GetInvocation', {'lookup': {'invocationId': child_id}})['invocation'][0]

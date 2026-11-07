@@ -30,6 +30,7 @@ def blink_compile_probe(name, libraries, repository = "@chromium"):
         ],
         copts = library["copts"],
         local_defines = library["defines"],
+        linkstatic = True,
         deps = [":" + name + "_headers"],
         features = ["cc_include_scanning"],
         # Skia selects these headers through macro includes.

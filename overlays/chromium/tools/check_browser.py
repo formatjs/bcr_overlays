@@ -187,6 +187,8 @@ Promise.resolve().then(() => {
             '--user-data-dir=' + str(directory / 'profile'),
             '--dump-dom',
         ]
+        if sys.platform == 'darwin':
+            arguments.append('--vmodule=keep_alive_registry=1')
         if args.no_sandbox:
             arguments.insert(0, '--no-sandbox')
         page = PageResult()

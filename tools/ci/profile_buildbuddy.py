@@ -266,7 +266,8 @@ def main():
         if url.startswith('https://formatjs.buildbuddy.io/invocation/'):
             identifiers.setdefault(status['context'], invocation_id(url))
     args.directory.mkdir(parents=True, exist_ok=True)
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    # Full cold traces retain large decoded event graphs.
+    with ThreadPoolExecutor(max_workers=2) as executor:
         futures = {name: executor.submit(collect, identifier)
                    for name, identifier in identifiers.items()}
         results = {}

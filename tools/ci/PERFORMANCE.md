@@ -367,3 +367,9 @@ The hosted candidate now uses 128 jobs; local defaults stay unchanged. Validate
 all browser artifacts, native rendering, payload equality, and full cold timing
 before promoting it. The running `d49c868` cold trial remains the 64-job control.
 The `perf/cold-linux-amd64-128` branch starts the follow-up without replacing it.
+
+The expanded 14-source browser comparisons at `1494feb` now pass all five triples
+with identical archives in all modes. Net paths removed per pair: Linux AMD64
+1,408,793; Linux ARM64 1,417,683; Darwin ARM64 1,381,646; Windows AMD64 1,413,986;
+Windows ARM64 1,428,014. Linux AMD64 at `9cb5359` also passes full browser and
+native rendering validation. Cross-platform full validation remains in progress.

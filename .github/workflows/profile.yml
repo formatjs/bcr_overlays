@@ -6,6 +6,10 @@ on:
         description: Full source commit SHA to profile
         required: true
         type: string
+      baseline:
+        description: Optional green commit for browser payload byte comparison
+        required: false
+        type: string
 permissions:
   contents: read
 jobs:
@@ -21,6 +25,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           BUILD_SHA: ${{ inputs.revision }}
         run: python3 -m tools.ci.profile_buildbuddy --revision "$BUILD_SHA" --directory "$RUNNER_TEMP/build-profile"
+      - name: Compare browser payload bytes
+        if: inputs.baseline != ''
+        env:
+          BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_RO_PUBLIC_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          BUILD_SHA: ${{ inputs.revision }}
+          BASELINE_SHA: ${{ inputs.baseline }}
+        run: python3 -m tools.ci.compare_payloads --baseline "$BASELINE_SHA" --revision "$BUILD_SHA" --directory "$RUNNER_TEMP/build-profile"
       - uses: actions/upload-artifact@v7
         if: always()
         with:

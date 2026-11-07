@@ -1,4 +1,6 @@
 import io
+import gzip
+from contextlib import redirect_stdout
 import json
 import os
 from pathlib import Path
@@ -8,6 +10,7 @@ import tempfile
 import unittest
 from unittest import mock
 
+from tools.ci.compression_benchmark import benchmark, tar_digest
 from tools.ci.chromium import PLATFORMS, ROOT, binary_platform, build, checksum, cold_build_report, package, package_payload, stamp_payload, unpack, artifact_outputs
 
 
@@ -35,6 +38,28 @@ class ArtifactsTest(unittest.TestCase):
 
     def archive(self):
         return package(self.bundle, self.root / 'artifacts', self.target, REVISION)
+
+    def test_compression_benchmark_follows_runfiles_bundle_link(self):
+        linked = self.root / 'runfiles-bundle'
+        linked.symlink_to(self.bundle, target_is_directory=True)
+        directory = self.root / 'compression-report'
+        with redirect_stdout(io.StringIO()):
+            benchmark(linked, self.target, directory)
+        report = json.loads((directory / 'report.json').read_text())
+        original = package_payload(self.bundle, self.root / 'original.tar.gz', self.target)
+        self.assertTrue(report['tar_bytes_match'])
+        self.assertTrue(report['repeated_gzip_bytes_match'])
+        self.assertEqual([mode['compression_level'] for mode in report['modes']], [6, 1, 1, 6])
+        self.assertTrue(all(mode['tar'] == tar_digest(original) for mode in report['modes']))
+
+    def test_compression_levels_preserve_complete_tar_bytes(self):
+        digests = []
+        for level in (1, 6):
+            payload = package_payload(self.bundle, self.root / f'level-{level}.tar.gz',
+                                      self.target, compression_level=level)
+            with gzip.open(payload, 'rb') as source:
+                digests.append(source.read())
+        self.assertEqual(digests[0], digests[1])
 
     def test_revision_stamping_reuses_compressed_payload_without_recompression(self):
         payload = package_payload(self.bundle, self.root / 'payload.tar.gz', self.target)

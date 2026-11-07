@@ -56,7 +56,7 @@ def checksum(path):
         return hashlib.file_digest(source, 'sha256').hexdigest()
 
 
-def package_payload(bundle, payload, target):
+def package_payload(bundle, payload, target, *, compression_level=6):
     validate_binary(bundle, target)
     payload.parent.mkdir(parents=True, exist_ok=True)
 
@@ -73,7 +73,7 @@ def package_payload(bundle, payload, target):
         return member
 
     with payload.open('wb') as raw, gzip.GzipFile(
-            filename='', mode='wb', fileobj=raw, mtime=0, compresslevel=6) as compressed:
+            filename='', mode='wb', fileobj=raw, mtime=0, compresslevel=compression_level) as compressed:
         with tarfile.open(fileobj=compressed, mode='w|', format=tarfile.PAX_FORMAT,
                           dereference=False) as output:
             output.add(bundle, arcname='bundle', filter=normalize)

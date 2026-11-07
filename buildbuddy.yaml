@@ -704,3 +704,32 @@ actions:
           python3 tools/ci/chromium.py build --buildbuddy-hosted --cold \
             --platform windows-arm64 --revision "$(git rev-parse HEAD)" \
             --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/windows-arm64"
+
+  - name: Chromium compression benchmark windows-amd64
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 1h
+    resource_requests:
+      cpu: 16
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/compression-benchmark"]
+    steps:
+      - run: |
+          bazel --host_jvm_args=-Xmx12g test --config=browser --config=buildbuddy \
+            --noexperimental_remote_discard_merkle_trees --nocache_test_results --zip_undeclared_test_outputs \
+            --repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1 \
+            --repo_env=BAZEL_WINDOWS_SDK_EULA=1 \
+            //tools/ci:windows-amd64_compression_benchmark
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          import zipfile
+          directory = Path(os.environ['BUILDBUDDY_ARTIFACTS_DIRECTORY']) / 'compression-experiment'
+          directory.mkdir(parents=True, exist_ok=True)
+          with zipfile.ZipFile('bazel-testlogs/tools/ci/windows-amd64_compression_benchmark/test.outputs/outputs.zip') as source:
+              (directory / 'report.json').write_bytes(source.read('report.json'))
+          PY

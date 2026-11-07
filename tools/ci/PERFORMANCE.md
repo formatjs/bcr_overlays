@@ -336,3 +336,13 @@ a local test showed raw BEP retains remote authentication headers. Artifact audi
 confirms zero raw event artifacts uploaded. Its partial run is not a timing result.
 The replacement at `d49c868` keeps raw BEP temporary and persists only profiles
 and sanitized metrics. No compiler or cache-policy change accompanies this retry.
+
+## Compression measurement
+
+Windows ARM64 previously reached compression before the workflow cap. A hermetic
+Python benchmark now packages the actual Windows AMD64 bundle at gzip levels
+6/1/1/6, recording wall time, CPU time, sizes, and compressed hashes. Every pass
+must produce identical complete uncompressed tar bytes; repeated levels must
+produce identical gzip bytes. The test bypasses caches and uses the existing
+with_cfg Windows bundle. Production remains at level 6. Report fixtures and a
+real Bazel-launched fixture pass; full-bundle measurements are still pending.

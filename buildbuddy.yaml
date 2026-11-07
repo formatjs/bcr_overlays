@@ -732,3 +732,30 @@ actions:
           source = Path('bazel-testlogs/tools/ci/windows-amd64_compression_benchmark/test.outputs/report.json')
           (directory / 'report.json').write_bytes(source.read_bytes())
           PY
+
+  - name: Chromium clean cold build darwin-arm64
+    container_image: ubuntu-24.04
+    timeout: 6h
+    resource_requests:
+      cpu: 16
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/darwin-clean"]
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import json, os, pathlib, shutil
+          for path in [pathlib.Path('/tmp'), pathlib.Path.cwd(), pathlib.Path('/home/buildbuddy/workspace/output-base')]:
+              if not path.exists():
+                  print(json.dumps({'path': str(path), 'exists': False}))
+                  continue
+              disk, stat = shutil.disk_usage(path), os.statvfs(path)
+              print(json.dumps({'path': str(path), 'device': os.stat(path).st_dev,
+                                'total_bytes': disk.total, 'free_bytes': disk.free,
+                                'inode_total': stat.f_files, 'inode_free': stat.f_favail}))
+          PY
+          python3 tools/ci/chromium.py build --buildbuddy-hosted --cold \
+            --platform darwin-arm64 --revision "$(git rev-parse HEAD)" \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/darwin-arm64"

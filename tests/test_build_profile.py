@@ -86,6 +86,7 @@ class BuildProfileTest(unittest.TestCase):
             {'cat': 'Remote execution process wall time', 'ph': 'X',
              'tid': 2, 'ts': 9000000, 'dur': 3000000},
             {'cat': 'discover inputs', 'ph': 'X', 'tid': 1, 'ts': 100, 'dur': 500000},
+            {'cat': 'include scanner', 'ph': 'X', 'tid': 1, 'ts': 200, 'dur': 250000},
         ]
         result = compiler_work(events)
         self.assertEqual(result['blink']['compile_spans'], 1)
@@ -93,6 +94,7 @@ class BuildProfileTest(unittest.TestCase):
         self.assertEqual(result['blink']['merkle_task_seconds'], 1)
         self.assertEqual(result['blink']['worker_task_seconds'], 3)
         self.assertEqual(result['blink']['input_discovery_task_seconds'], 0.5)
+        self.assertEqual(result['blink']['include_scanning_task_seconds'], 0.25)
         self.assertEqual(result['components']['merkle_task_seconds'], 2)
         self.assertEqual(result['components']['worker_task_seconds'], 0)
         self.assertNotIn('DO_NOT_EXPORT', json.dumps(result))

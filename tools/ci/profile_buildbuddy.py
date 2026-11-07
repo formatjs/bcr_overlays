@@ -63,7 +63,7 @@ def compiler_work(events):
         row = groups.setdefault(group, {
             'compile_spans': 0, 'tool_compile_spans': 0, 'action_task_seconds': 0,
             'merkle_task_seconds': 0, 'worker_task_seconds': 0, 'worker_spans': 0,
-            'input_discovery_task_seconds': 0,
+            'input_discovery_task_seconds': 0, 'include_scanning_task_seconds': 0,
         })
         row['compile_spans'] += 1
         row['tool_compile_spans'] += int(name.endswith(' [for tool]'))
@@ -81,6 +81,8 @@ def compiler_work(events):
             field = 'worker_task_seconds'
         elif event.get('cat') == 'discover inputs':
             field = 'input_discovery_task_seconds'
+        elif event.get('cat') == 'include scanner':
+            field = 'include_scanning_task_seconds'
         index = indices.get(event.get('tid'))
         if field is None or index is None:
             continue
@@ -140,6 +142,7 @@ def trace_summary(path, allow_partial=False):
         'worker_queue': ('Remote execution queuing time', None),
         'output_download': ('Remote execution file fetching', None),
         'input_discovery': ('discover inputs', None),
+        'include_scanning': ('include scanner', None),
     }
     tasks = {}
     for name, (category, event_name) in operations.items():

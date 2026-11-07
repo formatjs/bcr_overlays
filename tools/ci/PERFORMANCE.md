@@ -317,3 +317,9 @@ Captured Linux host libraries keep their previous scope; executables, shared
 libraries, and Objective-C helpers retain their existing settings. The new
 `perf/browser-platform-rollout` branch validates all five browser artifacts.
 These captured counts are not executed compiler counts or timing results.
+
+The larger concurrency warmup executed 961 selected C++ actions, but the default
+profile omitted one 61ms worker span. RBE execution metadata confirms that compile
+ran. Benchmarks now request full profiler data and save diagnostic reports before
+rejecting missing worker evidence. No timing gate was relaxed. Include-scanner
+spans are reported separately from parent discovery spans to avoid double-counting.

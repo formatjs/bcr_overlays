@@ -61,7 +61,7 @@ def payload_digest(source, expected_checksum, revision, platform):
     return {'sha256': payload_hash.hexdigest(), 'size_bytes': payload_size}
 
 
-def build_urls(revision):
+def build_urls(revision, platforms=PLATFORMS, kind='browser'):
     repository = os.environ.get('GITHUB_REPOSITORY', 'formatjs/chromium')
     request = urllib.request.Request(
         f'https://api.github.com/repos/{repository}/commits/{revision}/status?per_page=100',
@@ -72,20 +72,21 @@ def build_urls(revision):
     for status in statuses:
         by_context.setdefault(status['context'], status)
     urls = {}
-    for platform in PLATFORMS:
-        status = by_context.get('Chromium ' + platform, {})
+    prefix = 'Chromium cold build ' if kind == 'cold-browser' else 'Chromium '
+    for platform in platforms:
+        status = by_context.get(prefix + platform, {})
         if status.get('state') != 'success':
             raise ValueError('Browser build has not passed: ' + platform)
         urls[platform] = status['target_url']
     return urls
 
 
-def digest_artifact(url, revision, platform):
+def digest_artifact(url, revision, platform, kind='browser'):
     key = os.environ['BUILDBUDDY_API_KEY']
     with api_request('GetInvocation', {
             'selector': {'invocation_id': invocation_id(url)}, 'include_artifacts': True,
     }, key) as response:
-        uris = artifact_uris(json.load(response), revision, platform)
+        uris = artifact_uris(json.load(response), revision, platform, kind=kind)
     name = 'chromium-' + platform + '.tar.gz'
     with api_request('GetFile', {'uri': uris[name + '.sha256']}, key) as response:
         expected = response.read(66).decode().strip()
@@ -100,23 +101,27 @@ def main():
     parser.add_argument('--baseline', required=True)
     parser.add_argument('--revision', required=True)
     parser.add_argument('--directory', type=Path, required=True)
+    parser.add_argument('--platform', choices=sorted(PLATFORMS))
+    parser.add_argument('--revision-kind', choices=['browser', 'cold-browser'], default='browser')
     args = parser.parse_args()
     if any(not re.fullmatch(r'[0-9a-f]{40}', value) for value in (args.baseline, args.revision)):
         parser.error('Expected full source commit SHAs')
-    baseline_urls = build_urls(args.baseline)
-    revision_urls = baseline_urls if args.revision == args.baseline else build_urls(args.revision)
-    urls_by_revision = {args.baseline: baseline_urls, args.revision: revision_urls}
-    result = {'baseline': args.baseline, 'revision': args.revision, 'platforms': {}}
+    platforms = [args.platform] if args.platform else list(PLATFORMS)
+    baseline_key = (args.baseline, 'browser')
+    revision_key = (args.revision, args.revision_kind)
+    urls_by_build = {key: build_urls(key[0], platforms, key[1]) for key in dict.fromkeys((baseline_key, revision_key))}
+    result = {'baseline': args.baseline, 'revision': args.revision,
+              'revision_kind': args.revision_kind, 'platforms': {}}
     args.directory.mkdir(parents=True, exist_ok=True)
     with ThreadPoolExecutor(max_workers=2) as executor:
         futures = {
-            (platform, revision): executor.submit(digest_artifact, urls[platform], revision, platform)
-            for platform in PLATFORMS
-            for revision, urls in urls_by_revision.items()
+            (platform, *key): executor.submit(digest_artifact, urls[platform], key[0], platform, key[1])
+            for platform in platforms
+            for key, urls in urls_by_build.items()
         }
-        for platform in PLATFORMS:
-            baseline = futures[platform, args.baseline].result()
-            current = futures[platform, args.revision].result()
+        for platform in platforms:
+            baseline = futures[platform, *baseline_key].result()
+            current = futures[platform, *revision_key].result()
             result['platforms'][platform] = {
                 'baseline': baseline, 'current': current, 'payload_bytes_match': baseline == current,
             }

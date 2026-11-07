@@ -28,9 +28,11 @@ def invocation_id(url):
 def artifact_uris(response, revision, target, kind='browser'):
     if target not in PLATFORMS or not re.fullmatch(r'[0-9a-f]{40}', revision):
         raise ValueError('Invalid artifact platform or commit')
-    if kind not in ('browser', 'components'):
+    prefixes = {'browser': 'Chromium ', 'components': 'Chromium components ',
+                'cold-browser': 'Chromium cold build '}
+    if kind not in prefixes:
         raise ValueError('Invalid artifact kind')
-    prefix = 'Chromium ' if kind == 'browser' else 'Chromium components '
+    prefix = prefixes[kind]
     invocations = response.get('invocation', [])
     if len(invocations) != 1:
         raise ValueError('Expected exactly one BuildBuddy invocation')
@@ -42,7 +44,7 @@ def artifact_uris(response, revision, target, kind='browser'):
             or not invocation.get('success')
             or invocation.get('invocationStatus') != 'COMPLETE_INVOCATION_STATUS'):
         raise ValueError('Cross-build invocation does not match successful commit')
-    archive = 'chromium-' + ('' if kind == 'browser' else 'components-') + target + '.tar.gz'
+    archive = 'chromium-' + ('components-' if kind == 'components' else '') + target + '.tar.gz'
     uris = {}
     for name in [archive, archive + '.sha256']:
         artifacts = [item for item in invocation.get('artifacts', [])

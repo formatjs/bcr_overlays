@@ -64,6 +64,17 @@ class BuildBuddyArtifactsTest(unittest.TestCase):
             with self.subTest(response=response), self.assertRaises(ValueError):
                 artifacts.artifact_uris(response, REVISION, TARGET)
 
+    def test_cold_browser_keeps_provenance_checks_and_cannot_impersonate_regular_build(self):
+        response = invocation()
+        response['invocation'][0]['pattern'] = 'Chromium cold build ' + TARGET
+        self.assertEqual(set(artifacts.artifact_uris(response, REVISION, TARGET, kind='cold-browser')),
+                         {ARCHIVE, ARCHIVE + '.sha256'})
+        with self.assertRaisesRegex(ValueError, 'successful commit'):
+            artifacts.artifact_uris(response, REVISION, TARGET)
+        response['invocation'][0]['success'] = False
+        with self.assertRaisesRegex(ValueError, 'successful commit'):
+            artifacts.artifact_uris(response, REVISION, TARGET, kind='cold-browser')
+
     def test_download_checks_digest_before_publishing_files(self):
         payload = b'compressed browser artifact'
         digest = (hashlib.sha256(payload).hexdigest() + '\n').encode()

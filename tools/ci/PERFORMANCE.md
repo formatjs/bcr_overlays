@@ -323,3 +323,16 @@ profile omitted one 61ms worker span. RBE execution metadata confirms that compi
 ran. Benchmarks now request full profiler data and save diagnostic reports before
 rejecting missing worker evidence. No timing gate was relaxed. Include-scanner
 spans are reported separately from parent discovery spans to avoid double-counting.
+
+Even full profiling omitted that short worker in the 128-job warmup. Execution
+proof now requires one completed, unmerged RBE execution per selected source in
+the same invocation. Missing, cached, merged, duplicate, and mismatched outputs
+fail validation. Worker seconds come from execution metadata; profile worker
+seconds remain separate for diagnostics. A real replay verifies all 961 compiles
+from the first warmup, including the 0.061162s compiler.
+
+The `1494feb` cold trial was intentionally cancelled before artifact upload after
+a local test showed raw BEP retains remote authentication headers. Artifact audit
+confirms zero raw event artifacts uploaded. Its partial run is not a timing result.
+The replacement at `d49c868` keeps raw BEP temporary and persists only profiles
+and sanitized metrics. No compiler or cache-policy change accompanies this retry.

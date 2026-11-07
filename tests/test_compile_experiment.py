@@ -1,14 +1,53 @@
 import gzip
+import io
 import json
 import re
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
 
-from tools.ci.compile.experiment import TARGET, archive_outputs, compiler_input_diff, compiler_pattern, compiler_profiles
+from tools.ci.compile.experiment import TARGET, archive_outputs, compiler_input_diff, compiler_pattern, compiler_profiles, remote_compiler_seconds
 
 
 class CompileExperimentTest(unittest.TestCase):
+    def test_remote_worker_evidence_keeps_short_compiles_and_rejects_cache_merges(self):
+        def execution(name, **changes):
+            return {
+                'actionMnemonic': 'CppCompile', 'targetLabel': '//sample:probe',
+                'primaryOutputPath': 'objects/' + name, 'stage': 'COMPLETED',
+                'invocationLinkType': 1, 'executedActionMetadata': {
+                    'executionStartTimestamp': '2026-11-07T09:46:20.373944Z',
+                    'executionCompletedTimestamp': '2026-11-07T09:46:20.435106Z',
+                }, **changes,
+            }
+        rows = [execution('a.pic.d'), execution('b.obj'),
+                execution('a.pic.d', invocationLinkType=2),
+                execution('other.pic.d', targetLabel='//support:other')]
+        with tempfile.TemporaryDirectory() as temporary:
+            events = Path(temporary) / 'events.json'
+            events.write_text(json.dumps({'started': {'uuid': 'selected-invocation'}}))
+            with mock.patch('tools.ci.compile.experiment.urllib.request.urlopen',
+                            return_value=io.BytesIO(json.dumps({'execution': rows}).encode())) as fetch:
+                result = remote_compiler_seconds(events, ('a.cc', 'b.cc'), (':probe',))
+            self.assertEqual(result, {'a.cc': 0.061162, 'b.cc': 0.061162})
+            self.assertEqual(json.loads(fetch.call_args.args[0].data),
+                             {'executionLookup': {'invocationId': 'selected-invocation'}})
+            for invalid in [execution('b.obj', invocationLinkType=2),
+                            execution('b.obj', stage='EXECUTING'),
+                            execution('b.obj', executedActionMetadata={})]:
+                with mock.patch('tools.ci.compile.experiment.time.sleep'), \
+                        mock.patch('tools.ci.compile.experiment.urllib.request.urlopen', side_effect=[
+                            io.BytesIO(json.dumps({'execution': [rows[0], invalid]}).encode())
+                            for _ in range(3)]):
+                    with self.assertRaisesRegex(ValueError, 'Expected 2 real RBE compiles, found 1'):
+                        remote_compiler_seconds(events, ('a.cc', 'b.cc'), (':probe',))
+            for invalid in [execution('a.pic.d'), execution('unexpected.obj')]:
+                with mock.patch('tools.ci.compile.experiment.urllib.request.urlopen',
+                                return_value=io.BytesIO(json.dumps({'execution': [rows[0], invalid]}).encode())):
+                    with self.assertRaisesRegex(ValueError, 'outputs do not match'):
+                        remote_compiler_seconds(events, ('a.cc', 'b.cc'), (':probe',))
+
     def test_compact_source_filter_preserves_selection_and_literal_paths(self):
         sources = ('third_party/blink/renderer/core/css/a.cc',
                    'third_party/blink/renderer/core/layout/b+1.cc')

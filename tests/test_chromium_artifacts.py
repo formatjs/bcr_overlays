@@ -282,7 +282,7 @@ class ArtifactsTest(unittest.TestCase):
                                if value.startswith('--build_event_json_file=')))
             profile = Path(next(value.split('=', 1)[1] for value in command
                                 if value.startswith('--profile=')))
-            self.assertNotEqual(events.parent, directory)
+            self.assertFalse(events.resolve().is_relative_to(directory.resolve()))
             self.assertEqual(profile.parent, directory)
             events.write_text(json.dumps({'started': {'uuid': 'cold-failure'}}) + '\n')
             profile.write_text('{"traceEvents":[')

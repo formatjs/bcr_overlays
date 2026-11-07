@@ -7,9 +7,12 @@ import hashlib
 import json
 import os
 from pathlib import Path
+from datetime import datetime
 import re
 import subprocess
 import tempfile
+import time
+import urllib.request
 from urllib.parse import unquote, urlparse
 import uuid
 
@@ -48,6 +51,50 @@ def compiler_input_diff(path, owners=OWNERS, expected_compiles=None):
             removed += len(paths.get('old_only', []))
             added += len(paths.get('new_only', []))
     return {'comparison': 'paired', 'input_paths_removed': removed, 'input_paths_added': added}
+
+
+def remote_compiler_seconds(events, sources, owners):
+    """Require one completed, unmerged RBE compile for every selected source."""
+    with events.open() as stream:
+        invocation = next(event['started']['uuid'] for event in map(json.loads, stream) if 'started' in event)
+    expected = {Path(source).stem: source for source in sources}
+    if len(expected) != len(sources):
+        raise ValueError('Selected compiler source basenames must be unique')
+    request = urllib.request.Request(
+        'https://formatjs.buildbuddy.io/rpc/BuildBuddyService/GetExecution',
+        data=json.dumps({'executionLookup': {'invocationId': invocation}}).encode(),
+        headers={'Content-Type': 'application/json'})
+    for attempt in range(3):
+        with urllib.request.urlopen(request, timeout=60) as response:
+            executions = json.load(response).get('execution', [])
+        result = {}
+        for execution in executions:
+            if (execution.get('actionMnemonic') != 'CppCompile'
+                    or not execution.get('targetLabel', '').endswith(owners)
+                    or execution.get('stage') != 'COMPLETED'
+                    or execution.get('invocationLinkType') != 1
+                    or execution.get('status', {}).get('code', 0)):
+                continue
+            metadata = execution.get('executedActionMetadata', {})
+            start, end = (metadata.get(key, '') for key in (
+                'executionStartTimestamp', 'executionCompletedTimestamp'))
+            if not start or not end or start.startswith('1970'):
+                continue
+            seconds = (datetime.fromisoformat(end.replace('Z', '+00:00'))
+                       - datetime.fromisoformat(start.replace('Z', '+00:00'))).total_seconds()
+            name = Path(execution.get('primaryOutputPath', '')).name
+            for suffix in ('.pic.d', '.pic.o', '.obj', '.o', '.d'):
+                if name.endswith(suffix):
+                    name = name[:-len(suffix)]
+                    break
+            if name not in expected or expected[name] in result or seconds <= 0:
+                raise ValueError('RBE compiler outputs do not match selected sources')
+            result[expected[name]] = seconds
+        if len(result) == len(sources):
+            return result
+        if attempt < 2:
+            time.sleep(1)
+    raise ValueError(f'Expected {len(sources)} real RBE compiles, found {len(result)}')
 
 
 def compiler_profiles(path, sources):
@@ -269,6 +316,14 @@ def main():
             }
             if args.compare_concurrency:
                 report[mode]['requested_jobs'] = 128 if experimental else 64
+            (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
+            remote_seconds = remote_compiler_seconds(events, sources, owners)
+            for source, timing in timings.items():
+                timing['profile_worker_seconds'] = timing['worker_seconds']
+                timing['worker_seconds'] = remote_seconds[source]
+            report[mode]['execution_evidence'] = {
+                'source': 'completed unmerged RBE executions', 'cpp_compiles': len(remote_seconds),
+            }
             (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
             if any(item['worker_seconds'] <= 0 for item in timings.values()):
                 raise ValueError('Expected real remote worker execution for every selected compile')

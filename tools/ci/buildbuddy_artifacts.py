@@ -92,7 +92,7 @@ def download(url, revision, target, destination, key, kind='browser'):
                     if total > limit:
                         raise ValueError('Artifact exceeds size limit: ' + name)
                     output.write(chunk)
-        archive = staging / ('chromium-' + ('' if kind == 'browser' else 'components-') + target + '.tar.gz')
+        archive = staging / ('chromium-' + ('components-' if kind == 'components' else '') + target + '.tar.gz')
         expected = archive.with_suffix('.gz.sha256').read_text().strip()
         if not re.fullmatch(r'[0-9a-f]{64}', expected) or checksum(archive) != expected:
             raise ValueError('Artifact SHA256 mismatch')

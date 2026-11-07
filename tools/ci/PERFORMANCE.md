@@ -346,3 +346,10 @@ must produce identical complete uncompressed tar bytes; repeated levels must
 produce identical gzip bytes. The test bypasses caches and uses the existing
 with_cfg Windows bundle. Production remains at level 6. Report fixtures and a
 real Bazel-launched fixture pass; full-bundle measurements are still pending.
+
+Cold artifacts can also run native rendering smoke directly through the profile
+workflow: select one platform, enable `smoke_cold_artifact`, and supply its successful
+BuildBuddy workflow URL. The downloader verifies repository, full commit, cold
+workflow identity, completion, and checksum before handing the archive to the
+existing native smoke workflow. Cold smoke posts its own status. This also fixes
+a cold-download filename bug that incorrectly selected the component prefix.

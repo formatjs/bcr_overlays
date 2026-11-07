@@ -15,6 +15,15 @@ on:
         type: choice
         default: browser
         options: [browser, cold-browser]
+      smoke_cold_artifact:
+        description: Execute and render the selected cold artifact on its native runner
+        required: false
+        type: boolean
+        default: false
+      invocation_url:
+        description: Successful cold BuildBuddy workflow URL, required for native smoke
+        required: false
+        type: string
       platform:
         description: Platforms to compare
         type: choice
@@ -55,3 +64,15 @@ jobs:
           path: ${{ runner.temp }}/build-profile
           if-no-files-found: error
           retention-days: 7
+
+  cold_smoke:
+    if: inputs.smoke_cold_artifact
+    uses: ./.github/workflows/cold-smoke.yml
+    permissions:
+      contents: read
+      statuses: write
+    secrets: inherit
+    with:
+      platform: ${{ inputs.platform }}
+      revision: ${{ inputs.revision }}
+      invocation_url: ${{ inputs.invocation_url }}

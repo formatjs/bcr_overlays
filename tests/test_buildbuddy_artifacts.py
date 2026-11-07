@@ -101,6 +101,18 @@ class BuildBuddyArtifactsTest(unittest.TestCase):
                               'read-only-test-key'),
                 ])
 
+    def test_cold_browser_download_uses_browser_archive_name(self):
+        payload = b'cold browser artifact'
+        response = invocation()
+        response['invocation'][0]['pattern'] = 'Chromium cold build ' + TARGET
+        replies = [io.BytesIO(json.dumps(response).encode()), io.BytesIO(payload),
+                   io.BytesIO((hashlib.sha256(payload).hexdigest() + '\n').encode())]
+        with tempfile.TemporaryDirectory() as directory, \
+                mock.patch.object(artifacts, 'api_request', side_effect=replies):
+            destination = Path(directory) / 'download'
+            artifacts.download(URL, REVISION, TARGET, destination, 'read-only-test-key', kind='cold-browser')
+            self.assertEqual((destination / ARCHIVE).read_bytes(), payload)
+
     def test_oversized_download_leaves_no_artifact(self):
         with tempfile.TemporaryDirectory() as directory:
             destination = Path(directory) / 'download'

@@ -287,3 +287,14 @@ compiler worker time before claiming a wall-time improvement.
 
 Keep raw profiles in BuildBuddy or local temporary files. GitHub artifacts carry
 sanitized metrics only.
+
+## Next concurrency measurement
+
+The earlier 101-source comparison has a 40–50s critical path, close to its whole
+execution phase; it cannot establish sustained full-build throughput. The next
+fixed batch contains 960 common Blink-core sources that took at most eight
+worker-seconds each in the `5bfb3df` cold snapshot, plus the existing core-probe
+source. The sample belongs to all five captured core owners. Compare 64/128 jobs
+with 16 client CPUs, identical scanning/retention, warmups, real executions,
+complete input-diff coverage, and repeated archive equality. Record observed
+worker sums and critical paths again; sample selection is not a speedup result.

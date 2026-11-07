@@ -116,6 +116,15 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- Native 19-source comparisons now pass on all five triples at `9730c78`,
+  including generated bindings and GPU/codec paths. All four archive sets match
+  per platform, with complete selected-compiler diff coverage: 380 real selected
+  compiles total. Each pair removes 1.303–1.372 million input paths net.
+  The matching library scope now covers all native overlays: 138–139 libraries
+  and 3,836–3,844 source entries per triple. Linux ARM64 inherits its module macro
+  from the base overlay; the remaining platform-specific macros match that scope.
+  Four platform artifact validations run separately while Linux AMD64's existing
+  native-scope validation finishes. Cold timing and full artifact gates remain open.
 - The browser hotspot scanner trial exposed a local/RBE mismatch: Chromium's
   unused vendored protobuf headers shadowed the canonical BCR forwarding headers.
   Projected Chromium trees now exclude `third_party/protobuf/src`; the shared
@@ -138,9 +147,8 @@ object equivalence before changing that boundary.
   passed baseline/scanner/scanner/baseline with identical archives using Linux
   AMD64's native library contexts. Both pairs removed 1,377,555 input paths and
   added 5,611: **1,371,944 fewer paths net**. The next candidate extends scoped scanning to
-  its Blink modules, bindings, and platform libraries: 140 libraries and 3,842
-  source entries. Mandatory macro-selected headers remain declared. Other native
-  platform captures retain their prior scope until validation. Full artifact,
+  its Blink modules, bindings, and platform libraries: 139 libraries and 3,841
+  source entries. Mandatory macro-selected headers remain declared. Full artifact,
   native rendering, and cold timing gates remain pending.
 - [101-source scanner benchmark](https://formatjs.buildbuddy.io/invocation/33661bf5-b986-4a93-9bbc-a49441f975b8)
   passed two warmups and ABBA comparisons: 606 real remote compiles, identical

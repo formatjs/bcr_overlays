@@ -29,5 +29,11 @@ def blink_compile_probe(name):
         local_defines = library["defines"],
         deps = [":" + name + "_headers"],
         features = ["cc_include_scanning"],
+        # Skia selects these headers through macro includes.
+        additional_compiler_inputs = [
+            "@chromium//:skia/config/SkUserConfig.h",
+            "@chromium//:skia/config/sk_ref_cnt_ext_release.h",
+            "@chromium//:skia/ext/skia_histogram.h",
+        ],
         tags = ["manual"],
     )

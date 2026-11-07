@@ -32,8 +32,11 @@ def blink_compile_probe(name):
         # Skia selects these headers through macro includes.
         additional_compiler_inputs = [
             "@chromium//:skia/config/SkUserConfig.h",
+            "@chromium//:skia/config/sk_ref_cnt_ext_debug.h",
             "@chromium//:skia/config/sk_ref_cnt_ext_release.h",
             "@chromium//:skia/ext/skia_histogram.h",
+            # Preserve the directory used by ../../skia/config includes.
+            "@chromium//native:blink_core_forwarders/third_party/re2/src/re2/re2.h",
         ],
         tags = ["manual"],
     )

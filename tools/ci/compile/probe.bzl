@@ -15,7 +15,7 @@ _compilation_headers = rule(
     attrs = {"library": attr.label(mandatory = True, providers = [CcInfo])},
 )
 
-def _blink_library_probe(name, library, repository, sources):
+def _blink_library_probe(name, library, repository, sources, forwarders = "blink_core_forwarders"):
     _compilation_headers(
         name = name + "_headers",
         library = repository + "//native:" + library["name"],
@@ -36,7 +36,7 @@ def _blink_library_probe(name, library, repository, sources):
             repository + "//:skia/config/sk_ref_cnt_ext_release.h",
             repository + "//:skia/ext/skia_histogram.h",
             # Preserve the directory used by ../../skia/config includes.
-            repository + "//native:blink_core_forwarders/third_party/re2/src/re2/re2.h",
+            repository + "//native:" + forwarders + "/third_party/re2/src/re2/re2.h",
         ],
         tags = ["manual"],
     )
@@ -54,3 +54,22 @@ def blink_compile_probe(name, libraries, repository = "@chromium", batch = False
     _blink_library_probe(name + "_canvas", libraries["//third_party/blink/renderer/core/probe:probe"], repository, [
         "third_party/blink/renderer/core/probe/core_probes.cc",
     ])
+
+def host_blink_compile_probe(name, libraries, repository):
+    """Compile Linux ARM64's captured x64 host Blink context independently."""
+    toolchain = "(//build/toolchain/linux:clang_x64_v8_arm64)"
+    for suffix, owner, sources in [
+        ("", "//third_party/blink/renderer/core:core", [
+            "third_party/blink/renderer/core/layout/layout_box.cc",
+            "third_party/blink/renderer/core/layout/layout_view.cc",
+            "third_party/blink/renderer/core/paint/svg_object_painter.cc",
+            "third_party/blink/renderer/core/css/css_palette_mix_value.cc",
+            "third_party/blink/renderer/core/css/css_relative_color_value.cc",
+        ]),
+        ("_canvas", "//third_party/blink/renderer/core/probe:probe", [
+            "third_party/blink/renderer/core/probe/core_probes.cc",
+        ]),
+    ]:
+        library = dict(libraries[owner + toolchain])
+        library["copts"] = library["copts"] + ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
+        _blink_library_probe(name + suffix, library, repository, sources, forwarders = "browser_forwarders")

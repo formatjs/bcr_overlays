@@ -359,6 +359,23 @@ actions:
           python3 -m tools.ci.compile.experiment --platform windows-arm64 \
             --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/compile-input-experiment"
 
+  - name: Chromium compile inputs host-blink
+    container_image: ubuntu-24.04
+    allow_concurrent_runs: false
+    allow_concurrent_runs_on_branches: []
+    timeout: 1h
+    resource_requests:
+      cpu: 8
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/host-blink"]
+    steps:
+      - run: |
+          python3 -m tools.ci.compile.experiment --host-blink \
+            --directory "$BUILDBUDDY_ARTIFACTS_DIRECTORY/compile-input-experiment"
+
   - name: Chromium compile throughput linux-amd64
     container_image: ubuntu-24.04
     allow_concurrent_runs: false

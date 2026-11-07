@@ -122,15 +122,20 @@ def main():
     parser.add_argument('--directory', type=Path, required=True)
     parser.add_argument('--platform', choices=sorted(TARGETS), default='linux-amd64')
     parser.add_argument('--batch', action='store_true', help='Measure fixed host throughput batch after warmups')
+    parser.add_argument('--host-blink', action='store_true', help='Probe Linux ARM64 captured x64 host Blink libraries')
     args = parser.parse_args()
     if args.batch and args.platform != 'linux-amd64':
         parser.error('Throughput batch currently targets Linux amd64 host compiles')
+    if args.host_blink and (args.batch or args.platform != 'linux-amd64'):
+        parser.error('Host Blink probe runs on Linux amd64 without --batch')
     if not os.environ.get('BUILDBUDDY_CI_RUNNER_ABSPATH'):
         raise ValueError('Compile experiment requires a BuildBuddy workflow runner')
     args.directory.mkdir(parents=True, exist_ok=True)
     nonce = uuid.uuid4().hex
     sources = batch_sources() if args.batch else SOURCES
     target = '//tools/ci/compile/throughput:blink-throughput-linux-amd64' if args.batch else TARGETS[args.platform]
+    if args.host_blink:
+        target = '//tools/ci/compile/host:blink-host-linux-arm64'
     pattern = '.*(' + '|'.join(re.escape(source) for source in sources) + ')' if args.batch else SOURCE_PATTERN
     modes = [('baseline-1', False), ('include-scan-1', True), ('include-scan-2', True), ('baseline-2', False)]
     if args.batch:

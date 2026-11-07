@@ -2,7 +2,7 @@ name: Cross-compiled Chromium components
 on: [push, pull_request]
 concurrency:
   group: components-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:

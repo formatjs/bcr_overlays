@@ -27,7 +27,8 @@ remains required. The other four browser captures contain no Blink-core librarie
 
 The hosted build command accepts `--cold`. It starts a batch Bazel process with
 a unique output root and fresh repository download cache, disables disk caches
-and remote action-cache reads, and writes `cold-build.json` even on failure.
+and remote action-cache reads, and writes `cold-build.json` when Bazel returns, including build failures.
+The hosted hard timeout can terminate the process before that report is written.
 Successful results require actual C++ executions, complete cache metrics, and
 zero observed action-cache hits. Cold runs also apply Bazel's `no-cache` execution
 policy: BuildBuddy [disables in-flight merging for uncached actions](https://github.com/buildbuddy-io/buildbuddy/blob/master/enterprise/server/remote_execution/action_merger/action_merger.go#L238).
@@ -90,6 +91,28 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- [101-source scanner benchmark](https://formatjs.buildbuddy.io/invocation/33661bf5-b986-4a93-9bbc-a49441f975b8)
+  passed two warmups and ABBA comparisons: 606 real remote compiles, identical
+  archive sets. Each pair removed 7,535,800 input paths and added 29,472:
+  **7,506,328 fewer paths net**. Client CPU fell 18–24% in both pairs. Execution
+  phases were 95.22s/50.18s baseline versus 46.04s/42.15s scanner; worker load
+  differed, so these are not a full-build speedup estimate. Sampled heap did not
+  increase. Merkle construction fell from 73.51–91.76 to 5.95–8.07 task-seconds.
+- [19-source host regression](https://formatjs.buildbuddy.io/invocation/f6a8f4a1-e78a-4b97-8b3e-6ba2515a3587)
+  passed all four modes after full ARM validation exposed generated-header and
+  codec include issues. The fixes declare the real GPU header producer and a
+  directly included base header. Public AOM adapters remove private quote roots
+  that shadow canonical libyuv headers; public includes and linking stay intact.
+  Coverage includes generated permission strings, V8 bindings, WebRTC, WebCodecs,
+  GPU bitmap paths, accessibility, canvas, and WTF.
+- Four full candidate browser artifacts and native rendering smoke tests pass
+  at `2b28ee4`: Linux AMD64, Darwin ARM64, and both Windows MSVC targets. Windows
+  AMD64's complete compressed payload matches baseline `4a2321d` byte-for-byte
+  (1,509,377,784 bytes; SHA-256
+  `94b07618f1bae1e5d9ebd9fc8b6875ba08f29ced16f20e6ea95bb3b72c4ebfb8`).
+  Linux ARM64 failed on the header cases covered by the 19-source regression;
+  its full validation rerun remains pending. These builds reuse cached work and
+  do not establish cold-build timing.
 - [Matched input-tree retention benchmark](https://formatjs.buildbuddy.io/invocation/69e0a9ba-41b7-4b9c-adf1-50415c043bf3)
   passed two warmups and ABBA comparisons across 101 sources. All six archive
   sets match; every selected compile executed remotely. Retention changed zero
@@ -147,8 +170,9 @@ across three actions. All four archive hashes match. The first Darwin attempt
 exposed an unwanted dynamic-library link; probes now explicitly use static
 archives, matching the owning Chromium libraries.
 
-The full-browser candidate requests scanning only for Blink core libraries and
-keeps the known macro-selected Skia headers mandatory. Its rollout gate includes
+The full-browser candidate requests scanning for native Blink core libraries plus
+the captured Linux ARM64 host core, modules, platform, and bindings. Known
+macro-selected Skia headers remain mandatory inputs. Its rollout gate includes
 all five browser artifacts, native rendering smoke, and the Linux runtime suite.
 BuildBuddy profiles must distinguish include discovery and repository setup from
 compiler worker time before claiming a wall-time improvement.

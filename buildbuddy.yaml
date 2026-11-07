@@ -1,3 +1,4 @@
+# Timeouts remain subject to the BuildBuddy plan's limits.
 actions:
   - name: Chromium linux-amd64
     container_image: ubuntu-24.04

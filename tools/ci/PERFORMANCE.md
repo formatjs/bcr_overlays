@@ -21,9 +21,9 @@ before calling a run cold.
 
 The initial scanner candidate left a host gap: Linux ARM64's browser capture contains
 19 host Blink-core libraries with 2,733 source entries outside the dedicated
-Blink-core macro. The scoped follow-up enables scanning on those libraries;
-full Linux ARM64 validation remains required. The other four browser captures
-contain no Blink-core libraries.
+Blink-core macro. The follow-up covers captured host core, modules, platform,
+and bindings: 162 libraries with 7,604 source entries. Full Linux ARM64 validation
+remains required. The other four browser captures contain no Blink-core libraries.
 
 The hosted build command accepts `--cold`. It starts a batch Bazel process with
 a unique output root and fresh repository download cache, disables disk caches
@@ -33,8 +33,14 @@ zero observed action-cache hits. Elapsed time includes artifact copying but
 excludes temporary-directory cleanup. Shared remote CAS remains populated.
 
 Each `perf/cold-<platform>` branch triggers only that platform's cold browser
-job. Run sequentially after the regular browser and throughput trials finish;
-do not report shared-load experiments as controlled concurrency comparisons.
+job. The first Linux AMD64 cold baseline overlaps other validation during setup;
+record that overlap rather than claiming a controlled comparison. Later matched
+concurrency comparisons should run after other compiler workloads finish.
+
+Hosted free-tier workflows have a one-hour cap even with `timeout: 6h` configured.
+All five initial full-browser candidate workflows hit that cap at exactly 3,600
+seconds without compiler errors. Resuming their cached work validates artifacts;
+it does not establish a cold-build result.
 
 ## Baseline
 
@@ -75,6 +81,13 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- [Wider host Blink trial](https://formatjs.buildbuddy.io/invocation/f01535b3-73c1-44af-8d5c-89409df45244)
+  passed all four runs with identical archives across 12 sources, including
+  accessibility, canvas, WTF, and generated V8 bindings. Both pairs removed
+  1,255,557 paths and added 3,663: **1,251,894 fewer input paths net**. Warm execution
+  times stayed near 34s. Compiler worker timing needs interval overlap: remote
+  timestamps can extend milliseconds beyond the client action interval. Strict
+  containment incorrectly reported zero worker time; a regression covers this.
 - [Host Blink-core differential trial](https://formatjs.buildbuddy.io/invocation/a20cde7e-eea3-453d-9e31-4614451d0152)
   passed baseline/scanner/scanner/baseline with identical archives across six
   compiles. Both pairs removed 633,206 input paths and added 1,883: **631,323

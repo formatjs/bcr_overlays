@@ -116,7 +116,13 @@ def native_browser():
             linkstatic = True,
             deps = ([":browser_tool_headers"] if angle or v8 or ffmpeg else ([":browser_headers"] if library["srcs"] or library["hdrs"] else [])) + library["deps"],
         )
-        if original.startswith("//third_party/blink/renderer/core:") or original.startswith("//third_party/blink/renderer/core/"):
+        blink_path = original.split("(")[0].split(":")[0]
+        if any([blink_path == root or blink_path.startswith(root + "/") for root in [
+            "//third_party/blink/renderer/core",
+            "//third_party/blink/renderer/modules",
+            "//third_party/blink/renderer/platform",
+            "//third_party/blink/renderer/bindings",
+        ]]):
             common.update(
                 features = ["cc_include_scanning"],
                 # Skia selects these headers through macro includes.

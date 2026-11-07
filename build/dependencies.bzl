@@ -130,6 +130,7 @@ def _dependencies_impl(ctx):
             name = "chromium_" + variant,
             overlay = "chromium",
             variant = variant,
+            patches = [Label("//build:chromium-macos-headless-quit.patch")] if variant == "darwin_arm64" else [],
             archive = "@chromium_sources//__source__:anchor",
             catalog = Label("//:overlays.json"),
         )

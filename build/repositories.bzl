@@ -56,6 +56,22 @@ def _sources_impl(ctx):
     # Split only directories containing overrides; symlink unchanged source trees.
     # Rule edits then avoid extracting Chromium's archive again.
     source = ctx.path(ctx.attr.archive).dirname.dirname
+    patched_files = {}
+    for patch in ctx.attr.patches:
+        lines = ctx.read(patch).splitlines()
+        before = [line[6:].split("\t")[0] for line in lines if line.startswith("--- a/")]
+        after = [line[6:].split("\t")[0] for line in lines if line.startswith("+++ b/")]
+        if not after or before != after:
+            fail("Source patches must modify existing a/ and b/ paths: " + str(patch))
+        for relative in after:
+            parts = relative.split("/")
+            if not relative or relative.startswith("/") or ".." in parts:
+                fail("Invalid patched source path: " + relative)
+            patched_files[relative] = True
+            if relative not in files:
+                files[relative] = source.get_child(relative)
+            for depth in range(1, len(parts)):
+                directories["/".join(parts[:depth])] = True
     pending = [(source, "")]
     for _ in range(32):
         next_level = []
@@ -72,7 +88,12 @@ def _sources_impl(ctx):
     if pending:
         fail("Source exceeds supported directory depth: " + ctx.attr.overlay)
     for relative, path in files.items():
-        ctx.symlink(path, relative)
+        if relative in patched_files:
+            ctx.file(relative, ctx.read(path), executable = False)
+        else:
+            ctx.symlink(path, relative)
+    for patch in ctx.attr.patches:
+        ctx.patch(ctx.path(patch), strip = 1)
 
 _sources = repository_rule(
     implementation = _sources_impl,
@@ -80,6 +101,7 @@ _sources = repository_rule(
         "archive": attr.label(mandatory = True),
         "catalog": attr.label(mandatory = True),
         "overlay": attr.string(mandatory = True),
+        "patches": attr.label_list(allow_files = [".patch"]),
         "variant": attr.string(),
     },
 )

@@ -1,4 +1,5 @@
 exports_files([
+    "chromium-macos-headless-quit.patch",
     "libvpx-rtcd-lf.patch",
     "libvpx-rtcd-config-features.patch",
     "windows_sdk_runtime.BUILD.bazel",

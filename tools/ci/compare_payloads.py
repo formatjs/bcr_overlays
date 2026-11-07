@@ -77,15 +77,39 @@ def pe_summary(data):
     if count > 96 or table + count * 40 > len(data):
         raise ValueError('Invalid PE section table')
     sections = []
+    layouts = []
     for index in range(count):
         start = table + index * 40
         name = data[start:start + 8].rstrip(b'\0').decode('ascii')
         size, position = struct.unpack_from('<II', data, start + 16)
+        virtual_size, address = struct.unpack_from('<II', data, start + 8)
         if position + size > len(data):
             raise ValueError('Invalid PE section bounds')
         sections.append({'name': name, 'offset': position, 'size': size,
                          'sha256': hashlib.sha256(memoryview(data)[position:position + size]).hexdigest()})
-    return {'machine': machine, 'timestamp': timestamp, 'sections': sections}
+        layouts.append((address, max(size, virtual_size), position))
+    result = {'machine': machine, 'timestamp': timestamp, 'sections': sections}
+    optional = offset + 24
+    if optional_size >= 168 and struct.unpack_from('<H', data, optional)[0] == 0x20b:
+        debug_address, debug_size = struct.unpack_from('<II', data, optional + 112 + 6 * 8)
+        for address, size, position in layouts:
+            if address <= debug_address < address + size:
+                directory = position + debug_address - address
+                if debug_size > 4096 or debug_size % 28 or directory + debug_size > len(data):
+                    raise ValueError('Invalid PE debug directory')
+                for entry in range(directory, directory + debug_size, 28):
+                    kind, length, _, pointer = struct.unpack_from('<IIII', data, entry + 12)
+                    if kind == 2 and length >= 24 and pointer + length <= len(data) and data[pointer:pointer + 4] == b'RSDS':
+                        result['codeview'] = {'guid_hex': data[pointer + 4:pointer + 20].hex(),
+                                              'age': struct.unpack_from('<I', data, pointer + 20)[0],
+                                              'pdb_path': data[pointer + 24:pointer + length].rstrip(b'\0').decode('utf-8')}
+                        digest = hashlib.sha256()
+                        digest.update(memoryview(data)[:pointer + 4])
+                        digest.update(b'\0' * 16)
+                        digest.update(memoryview(data)[pointer + 20:])
+                        result['diagnostic_sha256_without_codeview_guid'] = digest.hexdigest()
+                break
+    return result
 
 
 def payload_manifest(path, verify_nss=False):

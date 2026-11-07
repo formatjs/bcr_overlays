@@ -15,6 +15,32 @@ from tools.ci.compare_payloads import payload_digest
 
 
 class PayloadComparisonTest(unittest.TestCase):
+    def test_codeview_diagnostic_keeps_every_other_binary_byte(self):
+        data = bytearray(1024)
+        data[:2] = b'MZ'
+        struct.pack_into('<I', data, 60, 64)
+        data[64:68] = b'PE\0\0'
+        struct.pack_into('<HHI', data, 68, 0x8664, 1, 123)
+        struct.pack_into('<H', data, 84, 240)
+        struct.pack_into('<H', data, 88, 0x20b)
+        struct.pack_into('<II', data, 88 + 160, 4096, 28)
+        data[328:334] = b'.rdata'
+        struct.pack_into('<IIII', data, 336, 512, 4096, 512, 512)
+        struct.pack_into('<IIII', data, 512 + 12, 2, 38, 0, 560)
+        data[560:564] = b'RSDS'
+        struct.pack_into('<I', data, 580, 1)
+        data[584:598] = b'chrome.dll.pdb\0'
+        original = comparison.pe_summary(data)
+        data[564:580] = b'x' * 16
+        changed = comparison.pe_summary(data)
+        key = 'diagnostic_sha256_without_codeview_guid'
+        self.assertEqual(original[key], changed[key])
+        self.assertNotEqual(original['sections'], changed['sections'])
+        self.assertNotEqual(original['codeview']['guid_hex'], changed['codeview']['guid_hex'])
+        self.assertEqual(changed['codeview']['pdb_path'], 'chrome.dll.pdb')
+        data[850] = 1
+        self.assertNotEqual(original[key], comparison.pe_summary(data)[key])
+
     def test_pe_diagnostic_distinguishes_code_from_other_sections(self):
         data = bytearray(512)
         data[:2] = b'MZ'

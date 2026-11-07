@@ -222,6 +222,7 @@ def build(target, destination, revision, hosted=False, cold=False):
             flags.extend([
                 '--remote_accept_cached=false', '--disk_cache=', '--repo_contents_cache=',
                 '--repository_cache=' + str(Path(temporary) / 'repository-cache'),
+                '--modify_execution_info=.*=+no-cache',
             ])
         started = time.monotonic()
         success = False
@@ -239,6 +240,7 @@ def build(target, destination, revision, hosted=False, cold=False):
         finally:
             if cold:
                 report = cold_build_report(events, time.monotonic() - started, success)
+                report['cache_state']['execution_policy'] = 'no-cache; no in-flight action merging'
                 destination.mkdir(parents=True, exist_ok=True)
                 (destination / 'cold-build.json').write_text(json.dumps(report, indent=2) + '\n')
         if cold and not report['cold_result_verified']:

@@ -29,12 +29,16 @@ The hosted build command accepts `--cold`. It starts a batch Bazel process with
 a unique output root and fresh repository download cache, disables disk caches
 and remote action-cache reads, and writes `cold-build.json` even on failure.
 Successful results require actual C++ executions, complete cache metrics, and
-zero observed action-cache hits. Elapsed time includes artifact copying but
-excludes temporary-directory cleanup. Shared remote CAS remains populated.
+zero observed action-cache hits. Cold runs also apply Bazel's `no-cache` execution
+policy: BuildBuddy [disables in-flight merging for uncached actions](https://github.com/buildbuddy-io/buildbuddy/blob/master/enterprise/server/remote_execution/action_merger/action_merger.go#L238).
+Skipping cache lookup alone does not prevent merging. Instance names do not
+isolate the merger either. This policy changes neither compiler options nor
+inputs; action results are not cached, while CAS remains available. Elapsed time
+includes artifact copying but excludes temporary-directory cleanup.
 
 Each `perf/cold-<platform>` branch triggers only that platform's cold browser
-job. The first Linux AMD64 cold baseline overlaps other validation during setup;
-record that overlap rather than claiming a controlled comparison. Later matched
+job. The first Linux AMD64 calibration predates the explicit `no-cache` policy
+and overlaps other validation; it is not final isolated cold proof. Later matched
 concurrency comparisons should run after other compiler workloads finish.
 
 Hosted free-tier workflows have a one-hour cap even with `timeout: 6h` configured.

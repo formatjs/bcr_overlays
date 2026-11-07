@@ -276,6 +276,7 @@ class ArtifactsTest(unittest.TestCase):
             self.assertIn('--remote_accept_cached=false', command)
             self.assertIn('--disk_cache=', command)
             self.assertIn('--repo_contents_cache=', command)
+            self.assertIn('--modify_execution_info=.*=+no-cache', command)
             self.assertIn('--repository_cache=' + str(root.parent / 'repository-cache'), command)
             raise RuntimeError('build failed')
 
@@ -287,6 +288,7 @@ class ArtifactsTest(unittest.TestCase):
                 report = json.loads((directory / 'cold-build.json').read_text())
                 self.assertFalse(report['build_succeeded'])
                 self.assertFalse(report['cold_result_verified'])
+                self.assertEqual(report['cache_state']['execution_policy'], 'no-cache; no in-flight action merging')
         self.assertNotEqual(roots[0], roots[1])
 if __name__ == '__main__':
     unittest.main()

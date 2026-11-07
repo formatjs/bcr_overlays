@@ -117,7 +117,7 @@ def _dependencies_impl(ctx):
             overlay = name,
             archive = "@" + archive_name + "//__source__:anchor",
             catalog = Label("//:overlays.json"),
-            exclude_paths = ["third_party/protobuf/src"] if name == "chromium" else [],
+            exclude_paths = ["third_party/protobuf/src"] if name in ["chromium", "ipcz"] else [],
         )
     chromium_overlay_repository(
         name = "chromium_linux_arm64",

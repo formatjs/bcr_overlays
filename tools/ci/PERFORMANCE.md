@@ -121,7 +121,9 @@ object equivalence before changing that boundary.
   and browser header groups now share the existing public dependency adapter,
   retaining public headers, include paths, defines, and linker context. A real
   13-action query confirms the only argument changes remove those two private
-  quote roots. The repeated browser archive gate is rerunning.
+  quote roots. A preflight audit found the same inactive protobuf tree in ipcz,
+  which shares Chromium's source archive; that projection now applies the same
+  exclusion. The repeated browser archive gate is rerunning.
 - Native 19-source comparisons now pass on all five triples at `9730c78`,
   including generated bindings and GPU/codec paths. All four archive sets match
   per platform, with complete selected-compiler diff coverage: 380 real selected
@@ -133,7 +135,7 @@ object equivalence before changing that boundary.
   native-scope validation finishes. Cold timing and full artifact gates remain open.
 - The browser hotspot scanner trial exposed a local/RBE mismatch: Chromium's
   unused vendored protobuf headers shadowed the canonical BCR forwarding headers.
-  Projected Chromium trees now exclude `third_party/protobuf/src`; the shared
+  Chromium and ipcz projections now exclude `third_party/protobuf/src`; the shared
   source archive stays intact. No captured input labels use that directory:
   generators already declare canonical BCR protobuf inputs. A real 13-action
   query preserves every compiler argument after projection. Filesystem tests

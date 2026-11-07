@@ -271,7 +271,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main, "perf/compile-*", "!perf/compile-throughput"]
+        branches: [main, "perf/compile-*", "!perf/compile-throughput", "!perf/compile-concurrency"]
       pull_request:
         branches: ["*"]
         merge_with_base: false
@@ -291,7 +291,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main, "perf/compile-*", "!perf/compile-throughput"]
+        branches: [main, "perf/compile-*", "!perf/compile-throughput", "!perf/compile-concurrency"]
       pull_request:
         branches: ["*"]
         merge_with_base: false
@@ -311,7 +311,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main, "perf/compile-*", "!perf/compile-throughput"]
+        branches: [main, "perf/compile-*", "!perf/compile-throughput", "!perf/compile-concurrency"]
       pull_request:
         branches: ["*"]
         merge_with_base: false
@@ -331,7 +331,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main, "perf/compile-*", "!perf/compile-throughput"]
+        branches: [main, "perf/compile-*", "!perf/compile-throughput", "!perf/compile-concurrency"]
       pull_request:
         branches: ["*"]
         merge_with_base: false
@@ -351,7 +351,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main, "perf/compile-*", "!perf/compile-throughput"]
+        branches: [main, "perf/compile-*", "!perf/compile-throughput", "!perf/compile-concurrency"]
       pull_request:
         branches: ["*"]
         merge_with_base: false

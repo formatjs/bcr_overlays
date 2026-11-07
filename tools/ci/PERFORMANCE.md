@@ -398,3 +398,21 @@ those verified file bodies; every other tar byte remains covered, including
 metadata and ordering. Invalid signatures, changed modules, altered metadata,
 and missing files fail. Default compressed-byte equality stays unchanged.
 Runtime signing and cryptographic checks remain unchanged.
+
+## Full 128-job validation
+
+All five builds and native rendering smoke tests pass at `6c9b871`. These are
+warm builds (14.6–24.3 minutes), not cold measurements. Linux ARM64 and Darwin
+payloads match `4a2321d` byte-for-byte. Linux AMD64 matches after verifying the
+four existing randomized NSS signatures.
+
+Both Windows payloads differ only in `chrome.dll` and its PDB. PE diagnostics
+confirm every DLL byte matches except its 16-byte CodeView GUID; code, resources,
+unwind data, and relocations are identical. PDB differences remain visible, and
+the default payload equality gate stays strict. The diagnostics do not authorize
+ignoring arbitrary debug data. Cold artifacts must also be compared with the
+validated `6c9b871` outputs, whose build inputs match the cold candidate.
+
+The five cold trials at `24375b5` combine 128 jobs with measured gzip level 1.
+Toolchains, compiler options, ABIs, and native rendering tests stay unchanged.
+Their results remain pending; no successful sub-hour cold claim yet.

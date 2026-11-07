@@ -20,5 +20,8 @@ linux_amd64_browser(
         "_canvas2d",
         "_platform",
         "_bindings",
+        "_graphics",
+        "_mediastream",
+        "_webcodecs",
     ]],
 )

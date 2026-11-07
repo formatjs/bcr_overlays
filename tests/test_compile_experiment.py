@@ -8,6 +8,21 @@ from tools.ci.compile.experiment import TARGET, archive_outputs, compiler_input_
 
 
 class CompileExperimentTest(unittest.TestCase):
+    def test_compiler_source_matching_keeps_generated_binding_prefix_distinct(self):
+        events = [
+            {'ph': 'X', 'cat': 'action processing', 'name': 'Compiling gen/v8_video_frame.cc [for tool]',
+             'tid': 1, 'ts': 0, 'dur': 1000000},
+            {'ph': 'X', 'cat': 'action processing', 'name': 'Compiling modules/video_frame.cc [for tool]',
+             'tid': 2, 'ts': 0, 'dur': 2000000},
+        ]
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'trace.gz'
+            with gzip.open(path, 'wt') as output:
+                json.dump({'traceEvents': events}, output)
+            result = compiler_profiles(path, ('video_frame.cc', 'v8_video_frame.cc'))
+        self.assertEqual(result['video_frame.cc']['action_seconds'], 2)
+        self.assertEqual(result['v8_video_frame.cc']['action_seconds'], 1)
+
     def test_compact_diff_reports_input_reduction_without_exporting_paths(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / 'diff.json'

@@ -37,7 +37,7 @@ def _blink_library_probe(name, library, repository, sources, forwarders = "blink
             repository + "//:skia/ext/skia_histogram.h",
             # Preserve the directory used by ../../skia/config includes.
             repository + "//native:" + forwarders + "/third_party/re2/src/re2/re2.h",
-        ],
+        ] + (["@chromium//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h"] if forwarders == "browser_forwarders" else []),
         tags = ["manual"],
     )
 
@@ -85,6 +85,18 @@ def host_blink_compile_probe(name, libraries, repository, wide = False):
             ("_bindings", "//third_party/blink/renderer/bindings/modules/v8:v8", [
                 ":clang_x64_v8_arm64/gen/third_party/blink/renderer/bindings/modules/v8/v8_video_frame.cc",
                 ":clang_x64_v8_arm64/gen/third_party/blink/renderer/bindings/modules/v8/v8_webgl2_rendering_context_webgpu.cc",
+            ]),
+            ("_graphics", "//third_party/blink/renderer/platform:platform", [
+                "third_party/blink/renderer/platform/graphics/accelerated_static_bitmap_image.cc",
+                "third_party/blink/renderer/platform/graphics/mailbox_texture_backing.cc",
+                "third_party/blink/renderer/platform/graphics/video_frame_image_util.cc",
+                "third_party/blink/renderer/platform/webrtc/convert_to_webrtc_video_frame_buffer.cc",
+            ]),
+            ("_mediastream", "//third_party/blink/renderer/modules/mediastream:mediastream", [
+                "third_party/blink/renderer/modules/mediastream/web_media_player_ms_compositor.cc",
+            ]),
+            ("_webcodecs", "//third_party/blink/renderer/modules/webcodecs:webcodecs", [
+                "third_party/blink/renderer/modules/webcodecs/video_frame.cc",
             ]),
         ]
     for suffix, owner, sources in owners:

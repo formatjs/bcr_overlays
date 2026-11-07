@@ -23,12 +23,15 @@ TARGETS = {'linux-amd64': TARGET, **{
     for platform in ('linux-arm64', 'darwin-arm64', 'windows-amd64', 'windows-arm64')
 }}
 OWNERS = tuple(':blink_layout_compile_probe' + suffix for suffix in (
-    '', '_canvas', '_accessibility', '_canvas2d', '_platform', '_bindings'))
+    '', '_canvas', '_accessibility', '_canvas2d', '_platform', '_bindings',
+    '_graphics', '_mediastream', '_webcodecs'))
 SOURCES = ('layout_box.cc', 'layout_view.cc', 'svg_object_painter.cc',
            'css_palette_mix_value.cc', 'css_relative_color_value.cc', 'core_probes.cc')
 WIDE_HOST_SOURCES = (*SOURCES, 'ax_object.cc', 'ax_node_object.cc', 'canvas_rendering_context_2d.cc',
                      'date_math.cc', 'v8_video_frame.cc', 'v8_webgl2_rendering_context_webgpu.cc',
-                     'html_permission_element_strings_map.cc')
+                     'html_permission_element_strings_map.cc',
+                     'accelerated_static_bitmap_image.cc', 'mailbox_texture_backing.cc', 'video_frame_image_util.cc',
+                     'convert_to_webrtc_video_frame_buffer.cc', 'web_media_player_ms_compositor.cc', 'video_frame.cc')
 
 
 def compiler_input_diff(path):
@@ -49,10 +52,13 @@ def compiler_profiles(path, sources):
     with gzip.open(path, 'rt') as source:
         events = [event for event in json.load(source)['traceEvents']
                   if event.get('ph') == 'X' and event.get('dur', 0) > 0]
+    compile_events = [(event['name'].removeprefix('Compiling ').removesuffix(' [for tool]'), event)
+                      for event in events if event.get('cat') == 'action processing'
+                      and event.get('name', '').startswith('Compiling ')]
     results = {}
     for source_name in sources:
-        compiles = [event for event in events if event.get('cat') == 'action processing'
-                    and event.get('name', '').startswith('Compiling ') and source_name in event['name']]
+        compiles = [event for compiled, event in compile_events
+                    if compiled == source_name or compiled.endswith('/' + source_name)]
         if len(compiles) != 1:
             raise ValueError('Expected exactly one Blink compiler timing span: ' + source_name)
         compile_event = compiles[0]

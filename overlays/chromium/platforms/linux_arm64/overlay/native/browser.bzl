@@ -132,6 +132,7 @@ def native_browser():
                     "//:skia/config/sk_ref_cnt_ext_debug.h",
                     "//:skia/config/sk_ref_cnt_ext_release.h",
                     "//:skia/ext/skia_histogram.h",
+                    "@chromium//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
                     # Keep the directory used by ../../skia/config includes.
                     ":browser_forwarders/third_party/re2/src/re2/re2.h",
                 ],

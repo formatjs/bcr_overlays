@@ -50,6 +50,13 @@ registered actions are not executed compiles.
   missing). The next pilot requests the feature only on its Blink probe; baseline
   still disables the scanner flag. Toolchain dependencies keep their existing
   feature selection.
+- [Scoped single-source pilot](https://formatjs.buildbuddy.io/invocation/8520913d-1109-4677-aad6-3f3b69406c47)
+  passed with identical archive bytes: 72,405 input paths removed, 338 added,
+  **72,067 fewer paths net**. Macro-selected Skia headers and a directory needed
+  by its relative include remain mandatory inputs. Action time was 27.0s versus
+  23.6s; worker time 23.7s versus 22.6s. This pair does not establish a full-build
+  speedup. The next experiment covers layout, view, and SVG paint sources in
+  baseline/scanner/scanner/baseline order, forcing recompilation each time.
 
 Keep raw profiles in BuildBuddy or local temporary files. GitHub artifacts carry
 sanitized metrics only.

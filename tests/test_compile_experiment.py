@@ -36,6 +36,8 @@ class CompileExperimentTest(unittest.TestCase):
              'tid': 1, 'ts': 200, 'dur': 500000},
             {'ph': 'X', 'cat': 'Remote execution process wall time', 'name': 'execute',
              'tid': 2, 'ts': 1000000, 'dur': 100000000},
+            {'ph': 'X', 'cat': 'action processing', 'name': 'Compiling layout_view.cc',
+             'tid': 3, 'ts': 100, 'dur': 3000000},
         ]
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / 'trace.gz'
@@ -43,6 +45,8 @@ class CompileExperimentTest(unittest.TestCase):
                 json.dump({'traceEvents': events}, output)
             self.assertEqual(compiler_profile(path), {'action_seconds': 4.0,
                                                      'worker_seconds': 2.0, 'merkle_seconds': 0.5})
+            self.assertEqual(compiler_profile(path, 'layout_view.cc'), {
+                'action_seconds': 3.0, 'worker_seconds': 0.0, 'merkle_seconds': 0.0})
 
     def test_archive_proof_requires_successful_local_default_outputs(self):
         with tempfile.TemporaryDirectory() as temporary:

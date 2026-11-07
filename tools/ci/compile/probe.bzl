@@ -1,4 +1,4 @@
-"""Compile one Blink source with its real header closure and compiler options."""
+"""Compile representative Blink sources with their real compiler inputs."""
 
 load("@chromium//native:blink_core_sources.bzl", "LIBRARIES")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
@@ -24,7 +24,11 @@ def blink_compile_probe(name):
     )
     cc_library(
         name = name,
-        srcs = ["@chromium//:third_party/blink/renderer/core/layout/layout_box.cc"],
+        srcs = [
+            "@chromium//:third_party/blink/renderer/core/layout/layout_box.cc",
+            "@chromium//:third_party/blink/renderer/core/layout/layout_view.cc",
+            "@chromium//:third_party/blink/renderer/core/paint/svg_object_painter.cc",
+        ],
         copts = library["copts"],
         local_defines = library["defines"],
         deps = [":" + name + "_headers"],

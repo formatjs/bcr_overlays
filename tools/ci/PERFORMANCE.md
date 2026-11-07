@@ -124,11 +124,18 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
-- The next 13-source browser comparison covers all five triples. Discovery
-  uses the captured Linux Wi-Fi, POSIX, or Windows implementation; every selected
-  source must belong to its captured GN owner. Each platform retains its own
-  compiler context and generated GPU header producer. Full cross-platform browser
-  scanning waits for these comparisons; Linux's artifact candidate runs separately.
+- The isolated 13-source browser comparison at `482a69c` passes all five
+  triples: all four archive sets match per platform, 260 selected compiles total.
+  Each pair removes 1,307,001 input paths net on Linux AMD64, 1,315,256 on
+  Linux ARM64, 1,282,159 on Darwin ARM64, 1,312,116 on Windows AMD64, and
+  1,325,142 on Windows ARM64. These are input reductions, not full-build speedups.
+  Discovery uses the captured Linux Wi-Fi, POSIX, or Windows source. An expanded
+  14-source check adds the utility context exposed by full Linux validation.
+- Native-scope Linux ARM64 at `186bf14` passes full artifact and rendering smoke.
+  Its complete compressed payload matches `4a2321d` byte-for-byte: 314,287,421
+  bytes, SHA256 `8fa250e8427cd63a70f0e58de13b9f4e4c7a2d20ee217485cc7b7e44575d56d0`.
+  Darwin ARM64 and Windows AMD64 also pass full builds; Windows ARM64 reached
+  compression before the workflow cap. These runs use ordinary cache settings.
 - The Linux browser candidate now requests scanning for captured Chrome,
   extensions, and component libraries: 2,480 eligible library targets with 10,482
   C/C++ source entries. Its 13-source owner-context probe passes repeated archive

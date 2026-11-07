@@ -43,12 +43,34 @@ def summarize(invocation):
     return result
 
 
-def trace_summary(path):
+def trace_summary(path, allow_partial=False):
     with path.open('rb') as source:
         opener = gzip.open if source.read(2) == b'\x1f\x8b' else open
     with opener(path, 'rt') as source:
-        trace = json.load(source)
-    events = trace.get('traceEvents', [])
+        data = source.read()
+    complete = True
+    try:
+        events = json.loads(data).get('traceEvents', [])
+    except json.JSONDecodeError:
+        if not allow_partial:
+            raise
+        start = re.search(r'"traceEvents"\s*:\s*\[', data)
+        if start is None:
+            raise ValueError('Partial profile has no event array')
+        complete, events, position = False, [], start.end()
+        decoder = json.JSONDecoder()
+        separator = re.compile(r'[\s,]*')
+        while position < len(data):
+            position = separator.match(data, position).end()
+            try:
+                event, position = decoder.raw_decode(data, position)
+            except json.JSONDecodeError:
+                break
+            if not isinstance(event, dict):
+                raise ValueError('Profile event must be an object')
+            events.append(event)
+        if not events:
+            raise ValueError('Partial profile has no complete events')
     durations = [event for event in events if event.get('ph') == 'X' and event.get('dur', 0) > 0]
     phases = [event for event in events if event.get('cat') == 'build phase marker']
     longest = sorted(durations, key=lambda event: event['dur'], reverse=True)[:40]
@@ -83,7 +105,8 @@ def trace_summary(path):
         if samples:
             counters[label] = {'samples': len(samples), 'sample_mean': statistics.fmean(samples),
                                'sample_max': max(samples), 'unit': unit}
-    return {'phases': phase_summary,
+    return {'trace_complete': complete, 'event_count': len(events),
+            'phases': phase_summary,
             'longest_events': [{key: event.get(key) for key in fields} for event in longest],
             'tasks': tasks, 'counters': counters}
 
@@ -95,6 +118,7 @@ def collect(identifier):
     result['children'] = []
     pattern = outer.get('pattern', [])
     report_key = None
+    cold_profile = None
     report_path = 'compile-input-experiment/report.json'
     if pattern == ['Chromium compile input experiment'] or (
             len(pattern) == 1 and pattern[0].startswith(('Chromium compile inputs ', 'Chromium compile throughput '))):
@@ -107,6 +131,12 @@ def collect(identifier):
                 'selector': {'invocation_id': identifier}, 'include_artifacts': True,
         }, os.environ['BUILDBUDDY_API_KEY']) as response:
             invocations = json.load(response).get('invocation', [])
+        if report_key == 'cold_build':
+            profiles = [artifact for invocation in invocations
+                        for artifact in invocation.get('artifacts', [])
+                        if artifact.get('name', '').endswith('/cold-profile.json')]
+            if len(profiles) == 1:
+                cold_profile = profiles[0]['uri']
         reports = [artifact for invocation in invocations
                    for artifact in invocation.get('artifacts', [])
                    if artifact.get('name', '').endswith('/' + report_path)
@@ -139,6 +169,18 @@ def collect(identifier):
                 profile['summary'] = trace_summary(path)
             del profile['uri']
         result['children'].append(summary)
+    if cold_profile and not any(child['profiles'] for child in result['children']):
+        with tempfile.TemporaryDirectory(prefix='bb-cold-profile-') as temporary:
+            path = Path(temporary) / 'trace.json'
+            with api_request('GetFile', {'uri': cold_profile}, os.environ['BUILDBUDDY_API_KEY']) as response, \
+                    path.open('wb') as output:
+                size = 0
+                while chunk := response.read(1024 * 1024):
+                    size += len(chunk)
+                    if size > 256 * 1024 * 1024:
+                        raise ValueError('Profile exceeds 256 MiB')
+                    output.write(chunk)
+            result['cold_profile'] = trace_summary(path, allow_partial=True)
     return result
 
 

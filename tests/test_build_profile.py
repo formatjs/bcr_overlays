@@ -36,6 +36,40 @@ class BuildProfileTest(unittest.TestCase):
                     mock.call('GetFile', {'uri': uri}, 'read-only-test-key'),
                 ])
 
+    def test_killed_cold_run_keeps_sanitized_completed_trace_events(self):
+        event = {'cat': 'general information', 'name': 'MerkleTreeComputer.buildForSpawn',
+                 'ph': 'X', 'dur': 500000, 'args': {'command': 'DO_NOT_EXPORT'}}
+        trace = '{"otherData":{},"traceEvents":[\n' + json.dumps(event) + ',\n{"unfinished":'
+        uri = 'bytestream://formatjs.buildbuddy.io/cold-profile'
+        outer = {'pattern': ['Chromium cold build linux-amd64'],
+                 'success': False, 'invocationStatus': 'COMPLETE_INVOCATION_STATUS'}
+        artifacts = {'invocation': [{'artifacts': [{
+            'name': 'command-0/linux-amd64/cold-profile.json', 'uri': uri}]}]}
+        with mock.patch.object(profile_buildbuddy, 'rpc', return_value={'invocation': [outer]}), \
+                mock.patch.object(profile_buildbuddy, 'api_request', side_effect=[
+                    io.BytesIO(json.dumps(artifacts).encode()), io.BytesIO(trace.encode())]), \
+                mock.patch.dict(os.environ, {'BUILDBUDDY_API_KEY': 'read-only-test-key'}):
+            result = profile_buildbuddy.collect('killed-workflow')
+        self.assertFalse(result['cold_profile']['trace_complete'])
+        self.assertEqual(result['cold_profile']['event_count'], 1)
+        self.assertEqual(result['cold_profile']['tasks']['merkle'],
+                         {'count': 1, 'task_seconds': 0.5})
+        self.assertNotIn('cold_build', result)
+        self.assertNotIn('DO_NOT_EXPORT', json.dumps(result))
+        self.assertNotIn(uri, json.dumps(result))
+
+    def test_incomplete_profiles_require_explicit_diagnostic_mode(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'partial.json'
+            path.write_text('{"traceEvents":[{"ph":"X","dur":1},')
+            with self.assertRaises(json.JSONDecodeError):
+                trace_summary(path)
+            self.assertFalse(trace_summary(path, allow_partial=True)['trace_complete'])
+            for content in ['{} garbage', '{"traceEvents":[{"unfinished":']:
+                path.write_text(content)
+                with self.assertRaises(ValueError):
+                    trace_summary(path, allow_partial=True)
+
     def test_metrics_preserved_without_command_credentials(self):
         metrics = {'actionSummary': {'actionsCreated': '42123', 'actionsExecuted': '17'},
                    'timingMetrics': {'wallTimeInMs': '12345'}}

@@ -116,6 +116,14 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- The browser hotspot scanner trial exposed a local/RBE mismatch: Chromium's
+  unused vendored protobuf headers shadowed the canonical BCR forwarding headers.
+  Projected Chromium trees now exclude `third_party/protobuf/src`; the shared
+  source archive stays intact. No captured input labels use that directory:
+  generators already declare canonical BCR protobuf inputs. A real 13-action
+  query preserves every compiler argument after projection. Filesystem tests
+  cover excluded subtrees, explicit overlay replacements, and archive preservation.
+  Repeated browser archive validation remains pending.
 - [64/128-job benchmark](https://formatjs.buildbuddy.io/invocation/93efbf69-445f-4732-a380-1a25e8761e81)
   passed two warmups and ABBA comparisons across 101 sources with 16 client CPUs,
   scanning, retained trees, and a 12 GiB heap. All archive sets match; input paths
@@ -123,7 +131,9 @@ object equivalence before changing that boundary.
   128 jobs. Both pairs were slower at 128; keep the production limit at 64.
   Other validations overlapped, so the result does not establish a universal
   concurrency optimum. The next cold Linux AMD64 trial combines the validated
-  native scope with 32 client CPUs, the same 32 GB memory budget, and 64 jobs.
+  native scope with more client CPU. BuildBuddy rejected 32 CPUs before execution:
+  this organization limits each runner to 16 vCPUs. The next cold trial keeps 16
+  client CPUs, 32 GB memory, and 64 jobs while testing the wider native scope.
 - [Native 19-source regression](https://formatjs.buildbuddy.io/invocation/7a4c660c-f4c6-4d06-9e54-1996c0eafbe6)
   passed baseline/scanner/scanner/baseline with identical archives using Linux
   AMD64's native library contexts. Both pairs removed 1,377,555 input paths and

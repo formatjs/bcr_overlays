@@ -38,6 +38,13 @@ class CompileExperimentTest(unittest.TestCase):
              'tid': 2, 'ts': 1000000, 'dur': 100000000},
             {'ph': 'X', 'cat': 'action processing', 'name': 'Compiling layout_view.cc',
              'tid': 3, 'ts': 100, 'dur': 3000000},
+            # Remote timestamps can extend beyond the client span by several milliseconds.
+            {'ph': 'X', 'cat': 'Remote execution process wall time', 'name': 'execute',
+             'tid': 3, 'ts': 10100, 'dur': 2999000},
+            {'ph': 'X', 'cat': 'Remote execution process wall time', 'name': 'previous action',
+             'tid': 3, 'ts': -2000000, 'dur': 2000010},
+            {'ph': 'X', 'cat': 'Remote execution process wall time', 'name': 'next action',
+             'tid': 3, 'ts': 3000099, 'dur': 2000000},
         ]
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / 'trace.gz'
@@ -45,7 +52,7 @@ class CompileExperimentTest(unittest.TestCase):
                 json.dump({'traceEvents': events}, output)
             self.assertEqual(compiler_profiles(path, ('layout_box.cc', 'layout_view.cc')), {
                 'layout_box.cc': {'action_seconds': 4.0, 'worker_seconds': 2.0, 'merkle_seconds': 0.5},
-                'layout_view.cc': {'action_seconds': 3.0, 'worker_seconds': 0.0, 'merkle_seconds': 0.0},
+                'layout_view.cc': {'action_seconds': 3.0, 'worker_seconds': 2.999, 'merkle_seconds': 0.0},
             })
 
     def test_archive_proof_requires_successful_local_default_outputs(self):

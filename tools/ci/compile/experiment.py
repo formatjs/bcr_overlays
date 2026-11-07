@@ -58,10 +58,15 @@ def compiler_profiles(path, sources):
         nested = [event for event in events if event.get('tid') == compile_event['tid']
                   and event['ts'] >= compile_event['ts']
                   and event['ts'] + event['dur'] <= compile_event['ts'] + compile_event['dur'] + 1000]
+        # Remote timestamps may extend slightly past the client action interval.
+        workers = [event for event in events
+                   if event.get('tid') == compile_event['tid']
+                   and event.get('cat') == 'Remote execution process wall time'
+                   and min(event['ts'] + event['dur'], compile_event['ts'] + compile_event['dur'])
+                   - max(event['ts'], compile_event['ts']) > event['dur'] / 2]
         results[source_name] = {
             'action_seconds': compile_event['dur'] / 1e6,
-            'worker_seconds': sum(event['dur'] for event in nested
-                                  if event.get('cat') == 'Remote execution process wall time') / 1e6,
+            'worker_seconds': sum(event['dur'] for event in workers) / 1e6,
             'merkle_seconds': sum(event['dur'] for event in nested
                                   if event.get('name') == 'MerkleTreeComputer.buildForSpawn') / 1e6,
         }

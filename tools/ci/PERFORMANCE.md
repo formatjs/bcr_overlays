@@ -141,7 +141,7 @@ object equivalence before changing that boundary.
   C/C++ source entries. Its 13-source owner-context probe passes repeated archive
   equality. Executables and shared-library targets keep their prior selection.
   Full artifact, rendering, payload equivalence, and cold timing remain gated;
-  other native platform scopes wait for their matching owner-context probes.
+  all platform candidates still require full browser validation.
 - Browser hotspot comparisons at `56c692e` now pass all four modes with
   identical archives after removing private protobuf shadows. The benchmark's
   next scanner switch selects the probe rules' feature locally, leaving support
@@ -306,3 +306,14 @@ counts establish actual execution. Unpaired spans stay in global totals. All
 group durations are overlapping task sums. Raw names, arguments, and paths do
 not enter the exported report. The same attribution reproduces Chrome's roughly
 7,919 Merkle task-seconds in the earlier completed Linux code-build profile.
+
+## Native browser scope rollout
+
+After the expanded 14-source probes pass on the four cross targets, enable
+scanning for native Chrome, extensions, and component libraries there. Scope
+counts are 2,472 libraries / 10,436 C/C++ source entries on Linux ARM64,
+2,828 / 10,421 on Darwin ARM64, and 2,565 / 10,741 on each Windows target.
+Captured Linux host libraries keep their previous scope; executables, shared
+libraries, and Objective-C helpers retain their existing settings. The new
+`perf/browser-platform-rollout` branch validates all five browser artifacts.
+These captured counts are not executed compiler counts or timing results.

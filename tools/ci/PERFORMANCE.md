@@ -72,5 +72,17 @@ object equivalence before changing that boundary.
   improvement remains unmeasured. Production scanning remains off until wider
   source and cross-platform validation passes.
 
+The cross-platform archive pilot also passes on Darwin ARM64 with debug info
+enabled: 208,487 paths removed and 486 added, or 208,001 fewer paths per comparison
+across three actions. All four archive hashes match. The first Darwin attempt
+exposed an unwanted dynamic-library link; probes now explicitly use static
+archives, matching the owning Chromium libraries.
+
+The full-browser candidate requests scanning only for Blink core libraries and
+keeps the known macro-selected Skia headers mandatory. Its rollout gate includes
+all five browser artifacts, native rendering smoke, and the Linux runtime suite.
+BuildBuddy profiles must distinguish include discovery and repository setup from
+compiler worker time before claiming a wall-time improvement.
+
 Keep raw profiles in BuildBuddy or local temporary files. GitHub artifacts carry
 sanitized metrics only.

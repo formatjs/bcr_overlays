@@ -10,7 +10,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main]
+        branches: [main, "perf/compile-cross-platform"]
       pull_request:
         branches: ["*"]
         merge_with_base: false
@@ -31,7 +31,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main]
+        branches: [main, "perf/compile-cross-platform"]
       pull_request:
         branches: ["*"]
         merge_with_base: false
@@ -52,7 +52,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main]
+        branches: [main, "perf/compile-cross-platform"]
       pull_request:
         branches: ["*"]
         merge_with_base: false
@@ -73,7 +73,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main]
+        branches: [main, "perf/compile-cross-platform"]
       pull_request:
         branches: ["*"]
         merge_with_base: false
@@ -94,7 +94,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main]
+        branches: [main, "perf/compile-cross-platform"]
       pull_request:
         branches: ["*"]
         merge_with_base: false
@@ -220,7 +220,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main]
+        branches: [main, "perf/compile-cross-platform"]
       pull_request:
         branches: ["*"]
         merge_with_base: false

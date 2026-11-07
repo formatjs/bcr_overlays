@@ -79,7 +79,11 @@ single-source action declared 76,130 inputs. The BuildBuddy experiment compares
 baseline/scanner/scanner/baseline runs, records compiler input differences and
 per-source timings, and requires identical archive bytes. Distinct unused macros
 force every selected source to recompile; timing excludes generator preparation.
-Production builds keep their current settings during the pilot.
+The full-browser trial enables the scanner flag in `--config=browser`, with only
+Blink core libraries requesting its feature. Toolchain bootstrap and other
+Chromium libraries keep their existing input behavior. Macro-selected Skia
+headers remain mandatory inputs. The experiment branch runs browser builds and
+Linux runtime coverage before rollout.
 
 `--platform` selects any supported browser triple. Each cross-platform probe lives
 in its own package and uses that platform's captured compilation context. Windows

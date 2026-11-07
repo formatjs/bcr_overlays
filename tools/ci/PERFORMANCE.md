@@ -158,6 +158,13 @@ object equivalence before changing that boundary.
   paths: stripping them changed header selection, allowing compact_enc_det's
   `util/string_util.h` to shadow openscreen's own header. The browser probe now
   also covers `chrome/utility/services.cc`, found by full validation.
+- The expanded utility probe reproduces a forwarding cycle through
+  sentencepiece's `gtest/gtest_prod.h` shim. Full inputs had accidentally supplied
+  `FRIEND_TEST` through AOM's bundled GoogleTest copy; scanning exposed the cycle.
+  Chromium's forwarding headers now select the declared BCR
+  `googletest/include/gtest/gtest_prod.h` directly. A real compiler replay of the
+  utility include context fails before this fix and passes after it. Repeat the
+  expanded probes before promoting the other browser scopes.
 - Native 19-source comparisons now pass on all five triples at `9730c78`,
   including generated bindings and GPU/codec paths. All four archive sets match
   per platform, with complete selected-compiler diff coverage: 380 real selected

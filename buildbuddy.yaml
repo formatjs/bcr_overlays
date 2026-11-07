@@ -230,10 +230,10 @@ actions:
           if [[ "$(id -u)" != 0 ]]; then elevate=(sudo); fi
           "${elevate[@]}" apt-get update
           "${elevate[@]}" apt-get install -y xvfb libasound2t64 libpulse0 libgbm1 libdbus-1-3 libpango-1.0-0 libpangocairo-1.0-0 libcairo2 libatk1.0-0t64 libatk-bridge2.0-0t64
-          bazel test --config=buildbuddy --strategy=TestRunner=local \
+          bazel test --config=browser --config=buildbuddy --strategy=TestRunner=local --local_test_jobs=4 \
             //:components //:runtime_tests //tools/ci:network_portability_test \
             //tools/ci:graphics_portability_test @boringssl//:pki_test @nss//bazel:sign_test
-          python3 tools/run_x11_integration.py -- --config=buildbuddy --strategy=TestRunner=local
+          python3 tools/run_x11_integration.py -- --config=browser --config=buildbuddy --strategy=TestRunner=local
 
   - name: Chromium compatibility modules
     container_image: ubuntu-24.04

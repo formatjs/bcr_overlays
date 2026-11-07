@@ -10,7 +10,7 @@ import re
 import tempfile
 import urllib.request
 
-from tools.ci.buildbuddy_artifacts import API_URL, invocation_id
+from tools.ci.buildbuddy_artifacts import API_URL, api_request, invocation_id
 
 
 RPC_URL = 'https://formatjs.buildbuddy.io/rpc/BuildBuddyService/'
@@ -60,6 +60,22 @@ def collect(identifier):
         'invocationId': identifier, 'fetchChildInvocations': True}})['invocation'][0]
     result = summarize(outer)
     result['children'] = []
+    if outer.get('pattern') == ['Chromium compile input experiment']:
+        with api_request('GetInvocation', {
+                'selector': {'invocation_id': identifier}, 'include_artifacts': True,
+        }, os.environ['BUILDBUDDY_API_KEY']) as response:
+            invocations = json.load(response).get('invocation', [])
+        reports = [artifact for invocation in invocations
+                   for artifact in invocation.get('artifacts', [])
+                   if artifact.get('name', '').endswith('/compile-input-experiment/report.json')
+                   or artifact.get('name') == 'compile-input-experiment/report.json']
+        if len(reports) == 1:
+            with api_request('GetFile', {'uri': reports[0]['uri']},
+                             os.environ['BUILDBUDDY_API_KEY']) as response:
+                payload = response.read(4 * 1024 * 1024 + 1)
+            if len(payload) > 4 * 1024 * 1024:
+                raise ValueError('Compiler experiment report exceeds 4 MiB')
+            result['compile_experiment'] = json.loads(payload)
     for child in outer.get('childInvocations', []):
         child_id = child['invocationId']
         full = rpc('GetInvocation', {'lookup': {'invocationId': child_id}})['invocation'][0]

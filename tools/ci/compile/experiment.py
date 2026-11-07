@@ -94,11 +94,12 @@ def main():
     with tempfile.TemporaryDirectory(prefix='blink-compile-profile-') as temporary:
         for mode in ('baseline', 'include-scan'):
             events, spawns = Path(temporary) / 'events.json', Path(temporary) / 'spawns.json'
-            command = [os.environ.get('BAZEL', 'bazel'), 'build', '--config=buildbuddy',
+            command = [os.environ.get('BAZEL', 'bazel'), 'build', '--config=browser', '--config=buildbuddy',
                        '--per_file_copt=.*layout_box.cc@-DBAZEL_COMPILE_PROFILE_RUN=' + nonce,
                        '--build_event_json_file=' + str(events),
                        '--nobuild_event_json_file_path_conversion',
                        '--execution_log_json_file=' + str(spawns),
+                       '--noexecution_log_sort',
                        '--cc_include_scanning=' + ('true' if mode == 'include-scan' else 'false'), TARGET]
             result = subprocess.run(command, cwd=ROOT)
             if result.returncode:

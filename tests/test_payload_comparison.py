@@ -15,6 +15,28 @@ from tools.ci.compare_payloads import payload_digest
 
 
 class PayloadComparisonTest(unittest.TestCase):
+    def test_clean_cold_status_requires_matching_platform_and_success(self):
+        platform, revision = 'darwin-arm64', '1' * 40
+        url = 'https://formatjs.buildbuddy.io/invocation/cold'
+        ordinary = {'context': 'Chromium cold build ' + platform, 'state': 'failure'}
+        for context, state, succeeds in [
+            ('Chromium clean cold build darwin-arm64', 'success', True),
+            ('Chromium clean cold build darwin-arm64', 'pending', False),
+            ('Chromium clean cold build linux-amd64', 'success', False),
+            ('Other clean cold build darwin-arm64', 'success', False),
+        ]:
+            response = {'statuses': [ordinary, {'context': context, 'state': state, 'target_url': url}]}
+            with self.subTest(context=context, state=state), \
+                    mock.patch.dict(comparison.os.environ, {'GH_TOKEN': 'test-token'}), \
+                    mock.patch.object(comparison.urllib.request, 'urlopen',
+                                      return_value=io.BytesIO(json.dumps(response).encode())):
+                if succeeds:
+                    self.assertEqual(comparison.build_urls(revision, [platform], 'cold-browser'),
+                                     {platform: url})
+                else:
+                    with self.assertRaisesRegex(ValueError, 'has not passed'):
+                        comparison.build_urls(revision, [platform], 'cold-browser')
+
     def test_codeview_diagnostic_keeps_every_other_binary_byte(self):
         data = bytearray(1024)
         data[:2] = b'MZ'

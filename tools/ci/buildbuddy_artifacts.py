@@ -13,6 +13,7 @@ from tools.ci.chromium import PLATFORMS, checksum
 
 API_URL = 'https://formatjs.buildbuddy.io/api/v1/'
 MAX_ARCHIVE_BYTES = 4 * 1024 * 1024 * 1024
+COLD_WORKFLOW_PREFIXES = ('Chromium cold build ', 'Chromium clean cold build ')
 
 
 def invocation_id(url):
@@ -28,11 +29,10 @@ def invocation_id(url):
 def artifact_uris(response, revision, target, kind='browser'):
     if target not in PLATFORMS or not re.fullmatch(r'[0-9a-f]{40}', revision):
         raise ValueError('Invalid artifact platform or commit')
-    prefixes = {'browser': 'Chromium ', 'components': 'Chromium components ',
-                'cold-browser': 'Chromium cold build '}
+    prefixes = {'browser': ('Chromium ',), 'components': ('Chromium components ',),
+                'cold-browser': COLD_WORKFLOW_PREFIXES}
     if kind not in prefixes:
         raise ValueError('Invalid artifact kind')
-    prefix = prefixes[kind]
     invocations = response.get('invocation', [])
     if len(invocations) != 1:
         raise ValueError('Expected exactly one BuildBuddy invocation')
@@ -40,7 +40,7 @@ def artifact_uris(response, revision, target, kind='browser'):
     if (invocation.get('commitSha') != revision
             or invocation.get('repoUrl', '').removesuffix('.git')
             != 'https://github.com/formatjs/chromium'
-            or invocation.get('pattern') != prefix + target
+            or invocation.get('pattern') not in [prefix + target for prefix in prefixes[kind]]
             or not invocation.get('success')
             or invocation.get('invocationStatus') != 'COMPLETE_INVOCATION_STATUS'):
         raise ValueError('Cross-build invocation does not match successful commit')

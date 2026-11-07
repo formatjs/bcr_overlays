@@ -16,7 +16,7 @@ import urllib.request
 import zlib
 
 from tools.ci.buildbuddy_artifacts import (
-    MAX_ARCHIVE_BYTES, api_request, artifact_uris, invocation_id,
+    COLD_WORKFLOW_PREFIXES, MAX_ARCHIVE_BYTES, api_request, artifact_uris, invocation_id,
 )
 from tools.ci.chromium import CONFIGURATION, PLATFORMS
 
@@ -220,9 +220,10 @@ def build_urls(revision, platforms=PLATFORMS, kind='browser'):
     for status in statuses:
         by_context.setdefault(status['context'], status)
     urls = {}
-    prefix = 'Chromium cold build ' if kind == 'cold-browser' else 'Chromium '
+    prefixes = COLD_WORKFLOW_PREFIXES if kind == 'cold-browser' else ('Chromium ',)
     for platform in platforms:
-        status = by_context.get(prefix + platform, {})
+        status = next((by_context[prefix + platform] for prefix in prefixes
+                       if by_context.get(prefix + platform, {}).get('state') == 'success'), {})
         if status.get('state') != 'success':
             raise ValueError('Browser build has not passed: ' + platform)
         urls[platform] = status['target_url']

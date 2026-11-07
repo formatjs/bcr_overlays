@@ -13,7 +13,7 @@ import statistics
 import tempfile
 import urllib.request
 
-from tools.ci.buildbuddy_artifacts import API_URL, api_request, invocation_id
+from tools.ci.buildbuddy_artifacts import API_URL, COLD_WORKFLOW_PREFIXES, api_request, invocation_id
 
 
 RPC_URL = 'https://formatjs.buildbuddy.io/rpc/BuildBuddyService/'
@@ -174,6 +174,8 @@ def collect(identifier):
     result = summarize(outer)
     result['children'] = []
     pattern = outer.get('pattern', [])
+    cold_prefix = next((prefix for prefix in COLD_WORKFLOW_PREFIXES
+                        if len(pattern) == 1 and pattern[0].startswith(prefix)), None)
     report_key = None
     cold_profile = None
     report_path = 'compile-input-experiment/report.json'
@@ -186,9 +188,9 @@ def collect(identifier):
     elif len(pattern) == 1 and pattern[0].startswith('Chromium bindings budget '):
         report_key = 'bindings_experiment'
         report_path = 'bindings-budget/report.json'
-    elif len(pattern) == 1 and pattern[0].startswith('Chromium cold build '):
+    elif cold_prefix:
         report_key = 'cold_build'
-        report_path = pattern[0].removeprefix('Chromium cold build ') + '/cold-build.json'
+        report_path = pattern[0].removeprefix(cold_prefix) + '/cold-build.json'
     if report_key:
         with api_request('GetInvocation', {
                 'selector': {'invocation_id': identifier}, 'include_artifacts': True,

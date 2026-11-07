@@ -100,7 +100,8 @@ object equivalence before changing that boundary.
 
 - [Native 19-source regression](https://formatjs.buildbuddy.io/invocation/7a4c660c-f4c6-4d06-9e54-1996c0eafbe6)
   passed baseline/scanner/scanner/baseline with identical archives using Linux
-  AMD64's native library contexts. The next candidate extends scoped scanning to
+  AMD64's native library contexts. Both pairs removed 1,377,555 input paths and
+  added 5,611: **1,371,944 fewer paths net**. The next candidate extends scoped scanning to
   its Blink modules, bindings, and platform libraries: 140 libraries and 3,842
   source entries. Mandatory macro-selected headers remain declared. Other native
   platform captures retain their prior scope until validation. Full artifact,

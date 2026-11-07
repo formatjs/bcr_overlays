@@ -211,13 +211,15 @@ def main():
             command = [os.environ.get('BAZEL', 'bazel')]
             if args.compare_concurrency:
                 command.append('--host_jvm_args=-Xmx12g')
+            # Keep supporting generators on production scanning in every mode.
             command.extend(['build', '--config=browser', '--config=buildbuddy',
                        '--per_file_copt=' + pattern + '@-DBAZEL_COMPILE_PROFILE_RUN=' + nonce + '_' + mode.replace('-', '_'),
                        '--build_event_json_file=' + str(events),
                        '--nobuild_event_json_file_path_conversion',
                        '--execution_log_compact_file=' + str(execution_log),
                        '--profile=' + str(profile),
-                       '--cc_include_scanning=' + ('true' if scanning else 'false')])
+                       '--cc_include_scanning=true',
+                       '--define=CHROMIUM_COMPILE_PROBE_SCAN=' + ('1' if scanning else '0')])
             if args.compare_concurrency:
                 command.extend(['--jobs=' + ('128' if experimental else '64'),
                                 '--noexperimental_remote_discard_merkle_trees'])

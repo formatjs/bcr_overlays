@@ -116,6 +116,12 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- Browser hotspot comparisons at `56c692e` now pass all four modes with
+  identical archives after removing private protobuf shadows. The benchmark's
+  next scanner switch selects the probe rules' feature locally, leaving support
+  generators on production scanning. Real queries resolve the feature off/on,
+  preserve all 13 probe compiler commands, and preserve 4,796 supporting C++
+  action keys. Runtime checks of this narrower experiment boundary remain gated.
 - After hiding Chromium's unused protobuf copy, the browser probe found the
   same shadowing through openscreen's private repository quote roots. Content
   and browser header groups now share the existing public dependency adapter,

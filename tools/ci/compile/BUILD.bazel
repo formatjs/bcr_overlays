@@ -4,6 +4,11 @@ load(":probe.bzl", "blink_compile_probe")
 
 package(default_visibility = ["//visibility:public"])
 
+config_setting(
+    name = "scan_disabled",
+    define_values = {"CHROMIUM_COMPILE_PROBE_SCAN": "0"},
+)
+
 blink_compile_probe(
     name = "blink_layout_compile_probe",
     libraries = LIBRARIES,

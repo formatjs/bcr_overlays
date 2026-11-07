@@ -28,7 +28,10 @@ def _blink_library_probe(name, library, repository, sources, forwarders = "blink
         local_defines = library["defines"],
         linkstatic = True,
         deps = [":" + name + "_headers"],
-        features = ["cc_include_scanning"],
+        features = select({
+            "//tools/ci/compile:scan_disabled": [],
+            "//conditions:default": ["cc_include_scanning"],
+        }),
         # Skia selects these headers through macro includes.
         additional_compiler_inputs = [
             repository + "//:base/component_export.h",

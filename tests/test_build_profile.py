@@ -72,6 +72,28 @@ class BuildProfileTest(unittest.TestCase):
         self.assertNotIn('DO_NOT_EXPORT', json.dumps(result))
         self.assertNotIn('compile', json.dumps(result))
 
+    def test_trace_summary_preserves_instant_phases_and_selected_resource_samples(self):
+        events = [
+            {'cat': 'build phase marker', 'name': 'Complete build', 'ph': 'i', 'ts': 9000000},
+            {'cat': 'general information', 'name': 'MerkleTreeComputer.buildForSpawn',
+             'ph': 'X', 'dur': 500000},
+            {'cat': 'Remote execution process wall time', 'ph': 'X', 'dur': 2000000},
+            *[{'name': 'CPU usage (Bazel)', 'ph': 'C',
+               'args': {'cpu': value, 'command': 'DO_NOT_EXPORT'}} for value in (2, 6)],
+            {'name': 'Memory usage (Bazel)', 'ph': 'C', 'args': {'memory': 1024}},
+        ]
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'trace.json'
+            path.write_text(json.dumps({'traceEvents': events}))
+            result = trace_summary(path)
+        self.assertEqual(result['phases'][0]['name'], 'Complete build')
+        self.assertEqual(result['phases'][0]['ph'], 'i')
+        self.assertEqual(result['tasks']['merkle'], {'count': 1, 'task_seconds': 0.5})
+        self.assertEqual(result['tasks']['worker_execution'], {'count': 1, 'task_seconds': 2})
+        self.assertEqual(result['counters']['bazel_cpu'], {
+            'samples': 2, 'sample_mean': 4, 'sample_max': 6, 'unit': 'cores'})
+        self.assertNotIn('DO_NOT_EXPORT', json.dumps(result))
+
 
 if __name__ == '__main__':
     unittest.main()

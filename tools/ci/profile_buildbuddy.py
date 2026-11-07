@@ -4,9 +4,11 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 import gzip
 import json
+import math
 import os
 from pathlib import Path
 import re
+import statistics
 import tempfile
 import urllib.request
 
@@ -48,11 +50,42 @@ def trace_summary(path):
         trace = json.load(source)
     events = trace.get('traceEvents', [])
     durations = [event for event in events if event.get('ph') == 'X' and event.get('dur', 0) > 0]
-    phases = [event for event in durations if event.get('cat') == 'build phase marker']
+    phases = [event for event in events if event.get('cat') == 'build phase marker']
     longest = sorted(durations, key=lambda event: event['dur'], reverse=True)[:40]
     fields = ('cat', 'ts', 'dur', 'tid')
-    return {'phases': [{key: event.get(key) for key in fields} for event in phases],
-            'longest_events': [{key: event.get(key) for key in fields} for event in longest]}
+    phase_names = {'Launch Blaze', 'Initialize command', 'Evaluate target patterns',
+                   'Load, analyze dependencies and build artifacts', 'Complete build'}
+    phase_summary = [{**{key: event.get(key) for key in (*fields, 'ph')},
+                      **({'name': event['name']} if event.get('name') in phase_names else {})}
+                     for event in phases]
+    operations = {
+        'merkle': ('general information', 'MerkleTreeComputer.buildForSpawn'),
+        'upload_missing_inputs': ('Remote execution upload time', 'upload missing inputs'),
+        'worker_execution': ('Remote execution process wall time', None),
+        'worker_queue': ('Remote execution queuing time', None),
+        'output_download': ('Remote execution file fetching', None),
+        'input_discovery': ('discover inputs', None),
+    }
+    tasks = {}
+    for name, (category, event_name) in operations.items():
+        spans = [event for event in durations if event.get('cat') == category
+                 and (event_name is None or event.get('name') == event_name)]
+        tasks[name] = {'count': len(spans), 'task_seconds': sum(event['dur'] for event in spans) / 1e6}
+    counters = {}
+    for label, counter_name, argument, unit in [
+        ('bazel_cpu', 'CPU usage (Bazel)', 'cpu', 'cores'),
+        ('bazel_memory', 'Memory usage (Bazel)', 'memory', 'MB'),
+        ('active_actions', 'action count', 'action', 'actions'),
+    ]:
+        samples = [event.get('args', {}).get(argument) for event in events
+                   if event.get('ph') == 'C' and event.get('name') == counter_name]
+        samples = [value for value in samples if isinstance(value, (int, float)) and math.isfinite(value)]
+        if samples:
+            counters[label] = {'samples': len(samples), 'sample_mean': statistics.fmean(samples),
+                               'sample_max': max(samples), 'unit': unit}
+    return {'phases': phase_summary,
+            'longest_events': [{key: event.get(key) for key in fields} for event in longest],
+            'tasks': tasks, 'counters': counters}
 
 
 def collect(identifier):

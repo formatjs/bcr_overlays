@@ -65,13 +65,12 @@ def summarize(source, size):
             result[str(index)] = {'size': length, 'sha256': stream_hash.hexdigest()}
         if 3 in mappings:
             indices, length = mappings[3]
-            if length > 64 * 1024 * 1024:
-                raise ValueError('DBI stream exceeds 64 MiB')
-            dbi = b''.join(chunks(indices, length))
-            if len(dbi) >= 64:
-                position, end = 64, 64 + struct.unpack_from('<I', dbi, 24)[0]
-                if end > len(dbi):
+            if length >= 64:
+                header = read_at(indices[0] * page_size, 64)
+                position, end = 64, 64 + struct.unpack_from('<I', header, 24)[0]
+                if end > length or end > 64 * 1024 * 1024:
                     raise ValueError('Invalid DBI module bounds')
+                dbi = b''.join(chunks(indices[:(end + page_size - 1) // page_size], end))
                 while position + 64 <= end:
                     index = struct.unpack_from('<H', dbi, position + 34)[0]
                     name_end = dbi.find(b'\0', position + 64, end)

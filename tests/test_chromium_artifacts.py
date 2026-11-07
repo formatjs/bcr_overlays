@@ -282,7 +282,7 @@ class ArtifactsTest(unittest.TestCase):
                                if value.startswith('--build_event_json_file=')))
             profile = Path(next(value.split('=', 1)[1] for value in command
                                 if value.startswith('--profile=')))
-            self.assertEqual(events.parent, directory)
+            self.assertNotEqual(events.parent, directory)
             self.assertEqual(profile.parent, directory)
             events.write_text(json.dumps({'started': {'uuid': 'cold-failure'}}) + '\n')
             profile.write_text('{"traceEvents":[')
@@ -297,7 +297,7 @@ class ArtifactsTest(unittest.TestCase):
                 self.assertFalse(report['build_succeeded'])
                 self.assertFalse(report['cold_result_verified'])
                 self.assertEqual(report['invocation_id'], 'cold-failure')
-                self.assertTrue((directory / 'cold-events.json').exists())
+                self.assertFalse((directory / 'cold-events.json').exists())
                 self.assertTrue((directory / 'cold-profile.json').exists())
                 self.assertEqual(report['cache_state']['execution_policy'], 'no-cache; no in-flight action merging')
         self.assertNotEqual(roots[0], roots[1])

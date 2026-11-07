@@ -56,9 +56,9 @@ Their killed Bazel children emitted no final profile or cold-result report.
 
 The wider Linux AMD64 cold trial at `5bfb3df` also hit the cap at
 145,437/154,750 actions, without compiler errors. Progress is not a finish-time
-estimate. Cold runs now write BEP events and an uncompressed profile directly
-into BuildBuddy's artifact directory, preserving partial evidence after a hard
-kill. Incomplete profiles are diagnostic only; successful cold proof still
+estimate. Cold runs write an uncompressed profile directly into BuildBuddy's artifact
+directory, preserving partial timing after a hard kill. Raw BEP stays temporary
+because command-line events can include authentication headers. Incomplete profiles are diagnostic only; successful cold proof still
 requires complete final metrics and zero action-cache hits. Raw files stay on
 BuildBuddy; GitHub receives sanitized summaries only.
 

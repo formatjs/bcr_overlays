@@ -219,7 +219,6 @@ def build(target, destination, revision, hosted=False, cold=False):
         events = Path(temporary) / 'events.json'
         if cold:
             destination.mkdir(parents=True, exist_ok=True)
-            events = destination / 'cold-events.json'
             flags.append('--profile=' + str(destination / 'cold-profile.json'))
             bazel.extend(['--batch', '--output_user_root=' + str(Path(temporary) / 'bazel')])
             flags.extend([

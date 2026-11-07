@@ -13,11 +13,7 @@ def native_blink_core():
         chromium_python_action(**action)
     cc_library(
         name = "blink_core_headers",
-        hdrs = SHARED_HEADERS + [
-            ":all_buildflags",
-            "//:third_party/khronos/GLES2/gl2platform.h",
-            "//:third_party/khronos/KHR/khrplatform.h",
-        ] + native.glob(["blink_core_forwarders/**/*.h"], allow_empty = True),
+        hdrs = SHARED_HEADERS + [":all_buildflags"] + native.glob(["blink_core_forwarders/**/*.h"], allow_empty = True),
         includes = ["..", "gen", "blink_core_forwarders"],
         deps = [":blink_platform_headers", ":libxslt"],
     )

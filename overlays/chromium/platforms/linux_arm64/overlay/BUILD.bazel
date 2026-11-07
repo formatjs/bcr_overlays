@@ -2,11 +2,6 @@ load("@rules_cc//cc:cc_library.bzl", "cc_library")
 
 package(default_visibility = ["//visibility:public"])
 
-exports_files([
-    "third_party/khronos/GLES2/gl2platform.h",
-    "third_party/khronos/KHR/khrplatform.h",
-])
-
 exports_files(["third_party/blink/renderer/core/html/html_permission_element_strings_map.h"])
 
 filegroup(

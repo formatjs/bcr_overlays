@@ -13,6 +13,8 @@ import tempfile
 from urllib.parse import unquote, urlparse
 import uuid
 
+from tools.ci.profile_buildbuddy import trace_summary
+
 
 ROOT = Path(__file__).resolve().parents[3]
 TARGET = '//tools/ci/compile:blink-layout-linux-amd64'
@@ -20,10 +22,12 @@ TARGETS = {'linux-amd64': TARGET, **{
     platform: '//tools/ci/compile/' + platform.replace('-', '_') + ':blink-layout-' + platform
     for platform in ('linux-arm64', 'darwin-arm64', 'windows-amd64', 'windows-arm64')
 }}
-OWNERS = (':blink_layout_compile_probe', ':blink_layout_compile_probe_canvas')
+OWNERS = tuple(':blink_layout_compile_probe' + suffix for suffix in (
+    '', '_canvas', '_accessibility', '_canvas2d', '_platform', '_bindings'))
 SOURCES = ('layout_box.cc', 'layout_view.cc', 'svg_object_painter.cc',
            'css_palette_mix_value.cc', 'css_relative_color_value.cc', 'core_probes.cc')
-SOURCE_PATTERN = '.*(' + '|'.join(source.removesuffix('.cc') for source in SOURCES) + ')[.]cc'
+WIDE_HOST_SOURCES = (*SOURCES, 'ax_object.cc', 'ax_node_object.cc', 'canvas_rendering_context_2d.cc',
+                     'date_math.cc', 'v8_video_frame.cc', 'v8_webgl2_rendering_context_webgpu.cc')
 
 
 def compiler_input_diff(path):
@@ -123,27 +127,39 @@ def main():
     parser.add_argument('--platform', choices=sorted(TARGETS), default='linux-amd64')
     parser.add_argument('--batch', action='store_true', help='Measure fixed host throughput batch after warmups')
     parser.add_argument('--host-blink', action='store_true', help='Probe Linux ARM64 captured x64 host Blink libraries')
+    parser.add_argument('--wide-host-blink', action='store_true', help='Include host modules, platform, and generated bindings')
+    parser.add_argument('--compare-merkle-retention', action='store_true',
+                        help='Compare retained input trees on the unscanned batch; compiler options stay fixed')
     args = parser.parse_args()
     if args.batch and args.platform != 'linux-amd64':
         parser.error('Throughput batch currently targets Linux amd64 host compiles')
-    if args.host_blink and (args.batch or args.platform != 'linux-amd64'):
+    if (args.host_blink or args.wide_host_blink) and (args.batch or args.platform != 'linux-amd64'):
         parser.error('Host Blink probe runs on Linux amd64 without --batch')
+    if args.compare_merkle_retention and not args.batch:
+        parser.error('--compare-merkle-retention requires --batch')
     if not os.environ.get('BUILDBUDDY_CI_RUNNER_ABSPATH'):
         raise ValueError('Compile experiment requires a BuildBuddy workflow runner')
     args.directory.mkdir(parents=True, exist_ok=True)
     nonce = uuid.uuid4().hex
     sources = batch_sources() if args.batch else SOURCES
+    if args.wide_host_blink:
+        sources = WIDE_HOST_SOURCES
     target = '//tools/ci/compile/throughput:blink-throughput-linux-amd64' if args.batch else TARGETS[args.platform]
     if args.host_blink:
         target = '//tools/ci/compile/host:blink-host-linux-arm64'
-    pattern = '.*(' + '|'.join(re.escape(source) for source in sources) + ')' if args.batch else SOURCE_PATTERN
-    modes = [('baseline-1', False), ('include-scan-1', True), ('include-scan-2', True), ('baseline-2', False)]
+    if args.wide_host_blink:
+        target = '//tools/ci/compile/host_wide:blink-host-linux-arm64'
+    pattern = '.*(' + '|'.join(re.escape(source) for source in sources) + ')'
+    variant = 'retain-merkle' if args.compare_merkle_retention else 'include-scan'
+    modes = [('baseline-1', False), (variant + '-1', True), (variant + '-2', True), ('baseline-2', False)]
     if args.batch:
-        modes = [('warmup-baseline', False), ('warmup-include-scan', True)] + modes
+        modes = [('warmup-baseline', False), ('warmup-' + variant, True)] + modes
     report = {'source_count': len(sources), 'platform': args.platform,
+              'comparison': variant,
               'warmup_modes': [mode for mode, _ in modes if mode.startswith('warmup-')]}
     with tempfile.TemporaryDirectory(prefix='blink-compile-profile-') as temporary:
-        for mode, scanning in modes:
+        for mode, experimental in modes:
+            scanning = experimental and not args.compare_merkle_retention
             events = Path(temporary) / 'events.json'
             execution_log = Path(temporary) / (mode + '.binpb.zst')
             profile = Path(temporary) / (mode + '.profile.gz')
@@ -154,6 +170,8 @@ def main():
                        '--execution_log_compact_file=' + str(execution_log),
                        '--profile=' + str(profile),
                        '--cc_include_scanning=' + ('true' if scanning else 'false')]
+            if args.compare_merkle_retention:
+                command.append('--experimental_remote_discard_merkle_trees=' + ('false' if experimental else 'true'))
             if args.platform.startswith('windows-'):
                 command.extend([
                     '--repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1',
@@ -166,10 +184,14 @@ def main():
                 (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
                 raise RuntimeError(mode + ' compile failed')
             digests, metrics = archive_outputs(events, target)
+            timings = compiler_profiles(profile, sources)
+            if any(item['worker_seconds'] <= 0 for item in timings.values()):
+                raise ValueError('Expected real remote worker execution for every selected compile')
             report[mode] = {
-                'compiles': compiler_profiles(profile, sources),
+                'compiles': timings,
                 'output_sha256': digests,
                 'build_metrics': metrics,
+                'profile_summary': trace_summary(profile),
             }
             (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
             print(mode + ': ' + (str(len(sources)) + ' compiler spans recorded' if args.batch
@@ -179,13 +201,13 @@ def main():
             for mode, _ in modes)
         (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
         if not report['output_bytes_match']:
-            raise ValueError('Include scanning changed compiler output bytes')
+            raise ValueError('Build experiment changed compiler output bytes')
         report['input_diff'] = {}
         for pair in ('1', '2'):
             diff = Path(temporary) / ('diff-' + pair + '.json')
             with diff.open('w') as output:
                 subprocess.run(['bb', 'explain', '--old', str(Path(temporary) / ('baseline-' + pair + '.binpb.zst')),
-                                '--new', str(Path(temporary) / ('include-scan-' + pair + '.binpb.zst')),
+                                '--new', str(Path(temporary) / (variant + '-' + pair + '.binpb.zst')),
                                 '--output_format', 'json'], stdout=output, cwd=ROOT, check=True)
             report['input_diff'][pair] = compiler_input_diff(diff)
         (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')

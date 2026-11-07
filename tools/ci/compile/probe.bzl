@@ -22,7 +22,7 @@ def _blink_library_probe(name, library, repository, sources, forwarders = "blink
     )
     cc_library(
         name = name,
-        srcs = [repository + "//:" + source for source in sources],
+        srcs = [repository + ("//native" if source.startswith(":") else "//:") + source for source in sources],
         copts = library["copts"],
         local_defines = library["defines"],
         linkstatic = True,
@@ -55,10 +55,10 @@ def blink_compile_probe(name, libraries, repository = "@chromium", batch = False
         "third_party/blink/renderer/core/probe/core_probes.cc",
     ])
 
-def host_blink_compile_probe(name, libraries, repository):
+def host_blink_compile_probe(name, libraries, repository, wide = False):
     """Compile Linux ARM64's captured x64 host Blink context independently."""
     toolchain = "(//build/toolchain/linux:clang_x64_v8_arm64)"
-    for suffix, owner, sources in [
+    owners = [
         ("", "//third_party/blink/renderer/core:core", [
             "third_party/blink/renderer/core/layout/layout_box.cc",
             "third_party/blink/renderer/core/layout/layout_view.cc",
@@ -69,7 +69,25 @@ def host_blink_compile_probe(name, libraries, repository):
         ("_canvas", "//third_party/blink/renderer/core/probe:probe", [
             "third_party/blink/renderer/core/probe/core_probes.cc",
         ]),
-    ]:
+    ]
+    if wide:
+        owners += [
+            ("_accessibility", "//third_party/blink/renderer/modules/accessibility:accessibility", [
+                "third_party/blink/renderer/modules/accessibility/ax_object.cc",
+                "third_party/blink/renderer/modules/accessibility/ax_node_object.cc",
+            ]),
+            ("_canvas2d", "//third_party/blink/renderer/modules/canvas:canvas", [
+                "third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc",
+            ]),
+            ("_platform", "//third_party/blink/renderer/platform/wtf:wtf", [
+                "third_party/blink/renderer/platform/wtf/date_math.cc",
+            ]),
+            ("_bindings", "//third_party/blink/renderer/bindings/modules/v8:v8", [
+                ":clang_x64_v8_arm64/gen/third_party/blink/renderer/bindings/modules/v8/v8_video_frame.cc",
+                ":clang_x64_v8_arm64/gen/third_party/blink/renderer/bindings/modules/v8/v8_webgl2_rendering_context_webgpu.cc",
+            ]),
+        ]
+    for suffix, owner, sources in owners:
         library = dict(libraries[owner + toolchain])
         library["copts"] = library["copts"] + ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
         _blink_library_probe(name + suffix, library, repository, sources, forwarders = "browser_forwarders")

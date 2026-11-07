@@ -8,9 +8,10 @@ registered actions are not executed compiles.
 
 Target: under one hour per supported triple on BuildBuddy, including artifact
 packaging. Preserve hermetic toolchains, declared inputs, compiler options,
-target ABIs, and native rendering smoke coverage. All five cold builds at
-`24375b5` finish in 35m56s–46m04s and pass native rendering smoke. Windows
-PDB byte variation remains under investigation below. The user's observed build effort, including retries, is about
+target ABIs, and native rendering smoke coverage. No strict cold result has
+been established. The `24375b5` cohort finished in 35m56s–46m04s and passed native
+rendering, but retained BuildBuddy's managed output base. Those timings are
+uncached-action measurements, not fresh-output cold proof. The user's observed build effort, including retries, is about
 2.5 hours; the mixed-cache profile below is not a cold baseline.
 
 Measure with fresh Bazel output state and action-cache reuse disabled. Record
@@ -19,6 +20,13 @@ does not make the remote CAS cold. Report fetch/setup, analysis, execution,
 linking, and packaging separately, plus total elapsed time and retries. Do not
 sum overlapping profile spans as wall time. Confirm executed compiler counts
 before calling a run cold.
+
+Audit correction: BuildBuddy injects `startup --output_base` through its managed
+RC. Setting `--output_user_root` alone did not isolate the output base. All earlier
+trials retained repository/output state, even when compiler actions re-executed.
+The replacement sets both paths explicitly and requires canonical BEP startup
+options to confirm the expected output base was used and was absent before the
+build. Cache counters alone cannot verify fresh state.
 
 The initial scanner candidate left a host gap: Linux ARM64's browser capture contains
 19 host Blink-core libraries with 2,733 source entries outside the dedicated
@@ -418,9 +426,9 @@ the default payload equality gate stays strict. The diagnostics do not authorize
 ignoring arbitrary debug data. Cold artifacts must also be compared with the
 validated `6c9b871` outputs, whose build inputs match the cold candidate.
 
-## Verified cold cohort
+## Uncached-action cohort (not strict cold)
 
-The five cold trials at `24375b5` combine 128 jobs with measured gzip level 1.
+The five trials at `24375b5` combine 128 jobs with measured gzip level 1.
 Each uses 16 client CPUs, 32GB memory, and a 12GiB JVM heap. Toolchains, compiler
 options, ABIs, and native rendering tests stay unchanged.
 
@@ -432,12 +440,14 @@ options, ABIs, and native rendering tests stay unchanged.
 | [Linux AMD64](https://formatjs.buildbuddy.io/invocation/61e548c4-e2dd-4b0e-9801-936011f91e61) | 40m36s | 75,286 | 154,750 |
 | [Linux ARM64](https://formatjs.buildbuddy.io/invocation/3d45f95a-cfb9-48d3-8777-7e2ffa4dc364) | 46m04s | 77,537 | 161,470 |
 
-Times include workflow setup, source fetching, analysis, linking, packaging,
-and artifact upload. Each report verifies zero reused actions, a fresh Bazel
-output root and repository download cache, disabled disk/remote action-cache
-reads, and disabled in-flight merging. Shared remote CAS and worker input caches
-are not cleared. The cohort executes 690,854 actions, including 318,572 C++
-compiles. All five exact cold artifacts pass native ABI and rendering smoke.
+Times include workflow setup, any fetching, analysis, linking, packaging,
+and artifact upload. Each report records zero reused actions, disabled remote
+action-cache reads and in-flight merging. Its claim of fresh output state was
+incorrect: the managed RC retained `/home/buildbuddy/workspace/output-base`.
+Repositories and output state were shared with earlier runs. The cohort executes
+690,854 actions, including 318,572 C++ compiles; all five exact artifacts pass
+native ABI and rendering smoke. These remain useful compilation measurements,
+but do not satisfy the strict cold goal. Shared remote CAS is also not cleared.
 
 Cold profiles show 3m33s–3m58s analysis and 31m08s–41m16s execution. Critical
 paths are 6m43s–10m55s, below execution time: aggregate throughput dominates.

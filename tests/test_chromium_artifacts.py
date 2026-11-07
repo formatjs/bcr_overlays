@@ -274,18 +274,48 @@ class ArtifactsTest(unittest.TestCase):
             (True, 0, 0, 0, False),
         ]:
             with self.subTest(success=success, local_hits=local_hits, remote_hits=remote_hits, compiles=compiles):
-                events.write_text(json.dumps({'buildMetrics': {'actionSummary': {
+                events.write_text(json.dumps({'structuredCommandLine': {
+                    'commandLineLabel': 'canonical', 'sections': [{
+                        'sectionLabel': 'startup options', 'optionList': {'option': [{
+                            'optionName': 'output_base', 'optionValue': str(self.root / 'fresh-base'),
+                        }]},
+                    }],
+                }}) + '\n' + json.dumps({'buildMetrics': {'actionSummary': {
                     'actionData': [{'mnemonic': 'CppCompile', 'actionsExecuted': str(compiles)}],
                     'actionCacheStatistics': {'hits': local_hits},
                     'runnerCount': [{'name': 'remote', 'count': compiles},
                                     {'name': 'remote cache hit', 'count': remote_hits}],
                 }}}))
-                result = cold_build_report(events, 9000, success)
+                result = cold_build_report(events, 9000, success,
+                                           expected_output_base=self.root / 'fresh-base',
+                                           output_base_was_fresh=True)
                 self.assertEqual(result['cold_result_verified'], verified)
                 self.assertEqual(result['elapsed_seconds'], 9000)
                 self.assertEqual(result['cpp_compile_actions'], compiles)
         events.write_text('{"incomplete":')
         self.assertFalse(cold_build_report(events, 1, False)['cold_result_verified'])
+
+    def test_cold_result_rejects_managed_rc_output_base(self):
+        events = self.root / 'events.json'
+        events.write_text('\n'.join(json.dumps(event) for event in [
+            {'structuredCommandLine': {'commandLineLabel': 'canonical', 'sections': [{
+                'sectionLabel': 'startup options', 'optionList': {'option': [
+                    {'optionName': 'output_base', 'optionValue': '/home/buildbuddy/workspace/output-base'},
+                    {'optionName': 'remote_header', 'optionValue': 'DO_NOT_EXPORT'},
+                ]}}]}},
+            {'buildMetrics': {'actionSummary': {
+                'actionData': [{'mnemonic': 'CppCompile', 'actionsExecuted': '12345'}],
+                'actionCacheStatistics': {'hits': 0},
+                'runnerCount': [{'name': 'remote', 'count': 12345}],
+            }}},
+        ]))
+        result = cold_build_report(events, 100, True)
+        self.assertFalse(result['cold_result_verified'])
+        self.assertNotIn('DO_NOT_EXPORT', json.dumps(result))
+        result = cold_build_report(events, 100, True, expected_output_base=self.root / 'fresh-base',
+                                   output_base_was_fresh=True)
+        self.assertFalse(result['cold_result_verified'])
+        self.assertEqual(result['cache_state']['bazel_output_state'], 'unverified')
 
     def test_cold_failure_keeps_measurement_without_reusing_bazel_state(self):
         directory = self.root / 'cold-artifacts'
@@ -296,6 +326,10 @@ class ArtifactsTest(unittest.TestCase):
             root = Path(next(value.split('=', 1)[1] for value in command
                              if value.startswith('--output_user_root=')))
             self.assertFalse(root.exists())
+            output_base = Path(next(value.split('=', 1)[1] for value in command
+                                    if value.startswith('--output_base=')))
+            self.assertFalse(output_base.exists())
+            self.assertEqual(output_base, root.parent / 'output-base')
             roots.append(root)
             self.assertIn('--batch', command[:command.index('build')])
             self.assertIn('--remote_accept_cached=false', command)

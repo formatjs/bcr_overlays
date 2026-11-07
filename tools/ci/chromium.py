@@ -153,10 +153,11 @@ def unpack(artifact, destination, target, revision):
     return bundle
 
 
-def cold_build_report(events, elapsed, success):
+def cold_build_report(events, elapsed, success, *, expected_output_base=None, output_base_was_fresh=False):
     """Keep cache evidence alongside cold-run timing, including failed runs."""
     metrics = {}
     invocation = None
+    output_bases = []
     if events.exists():
         with events.open() as source:
             for line in source:
@@ -168,6 +169,15 @@ def cold_build_report(events, elapsed, success):
                     invocation = event['started'].get('uuid')
                 if 'buildMetrics' in event:
                     metrics = event['buildMetrics']
+                command = event.get('structuredCommandLine', {})
+                if command.get('commandLineLabel') == 'canonical':
+                    for section in command.get('sections', []):
+                        if section.get('sectionLabel') == 'startup options':
+                            output_bases.extend(option.get('optionValue')
+                                                for option in section.get('optionList', {}).get('option', [])
+                                                if option.get('optionName') == 'output_base')
+    output_base_verified = (output_base_was_fresh and expected_output_base is not None
+                            and output_bases == [str(expected_output_base)])
     actions = metrics.get('actionSummary', {})
     cached = sum(int(item.get('count', 0)) for item in actions.get('runnerCount', [])
                  if 'cache' in item.get('name', '').lower())
@@ -178,11 +188,14 @@ def cold_build_report(events, elapsed, success):
         'invocation_id': invocation,
         'elapsed_seconds': elapsed,
         'build_succeeded': success,
-        'cold_result_verified': (success and bool(actions.get('runnerCount'))
+        'cold_result_verified': (success and output_base_verified and bool(actions.get('runnerCount'))
                                  and 'actionCacheStatistics' in actions and cached == 0 and compiles > 0),
+        'output_base_verified': output_base_verified,
+        'output_base_was_absent': output_base_was_fresh,
+        'effective_output_base': output_bases[0] if len(output_bases) == 1 else None,
         'cache_state': {
-            'bazel_output_state': 'fresh',
-            'repository_download_cache': 'fresh',
+            'bazel_output_state': 'fresh' if output_base_verified else 'unverified',
+            'repository_download_cache': 'fresh' if output_base_verified else 'unverified',
             'remote_action_cache_reads': False,
             'disk_action_cache': False,
             'remote_cas': 'shared; not cleared',
@@ -220,7 +233,13 @@ def build(target, destination, revision, hosted=False, cold=False):
         if cold:
             destination.mkdir(parents=True, exist_ok=True)
             flags.append('--profile=' + str(destination / 'cold-profile.json'))
-            bazel.extend(['--batch', '--output_user_root=' + str(Path(temporary) / 'bazel')])
+            output_base = Path(temporary) / 'output-base'
+            output_base_was_fresh = not output_base.exists()
+            if not output_base_was_fresh:
+                raise ValueError('Cold output base already exists')
+            # Managed RC files may set output_base independently of output_user_root.
+            bazel.extend(['--batch', '--output_user_root=' + str(Path(temporary) / 'bazel'),
+                          '--output_base=' + str(output_base)])
             flags.extend([
                 '--remote_accept_cached=false', '--disk_cache=', '--repo_contents_cache=',
                 '--repository_cache=' + str(Path(temporary) / 'repository-cache'),
@@ -241,12 +260,14 @@ def build(target, destination, revision, hosted=False, cold=False):
             success = True
         finally:
             if cold:
-                report = cold_build_report(events, time.monotonic() - started, success)
+                report = cold_build_report(events, time.monotonic() - started, success,
+                                           expected_output_base=output_base,
+                                           output_base_was_fresh=output_base_was_fresh)
                 report['cache_state']['execution_policy'] = 'no-cache; no in-flight action merging'
                 destination.mkdir(parents=True, exist_ok=True)
                 (destination / 'cold-build.json').write_text(json.dumps(report, indent=2) + '\n')
         if cold and not report['cold_result_verified']:
-            raise ValueError('Cold build evidence missing or cached actions detected')
+            raise ValueError('Cold build evidence missing, output base reused, or cached actions detected')
     return destination / ('chromium-' + target['id'] + '.tar.gz')
 
 

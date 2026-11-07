@@ -19,10 +19,11 @@ linking, and packaging separately, plus total elapsed time and retries. Do not
 sum overlapping profile spans as wall time. Confirm executed compiler counts
 before calling a run cold.
 
-Current scanner coverage has a host gap: Linux ARM64's browser capture contains
+The initial scanner candidate left a host gap: Linux ARM64's browser capture contains
 19 host Blink-core libraries with 2,733 source entries outside the dedicated
-Blink-core macro. Validate these compiler contexts separately before extending
-scanning. The other four browser captures contain no Blink-core libraries.
+Blink-core macro. The scoped follow-up enables scanning on those libraries;
+full Linux ARM64 validation remains required. The other four browser captures
+contain no Blink-core libraries.
 
 The hosted build command accepts `--cold`. It starts a batch Bazel process with
 a unique output root and fresh repository download cache, disables disk caches
@@ -74,6 +75,13 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- [Host Blink-core differential trial](https://formatjs.buildbuddy.io/invocation/a20cde7e-eea3-453d-9e31-4614451d0152)
+  passed baseline/scanner/scanner/baseline with identical archives across six
+  compiles. Both pairs removed 633,206 input paths and added 1,883: **631,323
+  fewer paths net**. Warm execution times were 25.8s baseline and 26.6s/28.1s
+  scanner. The first baseline also ran 2,218 generator actions and spent time
+  fetching repositories; its 354s wall time is not comparable. Header input
+  reduction is proven; throughput improvement remains unproven.
 - Payload compression now caches independently of revision stamping. A real
   Windows payload took 138.6s to compress; subsequent stamps took 5.7s and 1.3s.
   This improves packaging, not compiler throughput.

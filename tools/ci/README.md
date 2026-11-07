@@ -73,8 +73,10 @@ reusing its 1.12 GB compressed payload took 1.3–5.7 seconds to stamp. Full CI
 wall-time improvement still needs comparison after the new payload cache warms.
 
 The compiler optimization pilot lives in `tools/ci/compile`. It forwards Blink's
-real compilation context while compiling `layout_box.cc`, `layout_view.cc`, and
-`svg_object_painter.cc`, avoiding a full Blink library rebuild. The initial
+real compilation context while compiling layout, SVG paint, CSS color, and
+canvas probe sources, avoiding a full Blink library rebuild. CSS and canvas
+sources cover the macro-closure and Khronos declaration failures found by the
+first full-browser trial. Each source retains its owning library's flags. The initial
 single-source action declared 76,130 inputs. The BuildBuddy experiment compares
 baseline/scanner/scanner/baseline runs, records compiler input differences and
 per-source timings, and requires identical archive bytes. Distinct unused macros

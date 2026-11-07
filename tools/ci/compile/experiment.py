@@ -18,13 +18,15 @@ TARGETS = {'linux-amd64': TARGET, **{
     platform: '//tools/ci/compile/' + platform.replace('-', '_') + ':blink-layout-' + platform
     for platform in ('linux-arm64', 'darwin-arm64', 'windows-amd64', 'windows-arm64')
 }}
-OWNER = ':blink_layout_compile_probe'
-SOURCES = ('layout_box.cc', 'layout_view.cc', 'svg_object_painter.cc')
+OWNERS = (':blink_layout_compile_probe', ':blink_layout_compile_probe_canvas')
+SOURCES = ('layout_box.cc', 'layout_view.cc', 'svg_object_painter.cc',
+           'css_palette_mix_value.cc', 'css_relative_color_value.cc', 'core_probes.cc')
+SOURCE_PATTERN = '.*(' + '|'.join(source.removesuffix('.cc') for source in SOURCES) + ')[.]cc'
 
 
 def compiler_input_diff(path):
     changes = [item for item in json.loads(path.read_text()).get('spawn_diffs', [])
-               if item.get('mnemonic') == 'CppCompile' and item.get('target_label', '').endswith(OWNER)]
+               if item.get('mnemonic') == 'CppCompile' and item.get('target_label', '').endswith(OWNERS)]
     if any('old_only' in item or 'new_only' in item for item in changes):
         return {'comparison': 'unpaired', 'reason': 'Compiler output paths changed between configurations'}
     removed, added = 0, 0
@@ -114,7 +116,7 @@ def main():
             execution_log = Path(temporary) / (mode + '.binpb.zst')
             profile = Path(temporary) / (mode + '.profile.gz')
             command = [os.environ.get('BAZEL', 'bazel'), 'build', '--config=browser', '--config=buildbuddy',
-                       '--per_file_copt=.*(layout_box|layout_view|svg_object_painter)[.]cc@-DBAZEL_COMPILE_PROFILE_RUN=' + nonce + '_' + mode.replace('-', '_'),
+                       '--per_file_copt=' + SOURCE_PATTERN + '@-DBAZEL_COMPILE_PROFILE_RUN=' + nonce + '_' + mode.replace('-', '_'),
                        '--build_event_json_file=' + str(events),
                        '--nobuild_event_json_file_path_conversion',
                        '--execution_log_compact_file=' + str(execution_log),

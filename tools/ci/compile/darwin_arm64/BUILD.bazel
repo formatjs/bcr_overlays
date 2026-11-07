@@ -12,5 +12,8 @@ blink_compile_probe(
 
 darwin_arm64_browser(
     name = "blink-layout-darwin-arm64",
-    srcs = [":blink_layout_compile_probe"],
+    srcs = [
+        ":blink_layout_compile_probe",
+        ":blink_layout_compile_probe_canvas",
+    ],
 )

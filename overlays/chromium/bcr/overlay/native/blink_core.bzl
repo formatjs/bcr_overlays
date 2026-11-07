@@ -12,7 +12,11 @@ def native_blink_core():
         chromium_python_action(**action)
     cc_library(
         name = "blink_core_headers",
-        hdrs = SHARED_HEADERS + [":all_buildflags"] + native.glob(["blink_core_forwarders/**/*.h"], allow_empty = True),
+        hdrs = SHARED_HEADERS + [
+            ":all_buildflags",
+            "//:third_party/khronos/GLES2/gl2platform.h",
+            "//:third_party/khronos/KHR/khrplatform.h",
+        ] + native.glob(["blink_core_forwarders/**/*.h"], allow_empty = True),
         includes = ["..", "gen", "blink_core_forwarders"],
         deps = [":blink_platform_headers", ":libxslt"],
     )
@@ -28,6 +32,7 @@ def native_blink_core():
             features = ["cc_include_scanning"],
             # Skia selects these through macro includes.
             additional_compiler_inputs = [
+                "//:base/component_export.h",
                 "//:skia/config/SkUserConfig.h",
                 "//:skia/config/sk_ref_cnt_ext_debug.h",
                 "//:skia/config/sk_ref_cnt_ext_release.h",

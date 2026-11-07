@@ -11,5 +11,8 @@ blink_compile_probe(
 
 linux_amd64_browser(
     name = "blink-layout-linux-amd64",
-    srcs = [":blink_layout_compile_probe"],
+    srcs = [
+        ":blink_layout_compile_probe",
+        ":blink_layout_compile_probe_canvas",
+    ],
 )

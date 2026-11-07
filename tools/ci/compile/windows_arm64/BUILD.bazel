@@ -12,5 +12,8 @@ blink_compile_probe(
 
 windows_arm64_browser(
     name = "blink-layout-windows-arm64",
-    srcs = [":blink_layout_compile_probe"],
+    srcs = [
+        ":blink_layout_compile_probe",
+        ":blink_layout_compile_probe_canvas",
+    ],
 )

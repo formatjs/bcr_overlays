@@ -344,8 +344,16 @@ Python benchmark now packages the actual Windows AMD64 bundle at gzip levels
 6/1/1/6, recording wall time, CPU time, sizes, and compressed hashes. Every pass
 must produce identical complete uncompressed tar bytes; repeated levels must
 produce identical gzip bytes. The test bypasses caches and uses the existing
-with_cfg Windows bundle. Production remains at level 6. Report fixtures and a
-real Bazel-launched fixture pass; full-bundle measurements are still pending.
+with_cfg Windows bundle. The full-bundle trial at `e684be3` measured level 6 at
+388.83/403.12s and level 1 at 169.99/157.98s. Both levels produced the same
+7,648,174,080-byte tar; repeated compressed hashes also matched. Level 1 saves
+about 232s of packaging, growing the payload from 1,509,368,400 to
+1,762,705,675 bytes (16.8%). Production now uses level 1; tar contents and
+revision stamping stay unchanged.
+
+The benchmark's test body passed, but Bazel's optional output zipper failed
+because the worker lacked system `zip`. Disable zipped undeclared outputs and
+read the declared report from the output directory instead. No host tool install.
 
 Cold artifacts can also run native rendering smoke directly through the profile
 workflow: select one platform, enable `smoke_cold_artifact`, and supply its successful
@@ -365,7 +373,8 @@ are 3.4–4.9GB within the 12GiB heap budget.
 
 The hosted candidate now uses 128 jobs; local defaults stay unchanged. Validate
 all browser artifacts, native rendering, payload equality, and full cold timing
-before promoting it. The running `d49c868` cold trial remains the 64-job control.
+before promoting it. The `d49c868` 64-job cold control hit the one-hour cap at
+150,559/154,750 actions. Its preserved profile is incomplete, not cold proof.
 The `perf/cold-linux-amd64-128` branch starts the follow-up without replacing it.
 
 The expanded 14-source browser comparisons at `1494feb` now pass all five triples

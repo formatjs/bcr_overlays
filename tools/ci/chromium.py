@@ -56,7 +56,7 @@ def checksum(path):
         return hashlib.file_digest(source, 'sha256').hexdigest()
 
 
-def package_payload(bundle, payload, target, *, compression_level=6):
+def package_payload(bundle, payload, target, *, compression_level=1):
     validate_binary(bundle, target)
     payload.parent.mkdir(parents=True, exist_ok=True)
 

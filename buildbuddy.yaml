@@ -720,16 +720,15 @@ actions:
     steps:
       - run: |
           bazel --host_jvm_args=-Xmx12g test --config=browser --config=buildbuddy \
-            --noexperimental_remote_discard_merkle_trees --nocache_test_results --zip_undeclared_test_outputs \
+            --noexperimental_remote_discard_merkle_trees --nocache_test_results --nozip_undeclared_test_outputs \
             --repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1 \
             --repo_env=BAZEL_WINDOWS_SDK_EULA=1 \
             //tools/ci:windows-amd64_compression_benchmark
           python3 - <<'PY'
           import os
           from pathlib import Path
-          import zipfile
           directory = Path(os.environ['BUILDBUDDY_ARTIFACTS_DIRECTORY']) / 'compression-experiment'
           directory.mkdir(parents=True, exist_ok=True)
-          with zipfile.ZipFile('bazel-testlogs/tools/ci/windows-amd64_compression_benchmark/test.outputs/outputs.zip') as source:
-              (directory / 'report.json').write_bytes(source.read('report.json'))
+          source = Path('bazel-testlogs/tools/ci/windows-amd64_compression_benchmark/test.outputs/report.json')
+          (directory / 'report.json').write_bytes(source.read_bytes())
           PY

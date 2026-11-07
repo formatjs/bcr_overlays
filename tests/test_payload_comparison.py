@@ -4,6 +4,7 @@ import io
 import json
 from pathlib import Path
 import tempfile
+import tarfile
 import unittest
 from unittest import mock
 
@@ -37,6 +38,33 @@ class PayloadComparisonTest(unittest.TestCase):
         source = root / ('payload-' + revision + '.gz')
         source.write_bytes(gzip.compress(payload, mtime=0))
         return stamp_payload(source, root / revision, PLATFORMS['linux-amd64'], revision).read_bytes()
+
+    def test_member_diagnostics_distinguish_compression_from_tar_changes(self):
+        buffer = io.BytesIO()
+        with tarfile.open(fileobj=buffer, mode='w') as archive:
+            member = tarfile.TarInfo('bundle/chrome')
+            member.mode = 0o755
+            member.size = 4
+            archive.addfile(member, io.BytesIO(b'code'))
+        tar = buffer.getvalue()
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            manifests, digests = [], []
+            for level in (1, 6):
+                payload = root / f'payload-{level}.gz'
+                payload.write_bytes(gzip.compress(tar, compresslevel=level, mtime=0))
+                revision = str(level) * 40
+                path = stamp_payload(payload, root / revision, PLATFORMS['linux-amd64'], revision)
+                manifests.append(comparison.payload_manifest(path))
+                with path.open('rb') as source:
+                    digests.append(payload_digest(source, hashlib.sha256(path.read_bytes()).hexdigest(),
+                                                  revision, 'linux-amd64'))
+            self.assertNotEqual(digests[0], digests[1])
+            self.assertEqual(manifests[0]['tar_sha256'], hashlib.sha256(tar).hexdigest())
+            self.assertEqual(manifests[0]['tar_sha256'], manifests[1]['tar_sha256'])
+            self.assertEqual(manifests[0]['members'], manifests[1]['members'])
+            self.assertEqual(manifests[0]['members'][0]['sha256'], hashlib.sha256(b'code').hexdigest())
+            self.assertEqual(manifests[0]['members'][0]['mode'], 0o755)
 
     def test_revision_changes_do_not_change_payload_digest(self):
         with tempfile.TemporaryDirectory() as temporary:

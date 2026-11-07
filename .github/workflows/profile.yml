@@ -15,6 +15,11 @@ on:
         type: choice
         default: browser
         options: [browser, cold-browser]
+      diagnose_payload:
+        description: Include tar member hashes and metadata when comparing payloads
+        required: false
+        type: boolean
+        default: false
       smoke_cold_artifact:
         description: Execute and render the selected cold artifact on its native runner
         required: false
@@ -53,9 +58,11 @@ jobs:
           BASELINE_SHA: ${{ inputs.baseline }}
           REVISION_KIND: ${{ inputs.revision_kind }}
           PLATFORM: ${{ inputs.platform }}
+          DIAGNOSE_PAYLOAD: ${{ inputs.diagnose_payload }}
         run: |
           arguments=(--baseline "$BASELINE_SHA" --revision "$BUILD_SHA" --directory "$RUNNER_TEMP/build-profile" --revision-kind "$REVISION_KIND")
           if [[ "$PLATFORM" != all ]]; then arguments+=(--platform "$PLATFORM"); fi
+          if [[ "$DIAGNOSE_PAYLOAD" == true ]]; then arguments+=(--diagnose-members); fi
           python3 -m tools.ci.compare_payloads "${arguments[@]}"
       - uses: actions/upload-artifact@v7
         if: always()

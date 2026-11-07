@@ -1,6 +1,7 @@
 """Compare cached browser payload bytes, excluding revision stamps."""
 
 import argparse
+import gzip
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import io
@@ -9,6 +10,7 @@ import os
 from pathlib import Path
 import re
 import tarfile
+import tempfile
 import urllib.request
 import zlib
 
@@ -61,6 +63,42 @@ def payload_digest(source, expected_checksum, revision, platform):
     return {'sha256': payload_hash.hexdigest(), 'size_bytes': payload_size}
 
 
+def payload_manifest(path):
+    """Inspect the cached gzip member without extracting or executing files."""
+    with path.open('rb') as raw:
+        prefix = raw.read(1024 * 1024)
+        decoder = zlib.decompressobj(16 + zlib.MAX_WBITS)
+        decoder.decompress(prefix, 65537)
+        if not decoder.eof:
+            raise ValueError('Artifact stamp exceeds size limit')
+        offset = len(prefix) - len(decoder.unused_data)
+        raw.seek(offset)
+        header = raw.read(10).hex()
+        raw.seek(offset)
+        digest, size = hashlib.sha256(), 0
+        with gzip.GzipFile(fileobj=raw, mode='rb') as source:
+            while chunk := source.read(1024 * 1024):
+                size += len(chunk)
+                if size > 32 * 1024 * 1024 * 1024:
+                    raise ValueError('Uncompressed payload exceeds 32 GiB')
+                digest.update(chunk)
+        raw.seek(offset)
+        members = []
+        with gzip.GzipFile(fileobj=raw, mode='rb') as source, tarfile.open(fileobj=source, mode='r|') as archive:
+            for member in archive:
+                if len(members) >= 100000:
+                    raise ValueError('Payload contains too many members')
+                row = {key: getattr(member, key) for key in (
+                    'name', 'size', 'mode', 'uid', 'gid', 'mtime', 'uname', 'gname', 'linkname', 'pax_headers')}
+                row['type'] = member.type.decode('latin1')
+                if member.isfile():
+                    with archive.extractfile(member) as content:
+                        row['sha256'] = hashlib.file_digest(content, 'sha256').hexdigest()
+                members.append(row)
+    return {'tar_sha256': digest.hexdigest(), 'tar_size_bytes': size,
+            'gzip_header_hex': header, 'members': members}
+
+
 def build_urls(revision, platforms=PLATFORMS, kind='browser'):
     repository = os.environ.get('GITHUB_REPOSITORY', 'formatjs/chromium')
     request = urllib.request.Request(
@@ -81,7 +119,7 @@ def build_urls(revision, platforms=PLATFORMS, kind='browser'):
     return urls
 
 
-def digest_artifact(url, revision, platform, kind='browser'):
+def digest_artifact(url, revision, platform, kind='browser', *, diagnose_members=False):
     key = os.environ['BUILDBUDDY_API_KEY']
     with api_request('GetInvocation', {
             'selector': {'invocation_id': invocation_id(url)}, 'include_artifacts': True,
@@ -93,7 +131,21 @@ def digest_artifact(url, revision, platform, kind='browser'):
     if not re.fullmatch(r'[0-9a-f]{64}', expected):
         raise ValueError('Invalid artifact checksum')
     with api_request('GetFile', {'uri': uris[name]}, key) as response:
-        return payload_digest(response, expected, revision, platform)
+        if not diagnose_members:
+            return payload_digest(response, expected, revision, platform)
+        with tempfile.TemporaryDirectory(prefix='chromium-payload-diff-') as temporary:
+            path = Path(temporary) / name
+            size = 0
+            with path.open('wb') as output:
+                while chunk := response.read(1024 * 1024):
+                    size += len(chunk)
+                    if size > MAX_ARCHIVE_BYTES:
+                        raise ValueError('Artifact exceeds size limit')
+                    output.write(chunk)
+            with path.open('rb') as source:
+                result = payload_digest(source, expected, revision, platform)
+            result['manifest'] = payload_manifest(path)
+            return result
 
 
 def main():
@@ -103,6 +155,7 @@ def main():
     parser.add_argument('--directory', type=Path, required=True)
     parser.add_argument('--platform', choices=sorted(PLATFORMS))
     parser.add_argument('--revision-kind', choices=['browser', 'cold-browser'], default='browser')
+    parser.add_argument('--diagnose-members', action='store_true')
     args = parser.parse_args()
     if any(not re.fullmatch(r'[0-9a-f]{40}', value) for value in (args.baseline, args.revision)):
         parser.error('Expected full source commit SHAs')
@@ -115,7 +168,8 @@ def main():
     args.directory.mkdir(parents=True, exist_ok=True)
     with ThreadPoolExecutor(max_workers=2) as executor:
         futures = {
-            (platform, *key): executor.submit(digest_artifact, urls[platform], key[0], platform, key[1])
+            (platform, *key): executor.submit(digest_artifact, urls[platform], key[0], platform, key[1],
+                                            **({'diagnose_members': True} if args.diagnose_members else {}))
             for platform in platforms
             for key, urls in urls_by_build.items()
         }

@@ -31,7 +31,7 @@ actions:
       disk: 200GB
     triggers:
       push:
-        branches: [main, "perf/compile-cross-platform"]
+        branches: [main, "perf/compile-cross-platform", "perf/host-blink-rollout"]
       pull_request:
         branches: ["*"]
         merge_with_base: false

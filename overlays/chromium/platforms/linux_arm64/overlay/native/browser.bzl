@@ -116,6 +116,20 @@ def native_browser():
             linkstatic = True,
             deps = ([":browser_tool_headers"] if angle or v8 or ffmpeg else ([":browser_headers"] if library["srcs"] or library["hdrs"] else [])) + library["deps"],
         )
+        if original.startswith("//third_party/blink/renderer/core:") or original.startswith("//third_party/blink/renderer/core/"):
+            common.update(
+                features = ["cc_include_scanning"],
+                # Skia selects these headers through macro includes.
+                additional_compiler_inputs = [
+                    "//:base/component_export.h",
+                    "//:skia/config/SkUserConfig.h",
+                    "//:skia/config/sk_ref_cnt_ext_debug.h",
+                    "//:skia/config/sk_ref_cnt_ext_release.h",
+                    "//:skia/ext/skia_histogram.h",
+                    # Keep the directory used by ../../skia/config includes.
+                    ":browser_forwarders/third_party/re2/src/re2/re2.h",
+                ],
+            )
         qt = original in qt_libraries
         include_options = ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
         if angle:

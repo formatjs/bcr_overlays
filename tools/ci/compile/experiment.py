@@ -240,6 +240,7 @@ def main():
                        '--nobuild_event_json_file_path_conversion',
                        '--execution_log_compact_file=' + str(execution_log),
                        '--profile=' + str(profile),
+                       '--record_full_profiler_data',
                        '--cc_include_scanning=true',
                        '--define=CHROMIUM_COMPILE_PROBE_SCAN=' + ('1' if scanning else '0')])
             if args.compare_concurrency:
@@ -260,8 +261,6 @@ def main():
                 raise RuntimeError(mode + ' compile failed')
             digests, metrics = archive_outputs(events, target)
             timings = compiler_profiles(profile, sources)
-            if any(item['worker_seconds'] <= 0 for item in timings.values()):
-                raise ValueError('Expected real remote worker execution for every selected compile')
             report[mode] = {
                 'compiles': timings,
                 'output_sha256': digests,
@@ -271,6 +270,8 @@ def main():
             if args.compare_concurrency:
                 report[mode]['requested_jobs'] = 128 if experimental else 64
             (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
+            if any(item['worker_seconds'] <= 0 for item in timings.values()):
+                raise ValueError('Expected real remote worker execution for every selected compile')
             print(mode + ': ' + (str(len(sources)) + ' compiler spans recorded' if args.batch
                                 else json.dumps(report[mode]['compiles'])), flush=True)
         report['output_bytes_match'] = all(

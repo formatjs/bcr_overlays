@@ -218,6 +218,9 @@ def build(target, destination, revision, hosted=False, cold=False):
     with tempfile.TemporaryDirectory(prefix='chromium-build-') as temporary:
         events = Path(temporary) / 'events.json'
         if cold:
+            destination.mkdir(parents=True, exist_ok=True)
+            events = destination / 'cold-events.json'
+            flags.append('--profile=' + str(destination / 'cold-profile.json'))
             bazel.extend(['--batch', '--output_user_root=' + str(Path(temporary) / 'bazel')])
             flags.extend([
                 '--remote_accept_cached=false', '--disk_cache=', '--repo_contents_cache=',

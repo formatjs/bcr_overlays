@@ -13,6 +13,9 @@ PLATFORM_SOURCE_OVERRIDES = {
 }
 
 SOURCE_GROUPS = {
+    "//chrome/utility:utility": [
+        "chrome/utility/services.cc",
+    ],
     "//chrome/renderer/extensions:extensions": [
         "chrome/renderer/extensions/api/chrome_extensions_renderer_api_provider.cc",
     ],

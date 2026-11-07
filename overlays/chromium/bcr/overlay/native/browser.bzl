@@ -63,7 +63,7 @@ def native_browser():
         name = "browser_headers",
         hdrs = SHARED_HEADERS + [":all_buildflags"] + native.glob(["browser_forwarders/**/*.h"], allow_empty = True),
         includes = ["..", "gen", "browser_forwarders"],
-        deps = [":content_headers", "@fast_float//:fast_float"] + [":openscreen_public_headers" if project == "openscreen" else "@chromium_" + project + "//:chromium_headers" for project in [
+        deps = [":content_headers", "@fast_float//:fast_float"] + ["@chromium_" + project + "//:chromium_headers" for project in [
             "anonymous_tokens",
             "content_analysis_sdk",
             "dom_distiller_js",

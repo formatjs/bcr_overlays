@@ -54,6 +54,14 @@ was 142,247/161,470 Linux ARM64, 122,649/127,570 Darwin ARM64,
 include internal and generator work; they do not predict remaining compile time.
 Their killed Bazel children emitted no final profile or cold-result report.
 
+The wider Linux AMD64 cold trial at `5bfb3df` also hit the cap at
+145,437/154,750 actions, without compiler errors. Progress is not a finish-time
+estimate. Cold runs now write BEP events and an uncompressed profile directly
+into BuildBuddy's artifact directory, preserving partial evidence after a hard
+kill. Incomplete profiles are diagnostic only; successful cold proof still
+requires complete final metrics and zero action-cache hits. Raw files stay on
+BuildBuddy; GitHub receives sanitized summaries only.
+
 The initial Linux AMD64 calibration also hit the one-hour cap. The next isolated
 run requests 16 client CPUs instead of 8, retaining 64 remote action slots and
 the existing memory budget. This tests the client input-processing bottleneck;
@@ -136,14 +144,13 @@ object equivalence before changing that boundary.
   sets match and both pairs remove 0.421–0.443 million input paths net. This
   isolates the rule feature; the earlier global-flag comparison also varied
   supporting input setup. New scanner trials require positive net input reduction.
-- After hiding Chromium's unused protobuf copy, the browser probe found the
-  same shadowing through openscreen's private repository quote roots. Content
-  and browser header groups now share the existing public dependency adapter,
-  retaining public headers, include paths, defines, and linker context. A real
-  13-action query confirms the only argument changes remove those two private
-  quote roots. A preflight audit found the same inactive protobuf tree in ipcz,
-  which shares Chromium's source archive; that projection now applies the same
-  exclusion. The repeated browser archive gate is rerunning.
+- Chromium, ipcz, and openscreen carry inactive protobuf headers. Excluding
+  declarations alone leaves those files visible to local include discovery.
+  Chromium/ipcz source projections hide the unused subtree; openscreen's pinned
+  checkout now removes its unused copy. Restore openscreen's original quote
+  paths: stripping them changed header selection, allowing compact_enc_det's
+  `util/string_util.h` to shadow openscreen's own header. The browser probe now
+  also covers `chrome/utility/services.cc`, found by full validation.
 - Native 19-source comparisons now pass on all five triples at `9730c78`,
   including generated bindings and GPU/codec paths. All four archive sets match
   per platform, with complete selected-compiler diff coverage: 380 real selected

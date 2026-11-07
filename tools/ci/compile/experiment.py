@@ -140,8 +140,11 @@ def main():
     parser.add_argument('--batch', action='store_true', help='Measure fixed host throughput batch after warmups')
     parser.add_argument('--host-blink', action='store_true', help='Probe Linux ARM64 captured x64 host Blink libraries')
     parser.add_argument('--wide-host-blink', action='store_true', help='Include host modules, platform, and generated bindings')
-    parser.add_argument('--compare-merkle-retention', action='store_true',
-                        help='Compare retained input trees on the unscanned batch; compiler options stay fixed')
+    comparison = parser.add_mutually_exclusive_group()
+    comparison.add_argument('--compare-merkle-retention', action='store_true',
+                            help='Compare retained input trees on the unscanned batch; compiler options stay fixed')
+    comparison.add_argument('--compare-concurrency', action='store_true',
+                            help='Compare 64 and 128 jobs with scanning and retained input trees')
     args = parser.parse_args()
     if args.batch and args.platform != 'linux-amd64':
         parser.error('Throughput batch currently targets Linux amd64 host compiles')
@@ -149,6 +152,8 @@ def main():
         parser.error('Host Blink probe runs on Linux amd64 without --batch')
     if args.compare_merkle_retention and not args.batch:
         parser.error('--compare-merkle-retention requires --batch')
+    if args.compare_concurrency and not args.batch:
+        parser.error('--compare-concurrency requires --batch')
     if not os.environ.get('BUILDBUDDY_CI_RUNNER_ABSPATH'):
         raise ValueError('Compile experiment requires a BuildBuddy workflow runner')
     args.directory.mkdir(parents=True, exist_ok=True)
@@ -163,6 +168,8 @@ def main():
         target = '//tools/ci/compile/host_wide:blink-host-linux-arm64'
     pattern = '.*(' + '|'.join(re.escape(source) for source in sources) + ')'
     variant = 'retain-merkle' if args.compare_merkle_retention else 'include-scan'
+    if args.compare_concurrency:
+        variant = 'jobs-128'
     modes = [('baseline-1', False), (variant + '-1', True), (variant + '-2', True), ('baseline-2', False)]
     if args.batch:
         modes = [('warmup-baseline', False), ('warmup-' + variant, True)] + modes
@@ -171,17 +178,23 @@ def main():
               'warmup_modes': [mode for mode, _ in modes if mode.startswith('warmup-')]}
     with tempfile.TemporaryDirectory(prefix='blink-compile-profile-') as temporary:
         for mode, experimental in modes:
-            scanning = experimental and not args.compare_merkle_retention
+            scanning = args.compare_concurrency or (experimental and not args.compare_merkle_retention)
             events = Path(temporary) / 'events.json'
             execution_log = Path(temporary) / (mode + '.binpb.zst')
             profile = Path(temporary) / (mode + '.profile.gz')
-            command = [os.environ.get('BAZEL', 'bazel'), 'build', '--config=browser', '--config=buildbuddy',
+            command = [os.environ.get('BAZEL', 'bazel')]
+            if args.compare_concurrency:
+                command.append('--host_jvm_args=-Xmx12g')
+            command.extend(['build', '--config=browser', '--config=buildbuddy',
                        '--per_file_copt=' + pattern + '@-DBAZEL_COMPILE_PROFILE_RUN=' + nonce + '_' + mode.replace('-', '_'),
                        '--build_event_json_file=' + str(events),
                        '--nobuild_event_json_file_path_conversion',
                        '--execution_log_compact_file=' + str(execution_log),
                        '--profile=' + str(profile),
-                       '--cc_include_scanning=' + ('true' if scanning else 'false')]
+                       '--cc_include_scanning=' + ('true' if scanning else 'false')])
+            if args.compare_concurrency:
+                command.extend(['--jobs=' + ('128' if experimental else '64'),
+                                '--noexperimental_remote_discard_merkle_trees'])
             if args.compare_merkle_retention:
                 command.append('--experimental_remote_discard_merkle_trees=' + ('false' if experimental else 'true'))
             if args.platform.startswith('windows-'):
@@ -205,6 +218,8 @@ def main():
                 'build_metrics': metrics,
                 'profile_summary': trace_summary(profile),
             }
+            if args.compare_concurrency:
+                report[mode]['requested_jobs'] = 128 if experimental else 64
             (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
             print(mode + ': ' + (str(len(sources)) + ' compiler spans recorded' if args.batch
                                 else json.dumps(report[mode]['compiles'])), flush=True)

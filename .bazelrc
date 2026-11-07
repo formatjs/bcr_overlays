@@ -10,7 +10,7 @@ build:browser --jobs=4
 build:browser --discard_analysis_cache
 build:browser --notrack_incremental_state
 build:browser --nokeep_state_after_build
-# Only Blink core rules request this feature; toolchain bootstrap stays unchanged.
+# Only selected Blink rules request this feature; toolchain bootstrap stays unchanged.
 build:browser --cc_include_scanning
 
 # Hosted workflows supply authentication through their Bazel wrapper.

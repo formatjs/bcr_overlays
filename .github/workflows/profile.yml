@@ -1,0 +1,30 @@
+name: Profile BuildBuddy builds
+on:
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: Full source commit SHA to profile
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  profile:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Collect Bazel metrics and sanitized timing summaries
+        env:
+          BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_RO_PUBLIC_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          BUILD_SHA: ${{ inputs.revision }}
+        run: python3 -m tools.ci.profile_buildbuddy --revision "$BUILD_SHA" --directory "$RUNNER_TEMP/build-profile"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: build-profile-${{ inputs.revision }}
+          path: ${{ runner.temp }}/build-profile
+          if-no-files-found: error
+          retention-days: 7

@@ -35,6 +35,12 @@ registered actions are not executed compiles.
    Record wall time, client CPU, heap, GC, and actual remote executions. Increasing
    remote concurrency alone does not fix client input-processing saturation.
 
+Also audit include-directory propagation. The representative core target has
+14 captured include directories but resolves 945 search entries through its
+dependency context. Captured target-local directories may belong in local
+compiler options rather than public `includes`; validate header selection and
+object equivalence before changing that boundary.
+
 ## Results so far
 
 - Payload compression now caches independently of revision stamping. A real
@@ -57,6 +63,14 @@ registered actions are not executed compiles.
   23.6s; worker time 23.7s versus 22.6s. This pair does not establish a full-build
   speedup. The next experiment covers layout, view, and SVG paint sources in
   baseline/scanner/scanner/baseline order, forcing recompilation each time.
+- [Repeated three-source benchmark](https://formatjs.buildbuddy.io/invocation/555bc229-3711-450c-9621-3fb29d9fec5e)
+  passed all four runs with identical archive bytes. Both paired comparisons
+  removed 219,959 paths and added 987: **218,972 fewer compiler input paths**
+  across three actions. Whole-probe wall times were baseline 59.1s/45.3s and
+  scanner 47.4s/44.1s. The first baseline also executed two extra remote actions;
+  worker load was uncontrolled. Input reduction repeats; browser wall-time
+  improvement remains unmeasured. Production scanning remains off until wider
+  source and cross-platform validation passes.
 
 Keep raw profiles in BuildBuddy or local temporary files. GitHub artifacts carry
 sanitized metrics only.

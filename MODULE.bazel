@@ -256,7 +256,7 @@ rust_toolchains.toolchain(
             "-Cforce-unwind-tables=yes",
             "-Cdebug-assertions",
             "-Dunsafe_op_in_unsafe_fn",
-        ]
+        ] + (["-Ctarget-feature=+crt-static"] if triple.endswith("-windows-msvc") else [])
         for triple in [
             "x86_64-unknown-linux-gnu",
             "aarch64-unknown-linux-gnu",

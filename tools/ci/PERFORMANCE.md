@@ -47,6 +47,13 @@ All five initial full-browser candidate workflows hit that cap at exactly 3,600
 seconds without compiler errors. Resuming their cached work validates artifacts;
 it does not establish a cold-build result.
 
+The first four isolated cold runs at `ce310d1` (8 client CPUs, 64 jobs,
+retained trees) also hit that cap without compiler errors. Final action progress
+was 142,247/161,470 Linux ARM64, 122,649/127,570 Darwin ARM64,
+114,565/122,379 Windows AMD64, and 117,489/124,685 Windows ARM64. These counts
+include internal and generator work; they do not predict remaining compile time.
+Their killed Bazel children emitted no final profile or cold-result report.
+
 The initial Linux AMD64 calibration also hit the one-hour cap. The next isolated
 run requests 16 client CPUs instead of 8, retaining 64 remote action slots and
 the existing memory budget. This tests the client input-processing bottleneck;

@@ -92,6 +92,14 @@ in its own package and uses that platform's captured compilation context. Window
 uses the MSVC transition and accepts both SDK/runtime licenses, matching browser
 CI. BuildBuddy runs the five comparisons; GitHub only collects sanitized reports.
 
+The optional `--batch` host benchmark compiles 100 fixed common core sources plus
+the canvas regression source. It warms both configurations before the timed
+baseline/scanner/scanner/baseline sequence. Every source recompiles each run;
+all six archive sets must match. Its dedicated `perf/compile-throughput` branch
+runs only the throughput action, excluding the small regression jobs. Wait for
+other browser rebuilds to finish before interpreting client CPU and execution
+phase timings.
+
 Next: reduce oversized header closures, audit host-library reuse where compiler
 and ABI settings match, then benchmark client CPU and action concurrency. Rollout
 requires representative compiler equivalence plus the five browser/native smoke

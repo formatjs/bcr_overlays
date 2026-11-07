@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from tools.ci.compile.experiment import TARGET, archive_outputs, compiler_input_diff, compiler_profile
+from tools.ci.compile.experiment import TARGET, archive_outputs, compiler_input_diff, compiler_profiles
 
 
 class CompileExperimentTest(unittest.TestCase):
@@ -43,10 +43,10 @@ class CompileExperimentTest(unittest.TestCase):
             path = Path(temporary) / 'trace.gz'
             with gzip.open(path, 'wt') as output:
                 json.dump({'traceEvents': events}, output)
-            self.assertEqual(compiler_profile(path), {'action_seconds': 4.0,
-                                                     'worker_seconds': 2.0, 'merkle_seconds': 0.5})
-            self.assertEqual(compiler_profile(path, 'layout_view.cc'), {
-                'action_seconds': 3.0, 'worker_seconds': 0.0, 'merkle_seconds': 0.0})
+            self.assertEqual(compiler_profiles(path, ('layout_box.cc', 'layout_view.cc')), {
+                'layout_box.cc': {'action_seconds': 4.0, 'worker_seconds': 2.0, 'merkle_seconds': 0.5},
+                'layout_view.cc': {'action_seconds': 3.0, 'worker_seconds': 0.0, 'merkle_seconds': 0.0},
+            })
 
     def test_archive_proof_requires_successful_local_default_outputs(self):
         with tempfile.TemporaryDirectory() as temporary:

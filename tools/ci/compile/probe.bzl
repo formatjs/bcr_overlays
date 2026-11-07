@@ -2,6 +2,7 @@
 
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_cc//cc/common:cc_info.bzl", "CcInfo")
+load(":batch_sources.bzl", BATCH_SOURCES = "SOURCES")
 
 def _headers_impl(ctx):
     return [
@@ -40,15 +41,16 @@ def _blink_library_probe(name, library, repository, sources):
         tags = ["manual"],
     )
 
-def blink_compile_probe(name, libraries, repository = "@chromium"):
+def blink_compile_probe(name, libraries, repository = "@chromium", batch = False):
     """Reuse each source's real context without requesting its owner's objects."""
-    _blink_library_probe(name, libraries["//third_party/blink/renderer/core:core"], repository, [
+    sources = BATCH_SOURCES if batch else [
         "third_party/blink/renderer/core/layout/layout_box.cc",
         "third_party/blink/renderer/core/layout/layout_view.cc",
         "third_party/blink/renderer/core/paint/svg_object_painter.cc",
         "third_party/blink/renderer/core/css/css_palette_mix_value.cc",
         "third_party/blink/renderer/core/css/css_relative_color_value.cc",
-    ])
+    ]
+    _blink_library_probe(name, libraries["//third_party/blink/renderer/core:core"], repository, sources)
     _blink_library_probe(name + "_canvas", libraries["//third_party/blink/renderer/core/probe:probe"], repository, [
         "third_party/blink/renderer/core/probe/core_probes.cc",
     ])

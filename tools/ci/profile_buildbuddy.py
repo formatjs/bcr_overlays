@@ -62,7 +62,7 @@ def collect(identifier):
     result['children'] = []
     pattern = outer.get('pattern', [])
     if pattern == ['Chromium compile input experiment'] or (
-            len(pattern) == 1 and pattern[0].startswith('Chromium compile inputs ')):
+            len(pattern) == 1 and pattern[0].startswith(('Chromium compile inputs ', 'Chromium compile throughput '))):
         with api_request('GetInvocation', {
                 'selector': {'invocation_id': identifier}, 'include_artifacts': True,
         }, os.environ['BUILDBUDDY_API_KEY']) as response:

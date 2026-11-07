@@ -76,21 +76,21 @@ The compiler optimization pilot lives in `tools/ci/compile`. It forwards Blink's
 real compilation context while requesting only `layout_box.cc`, avoiding a full
 Blink library rebuild. The initial action declares 76,130 inputs. The BuildBuddy
 experiment builds this source with include scanning off and on, records actual
-spawn input counts and timings, and requires identical archive bytes. A unique
-unused macro forces this source to recompile in both modes while generators keep
-their cache. Production builds keep their current settings during the pilot.
+spawn input counts and timings, and requires identical archive bytes. Distinct unused macros force this source to recompile in both modes;
+compiler timing excludes generator preparation. Production builds keep their current settings during the pilot.
 
 Next: reduce oversized header closures, audit host-library reuse where compiler
 and ABI settings match, then benchmark client CPU and action concurrency. Rollout
 requires representative compiler equivalence plus the five browser/native smoke
 platforms; changing compiler options or snapshots is outside this experiment.
 
-The first host-reuse update replaces 21 strictly matching Linux ARM64 snapshot
-Mojo serialization targets with native providers, removing 353 duplicate source
-compilations. macOS and Windows signatures did not match and retain separate
-providers. Only the shared serialization targets qualify; client bindings and V8
-remain outside this optimization.
+A host-reuse experiment replaced 21 matching Linux ARM64 snapshot Mojo
+serialization targets with native providers. The isolated A/B graph check grew
+from 83,734 to 84,278 registered C++ actions because those providers imported
+additional dependency closures. That version was reverted. Future host sharing
+needs a narrower seam and measured execution benefit before rollout.
 
-The compiler pilot uses the browser's bounded-analysis settings and unsorted
-execution logging to avoid retaining large spawn logs in the 8 GB Bazel heap.
+The compiler pilot uses the browser's bounded-analysis settings and compact
+execution logs to avoid flat spawn-log expansion in the 8 GB Bazel heap.
+`bb explain` compares compiler inputs; timing comes from the selected C++ action.
 The initial pilot exhausted that heap before the compiler comparison completed.

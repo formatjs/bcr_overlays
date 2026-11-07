@@ -1,30 +1,48 @@
+import gzip
 import json
 from pathlib import Path
 import tempfile
 import unittest
 
-from tools.ci.compile.experiment import TARGET, archive_outputs, compile_spawns
+from tools.ci.compile.experiment import TARGET, archive_outputs, compiler_input_diff, compiler_profile
 
 
 class CompileExperimentTest(unittest.TestCase):
-    def test_compiler_report_counts_real_inputs_without_exporting_command_or_environment(self):
+    def test_compact_diff_reports_input_reduction_without_exporting_paths(self):
         with tempfile.TemporaryDirectory() as temporary:
-            path = Path(temporary) / 'spawns.json'
-            other = {'mnemonic': 'CppCompile', 'targetLabel': '//other:library', 'inputs': []}
+            path = Path(temporary) / 'diff.json'
             probe = {'mnemonic': 'CppCompile',
-                     'targetLabel': '//tools/ci/compile:blink_layout_compile_probe',
-                     'inputs': [{'path': 'layout_box.cc'}, {'path': 'layout_box.h'}, {'path': 'flags.inc'}],
-                     'commandArgs': ['DO_NOT_EXPORT'], 'environmentVariables': ['DO_NOT_EXPORT'],
-                     'metrics': {'executionWallTime': '4s'}, 'runner': 'remote'}
-            path.write_text(json.dumps(other, indent=2) + '\n' + json.dumps(probe, indent=2) + '\n')
-            result = compile_spawns(path)
-            self.assertEqual(result['input_entries'], 3)
-            self.assertEqual(result['header_inputs'], 2)
-            self.assertEqual(result['metrics'], {'executionWallTime': '4s'})
+                     'target_label': '//tools/ci/compile:blink_layout_compile_probe',
+                     'modified': {'diffs': [{'input_paths': {
+                         'old_only': ['unused.h', 'unrelated.h'], 'new_only': ['required.h']}},
+                         {'args': {'old': ['DO_NOT_EXPORT'], 'new': []}}]}}
+            path.write_text(json.dumps({'spawn_diffs': [probe]}))
+            result = compiler_input_diff(path)
+            self.assertEqual(result, {'comparison': 'paired', 'input_paths_removed': 2,
+                                      'input_paths_added': 1})
             self.assertNotIn('DO_NOT_EXPORT', json.dumps(result))
-            path.write_text(json.dumps(probe) + '\n' + json.dumps(probe))
-            with self.assertRaisesRegex(ValueError, 'exactly one'):
-                compile_spawns(path)
+            probe.pop('modified')
+            probe['old_only'] = {'top_level': True}
+            path.write_text(json.dumps({'spawn_diffs': [probe]}))
+            self.assertEqual(compiler_input_diff(path)['comparison'], 'unpaired')
+
+    def test_compiler_timing_excludes_other_actions_and_nested_wrapper_time(self):
+        events = [
+            {'ph': 'X', 'cat': 'action processing', 'name': 'Compiling layout_box.cc',
+             'tid': 1, 'ts': 100, 'dur': 4000000},
+            {'ph': 'X', 'cat': 'Remote execution process wall time', 'name': 'execute',
+             'tid': 1, 'ts': 1000000, 'dur': 2000000},
+            {'ph': 'X', 'cat': 'general information', 'name': 'MerkleTreeComputer.buildForSpawn',
+             'tid': 1, 'ts': 200, 'dur': 500000},
+            {'ph': 'X', 'cat': 'Remote execution process wall time', 'name': 'execute',
+             'tid': 2, 'ts': 1000000, 'dur': 100000000},
+        ]
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'trace.gz'
+            with gzip.open(path, 'wt') as output:
+                json.dump({'traceEvents': events}, output)
+            self.assertEqual(compiler_profile(path), {'action_seconds': 4.0,
+                                                     'worker_seconds': 2.0, 'merkle_seconds': 0.5})
 
     def test_archive_proof_requires_successful_local_default_outputs(self):
         with tempfile.TemporaryDirectory() as temporary:

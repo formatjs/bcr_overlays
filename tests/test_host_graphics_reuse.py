@@ -59,33 +59,6 @@ class HostGraphicsReuseTest(unittest.TestCase):
         self.assertEqual(reuse_host_graphics(capture, native, libraries, providers), 0)
         self.assertEqual(libraries, original)
 
-    def test_matching_blink_shared_serialization_reuses_native_objects(self):
-        label = '//third_party/blink/public/mojom:mojom_platform_shared_cpp_sources'
-        for mismatch in (False, True):
-            with self.subTest(mismatch=mismatch):
-                capture, native, libraries, providers = self.capture(label, kind='source_set')
-                target = next(iter(capture['targets'].values()))
-                if mismatch:
-                    target['defines'] = ['DIFFERENT_WIRE_LAYOUT']
-                original = copy.deepcopy(libraries)
-                count = reuse_host_graphics(capture, native, libraries, providers)
-                if mismatch:
-                    self.assertEqual(count, 0)
-                    self.assertEqual(libraries, original)
-                else:
-                    self.assertEqual(count, 1)
-                    library = next(iter(libraries.values()))
-                    self.assertEqual(library['kind'], 'group')
-                    self.assertEqual(library['deps'], ['@chromium//native:native_egl'])
-                    self.assertEqual(library['srcs'], [])
-
-    def test_blink_client_bindings_stay_separate(self):
-        label = '//third_party/blink/public/mojom:mojom_platform'
-        capture, native, libraries, providers = self.capture(label, kind='source_set')
-        original = copy.deepcopy(libraries)
-        self.assertEqual(reuse_host_graphics(capture, native, libraries, providers), 0)
-        self.assertEqual(libraries, original)
-
     def test_static_library_uses_existing_native_provider(self):
         capture, native, libraries, providers = self.capture(kind='static_library')
         self.assertEqual(reuse_host_graphics(capture, native, libraries, providers), 1)

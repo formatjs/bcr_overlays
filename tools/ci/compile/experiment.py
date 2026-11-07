@@ -1,6 +1,7 @@
 """Compare one real Blink compile with and without Bazel include scanning."""
 
 import argparse
+import gzip
 import hashlib
 import json
 import os
@@ -16,29 +17,39 @@ TARGET = '//tools/ci/compile:blink-layout-linux-amd64'
 OWNER = ':blink_layout_compile_probe'
 
 
-def compile_spawns(path):
-    text = path.read_text()
-    decoder = json.JSONDecoder()
-    offset = 0
-    results = []
-    while offset < len(text):
-        while offset < len(text) and text[offset].isspace():
-            offset += 1
-        if offset == len(text):
-            break
-        spawn, offset = decoder.raw_decode(text, offset)
-        if spawn.get('mnemonic') == 'CppCompile' and spawn.get('targetLabel', '').endswith(OWNER):
-            results.append({
-                'input_entries': len(spawn.get('inputs', [])),
-                'header_inputs': sum(item.get('path', '').endswith(('.h', '.hpp', '.inc'))
-                                     for item in spawn.get('inputs', [])),
-                'runner': spawn.get('runner'),
-                'cache_hit': spawn.get('cacheHit', False),
-                'metrics': spawn.get('metrics', {}),
-            })
-    if len(results) != 1:
-        raise ValueError('Expected exactly one Blink compiler spawn, got ' + str(len(results)))
-    return results[0]
+def compiler_input_diff(path):
+    changes = [item for item in json.loads(path.read_text()).get('spawn_diffs', [])
+               if item.get('mnemonic') == 'CppCompile' and item.get('target_label', '').endswith(OWNER)]
+    if any('old_only' in item or 'new_only' in item for item in changes):
+        return {'comparison': 'unpaired', 'reason': 'Compiler output paths changed between configurations'}
+    removed, added = 0, 0
+    for item in changes:
+        for difference in item.get('modified', {}).get('diffs', []):
+            paths = difference.get('input_paths', {})
+            removed += len(paths.get('old_only', []))
+            added += len(paths.get('new_only', []))
+    return {'comparison': 'paired', 'input_paths_removed': removed, 'input_paths_added': added}
+
+
+def compiler_profile(path):
+    with gzip.open(path, 'rt') as source:
+        events = [event for event in json.load(source)['traceEvents']
+                  if event.get('ph') == 'X' and event.get('dur', 0) > 0]
+    compiles = [event for event in events if event.get('cat') == 'action processing'
+                and event.get('name', '').startswith('Compiling ') and 'layout_box.cc' in event['name']]
+    if len(compiles) != 1:
+        raise ValueError('Expected exactly one Blink compiler timing span')
+    compile_event = compiles[0]
+    nested = [event for event in events if event.get('tid') == compile_event['tid']
+              and event['ts'] >= compile_event['ts']
+              and event['ts'] + event['dur'] <= compile_event['ts'] + compile_event['dur'] + 1000]
+    return {
+        'action_seconds': compile_event['dur'] / 1e6,
+        'worker_seconds': sum(event['dur'] for event in nested
+                              if event.get('cat') == 'Remote execution process wall time') / 1e6,
+        'merkle_seconds': sum(event['dur'] for event in nested
+                              if event.get('name') == 'MerkleTreeComputer.buildForSpawn') / 1e6,
+    }
 
 
 def archive_outputs(events):
@@ -93,13 +104,15 @@ def main():
     report = {}
     with tempfile.TemporaryDirectory(prefix='blink-compile-profile-') as temporary:
         for mode in ('baseline', 'include-scan'):
-            events, spawns = Path(temporary) / 'events.json', Path(temporary) / 'spawns.json'
+            events = Path(temporary) / 'events.json'
+            execution_log = Path(temporary) / (mode + '.binpb.zst')
+            profile = Path(temporary) / (mode + '.profile.gz')
             command = [os.environ.get('BAZEL', 'bazel'), 'build', '--config=browser', '--config=buildbuddy',
-                       '--per_file_copt=.*layout_box.cc@-DBAZEL_COMPILE_PROFILE_RUN=' + nonce,
+                       '--per_file_copt=.*layout_box.cc@-DBAZEL_COMPILE_PROFILE_RUN=' + nonce + '_' + mode.replace('-', '_'),
                        '--build_event_json_file=' + str(events),
                        '--nobuild_event_json_file_path_conversion',
-                       '--execution_log_json_file=' + str(spawns),
-                       '--noexecution_log_sort',
+                       '--execution_log_compact_file=' + str(execution_log),
+                       '--profile=' + str(profile),
                        '--cc_include_scanning=' + ('true' if mode == 'include-scan' else 'false'), TARGET]
             result = subprocess.run(command, cwd=ROOT)
             if result.returncode:
@@ -107,11 +120,20 @@ def main():
                 (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
                 raise RuntimeError(mode + ' compile failed')
             digests, metrics = archive_outputs(events)
-            report[mode] = dict(compile_spawns(spawns), output_sha256=digests, build_metrics=metrics)
+            report[mode] = dict(compiler_profile(profile), output_sha256=digests, build_metrics=metrics)
             (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
-            print(mode + ': ' + str(report[mode]['input_entries']) + ' compiler inputs', flush=True)
-    if report['baseline']['output_sha256'] != report['include-scan']['output_sha256']:
-        raise ValueError('Include scanning changed compiler output bytes')
+            print(mode + ': ' + str(round(report[mode]['action_seconds'], 3)) + ' compiler seconds', flush=True)
+        report['output_bytes_match'] = report['baseline']['output_sha256'] == report['include-scan']['output_sha256']
+        (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
+        if not report['output_bytes_match']:
+            raise ValueError('Include scanning changed compiler output bytes')
+        diff = Path(temporary) / 'diff.json'
+        with diff.open('w') as output:
+            subprocess.run(['bb', 'explain', '--old', str(Path(temporary) / 'baseline.binpb.zst'),
+                            '--new', str(Path(temporary) / 'include-scan.binpb.zst'),
+                            '--output_format', 'json'], stdout=output, cwd=ROOT, check=True)
+        report['input_diff'] = compiler_input_diff(diff)
+        (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
     print('Compiler output bytes match', flush=True)
 
 

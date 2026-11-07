@@ -189,6 +189,9 @@ def collect(identifier):
         }, os.environ['BUILDBUDDY_API_KEY']) as response:
             invocations = json.load(response).get('invocation', [])
         if report_key == 'cold_build':
+            result['raw_event_artifacts'] = sum(
+                artifact.get('name', '').endswith('/cold-events.json')
+                for invocation in invocations for artifact in invocation.get('artifacts', []))
             profiles = [artifact for invocation in invocations
                         for artifact in invocation.get('artifacts', [])
                         if artifact.get('name', '').endswith('/cold-profile.json')]

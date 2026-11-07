@@ -44,12 +44,14 @@ class BuildProfileTest(unittest.TestCase):
         outer = {'pattern': ['Chromium cold build linux-amd64'],
                  'success': False, 'invocationStatus': 'COMPLETE_INVOCATION_STATUS'}
         artifacts = {'invocation': [{'artifacts': [{
-            'name': 'command-0/linux-amd64/cold-profile.json', 'uri': uri}]}]}
+            'name': 'command-0/linux-amd64/cold-profile.json', 'uri': uri},
+            {'name': 'command-0/linux-amd64/cold-events.json', 'uri': 'DO_NOT_DOWNLOAD'}]}]}
         with mock.patch.object(profile_buildbuddy, 'rpc', return_value={'invocation': [outer]}), \
                 mock.patch.object(profile_buildbuddy, 'api_request', side_effect=[
                     io.BytesIO(json.dumps(artifacts).encode()), io.BytesIO(trace.encode())]), \
                 mock.patch.dict(os.environ, {'BUILDBUDDY_API_KEY': 'read-only-test-key'}):
             result = profile_buildbuddy.collect('killed-workflow')
+        self.assertEqual(result['raw_event_artifacts'], 1)
         self.assertFalse(result['cold_profile']['trace_complete'])
         self.assertEqual(result['cold_profile']['event_count'], 1)
         self.assertEqual(result['cold_profile']['tasks']['merkle'],

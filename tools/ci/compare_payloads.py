@@ -112,7 +112,7 @@ def pe_summary(data):
     return result
 
 
-def payload_manifest(path, verify_nss=False):
+def payload_manifest(path, verify_nss=False, diagnose_pdb=False):
     """Inspect the cached gzip member without extracting or executing files."""
     modules = _nss_modules() if verify_nss else {}
     with path.open('rb') as raw:
@@ -146,7 +146,11 @@ def payload_manifest(path, verify_nss=False):
                 row['type'] = member.type.decode('latin1')
                 if member.isfile():
                     with archive.extractfile(member) as content:
-                        if member.name == 'bundle/chrome.dll':
+                        if diagnose_pdb and member.name == 'bundle/chrome.dll.pdb':
+                            from tools.ci.pdb_diagnostics import summarize
+                            row['pdb'] = summarize(content, member.size)
+                            row['sha256'] = row['pdb']['sha256']
+                        elif member.name == 'bundle/chrome.dll':
                             if member.size > 1024 * 1024 * 1024:
                                 raise ValueError('PE diagnostic exceeds 1 GiB')
                             data = content.read()
@@ -250,7 +254,7 @@ def digest_artifact(url, revision, platform, kind='browser', *, diagnose_members
                     output.write(chunk)
             with path.open('rb') as source:
                 result = payload_digest(source, expected, revision, platform)
-            result['manifest'] = payload_manifest(path, verify_nss=verify_nss)
+            result['manifest'] = payload_manifest(path, verify_nss=verify_nss, diagnose_pdb=diagnose_members)
             return result
 
 
@@ -273,7 +277,8 @@ def main():
     result = {'baseline': args.baseline, 'revision': args.revision,
               'revision_kind': args.revision_kind, 'platforms': {}}
     args.directory.mkdir(parents=True, exist_ok=True)
-    with ThreadPoolExecutor(max_workers=2) as executor:
+    # Each optional PDB inspection temporarily stores one multi-gigabyte file.
+    with ThreadPoolExecutor(max_workers=1 if args.diagnose_members else 2) as executor:
         futures = {
             (platform, *key): executor.submit(digest_artifact, urls[platform], key[0], platform, key[1],
                                             **({**({'diagnose_members': True} if args.diagnose_members else {}),

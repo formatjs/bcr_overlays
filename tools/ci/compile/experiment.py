@@ -86,6 +86,13 @@ def compiler_profile(path, source_name='layout_box.cc'):
     return compiler_profiles(path, (source_name,))[source_name]
 
 
+def compiler_pattern(sources):
+    # Factor shared paths so Bazel wrappers stay below process argument limits.
+    prefix = os.path.commonprefix(sources)
+    return '.*' + re.escape(prefix) + '(' + '|'.join(
+        re.escape(source[len(prefix):]) for source in sources) + ')'
+
+
 def batch_sources():
     tree = ast.parse(Path(__file__).with_name('batch_sources.bzl').read_text())
     sources = next(ast.literal_eval(node.value) for node in tree.body
@@ -199,7 +206,7 @@ def main():
         if args.platform != 'linux-amd64':
             package += '/' + args.platform.replace('-', '_')
         target = package + ':browser-inputs-' + args.platform
-    pattern = '.*(' + '|'.join(re.escape(source) for source in sources) + ')'
+    pattern = compiler_pattern(sources)
     variant = 'retain-merkle' if args.compare_merkle_retention else 'include-scan'
     if args.compare_concurrency:
         variant = 'jobs-128'

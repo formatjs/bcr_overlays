@@ -1,13 +1,27 @@
 import gzip
 import json
+import re
 from pathlib import Path
 import tempfile
 import unittest
 
-from tools.ci.compile.experiment import TARGET, archive_outputs, compiler_input_diff, compiler_profiles
+from tools.ci.compile.experiment import TARGET, archive_outputs, compiler_input_diff, compiler_pattern, compiler_profiles
 
 
 class CompileExperimentTest(unittest.TestCase):
+    def test_compact_source_filter_preserves_selection_and_literal_paths(self):
+        sources = ('third_party/blink/renderer/core/css/a.cc',
+                   'third_party/blink/renderer/core/layout/b+1.cc')
+        old = '.*(' + '|'.join(re.escape(source) for source in sources) + ')'
+        compact = compiler_pattern(sources)
+        self.assertLess(len(compact), len(old))
+        for path in (*sources, 'external/+repo/' + sources[0],
+                     'third_party/blink/renderer/core/css/aXcc',
+                     'third_party/blink/renderer/core/layout/b1.cc',
+                     'third_party/blink/renderer/core/paint/other.cc'):
+            with self.subTest(path=path):
+                self.assertEqual(bool(re.fullmatch(compact, path)), bool(re.fullmatch(old, path)))
+
     def test_compiler_source_matching_keeps_generated_binding_prefix_distinct(self):
         events = [
             {'ph': 'X', 'cat': 'action processing', 'name': 'Compiling gen/v8_video_frame.cc [for tool]',

@@ -77,22 +77,27 @@ def windows_version(browser):
 
 
 def run(browser, arguments, environment, directory, timeout):
-    try:
-        result = subprocess.run(
-            [str(browser), *arguments], cwd=directory, env=environment,
-            text=True, encoding='utf-8', capture_output=True, timeout=timeout,
-        )
-    except subprocess.TimeoutExpired as error:
-        captured = []
-        for name, value in [('stdout', error.stdout), ('stderr', error.stderr)]:
-            if isinstance(value, bytes):
-                value = value.decode('utf-8', errors='replace')
-            if value:
-                captured.append(name + ': ' + value[-8000:])
-        raise RuntimeError(f'browser timed out after {timeout}s: ' + '\n'.join(captured)) from error
-    if result.returncode:
-        raise RuntimeError(f'browser exited {result.returncode}: {result.stderr[-8000:]}')
-    return result.stdout
+    # Helpers can retain inherited pipes after the browser has exited.
+    with tempfile.TemporaryFile() as stdout, tempfile.TemporaryFile() as stderr:
+        timed_out = None
+        try:
+            result = subprocess.run(
+                [str(browser), *arguments], cwd=directory, env=environment,
+                stdout=stdout, stderr=stderr, timeout=timeout,
+            )
+        except subprocess.TimeoutExpired as error:
+            timed_out = error
+        stdout.seek(0)
+        stderr.seek(0)
+        output = stdout.read().decode('utf-8', errors='replace')
+        errors = stderr.read().decode('utf-8', errors='replace')
+        if timed_out is not None:
+            captured = [name + ': ' + value[-8000:]
+                        for name, value in [('stdout', output), ('stderr', errors)] if value]
+            raise RuntimeError(f'browser timed out after {timeout}s: ' + '\n'.join(captured)) from timed_out
+        if result.returncode:
+            raise RuntimeError(f'browser exited {result.returncode}: {errors[-8000:]}')
+        return output
 
 
 def browser_version(browser, environment, directory, timeout):

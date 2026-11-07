@@ -739,7 +739,7 @@ actions:
     resource_requests:
       cpu: 16
       memory: 32GB
-      disk: 200GB
+      disk: 400GB
     triggers:
       push:
         branches: ["perf/disk-layout"]

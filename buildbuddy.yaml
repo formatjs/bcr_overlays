@@ -732,3 +732,28 @@ actions:
           source = Path('bazel-testlogs/tools/ci/windows-amd64_compression_benchmark/test.outputs/report.json')
           (directory / 'report.json').write_bytes(source.read_bytes())
           PY
+
+  - name: Chromium disk layout
+    container_image: ubuntu-24.04
+    timeout: 5m
+    resource_requests:
+      cpu: 16
+      memory: 32GB
+      disk: 200GB
+    triggers:
+      push:
+        branches: ["perf/disk-layout"]
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import json, os, pathlib, shutil
+          root = pathlib.Path.cwd()
+          for path in [pathlib.Path('/'), pathlib.Path('/tmp'), root, root.parent, pathlib.Path('/home/buildbuddy/workspace/output-base')]:
+              if not path.exists():
+                  print(json.dumps({'path': str(path), 'exists': False}))
+                  continue
+              disk, stat = shutil.disk_usage(path), os.statvfs(path)
+              print(json.dumps({'path': str(path), 'device': os.stat(path).st_dev,
+                                'total_gib': disk.total / 2**30, 'free_gib': disk.free / 2**30,
+                                'inode_total': stat.f_files, 'inode_free': stat.f_favail}))
+          PY

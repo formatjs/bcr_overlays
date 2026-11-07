@@ -4,6 +4,26 @@ Optimize measured compiler work first. Keep compiler flags, target ABIs, and
 artifact smoke coverage intact. Compare the same workload and cache state;
 registered actions are not executed compiles.
 
+## Cold-build target
+
+Target: under one hour per supported triple on BuildBuddy, including artifact
+packaging. Preserve hermetic toolchains, declared inputs, compiler options,
+target ABIs, and native rendering smoke coverage. No successful cold result has
+been established. The user's observed build effort, including retries, is about
+2.5 hours; the mixed-cache profile below is not a cold baseline.
+
+Measure with fresh Bazel output state and action-cache reuse disabled. Record
+repository/download cache state and shared RBE CAS conditions; a fresh client
+does not make the remote CAS cold. Report fetch/setup, analysis, execution,
+linking, and packaging separately, plus total elapsed time and retries. Do not
+sum overlapping profile spans as wall time. Confirm executed compiler counts
+before calling a run cold.
+
+Current scanner coverage has a host gap: Linux ARM64's browser capture contains
+19 host Blink-core libraries with 2,733 source entries outside the dedicated
+Blink-core macro. Validate these compiler contexts separately before extending
+scanning. The other four browser captures contain no Blink-core libraries.
+
 ## Baseline
 
 [Linux ARM64 compile-heavy profile](https://formatjs.buildbuddy.io/invocation/97238e03-06be-49ad-abed-4699731fe294):

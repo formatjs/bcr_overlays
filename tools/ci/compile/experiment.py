@@ -88,9 +88,17 @@ def compiler_profile(path, source_name='layout_box.cc'):
 
 def compiler_pattern(sources):
     # Factor shared paths so Bazel wrappers stay below process argument limits.
-    prefix = os.path.commonprefix(sources)
-    return '.*' + re.escape(prefix) + '(' + '|'.join(
-        re.escape(source[len(prefix):]) for source in sources) + ')'
+    def factor(paths):
+        prefix = os.path.commonprefix(paths)
+        tails = [path[len(prefix):] for path in paths]
+        if not any(tails):
+            return re.escape(prefix)
+        groups = {}
+        for tail in tails:
+            groups.setdefault(tail[:1], []).append(tail)
+        return re.escape(prefix) + '(?:' + '|'.join(factor(group) for group in groups.values()) + ')'
+
+    return '.*' + factor(sources)
 
 
 def batch_sources():

@@ -46,6 +46,11 @@ All five initial full-browser candidate workflows hit that cap at exactly 3,600
 seconds without compiler errors. Resuming their cached work validates artifacts;
 it does not establish a cold-build result.
 
+The initial Linux AMD64 calibration also hit the one-hour cap. The next isolated
+run requests 16 client CPUs instead of 8, retaining 64 remote action slots and
+the existing memory budget. This tests the client input-processing bottleneck;
+it is not yet a demonstrated full-build speedup.
+
 ## Baseline
 
 [Linux ARM64 compile-heavy profile](https://formatjs.buildbuddy.io/invocation/97238e03-06be-49ad-abed-4699731fe294):

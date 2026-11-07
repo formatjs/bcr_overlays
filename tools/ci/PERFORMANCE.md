@@ -353,3 +353,17 @@ BuildBuddy workflow URL. The downloader verifies repository, full commit, cold
 workflow identity, completion, and checksum before handing the archive to the
 existing native smoke workflow. Cold smoke posts its own status. This also fixes
 a cold-download filename bug that incorrectly selected the component prefix.
+
+## Sustained concurrency result
+
+The 961-source comparison at `13a2355` passes all modes: 5,766 real selected
+compiles including warmups, identical archives, and zero input-path changes.
+At 16 client CPUs, 64 jobs executes in 81.83/85.58s; 128 jobs takes 53.21/54.15s,
+about 36% less. Critical paths are 19–25s, below the execution phase. Observed
+mean worker execution rises from 46–48 concurrent workers to 70–74. Heap peaks
+are 3.4–4.9GB within the 12GiB heap budget.
+
+The hosted candidate now uses 128 jobs; local defaults stay unchanged. Validate
+all browser artifacts, native rendering, payload equality, and full cold timing
+before promoting it. The running `d49c868` cold trial remains the 64-job control.
+The `perf/cold-linux-amd64-128` branch starts the follow-up without replacing it.

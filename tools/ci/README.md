@@ -99,3 +99,8 @@ The first compact-log comparison produced identical archives but removed zero
 inputs. Its single compiler timing pair (31.2s versus 21.8s) does not establish a
 speedup. Bazel 9.2 requires both `--cc_include_scanning` and the requested
 `cc_include_scanning` feature; the pilot now enables both in its scanner mode.
+The feature belongs only to the probe rule: requesting it globally also scans
+LLVM's glibc bootstrap and fails on its generated `config.h`.
+
+See [PERFORMANCE.md](PERFORMANCE.md) for the measured compiler baseline and
+optimization rollout order.

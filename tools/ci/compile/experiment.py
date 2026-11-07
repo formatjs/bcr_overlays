@@ -114,8 +114,6 @@ def main():
                        '--execution_log_compact_file=' + str(execution_log),
                        '--profile=' + str(profile),
                        '--cc_include_scanning=' + ('true' if mode == 'include-scan' else 'false')]
-            if mode == 'include-scan':
-                command.append('--features=cc_include_scanning')
             command.append(TARGET)
             result = subprocess.run(command, cwd=ROOT)
             if result.returncode:

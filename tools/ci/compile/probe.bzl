@@ -28,5 +28,6 @@ def blink_compile_probe(name):
         copts = library["copts"],
         local_defines = library["defines"],
         deps = [":" + name + "_headers"],
+        features = ["cc_include_scanning"],
         tags = ["manual"],
     )

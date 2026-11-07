@@ -57,7 +57,10 @@ Their killed Bazel children emitted no final profile or cold-result report.
 The initial Linux AMD64 calibration also hit the one-hour cap. The next isolated
 run requests 16 client CPUs instead of 8, retaining 64 remote action slots and
 the existing memory budget. This tests the client input-processing bottleneck;
-it is not yet a demonstrated full-build speedup.
+it is not yet a demonstrated full-build speedup. That 16-CPU run at `0248ef2`
+also hit the one-hour cap: 142,837/154,750 actions, no compiler errors, and no
+final cold report. The next matched trial compares 64 and 128 jobs with 16 client
+CPUs, scanning, retained trees, and fixed compiler options.
 
 ## Baseline
 

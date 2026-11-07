@@ -81,6 +81,14 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- [Matched input-tree retention benchmark](https://formatjs.buildbuddy.io/invocation/69e0a9ba-41b7-4b9c-adf1-50415c043bf3)
+  passed two warmups and ABBA comparisons across 101 sources. All six archive
+  sets match; every selected compile executed remotely. Retention changed zero
+  input paths. Execution phases averaged 51.19s baseline versus 45.16s retained
+  (12% lower); client CPU averaged 408.28s versus 380.11s (7% lower). Both paired
+  execution comparisons improved. Peak sampled heap rose from 3.57 GB to 4.54 GB.
+  Hosted browser builds retain trees with a 12 GiB JVM heap budget inside the
+  existing 32 GB runner. Shared worker load limits extrapolation to full builds.
 - [Wider host Blink trial](https://formatjs.buildbuddy.io/invocation/f01535b3-73c1-44af-8d5c-89409df45244)
   passed all four runs with identical archives across 12 sources, including
   accessibility, canvas, WTF, and generated V8 bindings. Both pairs removed

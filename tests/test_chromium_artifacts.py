@@ -141,7 +141,9 @@ class ArtifactsTest(unittest.TestCase):
         label = '//tools/ci:linux-amd64_archive'
 
         def execute(command, **kwargs):
-            self.assertEqual(command[:4], ['bazel', 'build', '--config=browser', '--config=buildbuddy'])
+            self.assertEqual(command[:5], ['bazel', '--host_jvm_args=-Xmx12g', 'build',
+                                          '--config=browser', '--config=buildbuddy'])
+            self.assertIn('--noexperimental_remote_discard_merkle_trees', command)
             self.assertIn('--//tools/ci:revision=' + REVISION, command)
             self.assertEqual(command[-1], label)
             self.assertEqual(kwargs, {'cwd': ROOT, 'check': True})

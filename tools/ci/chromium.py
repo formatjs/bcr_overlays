@@ -201,7 +201,9 @@ def build(target, destination, revision, hosted=False, cold=False):
     if hosted:
         if not os.environ.get('BUILDBUDDY_CI_RUNNER_ABSPATH'):
             raise ValueError('Hosted mode requires a BuildBuddy workflow runner')
-        flags.extend(['--config=buildbuddy', '--keep_going'])
+        # Retained input trees need heap headroom at 64 active actions.
+        bazel.append('--host_jvm_args=-Xmx12g')
+        flags.extend(['--config=buildbuddy', '--keep_going', '--noexperimental_remote_discard_merkle_trees'])
         if target['os'] == 'darwin':
             # Bound input downloads for the large framework link.
             flags.extend(['--strategy=CppLink=sandboxed', '--remote_max_connections=8'])

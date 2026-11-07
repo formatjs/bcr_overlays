@@ -116,6 +116,14 @@ object equivalence before changing that boundary.
 
 ## Results so far
 
+- [64/128-job benchmark](https://formatjs.buildbuddy.io/invocation/93efbf69-445f-4732-a380-1a25e8761e81)
+  passed two warmups and ABBA comparisons across 101 sources with 16 client CPUs,
+  scanning, retained trees, and a 12 GiB heap. All archive sets match; input paths
+  are unchanged. Execution was 43.19s/51.22s at 64 jobs versus 46.05s/52.02s at
+  128 jobs. Both pairs were slower at 128; keep the production limit at 64.
+  Other validations overlapped, so the result does not establish a universal
+  concurrency optimum. The next cold Linux AMD64 trial combines the validated
+  native scope with 32 client CPUs, the same 32 GB memory budget, and 64 jobs.
 - [Native 19-source regression](https://formatjs.buildbuddy.io/invocation/7a4c660c-f4c6-4d06-9e54-1996c0eafbe6)
   passed baseline/scanner/scanner/baseline with identical archives using Linux
   AMD64's native library contexts. Both pairs removed 1,377,555 input paths and

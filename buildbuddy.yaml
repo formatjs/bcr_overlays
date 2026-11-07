@@ -553,7 +553,7 @@ actions:
     allow_concurrent_runs_on_branches: []
     timeout: 6h
     resource_requests:
-      cpu: 16
+      cpu: 32
       memory: 32GB
       disk: 200GB
     triggers:

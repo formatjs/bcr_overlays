@@ -75,6 +75,21 @@ it is not yet a demonstrated full-build speedup.
 - Current representative Blink action declares 76,130 inputs; compilation
   context exposes 74,982 headers.
 
+Completed mixed-cache code builds at `2b28ee4` confirm the same client limit:
+
+- [Linux AMD64](https://formatjs.buildbuddy.io/invocation/5f633002-2541-4944-b9ce-61b57ce39b18):
+  Bazel 44m10s; 40,895 remote cache hits and 5,818 real remote actions. Client CPU
+  averages 10.30 cores. Merkle construction totals 22,776 task-seconds.
+- [Windows AMD64](https://formatjs.buildbuddy.io/invocation/8a5cb9ab-a606-4d86-9d5c-1f378630ee30):
+  Bazel 38m43s; 28,026 remote cache hits and 3,665 real remote actions. Client CPU
+  averages 9.26 cores. Merkle construction totals 18,692 task-seconds.
+- Matching local Merkle spans to their owning compile spans attributes Linux's
+  largest sums to Chrome (7,921 task-seconds), components (3,276), and Blink
+  target/host (6,414 combined). Windows Chrome contributes 7,963 task-seconds.
+  These overlapping sums are not wall-time savings. A 13-source Chrome,
+  extensions, and component probe targets the next scope; production remains
+  gated on repeated archive equality and full browser validation.
+
 ## Order of work
 
 1. **Reduce compiler inputs.** The isolated Blink probe uses the real compilation

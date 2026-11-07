@@ -1,4 +1,4 @@
-"""Compare real Blink compiles with and without Bazel include scanning."""
+"""Compare real Chromium compiles with controlled execution settings."""
 
 import argparse
 import ast
@@ -34,9 +34,9 @@ WIDE_HOST_SOURCES = (*SOURCES, 'ax_object.cc', 'ax_node_object.cc', 'canvas_rend
                      'convert_to_webrtc_video_frame_buffer.cc', 'web_media_player_ms_compositor.cc', 'video_frame.cc')
 
 
-def compiler_input_diff(path):
+def compiler_input_diff(path, owners=OWNERS):
     changes = [item for item in json.loads(path.read_text()).get('spawn_diffs', [])
-               if item.get('mnemonic') == 'CppCompile' and item.get('target_label', '').endswith(OWNERS)]
+               if item.get('mnemonic') == 'CppCompile' and item.get('target_label', '').endswith(owners)]
     if any('old_only' in item or 'new_only' in item for item in changes):
         return {'comparison': 'unpaired', 'reason': 'Compiler output paths changed between configurations'}
     removed, added = 0, 0
@@ -92,6 +92,13 @@ def batch_sources():
     return (*sources, 'third_party/blink/renderer/core/probe/core_probes.cc')
 
 
+def browser_source_groups():
+    tree = ast.parse(Path(__file__).with_name('browser_probe_sources.bzl').read_text())
+    return next(ast.literal_eval(node.value) for node in tree.body
+                if isinstance(node, ast.Assign) and any(
+                    isinstance(target, ast.Name) and target.id == 'SOURCE_GROUPS' for target in node.targets))
+
+
 def archive_outputs(events, target=TARGET):
     sets, roots = {}, []
     complete = False
@@ -141,6 +148,7 @@ def main():
     parser.add_argument('--host-blink', action='store_true', help='Probe Linux ARM64 captured x64 host Blink libraries')
     parser.add_argument('--wide-host-blink', action='store_true', help='Include host modules, platform, and generated bindings')
     parser.add_argument('--wide-native-blink', action='store_true', help='Probe native Linux modules, platform, and generated bindings')
+    parser.add_argument('--browser', action='store_true', help='Probe Chrome, extensions, and component hotspots')
     comparison = parser.add_mutually_exclusive_group()
     comparison.add_argument('--compare-merkle-retention', action='store_true',
                             help='Compare retained input trees on the unscanned batch; compiler options stay fixed')
@@ -149,9 +157,9 @@ def main():
     args = parser.parse_args()
     if args.batch and args.platform != 'linux-amd64':
         parser.error('Throughput batch currently targets Linux amd64 host compiles')
-    if (args.host_blink or args.wide_host_blink or args.wide_native_blink) and (args.batch or args.platform != 'linux-amd64'):
+    if (args.host_blink or args.wide_host_blink or args.wide_native_blink or args.browser) and (args.batch or args.platform != 'linux-amd64'):
         parser.error('Host Blink probe runs on Linux amd64 without --batch')
-    if sum([args.host_blink, args.wide_host_blink, args.wide_native_blink]) > 1:
+    if sum([args.host_blink, args.wide_host_blink, args.wide_native_blink, args.browser]) > 1:
         parser.error('Choose one Blink context')
     if args.compare_merkle_retention and not args.batch:
         parser.error('--compare-merkle-retention requires --batch')
@@ -171,6 +179,12 @@ def main():
         target = '//tools/ci/compile/host_wide:blink-host-linux-arm64'
     if args.wide_native_blink:
         target = '//tools/ci/compile/native_wide:blink-native-linux-amd64'
+    owners = OWNERS
+    if args.browser:
+        groups = browser_source_groups()
+        sources = tuple(source for group in groups.values() for source in group)
+        owners = tuple(':browser_compile_probe_' + str(index) for index in range(len(groups)))
+        target = '//tools/ci/compile/browser:browser-inputs-linux-amd64'
     pattern = '.*(' + '|'.join(re.escape(source) for source in sources) + ')'
     variant = 'retain-merkle' if args.compare_merkle_retention else 'include-scan'
     if args.compare_concurrency:
@@ -241,7 +255,7 @@ def main():
                 subprocess.run(['bb', 'explain', '--old', str(Path(temporary) / ('baseline-' + pair + '.binpb.zst')),
                                 '--new', str(Path(temporary) / (variant + '-' + pair + '.binpb.zst')),
                                 '--output_format', 'json'], stdout=output, cwd=ROOT, check=True)
-            report['input_diff'][pair] = compiler_input_diff(diff)
+            report['input_diff'][pair] = compiler_input_diff(diff, owners)
         (args.directory / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
     print('Compiler output bytes match', flush=True)
 

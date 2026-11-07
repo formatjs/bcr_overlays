@@ -3,6 +3,7 @@
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_cc//cc/common:cc_info.bzl", "CcInfo")
 load(":batch_sources.bzl", BATCH_SOURCES = "SOURCES")
+load(":browser_probe_sources.bzl", "SOURCE_GROUPS")
 
 def _headers_impl(ctx):
     return [
@@ -117,5 +118,19 @@ def host_blink_compile_probe(name, libraries, repository, wide = False, captured
             repository,
             sources,
             forwarders = forwarders,
+            gpu_header = "@chromium//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
+        )
+
+def browser_compile_probe(name, libraries):
+    """Compile measured browser hotspots with each source's owning context."""
+    for index, (owner, sources) in enumerate(SOURCE_GROUPS.items()):
+        library = dict(libraries[owner])
+        library["copts"] = library["copts"] + ["-I" + Label(root).workspace_root for root in library.get("include_roots", [])]
+        _blink_library_probe(
+            name + "_" + str(index),
+            library,
+            "@chromium",
+            sources,
+            forwarders = "browser_forwarders",
             gpu_header = "@chromium//native:gen/gpu/config/gpu_driver_bug_workaround_autogen.h",
         )

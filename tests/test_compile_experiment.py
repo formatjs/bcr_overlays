@@ -41,6 +41,22 @@ class CompileExperimentTest(unittest.TestCase):
             path.write_text(json.dumps({'spawn_diffs': [probe]}))
             self.assertEqual(compiler_input_diff(path)['comparison'], 'unpaired')
 
+    def test_browser_input_diff_excludes_other_probes(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'diff.json'
+            path.write_text(json.dumps({'spawn_diffs': [
+                {'mnemonic': 'CppCompile',
+                 'target_label': '//tools/ci/compile/browser:browser_compile_probe_0',
+                 'modified': {'diffs': [{'input_paths': {
+                     'old_only': ['a.h', 'b.h', 'c.h'], 'new_only': ['required.h']}}]}},
+                {'mnemonic': 'CppCompile',
+                 'target_label': '//tools/ci/compile:blink_layout_compile_probe',
+                 'old_only': {'top_level': True}},
+            ]}))
+            self.assertEqual(compiler_input_diff(path, (':browser_compile_probe_0',)), {
+                'comparison': 'paired', 'input_paths_removed': 3, 'input_paths_added': 1,
+            })
+
     def test_compiler_timing_excludes_other_actions_and_nested_wrapper_time(self):
         events = [
             {'ph': 'X', 'cat': 'action processing', 'name': 'Compiling layout_box.cc',
